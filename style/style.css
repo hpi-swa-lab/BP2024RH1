@@ -13,9 +13,10 @@ p {
 }
 
 a:link {
-    color: black;
+    color: blue;
 }
 
-a:visited {
-    color: gray;
+a:hover {
+    background-color: yellow;
+    font-size: larger;
 }
