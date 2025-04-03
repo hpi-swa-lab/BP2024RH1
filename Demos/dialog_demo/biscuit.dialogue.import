@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://eu77o3hagm62"
+path="res://.godot/imported/biscuit.dialogue-2c59c04afc1657dd532382279a556749.tres"
+
+[deps]
+
+source_file="res://biscuit.dialogue"
+dest_files=["res://.godot/imported/biscuit.dialogue-2c59c04afc1657dd532382279a556749.tres"]
+
+[params]
+
+defaults=true
