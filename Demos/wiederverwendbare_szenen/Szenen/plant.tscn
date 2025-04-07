@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://onpilgv0m7yw"]
+
+[ext_resource type="Texture2D" uid="uid://bh7nh0xxcr6ic" path="res://Asserts/plant.png" id="1_pgs8x"]
+[ext_resource type="Script" path="res://Scripts/plant.gd" id="1_r1bnm"]
+[ext_resource type="Texture2D" uid="uid://csdj8f3ugn1gy" path="res://Asserts/plant(2).png" id="2_fepqr"]
+[ext_resource type="Texture2D" uid="uid://pg58f0xtffvm" path="res://Asserts/plant(1).png" id="4_4oaxh"]
+[ext_resource type="Texture2D" uid="uid://cbg6546f1qp1c" path="res://Asserts/plant_deadandsus.png" id="5_3n2ww"]
+
+[node name="Plant" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r1bnm")
+
+[node name="Plant_normal" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.00002
+offset_top = -0.999969
+offset_right = 521.0
+offset_bottom = 519.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("1_pgs8x")
+flat = true
+
+[node name="Plant_sus" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.2, 0.2)
+disabled = true
+icon = ExtResource("2_fepqr")
+flat = true
+
+[node name="Plant_dead" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("4_4oaxh")
+flat = true
+
+[node name="Plant_dead_and_sus" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("5_3n2ww")
+flat = true

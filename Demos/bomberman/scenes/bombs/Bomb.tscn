@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://c66wqjsdykb8p"]
+
+[ext_resource type="Script" path="res://scripts/bomb.gd" id="1_pkn0v"]
+[ext_resource type="Texture2D" uid="uid://ca5wwnvqtts7f" path="res://asserts/Sprites.png" id="2_o7yjr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3dgn"]
+atlas = ExtResource("2_o7yjr")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yrni"]
+atlas = ExtResource("2_o7yjr")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61vj3"]
+atlas = ExtResource("2_o7yjr")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mfmg"]
+atlas = ExtResource("2_o7yjr")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nisx"]
+atlas = ExtResource("2_o7yjr")
+region = Rect2(0, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43ily"]
+atlas = ExtResource("2_o7yjr")
+region = Rect2(16, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maxuw"]
+atlas = ExtResource("2_o7yjr")
+region = Rect2(32, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pcv6"]
+atlas = ExtResource("2_o7yjr")
+region = Rect2(16, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4s07i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3dgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yrni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61vj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mfmg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nisx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43ily")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maxuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pcv6")
+}],
+"loop": false,
+"name": &"last_second",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibw5b"]
+size = Vector2(16, 16)
+
+[node name="Bomb" type="Area2D"]
+collision_layer = 8
+collision_mask = 63
+script = ExtResource("1_pkn0v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4s07i")
+animation = &"last_second"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ibw5b")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
