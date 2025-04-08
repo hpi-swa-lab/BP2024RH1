@@ -1,0 +1,21 @@
+~ Caesar
+if Global.culprit_found:
+	MC: Die Statue habe ich schon benutzt, die brauche ich nicht mehr.
+else:
+	MC: Die Statue ist von Cäsar. Warte, da steht hinten was drauf. 
+	MC: Caesar = Geiwev, was könnte das bedeuten?
+=> END
+
+~ Bild
+if Global.culprit_found:
+	MC: Der Hund scheint ihm wichtig zu sein, bedeutet das vielleicht noch mehr?
+else:
+	MC: Ein Hund, das hilft mir grade nicht weiter.
+=> END
+
+~ Businesskarte
+if Global.culprit_found:
+	MC: Da war ich ja schon, das brauche ich nicht mehr.
+else:
+	MC: Das Restaurant kenne ich, vielleicht hat die Nachricht damit etwas zu tun.
+=> END

@@ -1,0 +1,45 @@
+~ start
+MC (Name fehlt noch): Die Wohnung in der [Straße] ist vor kurzem abgebrannt, der Besitzer vermutet Brandstiftung und hat uns beauftragt das zu untersuchen
+MC: Am besten sollte ich mir einmal die Wohnung ansehen, vielleicht finde ich ja Hinweise
+=> END
+
+~ Teil2
+Kollege: Und irgendwas gefunden?
+MC: Ein bisschen was, da war so eine seltsame Nachricht und eine Statue von Cäsar glaube ich.
+Kollege: Der Text könnte verschlüsselt sein oder?
+MC: Ja aber was hat Cäsar damit zu tun?
+Kollege: Der hat schon vor 2000 Jahren Nachrichten verschlüsselt, damit die Feinde sie nicht lesen können. Dabei verschiebt man einfach die Buchstaben. 
+Kollege: Ich glaube ich hatte sogar noch so eine Scheibe irgendwo rumliegen” … “ah, hier ist sie
+Kollege: Kennst du die Cäsar Verschlüsselung schon oder soll ich sie dir erklären?
+- Nein, kannst du sie mir erklären? => Tutorial
+- Ja, die kenne ich schon
+Kollege: Ok, dann viel Erfolg beim Entschlüsseln!!
+=> Teil3
+
+~ Tutorial
+Kollege: Ok, kein Problem
+do load_tutorial()
+=> Teil3
+
+~ Teil3
+if Global.had_tutorial:
+	Kollege: Hast du das verstanden, oder soll ich es dir nochmal erklären?
+	- Könntest du es noch mal erklären => Tutorial
+	- Ja, ich denke schon
+MC: Und woher weiß ich wie ich die verschieben soll? Gehe ich einfach alle durch?
+Kollege: Entweder das oder vielleicht gibt es ja irgendwo einen Hinweis
+set Global.had_tutorial = true
+do load_minigame()
+=> END
+
+~ Teil4
+MC: ich sollte mal beim BitStop vorbeischauen, ich habe es auf der Karte markiert
+=> END
+
+~ Teil5
+
+Kollege: Jojo, ich hab da noch was gefunden sone tolle Nachricht
+Kollege: Dann erkläre ich dir hier nochmal wie man Cäsar mit Schlüsselwort verschlüsseln kann.
+Kollege: Und jetzt entschlüssel mal bitte
+do load_second_game()
+=> END

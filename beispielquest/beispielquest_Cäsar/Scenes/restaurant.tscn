@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg07ghblpxvn2"]
+
+[ext_resource type="Script" uid="uid://52hlf570n15q" path="res://Scripts/restaurant.gd" id="1_cradt"]
+[ext_resource type="Texture2D" uid="uid://cvn4bavuxurao" path="res://Assets/Restaurant.png" id="2_801p6"]
+
+[node name="Restaurant" type="Node2D"]
+script = ExtResource("1_cradt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_801p6")

@@ -1,0 +1,29 @@
+~ start
+{Klingel wird gedrückt}
+Täter: Hallo, kann ich ihnen helfen
+MC: Ich suche [Name], sind sie das?
+Täter: Ja, wieso?
+MC: Sie werden verdächtigt einen Brand in der Wohnung in der [Adresse] ausgelöst zu haben
+Täter: Wie .. Wie kommen sie darauf? Das können sie nicht beweisen
+MC: Sie wurden beobachtet wie sie [Name] gedroht haben und ich bin sicher, wenn wir die Fußabdrücke am Tatort mit ihnen abgleichen stimmen die überein
+Täter: Das war … Ich wollte doch nichts schlimmes tun, ich wollte ihn doch nur erschrecken damit er mit [die Daten/das gestohlene] wiedergibt was er mit geklaut hat
+MC: Er hat dir [Gestohlenes] gestohlen?
+Täter: Ja und er hat mir gedroht, dass er das [verkauft/veröffentlicht] wenn ich ihm nicht [Geldsumme] zahle, deswegen wollte ich ein kleines Feuer im Papierkorb legen um ihn einzuschüchtern, ich wusste ja nicht, dass die ganze Wohnung abbrennt”
+MC: Hast du irgendwelche Beweise dafür?
+Täter: Nachdem wir uns gestern gestritten haben hat er gesagt, er schickt [die Daten] morgen weiter, vielleicht liegen die noch bei ihm Zuhause wegen dem Brand.
+- Ich glaube dir nicht => Option2
+- Mal schauen => Option1
+=> END
+
+~ Option1
+MC: Ich schaue mal was ich finde, Sie müssen aber trotzdem mitkommen
+Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Täter rennt weg)
+set Global.culprit_found = true
+set Global.office_szene = 4
+do go_back()
+=> END
+
+~ Option2
+MC: Das ist egal komm mit: Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Täter rennt weg)
+do end_it()
+=> END
