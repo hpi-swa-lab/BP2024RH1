@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhm4yogkq8wyk"
-path="res://.godot/imported/detektiv_buro3.jpg-39e78852a1cb00173f3b7d9d9fefb4f4.ctex"
+uid="uid://b3gvh732f6yxc"
+path="res://.godot/imported/Kaito_Koruba.webp-e5085d9027d8113fac2087a0fc470b54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/detektiv_buro3.jpg"
-dest_files=["res://.godot/imported/detektiv_buro3.jpg-39e78852a1cb00173f3b7d9d9fefb4f4.ctex"]
+source_file="res://assets/character/Kaito_Koruba.webp"
+dest_files=["res://.godot/imported/Kaito_Koruba.webp-e5085d9027d8113fac2087a0fc470b54.ctex"]
 
 [params]
 

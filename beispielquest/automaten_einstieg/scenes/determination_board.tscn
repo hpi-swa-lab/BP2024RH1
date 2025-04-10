@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://df74of7y128hx"]
+
+[ext_resource type="Script" uid="uid://cpqx8hplvbepb" path="res://scripts/determination_board/determination_board.gd" id="1_as8t6"]
+[ext_resource type="Texture2D" uid="uid://cfh3t40rea6ww" path="res://assets/office/tafel0.jpg" id="2_os71b"]
+[ext_resource type="Script" uid="uid://dxvtsfrbtfeek" path="res://scripts/determination_board/name_det_board.gd" id="3_os71b"]
+
+[node name="DeterminationBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_as8t6")
+NAME_OF_CASE = "Einbruch"
+
+[node name="board_as_background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 50.0
+offset_right = 1001.0
+offset_bottom = 598.0
+texture = ExtResource("2_os71b")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 543.0
+offset_right = 306.0
+offset_bottom = 579.0
+theme_override_colors/icon_hover_color = Color(0.36, 0.36, 0.36, 1)
+theme_override_font_sizes/font_size = 20
+text = "schließen "
+
+[node name="Name_of_case" type="Label" parent="."]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 77.0
+offset_right = 237.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "test"
+script = ExtResource("3_os71b")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

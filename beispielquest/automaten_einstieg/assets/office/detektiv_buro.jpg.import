@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7nbli0ynb0ad"
-path="res://.godot/imported/tafel3.png-a063aa0a6c678e23415735b4d20850ad.ctex"
+uid="uid://d0hl71u53qf86"
+path="res://.godot/imported/detektiv_buro.jpg-8567308c94a887ba3fa939a83c2c09c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tafel3.png"
-dest_files=["res://.godot/imported/tafel3.png-a063aa0a6c678e23415735b4d20850ad.ctex"]
+source_file="res://assets/office/detektiv_buro.jpg"
+dest_files=["res://.godot/imported/detektiv_buro.jpg-8567308c94a887ba3fa939a83c2c09c5.ctex"]
 
 [params]
 

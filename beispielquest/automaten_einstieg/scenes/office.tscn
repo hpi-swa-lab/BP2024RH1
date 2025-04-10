@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://1lucnrhv7ixm"]
+
+[ext_resource type="Texture2D" uid="uid://dhm4yogkq8wyk" path="res://assets/office/detektiv_buro3.jpg" id="1_n0wcf"]
+[ext_resource type="PackedScene" uid="uid://dlmpha4oit6nq" path="res://scenes/change_scene_button.tscn" id="3_jwaux"]
+[ext_resource type="Script" uid="uid://magsoy2dds7r" path="res://scripts/determination_board/button_determination_board.gd" id="3_qphb6"]
+[ext_resource type="PackedScene" uid="uid://ce8a5svl1xg4k" path="res://scenes/stadt_karte.tscn" id="4_7jj4f"]
+
+[node name="Office" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Background" type="TextureRect" parent="Sprite2D"]
+offset_left = -24.0
+offset_top = -13.0
+offset_right = 1176.0
+offset_bottom = 662.0
+texture = ExtResource("1_n0wcf")
+
+[node name="button_determination_board" type="TextureButton" parent="."]
+offset_left = 382.0
+offset_top = 180.0
+offset_right = 669.0
+offset_bottom = 346.0
+script = ExtResource("3_qphb6")
+
+[node name="ChangeScenenButton" parent="." instance=ExtResource("3_jwaux")]
+offset_left = 1027.0
+offset_top = 603.0
+offset_right = -3.0
+offset_bottom = -7.0
+text = "Leave Office"
+switch_to_scene = ExtResource("4_7jj4f")
+
+[connection signal="pressed" from="button_determination_board" to="button_determination_board" method="_on_pressed"]
