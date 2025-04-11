@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxcd82whlfmsk"]
+[gd_scene load_steps=3 format=3 uid="uid://cjeu3pdw5el04"]
 
 [ext_resource type="Script" uid="uid://nhqberbk3drv" path="res://fallübersicht.gd" id="1_00qau"]
 
@@ -7,14 +7,12 @@
 [node name="Fallübersicht" type="Node2D"]
 script = ExtResource("1_00qau")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Open_Caseboard" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 630.0
-offset_top = 86.0
-offset_right = 793.0
-offset_bottom = 117.0
+offset_left = -425.0
+offset_top = 122.0
+offset_right = -262.0
+offset_bottom = 153.0
 text = "Fallübersicht öffnen"
 
 [node name="Caseboard_UI" type="Control" parent="."]
@@ -26,6 +24,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="Caseboard_UI"]
+layout_mode = 0
 offset_left = -260.0
 offset_top = -250.0
 offset_right = 260.0
@@ -34,6 +33,7 @@ offset_bottom = 216.0
 [node name="SelectButton" type="Button" parent="Caseboard_UI"]
 unique_name_in_owner = true
 visible = false
+layout_mode = 0
 offset_left = -250.0
 offset_top = -240.0
 offset_right = -125.0
@@ -41,6 +41,7 @@ offset_bottom = -208.0
 text = "Fall auswählen"
 
 [node name="Back Button" type="Button" parent="Caseboard_UI"]
+layout_mode = 0
 offset_left = 124.0
 offset_top = -240.0
 offset_right = 249.0
@@ -48,6 +49,7 @@ offset_bottom = -208.0
 text = "Schließen"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Caseboard_UI"]
+layout_mode = 0
 offset_left = -250.0
 offset_top = -200.0
 offset_right = 250.0

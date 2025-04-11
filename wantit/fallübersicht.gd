@@ -15,10 +15,9 @@ func _on_open_caseboard_pressed() -> void:
 	%Caseboard_UI.visible = true
 	%Open_Caseboard.visible = false
 
-
 func _on_back_button_pressed() -> void:
 	%Caseboard_UI.visible = false
-	print("tada")
+	%Open_Caseboard.visible = true
 
 func add_Case(CaseName: String) -> void:		#A Case Type should also be added here or an alternativ connection how cases are loaded
 	var new_Case = Button.new()
