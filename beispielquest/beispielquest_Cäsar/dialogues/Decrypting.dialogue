@@ -1,9 +1,0 @@
-~ start
-MC: Was könnte die Verschiebung sein. Ich könnte mir die Sachen vom Tatort nochmal anschauen.
-=> END
-
-~ zurueck
-MC: Nice!! BitStop ..., ich glaube die Adresse stand auf der Karte. Ich sollte mal vorbeischauen.
-set Global.office_szene = 3
-do go_back()
-=> END

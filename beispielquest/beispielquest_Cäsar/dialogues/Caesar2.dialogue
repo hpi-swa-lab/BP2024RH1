@@ -1,9 +1,0 @@
-~ start
-MC: Vielleicht helfen mir die Sachen vom Tatort ja weiter.
-=> END
-
-~ fertig
-MC: Damit sollte ich genung Beweise haben
-set Global.optional_route = true
-do end_it()
-=> END
