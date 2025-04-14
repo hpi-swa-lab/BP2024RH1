@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c46r1xqgd45xm"]
+
+[ext_resource type="Script" uid="uid://qtohmmfcprtr" path="res://scripts/Baukasten/Gatter/or_gatter.gd" id="1_rgeqk"]
+
+[node name="Or_Gatter" type="Button"]
+text = "eins von beidem"
+script = ExtResource("1_rgeqk")

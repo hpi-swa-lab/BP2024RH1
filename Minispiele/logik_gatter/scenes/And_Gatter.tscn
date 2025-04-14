@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5sch15aup7u2"]
-
-[ext_resource type="Script" uid="uid://ds78qfgd8byjx" path="res://scripts/and_gatter.gd" id="1_p3fhr"]
-
-[node name="AndGatter" type="Button"]
-text = "beides"
-script = ExtResource("1_p3fhr")
