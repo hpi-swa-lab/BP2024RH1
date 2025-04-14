@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd23pklibjxcc"]
+
+[ext_resource type="Script" uid="uid://biy28kj3cud3y" path="res://scripts/choose_gatter.gd" id="1_kpyvx"]
+
+[node name="Choose_and_or" type="OptionButton"]
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "beides"
+popup/item_0/id = 0
+popup/item_1/text = "eins von beidem"
+popup/item_1/id = 1
+script = ExtResource("1_kpyvx")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

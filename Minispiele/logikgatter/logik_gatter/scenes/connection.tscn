@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://uxhep3vdtv0g"]
+
+[ext_resource type="Script" uid="uid://b5u0hsjypip7l" path="res://scripts/connection.gd" id="1_u7hla"]
+
+[node name="Connection" type="Line2D"]
+points = PackedVector2Array(0, 1, 105, 1)
+script = ExtResource("1_u7hla")
