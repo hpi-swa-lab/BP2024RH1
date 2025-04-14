@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjeu3pdw5el04"]
 
-[ext_resource type="Script" uid="uid://nhqberbk3drv" path="res://fallübersicht.gd" id="1_00qau"]
+[ext_resource type="Script" uid="uid://nhqberbk3drv" path="res://Scripts/fallübersicht.gd" id="1_odww0"]
 
 [sub_resource type="Theme" id="Theme_00qau"]
 
 [node name="Fallübersicht" type="Node2D"]
-script = ExtResource("1_00qau")
+script = ExtResource("1_odww0")
 
 [node name="Open_Caseboard" type="Button" parent="."]
 unique_name_in_owner = true

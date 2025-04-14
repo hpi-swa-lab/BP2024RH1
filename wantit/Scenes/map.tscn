@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cblna1w3vj7si"]
+
+[ext_resource type="Script" uid="uid://dxdeti0007cop" path="res://Scripts/map.gd" id="1_p3ir5"]
+[ext_resource type="Texture2D" uid="uid://lj0oyh7xx0de" path="res://Assets/photo_2025-04-14_14-41-11.jpg" id="2_myvm1"]
+[ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="3_q0mm3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5pve"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0an3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urblq"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_p3ir5")
+
+[node name="Map" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = -275.0
+offset_top = 186.0
+offset_right = 469.0
+offset_bottom = 1286.0
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("2_myvm1")
+
+[node name="Control" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back_Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = -275.0
+offset_right = 960.0
+offset_bottom = 245.0
+scale = Vector2(0.1, 0.1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p5pve")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e0an3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_urblq")
+icon = ExtResource("3_q0mm3")
+
+[connection signal="pressed" from="Map" to="." method="_on_map_pressed"]
+[connection signal="pressed" from="Control/Back_Button" to="." method="_on_back_button_pressed"]
