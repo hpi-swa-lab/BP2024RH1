@@ -13,19 +13,16 @@
 [node name="Map" type="Node2D"]
 script = ExtResource("1_p3ir5")
 
-[node name="Map" type="Button" parent="."]
-unique_name_in_owner = true
-offset_left = -275.0
-offset_top = 186.0
-offset_right = 469.0
-offset_bottom = 1286.0
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(2.47955e-05, -1.08002e-12)
 rotation = -1.5708
-scale = Vector2(0.5, 0.5)
-icon = ExtResource("2_myvm1")
+scale = Vector2(1, 1.05516)
+texture = ExtResource("2_myvm1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Control" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -33,15 +30,14 @@ offset_bottom = 40.0
 
 [node name="Back_Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 440.0
-offset_top = -275.0
-offset_right = 960.0
-offset_bottom = 245.0
+offset_left = 489.0
+offset_top = -282.0
+offset_right = 1009.0
+offset_bottom = 238.0
 scale = Vector2(0.1, 0.1)
 theme_override_styles/hover = SubResource("StyleBoxEmpty_p5pve")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_e0an3")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_urblq")
 icon = ExtResource("3_q0mm3")
 
-[connection signal="pressed" from="Map" to="." method="_on_map_pressed"]
 [connection signal="pressed" from="Control/Back_Button" to="." method="_on_back_button_pressed"]

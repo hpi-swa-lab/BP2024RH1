@@ -8,15 +8,8 @@ func _ready() -> void:
 	add_location(test_pos, test_scale, test_tex, test_scene)
 	add_location(Vector2(100, 25), test_scale, test_tex, "2") # only for testing
 
-func _on_map_pressed() -> void:
-	%Map.scale = Vector2(1.0, 1.0)
-	%Map.position = Vector2(-%Map.size.y/2, %Map.size.x/2)
-	%Control.visible = true
-
 func _on_back_button_pressed() -> void:
-	%Map.scale = Vector2(0.5, 0.5)
-	%Map.position = Vector2(-%Map.size.y/4, %Map.size.x/4)
-	%Control.visible = false
+	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 
 func add_location(Loc_pos: Vector2, Loc_scale: Vector2, Loc_tex: CompressedTexture2D, Loc_scene: String):	#Type of Loc_scene should be changed later once scene switching logic is implemented
 	var Location = Button.new()
