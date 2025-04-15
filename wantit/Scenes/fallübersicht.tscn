@@ -7,17 +7,10 @@
 [node name="Fallübersicht" type="Node2D"]
 script = ExtResource("1_odww0")
 
-[node name="Open_Caseboard" type="Button" parent="."]
-unique_name_in_owner = true
-offset_left = -425.0
-offset_top = 122.0
-offset_right = -262.0
-offset_bottom = 153.0
-text = "Fallübersicht öffnen"
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Caseboard_UI" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -62,6 +55,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[connection signal="pressed" from="Open_Caseboard" to="." method="_on_open_caseboard_pressed"]
 [connection signal="pressed" from="Caseboard_UI/SelectButton" to="." method="_on_select_button_pressed"]
 [connection signal="pressed" from="Caseboard_UI/Back Button" to="." method="_on_back_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://iavk8e8ffr6w"]
+[gd_scene load_steps=31 format=3 uid="uid://iavk8e8ffr6w"]
 
 [ext_resource type="Script" uid="uid://4eg8qk5k60he" path="res://Scripts/office.gd" id="1_4luf0"]
 [ext_resource type="Texture2D" uid="uid://2ir61r3woe0i" path="res://Assets/textures/Prototype Textures/Vector/texture_01.svg" id="1_fmddn"]
@@ -56,6 +56,12 @@ albedo_texture = ExtResource("8_k578b")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fw3ux"]
 albedo_texture = ExtResource("8_k578b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q644x"]
+albedo_texture = ExtResource("3_in4ui")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rs1ao"]
+size = Vector3(0.324829, 0.485046, 0.450684)
 
 [sub_resource type="Sky" id="Sky_g1ciw"]
 
@@ -149,9 +155,9 @@ size = Vector3(2, 1, 0.05)
 operation = 2
 size = Vector3(1.9, 0.9, 0.1)
 
-[node name="Area3D" type="Area3D" parent="CSGRoom/CSGMissionBoard"]
+[node name="Map" type="Area3D" parent="CSGRoom/CSGMissionBoard"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGRoom/CSGMissionBoard/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGRoom/CSGMissionBoard/Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00646973, 0, 0.0404052)
 shape = SubResource("BoxShape3D_q644x")
 
@@ -183,6 +189,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.527079, 0)
 operation = 2
 size = Vector3(1.1, 0.381, 0.28)
 
+[node name="CSGPC" type="CSGBox3D" parent="CSGRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19864, 0.956243, -0.0783386)
+material_override = SubResource("StandardMaterial3D_q644x")
+use_collision = true
+size = Vector3(0.31192, 0.487732, 0.446594)
+
+[node name="PC" type="Area3D" parent="CSGRoom/CSGPC"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGRoom/CSGPC/PC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00592041, 0.00375366, -0.0012207)
+shape = SubResource("BoxShape3D_rs1ao")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 light_color = Color(1, 1, 0.878431, 1)
@@ -208,4 +226,5 @@ texture = ExtResource("9_gdafm")
 transform = Transform3D(-9.43724e-09, 0.175, -3.01992e-08, 0.125, 1.32121e-08, 1.74846e-08, 1.09278e-08, -2.64243e-08, -0.2, 0.619914, 1.24632, 1.94826)
 texture = ExtResource("11_q644x")
 
-[connection signal="input_event" from="CSGRoom/CSGMissionBoard/Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="input_event" from="CSGRoom/CSGMissionBoard/Map" to="." method="_on_map_input_event"]
+[connection signal="input_event" from="CSGRoom/CSGPC/PC" to="." method="_on_pc_input_event"]

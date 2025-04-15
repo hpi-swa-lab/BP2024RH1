@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmombc46nsk25"]
+
+[ext_resource type="Script" uid="uid://b3j76fwtdhhgn" path="res://Scripts/testscene.gd" id="1_r2sr7"]
+
+[node name="Testscene" type="Node2D"]
+script = ExtResource("1_r2sr7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 349.0
+offset_top = 181.0
+offset_right = 389.0
+offset_bottom = 204.0
+text = "Success"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 567.0
+offset_top = 250.0
+offset_right = 657.0
+offset_bottom = 281.0
+text = "Close Case"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
