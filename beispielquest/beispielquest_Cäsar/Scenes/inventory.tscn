@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jfkrjf40fn0i" path="res://Scenes/item.tscn" id="2_k1vlg"]
 [ext_resource type="Texture2D" uid="uid://sugbmdkyi5m7" path="res://Assets/Restaurant_Karte.png" id="3_c5ffv"]
 [ext_resource type="Texture2D" uid="uid://ke8837g8jnqu" path="res://Assets/Bild.png" id="4_sd8fj"]
-[ext_resource type="Texture2D" uid="uid://2hrrv3ugu7co" path="res://Assets/Cäsar.png" id="5_trvqw"]
+[ext_resource type="Texture2D" uid="uid://b1jy2smo77m4t" path="res://Assets/caesar.png" id="6_c5ffv"]
 
 [node name="Inventory" type="Node2D"]
 script = ExtResource("1_c5ffv")
@@ -48,10 +48,11 @@ dialogue = "Inventar"
 dialogue_start = "Bild"
 
 [node name="Cäsar" parent="." instance=ExtResource("2_k1vlg")]
-offset_left = 81.0
-offset_top = -108.0
-offset_right = 154.0
-offset_bottom = 10.0
-icon = ExtResource("5_trvqw")
+offset_left = 91.0
+offset_top = -102.0
+offset_right = 411.0
+offset_bottom = 538.0
+scale = Vector2(0.188731, 0.188731)
+icon = ExtResource("6_c5ffv")
 dialogue = "Inventar"
 dialogue_start = "Caesar"

@@ -7,8 +7,15 @@ var text_fields
 @export var original_text = "BITSTOP ZEHN UHR" # Muss in Großbuchtaben geschrieben werden
 @export var shown_text = " F M  X W  X  S  T    D   I  L  R     Y  L  V"
 @onready var input_container = %HBoxContainer
+@onready var hinweis: Label = $Hinweis
+
 
 func _ready():
+	hinweis.hide()
+	
+	if Global.verschiebung_found:
+		hinweis.show()
+	
 	%"VerschlüsselterText".text = shown_text
 	var rot_angle = deg_to_rad(13.84)
 	

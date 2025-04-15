@@ -1,9 +1,12 @@
 ~ start
-MC: Vielleicht helfen mir die Sachen vom Tatort ja weiter.
+if Global.schluesselwort_found:
+	Detective Turing: Ein Hund names Bella...wie hilft mir das weiter?
+else:
+	Detective Turing: Ich muss das Schlüsselwort herausfinden. Vielleicht helfen mir die Gegenstände vom Tatort ja weiter.
 => END
 
 ~ fertig
-MC: Damit sollte ich genung Beweise haben
+Detective Turing: Damit sollte ich genug Beweise haben.
 set Global.optional_route = true
 do end_it()
 => END

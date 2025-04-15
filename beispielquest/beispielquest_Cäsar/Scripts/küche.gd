@@ -4,7 +4,7 @@ func _ready() -> void:
 	if Global.Papierkorb_picked == true:
 		disable("Papierkorb")
 
-func _on_fenster_abdrücke_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_fenster_abdrücke_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and Global.Fenster_picked == false:
 		Global.items_found += 1
 		Global.Fenster_picked = true

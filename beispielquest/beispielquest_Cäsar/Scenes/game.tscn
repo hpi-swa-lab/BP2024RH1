@@ -9,4 +9,4 @@ position = Vector2(83, 0)
 
 [node name="SceneSwitcherButton" parent="." instance=ExtResource("1_ebmjs")]
 Text = "Starte das Spiel"
-NextSceneString = "büro"
+NextSceneString = "character_selection"

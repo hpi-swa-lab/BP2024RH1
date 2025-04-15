@@ -17,7 +17,7 @@ color = Color(0.445939, 0.908019, 0.874631, 1)
 [node name="Minispiel" parent="." instance=ExtResource("2_omtrn")]
 unique_name_in_owner = true
 original_text = "BEISPIEL"
-shown_text = " H  K  O  Y  V  O  K  r"
+shown_text = " H  K  O  Y  V  O  K  R"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 121.0
@@ -26,3 +26,35 @@ offset_right = 366.0
 offset_bottom = -150.0
 theme_type_variation = &"HeaderLarge"
 text = "Verschiebung = 6"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-62, -25)
+points = PackedVector2Array(-192, -120, -176, -136, -80, -136)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(-19, 35)
+points = PackedVector2Array(-192, -120, -176, -136, -123, -136)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -140.0
+offset_top = -113.0
+offset_right = -78.0
+offset_bottom = -64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Klartext
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -140.0
+offset_top = -173.0
+offset_bottom = -124.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -4
+theme_override_font_sizes/font_size = 15
+text = "Verschlüsselter Text"
+autowrap_mode = 3

@@ -10,8 +10,12 @@ const RADIUS_INNER := 118
 @export var original_text = "GEHEIMES GEHEIMNIS" # Muss in Großbuchtaben geschrieben werden
 @export var shown_text = "H  B   I  B   J  M B  S    H  B   I  B   J  M  N  J  S"
 @onready var input_container = %HBoxContainer
+@onready var schlüsselwort: LineEdit = %Schlüsselwort
+@onready var bella: Button = %Bella
 
 func _ready():
+	bella.disabled
+	bella.hide()
 	DialogueManager.show_dialogue_balloon(load("res://dialogues/Caesar2.dialogue"), "start")
 	%VerschlüsselterText.text = shown_text
 	
@@ -36,6 +40,10 @@ func _ready():
 	text_fields = %HBoxContainer.get_children()
 	text_fields[0].grab_focus()
 
+func _process(_delta: float) -> void:
+	if Global.schluesselwort_found:
+		bella.show()
+		
 func _on_letter_clicked(_viewport, event, _shape_idx, letter):
 	for i in range(text_fields.size()):
 		if text_fields[i] is LineEdit and text_fields[i].has_focus():
@@ -107,3 +115,7 @@ func remove_children(node: Node):
 
 func end_it() -> void:
 	SceneSwitcher.switch_scene("res://Scenes/ende.tscn")
+
+
+func _on_keyword_clicked(text: String) -> void:
+	schlüsselwort.text = text

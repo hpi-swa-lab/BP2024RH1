@@ -1,9 +1,15 @@
 extends Node
 
+var portrait: CompressedTexture2D
+
 var map_clicked: bool = false
 var items_found: int = 0 
 var CrimeScene_visited: bool = false
 #var Restaurant_visited: bool = false
+
+var verschiebung_found: bool = false
+var schluesselwort_found: bool = false
+var secret_message_found: bool = false
 
 var had_tutorial: bool = false
 var caesar_decrypted: bool = false

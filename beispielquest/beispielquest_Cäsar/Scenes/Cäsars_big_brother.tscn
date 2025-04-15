@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2hddm7sgmp18"]
+[gd_scene load_steps=5 format=3 uid="uid://b2hddm7sgmp18"]
 
 [ext_resource type="Script" uid="uid://cti53snwxovxi" path="res://Scripts/cäsars_big_brother.gd" id="1_3q7tp"]
 [ext_resource type="Texture2D" uid="uid://dajh57clpktxi" path="res://Assets/Caesar_teil2.png" id="2_irj1d"]
+[ext_resource type="PackedScene" uid="uid://djwgirmrlf867" path="res://Scenes/keyword.tscn" id="4_6int8"]
 [ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="4_u5whh"]
 
 [node name="Cäsars_big_brother" type="Node2D"]
@@ -79,5 +80,33 @@ text = "Inventar öffnen"
 Text = "Inventar öffnen"
 NextSceneString = "inventory"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+offset_left = 27.0
+offset_top = -178.0
+offset_right = 430.0
+offset_bottom = -138.0
+theme_override_constants/separation = 45
+
+[node name="Keyword" parent="HBoxContainer2" instance=ExtResource("4_6int8")]
+layout_mode = 2
+text = "CAESAR"
+
+[node name="Keyword2" parent="HBoxContainer2" instance=ExtResource("4_6int8")]
+layout_mode = 2
+text = "HACKER"
+
+[node name="Keyword3" parent="HBoxContainer2" instance=ExtResource("4_6int8")]
+layout_mode = 2
+text = "BITCOIN"
+
+[node name="Bella" parent="HBoxContainer2" instance=ExtResource("4_6int8")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "BELLA"
+
 [connection signal="pressed" from="CheckSolution" to="." method="_on_check_solution_pressed"]
 [connection signal="pressed" from="ApplyInner" to="." method="_on_apply_inner_pressed"]
+[connection signal="clicked" from="HBoxContainer2/Keyword" to="." method="_on_keyword_clicked"]
+[connection signal="clicked" from="HBoxContainer2/Keyword2" to="." method="_on_keyword_clicked"]
+[connection signal="clicked" from="HBoxContainer2/Keyword3" to="." method="_on_keyword_clicked"]
+[connection signal="clicked" from="HBoxContainer2/Bella" to="." method="_on_keyword_clicked"]

@@ -1,9 +1,12 @@
 ~ start
-MC: Was könnte die Verschiebung sein. Ich könnte mir die Sachen vom Tatort nochmal anschauen.
+if not Global.verschiebung_found:
+	Detective Turing: Was könnte die Verschiebung sein? Ich könnte mir die Gegenstände vom Tatort noch einmal anschauen.
+else:
+	Detective Turing: Mit dem neuen Hinweis kann ich die Nachricht vielleicht entschlüsseln.
 => END
 
 ~ zurueck
-MC: Nice!! BitStop ..., ich glaube die Adresse stand auf der Karte. Ich sollte mal vorbeischauen.
+Detective Turing: BitStop ... ich glaube die Adresse stand auf der Karte. Ich sollte dem Restaurant mal einen Besuch abstatten.
 set Global.office_szene = 3
 do go_back()
 => END
