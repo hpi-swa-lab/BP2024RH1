@@ -7,26 +7,29 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 536.0
+offset_bottom = -282.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_imlri")
 
 [node name="Questionmark" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1085.0
-offset_top = 16.0
-offset_right = 1131.0
-offset_bottom = 62.0
+offset_left = 548.0
+offset_top = 18.0
+offset_right = 594.0
+offset_bottom = 68.0
 theme_override_font_sizes/font_size = 30
 text = "?"
 
 [node name="Hints" type="Control" parent="."]
 visible = false
-anchors_preset = 0
-offset_left = 523.0
-offset_top = 13.0
-offset_right = 1139.0
-offset_bottom = 376.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="Hints"]
 layout_mode = 1
