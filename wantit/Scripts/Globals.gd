@@ -1,4 +1,4 @@
 extends Node
 
-var nextScene: PackedScene
+var nextScene: CaseManager.Location
 var selectedCase: CaseManager.Case

@@ -1,9 +1,23 @@
 extends Node3D
 
+var CaseBoardPicture
+
 func _ready() -> void:
 	CaseManager.add_Case("Test1", load("res://Scenes/testscene.tscn"))
 	CaseManager.add_Case("Test2", load("res://Scenes/testscene.tscn"))
 	CaseManager.add_Case("Test3", load("res://Scenes/testscene.tscn"))
+	
+	if Globals.selectedCase == null:
+		CaseBoardPicture = load("res://Assets/Hinweistafel_basic.png")
+	else:
+		var image = Image.new()
+		var error = image.load("user://Assets/Hinweistafel.png")
+		if error != OK:
+			print("Fehler beim Laden des Bildes:", error)
+		else:
+			var tex = ImageTexture.new()
+			CaseBoardPicture = tex.create_from_image(image)
+	%CaseBoard.texture = CaseBoardPicture
 
 func _on_pc_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
@@ -16,3 +30,8 @@ func _on_pc_input_event(_camera: Node, event: InputEvent, _event_position: Vecto
 func _on_map_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		SceneSwitcher.switch_scene("res://Scenes/map.tscn")
+
+
+func _on_board_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		SceneSwitcher.switch_scene("res://Scenes/hinweistafel.tscn")

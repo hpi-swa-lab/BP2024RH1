@@ -1,14 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cblna1w3vj7si"]
+[gd_scene load_steps=4 format=3 uid="uid://cblna1w3vj7si"]
 
 [ext_resource type="Script" uid="uid://dxdeti0007cop" path="res://Scripts/map.gd" id="1_p3ir5"]
 [ext_resource type="Texture2D" uid="uid://lj0oyh7xx0de" path="res://Assets/photo_2025-04-14_14-41-11.jpg" id="2_myvm1"]
-[ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="3_q0mm3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5pve"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0an3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urblq"]
+[ext_resource type="PackedScene" uid="uid://c5wdqha4l66kp" path="res://Scenes/back_to_office_button.tscn" id="3_p3ir5"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_p3ir5")
@@ -28,16 +22,9 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Back_Button" type="Button" parent="Control"]
+[node name="Back Button" parent="Control" instance=ExtResource("3_p3ir5")]
 layout_mode = 0
-offset_left = 489.0
-offset_top = -282.0
-offset_right = 1009.0
-offset_bottom = 238.0
-scale = Vector2(0.1, 0.1)
-theme_override_styles/hover = SubResource("StyleBoxEmpty_p5pve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_e0an3")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_urblq")
-icon = ExtResource("3_q0mm3")
-
-[connection signal="pressed" from="Control/Back_Button" to="." method="_on_back_button_pressed"]
+offset_left = 456.0
+offset_top = -276.0
+offset_right = 976.0
+offset_bottom = 244.0

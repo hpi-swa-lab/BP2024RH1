@@ -1,33 +1,27 @@
 extends Node2D
 
 func _ready() -> void:
-	var test_scale = Vector2(0.1, 0.1)
-	var test_tex = preload("res://Assets/library.png")
-	var test_pos = Vector2(-150, 40)
-	var test_scene = "Bibliothek"
-	add_location(test_pos, test_scale, test_tex, test_scene)
-	add_location(Vector2(100, 25), test_scale, test_tex, "2") # only for testing
+	# Loads constant Locations
+	var Library = CaseManager.Location.new(preload("res://Assets/library.png"), Vector2(0.1, 0.1), Vector2(-150, 40), preload("res://Scenes/testscene.tscn"))
+	add_location(Library) # Its not the right Scene for the Library should be changed
 
-func _on_back_button_pressed() -> void:
-	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
-
-func add_location(Loc_pos: Vector2, Loc_scale: Vector2, Loc_tex: CompressedTexture2D, Loc_scene: String):	#Type of Loc_scene should be changed later once scene switching logic is implemented
-	var Location = Button.new()
+	# Loads next Location
+	add_location(Globals.nextScene)
+	
+func add_location(Location: CaseManager.Location):	#Type of Loc_scene should be changed later once scene switching logic is implemented
+	var newLocation = Button.new()
 	var Style = StyleBoxEmpty.new()
 	
-	Location.position = Loc_pos
-	Location.scale = Loc_scale
-	Location.icon = Loc_tex
+	newLocation.position = Location.LocationPos
+	newLocation.scale = Location.LocationScale
+	newLocation.icon = Location.LocationTex
 	
-	Location.add_theme_stylebox_override("hover", Style)
-	Location.add_theme_stylebox_override("normal", Style)
-	Location.add_theme_stylebox_override("pressed", Style)
+	newLocation.add_theme_stylebox_override("hover", Style)
+	newLocation.add_theme_stylebox_override("normal", Style)
+	newLocation.add_theme_stylebox_override("pressed", Style)
 	
-	Location.pressed.connect(self.switch_location.bind(Loc_scene))
-	%Control.add_child(Location)
+	newLocation.pressed.connect(self.switch_location.bind(Location.LocationScene))
+	%Control.add_child(newLocation)
 
-# An Alternativ logic to having to add them manually would we to have globals like Case_locations which would
-# be set upon selecting a case and then you would just have to load them instead of the given values like here.
-
-func switch_location(Scene: String):	#Should be changed according to earlier
-	print(Scene)
+func switch_location(Scene: PackedScene):
+	SceneSwitcher.switch_scene(Scene)

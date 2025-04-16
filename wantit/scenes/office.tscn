@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://iavk8e8ffr6w"]
+[gd_scene load_steps=33 format=3 uid="uid://iavk8e8ffr6w"]
 
 [ext_resource type="Script" uid="uid://4eg8qk5k60he" path="res://Scripts/office.gd" id="1_4luf0"]
 [ext_resource type="Texture2D" uid="uid://2ir61r3woe0i" path="res://Assets/textures/Prototype Textures/Vector/texture_01.svg" id="1_fmddn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://1mv3dukrl7c2" path="res://Assets/textures/Prototype Textures/PNG/Light/texture_07.png" id="3_in4ui"]
 [ext_resource type="Texture2D" uid="uid://6cc8qa6b5s3n" path="res://Assets/textures/Prototype Textures/PNG/Orange/texture_09.png" id="4_6hbky"]
 [ext_resource type="Texture2D" uid="uid://cgavgb11pvp5v" path="res://Assets/textures/Prototype Textures/Vector/texture_02.svg" id="5_o23kw"]
+[ext_resource type="Texture2D" uid="uid://24um6ha6ct7i" path="res://Assets/Hinweistafel_basic.png" id="6_rs1ao"]
 [ext_resource type="Texture2D" uid="uid://d3qcxp0k2kojc" path="res://Assets/textures/Prototype Textures/PNG/Dark/texture_04.png" id="6_wruke"]
 [ext_resource type="Texture2D" uid="uid://vldv04eht456" path="res://Assets/textures/Prototype Textures/PNG/Light/texture_01.png" id="7_ujkv6"]
 [ext_resource type="Texture2D" uid="uid://5wtmik02ares" path="res://Assets/textures/Prototype Textures/PNG/Dark/texture_13.png" id="8_k578b"]
@@ -23,6 +24,9 @@ albedo_texture = ExtResource("7_ujkv6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp1e5"]
 albedo_texture = ExtResource("3_in4ui")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q644x"]
+size = Vector3(1.61151, 0.0563994, 0.763672)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kviqm"]
 albedo_texture = ExtResource("4_6hbky")
@@ -42,8 +46,8 @@ albedo_texture = ExtResource("6_wruke")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ywr3"]
 albedo_texture = ExtResource("7_ujkv6")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_q644x"]
-size = Vector3(1.99634, 1, 0.132568)
+[sub_resource type="BoxShape3D" id="BoxShape3D_o2cca"]
+size = Vector3(1.98933, 1.01749, 0.162743)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1nwb"]
 albedo_texture = ExtResource("3_in4ui")
@@ -117,6 +121,13 @@ radius = 0.05
 height = 0.692383
 sides = 16
 
+[node name="Map" type="Area3D" parent="CSGRoom/CSGTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00100005, 0.55, 1.92867)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGRoom/CSGTable/Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00271583, -0.539666, -1.94734)
+shape = SubResource("BoxShape3D_q644x")
+
 [node name="CSGWallZ1" type="CSGBox3D" parent="CSGRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
 material_override = SubResource("StandardMaterial3D_kviqm")
@@ -155,11 +166,12 @@ size = Vector3(2, 1, 0.05)
 operation = 2
 size = Vector3(1.9, 0.9, 0.1)
 
-[node name="Map" type="Area3D" parent="CSGRoom/CSGMissionBoard"]
+[node name="Board" type="Area3D" parent="CSGRoom/CSGMissionBoard/MissionBoard2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00100005, -0.55, -0.360566)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGRoom/CSGMissionBoard/Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00646973, 0, 0.0404052)
-shape = SubResource("BoxShape3D_q644x")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGRoom/CSGMissionBoard/MissionBoard2/Board"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151825, 0.555174, 0.403042)
+shape = SubResource("BoxShape3D_o2cca")
 
 [node name="CSGBücherregal" type="CSGBox3D" parent="CSGRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34302, 1, 1.80318)
@@ -190,7 +202,7 @@ operation = 2
 size = Vector3(1.1, 0.381, 0.28)
 
 [node name="CSGPC" type="CSGBox3D" parent="CSGRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19864, 0.956243, -0.0783386)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75669, 0.956243, 0.808055)
 material_override = SubResource("StandardMaterial3D_q644x")
 use_collision = true
 size = Vector3(0.31192, 0.487732, 0.446594)
@@ -207,11 +219,11 @@ light_color = Color(1, 1, 0.878431, 1)
 light_energy = 0.4
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.037, -2)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.15, -2)
 environment = SubResource("Environment_u5glt")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 1, 0)
+transform = Transform3D(-0.0119902, 0, 0.999928, 0, 1, 0, -0.999928, 0, -0.0119902, 5.52329, 0.909159, -0.25555)
 light_color = Color(1, 1, 0.878431, 1)
 light_energy = 16.0
 spot_range = 10.0
@@ -223,8 +235,14 @@ pixel_size = 0.006
 texture = ExtResource("9_gdafm")
 
 [node name="Map" type="Sprite3D" parent="."]
-transform = Transform3D(-9.43724e-09, 0.175, -3.01992e-08, 0.125, 1.32121e-08, 1.74846e-08, 1.09278e-08, -2.64243e-08, -0.2, 0.619914, 1.24632, 1.94826)
+transform = Transform3D(-4.72083e-09, -0.147, -8.74228e-09, 0, -6.42557e-09, 0.2, -0.108, 6.42557e-09, 3.82137e-16, 0.606156, 0.731304, 0.00157316)
 texture = ExtResource("11_q644x")
 
-[connection signal="input_event" from="CSGRoom/CSGMissionBoard/Map" to="." method="_on_map_input_event"]
+[node name="CaseBoard" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-0.17, 1.22392e-08, 0, 1.48619e-08, 0.14, 8.74228e-08, 1.29927e-15, 1.22392e-08, -1, 0.610072, 1.25347, 1.93535)
+texture = ExtResource("6_rs1ao")
+
+[connection signal="input_event" from="CSGRoom/CSGTable/Map" to="." method="_on_map_input_event"]
+[connection signal="input_event" from="CSGRoom/CSGMissionBoard/MissionBoard2/Board" to="." method="_on_board_input_event"]
 [connection signal="input_event" from="CSGRoom/CSGPC/PC" to="." method="_on_pc_input_event"]

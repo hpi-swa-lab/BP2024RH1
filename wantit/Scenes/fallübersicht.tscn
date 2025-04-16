@@ -33,14 +33,6 @@ offset_right = -125.0
 offset_bottom = -208.0
 text = "Fall auswählen"
 
-[node name="Back Button" type="Button" parent="Caseboard_UI"]
-layout_mode = 0
-offset_left = 124.0
-offset_top = -240.0
-offset_right = 249.0
-offset_bottom = -208.0
-text = "Schließen"
-
 [node name="ScrollContainer" type="ScrollContainer" parent="Caseboard_UI"]
 layout_mode = 0
 offset_left = -250.0
@@ -56,4 +48,3 @@ size_flags_horizontal = 3
 alignment = 1
 
 [connection signal="pressed" from="Caseboard_UI/SelectButton" to="." method="_on_select_button_pressed"]
-[connection signal="pressed" from="Caseboard_UI/Back Button" to="." method="_on_back_button_pressed"]

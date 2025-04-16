@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmombc46nsk25"]
+[gd_scene load_steps=3 format=3 uid="uid://bmombc46nsk25"]
 
 [ext_resource type="Script" uid="uid://b3j76fwtdhhgn" path="res://Scripts/testscene.gd" id="1_r2sr7"]
+[ext_resource type="PackedScene" uid="uid://c5wdqha4l66kp" path="res://Scenes/back_to_office_button.tscn" id="2_wni78"]
 
 [node name="Testscene" type="Node2D"]
 script = ExtResource("1_r2sr7")
@@ -18,5 +19,11 @@ offset_top = 250.0
 offset_right = 657.0
 offset_bottom = 281.0
 text = "Close Case"
+
+[node name="Back Button" parent="." instance=ExtResource("2_wni78")]
+offset_left = 987.0
+offset_top = 64.0
+offset_right = 1507.0
+offset_bottom = 584.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
