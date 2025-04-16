@@ -2,6 +2,8 @@ extends Control
 
 class_name Helpsys
 
+signal questionmark_found
+
 @onready var questionmark: Button = $Questionmark
 @onready var hints: Control = $Hints
 
@@ -36,6 +38,8 @@ func _ready() -> void:
 func _on_questionmark_pressed() -> void:
 	questionmark.hide()
 	hints.show()
+	emit_signal("questionmark_found")
+	
 
 func _on_close_pressed() -> void:
 	questionmark.show()

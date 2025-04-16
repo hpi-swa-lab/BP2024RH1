@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdoqnm5p234g1"]
+[gd_scene load_steps=3 format=3 uid="uid://b8rfdjpkub5ym"]
 
 [ext_resource type="Script" uid="uid://crj6k714f6x7b" path="res://scripts/blink_highlight_sys.gd" id="1_78qs8"]
 
