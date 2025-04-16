@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bug3q78my00wp"]
+
+[ext_resource type="Script" uid="uid://c3ij8ajo8dqkw" path="res://Scripts/printing.gd" id="1_3qkok"]
+[ext_resource type="Texture2D" uid="uid://5wex6kuvniql" path="res://Assets/qrcode_cut_demopage_scaled.png" id="2_eppvv"]
+
+[node name="Printing" type="Node2D"]
+script = ExtResource("1_3qkok")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 69.0
+offset_top = 114.0
+offset_right = 841.0
+offset_bottom = 147.0
+text = "Hier sollte eine Szene mit animiertem Drucker stehen, der dann den Schlüssel druckt und ausspuckt"
+
+[node name="QR-Code" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(600, 300)
+texture = ExtResource("2_eppvv")
+
+[node name="Own Code" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+offset = Vector2(752, 428)

@@ -1,0 +1,68 @@
+~ start
+if Global.Intro_done == false
+	Inspector: Hallo Robo! Ich habe einen neuen Fall für dich.
+	Robo: Hmmm...
+	- Was ist passiert?
+		Inspector: Es war ein Einbruch!
+		- Ich werde mir sofort den Tatort angucken gehen.
+			do get_tree().change_scene_to_file("res://Scenes/tatort.tscn")
+		- Was ist über den Einbruch bekannt?
+			Inspector: Es wurde ein sehr wertvolles Gemälde geklaut.
+			Inspector: Aber sonst komischerweise nichts.
+			Robo: Wer wusste, dass diese Gemälde dort hängt?
+			Inspector: Laut eigener Aussage wussten das nur seine Bakannten.
+			- Den Tatort untesuchen
+			do get_tree().change_scene_to_file("res://Scenes/tatort.tscn")
+			
+	- Tut mir leid, aber ich bin zu beschäftigt für einen neuen Fall.
+		Inspector: Schade, vielleicht ein anderes Mal.
+	set Global.Intro_done = true
+=> END
+
+~ picture
+Robo: Da hing wohl das Gemälde.
+=> END
+
+~ safe
+Robo: Komisch, sie haben den Safe nicht aufgebrochen.
+=> END
+
+~ book
+Robo: Interessant, hier sind Visitenkarten.
+=> END
+
+~ florist
+Robo: Welches Interesse könnte der Florist an einem Gemälde haben?
+=> END
+
+~ elektrikerin
+Robo: Welches Interesse könnte die Elektrikerin an einem Gemälde haben?
+=> END
+
+~ kunsthaendler
+Robo: Komisch, da scheint ein Ecke abgerissen zu sein.
+Robo: Ich nehme die Karte mal mit.
+=> END
+
+~ pixeleditor
+Robo: Dann müssen wir die fehlenden Pixel wohl manuell hinzufügen.
+Robo: In Bildschirmen werden Pixel mit 0 und 1 codiert.
+=> frage1
+
+~ frage1
+Robo: 0 heißt Licht aus. Welche Farbe ist das dann?
+- weiß
+	Robo: Nein, überleg noch einmal.
+	=> frage1
+- schwarz
+	Robo: Genau!
+=> frage2
+
+~ frage2
+Robo: 1 heißt Licht an. Welche Farbe ist das dann?
+- weiß
+	Robo: Genau!
+- schwarz
+	Robo: Nein, überleg noch einmal.
+	=> frage2
+=> END

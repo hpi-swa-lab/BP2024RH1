@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsybfj7o8jp5r"]
+
+[ext_resource type="Texture2D" uid="uid://c3rnpxq603tly" path="res://Assets/tatort.jpg" id="1_kl7lh"]
+[ext_resource type="Script" uid="uid://cvqpiprt1bsak" path="res://Scripts/cupboard.gd" id="3_b8mj1"]
+[ext_resource type="Texture2D" uid="uid://ct0txpg5ekunk" path="res://Assets/back-button.svg" id="4_k7fs2"]
+
+[sub_resource type="GDScript" id="GDScript_q5h7g"]
+script/source = "extends Camera2D
+"
+
+[node name="CrimeScene" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(648.625, 324.813)
+scale = Vector2(0.219458, 0.219458)
+texture = ExtResource("1_kl7lh")
+
+[node name="Picture" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 541.0
+offset_top = 169.0
+offset_right = 680.0
+offset_bottom = 265.0
+
+[node name="Book" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 47.0
+offset_top = 264.0
+offset_right = 115.0
+offset_bottom = 322.0
+
+[node name="Safe" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 140.0
+offset_top = 445.0
+offset_right = 208.0
+offset_bottom = 502.0
+
+[node name="Cupboard" type="Button" parent="." node_paths=PackedStringArray("camera", "book", "safe", "zoom_out")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 23.0
+offset_top = 238.0
+offset_right = 232.0
+offset_bottom = 527.0
+script = ExtResource("3_b8mj1")
+camera = NodePath("../Camera2D")
+book = NodePath("../Book")
+safe = NodePath("../Safe")
+zoom_out = NodePath("../Zoom_out")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+script = SubResource("GDScript_q5h7g")
+
+[node name="Zoom_out" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 233.0
+offset_right = 114.0
+offset_bottom = 283.0
+rotation = 3.14159
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_k7fs2")
+expand_icon = true
+
+[node name="Back" type="Button" parent="."]
+offset_left = 1002.0
+offset_top = 585.0
+offset_right = 1137.0
+offset_bottom = 623.0
+
+[node name="Label" type="Label" parent="Back"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 128.0
+offset_bottom = 30.0
+text = "zurück ins Büro"
+
+[connection signal="gui_input" from="Picture" to="Picture" method="_on_gui_input"]
+[connection signal="gui_input" from="Picture" to="Cupboard" method="_on_picture_gui_input"]
+[connection signal="gui_input" from="Book" to="Cupboard" method="_on_book_gui_input"]
+[connection signal="gui_input" from="Safe" to="Cupboard" method="_on_safe_gui_input"]
+[connection signal="gui_input" from="Cupboard" to="Cupboard" method="_on_gui_input"]
+[connection signal="ready" from="Cupboard" to="Book" method="_on_cupboard_ready"]
+[connection signal="ready" from="Cupboard" to="Cupboard" method="_on_ready"]
+[connection signal="gui_input" from="Zoom_out" to="Cupboard" method="_on_zoom_out_gui_input"]
+[connection signal="gui_input" from="Zoom_out" to="Cupboard" method="_on_back_gui_input"]
+[connection signal="ready" from="Zoom_out" to="Zoom_out" method="_on_ready"]
+[connection signal="gui_input" from="Back" to="Cupboard" method="_on_back_gui_input"]

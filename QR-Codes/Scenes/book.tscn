@@ -1,0 +1,144 @@
+[gd_scene load_steps=5 format=3 uid="uid://j7jgpexgx8ss"]
+
+[ext_resource type="Script" uid="uid://6n6ej0ugsmd1" path="res://Scripts/book.gd" id="1_0vt1r"]
+[ext_resource type="Texture2D" uid="uid://rcum2pr6r2nn" path="res://Assets/book.jpg" id="1_rhhov"]
+[ext_resource type="Texture2D" uid="uid://bgupipfeqw7ff" path="res://Assets/back-button-svgrepo-com.svg" id="3_0vt1r"]
+[ext_resource type="Texture2D" uid="uid://bpohlayjgsxtn" path="res://Assets/qrcode_cut_demopage.png" id="4_gr7b7"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("back", "card1", "card2", "card3")]
+script = ExtResource("1_0vt1r")
+back = NodePath("Back")
+card1 = NodePath("Card1")
+card2 = NodePath("Card2")
+card3 = NodePath("Card3")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1175.0
+offset_bottom = 685.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite_Book" type="Sprite2D" parent="."]
+position = Vector2(584.688, 360.5)
+scale = Vector2(0.716341, 0.628704)
+texture = ExtResource("1_rhhov")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 100.0
+offset_top = 115.0
+offset_right = 324.0
+offset_bottom = 159.0
+scale = Vector2(2.2, 2.2)
+text = "Geschäftspartner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 34.0
+offset_right = 74.0
+offset_bottom = 84.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("3_0vt1r")
+expand_icon = true
+
+[node name="Card1" type="ColorRect" parent="."]
+offset_left = 165.0
+offset_top = 259.0
+offset_right = 499.0
+offset_bottom = 479.0
+
+[node name="Label" type="Label" parent="Card1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 209.0
+offset_bottom = 33.0
+scale = Vector2(1.6, 1.6)
+text = "Tom Müller"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Qrcode1" type="Sprite2D" parent="Card1"]
+position = Vector2(236, 122)
+scale = Vector2(0.16825, 0.16825)
+texture = ExtResource("4_gr7b7")
+
+[node name="Label2" type="Label" parent="Card1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 27.0
+offset_top = 107.0
+offset_right = 148.0
+offset_bottom = 187.0
+text = "Florist"
+horizontal_alignment = 1
+
+[node name="Card2" type="ColorRect" parent="."]
+offset_left = 667.0
+offset_top = 137.0
+offset_right = 1001.0
+offset_bottom = 357.0
+
+[node name="Label" type="Label" parent="Card2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 34.0
+scale = Vector2(1.6, 1.6)
+text = "Martin Schulze"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Qrcode2" type="Sprite2D" parent="Card2"]
+position = Vector2(237, 122)
+scale = Vector2(0.168, 0.168)
+texture = ExtResource("4_gr7b7")
+
+[node name="Label2" type="Label" parent="Card2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 35.0
+offset_top = 106.0
+offset_right = 156.0
+offset_bottom = 129.0
+text = "Kunsthändler"
+horizontal_alignment = 1
+
+[node name="Card3" type="ColorRect" parent="."]
+offset_left = 667.0
+offset_top = 371.0
+offset_right = 1001.0
+offset_bottom = 591.0
+
+[node name="Label" type="Label" parent="Card3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 208.0
+offset_bottom = 33.0
+scale = Vector2(1.6, 1.6)
+text = "Anna Meyer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Qrcode3" type="Sprite2D" parent="Card3"]
+position = Vector2(235, 127)
+scale = Vector2(0.168, 0.168)
+texture = ExtResource("4_gr7b7")
+
+[node name="Label2" type="Label" parent="Card3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 28.0
+offset_top = 108.0
+offset_right = 154.0
+offset_bottom = 131.0
+text = "Elektrikerin"
+horizontal_alignment = 1
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="gui_input" from="Back" to="." method="_on_back_gui_input"]
+[connection signal="gui_input" from="Card1" to="." method="_on_card_1_gui_input"]
+[connection signal="gui_input" from="Card2" to="." method="_on_card_2_gui_input"]
+[connection signal="gui_input" from="Card3" to="." method="_on_card_3_gui_input"]

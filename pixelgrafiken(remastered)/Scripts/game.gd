@@ -13,7 +13,7 @@ func _ready() -> void:
 		%CheckSolution.text = "QR-Code erstellen"
 		
 	if solution.length() != columns * columns:
-		print("sour solution does not have the right length", solution.length())
+		print("your solution does not have the right length", solution.length())
 	%RightGrid.columns = columns
 	%LeftGrid.columns = columns
 	%SolutionGrid.columns = columns

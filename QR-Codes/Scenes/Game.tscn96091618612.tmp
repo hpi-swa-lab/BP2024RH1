@@ -1,0 +1,165 @@
+[gd_scene load_steps=6 format=3 uid="uid://djixjlps6o112"]
+
+[ext_resource type="Texture2D" uid="uid://6y412rwx1hbf" path="res://Assets/scroll.png" id="1_gl6un"]
+[ext_resource type="Script" uid="uid://cs0jqpctjeomk" path="res://Scripts/game.gd" id="1_kldst"]
+[ext_resource type="Texture2D" uid="uid://c35v7xcvgrabj" path="res://Assets/monitor.png" id="2_j5yw3"]
+[ext_resource type="Texture2D" uid="uid://bpohlayjgsxtn" path="res://Assets/qrcode_cut_demopage.png" id="4_kldst"]
+[ext_resource type="Texture2D" uid="uid://bx1xynxjwnuo6" path="res://Assets/random_websites/cinema.jpg" id="5_b2bpf"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("card", "qrcode", "monitor_label", "pixel_editor", "button", "display")]
+script = ExtResource("1_kldst")
+card = NodePath("Card2")
+qrcode = NodePath("Qrcode")
+monitor_label = NodePath("Monitor_label")
+pixel_editor = NodePath("Pixel_editor")
+button = NodePath("Button")
+display = NodePath("Display")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1156.0
+offset_bottom = 649.0
+color = Color(0.913725, 1, 1, 1)
+
+[node name="Plan" type="Sprite2D" parent="."]
+position = Vector2(216, 222)
+scale = Vector2(0.654297, 0.654297)
+texture = ExtResource("1_gl6un")
+
+[node name="Monitor" type="Sprite2D" parent="."]
+position = Vector2(795, 319.5)
+scale = Vector2(1.46484, 1.46484)
+texture = ExtResource("2_j5yw3")
+
+[node name="Monitor_label" type="Label" parent="Monitor"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.392
+anchor_right = 0.5
+anchor_bottom = 0.392
+offset_left = -454.0
+offset_top = -355.704
+offset_right = -56.0
+offset_bottom = -142.704
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftGrid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 814.0
+offset_top = 110.0
+offset_right = 1064.0
+offset_bottom = 360.0
+
+[node name="RightGrid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 500.0
+offset_top = 110.0
+offset_right = 750.0
+offset_bottom = 360.0
+
+[node name="SolutionGrid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 102.0
+offset_top = 84.0
+offset_right = 332.0
+offset_bottom = 294.0
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 726.0
+offset_top = 561.0
+offset_right = 1008.0
+offset_bottom = 600.0
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Das war leider falsch"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(400, 400)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 500.0
+offset_right = 375.0
+offset_bottom = 564.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 66.0
+text = "Karte einscannen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card2" type="ColorRect" parent="."]
+visible = false
+offset_left = 627.0
+offset_top = 141.0
+offset_right = 961.0
+offset_bottom = 361.0
+
+[node name="Label" type="Label" parent="Card2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 34.0
+scale = Vector2(1.6, 1.6)
+text = "Martin Schulze"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Qrcode2" type="Sprite2D" parent="Card2"]
+position = Vector2(237, 122)
+scale = Vector2(0.168, 0.168)
+texture = ExtResource("4_kldst")
+
+[node name="Label2" type="Label" parent="Card2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 35.0
+offset_top = 106.0
+offset_right = 156.0
+offset_bottom = 129.0
+text = "Kunsthändler"
+horizontal_alignment = 1
+
+[node name="Qrcode" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(793, 204)
+scale = Vector2(0.2445, 0.2445)
+texture = ExtResource("4_kldst")
+
+[node name="Monitor_label" type="Label" parent="."]
+offset_left = 666.0
+offset_top = 325.0
+offset_right = 921.0
+offset_bottom = 377.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pixel_editor" type="Button" parent="."]
+visible = false
+offset_left = 747.0
+offset_top = 383.0
+offset_right = 839.0
+offset_bottom = 423.0
+text = "Pixeleditor"
+
+[node name="Label" type="Label" parent="Pixel_editor"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Display" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(792.75, 250)
+scale = Vector2(0.981209, 0.814286)
+texture = ExtResource("5_b2bpf")
+
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
+[connection signal="gui_input" from="Pixel_editor" to="." method="_on_pixel_editor_gui_input"]

@@ -1,0 +1,154 @@
+extends Node2D
+
+@export var card: ColorRect
+@export var qrcode: Sprite2D
+@export var monitor_label: Label
+@export var pixel_editor: Button
+@export var button: Button
+@export var display: Sprite2D
+
+var columns = 8
+var solution = "10100010" + "00000001" + "11100011" + "10100110" + "11100011" + "00000010" + "00100001" + "11001100"
+var correct_solution = true
+var button_label: int = 0
+
+var cinema = preload("res://Assets/random_websites/cinema2.png")
+var plants = preload("res://assets/random_websites/plants2.jpg")
+var time = preload("res://assets/random_websites/time2.png")
+var zoo = preload("res://assets/random_websites/zoo2.jpg")
+
+func _ready() -> void:
+	randomize()
+	#if Global.Options == 1:
+	#	solution = "11111111" + "11111111" + "10011111" + "00000000" + "00001101" + "10011111" + "11111111" + "11111111"
+	#	%CheckSolution.text = "Drucken"
+	#else: 
+	#	solution = "10100010" + "00000001" + "11100011" + "10100110" + "11100011" + "00000010" + "00100001" + "11001100"
+	#	%CheckSolution.text = "QR-Code erstellen"
+		
+	#if solution.length() != columns * columns:
+	#	print("your solution does not have the right length", solution.length())
+	%RightGrid.columns = columns
+	%LeftGrid.columns = columns
+	%SolutionGrid.columns = columns
+	#add_buttons(%LeftGrid)
+	#add_clickable_buttons(%RightGrid)
+	#add_solution_Grid(%SolutionGrid)
+	
+func add_solution_Grid(Grid: GridContainer):
+	for i in range(columns * columns):
+		var rect = ColorRect.new()
+		rect.custom_minimum_size = Vector2(Grid.size.x / columns, Grid.size.y / columns)
+		if solution[i] == "1":
+			rect.color = Color(224,224,224)
+		elif solution[i] == "0":
+			rect.color = Color(0, 0, 0)
+		Grid.add_child(rect)
+	
+func add_buttons(Grid: GridContainer):
+	for i in range(columns * columns):
+		var rect = ColorRect.new()
+		rect.custom_minimum_size = Vector2(Grid.size.x / columns, Grid.size.y / columns)
+		rect.color = Color(1,1,1)
+		Grid.add_child(rect)
+
+func add_clickable_buttons(Grid: GridContainer):
+	for i in range(columns * columns):
+		var button = Button.new()
+		button.text = "1"
+		button.clip_text = true
+		button.custom_minimum_size = Vector2(Grid.size.x / columns, Grid.size.y / columns)
+		button.pressed.connect(self._button_pressed.bind(i))
+		Grid.add_child(button)
+
+func _button_pressed(ButtonPos: int):
+	var button = %RightGrid.get_child(ButtonPos)
+	var rect = %LeftGrid.get_child(ButtonPos)
+	if button.text == "1":
+		rect.color = Color(0, 0, 0)
+		button.text = "0"
+	elif button.text == "0":
+		rect.color = Color(1, 1, 1)
+		button.text = "1"
+	else:
+		print("There are some very wrong values here")
+
+#func create_image(Grid: GridContainer) -> ImageTexture:
+	#var size := Grid.columns
+	#var Img := Image.create(size, size, false, Image.FORMAT_RGB8)
+#
+	#for y in range(size):
+		#for x in range(size): 
+			#var index = y * size + x
+			#var child = Grid.get_child(index)
+			#if child is ColorRect:
+				#Img.set_pixel(x, y, child.color)
+	#
+	#var scale_factor := 12.25
+	#Img.resize(size * scale_factor, size * scale_factor, Image.INTERPOLATE_NEAREST)
+	#
+	#var tex = ImageTexture.create_from_image(Img)
+	#return tex
+	
+#func _on_check_solution_pressed() -> void:
+	#if Global.Options == 1:
+		#var button: Button
+		#for i in range(%RightGrid.get_child_count()):
+			#button = %RightGrid.get_child(i)
+			#if button.text != solution[i]:
+				#correct_solution = false
+				#%Label.visible = true
+				#break
+		#if correct_solution == true:
+			#print("well Done")
+			#%Label.visible = false
+		#correct_solution = true
+	#else:
+		##var texture = create_image(%LeftGrid)
+		##Global.Tex = texture
+		#SceneSwitcher.switch_scene("res://Scenes/printing.tscn")
+
+
+func _on_button_gui_input(event: InputEvent) -> void:
+	if  event is InputEventMouseButton and event.is_pressed():
+		if button_label == 0:
+			card.visible = true
+			await get_tree().create_timer(1).timeout
+			card.visible = false
+			qrcode.visible = true
+			monitor_label.text = "QR-Code unvollständig"
+			pixel_editor.visible = true
+			button.get_child(0).text = "Webseite suchen"
+			
+		if button_label == 1:
+			var button: Button
+			for i in range(%RightGrid.get_child_count()):
+				button = %RightGrid.get_child(i)
+				if button.text != solution[i]:
+					display.visible = true
+					correct_solution = false
+					display_solution()
+					break
+			display.visible = true
+			%LeftGrid.visible = false
+			%RightGrid.visible = false
+			display_solution()
+			
+func display_solution():
+	if correct_solution == false:
+		var displays = [cinema, plants, time, zoo]
+		var random_display = displays[randi() % displays.size()]
+		display.texture = random_display
+	if correct_solution == true:
+		display.texture = preload("res://Assets/museum2.jpg")
+
+func _on_pixel_editor_gui_input(event: InputEvent) -> void:
+	if  event is InputEventMouseButton and event.is_pressed():
+		monitor_label.visible = false
+		qrcode.visible = false
+		pixel_editor.visible = false
+		add_buttons(%LeftGrid)
+		add_clickable_buttons(%RightGrid)
+		add_solution_Grid(%SolutionGrid)
+		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "pixeleditor")
+		button_label = 1

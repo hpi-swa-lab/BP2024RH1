@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0kcip623e00g"]
+
+[ext_resource type="Script" uid="uid://ccxu3cq8yx3d" path="res://Scripts/office.gd" id="1_llmbb"]
+[ext_resource type="Texture2D" uid="uid://dwrxsnyn8hsub" path="res://Assets/office.jpg" id="2_vggx3"]
+
+[node name="Office" type="Node2D"]
+script = ExtResource("1_llmbb")
+
+[node name="Office" type="Sprite2D" parent="."]
+position = Vector2(575, 307)
+scale = Vector2(0.346, 0.346)
+texture = ExtResource("2_vggx3")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 532.0
+offset_top = 273.0
+offset_right = 683.0
+offset_bottom = 379.0
+
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
