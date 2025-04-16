@@ -1,18 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://doisuir7v57ie"]
+[gd_scene load_steps=2 format=3 uid="uid://doisuir7v57ie"]
 
 [ext_resource type="Texture2D" uid="uid://cneoojd2o76q4" path="res://assets/places/head_office.jpg" id="1_qef8d"]
-[ext_resource type="PackedScene" uid="uid://c1iqltw88mlq8" path="res://scenes/places/office_change_room_overlay.tscn" id="2_6sxf1"]
 
-[node name="HeadOffice" type="Node2D"]
+[node name="HeadOffice" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1442.0
 offset_bottom = 862.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_qef8d")
-
-[node name="office_change_room_overlay" parent="." instance=ExtResource("2_6sxf1")]
-offset_left = 464.0
-offset_top = 342.0
-offset_right = 464.0
-offset_bottom = 342.0

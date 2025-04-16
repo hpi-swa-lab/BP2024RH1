@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcc1qe6wb2fvg"]
+[gd_scene load_steps=3 format=3 uid="uid://dcc1qe6wb2fvg"]
 
 [ext_resource type="Texture2D" uid="uid://sdd3un8lgcf5" path="res://assets/places/tech_room.png" id="1_pfghq"]
 [ext_resource type="Texture2D" uid="uid://bi35alsblos7b" path="res://assets/objects/stromkasten.jpg" id="2_sx1e0"]
-[ext_resource type="PackedScene" uid="uid://c1iqltw88mlq8" path="res://scenes/places/office_change_room_overlay.tscn" id="3_sx1e0"]
 
 [node name="TechRoom" type="Control"]
 layout_mode = 3
@@ -22,10 +21,3 @@ offset_right = 1768.0
 offset_bottom = 1563.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("2_sx1e0")
-
-[node name="office_change_room_overlay" parent="." instance=ExtResource("3_sx1e0")]
-layout_mode = 1
-offset_left = 127.0
-offset_top = 402.0
-offset_right = 127.0
-offset_bottom = 402.0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdoqnm5p234g1"]
+
+[ext_resource type="Script" uid="uid://crj6k714f6x7b" path="res://scripts/blink_highlight_sys.gd" id="1_78qs8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78qs8"]
+bg_color = Color(0.955963, 0.955963, 0.955963, 1)
+
+[node name="BlinkHighlightSys" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_78qs8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_78qs8")

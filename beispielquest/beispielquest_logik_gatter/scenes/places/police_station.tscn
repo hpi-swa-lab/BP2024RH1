@@ -1,0 +1,144 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxneb8wkso78d"]
+
+[ext_resource type="PackedScene" uid="uid://1lucnrhv7ixm" path="res://scenes/places/office.tscn" id="1_fn6ai"]
+[ext_resource type="PackedScene" uid="uid://dm8xbmol5f8en" path="res://scenes/places/Kitchen.tscn" id="2_k1m2r"]
+[ext_resource type="PackedScene" uid="uid://doisuir7v57ie" path="res://scenes/places/head_office.tscn" id="3_fgjwi"]
+[ext_resource type="PackedScene" uid="uid://h6fwhyygn64k" path="res://scenes/places/big_office.tscn" id="4_sg78t"]
+[ext_resource type="PackedScene" uid="uid://dcc1qe6wb2fvg" path="res://scenes/places/tech_room.tscn" id="5_6q6d6"]
+[ext_resource type="Texture2D" uid="uid://hkjnjyf75j8w" path="res://assets/black.png" id="6_k1m2r"]
+[ext_resource type="PackedScene" uid="uid://dinkb6rvbmkhj" path="res://scenes/helpsys.tscn" id="7_fgjwi"]
+[ext_resource type="Script" uid="uid://becqufe2435yy" path="res://scripts/game_manager.gd" id="8_sg78t"]
+
+[node name="PoliceStation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Office" parent="." instance=ExtResource("1_fn6ai")]
+layout_mode = 1
+
+[node name="Kitchen" parent="." instance=ExtResource("2_k1m2r")]
+visible = false
+layout_mode = 1
+
+[node name="HeadOffice" parent="." instance=ExtResource("3_fgjwi")]
+visible = false
+layout_mode = 1
+
+[node name="BigOffice" parent="." instance=ExtResource("4_sg78t")]
+visible = false
+layout_mode = 1
+
+[node name="TechRoom" parent="." instance=ExtResource("5_6q6d6")]
+visible = false
+layout_mode = 1
+
+[node name="Change_Room_Sys" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 592.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Office_button_background" type="TextureRect" parent="Change_Room_Sys"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 168.0
+offset_bottom = 48.0
+texture = ExtResource("6_k1m2r")
+expand_mode = 1
+
+[node name="Office_button" type="Button" parent="Change_Room_Sys/Office_button_background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Eigenes Büro"
+
+[node name="Head_Office_button_background" type="TextureRect" parent="Change_Room_Sys"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 320.0
+offset_bottom = 48.0
+texture = ExtResource("6_k1m2r")
+expand_mode = 1
+
+[node name="Head_Office_button" type="Button" parent="Change_Room_Sys/Head_Office_button_background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chef Büro"
+
+[node name="Big_Office_button_background" type="TextureRect" parent="Change_Room_Sys"]
+layout_mode = 0
+offset_left = 344.0
+offset_right = 472.0
+offset_bottom = 48.0
+texture = ExtResource("6_k1m2r")
+expand_mode = 1
+
+[node name="Big_Office_button" type="Button" parent="Change_Room_Sys/Big_Office_button_background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Großes Büro"
+
+[node name="Tech_Room_button_background" type="TextureRect" parent="Change_Room_Sys"]
+layout_mode = 0
+offset_left = 832.0
+offset_top = -8.0
+offset_right = 960.0
+offset_bottom = 40.0
+texture = ExtResource("6_k1m2r")
+expand_mode = 1
+
+[node name="Tech_Room_button" type="Button" parent="Change_Room_Sys/Tech_Room_button_background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Technik Raum"
+
+[node name="Kitchen_button_background" type="TextureRect" parent="Change_Room_Sys"]
+layout_mode = 0
+offset_left = 984.0
+offset_top = -8.0
+offset_right = 1112.0
+offset_bottom = 40.0
+texture = ExtResource("6_k1m2r")
+expand_mode = 1
+
+[node name="Kitchen_button" type="Button" parent="Change_Room_Sys/Kitchen_button_background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Küche"
+
+[node name="Helpsys" parent="." instance=ExtResource("7_fgjwi")]
+layout_mode = 1
+hint_1_text = "Hier findest du hinweise, wenn du nicht weiter kommst. Sie erscheinen nicht alle Direkt zu Beginn."
+hint_2_text = "Wenn der Strom nicht funktioniert, lässt sich das problem vielleicht beim Stromkasten beheben. Dieser sollte sich im Technik Raum befinden"
+hint_3_text = "Klicke auf den Stromkasten im Technik Raum, um den Strom zu reüarieren "
+Timer_hint_2_time = 9.0
+Timer_hint_3_time = 12.0
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("8_sg78t")
