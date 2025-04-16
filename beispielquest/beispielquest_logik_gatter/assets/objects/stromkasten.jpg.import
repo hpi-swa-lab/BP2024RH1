@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7nbli0ynb0ad"
-path="res://.godot/imported/tafel3.png-2c313ae5c09d63e8415886a950903d91.ctex"
+uid="uid://bi35alsblos7b"
+path="res://.godot/imported/stromkasten.jpg-f7167988496957d8d7b911047a870fbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/office/tafel3.png"
-dest_files=["res://.godot/imported/tafel3.png-2c313ae5c09d63e8415886a950903d91.ctex"]
+source_file="res://assets/objects/stromkasten.jpg"
+dest_files=["res://.godot/imported/stromkasten.jpg-f7167988496957d8d7b911047a870fbc.ctex"]
 
 [params]
 

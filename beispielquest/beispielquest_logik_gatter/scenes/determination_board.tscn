@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://df74of7y128hx"]
 
 [ext_resource type="Script" uid="uid://cpqx8hplvbepb" path="res://scripts/determination_board/determination_board.gd" id="1_as8t6"]
-[ext_resource type="Texture2D" uid="uid://cfh3t40rea6ww" path="res://assets/office/tafel0.jpg" id="2_os71b"]
+[ext_resource type="Texture2D" uid="uid://cfh3t40rea6ww" path="res://assets/objects/tafel0.jpg" id="2_os71b"]
 [ext_resource type="Script" uid="uid://dxvtsfrbtfeek" path="res://scripts/determination_board/name_det_board.gd" id="3_os71b"]
 
 [node name="DeterminationBoard" type="Control"]

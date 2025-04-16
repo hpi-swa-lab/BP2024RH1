@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2u5uhikas41x"]
+
+[ext_resource type="Texture2D" uid="uid://dstqrc6f1p03n" path="res://assets/places/ubahn_station.jpg" id="1_ntpmx"]
+[ext_resource type="Texture2D" uid="uid://c1jrwtvbwx8p0" path="res://assets/objects/ticket_machine.png" id="2_2kp8s"]
+
+[node name="U-bahn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("1_ntpmx")
+
+[node name="Ticket_machine" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 372.0
+offset_right = 1199.0
+offset_bottom = 871.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("2_2kp8s")
+texture_pressed = ExtResource("2_2kp8s")

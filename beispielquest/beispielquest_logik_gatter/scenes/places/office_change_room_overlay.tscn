@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1iqltw88mlq8"]
+
+[ext_resource type="PackedScene" uid="uid://dlmpha4oit6nq" path="res://scenes/change_scene_button.tscn" id="1_ltoaw"]
+
+[node name="office_change_room_overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Office" parent="." instance=ExtResource("1_ltoaw")]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 592.0
+offset_right = -1006.0
+offset_bottom = -18.0
+text = "eigenes Büro"
+path_switch_to_scene = "res://scenes/places/office.tscn"
+
+[node name="Big_Office" parent="." instance=ExtResource("1_ltoaw")]
+layout_mode = 1
+offset_left = 168.0
+offset_top = 592.0
+offset_right = -862.0
+offset_bottom = -18.0
+text = "Großes Büro"
+path_switch_to_scene = "res://scenes/places/big_office.tscn"
+
+[node name="Head_Office" parent="." instance=ExtResource("1_ltoaw")]
+layout_mode = 1
+offset_left = 312.0
+offset_top = 592.0
+offset_right = -718.0
+offset_bottom = -18.0
+text = "Chef Büro"
+path_switch_to_scene = "res://scenes/places/head_office.tscn"
+
+[node name="Tech_room" parent="." instance=ExtResource("1_ltoaw")]
+layout_mode = 1
+offset_left = 720.0
+offset_top = 592.0
+offset_right = -310.0
+offset_bottom = -18.0
+text = "Technik Raum"
+path_switch_to_scene = "res://scenes/places/tech_room.tscn"
+
+[node name="Flur" parent="." instance=ExtResource("1_ltoaw")]
+visible = false
+layout_mode = 1
+offset_left = 864.0
+offset_top = 592.0
+offset_right = -166.0
+offset_bottom = -18.0
+text = "Flur"
+path_switch_to_scene = "res://scenes/places/flur.tscn"
+
+[node name="Kitchen" parent="." instance=ExtResource("1_ltoaw")]
+layout_mode = 1
+offset_left = 1008.0
+offset_top = 592.0
+offset_right = -22.0
+offset_bottom = -18.0
+text = "Küche"
+path_switch_to_scene = "res://scenes/places/Kitchen.tscn"

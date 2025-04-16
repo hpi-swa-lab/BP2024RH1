@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfh3t40rea6ww"
-path="res://.godot/imported/tafel0.jpg-c2e36d025cd371ac881c1637069cb005.ctex"
+uid="uid://c84crkn6oc78g"
+path="res://.godot/imported/kitchen2.jpg-b407bf97806d579f315f38172d22f5df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/office/tafel0.jpg"
-dest_files=["res://.godot/imported/tafel0.jpg-c2e36d025cd371ac881c1637069cb005.ctex"]
+source_file="res://assets/places/kitchen2.jpg"
+dest_files=["res://.godot/imported/kitchen2.jpg-b407bf97806d579f315f38172d22f5df.ctex"]
 
 [params]
 

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfc78ys82sd5n"]
+
+[ext_resource type="PackedScene" uid="uid://c1iqltw88mlq8" path="res://scenes/places/office_change_room_overlay.tscn" id="1_sttdy"]
+
+[node name="Flur" type="Node2D"]
+
+[node name="office_change_room_overlay" parent="." instance=ExtResource("1_sttdy")]
+offset_left = 155.0
+offset_top = 306.0
+offset_right = 155.0
+offset_bottom = 306.0
