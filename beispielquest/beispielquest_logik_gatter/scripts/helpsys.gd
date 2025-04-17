@@ -22,7 +22,7 @@ var Questionmark_found: bool = false
 @export var Timer_hint_2_time: float = 90
 @export var Timer_hint_3_time: float = 120
 
-
+#set timer and hint text
 func _ready() -> void:
 	hint_1.text = hint_1_text 
 	hint_2.text = hint_2_text
@@ -33,27 +33,29 @@ func _ready() -> void:
 	
 	timer_hint_2.start()
 	timer_hint_3.start()
+	
+	hints.hide()
 
 
-
+#opens the part where the hints are shown
 func _on_questionmark_pressed() -> void:
 	questionmark.hide()
 	hints.show()
 	if !Questionmark_found: 
 		emit_signal("questionmark_found")
 	
-
+#close the part where the hints are shown
 func _on_close_pressed() -> void:
 	questionmark.show()
 	hints.hide()
 	if !Questionmark_found:
 		emit_signal("questionmark_found")
 
-
+#show the second hint
 func _on_timer_hint_2_timeout() -> void:
 	hint_2.show()
 	print("2")
-
+#show the third hint
 func _on_timer_hint_3_timeout() -> void:
 	hint_3.show()
 	print("3")

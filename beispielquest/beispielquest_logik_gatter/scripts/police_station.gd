@@ -17,3 +17,8 @@ func _on_helpsys_questionmark_found() -> void:
 
 func _on_timer_blackout_beginn_timeout() -> void:
 	dark_mode_blackout.show()
+
+
+func _on_tech_room_electricity_box_pressed() -> void:
+	if dark_mode_blackout.visible:
+		print("start mini game")	#hier minigame 1 starten

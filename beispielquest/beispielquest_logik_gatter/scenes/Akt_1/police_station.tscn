@@ -142,8 +142,8 @@ layout_mode = 1
 hint_1_text = "Hier findest du hinweise, wenn du nicht weiter kommst. Sie erscheinen nicht alle Direkt zu Beginn."
 hint_2_text = "Wenn der Strom nicht funktioniert, lässt sich das problem vielleicht beim Stromkasten beheben. Dieser sollte sich im Technik Raum befinden"
 hint_3_text = "Klicke auf den Stromkasten im Technik Raum, um den Strom zu reüarieren "
-Timer_hint_2_time = 9.0
-Timer_hint_3_time = 12.0
+Timer_hint_2_time = 15.0
+Timer_hint_3_time = 20.0
 
 [node name="show_helpsys" type="TextureRect" parent="."]
 layout_mode = 0
@@ -164,6 +164,7 @@ visible = false
 position = Vector2(587, 332)
 texture = ExtResource("11_c3stg")
 
+[connection signal="electricity_box_pressed" from="TechRoom" to="." method="_on_tech_room_electricity_box_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Office_button_background/Office_button" to="Change_Room_Sys" method="_on_office_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Head_Office_button_background/Head_Office_button" to="Change_Room_Sys" method="_on_head_office_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Big_Office_button_background/Big_Office_button" to="Change_Room_Sys" method="_on_big_office_button_pressed"]
