@@ -41,6 +41,9 @@ func add_Case(CaseName: String, FirstScene: PackedScene):
 func close_Case(CurrentCase: Case):
 	CaseList.erase(CurrentCase.CaseName)
 	Globals.selectedCase = null
+	Globals.nextScene = null
+	Hints.clear()
+	
 	ClosedCases[CurrentCase.CaseName] = CurrentCase
 	SceneSwitcher.switch_scene("res://Scenes/office.tscn")	# Muss hier nicht immer das Office sein
 

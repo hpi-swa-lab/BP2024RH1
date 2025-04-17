@@ -21,6 +21,11 @@ SceneSwitcher="*res://Scripts/SceneSwitcher.gd"
 Globals="*res://Scripts/Globals.gd"
 CaseManager="*res://Scripts/CaseManager.gd"
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

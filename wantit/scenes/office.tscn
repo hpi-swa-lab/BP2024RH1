@@ -25,9 +25,6 @@ albedo_texture = ExtResource("7_ujkv6")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp1e5"]
 albedo_texture = ExtResource("3_in4ui")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_q644x"]
-size = Vector3(1.61151, 0.0563994, 0.763672)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kviqm"]
 albedo_texture = ExtResource("4_6hbky")
 
@@ -65,13 +62,16 @@ albedo_texture = ExtResource("8_k578b")
 albedo_texture = ExtResource("3_in4ui")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rs1ao"]
-size = Vector3(0.324829, 0.485046, 0.450684)
+size = Vector3(0.207184, 0.442718, 0.450684)
 
 [sub_resource type="Sky" id="Sky_g1ciw"]
 
 [sub_resource type="Environment" id="Environment_u5glt"]
 background_mode = 2
 sky = SubResource("Sky_g1ciw")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q644x"]
+size = Vector3(1.63894, 0.0563994, 0.833008)
 
 [node name="office" type="Node3D"]
 script = ExtResource("1_4luf0")
@@ -121,13 +121,6 @@ radius = 0.05
 height = 0.692383
 sides = 16
 
-[node name="Map" type="Area3D" parent="CSGRoom/CSGTable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00100005, 0.55, 1.92867)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGRoom/CSGTable/Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00271583, -0.539666, -1.94734)
-shape = SubResource("BoxShape3D_q644x")
-
 [node name="CSGWallZ1" type="CSGBox3D" parent="CSGRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
 material_override = SubResource("StandardMaterial3D_kviqm")
@@ -173,6 +166,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00100005, -0.55, -0.360566
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151825, 0.555174, 0.403042)
 shape = SubResource("BoxShape3D_o2cca")
 
+[node name="CaseBoard" type="Sprite3D" parent="CSGRoom/CSGMissionBoard"]
+unique_name_in_owner = true
+transform = Transform3D(-0.17, 1.22392e-08, 0, 1.48619e-08, 0.14, 8.74228e-08, 1.29927e-15, 1.22392e-08, -1, 0.010072, 0.00346994, 0.00667989)
+texture = ExtResource("6_rs1ao")
+
 [node name="CSGBücherregal" type="CSGBox3D" parent="CSGRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34302, 1, 1.80318)
 material_override = SubResource("StandardMaterial3D_t1nwb")
@@ -202,15 +200,15 @@ operation = 2
 size = Vector3(1.1, 0.381, 0.28)
 
 [node name="CSGPC" type="CSGBox3D" parent="CSGRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75669, 0.956243, 0.808055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2343, 0.914815, -0.0533311)
 material_override = SubResource("StandardMaterial3D_q644x")
 use_collision = true
-size = Vector3(0.31192, 0.487732, 0.446594)
+size = Vector3(0.195022, 0.404877, 0.446594)
 
 [node name="PC" type="Area3D" parent="CSGRoom/CSGPC"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGRoom/CSGPC/PC"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00592041, 0.00375366, -0.0012207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018158, -0.0174102, -0.0012207)
 shape = SubResource("BoxShape3D_rs1ao")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
@@ -235,14 +233,16 @@ pixel_size = 0.006
 texture = ExtResource("9_gdafm")
 
 [node name="Map" type="Sprite3D" parent="."]
-transform = Transform3D(-4.72083e-09, -0.147, -8.74228e-09, 0, -6.42557e-09, 0.2, -0.108, 6.42557e-09, 3.82137e-16, 0.606156, 0.731304, 0.00157316)
+transform = Transform3D(2.06354e-16, 6.42557e-09, 0.2, 0.108, -6.42557e-09, 0, 4.72083e-09, 0.147, -8.74228e-09, -1.93415, 1.09295, 0.674339)
 texture = ExtResource("11_q644x")
 
-[node name="CaseBoard" type="Sprite3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(-0.17, 1.22392e-08, 0, 1.48619e-08, 0.14, 8.74228e-08, 1.29927e-15, 1.22392e-08, -1, 0.610072, 1.25347, 1.93535)
-texture = ExtResource("6_rs1ao")
+[node name="Map" type="Area3D" parent="Map"]
+transform = Transform3D(-2.27374e-13, 2.18557e-07, -5, 5, -2.18557e-07, -1.13687e-13, -2.18557e-07, -5, -2.18557e-07, -2.69243, -0.0885582, 5.74809)
 
-[connection signal="input_event" from="CSGRoom/CSGTable/Map" to="." method="_on_map_input_event"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Map"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -2.55317, -0.153436, -1.24972)
+shape = SubResource("BoxShape3D_q644x")
+
 [connection signal="input_event" from="CSGRoom/CSGMissionBoard/MissionBoard2/Board" to="." method="_on_board_input_event"]
 [connection signal="input_event" from="CSGRoom/CSGPC/PC" to="." method="_on_pc_input_event"]
+[connection signal="input_event" from="Map/Map" to="." method="_on_map_input_event"]

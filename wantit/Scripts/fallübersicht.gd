@@ -9,8 +9,6 @@ func load_Case(Case: CaseManager.Case) -> void:
 	newCase.text = Case.CaseName
 	newCase.custom_minimum_size.y = 40
 	newCase.pressed.connect(self.Case_button_pressed.bind(Case))
-	var img = load("res://Assets/Hinweistafel_basic.png").get_image()
-	img.save_png("user://Assets/Hinweistafel.png")
 	%VBoxContainer.add_child(newCase)
 
 func Case_button_pressed(Case) -> void:
@@ -19,3 +17,6 @@ func Case_button_pressed(Case) -> void:
 	
 func _on_select_button_pressed() -> void:
 	SceneSwitcher.switch_scene(Globals.selectedCase.FirstScene)
+	var img = load("res://Assets/Hinweistafel_basic.png").get_image()
+	img.save_png("user://Assets/Hinweistafel.png")
+	CaseManager.Hints.clear()

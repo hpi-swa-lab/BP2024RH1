@@ -21,9 +21,9 @@ offset_bottom = 281.0
 text = "Close Case"
 
 [node name="Back Button" parent="." instance=ExtResource("2_wni78")]
-offset_left = 987.0
-offset_top = 64.0
-offset_right = 1507.0
-offset_bottom = 584.0
+offset_left = 96.0001
+offset_top = 532.0
+offset_right = 616.0
+offset_bottom = 1052.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

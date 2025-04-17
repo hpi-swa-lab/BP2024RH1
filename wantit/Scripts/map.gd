@@ -6,7 +6,8 @@ func _ready() -> void:
 	add_location(Library) # Its not the right Scene for the Library should be changed
 
 	# Loads next Location
-	add_location(Globals.nextScene)
+	if Globals.nextScene != null:
+		add_location(Globals.nextScene)
 	
 func add_location(Location: CaseManager.Location):	#Type of Loc_scene should be changed later once scene switching logic is implemented
 	var newLocation = Button.new()

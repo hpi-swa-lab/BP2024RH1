@@ -3,6 +3,11 @@ extends Node2D
 var HintArr := []
 
 func _ready() -> void:
+	if Globals.selectedCase == null:
+		HintArr.clear()
+		for child in %Hinweise.get_children():
+			%Hinweise.remove_child(child)
+	
 	var dir = DirAccess.open("user://")
 	dir.make_dir("Assets")
 	
