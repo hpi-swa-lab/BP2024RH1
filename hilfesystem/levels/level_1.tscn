@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://drjnqom75kan4"]
+
+[ext_resource type="Theme" uid="uid://bwyobnlry13iv" path="res://gui/default_theme.tres" id="1_jirdo"]
+[ext_resource type="PackedScene" uid="uid://b3ew5e367icj4" path="res://gui/lvl_btn.tscn" id="2_bt44k"]
+[ext_resource type="Script" uid="uid://benter4ltjt4p" path="res://levelsScript/level_1.gd" id="2_kx6l7"]
+[ext_resource type="Texture2D" uid="uid://dhso2j0ieml5v" path="res://graphics/question.png" id="3_bt44k"]
+[ext_resource type="Texture2D" uid="uid://bvo3jg86t5qjn" path="res://graphics/table.png" id="5_gwceb"]
+[ext_resource type="Texture2D" uid="uid://78ye3tuxl3jj" path="res://graphics/knife.png" id="6_l53as"]
+[ext_resource type="Texture2D" uid="uid://bg6n2n4b2jbcb" path="res://graphics/apple.png" id="7_3sk1a"]
+
+[node name="Level1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jirdo")
+script = ExtResource("2_kx6l7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.380392, 0.705882, 0.639216, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="LvlBtn" parent="." instance=ExtResource("2_bt44k")]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 0
+offset_left = 33.0
+offset_top = 27.0
+offset_right = 162.0
+offset_bottom = 109.0
+pivot_offset = Vector2(65, 41)
+text = "Back"
+level_path = "uid://bd2fv80p6fkq0"
+
+[node name="QuestionMark" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 27.0
+offset_right = 1119.0
+offset_bottom = 127.0
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("3_bt44k")
+expand_mode = 1
+
+[node name="QuestionTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Gegenstände" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Table" type="TextureRect" parent="Gegenstände"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 300.0
+offset_right = 350.0
+offset_bottom = 600.0
+pivot_offset = Vector2(150, 150)
+texture = ExtResource("5_gwceb")
+expand_mode = 1
+
+[node name="Knife" type="TextureRect" parent="Gegenstände"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 600.0
+offset_right = 450.0
+offset_bottom = 650.0
+pivot_offset = Vector2(25, 25)
+texture = ExtResource("6_l53as")
+expand_mode = 1
+
+[node name="Apple" type="TextureRect" parent="Gegenstände"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 315.0
+offset_right = 160.0
+offset_bottom = 375.0
+pivot_offset = Vector2(30, 30)
+texture = ExtResource("7_3sk1a")
+expand_mode = 1
+
+[connection signal="gui_input" from="QuestionMark" to="." method="_on_question_mark_gui_input"]
+[connection signal="timeout" from="QuestionTimer" to="." method="_on_question_timer_timeout"]
+[connection signal="gui_input" from="Gegenstände/Table" to="." method="_on_table_gui_input"]
+[connection signal="gui_input" from="Gegenstände/Knife" to="." method="_on_knife_gui_input"]
+[connection signal="gui_input" from="Gegenstände/Apple" to="." method="_on_apple_gui_input"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc61g2tq1bssg"]
+
+[ext_resource type="Theme" uid="uid://bwyobnlry13iv" path="res://gui/default_theme.tres" id="1_wvhyd"]
+[ext_resource type="Texture2D" uid="uid://b7ia036k6ryvt" path="res://graphics/close.png" id="2_qij5m"]
+[ext_resource type="Script" uid="uid://d10q4ucjukaeb" path="res://helpscreen.gd" id="2_u5o7p"]
+
+[node name="helpscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wvhyd")
+script = ExtResource("2_u5o7p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.168627, 0.337255, 0.427451, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Hilfesystem" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Hilfesystem"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Hinweis" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Hinweis:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="close" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 27.0
+offset_right = 103.0
+offset_bottom = 97.0
+pivot_offset = Vector2(35, 35)
+texture = ExtResource("2_qij5m")
+expand_mode = 1
+
+[connection signal="gui_input" from="close" to="." method="_on_close_gui_input"]

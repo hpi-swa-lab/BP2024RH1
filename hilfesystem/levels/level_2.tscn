@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://by7xuck8vrrud"]
+
+[ext_resource type="Theme" uid="uid://bwyobnlry13iv" path="res://gui/default_theme.tres" id="1_ilhis"]
+[ext_resource type="Script" uid="uid://b0fen8huethwv" path="res://levelsScript/level_2.gd" id="2_dfjjl"]
+[ext_resource type="PackedScene" uid="uid://b3ew5e367icj4" path="res://gui/lvl_btn.tscn" id="2_ep78u"]
+[ext_resource type="Texture2D" uid="uid://dhso2j0ieml5v" path="res://graphics/question.png" id="3_dfjjl"]
+[ext_resource type="Texture2D" uid="uid://dd4nde1v8aqum" path="res://graphics/chair.png" id="4_at1ld"]
+[ext_resource type="Texture2D" uid="uid://dbudyd0ujwwbd" path="res://graphics/spoon.png" id="5_sd18g"]
+[ext_resource type="Texture2D" uid="uid://dmfrnkrnwxmfb" path="res://graphics/banana.png" id="6_vm7no"]
+
+[node name="Level2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ilhis")
+script = ExtResource("2_dfjjl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.398229, 0.635033, 1, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Level 2"
+horizontal_alignment = 1
+
+[node name="LvlBtn" parent="." instance=ExtResource("2_ep78u")]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 0
+offset_left = 33.0
+offset_top = 27.0
+offset_right = 162.0
+offset_bottom = 109.0
+pivot_offset = Vector2(65, 41)
+text = "Back"
+level_path = "uid://bd2fv80p6fkq0"
+
+[node name="QuestionMark" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 27.0
+offset_right = 1119.0
+offset_bottom = 127.0
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("3_dfjjl")
+expand_mode = 1
+
+[node name="QuestionTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Gegenstände" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Chair" type="TextureRect" parent="Gegenstände"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 300.0
+offset_right = 550.0
+offset_bottom = 600.0
+pivot_offset = Vector2(150, 150)
+texture = ExtResource("4_at1ld")
+expand_mode = 1
+
+[node name="Spoon" type="TextureRect" parent="Gegenstände"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 300.0
+offset_right = 850.0
+offset_bottom = 350.0
+pivot_offset = Vector2(25, 25)
+texture = ExtResource("5_sd18g")
+expand_mode = 1
+
+[node name="Banana" type="TextureRect" parent="Gegenstände"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 500.0
+offset_right = 160.0
+offset_bottom = 560.0
+pivot_offset = Vector2(30, 30)
+texture = ExtResource("6_vm7no")
+expand_mode = 1
+
+[connection signal="gui_input" from="QuestionMark" to="." method="_on_question_mark_gui_input"]
+[connection signal="timeout" from="QuestionTimer" to="." method="_on_question_timer_timeout"]
+[connection signal="gui_input" from="Gegenstände/Chair" to="." method="_on_chair_gui_input"]
+[connection signal="gui_input" from="Gegenstände/Spoon" to="." method="_on_spoon_gui_input"]
+[connection signal="gui_input" from="Gegenstände/Banana" to="." method="_on_banana_gui_input"]

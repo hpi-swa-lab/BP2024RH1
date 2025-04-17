@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ew5e367icj4"]
+
+[ext_resource type="Script" uid="uid://wsivivei7aqh" path="res://gui/lvl_btn.gd" id="1_xul2s"]
+
+[node name="LvlBtn" type="Button"]
+custom_minimum_size = Vector2(200, 150)
+offset_right = 8.0
+offset_bottom = 8.0
+pivot_offset = Vector2(100, 75)
+text = "Level 1"
+script = ExtResource("1_xul2s")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
