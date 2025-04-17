@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxneb8wkso78d"]
+[gd_scene load_steps=12 format=3 uid="uid://dxneb8wkso78d"]
 
 [ext_resource type="Script" uid="uid://cvhmn6ele4hvq" path="res://scripts/police_station.gd" id="1_dmrwq"]
 [ext_resource type="PackedScene" uid="uid://1lucnrhv7ixm" path="res://scenes/places/office.tscn" id="2_57o6l"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://hkjnjyf75j8w" path="res://assets/black.png" id="7_lt3nl"]
 [ext_resource type="PackedScene" uid="uid://dinkb6rvbmkhj" path="res://scenes/helpsys.tscn" id="8_8qadg"]
 [ext_resource type="Texture2D" uid="uid://crj8s6h8bbatp" path="res://assets/arrows.png" id="9_mcvgu"]
+[ext_resource type="Texture2D" uid="uid://ncploay0c37s" path="res://assets/light out shadow.png" id="11_c3stg"]
 
 [node name="PoliceStation" type="Control"]
 layout_mode = 3
@@ -154,9 +155,19 @@ rotation = -0.822278
 texture = ExtResource("9_mcvgu")
 expand_mode = 1
 
+[node name="Timer_Blackout_beginn" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Dark_Mode_Blackout" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(587, 332)
+texture = ExtResource("11_c3stg")
+
 [connection signal="pressed" from="Change_Room_Sys/Office_button_background/Office_button" to="Change_Room_Sys" method="_on_office_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Head_Office_button_background/Head_Office_button" to="Change_Room_Sys" method="_on_head_office_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Big_Office_button_background/Big_Office_button" to="Change_Room_Sys" method="_on_big_office_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Tech_Room_button_background/Tech_Room_button" to="Change_Room_Sys" method="_on_tech_room_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Kitchen_button_background/Kitchen_button" to="Change_Room_Sys" method="_on_kitchen_button_pressed"]
 [connection signal="questionmark_found" from="Helpsys" to="." method="_on_helpsys_questionmark_found"]
+[connection signal="timeout" from="Timer_Blackout_beginn" to="." method="_on_timer_blackout_beginn_timeout"]

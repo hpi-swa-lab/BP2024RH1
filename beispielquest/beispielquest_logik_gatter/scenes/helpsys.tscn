@@ -98,9 +98,11 @@ text = "schließen"
 
 [node name="Timer_Hint_2" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="Timer_Hint_3" type="Timer" parent="."]
 wait_time = 6.0
+one_shot = true
 
 [connection signal="pressed" from="Questionmark" to="." method="_on_questionmark_pressed"]
 [connection signal="pressed" from="Hints/Close" to="." method="_on_close_pressed"]
