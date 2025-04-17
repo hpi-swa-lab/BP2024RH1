@@ -10,6 +10,7 @@ func _ready() -> void:
 	pic.visible = false
 	load_level_parameters()
 
+# load parameters to know which hint has already been found
 func load_level_parameters():
 	desktop.visible = Global.level_parameters.hinweis1
 	chopsticks.visible = Global.level_parameters.hinweis2
@@ -17,7 +18,6 @@ func load_level_parameters():
 
 
 func _on_question_mark_gui_input(event: InputEvent) -> void:
-		# emit signal to scene switcher mit level parameters - emit_signal("change_to_helpscreen",)
 	if event.is_action_pressed("linksklick"):
 		print("emit signal")
 		get_tree().change_scene_to_file("res://helpscreen.tscn")
@@ -25,7 +25,6 @@ func _on_question_mark_gui_input(event: InputEvent) -> void:
 	
 func _on_question_timer_timeout() -> void:
 	pic.visible = true
-
 
 
 func _on_desktop_gui_input(event: InputEvent) -> void:

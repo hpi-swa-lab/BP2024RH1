@@ -5,6 +5,7 @@ extends Control
 
 func _ready() -> void:
 	var level = int(Global.level_parameters.level)
+	# show hint, based on level
 	match level:
 		1:
 			load_hint_level1()
@@ -12,13 +13,6 @@ func _ready() -> void:
 			load_hint_level2()
 		3:
 			load_hint_level3()
-
-# Hinweis einblenden, je nach Level und Hinweis
-# signal ausgeben, wenn auf close gedrückt
-
-# wenn signal gefunden wurde
-# load_hint = 'load_hint_level' + str(level_parameters.level) + '()'
-# func load_hint
 
 
 func load_hint_level1():
@@ -49,6 +43,7 @@ func load_hint_level3():
 	else:
 		hinweis.text = "Du hast alle Hinweise gefunden."	
 
+# change back to level
 func _on_close_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("linksklick"):
 		print("emit signal")
