@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cr1ykw2088lcw"
+path="res://.godot/imported/Büro_1.dialogue-ccd2d253359cdff6b3d37cdaccc9e67c.tres"
+
+[deps]
+
+source_file="res://Cases/Caesar/dialogues/Büro_1.dialogue"
+dest_files=["res://.godot/imported/Büro_1.dialogue-ccd2d253359cdff6b3d37cdaccc9e67c.tres"]
+
+[params]
+
+defaults=true

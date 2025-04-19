@@ -1,0 +1,24 @@
+~ Caesar
+if Globals.culprit_found:
+	Detective Turing: Die Statue habe ich schon benutzt, die brauche ich nicht mehr.
+else:
+	do Globals.verschiebung_found = true
+	Detective Turing: Die Statue ist von Cäsar. Warte, da steht etwas auf der Rückseite. 
+	Detective Turing: Geiwev = Caesar
+	Detective Turing: Was könnte das bedeuten?
+=> END
+
+~ Bild
+if Globals.culprit_found:
+	do Globals.schluesselwort_found = true
+	Detective Turing: Der Hund scheint ihm wichtig zu sein, bedeutet das vielleicht noch mehr?
+else:
+	Detective Turing: Ein Hund, das hilft mir grade nicht weiter.
+=> END
+
+~ Businesskarte
+if Globals.culprit_found:
+	Detective Turing: Da war ich ja schon, das brauche ich nicht mehr.
+else:
+	Detective Turing: Das Restaurant kenne ich, vielleicht hat die Nachricht damit etwas zu tun.
+=> END

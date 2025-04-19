@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://rcxljc72bg1b"
+path="res://.godot/imported/Ende.dialogue-7667418001a1fe331c4d71480ff5f1b8.tres"
+
+[deps]
+
+source_file="res://Cases/Caesar/dialogues/Ende.dialogue"
+dest_files=["res://.godot/imported/Ende.dialogue-7667418001a1fe331c4d71480ff5f1b8.tres"]
+
+[params]
+
+defaults=true

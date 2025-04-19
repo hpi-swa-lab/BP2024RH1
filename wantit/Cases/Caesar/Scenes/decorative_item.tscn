@@ -1,0 +1,43 @@
+[gd_scene load_steps=13 format=3 uid="uid://chluu1cjq7fdw"]
+
+[ext_resource type="Script" uid="uid://cawmryuigot40" path="res://Scripts/decorative_item.gd" id="1_ufaaq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufaaq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85dp5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fbe1q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qcim"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivipu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ki15a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e43cc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63pur"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2ell"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_61oc6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h3wmd"]
+
+[node name="decorative_item" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ufaaq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_85dp5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fbe1q")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_1qcim")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ivipu")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ki15a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e43cc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_63pur")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j2ell")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_61oc6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h3wmd")
+script = ExtResource("1_ufaaq")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

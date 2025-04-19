@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcf7fub0fm711"]
+
+[ext_resource type="Script" uid="uid://bcrd72xm7fut8" path="res://Scripts/turorial.gd" id="1_feyax"]
+[ext_resource type="PackedScene" uid="uid://cq2kn0806dpmu" path="res://Scenes/minispiel.tscn" id="2_omtrn"]
+
+[node name="Turorial" type="Node2D"]
+script = ExtResource("1_feyax")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -578.0
+offset_top = -322.0
+offset_right = 575.0
+offset_bottom = 322.0
+mouse_filter = 2
+color = Color(0.445939, 0.908019, 0.874631, 1)
+
+[node name="Minispiel" parent="." instance=ExtResource("2_omtrn")]
+unique_name_in_owner = true
+original_text = "BEISPIEL"
+shown_text = " H  K  O  Y  V  O  K  R"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 121.0
+offset_top = -191.0
+offset_right = 366.0
+offset_bottom = -150.0
+theme_type_variation = &"HeaderLarge"
+text = "Verschiebung = 6"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-62, -25)
+points = PackedVector2Array(-192, -120, -176, -136, -80, -136)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(-19, 35)
+points = PackedVector2Array(-192, -120, -176, -136, -123, -136)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -140.0
+offset_top = -113.0
+offset_right = -78.0
+offset_bottom = -64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Klartext
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -140.0
+offset_top = -173.0
+offset_bottom = -124.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -4
+theme_override_font_sizes/font_size = 15
+text = "Verschlüsselter Text"
+autowrap_mode = 3

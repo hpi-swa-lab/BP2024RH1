@@ -1,0 +1,14 @@
+~ start
+if Globals.Ende == 1 and Globals.optional_route == false:
+	Detective Turing: Wir haben den Brandstifter gefunden! Ob der Mieter ihm wohl tatsächlich Daten gestohlen hat?
+	Detective Turing: Hätte er moderne Verschlüsselungsmethoden benutzt wäre das nicht so leicht gegangen.
+	do quit()
+elif Globals.Ende == 1 and Globals.optional_route == true:
+	Detective Turing: Der Brandstifter ist der schuldige, unabhängig davon ob der andere ihm etwas gestohlen hat oder nicht.
+	Detective Turing: Hätten die beiden moderne Verschlüsselungsmethoden benutzt wäre das nicht so leicht gegangen.
+	do quit()
+else:
+	Detective Turing: Beide tragen Schuld.
+	Detective Turing: Hätten sie moderne Verschlüsselungsmethoden benutzt wäre das nicht so leicht gegangen.
+	do quit()
+=> END

@@ -1,0 +1,12 @@
+~ start
+if Globals.schluesselwort_found:
+	Detective Turing: Ein Hund names Bella...wie hilft mir das weiter?
+else:
+	Detective Turing: Ich muss das Schlüsselwort herausfinden. Vielleicht helfen mir die Gegenstände vom Tatort ja weiter.
+=> END
+
+~ fertig
+Detective Turing: Damit sollte ich genug Beweise haben.
+set Globals.optional_route = true
+do end_it()
+=> END

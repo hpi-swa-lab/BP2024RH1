@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://7uh43dd5jukg"
+path="res://.godot/imported/Tatort.dialogue-43978a9539a84875ffed5361a687dc1e.tres"
+
+[deps]
+
+source_file="res://Cases/Caesar/dialogues/Tatort.dialogue"
+dest_files=["res://.godot/imported/Tatort.dialogue-43978a9539a84875ffed5361a687dc1e.tres"]
+
+[params]
+
+defaults=true
