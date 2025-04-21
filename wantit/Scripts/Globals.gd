@@ -24,16 +24,3 @@ var culprit_found: bool = false
 
 var optional_route: bool = false
 var Ende: int
-
-# decorative items - Im pretty sure that can be fixed too if not use old idea of Global for items
-var Buch_picked: bool = false
-var Mikrowelle_picked: bool = false
-var Zeitung_picked: bool = false
-
-# Wichtige Items
-var Fenster_picked: bool = false
-var Caesar_picked: bool = false
-var Bild_picked: bool = false
-var Nachricht_picked: bool = false
-var Papierkorb_picked: bool = false
-var Businesskarte_picked: bool = false
