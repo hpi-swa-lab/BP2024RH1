@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_imlri")
 
 [node name="Questionmark" type="Button" parent="."]
+layout_mode = 0
 offset_left = -76.0
 offset_top = 30.0
 offset_right = -30.0
