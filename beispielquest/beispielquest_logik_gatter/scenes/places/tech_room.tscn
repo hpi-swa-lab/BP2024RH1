@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dcc1qe6wb2fvg"]
 
 [ext_resource type="Texture2D" uid="uid://sdd3un8lgcf5" path="res://assets/places/tech_room.png" id="1_pfghq"]
-[ext_resource type="Texture2D" uid="uid://bi35alsblos7b" path="res://assets/objects/stromkasten.jpg" id="2_sx1e0"]
-[ext_resource type="PackedScene" uid="uid://c1iqltw88mlq8" path="res://scenes/places/office_change_room_overlay.tscn" id="3_sx1e0"]
+[ext_resource type="Script" uid="uid://ta4vdor33e3e" path="res://scripts/places/tech_room.gd" id="1_sx1e0"]
+[ext_resource type="Texture2D" uid="uid://b4ebbre8iljr7" path="res://assets/electrical-panel.png" id="3_sx1e0"]
 
 [node name="TechRoom" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_sx1e0")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -14,18 +15,14 @@ offset_right = 1148.0
 offset_bottom = 653.0
 texture = ExtResource("1_pfghq")
 
-[node name="Strom_Kasten" type="TextureButton" parent="."]
+[node name="Electricity_box" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 620.0
+offset_left = 603.0
 offset_top = 160.0
-offset_right = 1768.0
-offset_bottom = 1563.0
+offset_right = 1921.0
+offset_bottom = 1440.0
 scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("2_sx1e0")
+texture_normal = ExtResource("3_sx1e0")
+stretch_mode = 0
 
-[node name="office_change_room_overlay" parent="." instance=ExtResource("3_sx1e0")]
-layout_mode = 1
-offset_left = 127.0
-offset_top = 402.0
-offset_right = 127.0
-offset_bottom = 402.0
+[connection signal="pressed" from="Electricity_box" to="." method="_on_electricity_box_pressed"]

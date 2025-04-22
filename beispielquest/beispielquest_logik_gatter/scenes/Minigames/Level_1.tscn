@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://v8eg0wvcs4ea"]
+
+[ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://logik_gatter/scenes/Baukasten/Start.tscn" id="1_4vy14"]
+[ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://logik_gatter/scenes/Baukasten/Gatter/And_Gatter.tscn" id="2_nujbg"]
+[ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://logik_gatter/scenes/Baukasten/Gatter/Or_Gatter.tscn" id="3_gsj6i"]
+[ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://logik_gatter/scenes/Baukasten/Ziel.tscn" id="4_i7jti"]
+[ext_resource type="Texture2D" uid="uid://genn6of8icim" path="res://logik_gatter/assets/lampe_an.png" id="5_uxhvd"]
+[ext_resource type="Texture2D" uid="uid://xmv2tryc7wd8" path="res://logik_gatter/assets/lampe_aus.png" id="6_3c18i"]
+[ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://logik_gatter/scenes/Baukasten/connection.tscn" id="7_froun"]
+
+[node name="Level1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start_AndLeft_1" parent="." node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+offset_left = 159.0
+offset_top = 110.0
+offset_right = 236.0
+offset_bottom = 141.0
+output_connection = NodePath("")
+
+[node name="Start_AndLeft_2" parent="." node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+offset_left = 153.0
+offset_top = 426.0
+offset_right = 230.0
+offset_bottom = 457.0
+output_connection = NodePath("")
+
+[node name="Start_Or_1" parent="." node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+offset_left = 901.0
+offset_top = 93.0
+offset_right = 978.0
+offset_bottom = 124.0
+output_connection = NodePath("")
+
+[node name="Start_Or_2" parent="." node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+offset_left = 903.0
+offset_top = 422.0
+offset_right = 980.0
+offset_bottom = 453.0
+output_connection = NodePath("")
+
+[node name="AndLeft" parent="." node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("2_nujbg")]
+offset_left = 160.0
+offset_top = 264.0
+offset_right = 219.0
+offset_bottom = 295.0
+input_connection_1 = NodePath("")
+input_connection_2 = NodePath("")
+output_connection = NodePath("")
+
+[node name="Or" parent="." node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("3_gsj6i")]
+offset_left = 864.0
+offset_top = 264.0
+offset_right = 999.0
+offset_bottom = 295.0
+input_connection_1 = NodePath("")
+input_connection_2 = NodePath("")
+output_connection = NodePath("")
+
+[node name="AndMid" parent="." node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("2_nujbg")]
+offset_left = 544.0
+offset_top = 264.0
+offset_right = 603.0
+offset_bottom = 295.0
+input_connection_1 = NodePath("")
+input_connection_2 = NodePath("")
+output_connection = NodePath("")
+
+[node name="Ziel" parent="." node_paths=PackedStringArray("input_connection") instance=ExtResource("4_i7jti")]
+position = Vector2(574, 482)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_uxhvd")
+input_connection = NodePath("")
+lv_complete_picture = ExtResource("5_uxhvd")
+lv_not_complete_picture = ExtResource("6_3c18i")
+
+[node name="Input_AndLeft_1" parent="." instance=ExtResource("7_froun")]
+position = Vector2(144, 195)
+points = PackedVector2Array(48, -54, 48, 69)
+
+[node name="Input_AndLeft_2" parent="." instance=ExtResource("7_froun")]
+position = Vector2(134, 361)
+points = PackedVector2Array(58, -65, 58, 71)
+
+[node name="Btw_AndLeft_AndMid" parent="." instance=ExtResource("7_froun")]
+position = Vector2(354, 290)
+points = PackedVector2Array(-138, -10, 190, -10)
+
+[node name="Btw_AndMid_Ziel" parent="." instance=ExtResource("7_froun")]
+position = Vector2(521, 366)
+points = PackedVector2Array(55, -70, 55, 34)
+
+[node name="Input_Or_2" parent="." instance=ExtResource("7_froun")]
+position = Vector2(897, 373)
+points = PackedVector2Array(39, 59, 39, -77)
+
+[node name="Input_Or_1" parent="." instance=ExtResource("7_froun")]
+position = Vector2(891, 187)
+points = PackedVector2Array(45, -67, 45, 77)
+
+[node name="Btw_Or_AndMid" parent="." instance=ExtResource("7_froun")]
+position = Vector2(714, 280)
+points = PackedVector2Array(-114, 0, 150, 0)

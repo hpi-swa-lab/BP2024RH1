@@ -7,26 +7,30 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_imlri")
 
 [node name="Questionmark" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1085.0
-offset_top = 16.0
-offset_right = 1131.0
-offset_bottom = 62.0
+offset_left = -76.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 80.0
 theme_override_font_sizes/font_size = 30
 text = "?"
 
 [node name="Hints" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_left = 523.0
-offset_top = 13.0
-offset_right = 1139.0
-offset_bottom = 376.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -602.0
+offset_bottom = 363.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="Hints"]
 layout_mode = 1
@@ -61,17 +65,20 @@ size_flags_horizontal = 3
 
 [node name="Hint_1" type="Label" parent="Hints/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "First Hint"
+text = "First Hinthhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+autowrap_mode = 3
 
 [node name="Hint_2" type="Label" parent="Hints/VBoxContainer/HBoxContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Second Hint"
+autowrap_mode = 3
 
 [node name="Hint_3" type="Label" parent="Hints/VBoxContainer/HBoxContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Third Hint"
+autowrap_mode = 3
 
 [node name="Space_right_of_hints" type="Label" parent="Hints/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -90,5 +97,15 @@ offset_right = 83.0
 grow_vertical = 0
 text = "schließen"
 
+[node name="Timer_Hint_2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer_Hint_3" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
 [connection signal="pressed" from="Questionmark" to="." method="_on_questionmark_pressed"]
 [connection signal="pressed" from="Hints/Close" to="." method="_on_close_pressed"]
+[connection signal="timeout" from="Timer_Hint_2" to="." method="_on_timer_hint_2_timeout"]
+[connection signal="timeout" from="Timer_Hint_3" to="." method="_on_timer_hint_3_timeout"]
