@@ -14,8 +14,6 @@ unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Cäsar_außen" type="Sprite2D" parent="."]
 position = Vector2(-300, 0)
 scale = Vector2(0.25, 0.25)

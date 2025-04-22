@@ -20,13 +20,13 @@ Kai Netzer: Nachdem wir uns gestern gestritten haben hat er gesagt, er schickt d
 ~ Option1
 Detective Turing: Ich schaue mal was ich finde. Sie müssen aber trotzdem mitkommen.
 # Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Kai Netzer rennt weg)
-set Globals.culprit_found = true
-set Globals.office_szene = 4
+set Globals.CaseGlobals.culprit_found = true
+set Globals.OfficeDialogueStart = "Teil5"
 do go_back()
 => END
 
 ~ Option2
 Detective Turing: Das ist mir egal. Mitkommen!
 # Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Kai Netzer rennt weg)
-do end_it()
+do CaseManager.close_case()
 => END

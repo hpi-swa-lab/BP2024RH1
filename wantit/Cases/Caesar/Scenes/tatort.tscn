@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://buij12itm0l0f"]
+[gd_scene load_steps=14 format=3 uid="uid://buij12itm0l0f"]
 
 [ext_resource type="Script" uid="uid://ckn4i25eajkk5" path="res://Cases/Caesar/Scripts/tatort.gd" id="1_dsq52"]
 [ext_resource type="Texture2D" uid="uid://cpv5dp7ajsppy" path="res://Cases/Caesar/Assets/Hintergrund.png" id="1_eik8t"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://cho02avh82141" path="res://Cases/Caesar/Assets/Mikro.png" id="10_6rnh6"]
 [ext_resource type="Texture2D" uid="uid://crif1sg30ln8q" path="res://Cases/Caesar/Assets/Papierkorb.png" id="11_7itac"]
 [ext_resource type="PackedScene" uid="uid://c8frnlbfnegad" path="res://Cases/Caesar/Scenes/nachricht.tscn" id="12_v0vyj"]
-[ext_resource type="Texture2D" uid="uid://dunpdle60mim7" path="res://Cases/Caesar/Assets/Nachricht - Kopie.png" id="14_6rnh6"]
 
 [node name="Tatort" type="Node2D"]
 script = ExtResource("1_dsq52")
@@ -50,17 +49,6 @@ icon = ExtResource("9_0ls3p")
 dialogue = "Tatort"
 dialogue_start = "Zeitung"
 
-[node name="Caesar" parent="Items" instance=ExtResource("5_d1yf4")]
-layout_mode = 0
-offset_left = 31.0
-offset_top = -12.0
-offset_right = 351.0
-offset_bottom = 628.0
-scale = Vector2(0.228, 0.228)
-icon = ExtResource("4_lre5u")
-dialogue = "Tatort"
-dialogue_start = "Zeitung"
-
 [node name="Buch" parent="Items" instance=ExtResource("5_d1yf4")]
 layout_mode = 0
 offset_left = -424.0
@@ -80,6 +68,17 @@ offset_bottom = 171.0
 icon = ExtResource("6_jkvpc")
 dialogue = "Tatort"
 dialogue_start = "Bild"
+
+[node name="Caesar" parent="Items" instance=ExtResource("3_iqajy")]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -9.0
+offset_right = 338.0
+offset_bottom = 631.0
+scale = Vector2(0.228, 0.228)
+icon = ExtResource("4_lre5u")
+dialogue = "Tatort"
+dialogue_start = "Caesar"
 
 [node name="Businesskarte" parent="Items" instance=ExtResource("3_iqajy")]
 layout_mode = 0
@@ -126,7 +125,6 @@ offset_right = 1812.0
 offset_bottom = 124.0
 rotation = -3.02116
 scale = Vector2(0.195582, 0.195582)
-icon = ExtResource("14_6rnh6")
 dialogue = "Küche"
 dialogue_start = "Nachricht"
 

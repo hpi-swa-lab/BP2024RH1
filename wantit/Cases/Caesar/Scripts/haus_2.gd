@@ -7,5 +7,5 @@ func go_back():
 	Globals.OfficeDialogueStart = "Teil5"
 	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 
-func end_it():
+func close_case():
 	SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/ende.tscn")

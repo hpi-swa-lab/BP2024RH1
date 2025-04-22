@@ -22,6 +22,10 @@ Globals="*res://Scripts/Globals.gd"
 CaseManager="*res://Scripts/CaseManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
+[dialogue_manager]
+
+runtime/balloon_path="uid://cj6d4qjwusrni"
+
 [display]
 
 window/size/mode=2

@@ -4,18 +4,16 @@ var textfield_index = 0
 var text_fields
 var new_alphabet: String
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var keyword: String = ""
 
 const RADIUS_INNER := 118
 
 @export var original_text = "GEHEIMES GEHEIMNIS" # Muss in Großbuchtaben geschrieben werden
 @export var shown_text = "H  B   I  B   J  M B  S    H  B   I  B   J  M  N  J  S"
 @onready var input_container = %HBoxContainer
-@onready var schlüsselwort: LineEdit = %Schlüsselwort
-@onready var bella: Button = %Bella
 
 func _ready():
-	bella.disabled
-	bella.hide()
+	%Bella.hide()
 	DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Caesar2.dialogue"), "start")
 	%VerschlüsselterText.text = shown_text
 	
@@ -41,8 +39,8 @@ func _ready():
 	text_fields[0].grab_focus()
 
 func _process(_delta: float) -> void:
-	if Globals.schluesselwort_found:
-		bella.show()
+	if Globals.CaseGlobals.schluesselwort_found:
+		%Bella.show()
 		
 func _on_letter_clicked(_viewport, event, _shape_idx, letter):
 	for i in range(text_fields.size()):
@@ -67,7 +65,6 @@ func _on_check_solution_pressed() -> void:
 		else:
 			input_text += " "
 	if input_text == original_text:
-		print("congrats")
 		DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Caesar2.dialogue"), "fertig")
 
 func remove_duplicates(new_text: String, old_text: String) -> String:
@@ -79,7 +76,6 @@ func remove_duplicates(new_text: String, old_text: String) -> String:
 func create_inner_circle() -> void:
 	remove_children(%Area2D)
 	remove_children(%InnerRing)
-	#print(%Area2D.get_children())
 	for i in range(new_alphabet.length()):
 		var angle = i * deg_to_rad((360.0 / new_alphabet.length())) - deg_to_rad(97)
 		var label = Label.new()
@@ -101,8 +97,8 @@ func create_inner_circle() -> void:
 		clickable_letter.add_child(new_shape)
 		%Area2D.add_child(clickable_letter)
 
-func _on_apply_inner_pressed() -> void:
-	new_alphabet = remove_duplicates(%Schlüsselwort.text.to_upper(), "")
+func apply_keyword(keyword: String) -> void:
+	new_alphabet = remove_duplicates(keyword.to_upper(), "")
 	new_alphabet = remove_duplicates(alphabet, new_alphabet)
 	create_inner_circle()
 	text_fields[0].grab_focus()
@@ -113,9 +109,18 @@ func remove_children(node: Node):
 			node.remove_child(child)
 			child.queue_free()
 
-func end_it() -> void:
-	SceneSwitcher.switch_scene("res://Scenes/ende.tscn")
-
-
 func _on_keyword_clicked(text: String) -> void:
-	schlüsselwort.text = text
+	keyword = text
+	print(keyword)
+
+func _on_keyword_pressed() -> void:
+	apply_keyword(%Keyword.text)
+
+func _on_keyword_2_pressed() -> void:
+	apply_keyword(%Keyword2.text)
+
+func _on_keyword_3_pressed() -> void:
+	apply_keyword(%Keyword3.text)
+
+func _on_bella_pressed() -> void:
+	apply_keyword(%Bella.text)

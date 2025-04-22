@@ -11,6 +11,6 @@ Kollege: Super! Dann probier dass doch gleich mal aus, der verschlüsselte Text 
 
 ~ zurueck
 Kollege: Klasse! Du hast die Verschlüsselung geknackt. Viel Erfolg beim Lösen des Falls!
-set Globals.office_szene = 2
+set Globals.OfficeDialogueStart = "Teil2"
 do go_back()
 => END

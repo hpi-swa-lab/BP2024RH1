@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cti53snwxovxi" path="res://Cases/Caesar/Scripts/cäsars_big_brother.gd" id="1_3q7tp"]
 [ext_resource type="Texture2D" uid="uid://dajh57clpktxi" path="res://Cases/Caesar/Assets/Caesar_teil2.png" id="2_irj1d"]
-[ext_resource type="PackedScene" uid="uid://djwgirmrlf867" path="res://Cases/Caesar/Scenes/keyword.tscn" id="4_6int8"]
 [ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="4_u5whh"]
+[ext_resource type="Texture2D" uid="uid://cf5h5p6f4pt64" path="res://Cases/Caesar/Assets/Geheim.png" id="5_hrw2l"]
 
 [node name="Cäsars_big_brother" type="Node2D"]
 script = ExtResource("1_3q7tp")
@@ -57,20 +57,6 @@ offset_bottom = -214.0
 theme_type_variation = &"HeaderMedium"
 text = "Schlüsselwort eingeben:"
 
-[node name="Schlüsselwort" type="LineEdit" parent="."]
-unique_name_in_owner = true
-offset_left = 161.0
-offset_top = -244.0
-offset_right = 229.563
-offset_bottom = -213.0
-
-[node name="ApplyInner" type="Button" parent="."]
-offset_left = 258.0
-offset_top = -242.0
-offset_right = 349.0
-offset_bottom = -211.0
-text = "Anwenden"
-
 [node name="SceneSwitcherButton" parent="." instance=ExtResource("4_u5whh")]
 offset_left = 245.0
 offset_top = 223.0
@@ -87,26 +73,34 @@ offset_right = 430.0
 offset_bottom = -138.0
 theme_override_constants/separation = 45
 
-[node name="Keyword" parent="HBoxContainer2" instance=ExtResource("4_6int8")]
+[node name="Keyword" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "CAESAR"
 
-[node name="Keyword2" parent="HBoxContainer2" instance=ExtResource("4_6int8")]
+[node name="Keyword2" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "HACKER"
 
-[node name="Keyword3" parent="HBoxContainer2" instance=ExtResource("4_6int8")]
+[node name="Keyword3" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "BITCOIN"
 
-[node name="Bella" parent="HBoxContainer2" instance=ExtResource("4_6int8")]
+[node name="Bella" type="Button" parent="HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "BELLA"
+
+[node name="Geheim" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(262, -3)
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("5_hrw2l")
 
 [connection signal="pressed" from="CheckSolution" to="." method="_on_check_solution_pressed"]
-[connection signal="pressed" from="ApplyInner" to="." method="_on_apply_inner_pressed"]
-[connection signal="clicked" from="HBoxContainer2/Keyword" to="." method="_on_keyword_clicked"]
-[connection signal="clicked" from="HBoxContainer2/Keyword2" to="." method="_on_keyword_clicked"]
-[connection signal="clicked" from="HBoxContainer2/Keyword3" to="." method="_on_keyword_clicked"]
-[connection signal="clicked" from="HBoxContainer2/Bella" to="." method="_on_keyword_clicked"]
+[connection signal="pressed" from="HBoxContainer2/Keyword" to="." method="_on_keyword_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Keyword2" to="." method="_on_keyword_2_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Keyword3" to="." method="_on_keyword_3_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Bella" to="." method="_on_bella_pressed"]

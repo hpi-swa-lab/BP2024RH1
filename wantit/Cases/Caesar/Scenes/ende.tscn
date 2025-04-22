@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ht4bldq4k36r"]
 
-[ext_resource type="Script" uid="uid://d1wq73exckevj" path="res://Scripts/ende.gd" id="1_u7ej0"]
-[ext_resource type="PackedScene" uid="uid://d3khnxf0k5pds" path="res://Scenes/end_auswahl.tscn" id="2_ymns0"]
-[ext_resource type="Texture2D" uid="uid://esbtm1p0xk7q" path="res://Assets/Ende1.png" id="3_lcyf4"]
-[ext_resource type="Texture2D" uid="uid://csgbifiksa50q" path="res://Assets/Ende2.png" id="4_oqxu6"]
+[ext_resource type="Script" uid="uid://d1wq73exckevj" path="res://Cases/Caesar/Scripts/ende.gd" id="1_u7ej0"]
+[ext_resource type="PackedScene" uid="uid://d3khnxf0k5pds" path="res://Cases/Caesar/Scenes/end_auswahl.tscn" id="2_ymns0"]
+[ext_resource type="Texture2D" uid="uid://esbtm1p0xk7q" path="res://Cases/Caesar/Assets/Ende1.png" id="3_lcyf4"]
+[ext_resource type="Texture2D" uid="uid://csgbifiksa50q" path="res://Cases/Caesar/Assets/Ende2.png" id="4_oqxu6"]
 
 [node name="Ende" type="Node2D"]
 script = ExtResource("1_u7ej0")
@@ -29,3 +29,6 @@ visible = false
 Bild = ExtResource("4_oqxu6")
 ButtonText = "Beide bestrafen"
 Ende = 2
+
+[connection signal="EndDialogue" from="Option 1" to="." method="_on_option_1_end_dialogue"]
+[connection signal="EndDialogue" from="Option 2" to="." method="_on_option_2_end_dialogue"]

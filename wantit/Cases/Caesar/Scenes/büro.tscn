@@ -1,11 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://b46stxd7p1afr"]
+[gd_scene load_steps=4 format=3 uid="uid://dwid4wtutf6re"]
 
-[ext_resource type="Script" uid="uid://dkoa2u1y85nav" path="res://Cases/Caesar/Scripts/büro.gd" id="1_p13xj"]
 [ext_resource type="Texture2D" uid="uid://ddvxwfxwi2a32" path="res://Cases/Caesar/Assets/Büro.png" id="1_s0ldl"]
 [ext_resource type="Texture2D" uid="uid://cf5h5p6f4pt64" path="res://Cases/Caesar/Assets/Geheim.png" id="7_svqko"]
 
+[sub_resource type="GDScript" id="GDScript_nvvyt"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	elif Globals.office_szene == 2:
+		DialogueManager.show_dialogue_balloon(load(\"res://Cases/Caesar/dialogues/Büro_1.dialogue\"), \"Teil3\")
+	elif Globals.office_szene == 3:
+		%NextButton.NextSceneString = \"restaurant\"
+		%NextButton.position = Vector2(-200, 75)
+		DialogueManager.show_dialogue_balloon(load(\"res://Cases/Caesar/dialogues/Büro_1.dialogue\"), \"Teil4\")
+	elif Globals.office_szene == 4:
+		#if Globals.secret_message_found:
+		#	%Geheim.visible = true
+		Globals.caesar_decrypted = false
+		DialogueManager.show_dialogue_balloon(load(\"res://Cases/Caesar/dialogues/Büro_1.dialogue\"), \"Teil5\")
+
+func _process(_delta: float) -> void:
+	if Globals.secret_message_found:
+		%Geheim.show()
+		
+"
+
 [node name="Büro" type="Node2D"]
-script = ExtResource("1_p13xj")
+script = SubResource("GDScript_nvvyt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

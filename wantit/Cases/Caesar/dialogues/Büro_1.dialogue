@@ -19,18 +19,18 @@ Kollege: Ok, dann viel Erfolg beim Entschlüsseln!!
 
 ~ Tutorial
 Kollege: Ok, kein Problem.
-do load_tutorial()
+do SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/tutorial.tscn")
 => Teil3
 
 ~ Teil3
-if Globals.had_tutorial:
+if Globals.CaseGlobals.had_tutorial:
 	Kollege: Hast du das verstanden, oder soll ich es dir nochmal erklären?
 	- Könntest du es noch mal erklären? => Tutorial
 	- Ja, ich denke schon.
 Detective Turing: Und woher weiß, um wie viele Buchstaben verschoben werden muss? Gehe ich einfach alle durch?
 Kollege: Entweder das oder es gibt irgendwo einen Hinweis.
-set Globals.had_tutorial = true
-do load_minigame()
+set Globals.CaseGlobals.had_tutorial = true
+do SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/decrypting_caesar.tscn")
 => END
 
 ~ Teil4
@@ -40,8 +40,7 @@ Detective Turing: Ich sollte mal beim BitStop vorbeischauen, ich habe es auf der
 ~ Teil5
 
 Kollege: Wir haben in der Wohnung von John Byte tatsächlich ein paar verdächtige Unterlagen gefunden.
-Kollege: Vielleicht handelt es sich dabei um die gestohlenen Daten. Allerdings scheint die wichtigste Stelle wieder verschlüsselt zu sein. Schau mal
-do Globals.secret_message_found = trues
+Kollege: Vielleicht handelt es sich dabei um die gestohlenen Daten. Allerdings scheint die wichtigste Stelle wieder verschlüsselt zu sein.
 Detective Turing: Habt ihr bereits probiert die Nachricht zu entschlüsseln?
 Kollege: Ja, aber es handelt sich nicht um die gleiche Verschiebung wie bei der ersten Nachricht. Wir vermuten, dass ein Schlüsselwort genutzt wurde.
 Detective Turing: Ein Schlüsselwort?
@@ -50,7 +49,7 @@ Kollege: Soll ich dir diese Verschlüsselungsmethode noch genauer erklären?
 - Ja, gerne. =>< Erklaerung2
 - Nicht nötig. Ich erinnere mich.
 Kollege: Viel Erfolg beim Entschlüsseln!
-do load_second_game()
+do SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/Cäsars_big_brother.tscn")
 => END
 
 ~ Erklaerung2

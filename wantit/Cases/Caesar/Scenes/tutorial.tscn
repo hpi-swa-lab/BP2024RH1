@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcf7fub0fm711"]
 
-[ext_resource type="Script" uid="uid://bcrd72xm7fut8" path="res://Scripts/turorial.gd" id="1_feyax"]
-[ext_resource type="PackedScene" uid="uid://cq2kn0806dpmu" path="res://Scenes/minispiel.tscn" id="2_omtrn"]
+[ext_resource type="Script" uid="uid://bcrd72xm7fut8" path="res://Cases/Caesar/Scripts/turorial.gd" id="1_feyax"]
+[ext_resource type="PackedScene" uid="uid://cq2kn0806dpmu" path="res://Cases/Caesar/Scenes/minispiel.tscn" id="2_omtrn"]
 
 [node name="Turorial" type="Node2D"]
 script = ExtResource("1_feyax")
@@ -58,3 +58,7 @@ theme_override_constants/line_spacing = -4
 theme_override_font_sizes/font_size = 15
 text = "Verschlüsselter Text"
 autowrap_mode = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="Solved" from="Minispiel" to="." method="_on_minispiel_solved"]

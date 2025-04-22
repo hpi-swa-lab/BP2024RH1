@@ -6,7 +6,7 @@ func _ready() -> void:
 	
 	if Globals.selectedCase != null and Globals.OfficeDialogue != null:
 		DialogueManager.show_dialogue_balloon(load(Globals.OfficeDialogue), Globals.OfficeDialogueStart)
-
+	
 func _on_pc_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if not Globals.selectedCase:
@@ -37,18 +37,6 @@ func load_CaseBoard_Picture():
 	%CaseBoard.texture = CaseBoardPicture
 
 func add_basic_cases():
-	CaseManager.add_Case("Caesar", load("res://Cases/Caesar/Scenes/character_selection.tscn"))
-	CaseManager.add_Case("Test2", load("res://Scenes/testscene.tscn"))
-	CaseManager.add_Case("Test3", load("res://Scenes/testscene.tscn"))
-
-func load_tutorial() -> void:
-	SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/tutorial.tscn")
-
-func load_minigame() -> void:
-	SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/decrypting_caesar.tscn")
-
-func load_second_game() -> void:
-	SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/Cäsars_big_brother.tscn")
-
-func load_end():
-	SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/ende.tscn")
+	CaseManager.add_Case("Caesar", load("res://Cases/Caesar/Scenes/character_selection.tscn"), load("res://Cases/Caesar/Scenes/ende.tscn"), load("res://Cases/Caesar/Scripts/global.gd").new())
+	CaseManager.add_Case("Test2", load("res://Scenes/testscene.tscn"), load("res://Scenes/testscene.tscn"), load("res://Cases/Caesar/Scripts/global.gd").new())
+	CaseManager.add_Case("Test3", load("res://Scenes/testscene.tscn"), load("res://Scenes/testscene.tscn"), load("res://Cases/Caesar/Scripts/global.gd").new())

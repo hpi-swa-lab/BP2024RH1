@@ -12,5 +12,4 @@ func _on_portrait_pressed() -> void:
 	scene_switcher_button.visible = true
 	Globals.OfficeDialogue = "res://Cases/Caesar/dialogues/Büro_1.dialogue"
 	Globals.OfficeDialogueStart = "start"
-	CaseManager.new_Location(preload("res://Assets/library.png"), Vector2(0.1, 0.1), Vector2(130, 100), preload("res://Cases/Caesar/Scenes/tatort.tscn"))
-	
+	CaseManager.new_Location(preload("res://Assets/library.png"), Vector2(0.1, 0.1), Vector2(130, 100), preload("res://Cases/Caesar/Scenes/tatort.tscn"))	

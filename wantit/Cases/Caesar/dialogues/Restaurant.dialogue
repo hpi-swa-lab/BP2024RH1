@@ -10,7 +10,7 @@ Bedienung: Den sollte ich haben. Es war eine Reservierung auf seinen Namen. Eine
 Bedienung: Ah ja, er hieß Kai Netzer.
 Detective Turing: Vielen Dank für Ihre Hilfe und noch einen schönen Abend.
 Detective Turing: Ich sollte diesem Kai Netzer mal einen Besuch abstatten.
-set Globals.caesar_decrypted = false
-set Globals.Restaurant_visited = true
+set Globals.CaseGlobals.caesar_decrypted = false
+set Globals.CaseGlobals.Restaurant_visited = true
 do visit_culprit()
 => END

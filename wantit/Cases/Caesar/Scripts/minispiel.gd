@@ -9,11 +9,12 @@ var text_fields
 @onready var input_container = %HBoxContainer
 @onready var hinweis: Label = $Hinweis
 
+signal Solved
 
 func _ready():
 	hinweis.hide()
 	
-	if Globals.verschiebung_found:
+	if Globals.CaseGlobals.verschiebung_found:
 		hinweis.show()
 	
 	%"VerschlüsselterText".text = shown_text
@@ -73,12 +74,11 @@ func _on_rechts_pressed() -> void:
 	%Drehen.rotation += deg_to_rad(13.84)
 
 func _on_check_solution_pressed() -> void:
-	var input_text:String
+	var input_text: String
 	for i in range(text_fields.size()):
 		if text_fields[i] is LineEdit:
 			input_text += text_fields[i].text
 		else:
 			input_text += " "
 	if input_text == original_text:
-		print("congrats")
-		Globals.caesar_decrypted = true
+		Solved.emit()

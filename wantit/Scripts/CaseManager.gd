@@ -1,12 +1,16 @@
 extends Node
 
-class Case:				#Does not have to be a class right now, because of the dict but could prove useful
+class Case:
 	var CaseName: String
 	var FirstScene: PackedScene
+	var EndScene: PackedScene
+	var GlobalScript: Node
 	
-	func _init(_CaseName: String, _FirstScene: PackedScene) -> void:
+	func _init(_CaseName: String, _FirstScene: PackedScene, _EndScene: PackedScene, _GlobalScript: Node) -> void:
 		CaseName = _CaseName
 		FirstScene = _FirstScene
+		EndScene = _EndScene
+		GlobalScript = _GlobalScript
 
 class Hint:					# Hints that are shown at the Board
 	var HintPos: Vector2
@@ -33,9 +37,10 @@ var ClosedCases = {}
 
 var Hints = []
 
-func add_Case(CaseName: String, FirstScene: PackedScene):
+func add_Case(CaseName: String, FirstScene: PackedScene, EndScene: PackedScene, GlobalScript: Node):
 	if not ClosedCases.has(CaseName):
-		var newCase = Case.new(CaseName, FirstScene)
+		var newCase = Case.new(CaseName, FirstScene, EndScene, GlobalScript)
+		Globals.CaseGlobals = GlobalScript
 		CaseList[newCase.CaseName] = newCase
 
 func close_Case(CurrentCase: Case):
@@ -45,7 +50,7 @@ func close_Case(CurrentCase: Case):
 	Hints.clear()
 	
 	ClosedCases[CurrentCase.CaseName] = CurrentCase
-	SceneSwitcher.switch_scene("res://Scenes/office.tscn")	# Muss hier nicht immer das Office sein
+	SceneSwitcher.switch_scene(CurrentCase.EndScene)
 
 func add_Hint(HintPos: Vector2, HintTexture: CompressedTexture2D):
 	var new_Hint = Hint.new(HintPos, HintTexture)
