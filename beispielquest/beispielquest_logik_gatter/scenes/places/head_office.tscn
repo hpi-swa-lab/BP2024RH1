@@ -12,3 +12,8 @@ offset_right = 1442.0
 offset_bottom = 862.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_qef8d")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxneb8wkso78d"]
+[gd_scene load_steps=13 format=3 uid="uid://dxneb8wkso78d"]
 
-[ext_resource type="Script" uid="uid://cvhmn6ele4hvq" path="res://scripts/police_station.gd" id="1_dmrwq"]
-[ext_resource type="PackedScene" uid="uid://1lucnrhv7ixm" path="res://scenes/places/office.tscn" id="2_57o6l"]
-[ext_resource type="PackedScene" uid="uid://dm8xbmol5f8en" path="res://scenes/places/Kitchen.tscn" id="3_c3stg"]
-[ext_resource type="PackedScene" uid="uid://doisuir7v57ie" path="res://scenes/places/head_office.tscn" id="4_ljyy1"]
-[ext_resource type="PackedScene" uid="uid://h6fwhyygn64k" path="res://scenes/places/big_office.tscn" id="5_dnta6"]
-[ext_resource type="PackedScene" uid="uid://dcc1qe6wb2fvg" path="res://scenes/places/tech_room.tscn" id="6_1b4pb"]
-[ext_resource type="Script" uid="uid://dcw8le38a2ymy" path="res://scripts/change_room_sys.gd" id="7_57o6l"]
-[ext_resource type="Texture2D" uid="uid://hkjnjyf75j8w" path="res://assets/black.png" id="7_lt3nl"]
-[ext_resource type="PackedScene" uid="uid://dinkb6rvbmkhj" path="res://scenes/helpsys.tscn" id="8_8qadg"]
-[ext_resource type="Texture2D" uid="uid://crj8s6h8bbatp" path="res://assets/arrows.png" id="9_mcvgu"]
-[ext_resource type="Texture2D" uid="uid://ncploay0c37s" path="res://assets/light out shadow.png" id="11_c3stg"]
+[ext_resource type="Script" uid="uid://cvhmn6ele4hvq" path="res://scripts/police_station/police_station.gd" id="1_fy0r2"]
+[ext_resource type="PackedScene" uid="uid://1lucnrhv7ixm" path="res://scenes/places/office.tscn" id="2_70bat"]
+[ext_resource type="PackedScene" uid="uid://doisuir7v57ie" path="res://scenes/places/head_office.tscn" id="3_15h13"]
+[ext_resource type="PackedScene" uid="uid://h6fwhyygn64k" path="res://scenes/places/big_office.tscn" id="4_tnrli"]
+[ext_resource type="PackedScene" uid="uid://dcc1qe6wb2fvg" path="res://scenes/places/tech_room.tscn" id="5_l2ldt"]
+[ext_resource type="PackedScene" uid="uid://dm8xbmol5f8en" path="res://scenes/places/Kitchen.tscn" id="6_rih7q"]
+[ext_resource type="Script" uid="uid://dcw8le38a2ymy" path="res://scripts/change_room_sys.gd" id="7_qf0qb"]
+[ext_resource type="Texture2D" uid="uid://hkjnjyf75j8w" path="res://assets/black.png" id="8_g5l34"]
+[ext_resource type="PackedScene" uid="uid://dinkb6rvbmkhj" path="res://scenes/helpsys.tscn" id="9_s3kkb"]
+[ext_resource type="Texture2D" uid="uid://crj8s6h8bbatp" path="res://assets/arrows.png" id="10_enfs1"]
+[ext_resource type="Texture2D" uid="uid://ncploay0c37s" path="res://assets/light out shadow.png" id="11_mrijh"]
+[ext_resource type="Script" uid="uid://die6wh05p22vk" path="res://scripts/police_station/computer_button_management_sys.gd" id="12_ml4ek"]
 
 [node name="PoliceStation" type="Control"]
 layout_mode = 3
@@ -19,24 +20,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dmrwq")
+script = ExtResource("1_fy0r2")
 
-[node name="Office" parent="." instance=ExtResource("2_57o6l")]
+[node name="Office" parent="." instance=ExtResource("2_70bat")]
 layout_mode = 1
 
-[node name="HeadOffice" parent="." instance=ExtResource("4_ljyy1")]
+[node name="HeadOffice" parent="." instance=ExtResource("3_15h13")]
 visible = false
 layout_mode = 1
 
-[node name="BigOffice" parent="." instance=ExtResource("5_dnta6")]
+[node name="BigOffice" parent="." instance=ExtResource("4_tnrli")]
 visible = false
 layout_mode = 1
 
-[node name="TechRoom" parent="." instance=ExtResource("6_1b4pb")]
+[node name="TechRoom" parent="." instance=ExtResource("5_l2ldt")]
 visible = false
 layout_mode = 1
 
-[node name="Kitchen" parent="." instance=ExtResource("3_c3stg")]
+[node name="Kitchen" parent="." instance=ExtResource("6_rih7q")]
 visible = false
 layout_mode = 1
 
@@ -48,14 +49,14 @@ anchor_bottom = 1.0
 offset_top = 592.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("7_57o6l")
+script = ExtResource("7_qf0qb")
 
 [node name="Office_button_background" type="TextureRect" parent="Change_Room_Sys"]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 168.0
 offset_bottom = 48.0
-texture = ExtResource("7_lt3nl")
+texture = ExtResource("8_g5l34")
 expand_mode = 1
 
 [node name="Office_button" type="Button" parent="Change_Room_Sys/Office_button_background"]
@@ -72,7 +73,7 @@ layout_mode = 0
 offset_left = 192.0
 offset_right = 320.0
 offset_bottom = 48.0
-texture = ExtResource("7_lt3nl")
+texture = ExtResource("8_g5l34")
 expand_mode = 1
 
 [node name="Head_Office_button" type="Button" parent="Change_Room_Sys/Head_Office_button_background"]
@@ -89,7 +90,7 @@ layout_mode = 0
 offset_left = 344.0
 offset_right = 472.0
 offset_bottom = 48.0
-texture = ExtResource("7_lt3nl")
+texture = ExtResource("8_g5l34")
 expand_mode = 1
 
 [node name="Big_Office_button" type="Button" parent="Change_Room_Sys/Big_Office_button_background"]
@@ -107,7 +108,7 @@ offset_left = 832.0
 offset_top = -8.0
 offset_right = 960.0
 offset_bottom = 40.0
-texture = ExtResource("7_lt3nl")
+texture = ExtResource("8_g5l34")
 expand_mode = 1
 
 [node name="Tech_Room_button" type="Button" parent="Change_Room_Sys/Tech_Room_button_background"]
@@ -125,7 +126,7 @@ offset_left = 984.0
 offset_top = -8.0
 offset_right = 1112.0
 offset_bottom = 40.0
-texture = ExtResource("7_lt3nl")
+texture = ExtResource("8_g5l34")
 expand_mode = 1
 
 [node name="Kitchen_button" type="Button" parent="Change_Room_Sys/Kitchen_button_background"]
@@ -137,7 +138,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Küche"
 
-[node name="Helpsys" parent="." instance=ExtResource("8_8qadg")]
+[node name="Helpsys" parent="." instance=ExtResource("9_s3kkb")]
 layout_mode = 1
 hint_1_text = "Hier findest du hinweise, wenn du nicht weiter kommst. Sie erscheinen nicht alle Direkt zu Beginn."
 hint_2_text = "Wenn der Strom nicht funktioniert, lässt sich das problem vielleicht beim Stromkasten beheben. Dieser sollte sich im Technik Raum befinden"
@@ -152,7 +153,7 @@ offset_top = 166.0
 offset_right = 1053.0
 offset_bottom = 404.0
 rotation = -0.822278
-texture = ExtResource("9_mcvgu")
+texture = ExtResource("10_enfs1")
 expand_mode = 1
 
 [node name="Timer_Blackout_beginn" type="Timer" parent="."]
@@ -162,9 +163,17 @@ one_shot = true
 [node name="Dark_Mode_Blackout" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(587, 332)
-texture = ExtResource("11_c3stg")
+texture = ExtResource("11_mrijh")
 
+[node name="computer_button_management_sys" type="Node" parent="."]
+script = ExtResource("12_ml4ek")
+
+[connection signal="Computer_pressed" from="Office" to="computer_button_management_sys" method="_on_office_computer_pressed"]
+[connection signal="computer_1_pressed" from="BigOffice" to="computer_button_management_sys" method="_on_big_office_computer_1_pressed"]
+[connection signal="computer_2_pressed" from="BigOffice" to="computer_button_management_sys" method="_on_big_office_computer_2_pressed"]
+[connection signal="computer_3_pressed" from="BigOffice" to="computer_button_management_sys" method="_on_big_office_computer_3_pressed"]
 [connection signal="electricity_box_pressed" from="TechRoom" to="." method="_on_tech_room_electricity_box_pressed"]
+[connection signal="computer_pressed" from="Kitchen" to="computer_button_management_sys" method="_on_kitchen_computer_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Office_button_background/Office_button" to="Change_Room_Sys" method="_on_office_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Head_Office_button_background/Head_Office_button" to="Change_Room_Sys" method="_on_head_office_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Big_Office_button_background/Big_Office_button" to="Change_Room_Sys" method="_on_big_office_button_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dldwkuqwfxyqu"]
 
 [ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://scenes/Minigames/Logik_Gatter_level_introduction.tscn" id="1_2iq3a"]
-[ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://scripts/minigame_introduction.gd" id="1_ooyhf"]
+[ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://scripts/minigames/minigame_introduction.gd" id="1_ooyhf"]
 [ext_resource type="Texture2D" uid="uid://cn421n1s4xu8x" path="res://assets/orange1.png" id="2_en5oq"]
 [ext_resource type="Texture2D" uid="uid://bhhr6i7ouguuq" path="res://assets/kabel_background.png" id="2_iyj0y"]
 [ext_resource type="Texture2D" uid="uid://crj8s6h8bbatp" path="res://assets/arrows.png" id="3_ooyhf"]

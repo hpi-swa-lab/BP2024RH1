@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c7p06tvojqkq0"]
 
-[ext_resource type="Script" uid="uid://bvnp3honp7k4q" path="res://scripts/logik_gatter_level_introduction.gd" id="1_0s15r"]
+[ext_resource type="Script" uid="uid://bvnp3honp7k4q" path="res://scripts/minigames/logik_gatter_level_introduction.gd" id="1_0s15r"]
 [ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://logik_gatter/scenes/Baukasten/Start.tscn" id="1_7gbyl"]
 [ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://logik_gatter/scenes/Baukasten/Gatter/And_Gatter.tscn" id="2_0s15r"]
 [ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://logik_gatter/scenes/Baukasten/Gatter/Or_Gatter.tscn" id="3_1v12f"]
