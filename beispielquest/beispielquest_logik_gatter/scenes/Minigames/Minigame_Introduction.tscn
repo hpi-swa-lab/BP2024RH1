@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dldwkuqwfxyqu"]
+[gd_scene load_steps=6 format=3 uid="uid://dldwkuqwfxyqu"]
 
 [ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://scenes/Minigames/Logik_Gatter_level_introduction.tscn" id="1_2iq3a"]
 [ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://scripts/minigame_introduction.gd" id="1_ooyhf"]
 [ext_resource type="Texture2D" uid="uid://cn421n1s4xu8x" path="res://assets/orange1.png" id="2_en5oq"]
+[ext_resource type="Texture2D" uid="uid://bhhr6i7ouguuq" path="res://assets/kabel_background.png" id="2_iyj0y"]
 [ext_resource type="Texture2D" uid="uid://crj8s6h8bbatp" path="res://assets/arrows.png" id="3_ooyhf"]
 
 [node name="MinigameIntroduction" type="Control"]
@@ -13,6 +14,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ooyhf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.389058, 0.421474, 0.446514, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_iyj0y")
 
 [node name="LogikGatterLevelIntroduction" parent="." instance=ExtResource("1_2iq3a")]
 layout_mode = 1
@@ -191,24 +203,78 @@ expand_mode = 1
 
 [node name="next_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 820.0
+offset_left = 951.0
 offset_top = 519.0
-offset_right = 967.0
+offset_right = 1098.0
 offset_bottom = 578.0
 theme_override_font_sizes/font_size = 30
 text = "weiter"
 
 [node name="back_button" type="Button" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 220.0
+offset_left = 74.0
 offset_top = 515.0
-offset_right = 367.0
+offset_right = 221.0
 offset_bottom = 574.0
 theme_override_font_sizes/font_size = 30
 text = "zurück"
 
+[node name="end_button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 741.0
+offset_top = 527.0
+offset_right = 876.0
+offset_bottom = 577.0
+theme_override_font_sizes/font_size = 30
+text = "beenden"
+
+[node name="Good_job" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 257.0
+offset_top = 93.0
+offset_right = -268.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_en5oq")
+expand_mode = 1
+
+[node name="Good_Job_text" type="Label" parent="Good_job"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = 56.0
+offset_right = -67.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Du hast es geschafft das Signal ist beim ZIel angekommen. 
+jetzt kannst du die Stromverbindung wiederherstellen in dem du die Signale überprüfst"
+autowrap_mode = 3
+
+[node name="start_minigame_1" type="Button" parent="Good_job"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 268.0
+offset_right = 511.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 25
+text = "Strom wiederherstellen starten"
+
 [connection signal="start_1" from="LogikGatterLevelIntroduction" to="." method="_on_logik_gatter_level_introduction_start_1"]
 [connection signal="start_2" from="LogikGatterLevelIntroduction" to="." method="_on_logik_gatter_level_introduction_start_2"]
+[connection signal="ziel_input_false" from="LogikGatterLevelIntroduction" to="." method="_on_logik_gatter_level_introduction_ziel_input_false"]
+[connection signal="ziel_input_true" from="LogikGatterLevelIntroduction" to="." method="_on_logik_gatter_level_introduction_ziel_input_true"]
 [connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="end_button" to="." method="_on_end_button_pressed"]
+[connection signal="pressed" from="Good_job/start_minigame_1" to="." method="_on_start_minigame_1_pressed"]

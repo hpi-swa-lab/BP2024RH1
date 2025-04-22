@@ -118,3 +118,5 @@ points = PackedVector2Array(-114, 0, 150, 0)
 
 [connection signal="pressed" from="Start_AndLeft_1" to="." method="_on_start_and_left_1_pressed"]
 [connection signal="pressed" from="Start_AndLeft_2" to="." method="_on_start_and_left_2_pressed"]
+[connection signal="ziel_input_false" from="Ziel" to="." method="_on_ziel_ziel_input_false"]
+[connection signal="ziel_input_true" from="Ziel" to="." method="_on_ziel_ziel_input_true"]
