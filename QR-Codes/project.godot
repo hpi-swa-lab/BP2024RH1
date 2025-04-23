@@ -21,6 +21,11 @@ Global="*res://Scripts/Global.gd"
 SceneSwitcher="*res://Scripts/Scene_Switcher.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")

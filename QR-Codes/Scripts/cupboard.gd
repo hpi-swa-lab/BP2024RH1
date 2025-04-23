@@ -18,13 +18,17 @@ func _on_ready() -> void:
 	zoom_out.visible = false
 	book.visible = false
 	safe.visible = false
-	if Global.Card2_collected == true:
+	
+func _process(delta):
+	if Global.Card2_collected == true and Global.Paper_collected == true:
 		back.visible = true
+	if Global.Paper_collected == true:
+		paper.visible = false
 
 func _on_gui_input(event: InputEvent) -> void:
 	if  event is InputEventMouseButton and event.is_pressed():
 		zoom()
-		
+
 func zoom():
 	camera.zoom += zoom_cupboard
 	camera.position = camera_cupboard
@@ -32,7 +36,6 @@ func zoom():
 	safe.visible = true
 	zoom_out.visible = true
 	self.visible = false
-	
 
 func _on_zoom_out_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
@@ -40,28 +43,23 @@ func _on_zoom_out_gui_input(event: InputEvent) -> void:
 		camera.position = camera_start
 		self.visible = true
 		zoom_out.visible = false
-	
 
 func _on_picture_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "picture")
 
-
 func _on_book_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		get_tree().change_scene_to_file("res://Scenes/book.tscn")
-
 
 func _on_safe_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "safe")
 
-
 func _on_back_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		Global.Intro_done = true
 		get_tree().change_scene_to_file("res://Scenes/office.tscn")
-
 
 func _on_cushion_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
@@ -70,8 +68,7 @@ func _on_cushion_gui_input(event: InputEvent) -> void:
 			%SolutionGrid.columns = columns
 			add_solution_Grid(%SolutionGrid)
 			DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "paper")
-			Global.Paper_collected = true
-		
+
 func add_solution_Grid(Grid: GridContainer):
 	for i in range(columns * columns):
 		var rect = ColorRect.new()

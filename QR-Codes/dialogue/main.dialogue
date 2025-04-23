@@ -70,12 +70,13 @@ Robo: 1 heißt Licht an. Welche Farbe ist das dann?
 ~ paper
 Robo: Das sieht mir nach einem Schnipsel von einem QR-Code aus.
 Robo: Ich nehme es mal mit.
+set Global.Paper_collected = true
 => END
 
 ~ false_solution
 Robo: Das scheint nicht die Webseite des Kunsthändlers zu sein.
 Robo: Wahrscheinlich war das der falsche QR-Code.
-do Global.button_label_stage = "Pixel ändern"
+set Global.button_label_stage = "Pixel ändern"
 => END
 
 ~ correct_solution
