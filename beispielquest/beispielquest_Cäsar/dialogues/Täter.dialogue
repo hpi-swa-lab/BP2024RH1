@@ -1,29 +1,32 @@
 ~ start
-{Klingel wird gedrückt}
-Täter: Hallo, kann ich ihnen helfen
-MC: Ich suche [Name], sind sie das?
-Täter: Ja, wieso?
-MC: Sie werden verdächtigt einen Brand in der Wohnung in der [Adresse] ausgelöst zu haben
-Täter: Wie .. Wie kommen sie darauf? Das können sie nicht beweisen
-MC: Sie wurden beobachtet wie sie [Name] gedroht haben und ich bin sicher, wenn wir die Fußabdrücke am Tatort mit ihnen abgleichen stimmen die überein
-Täter: Das war … Ich wollte doch nichts schlimmes tun, ich wollte ihn doch nur erschrecken damit er mit [die Daten/das gestohlene] wiedergibt was er mit geklaut hat
-MC: Er hat dir [Gestohlenes] gestohlen?
-Täter: Ja und er hat mir gedroht, dass er das [verkauft/veröffentlicht] wenn ich ihm nicht [Geldsumme] zahle, deswegen wollte ich ein kleines Feuer im Papierkorb legen um ihn einzuschüchtern, ich wusste ja nicht, dass die ganze Wohnung abbrennt”
-MC: Hast du irgendwelche Beweise dafür?
-Täter: Nachdem wir uns gestern gestritten haben hat er gesagt, er schickt [die Daten] morgen weiter, vielleicht liegen die noch bei ihm Zuhause wegen dem Brand.
-- Ich glaube dir nicht => Option2
-- Mal schauen => Option1
+Detective Turing: Dann lass uns mal die Klingel drücken.
+Detective Turing: [wave amp=25 freq=5]Ding Dong[/wave]
+Bewohner: Hallo, kann ich Ihnen helfen?
+Detective Turing: Ich suche Kai Netzer, sind Sie das?
+Kai Netzer: Ja, wieso?
+Detective Turing: Sie werden verdächtigt einen Brand in der Wohnung in der Kryptoallee ausgelöst zu haben.
+Kai Netzer: Wie ... Wie kommen sie darauf? Das können sie nicht beweisen.
+Detective Turing: Sie wurden beobachtet wie Sie John Byte gedroht haben und ich bin sicher, wenn wir die Fußabdrücke am Tatort mit Ihren abgleichen stimmen die überein.
+Kai Netzer: Das war ... Ich wollte doch nichts schlimmes tun, ich wollte ihn doch nur erschrecken damit er mit meine Daten wiedergibt, die er mir geklaut hat.
+Detective Turing: Er hat Ihnen Daten gestohlen?
+Kai Netzer: Ja und er hat mir gedroht, dass er diese veröffentlicht, wenn ich ihm nicht 10 Bitcoins zahle. 
+Kai Netzer: Ich wollte ein kleines Feuer im Papierkorb legen um ihn einzuschüchtern, ich wusste ja nicht, dass die ganze Wohnung abfackelt.
+Detective Turing: Haben Sie irgendwelche Beweise dafür?
+Kai Netzer: Nachdem wir uns gestern gestritten haben hat er gesagt, er schickt die Daten morgen weiter. Vielleicht liegen die noch bei ihm Zuhause.
+- Ich glaube Ihnen nicht. => Option2
+- Mal schauen. => Option1
 => END
 
 ~ Option1
-MC: Ich schaue mal was ich finde, Sie müssen aber trotzdem mitkommen
-Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Täter rennt weg)
+Detective Turing: Ich schaue mal was ich finde. Sie müssen aber trotzdem mitkommen.
+# Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Kai Netzer rennt weg)
 set Global.culprit_found = true
 set Global.office_szene = 4
 do go_back()
 => END
 
 ~ Option2
-MC: Das ist egal komm mit: Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Täter rennt weg)
+Detective Turing: Das ist mir egal. Mitkommen!
+# Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Kai Netzer rennt weg)
 do end_it()
 => END

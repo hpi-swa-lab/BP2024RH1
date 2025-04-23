@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq2kn0806dpmu"]
+[gd_scene load_steps=6 format=3 uid="uid://cq2kn0806dpmu"]
 
 [ext_resource type="Script" uid="uid://cxwi83pqvt4fk" path="res://Scripts/minispiel.gd" id="1_k10lx"]
 [ext_resource type="Texture2D" uid="uid://dey5u0abogkd" path="res://Assets/Caesar_außen.png" id="2_drk55"]
 [ext_resource type="Texture2D" uid="uid://vx7bwsjh032j" path="res://Assets/Cäsar_innen.png" id="3_16kq3"]
+[ext_resource type="Texture2D" uid="uid://4604ftawrbhk" path="res://Assets/arrow_left.png" id="4_16kq3"]
+[ext_resource type="Texture2D" uid="uid://bgrmpcrchx761" path="res://Assets/arrow_right.png" id="5_w2e1w"]
 
 [node name="Minispiel" type="Node2D"]
 script = ExtResource("1_k10lx")
@@ -35,18 +37,24 @@ unique_name_in_owner = true
 polygon = PackedVector2Array(-16, -128, -13, -106, -1, -107, 12, -106, 15, -128, -1, -129)
 
 [node name="links" type="Button" parent="."]
-offset_left = -547.0
+offset_left = -496.0
 offset_top = 140.0
-offset_right = -421.0
-offset_bottom = 198.0
-text = "Links drehen"
+offset_right = -176.0
+offset_bottom = 456.0
+scale = Vector2(0.191489, 0.191489)
+text = "
+"
+icon = ExtResource("4_16kq3")
+flat = true
 
 [node name="rechts" type="Button" parent="."]
-offset_left = -191.0
-offset_top = 140.0
-offset_right = -65.0
-offset_bottom = 198.0
-text = "Rechts drehen"
+offset_left = -160.0
+offset_top = 134.0
+offset_right = 156.0
+offset_bottom = 450.0
+scale = Vector2(0.194077, 0.194077)
+icon = ExtResource("5_w2e1w")
+flat = true
 
 [node name="VerschlüsselterText" type="Label" parent="."]
 unique_name_in_owner = true
@@ -61,6 +69,14 @@ offset_top = 99.0
 offset_right = 299.0
 offset_bottom = 153.0
 text = "Check Solution"
+
+[node name="Hinweis" type="Label" parent="."]
+offset_left = -416.0
+offset_top = -264.0
+offset_right = -180.0
+offset_bottom = -222.0
+theme_override_font_sizes/font_size = 30
+text = "Geiwev = Caesar"
 
 [connection signal="pressed" from="links" to="." method="_on_links_pressed"]
 [connection signal="pressed" from="rechts" to="." method="_on_rechts_pressed"]

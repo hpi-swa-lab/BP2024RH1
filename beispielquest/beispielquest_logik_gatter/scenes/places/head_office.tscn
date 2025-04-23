@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://doisuir7v57ie"]
+
+[ext_resource type="Texture2D" uid="uid://cneoojd2o76q4" path="res://assets/places/head_office.jpg" id="1_qef8d"]
+
+[node name="HeadOffice" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1442.0
+offset_bottom = 862.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_qef8d")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

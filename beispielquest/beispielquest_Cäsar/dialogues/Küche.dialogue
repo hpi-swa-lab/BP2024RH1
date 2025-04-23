@@ -1,15 +1,16 @@
 ~ Papierkorb
-MC: Hier scheint das Feuer angefangen zu haben, aber wieso hat der Papierkorb Feuer gefangen?
+Detective Turing: Hier scheint das Feuer angefangen zu haben, aber wieso hat der Papierkorb Feuer gefangen?
 => END
 
 ~ Fenster
-MC: Hier sind Fußabdrücke am offenen Fenster, vielleicht ist jemand reingeklettert.
+Detective Turing: Hier sind Fußabdrücke am offenen Fenster, vielleicht ist jemand reingeklettert.
 => END
 
 ~ Mikrowelle
-MC: Die hat zwar gebrannt, aber hier hat es nicht angefangen.
+Detective Turing: Die hat zwar gebrannt, aber hier hat es nicht angefangen.
 => END
 
 ~ Nachricht
-MC: Eine Nachricht? … Mhm, sie scheint verschlüsselt zu sein, ich kann sie nicht lesen. Vielleicht gibt es hier ja einen Hinweis.
+Detective Turing: Eine Nachricht?
+Detective Turing: Mhm, sie scheint verschlüsselt zu sein. Ich kann sie nicht lesen. Vielleicht gibt es hier ja einen Hinweis.
 => END

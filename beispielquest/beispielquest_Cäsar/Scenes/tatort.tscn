@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://buij12itm0l0f"]
+[gd_scene load_steps=11 format=3 uid="uid://buij12itm0l0f"]
 
 [ext_resource type="Script" uid="uid://ckn4i25eajkk5" path="res://Scripts/tatort.gd" id="1_dsq52"]
 [ext_resource type="Texture2D" uid="uid://cpv5dp7ajsppy" path="res://Assets/Hintergrund.png" id="1_eik8t"]
 [ext_resource type="PackedScene" uid="uid://jfkrjf40fn0i" path="res://Scenes/item.tscn" id="3_iqajy"]
 [ext_resource type="Texture2D" uid="uid://sugbmdkyi5m7" path="res://Assets/Restaurant_Karte.png" id="4_d1yf4"]
-[ext_resource type="Texture2D" uid="uid://2hrrv3ugu7co" path="res://Assets/Cäsar.png" id="4_ndi37"]
+[ext_resource type="Texture2D" uid="uid://b1jy2smo77m4t" path="res://Assets/caesar.png" id="4_lre5u"]
 [ext_resource type="PackedScene" uid="uid://chluu1cjq7fdw" path="res://Scenes/decorative_item.tscn" id="5_d1yf4"]
 [ext_resource type="Texture2D" uid="uid://ke8837g8jnqu" path="res://Assets/Bild.png" id="6_jkvpc"]
 [ext_resource type="Texture2D" uid="uid://biwmmsforlbi7" path="res://Assets/Buch.png" id="8_lre5u"]
 [ext_resource type="Texture2D" uid="uid://obb2c3u5n406" path="res://Assets/Zeitung.png" id="9_0ls3p"]
+[ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="11_0ls3p"]
 
 [node name="Tatort" type="Node2D"]
 script = ExtResource("1_dsq52")
@@ -38,11 +39,12 @@ polygon = PackedVector2Array(-579, 266, -523, 171, -528, -201, -581, -103)
 
 [node name="Caesar" parent="." instance=ExtResource("3_iqajy")]
 unique_name_in_owner = true
-offset_left = 29.0
-offset_top = 46.0
-offset_right = 102.0
-offset_bottom = 164.0
-icon = ExtResource("4_ndi37")
+offset_left = 24.0
+offset_top = -11.0
+offset_right = 344.0
+offset_bottom = 629.0
+scale = Vector2(0.228118, 0.228118)
+icon = ExtResource("4_lre5u")
 dialogue = "Tatort"
 dialogue_start = "Caesar"
 
@@ -83,6 +85,14 @@ offset_bottom = 166.0
 icon = ExtResource("9_0ls3p")
 dialogue = "Tatort"
 dialogue_start = "Zeitung"
+
+[node name="SceneSwitcherButton" parent="." instance=ExtResource("11_0ls3p")]
+offset_left = -555.0
+offset_top = 196.0
+offset_right = -547.0
+offset_bottom = 204.0
+Text = "In die Küche gehen"
+NextSceneString = "küche"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="input_event" from="Tür" to="." method="_on_tür_input_event"]

@@ -21,6 +21,15 @@ Global="*res://Scripts/global.gd"
 SceneSwitcher="*res://Scripts/scene_switcher.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
+[dialogue_manager]
+
+runtime/balloon_path="res://dialogue_balloons/balloon.tscn"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")

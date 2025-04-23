@@ -51,7 +51,10 @@ polygon = PackedVector2Array(-372, -270, -474, -229, -446, -95, -325, -69, -268,
 
 [node name="Nachricht" parent="Environment" instance=ExtResource("7_0slcc")]
 unique_name_in_owner = true
-position = Vector2(-570, -30)
+position = Vector2(-440, -16)
+rotation = 0.120428
+scale = Vector2(-0.195582, -0.195582)
+skew = 0.47822
 dialogue = "Küche"
 dialogue_start = "Nachricht"
 

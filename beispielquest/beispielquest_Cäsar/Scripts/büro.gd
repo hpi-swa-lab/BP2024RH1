@@ -16,10 +16,15 @@ func _ready() -> void:
 		%NextButton.position = Vector2(-200, 75)
 		DialogueManager.show_dialogue_balloon(load("res://dialogues/Büro_1.dialogue"), "Teil4")
 	elif Global.office_szene == 4:
-		%Geheim.visible = true
+		#if Global.secret_message_found:
+		#	%Geheim.visible = true
 		Global.caesar_decrypted = false
 		DialogueManager.show_dialogue_balloon(load("res://dialogues/Büro_1.dialogue"), "Teil5")
 
+func _process(_delta: float) -> void:
+	if Global.secret_message_found:
+		%Geheim.show()
+		
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		Global.map_clicked = true

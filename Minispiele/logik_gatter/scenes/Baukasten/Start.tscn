@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwlgbeyj8pysr"]
+
+[ext_resource type="Script" uid="uid://cp5mdd5cx6b5y" path="res://scripts/Baukasten/start.gd" id="1_8t08e"]
+
+[node name="Start" type="CheckButton"]
+text = "Aus"
+script = ExtResource("1_8t08e")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]
