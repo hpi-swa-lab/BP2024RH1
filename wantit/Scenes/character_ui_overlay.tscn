@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://uxexlhpgctgh"]
 
-[ext_resource type="Script" uid="uid://ddhas25fxojnx" path="res://Cases/Caesar/Scripts/character_ui_overlay.gd" id="1_yg5tb"]
+[ext_resource type="Script" uid="uid://ddhas25fxojnx" path="res://Scripts/character_ui_overlay.gd" id="1_yg5tb"]
 
 [node name="Character UI Overlay" type="Control"]
 layout_mode = 3

@@ -23,6 +23,7 @@ func add_Hint(Hint: CaseManager.Hint):
 	var newHint = Sprite2D.new()
 	newHint.position = Hint.HintPos
 	newHint.texture = Hint.HintTexture
+	newHint.scale = Hint.HintScale
 	%Hinweise.add_child(newHint)
 	
 func connect_hints():
@@ -45,5 +46,6 @@ func screenshot():
 	
 	var viewport = get_viewport()
 	var img = viewport.get_texture().get_image()
+	img.resize(1152, 648)
 	img.save_png("user://Assets/Hinweistafel.png")
 	%"Back Button".visible = true

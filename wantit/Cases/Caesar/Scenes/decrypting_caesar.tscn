@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cq2kn0806dpmu" path="res://Cases/Caesar/Scenes/minispiel.tscn" id="1_ijd14"]
 [ext_resource type="Script" uid="uid://bkrs4cnjfspiy" path="res://Cases/Caesar/Scripts/decrypting_caesar.gd" id="1_wr5gx"]
 [ext_resource type="PackedScene" uid="uid://c8frnlbfnegad" path="res://Cases/Caesar/Scenes/nachricht.tscn" id="2_rn1w6"]
-[ext_resource type="PackedScene" uid="uid://wjtn436rclve" path="res://Cases/Caesar/Scenes/inventory.tscn" id="5_yq0o2"]
+[ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="4_1oedj"]
 
 [node name="Decrypting_Caesar" type="Node2D"]
 script = ExtResource("1_wr5gx")
@@ -18,27 +18,15 @@ offset_top = -168.0
 offset_right = 506.0
 offset_bottom = -35.0
 
-[node name="Inventory" parent="." instance=ExtResource("5_yq0o2")]
-position = Vector2(1500, 0)
-scale = Vector2(2, 2)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 
-[node name="OpenInventory" type="Button" parent="."]
-offset_left = 319.0
-offset_top = 227.0
-offset_right = 448.0
-offset_bottom = 258.0
+[node name="SceneSwitcherButton" parent="." instance=ExtResource("4_1oedj")]
+offset_left = 295.0
+offset_top = 224.0
+offset_right = 424.0
+offset_bottom = 255.0
 text = "Inventar öffnen"
-
-[node name="CloseInventory" type="Button" parent="."]
-offset_left = 1676.0
-offset_top = 155.0
-offset_right = 1886.0
-offset_bottom = 203.0
-text = "Weiter entschlüsseln"
+NextSceneString = "inventory"
 
 [connection signal="Solved" from="Minispiel" to="." method="_on_minispiel_solved"]
-[connection signal="pressed" from="OpenInventory" to="." method="_on_open_inventory_pressed"]
-[connection signal="pressed" from="CloseInventory" to="." method="_on_close_inventory_pressed"]

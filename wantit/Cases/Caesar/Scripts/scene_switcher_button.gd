@@ -1,10 +1,6 @@
 extends Button
 
-@export var Text: String
 @export var NextSceneString: String
-
-func _ready() -> void:
-	self.text = Text
 
 func _on_pressed() -> void:
 	var Folder: String = ""

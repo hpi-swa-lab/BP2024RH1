@@ -49,6 +49,7 @@ Kollege: Soll ich dir diese Verschlüsselungsmethode noch genauer erklären?
 - Ja, gerne. =>< Erklaerung2
 - Nicht nötig. Ich erinnere mich.
 Kollege: Viel Erfolg beim Entschlüsseln!
+set Globals.CaseGlobals.culprit_found = true
 do SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/Cäsars_big_brother.tscn")
 => END
 

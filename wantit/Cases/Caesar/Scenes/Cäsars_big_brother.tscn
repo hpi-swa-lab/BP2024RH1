@@ -63,7 +63,6 @@ offset_top = 223.0
 offset_right = 255.0
 offset_bottom = 231.0
 text = "Inventar öffnen"
-Text = "Inventar öffnen"
 NextSceneString = "inventory"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
@@ -91,6 +90,7 @@ text = "BITCOIN"
 [node name="Bella" type="Button" parent="HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
+text = "BELLA"
 
 [node name="Geheim" type="Sprite2D" parent="."]
 unique_name_in_owner = true

@@ -3,22 +3,22 @@ extends Node
 class Case:
 	var CaseName: String
 	var FirstScene: PackedScene
-	var EndScene: PackedScene
 	var GlobalScript: Node
 	
-	func _init(_CaseName: String, _FirstScene: PackedScene, _EndScene: PackedScene, _GlobalScript: Node) -> void:
+	func _init(_CaseName: String, _FirstScene: PackedScene, _GlobalScript: Node) -> void:
 		CaseName = _CaseName
 		FirstScene = _FirstScene
-		EndScene = _EndScene
 		GlobalScript = _GlobalScript
 
 class Hint:					# Hints that are shown at the Board
 	var HintPos: Vector2
 	var HintTexture: CompressedTexture2D
+	var HintScale: Vector2
 	
-	func _init(_HintPos: Vector2, _HintTexture: CompressedTexture2D) -> void:
+	func _init(_HintPos: Vector2, _HintTexture: CompressedTexture2D, _HintScale: Vector2) -> void:
 		HintPos = _HintPos
 		HintTexture = _HintTexture 
+		HintScale = _HintScale
 
 class Location:
 	var LocationTex: CompressedTexture2D
@@ -37,9 +37,9 @@ var ClosedCases = {}
 
 var Hints = []
 
-func add_Case(CaseName: String, FirstScene: PackedScene, EndScene: PackedScene, GlobalScript: Node):
+func add_Case(CaseName: String, FirstScene: PackedScene, GlobalScript: Node):
 	if not ClosedCases.has(CaseName):
-		var newCase = Case.new(CaseName, FirstScene, EndScene, GlobalScript)
+		var newCase = Case.new(CaseName, FirstScene, GlobalScript)
 		Globals.CaseGlobals = GlobalScript
 		CaseList[newCase.CaseName] = newCase
 
@@ -47,13 +47,14 @@ func close_Case(CurrentCase: Case):
 	CaseList.erase(CurrentCase.CaseName)
 	Globals.selectedCase = null
 	Globals.nextScene = null
+	Globals.CaseGlobals = null
 	Hints.clear()
 	
 	ClosedCases[CurrentCase.CaseName] = CurrentCase
-	SceneSwitcher.switch_scene(CurrentCase.EndScene)
+	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 
-func add_Hint(HintPos: Vector2, HintTexture: CompressedTexture2D):
-	var new_Hint = Hint.new(HintPos, HintTexture)
+func add_Hint(HintPos: Vector2, HintTexture: CompressedTexture2D, HintScale: Vector2):
+	var new_Hint = Hint.new(HintPos, HintTexture, HintScale)
 	Hints.append(new_Hint)
 
 func new_Location(LocationTex: CompressedTexture2D, LocationScale: Vector2, LocationPos: Vector2, LocationScene: PackedScene):

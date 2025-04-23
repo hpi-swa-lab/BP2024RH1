@@ -9,7 +9,7 @@ var text_fields
 @onready var input_container = %HBoxContainer
 @onready var hinweis: Label = $Hinweis
 
-signal Solved
+signal Solved(value: bool)
 
 func _ready():
 	hinweis.hide()
@@ -33,9 +33,8 @@ func _ready():
 		clickable_letter.add_child(new_shape)
 		%Area2D.add_child(clickable_letter)
 	
-	var custom_theme = Theme.new()
-	custom_theme.set_constant("minimum_character_width", "LineEdit", 1)
-	
+	var customTheme = Theme.new()
+	customTheme.set_constant("minimum_character_width", "LineEdit", 1)
 	
 	for char in original_text:
 		if char == " ":
@@ -47,8 +46,9 @@ func _ready():
 			field.max_length = 1
 			field.placeholder_text = "_"
 			input_container.add_child(field)
-			field.theme = custom_theme
+			field.theme = customTheme
 			field.alignment = 1
+			field.editable = false
 	text_fields = %HBoxContainer.get_children()
 	text_fields[0].grab_focus()
 
@@ -81,4 +81,6 @@ func _on_check_solution_pressed() -> void:
 		else:
 			input_text += " "
 	if input_text == original_text:
-		Solved.emit()
+		Solved.emit(true)
+	else:
+		Solved.emit(false)

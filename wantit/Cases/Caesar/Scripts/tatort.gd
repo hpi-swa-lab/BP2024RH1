@@ -7,7 +7,8 @@ func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Tatort.dialogue"), "start")
 	
 func go_back() -> void:
-	CaseManager.new_Location(preload("res://Assets/library.png"), Vector2(0.1, 0.1), Vector2(130, 100), preload("res://Cases/Caesar/Scenes/restaurant.tscn"))
+	CaseManager.add_Hint(Vector2(250, 150), preload("res://Cases/Caesar/Assets/caesar.png"), Vector2(0.3, 0.3))
+	CaseManager.add_Hint(Vector2(500, 350), preload("res://Cases/Caesar/Assets/Restaurant_icon.png"), Vector2(0.2, 0.2))
 	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 
 func _on_fenster_abdrücke_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

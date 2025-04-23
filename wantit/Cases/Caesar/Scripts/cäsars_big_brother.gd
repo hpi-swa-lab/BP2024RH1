@@ -4,7 +4,6 @@ var textfield_index = 0
 var text_fields
 var new_alphabet: String
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var keyword: String = ""
 
 const RADIUS_INNER := 118
 
@@ -23,8 +22,8 @@ func _ready():
 	var custom_theme = Theme.new()
 	custom_theme.set_constant("minimum_character_width", "LineEdit", 1)
 	
-	for char in original_text:
-		if char == " ":
+	for letter in original_text:
+		if letter == " ":
 			var spacer = Control.new()
 			spacer.custom_minimum_size = Vector2(10, 0)
 			input_container.add_child(spacer)
@@ -35,6 +34,7 @@ func _ready():
 			input_container.add_child(field)
 			field.theme = custom_theme
 			field.alignment = 1
+			field.editable = false
 	text_fields = %HBoxContainer.get_children()
 	text_fields[0].grab_focus()
 
@@ -58,7 +58,7 @@ func _on_letter_clicked(_viewport, event, _shape_idx, letter):
 			text_fields[textfield_index + 1].grab_focus()
 
 func _on_check_solution_pressed() -> void:
-	var input_text:String
+	var input_text:String = ""
 	for i in range(text_fields.size()):
 		if text_fields[i] is LineEdit:
 			input_text += text_fields[i].text
@@ -66,11 +66,13 @@ func _on_check_solution_pressed() -> void:
 			input_text += " "
 	if input_text == original_text:
 		DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Caesar2.dialogue"), "fertig")
+	else:
+		DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Caesar2.dialogue"), "falsch")
 
 func remove_duplicates(new_text: String, old_text: String) -> String:
-	for char in new_text:
-		if not char in old_text:
-			old_text += char
+	for letter in new_text:
+		if not letter in old_text:
+			old_text += letter
 	return old_text
 
 func create_inner_circle() -> void:
@@ -108,10 +110,6 @@ func remove_children(node: Node):
 		if not child is CollisionPolygon2D:
 			node.remove_child(child)
 			child.queue_free()
-
-func _on_keyword_clicked(text: String) -> void:
-	keyword = text
-	print(keyword)
 
 func _on_keyword_pressed() -> void:
 	apply_keyword(%Keyword.text)

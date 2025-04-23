@@ -10,3 +10,7 @@ Detective Turing: BitStop ... ich glaube die Adresse stand auf der Karte. Ich so
 set Globals.OfficeSceneStart = "Teil4"
 do go_back()
 => END
+
+~ falsch
+Detective Turing: Mhmm ... der Text ist unverständlich, vielleicht war die Entschlüsselung falsch
+=> END

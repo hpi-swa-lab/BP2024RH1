@@ -106,7 +106,7 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	if dialogue_line.character == "Detective Turing":
-		portrait.texture = Globals.CaseGlobals.portrait	# Cant be used elsewhere right now
+		portrait.texture = Globals.portrait
 	else:
 		portrait.texture = load("res://Cases/Caesar/assets/npc.png")
 

@@ -14,3 +14,9 @@ Kollege: Klasse! Du hast die Verschlüsselung geknackt. Viel Erfolg beim Lösen 
 set Globals.OfficeDialogueStart = "Teil2"
 do go_back()
 => END
+
+~ falsch
+Kollege: Das ist leider nicht richtig, soll ich dir das ganze nochmal erklären?
+- Ja, bitte => start
+- Nein, ich schaffe das schon
+=> END
