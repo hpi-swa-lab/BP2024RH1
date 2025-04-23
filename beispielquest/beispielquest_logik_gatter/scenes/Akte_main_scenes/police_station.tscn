@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxneb8wkso78d"]
+[gd_scene load_steps=14 format=3 uid="uid://dxneb8wkso78d"]
 
 [ext_resource type="Script" uid="uid://cvhmn6ele4hvq" path="res://scripts/police_station/police_station.gd" id="1_fy0r2"]
 [ext_resource type="PackedScene" uid="uid://1lucnrhv7ixm" path="res://scenes/places/office.tscn" id="2_70bat"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://crj8s6h8bbatp" path="res://assets/arrows.png" id="10_enfs1"]
 [ext_resource type="Texture2D" uid="uid://ncploay0c37s" path="res://assets/light out shadow.png" id="11_mrijh"]
 [ext_resource type="Script" uid="uid://die6wh05p22vk" path="res://scripts/police_station/computer_button_management_sys.gd" id="12_ml4ek"]
+[ext_resource type="Script" uid="uid://bkw5fx82afbr6" path="res://scripts/police_station/rouer_button_management_sys.gd" id="13_70bat"]
 
 [node name="PoliceStation" type="Control"]
 layout_mode = 3
@@ -161,19 +162,31 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Dark_Mode_Blackout" type="Sprite2D" parent="."]
-visible = false
+modulate = Color(0.262932, 0.262932, 0.262932, 1)
+self_modulate = Color(0.605274, 0.605274, 0.605274, 1)
 position = Vector2(587, 332)
 texture = ExtResource("11_mrijh")
 
 [node name="computer_button_management_sys" type="Node" parent="."]
 script = ExtResource("12_ml4ek")
 
-[connection signal="Computer_pressed" from="Office" to="computer_button_management_sys" method="_on_office_computer_pressed"]
+[node name="rouer_button_management_sys" type="Node" parent="."]
+script = ExtResource("13_70bat")
+
+[connection signal="computer_pressed" from="Office" to="computer_button_management_sys" method="_on_office_computer_pressed"]
+[connection signal="router_pressed" from="Office" to="rouer_button_management_sys" method="_on_office_router_pressed"]
+[connection signal="computer_pressed" from="HeadOffice" to="computer_button_management_sys" method="_on_head_office_computer_pressed"]
+[connection signal="router_pressed" from="HeadOffice" to="rouer_button_management_sys" method="_on_head_office_router_pressed"]
 [connection signal="computer_1_pressed" from="BigOffice" to="computer_button_management_sys" method="_on_big_office_computer_1_pressed"]
 [connection signal="computer_2_pressed" from="BigOffice" to="computer_button_management_sys" method="_on_big_office_computer_2_pressed"]
 [connection signal="computer_3_pressed" from="BigOffice" to="computer_button_management_sys" method="_on_big_office_computer_3_pressed"]
+[connection signal="router_1_pressed" from="BigOffice" to="rouer_button_management_sys" method="_on_big_office_router_1_pressed"]
+[connection signal="router_2_pressed" from="BigOffice" to="rouer_button_management_sys" method="_on_big_office_router_2_pressed"]
+[connection signal="router_3_pressed" from="BigOffice" to="rouer_button_management_sys" method="_on_big_office_router_3_pressed"]
 [connection signal="electricity_box_pressed" from="TechRoom" to="." method="_on_tech_room_electricity_box_pressed"]
+[connection signal="router_pressed" from="TechRoom" to="rouer_button_management_sys" method="_on_tech_room_router_pressed"]
 [connection signal="computer_pressed" from="Kitchen" to="computer_button_management_sys" method="_on_kitchen_computer_pressed"]
+[connection signal="router_pressed" from="Kitchen" to="rouer_button_management_sys" method="_on_kitchen_router_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Office_button_background/Office_button" to="Change_Room_Sys" method="_on_office_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Head_Office_button_background/Head_Office_button" to="Change_Room_Sys" method="_on_head_office_button_pressed"]
 [connection signal="pressed" from="Change_Room_Sys/Big_Office_button_background/Big_Office_button" to="Change_Room_Sys" method="_on_big_office_button_pressed"]
