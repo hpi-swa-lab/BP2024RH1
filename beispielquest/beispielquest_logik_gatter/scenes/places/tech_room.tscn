@@ -27,6 +27,7 @@ texture_normal = ExtResource("3_sx1e0")
 stretch_mode = 0
 
 [node name="Router" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 1069.0
 offset_top = 306.0
 offset_right = 1581.0
