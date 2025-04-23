@@ -10,7 +10,7 @@ if Global.Intro_done == false
 			Inspector: Es wurde ein sehr wertvolles Gemälde geklaut.
 			Inspector: Aber sonst komischerweise nichts.
 			Robo: Wer wusste, dass diese Gemälde dort hängt?
-			Inspector: Laut eigener Aussage wussten das nur seine Bakannten.
+			Inspector: Laut eigener Aussage wussten das nur seine Bekannten.
 			- Den Tatort untesuchen
 			do get_tree().change_scene_to_file("res://Scenes/tatort.tscn")
 			
