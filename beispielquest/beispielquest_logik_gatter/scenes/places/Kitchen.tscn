@@ -18,6 +18,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_4uorp")
 
 [node name="Computer" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 268.0
 offset_top = 404.0
 offset_right = 780.0
@@ -26,6 +27,7 @@ scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("3_qdcgt")
 
 [node name="Router" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 793.0
 offset_top = 413.0
 offset_right = 1305.0

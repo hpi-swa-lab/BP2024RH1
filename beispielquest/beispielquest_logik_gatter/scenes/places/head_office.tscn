@@ -27,6 +27,7 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("3_p8lxu")
 
 [node name="Router" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 709.0
 offset_top = 292.0
 offset_right = 1221.0
