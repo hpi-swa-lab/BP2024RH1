@@ -6,11 +6,11 @@ extends Node2D
 @export var pixel_editor: Button
 @export var button: Button
 @export var display: Sprite2D
+@export var button_label: Label
 
-var columns = 8
-var solution = "10100010" + "00000001" + "11100011" + "10100110" + "11100011" + "00000010" + "00100001" + "11001100"
-var correct_solution = true
-var button_label: int = 0
+var columns: int = 8
+var solution: String = "10100010" + "00000001" + "11100011" + "10100110" + "11100011" + "00000010" + "00100001" + "11001100"
+var correct_solution: bool = true
 
 var cinema = preload("res://Assets/random_websites/cinema2.png")
 var plants = preload("res://assets/random_websites/plants2.jpg")
@@ -31,6 +31,7 @@ func _ready() -> void:
 	%RightGrid.columns = columns
 	%LeftGrid.columns = columns
 	%SolutionGrid.columns = columns
+	add_solution_Grid(%SolutionGrid)
 	#add_buttons(%LeftGrid)
 	#add_clickable_buttons(%RightGrid)
 	#add_solution_Grid(%SolutionGrid)
@@ -62,8 +63,8 @@ func add_clickable_buttons(Grid: GridContainer):
 		Grid.add_child(button)
 
 func _button_pressed(ButtonPos: int):
-	var button = %RightGrid.get_child(ButtonPos)
-	var rect = %LeftGrid.get_child(ButtonPos)
+	var button = %LeftGrid.get_child(ButtonPos)
+	var rect = %RightGrid.get_child(ButtonPos)
 	if button.text == "1":
 		rect.color = Color(0, 0, 0)
 		button.text = "0"
@@ -110,45 +111,72 @@ func _button_pressed(ButtonPos: int):
 
 
 func _on_button_gui_input(event: InputEvent) -> void:
-	if  event is InputEventMouseButton and event.is_pressed():
-		if button_label == 0:
+	if event is InputEventMouseButton and event.is_pressed():
+		correct_solution = true
+		if button_label.text == "Karte einscannen":
 			card.visible = true
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(2).timeout
 			card.visible = false
 			qrcode.visible = true
 			monitor_label.text = "QR-Code unvollständig"
 			pixel_editor.visible = true
-			button.get_child(0).text = "Webseite suchen"
-			
-		if button_label == 1:
-			var button: Button
-			for i in range(%RightGrid.get_child_count()):
-				button = %RightGrid.get_child(i)
-				if button.text != solution[i]:
+			button_label.text = "Webseite suchen"
+			return
+		elif button_label.text == "Webseite suchen":
+			var grid_button: Button
+			for i in range(%LeftGrid.get_child_count()):
+				grid_button = %LeftGrid.get_child(i)
+				if grid_button.text != solution[i]:
 					display.visible = true
 					correct_solution = false
+					button_label.text = "Pixel ändern"
+					%LeftGrid.visible = false
+					%RightGrid.visible = false
 					display_solution()
-					break
+					return
 			display.visible = true
 			%LeftGrid.visible = false
 			%RightGrid.visible = false
 			display_solution()
+			return
+		elif button_label.text == "Pixel ändern":
+			edit_pixels()
+			return
 			
 func display_solution():
-	if correct_solution == false:
+	if not correct_solution:
 		var displays = [cinema, plants, time, zoo]
 		var random_display = displays[randi() % displays.size()]
 		display.texture = random_display
-	if correct_solution == true:
+		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "false_solution")
+	if correct_solution:
 		display.texture = preload("res://Assets/museum2.jpg")
+		Global.End = true
+		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "correct_solution")
+		
 
 func _on_pixel_editor_gui_input(event: InputEvent) -> void:
-	if  event is InputEventMouseButton and event.is_pressed():
-		monitor_label.visible = false
-		qrcode.visible = false
-		pixel_editor.visible = false
-		add_buttons(%LeftGrid)
-		add_clickable_buttons(%RightGrid)
-		add_solution_Grid(%SolutionGrid)
+	if event is InputEventMouseButton and event.is_pressed():
+		edit_pixels()
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "pixeleditor")
-		button_label = 1
+		
+func edit_pixels():
+	monitor_label.visible = false
+	display.visible = false
+	qrcode.visible = false
+	pixel_editor.visible = false
+	%LeftGrid.visible = true
+	%RightGrid.visible = true
+	if button_label.text == "Webseite suchen":
+		add_buttons(%RightGrid)
+		add_clickable_buttons(%LeftGrid)
+	else:
+		var grid_button: Button
+		var rect = ColorRect.new()
+		for i in range(%LeftGrid.get_child_count()):
+			grid_button = %LeftGrid.get_child(i)
+			grid_button.text = "1"
+		for j in range(%RightGrid.get_child_count()):
+			rect = %RightGrid.get_child(j)
+			rect.color = Color(1, 1, 1)
+	button_label.text = "Webseite suchen"

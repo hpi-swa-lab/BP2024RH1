@@ -66,3 +66,35 @@ Robo: 1 heißt Licht an. Welche Farbe ist das dann?
 	Robo: Nein, überleg noch einmal.
 	=> frage2
 => END
+
+~ paper
+Robo: Das sieht mir nach einem Schnipsel von einem QR-Code aus.
+Robo: Ich nehme es mal mit.
+=> END
+
+~ false_solution
+Robo: Das scheint nicht die Webseite des Kunsthändlers zu sein.
+Robo: Wahrscheinlich war das der falsche QR-Code.
+do Global.button_label_stage = "Pixel ändern"
+=> END
+
+~ correct_solution
+Robo: Perfekt! Das ist die Webseite des Kunsthändlers.
+Robo: Hier finde ich bestimmt seine Kontaktdaten, um ihn zu überführen!
+Robo: Ich werde es sofort dem Inspektor berichten!
+do get_tree().change_scene_to_file("res://Scenes/office.tscn")
+=> END
+
+~ end_scene
+Inspector: Vielen Dank für deine Hilfe Robo!
+Inspector: Der Kunständler hatte das Gemälde gestohlen.
+Robo: Konnte es wiedergefunden werden?
+Inspector: Zum Glück ja.
+Inspector: Du warst eine große Hilfe!
+Inpector: Hat dir der Fall Spaß gemacht?
+- Ja!
+	set Global.Colour = "green"
+	=> END
+- Nein.
+	set Global.Colour = "red"
+	=> END

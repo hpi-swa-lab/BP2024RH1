@@ -18,12 +18,13 @@ func _on_ready() -> void:
 		#card.visible = false
 		
 	if Global.Card2_collected == false:
+		card2.visible = true
+	else:
 		card2.visible = false
-		Global.Card2_collected = true
 
 func _on_back_gui_input(event: InputEvent) -> void:
 	if  event is InputEventMouseButton and event.is_pressed():
-		SceneSwitcher.switch_scene("res://Scenes/tatort.tscn")
+		get_tree().change_scene_to_file("res://Scenes/tatort.tscn")
 
 func _on_card_1_gui_input(event: InputEvent) -> void:
 	if  event is InputEventMouseButton and event.is_pressed():

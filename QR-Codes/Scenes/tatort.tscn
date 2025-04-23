@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsybfj7o8jp5r"]
+[gd_scene load_steps=6 format=3 uid="uid://dsybfj7o8jp5r"]
 
 [ext_resource type="Texture2D" uid="uid://c3rnpxq603tly" path="res://Assets/tatort.jpg" id="1_kl7lh"]
 [ext_resource type="Script" uid="uid://cvqpiprt1bsak" path="res://Scripts/cupboard.gd" id="3_b8mj1"]
@@ -7,6 +7,9 @@
 [sub_resource type="GDScript" id="GDScript_q5h7g"]
 script/source = "extends Camera2D
 "
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b8mj1"]
+load_path = "res://.godot/imported/paper.png-8ddf38491959bdccfaea64467966ff8f.ctex"
 
 [node name="CrimeScene" type="Node2D"]
 
@@ -36,7 +39,7 @@ offset_top = 445.0
 offset_right = 208.0
 offset_bottom = 502.0
 
-[node name="Cupboard" type="Button" parent="." node_paths=PackedStringArray("camera", "book", "safe", "zoom_out")]
+[node name="Cupboard" type="Button" parent="." node_paths=PackedStringArray("camera", "book", "safe", "zoom_out", "back", "paper")]
 modulate = Color(1, 1, 1, 0)
 offset_left = 23.0
 offset_top = 238.0
@@ -47,6 +50,8 @@ camera = NodePath("../Camera2D")
 book = NodePath("../Book")
 safe = NodePath("../Safe")
 zoom_out = NodePath("../Zoom_out")
+back = NodePath("../Back")
+paper = NodePath("../Paper")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -66,6 +71,7 @@ icon = ExtResource("4_k7fs2")
 expand_icon = true
 
 [node name="Back" type="Button" parent="."]
+visible = false
 offset_left = 1002.0
 offset_top = 585.0
 offset_right = 1137.0
@@ -79,6 +85,29 @@ offset_right = 128.0
 offset_bottom = 30.0
 text = "zurück ins Büro"
 
+[node name="Cushion" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 737.0
+offset_top = 346.0
+offset_right = 841.0
+offset_bottom = 455.0
+
+[node name="Paper" type="Button" parent="."]
+visible = false
+offset_left = 432.0
+offset_top = 34.0
+offset_right = 801.0
+offset_bottom = 380.0
+icon = SubResource("CompressedTexture2D_b8mj1")
+
+[node name="SolutionGrid" type="GridContainer" parent="Paper"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 68.0
+offset_top = 34.0
+offset_right = 268.0
+offset_bottom = 234.0
+
 [connection signal="gui_input" from="Picture" to="Picture" method="_on_gui_input"]
 [connection signal="gui_input" from="Picture" to="Cupboard" method="_on_picture_gui_input"]
 [connection signal="gui_input" from="Book" to="Cupboard" method="_on_book_gui_input"]
@@ -87,6 +116,7 @@ text = "zurück ins Büro"
 [connection signal="ready" from="Cupboard" to="Book" method="_on_cupboard_ready"]
 [connection signal="ready" from="Cupboard" to="Cupboard" method="_on_ready"]
 [connection signal="gui_input" from="Zoom_out" to="Cupboard" method="_on_zoom_out_gui_input"]
-[connection signal="gui_input" from="Zoom_out" to="Cupboard" method="_on_back_gui_input"]
 [connection signal="ready" from="Zoom_out" to="Zoom_out" method="_on_ready"]
 [connection signal="gui_input" from="Back" to="Cupboard" method="_on_back_gui_input"]
+[connection signal="gui_input" from="Cushion" to="Cupboard" method="_on_cushion_gui_input"]
+[connection signal="gui_input" from="Paper" to="Cupboard" method="_on_paper_gui_input"]
