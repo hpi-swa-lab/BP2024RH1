@@ -12,3 +12,4 @@ var minigame: PackedScene
 var CaseGlobals: Node = null # The script for Globals in each Case will be loaded in here. The Globals can be accessed via: Globals.CaseGlobals.<var_name>
 
 var portrait: CompressedTexture2D
+var npc_icon: CompressedTexture2D

@@ -24,15 +24,15 @@ func _on_board_input_event(_camera: Node, event: InputEvent, _event_position: Ve
 
 func load_CaseBoard_Picture():
 	var CaseBoardPicture
-	if Globals.selectedCase == null:
-		CaseBoardPicture = load("res://Assets/Hinweistafel_basic.png")
-	else:
-		var image = Image.new()
-		var error = image.load("user://Assets/Hinweistafel.png")
-		if error != OK:
-			print("Fehler beim Laden des Bildes:", error)
-		else:
-			CaseBoardPicture = ImageTexture.new().create_from_image(image)
+	#if Globals.selectedCase == null:
+	CaseBoardPicture = load("res://Assets/Hinweistafel_basic.png")
+	#else:		# Doesnt work on web
+		#var image = Image.new()
+		#var error = image.load("user://Assets/Hinweistafel.png")
+		#if error != OK:
+			#print("Fehler beim Laden des Bildes:", error)
+		#else:
+			#CaseBoardPicture = ImageTexture.new().create_from_image(image)
 	%CaseBoard.texture = CaseBoardPicture
 
 func add_basic_cases():

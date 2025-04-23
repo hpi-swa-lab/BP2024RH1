@@ -17,6 +17,6 @@ func Case_button_pressed(Case) -> void:
 	
 func _on_select_button_pressed() -> void:
 	SceneSwitcher.switch_scene(Globals.selectedCase.FirstScene)
-	var img = load("res://Assets/Hinweistafel_basic.png").get_image()
-	img.save_png("user://Assets/Hinweistafel.png")
+	#var img = load("res://Assets/Hinweistafel_basic.png").get_image()	# Doesnt work on web
+	#img.save_png("user://Assets/Hinweistafel.png")
 	CaseManager.Hints.clear()
