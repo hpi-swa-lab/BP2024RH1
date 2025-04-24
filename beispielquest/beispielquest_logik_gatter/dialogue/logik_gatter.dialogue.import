@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://etjo1r4745nw"
+path="res://.godot/imported/logik_gatter.dialogue-6950936eee3ca25bda110595150cbafc.tres"
+
+[deps]
+
+source_file="res://dialogue/logik_gatter.dialogue"
+dest_files=["res://.godot/imported/logik_gatter.dialogue-6950936eee3ca25bda110595150cbafc.tres"]
+
+[params]
+
+defaults=true

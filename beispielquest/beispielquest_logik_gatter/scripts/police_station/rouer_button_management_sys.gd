@@ -20,3 +20,6 @@ func _on_tech_room_router_pressed() -> void:
 
 func _on_kitchen_router_pressed() -> void:
 	pass # Replace with function body.
+
+func _show_dialogue() -> void:
+	DialogueManager.show_dialogue_balloon(load("res://dialogue/logik_gatter.dialogue"), "routerError")

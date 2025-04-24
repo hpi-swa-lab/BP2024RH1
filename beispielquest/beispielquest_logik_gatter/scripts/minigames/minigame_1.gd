@@ -12,6 +12,7 @@ func _on_level_1_ziel_input_true() -> void:
 
 func _on_check_button_pressed() -> void:
 	if ziel_input == true:
-		pass
+		get_tree().change_scene_to_file("res://scenes/Akte_main_scenes/police_station_akt2.tscn")
 		#dialog strom funktioniert aber internet verbindung noch weg
 		#szenen wechsle in dialog
+		

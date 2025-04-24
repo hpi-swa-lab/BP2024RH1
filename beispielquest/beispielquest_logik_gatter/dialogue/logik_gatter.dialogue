@@ -1,0 +1,48 @@
+~ start
+Du: Stromausfall! Ich muss schnell zum SICHERUNGSKASTEN.
+=> END
+
+~ computerError
+Du: Der Computer hat keinen Strom.
+=> END
+
+~ routerError
+Du: Der Router hat keinen Strom.
+=> END
+
+~ introRouterError
+Du: Damit geht der Strom wieder, sehr gut! Aber die Computer scheinen Probleme zu haben.
+=> END
+
+
+~ investigatePC
+Du: Das Internet funktioniert nicht, weil einer unserer Router gehackt wurde. 
+Du: Wenn ich den gehackten Router finde, hat er die IP-Adresse des Täters vielleicht noch gespeichert.
+=> END
+
+
+~ investigateRouterError
+	if RouterCount == 1
+		Du: Router 1 sieht gut aus.
+	=> END
+	if RouterCount == 2
+		Du: Router 2 sieht auch gut aus, aber warum?
+	=> END
+	if RouterCount == 3
+		Du: Router 3 hat ist auch betroffen, aber nicht die Quelle.
+	=> END
+	if RouterCount == 4
+		Du: Router 4 läuft einwandfrei.
+	=> END
+	if RouterCount == 5
+		Du: Router 5 hier haben wir den Übeltäter. Jetzt rebooten und neu verkabeln, danach sollte ich wissen wer das hier verbrochen hat.
+	=> END
+
+
+~ act2Puzzle
+Du: Wir brauchen ein WLAN-Signal bei...
+=> END
+
+~ act2PuzzleFinished
+Du: Hier ist die IP-Adresse!
+Kommissar: Perfekt, ab hier übernehme ich. Vielen dank für deine Hilfe!

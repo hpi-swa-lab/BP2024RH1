@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwauuemc10o6x"]
 
-[ext_resource type="Script" uid="uid://coscvc1h5bxok" path="res://scripts/Minigames/minigame_1.gd" id="1_3iif4"]
+[ext_resource type="Script" uid="uid://coscvc1h5bxok" path="res://scripts/minigames/minigame_1.gd" id="1_3iif4"]
 [ext_resource type="PackedScene" uid="uid://v8eg0wvcs4ea" path="res://scenes/Minigames/Level_1.tscn" id="1_fqtu4"]
 [ext_resource type="Texture2D" uid="uid://bhhr6i7ouguuq" path="res://assets/kabel_background.png" id="2_3iif4"]
 
@@ -45,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.915667, 1, 0.54, 1)
 
 [connection signal="ziel_input_false" from="Level1" to="." method="_on_level_1_ziel_input_false"]
