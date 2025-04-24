@@ -100,3 +100,5 @@ func clear_save_data():
 	
 func start_new_game():
 	SceneSwitcher.switch_scene("res://Scenes/game.tscn")
+	Global.reset_globals()
+	

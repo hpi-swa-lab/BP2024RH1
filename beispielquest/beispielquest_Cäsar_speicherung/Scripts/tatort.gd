@@ -4,7 +4,7 @@ var dialogue = "Tatort"
 
 func _ready() -> void:
 	Global.last_visited_scene = "res://Scenes/tatort.tscn"
-	#GameSaver.save_game()
+	GameSaver.save_game()
 	
 	if Global.CrimeScene_visited == false:
 		DialogueManager.show_dialogue_balloon(load("res://dialogues/Tatort.dialogue"), "start")

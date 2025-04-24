@@ -17,7 +17,7 @@ func _ready() -> void:
 	if Global.Nachricht_picked == true and Global.had_tutorial == false:
 		self.visible = false
 
-func _on_button_pressed() -> void:
+func _on_button_pressed() -> void:	
 	if not Global.Nachricht_picked:
 		DialogueManager.show_dialogue_balloon(load("res://dialogues/" + dialogue + ".dialogue"), dialogue_start)
 		if dialogue == "Küche":
@@ -25,3 +25,6 @@ func _on_button_pressed() -> void:
 			Global.Nachricht_picked = true
 		$Button.visible = false
 		$Button.disabled = true
+
+	Global.Nachricht_picked = true
+	GameSaver.save_game()

@@ -34,3 +34,18 @@ var Bild_picked: bool = false
 var Nachricht_picked: bool = false
 var Papierkorb_picked: bool = false
 var Businesskarte_picked: bool = false
+
+
+func reset_globals():
+	Global.Caesar_picked = false
+	Global.Businesskarte_picked = false
+	Global.Bild_picked = false
+	Global.Fenster_picked = false
+	Global.Nachricht_picked = false
+	Global.Papierkorb_picked = false
+	Global.Buch_picked = false
+	Global.Mikrowelle_picked = false
+	Global.Zeitung_picked = false
+	
+	Global.last_visited_scene = ""
+	Global.character_portrait_path = ""
