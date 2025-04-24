@@ -17,9 +17,9 @@ color = Color(1, 1, 1, 0)
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
-offset_left = 830.0
-offset_top = 549.0
-offset_right = 1144.0
-offset_bottom = 655.0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 319.0
+offset_bottom = 113.0
 
 [connection signal="ready" from="." to="." method="_on_ready"]
