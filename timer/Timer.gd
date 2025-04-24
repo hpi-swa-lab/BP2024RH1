@@ -6,15 +6,19 @@ extends Node
 
 var Times = {}
 
-func start_timer(TimerName: String):
-	var time = Time.get_ticks_msec()
-	Times[TimerName] = time
+func start_timer(TimerName: String):	#You need to end the timer to restart it
+	var time = Time.get_ticks_msec() / 1000
+	if Times.has(TimerName):
+		var time_before = Times[TimerName]
+		Times[TimerName] = time - time_before
+	else:
+		Times[TimerName] = time
 	
 func end_timer(TimerName: String):
 	if Times.has(TimerName):
 		var startTime = Times[TimerName]
-		var endTime = Time.get_ticks_msec()
-		Times[TimerName] = (endTime - startTime) / 1000
+		var endTime = Time.get_ticks_msec() / 1000
+		Times[TimerName] = endTime - startTime
 
 func print_times() -> String:
 	var returnString = ""
