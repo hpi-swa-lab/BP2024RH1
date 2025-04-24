@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://clusonmj5firc"
+path="res://.godot/imported/Caesar2.dialogue-b31a7d21ecbfb0555f65d4b584ec8dbb.tres"
+
+[deps]
+
+source_file="res://dialogues/Caesar2.dialogue"
+dest_files=["res://.godot/imported/Caesar2.dialogue-b31a7d21ecbfb0555f65d4b584ec8dbb.tres"]
+
+[params]
+
+defaults=true

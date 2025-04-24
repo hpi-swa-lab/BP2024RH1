@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://lhhlmsmxrbey"
+path="res://.godot/imported/Decrypting.dialogue-afe8314287f40a3011df09cf7272d165.tres"
+
+[deps]
+
+source_file="res://dialogues/Decrypting.dialogue"
+dest_files=["res://.godot/imported/Decrypting.dialogue-afe8314287f40a3011df09cf7272d165.tres"]
+
+[params]
+
+defaults=true

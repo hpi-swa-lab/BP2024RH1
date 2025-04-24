@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://djwgirmrlf867"]
+
+[ext_resource type="Script" uid="uid://b4tahgw3gs8h0" path="res://keyword.gd" id="1_ufm4d"]
+
+[node name="Keyword" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_ufm4d")

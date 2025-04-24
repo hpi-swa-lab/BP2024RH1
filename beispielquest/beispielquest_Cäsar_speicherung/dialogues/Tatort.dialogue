@@ -1,0 +1,40 @@
+~ start
+Detective Turing: Ugh, das riecht ja schrecklich, ich hatte gehofft der Geruch wäre schon verzogen.
+Detective Turing: Zum Glück hat das Feuer nicht alles zerstört.
+set Global.CrimeScene_visited = true
+=> END
+
+~ zurueck
+if Global.items_found < 6:
+	Detective Turing: Ich glaube, ich habe noch nicht alles gefunden. Ich sollte nochmal genauer suchen.
+else:
+	set Global.office_szene = 1
+	do go_back()
+=> END
+
+~ Caesar
+Detective Turing: Er ist wohl ein Fan der Römer. Ich nehme die Statue mal mit, vielleicht steckt da noch mehr dahinter.
+=> END
+
+~ Bild
+Detective Turing: Ein Bild von einem Hund … scheint ihm wichtig zu sein.
+=> END
+
+~ Businesskarte
+if Global.Nachricht_picked:
+	Detective Turing: Das Restaurant kenne ich. Hat die Nachricht vielleicht damit etwas zu tun?
+else:
+	Detective Turing: Die Businesskarte eines Restaurants. Der Name kommt mir bekannt vor.
+=> END
+
+~ Buch
+Detective Turing: Harry Potter Teil 9???
+=> END
+
+~ Zeitung
+Detective Turing: Die ist von gestern.
+=> END
+
+~ fertig
+Detective Turing: Ich glaube, mehr gibt es hier nicht zu entdecken. Ich sollte zurück ins Büro.
+=> END
