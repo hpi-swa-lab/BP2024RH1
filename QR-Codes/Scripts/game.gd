@@ -169,13 +169,13 @@ func edit_pixels():
 	if button_label.text == "Webseite suchen":
 		add_buttons(%RightGrid)
 		add_clickable_buttons(%LeftGrid)
-	else:
-		var grid_button: Button
-		var rect = ColorRect.new()
-		for i in range(%LeftGrid.get_child_count()):
-			grid_button = %LeftGrid.get_child(i)
-			grid_button.text = "1"
-		for j in range(%RightGrid.get_child_count()):
-			rect = %RightGrid.get_child(j)
-			rect.color = Color(1, 1, 1)
+	#else:
+		#var grid_button: Button
+		#var rect = ColorRect.new()
+		#for i in range(%LeftGrid.get_child_count()):
+		#	grid_button = %LeftGrid.get_child(i)
+		#	grid_button.text = "1"
+		#for j in range(%RightGrid.get_child_count()):
+		#	rect = %RightGrid.get_child(j)
+		#	rect.color = Color(1, 1, 1)
 	button_label.text = "Webseite suchen"
