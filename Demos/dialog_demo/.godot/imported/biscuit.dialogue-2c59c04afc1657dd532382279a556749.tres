@@ -1,0 +1,1090 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_ckeac"]
+
+[resource]
+script = ExtResource("1_ckeac")
+using_states = PackedStringArray()
+titles = {
+"end_bad": "81",
+"end_good": "76",
+"go_to_sleep": "35",
+"search_successful": "60",
+"start": "2",
+"talk": "40",
+"wake_up": "24"
+}
+character_names = PackedStringArray("Biscuit")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "2",
+&"type": "title"
+},
+"1": {
+&"id": "1",
+&"next_id": "2",
+&"type": ""
+},
+"10": {
+&"id": "10",
+&"next_id": "11",
+&"responses": PackedStringArray("10"),
+&"text": "Not yet. Sorry...",
+&"type": "response"
+},
+"11": {
+&"id": "11",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"13": {
+&"character": "Biscuit",
+&"id": "13",
+&"next_id": "14",
+&"text": "Did you find my mouse?",
+&"type": "dialogue"
+},
+"14": {
+&"id": "14",
+&"next_id": "60",
+&"responses": PackedStringArray("14", "15"),
+&"text": "Yes. Here you go.",
+&"type": "response"
+},
+"15": {
+&"id": "15",
+&"next_id": "16",
+&"text": "Yeah. But I changed my mind. I'll go now.",
+&"type": "response"
+},
+"16": {
+&"id": "16",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "angry"
+}, {
+&"i": 28,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "17",
+&"type": "mutation"
+},
+"17": {
+&"character": "Biscuit",
+&"id": "17",
+&"next_id": "18",
+&"text": "Damn you!!",
+&"type": "dialogue"
+},
+"18": {
+&"id": "18",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "upset"
+}, {
+&"i": 28,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "19",
+&"type": "mutation"
+},
+"19": {
+&"character": "Biscuit",
+&"id": "19",
+&"next_id": "81",
+&"text": "At least give me my mouse back...",
+&"type": "dialogue"
+},
+"2": {
+&"cases": Array[Dictionary]([{
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"string",
+&"value": "not started"
+}])
+},
+&"next_id": "4"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"string",
+&"value": "started"
+}])
+},
+&"next_id": "9"
+}, {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"string",
+&"value": "successful"
+}])
+},
+&"next_id": "13"
+}, {
+&"is_else": true,
+&"next_id": "21"
+}]),
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 6,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 11,
+&"type": &"dot"
+}, {
+&"i": 12,
+&"type": &"variable",
+&"value": "search_status"
+}])
+},
+&"id": "2",
+&"next_id": "3",
+&"next_id_after": "23",
+&"type": "match"
+},
+"21": {
+&"id": "21",
+&"is_snippet": false,
+&"next_id": "end!",
+&"next_id_after": "",
+&"type": "goto"
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": ""
+},
+"23": {
+&"id": "23",
+&"next_id": "24",
+&"type": "title"
+},
+"24": {
+&"id": "24",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "wake_up",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 17,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "25",
+&"type": "mutation"
+},
+"25": {
+&"id": "25",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "angry"
+}, {
+&"i": 28,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "26",
+&"type": "mutation"
+},
+"26": {
+&"character": "Biscuit",
+&"id": "26",
+&"next_id": "27",
+&"text": "Are you serious?",
+&"type": "dialogue"
+},
+"27": {
+&"id": "27",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "mad"
+}, {
+&"i": 26,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "28",
+&"type": "mutation"
+},
+"28": {
+&"character": "Biscuit",
+&"id": "28",
+&"next_id": "29",
+&"text": "Do you know anything about a good sleep?",
+&"type": "dialogue"
+},
+"29": {
+&"character": "Biscuit",
+&"id": "29",
+&"next_id": "30",
+&"text": "What do you want?",
+&"type": "dialogue"
+},
+"30": {
+&"id": "30",
+&"next_id": "40",
+&"responses": PackedStringArray("30", "31"),
+&"text": "I need some information.",
+&"type": "response"
+},
+"31": {
+&"id": "31",
+&"next_id": "32",
+&"text": "Nevermind. Sorry for waking you up.",
+&"type": "response"
+},
+"32": {
+&"character": "Biscuit",
+&"id": "32",
+&"next_id": "35",
+&"text": "Damn you. Get lost and let me sleep...",
+&"type": "dialogue"
+},
+"33": {
+&"id": "33",
+&"next_id": "34",
+&"type": ""
+},
+"34": {
+&"id": "34",
+&"next_id": "35",
+&"type": "title"
+},
+"35": {
+&"id": "35",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "sleeping"
+}, {
+&"i": 31,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "36",
+&"type": "mutation"
+},
+"36": {
+&"id": "36",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "go_to_sleep",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "37",
+&"type": "mutation"
+},
+"37": {
+&"id": "37",
+&"is_snippet": false,
+&"next_id": "end!",
+&"next_id_after": "",
+&"type": "goto"
+},
+"38": {
+&"id": "38",
+&"next_id": "39",
+&"type": ""
+},
+"39": {
+&"id": "39",
+&"next_id": "40",
+&"type": "title"
+},
+"4": {
+&"character": "Biscuit",
+&"id": "4",
+&"next_id": "5",
+&"text": "[wave]Z Z z Z[/wave]",
+&"type": "dialogue"
+},
+"40": {
+&"character": "Biscuit",
+&"id": "40",
+&"next_id": "41",
+&"text": "Not sure why you're asking me...but what is it?",
+&"type": "dialogue"
+},
+"41": {
+&"id": "41",
+&"next_id": "42",
+&"responses": PackedStringArray("41"),
+&"text": "Do you know where the cat godess lives?",
+&"type": "response"
+},
+"42": {
+&"id": "42",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "think"
+}, {
+&"i": 28,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "43",
+&"type": "mutation"
+},
+"43": {
+&"character": "Biscuit",
+&"id": "43",
+&"next_id": "44",
+&"text": "Let me think[speed=0.8]...[next=1]",
+&"type": "dialogue"
+},
+"44": {
+&"id": "44",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "mad"
+}, {
+&"i": 26,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "45",
+&"type": "mutation"
+},
+"45": {
+&"character": "Biscuit",
+&"id": "45",
+&"next_id": "46",
+&"text": "Yes! I do know. The question is rather, why do you think I would tell you?",
+&"type": "dialogue"
+},
+"46": {
+&"id": "46",
+&"next_id": "47",
+&"responses": PackedStringArray("46"),
+&"text": "Ehmm...you wouldn't?",
+&"type": "response"
+},
+"47": {
+&"character": "Biscuit",
+&"id": "47",
+&"next_id": "48",
+&"text": "Not without something good in return.",
+&"type": "dialogue"
+},
+"48": {
+&"id": "48",
+&"next_id": "49",
+&"responses": PackedStringArray("48", "56"),
+&"text": "What do you have in mind?",
+&"type": "response"
+},
+"49": {
+&"id": "49",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "sad"
+}, {
+&"i": 26,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "50",
+&"type": "mutation"
+},
+"5": {
+&"id": "5",
+&"next_id": "24",
+&"responses": PackedStringArray("5", "6"),
+&"text": "Wake the cat.",
+&"type": "response"
+},
+"50": {
+&"character": "Biscuit",
+&"id": "50",
+&"next_id": "51",
+&"text": "You see, I lost my little mouse toy somewhere here.",
+&"type": "dialogue"
+},
+"51": {
+&"character": "Biscuit",
+&"id": "51",
+&"next_id": "52",
+&"text": "Without it, my sleep is only half as good.",
+&"type": "dialogue"
+},
+"52": {
+&"character": "Biscuit",
+&"id": "52",
+&"next_id": "53",
+&"text": "If you could find it for me, I'll maybe give your request a second thought.",
+&"type": "dialogue"
+},
+"53": {
+&"id": "53",
+&"next_id": "54",
+&"responses": PackedStringArray("53"),
+&"text": "Okay, then. I will search every inch of this room.",
+&"type": "response"
+},
+"54": {
+&"id": "54",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "start_search",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 22,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "55",
+&"type": "mutation"
+},
+"55": {
+&"id": "55",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"56": {
+&"id": "56",
+&"next_id": "57",
+&"text": "Okay, nevermind. You can go back to sleep.",
+&"type": "response"
+},
+"57": {
+&"character": "Biscuit",
+&"id": "57",
+&"next_id": "35",
+&"text": "Get lost then.[next=2]",
+&"type": "dialogue"
+},
+"58": {
+&"id": "58",
+&"next_id": "59",
+&"type": ""
+},
+"59": {
+&"id": "59",
+&"next_id": "60",
+&"type": "title"
+},
+"6": {
+&"id": "6",
+&"next_id": "7",
+&"text": "Let him sleep.",
+&"type": "response"
+},
+"60": {
+&"id": "60",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "tears"
+}, {
+&"i": 28,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "61",
+&"type": "mutation"
+},
+"61": {
+&"character": "Biscuit",
+&"id": "61",
+&"next_id": "62",
+&"text": "My little little mouse. I missed you soooo much.",
+&"type": "dialogue"
+},
+"62": {
+&"id": "62",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "shy"
+}, {
+&"i": 26,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "63",
+&"type": "mutation"
+},
+"63": {
+&"character": "Biscuit",
+&"id": "63",
+&"next_id": "64",
+&"text": "Thank you for bringing it back to me.",
+&"type": "dialogue"
+},
+"64": {
+&"id": "64",
+&"next_id": "65",
+&"responses": PackedStringArray("64"),
+&"text": "What about my request? Remember?",
+&"type": "response"
+},
+"65": {
+&"id": "65",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "mad"
+}, {
+&"i": 26,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "66",
+&"type": "mutation"
+},
+"66": {
+&"character": "Biscuit",
+&"id": "66",
+&"next_id": "67",
+&"text": "Of course I remember.",
+&"type": "dialogue"
+},
+"67": {
+&"id": "67",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "think"
+}, {
+&"i": 28,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "68",
+&"type": "mutation"
+},
+"68": {
+&"character": "Biscuit",
+&"id": "68",
+&"next_id": "69",
+&"text": "The cat godess...",
+&"type": "dialogue"
+},
+"69": {
+&"character": "Biscuit",
+&"id": "69",
+&"next_id": "70",
+&"text": "...",
+&"type": "dialogue"
+},
+"7": {
+&"id": "7",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"70": {
+&"character": "Biscuit",
+&"id": "70",
+&"next_id": "71",
+&"text": "She lives right upstairs.",
+&"type": "dialogue"
+},
+"71": {
+&"id": "71",
+&"next_id": "72",
+&"responses": PackedStringArray("71"),
+&"text": "Thank you!!",
+&"type": "response"
+},
+"72": {
+&"id": "72",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_emotion",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 21,
+&"type": &"string",
+&"value": "mad"
+}, {
+&"i": 26,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "73",
+&"type": "mutation"
+},
+"73": {
+&"character": "Biscuit",
+&"id": "73",
+&"next_id": "76",
+&"text": "Yeah yeah...just get lost now!!",
+&"type": "dialogue"
+},
+"74": {
+&"id": "74",
+&"next_id": "75",
+&"type": ""
+},
+"75": {
+&"id": "75",
+&"next_id": "76",
+&"type": "title"
+},
+"76": {
+&"id": "76",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "end_search",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 20,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "77",
+&"type": "mutation"
+},
+"77": {
+&"id": "77",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_ending",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 20,
+&"type": &"string",
+&"value": "good"
+}, {
+&"i": 26,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "78",
+&"type": "mutation"
+},
+"78": {
+&"id": "78",
+&"is_snippet": false,
+&"next_id": "35",
+&"next_id_after": "",
+&"type": "goto"
+},
+"79": {
+&"id": "79",
+&"next_id": "80",
+&"type": ""
+},
+"80": {
+&"id": "80",
+&"next_id": "81",
+&"type": "title"
+},
+"81": {
+&"id": "81",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "end_search",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 20,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "82",
+&"type": "mutation"
+},
+"82": {
+&"id": "82",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"function": "set_ending",
+&"i": 9,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 20,
+&"type": &"string",
+&"value": "bad"
+}, {
+&"i": 25,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "83",
+&"type": "mutation"
+},
+"83": {
+&"id": "83",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"84": {
+&"id": "84",
+&"next_id": "85",
+&"type": ""
+},
+"85": {
+&"id": "85",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"9": {
+&"character": "Biscuit",
+&"id": "9",
+&"next_id": "10",
+&"text": "Did you find my mouse?",
+&"type": "dialogue"
+}
+}
+raw_text = "~ start
+
+match State.search_status:
+	when \"not started\"
+		Biscuit: [wave]Z Z z Z[/wave]
+		- Wake the cat. => wake_up
+		- Let him sleep.			
+		=> END
+	when \"started\"
+		Biscuit: Did you find my mouse?
+		- Not yet. Sorry...
+		=> END
+	when \"successful\"
+		Biscuit: Did you find my mouse?
+		- Yes. Here you go. => search_successful
+		- Yeah. But I changed my mind. I'll go now.
+			do State.set_emotion(\"angry\")
+			Biscuit: Damn you!!
+			do State.set_emotion(\"upset\")
+			Biscuit: At least give me my mouse back... => end_bad
+	else
+		=> END!
+
+~ wake_up
+do State.wake_up()
+do State.set_emotion(\"angry\")
+Biscuit: Are you serious?
+do State.set_emotion(\"mad\")
+Biscuit: Do you know anything about a good sleep?
+Biscuit: What do you want?
+- I need some information. => talk
+- Nevermind. Sorry for waking you up.
+	Biscuit: Damn you. Get lost and let me sleep... => go_to_sleep
+	
+~ go_to_sleep
+do State.set_emotion(\"sleeping\")
+do State.go_to_sleep()
+=> END!
+
+~ talk
+Biscuit: Not sure why you're asking me...but what is it?
+- Do you know where the cat godess lives?
+	do State.set_emotion(\"think\")
+	Biscuit: Let me think[speed=0.8]...[next=1]
+	do State.set_emotion(\"mad\")
+	Biscuit: Yes! I do know. The question is rather, why do you think I would tell you?
+	- Ehmm...you wouldn't?
+		Biscuit: Not without something good in return.
+		- What do you have in mind?
+			do State.set_emotion(\"sad\")
+			Biscuit: You see, I lost my little mouse toy somewhere here.
+			Biscuit: Without it, my sleep is only half as good.
+			Biscuit: If you could find it for me, I'll maybe give your request a second thought.
+			- Okay, then. I will search every inch of this room.
+				do State.start_search()
+				=> END
+		- Okay, nevermind. You can go back to sleep.
+			Biscuit: Get lost then.[next=2] => go_to_sleep
+			
+~ search_successful
+do State.set_emotion(\"tears\")
+Biscuit: My little little mouse. I missed you soooo much.
+do State.set_emotion(\"shy\")
+Biscuit: Thank you for bringing it back to me.
+- What about my request? Remember?
+	do State.set_emotion(\"mad\")
+	Biscuit: Of course I remember.
+	do State.set_emotion(\"think\")
+	Biscuit: The cat godess...
+	Biscuit: ...
+	Biscuit: She lives right upstairs. 
+	- Thank you!!
+		do State.set_emotion(\"mad\")
+		Biscuit: Yeah yeah...just get lost now!! => end_good
+		
+~ end_good
+do State.end_search()
+do State.set_ending(\"good\")
+=> go_to_sleep
+
+~ end_bad
+do State.end_search()
+do State.set_ending(\"bad\")
+=> END
+"
+metadata/dialogue_manager_version = "3.5.1"
