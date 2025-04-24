@@ -19,5 +19,5 @@ func end_timer(TimerName: String):
 func print_times() -> String:
 	var returnString = ""
 	for timer in Times.keys():
-		returnString += "Du hast " + timer + " " + str(Times[timer]) + " Sekunden gespielt. "
+		returnString += "Du hast " + timer + " " + str(Times[timer]) + " Sekunden gespielt.\n"
 	return returnString
