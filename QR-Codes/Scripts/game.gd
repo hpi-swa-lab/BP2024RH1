@@ -12,11 +12,6 @@ var columns: int = 8
 var solution: String = "10100010" + "00000001" + "11100011" + "10100110" + "11100011" + "00000010" + "00100001" + "11001100"
 var correct_solution: bool = true
 
-var cinema = preload("res://Assets/random_websites/cinema2.png")
-var plants = preload("res://assets/random_websites/plants2.jpg")
-var time = preload("res://assets/random_websites/time2.png")
-var zoo = preload("res://assets/random_websites/zoo2.jpg")
-
 func _ready() -> void:
 	randomize()
 	#if Global.Options == 1:
@@ -145,12 +140,16 @@ func _on_button_gui_input(event: InputEvent) -> void:
 			
 func display_solution():
 	if not correct_solution:
+		var cinema = load("res://Assets/random_websites/cinema2.png")
+		var plants = load("res://assets/random_websites/plants2.jpg")
+		var time = load("res://assets/random_websites/time2.png")
+		var zoo = load("res://assets/random_websites/zoo2.jpg")
 		var displays = [cinema, plants, time, zoo]
 		var random_display = displays[randi() % displays.size()]
 		display.texture = random_display
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "false_solution")
 	if correct_solution:
-		display.texture = preload("res://Assets/museum2.jpg")
+		display.texture = load("res://Assets/museum2.jpg")
 		Global.End = true
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "correct_solution")
 		
