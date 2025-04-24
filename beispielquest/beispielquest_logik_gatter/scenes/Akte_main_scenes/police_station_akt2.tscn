@@ -141,8 +141,7 @@ text = "Küche"
 layout_mode = 1
 hint_1_text = "Vielleicht findest du hinweise wenn du die technischen geräte untersuchst"
 hint_2_text = "untersuche alle router"
-hint_3_text = "Nachdem alle router untersucht wurden gehe ins Chefbüro und untersuche den router erneut"
-Timer_hint_2_time = 45.0
+Timer_hint_2_time = 60.0
 Timer_hint_3_time = 90.0
 
 [node name="computer_button_management_sys" type="Node" parent="."]

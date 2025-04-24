@@ -26,9 +26,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_iyj0y")
 
-[node name="LogikGatterLevelIntroduction" parent="." instance=ExtResource("1_2iq3a")]
-layout_mode = 1
-
 [node name="explanation_start" type="Label" parent="."]
 layout_mode = 0
 offset_left = 289.0
@@ -56,6 +53,9 @@ offset_right = 127.0
 offset_bottom = 36.0
 texture = ExtResource("2_en5oq")
 expand_mode = 1
+
+[node name="LogikGatterLevelIntroduction" parent="." instance=ExtResource("1_2iq3a")]
+layout_mode = 1
 
 [node name="explanation_connection" type="Label" parent="."]
 visible = false

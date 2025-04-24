@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://v8eg0wvcs4ea"]
 
 [ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://logik_gatter/scenes/Baukasten/Start.tscn" id="1_4vy14"]
-[ext_resource type="Script" uid="uid://ch3hunh08n8eo" path="res://scripts/Minigames/level_1.gd" id="1_nujbg"]
+[ext_resource type="Script" uid="uid://ch3hunh08n8eo" path="res://scripts/minigames/level_1.gd" id="1_nujbg"]
 [ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://logik_gatter/scenes/Baukasten/Gatter/And_Gatter.tscn" id="2_nujbg"]
 [ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://logik_gatter/scenes/Baukasten/Gatter/Or_Gatter.tscn" id="3_gsj6i"]
 [ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://logik_gatter/scenes/Baukasten/Ziel.tscn" id="4_i7jti"]
