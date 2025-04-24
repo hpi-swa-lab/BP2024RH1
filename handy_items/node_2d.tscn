@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://fwd7pp1jeb0t"]
+
+[ext_resource type="Texture2D" uid="uid://bh6csba3en17v" path="res://Assets/magnifying-glass.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://b10uxvwp6kcxh" path="res://node_2d.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://cdd0cm306alxw" path="res://lupe.gd" id="2_epypp"]
+[ext_resource type="PackedScene" uid="uid://ckgilkx8p3b3q" path="res://item.tscn" id="4_kdubu"]
+[ext_resource type="Texture2D" uid="uid://byurtrqbwj6iv" path="res://Assets/apple.png" id="5_d21ai"]
+[ext_resource type="Texture2D" uid="uid://drq7mq80wjsrk" path="res://Assets/book.png" id="6_rj586"]
+
+[sub_resource type="Theme" id="Theme_0hol4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6r6c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdubu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d21ai"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_epypp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1165.0
+offset_bottom = 654.0
+mouse_filter = 2
+color = Color(0.65098, 1, 1, 1)
+
+[node name="Lupe" type="Button" parent="."]
+offset_left = 995.0
+offset_top = 35.0
+offset_right = 1515.0
+offset_bottom = 555.0
+scale = Vector2(0.2, 0.2)
+theme = SubResource("Theme_0hol4")
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_q6r6c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kdubu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d21ai")
+icon = ExtResource("1_0e48y")
+script = ExtResource("2_epypp")
+
+[node name="Items" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" parent="Items" instance=ExtResource("4_kdubu")]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 372.0
+offset_right = 308.0
+offset_bottom = 472.0
+icon = ExtResource("6_rj586")
+
+[node name="Button2" parent="Items" instance=ExtResource("4_kdubu")]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 381.0
+offset_right = 725.0
+offset_bottom = 481.0
+icon = ExtResource("5_d21ai")
+
+[connection signal="pressed" from="Lupe" to="Lupe" method="_on_pressed"]
+[connection signal="searching" from="Lupe" to="." method="_on_lupe_searching"]
