@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2bi0h58ogcem"]
+[gd_scene load_steps=11 format=3 uid="uid://c2bi0h58ogcem"]
 
 [ext_resource type="Texture2D" uid="uid://df8kpp4el6p1k" path="res://assets/places/grundriss.jpg" id="1_udyx4"]
 [ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://logik_gatter/scenes/Baukasten/Ziel.tscn" id="2_12rdr"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://logik_gatter/scenes/Baukasten/Gatter/Or_Gatter.tscn" id="7_elwrv"]
 [ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://logik_gatter/scenes/Baukasten/Start.tscn" id="8_ku0cy"]
 [ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://logik_gatter/scenes/Baukasten/connection.tscn" id="9_snf2q"]
+[ext_resource type="PackedScene" uid="uid://dobh0dh6l2t8n" path="res://logik_gatter/scenes/Baukasten/Start_for_two.tscn" id="10_1gmlg"]
 
 [node name="Level2" type="Control"]
 layout_mode = 3
@@ -28,6 +29,62 @@ rotation = -1.5708
 texture = ExtResource("1_udyx4")
 expand_mode = 1
 
+[node name="Connections" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -8.0
+offset_top = 667.0
+offset_right = 32.0
+offset_bottom = 707.0
+
+[node name="Connection_AndChef_ZIel" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(144, -155)
+
+[node name="Connection_Input_OrRight_1" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(1000, -531)
+points = PackedVector2Array(48, -32, 48, 24)
+
+[node name="Connection_Input_OrRight_2" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(1000, -459)
+points = PackedVector2Array(48, 280, 48, -16)
+
+[node name="Connection_OrRight_AndRight" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(864, -491)
+
+[node name="Connection_AndLeft_AndChef" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(296, -475)
+points = PackedVector2Array(0, 1, 0, 304)
+
+[node name="Connection_AndKitchen_AndChef" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(528, -139)
+points = PackedVector2Array(-224, -16, 264, -16)
+
+[node name="Connection_Input_AndKitchen" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(976, -267)
+points = PackedVector2Array(-128, 112, 0, 112)
+
+[node name="Connection_Input_AndRight" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(728, -547)
+points = PackedVector2Array(-40, -32, 112, -32, 112, 40)
+
+[node name="Connection_Input_OrRIght_2" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(672, -420)
+points = PackedVector2Array(-48, -56, -48, 0)
+
+[node name="Connection_Input_OrRIght_1" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(512, -555)
+points = PackedVector2Array(112, 48, 112, -8)
+
+[node name="Connection_AndRight_AndKitchen" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(624, -307)
+points = PackedVector2Array(200, -168, 200, 136)
+
+[node name="Connection_OrLeft_AndLeft" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(232, -523)
+points = PackedVector2Array(272, 32, 88, 32)
+
+[node name="Connection_Input_AndLeft" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(160, -491)
+
 [node name="Ziel" parent="." instance=ExtResource("2_12rdr")]
 position = Vector2(96, 456)
 scale = Vector2(0.15, 0.15)
@@ -42,113 +99,92 @@ offset_right = 245.333
 offset_bottom = 672.0
 texture = ExtResource("5_ej7eh")
 
-[node name="AndGatter" parent="." instance=ExtResource("6_1gmlg")]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 200.0
-offset_right = 315.0
-offset_bottom = 231.0
+[node name="Starts" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Or_Gatter" parent="." instance=ExtResource("7_elwrv")]
-layout_mode = 0
-offset_left = 496.0
-offset_top = 200.0
-offset_right = 631.0
-offset_bottom = 231.0
-
-[node name="AndGatter2" parent="." instance=ExtResource("6_1gmlg")]
-layout_mode = 0
-offset_left = 800.0
-offset_top = 160.0
-offset_right = 859.0
-offset_bottom = 191.0
-
-[node name="Or_Gatter2" parent="." instance=ExtResource("7_elwrv")]
-layout_mode = 0
-offset_left = 960.0
-offset_top = 160.0
-offset_right = 1095.0
-offset_bottom = 191.0
-
-[node name="AndGatter3" parent="." instance=ExtResource("6_1gmlg")]
-layout_mode = 0
-offset_left = 944.0
-offset_top = 504.0
-offset_right = 1003.0
-offset_bottom = 535.0
-
-[node name="AndGatter4" parent="." instance=ExtResource("6_1gmlg")]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 498.0
-offset_right = 299.0
-offset_bottom = 529.0
-
-[node name="Start" parent="." instance=ExtResource("8_ku0cy")]
+[node name="Start_OrRight" parent="Starts" instance=ExtResource("8_ku0cy")]
 layout_mode = 0
 offset_left = 984.0
 offset_top = 80.0
 offset_right = 1061.0
 offset_bottom = 111.0
 
-[node name="Start2" parent="." instance=ExtResource("8_ku0cy")]
+[node name="Start_OrLeft" parent="Starts" instance=ExtResource("8_ku0cy")]
 layout_mode = 0
-offset_left = 984.0
-offset_top = 232.0
-offset_right = 1061.0
-offset_bottom = 263.0
+offset_left = 552.0
+offset_top = 239.0
+offset_right = 629.0
+offset_bottom = 270.0
 
-[node name="Connection" parent="." instance=ExtResource("9_snf2q")]
-position = Vector2(136, 512)
-
-[node name="Start3" parent="." instance=ExtResource("8_ku0cy")]
-layout_mode = 0
-offset_left = 440.0
-offset_top = 96.0
-offset_right = 517.0
-offset_bottom = 127.0
-
-[node name="Start4" parent="." instance=ExtResource("8_ku0cy")]
-layout_mode = 0
-offset_left = 584.0
-offset_top = 96.0
-offset_right = 661.0
-offset_bottom = 127.0
-
-[node name="Start5" parent="." instance=ExtResource("8_ku0cy")]
-layout_mode = 0
-offset_left = 232.0
-offset_top = 96.0
-offset_right = 309.0
-offset_bottom = 127.0
-
-[node name="Start6" parent="." instance=ExtResource("8_ku0cy")]
+[node name="Start_AndLeft" parent="Starts" instance=ExtResource("8_ku0cy")]
 layout_mode = 0
 offset_left = 80.0
-offset_top = 208.0
+offset_top = 161.0
 offset_right = 157.0
-offset_bottom = 239.0
+offset_bottom = 192.0
 
-[node name="Connection2" parent="." instance=ExtResource("9_snf2q")]
-position = Vector2(992, 136)
+[node name="StartForTwo_OrLeft_AndRight" parent="Starts" instance=ExtResource("10_1gmlg")]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 72.0
+offset_right = 677.0
+offset_bottom = 103.0
 
-[node name="Connection3" parent="." instance=ExtResource("9_snf2q")]
-position = Vector2(992, 208)
+[node name="StartForTwo_AndKitchen_OrRight" parent="Starts" instance=ExtResource("10_1gmlg")]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 496.0
+offset_right = 1061.0
+offset_bottom = 527.0
 
-[node name="Connection4" parent="." instance=ExtResource("9_snf2q")]
-position = Vector2(856, 176)
+[node name="Gatter" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 96.0
+offset_top = 456.0
+offset_right = 136.0
+offset_bottom = 496.0
 
-[node name="Connection5" parent="." instance=ExtResource("9_snf2q")]
-position = Vector2(232, 360)
+[node name="AndLeft" parent="Gatter" instance=ExtResource("6_1gmlg")]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -296.0
+offset_right = 219.0
+offset_bottom = -265.0
 
-[node name="Connection6" parent="." instance=ExtResource("9_snf2q")]
-position = Vector2(544, 528)
+[node name="OrLeft" parent="Gatter" instance=ExtResource("7_elwrv")]
+layout_mode = 0
+offset_left = 400.0
+offset_top = -296.0
+offset_right = 535.0
+offset_bottom = -265.0
 
-[node name="Connection7" parent="." instance=ExtResource("9_snf2q")]
-position = Vector2(968, 400)
+[node name="AndRight" parent="Gatter" instance=ExtResource("6_1gmlg")]
+layout_mode = 0
+offset_left = 703.0
+offset_top = -296.0
+offset_right = 762.0
+offset_bottom = -265.0
 
-[node name="Connection8" parent="." instance=ExtResource("9_snf2q")]
-position = Vector2(720, 120)
+[node name="OrRight" parent="Gatter" instance=ExtResource("7_elwrv")]
+layout_mode = 0
+offset_left = 864.0
+offset_top = -296.0
+offset_right = 999.0
+offset_bottom = -265.0
 
-[node name="Connection9" parent="." instance=ExtResource("9_snf2q")]
-position = Vector2(576, 168)
+[node name="AndKitchen" parent="Gatter" instance=ExtResource("6_1gmlg")]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 40.0
+offset_right = 747.0
+offset_bottom = 71.0
+
+[node name="AndChef" parent="Gatter" instance=ExtResource("6_1gmlg")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 42.0
+offset_right = 203.0
+offset_bottom = 73.0
