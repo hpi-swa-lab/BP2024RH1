@@ -94,7 +94,7 @@ Inspector: Der Kunständler hatte das Gemälde gestohlen.
 Robo: Konnte es wiedergefunden werden?
 Inspector: Zum Glück ja.
 Inspector: Du warst eine große Hilfe!
-Inpector: Wie schwer fandest du den Fall?
+Inspector: Wie schwer fandest du den Fall?
 - Einfach.
 	set Global.Difficult = "einfach"
 	=> second_question
@@ -106,7 +106,7 @@ Inpector: Wie schwer fandest du den Fall?
 		=> second_question
 
 ~ second_question
-Inpector: Hat dir der Fall Spaß gemacht?
+Inspector: Hat dir der Fall Spaß gemacht?
 - Ja!
 	set Global.Fun = "ja"
 	do show_end_animal()
