@@ -16,8 +16,8 @@ func end_timer(TimerName: String):
 		var endTime = Time.get_ticks_msec()
 		Times[TimerName] = (endTime - startTime) / 1000
 
-func print_time(TimerName: String) -> String:
+func print_times() -> String:
 	var returnString = ""
-	if Times.has(TimerName):
-		returnString = "Du hast " + TimerName + " " + str(Times[TimerName]) + " Sekunden gespielt."
+	for timer in Times.keys():
+		returnString += "Du hast " + timer + " " + str(Times[timer]) + " Sekunden gespielt. "
 	return returnString

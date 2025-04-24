@@ -14,4 +14,4 @@ func _on_end_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	GlobalTimer.end_timer(Timer1)
-	print(GlobalTimer.print_time(Timer1), GlobalTimer.print_time(Timer2))
+	print(GlobalTimer.print_times())
