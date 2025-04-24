@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://1lucnrhv7ixm"]
+[gd_scene load_steps=7 format=3 uid="uid://1lucnrhv7ixm"]
 
 [ext_resource type="Script" uid="uid://b1rv0ye67g0jw" path="res://scripts/places/office.gd" id="1_dtsx8"]
 [ext_resource type="Texture2D" uid="uid://dhm4yogkq8wyk" path="res://assets/places/detektiv_buro3.jpg" id="1_n0wcf"]
 [ext_resource type="Texture2D" uid="uid://cfh3t40rea6ww" path="res://assets/objects/tafel0.jpg" id="2_qphb6"]
 [ext_resource type="Script" uid="uid://magsoy2dds7r" path="res://scripts/determination_board/button_determination_board.gd" id="3_qphb6"]
 [ext_resource type="Texture2D" uid="uid://bqvevd3fn3iuu" path="res://assets/objects/desktop.png" id="5_cgu3l"]
+[ext_resource type="Texture2D" uid="uid://cfj7o3thne24e" path="res://assets/objects/router2.png" id="6_cgu3l"]
 
 [node name="Office" type="Control"]
 layout_mode = 3
@@ -38,5 +39,15 @@ offset_bottom = 758.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("5_cgu3l")
 
+[node name="Router" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 263.0
+offset_right = 718.0
+offset_bottom = 775.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("6_cgu3l")
+
 [connection signal="pressed" from="button_determination_board" to="button_determination_board" method="_on_pressed"]
 [connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
+[connection signal="pressed" from="Router" to="." method="_on_router_pressed"]
