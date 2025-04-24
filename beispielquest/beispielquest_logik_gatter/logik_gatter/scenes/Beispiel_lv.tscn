@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://80kkyj1gae0r"]
 
-[ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://scenes/Baukasten/Gatter/And_Gatter.tscn" id="1_3g1ar"]
-[ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://scenes/Baukasten/Gatter/Or_Gatter.tscn" id="2_njpnc"]
-[ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://scenes/Baukasten/connection.tscn" id="3_fucsj"]
-[ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://scenes/Baukasten/Start.tscn" id="4_whycb"]
-[ext_resource type="PackedScene" uid="uid://dd23pklibjxcc" path="res://scenes/Baukasten/Gatter/choose_gatter.tscn" id="5_wd8xi"]
-[ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://scenes/Baukasten/Ziel.tscn" id="6_xomk6"]
-[ext_resource type="Texture2D" uid="uid://xmv2tryc7wd8" path="res://assets/lampe_aus.png" id="7_2rfmn"]
-[ext_resource type="Texture2D" uid="uid://genn6of8icim" path="res://assets/lampe_an.png" id="8_mmi1d"]
+[ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://logik_gatter/scenes/Baukasten/Gatter/And_Gatter.tscn" id="1_3g1ar"]
+[ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://logik_gatter/scenes/Baukasten/Gatter/Or_Gatter.tscn" id="2_njpnc"]
+[ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://logik_gatter/scenes/Baukasten/connection.tscn" id="3_fucsj"]
+[ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://logik_gatter/scenes/Baukasten/Start.tscn" id="4_whycb"]
+[ext_resource type="PackedScene" uid="uid://dd23pklibjxcc" path="res://logik_gatter/scenes/Baukasten/Gatter/choose_gatter.tscn" id="5_wd8xi"]
+[ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://logik_gatter/scenes/Baukasten/Ziel.tscn" id="6_xomk6"]
+[ext_resource type="Texture2D" uid="uid://xmv2tryc7wd8" path="res://logik_gatter/assets/lampe_aus.png" id="7_2rfmn"]
+[ext_resource type="Texture2D" uid="uid://genn6of8icim" path="res://logik_gatter/assets/lampe_an.png" id="8_mmi1d"]
 
 [node name="beispiel_lv" type="Control"]
 layout_mode = 3

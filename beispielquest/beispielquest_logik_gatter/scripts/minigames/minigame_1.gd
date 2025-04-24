@@ -14,3 +14,4 @@ func _on_check_button_pressed() -> void:
 	if ziel_input == true:
 		pass
 		#dialog strom funktioniert aber internet verbindung noch weg
+		#szenen wechsle in dialog
