@@ -3,9 +3,8 @@ extends Node
 var Options: int
 var Tex: ImageTexture
 var Intro_done: bool = false
-var Card1_collected: bool = false
-var Card2_collected: bool = false
-var Card3_collected: bool = false
+var Card_collected: bool = false
 var Paper_collected: bool = false
 var End: bool = false
-var Colour: String = ""
+var Difficult: String = ""
+var Fun: String = ""

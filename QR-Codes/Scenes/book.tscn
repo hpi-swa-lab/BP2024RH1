@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://j7jgpexgx8ss"]
+[gd_scene load_steps=6 format=3 uid="uid://j7jgpexgx8ss"]
 
 [ext_resource type="Script" uid="uid://6n6ej0ugsmd1" path="res://Scripts/book.gd" id="1_0vt1r"]
 [ext_resource type="Texture2D" uid="uid://rcum2pr6r2nn" path="res://Assets/book.jpg" id="1_rhhov"]
 [ext_resource type="Texture2D" uid="uid://bgupipfeqw7ff" path="res://Assets/back-button-svgrepo-com.svg" id="3_0vt1r"]
+[ext_resource type="Texture2D" uid="uid://bewqvq5m4tyov" path="res://Assets/qrcode_full.png" id="4_dgncb"]
 [ext_resource type="Texture2D" uid="uid://bpohlayjgsxtn" path="res://Assets/qrcode_cut_demopage.png" id="4_gr7b7"]
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("back", "card1", "card2", "card3")]
@@ -62,7 +63,7 @@ vertical_alignment = 1
 [node name="Qrcode1" type="Sprite2D" parent="Card1"]
 position = Vector2(236, 122)
 scale = Vector2(0.16825, 0.16825)
-texture = ExtResource("4_gr7b7")
+texture = ExtResource("4_dgncb")
 
 [node name="Label2" type="Label" parent="Card1"]
 modulate = Color(0, 0, 0, 1)
@@ -125,7 +126,7 @@ vertical_alignment = 1
 [node name="Qrcode3" type="Sprite2D" parent="Card3"]
 position = Vector2(235, 127)
 scale = Vector2(0.168, 0.168)
-texture = ExtResource("4_gr7b7")
+texture = ExtResource("4_dgncb")
 
 [node name="Label2" type="Label" parent="Card3"]
 modulate = Color(0, 0, 0, 1)

@@ -5,7 +5,7 @@ extends Button
 @export var safe: Button
 @export var zoom_out: Button
 @export var back: Button
-@export var paper: Button
+@export var paper: Sprite2D
 
 var camera_start: Vector2 = Vector2(576, 324)
 var camera_cupboard: Vector2 = Vector2(100,350)
@@ -20,7 +20,7 @@ func _on_ready() -> void:
 	safe.visible = false
 	
 func _process(delta):
-	if Global.Card2_collected == true and Global.Paper_collected == true:
+	if Global.Card_collected == true and Global.Paper_collected == true:
 		back.visible = true
 	if Global.Paper_collected == true:
 		paper.visible = false

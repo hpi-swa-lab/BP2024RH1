@@ -141,9 +141,9 @@ func _on_button_gui_input(event: InputEvent) -> void:
 func display_solution():
 	if not correct_solution:
 		var cinema = load("res://Assets/random_websites/cinema2.png")
-		var plants = load("res://assets/random_websites/plants2.jpg")
-		var time = load("res://assets/random_websites/time2.png")
-		var zoo = load("res://assets/random_websites/zoo2.jpg")
+		var plants = load("res://Assets/random_websites/plants2.jpg")
+		var time = load("res://Assets/random_websites/time2.png")
+		var zoo = load("res://Assets/random_websites/zoo2.jpg")
 		var displays = [cinema, plants, time, zoo]
 		var random_display = displays[randi() % displays.size()]
 		display.texture = random_display

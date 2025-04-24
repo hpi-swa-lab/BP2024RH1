@@ -17,7 +17,7 @@ func _on_ready() -> void:
 	#else:
 		#card.visible = false
 		
-	if Global.Card2_collected == false:
+	if Global.Card_collected == false:
 		card2.visible = true
 	else:
 		card2.visible = false
@@ -33,10 +33,11 @@ func _on_card_1_gui_input(event: InputEvent) -> void:
 func _on_card_2_gui_input(event: InputEvent) -> void:
 	if  event is InputEventMouseButton and event.is_pressed():
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "kunsthaendler")
-		await get_tree().create_timer(3).timeout
-		card2.visible = false
-		Global.Card2_collected = true
+		Global.Card_collected = true
 
 func _on_card_3_gui_input(event: InputEvent) -> void:
 	if  event is InputEventMouseButton and event.is_pressed():
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "elektrikerin")
+
+func hide_card():
+	card2.visible = false

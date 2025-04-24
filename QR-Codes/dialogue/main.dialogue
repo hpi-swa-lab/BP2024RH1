@@ -42,6 +42,8 @@ Robo: Welches Interesse könnte die Elektrikerin an einem Gemälde haben?
 ~ kunsthaendler
 Robo: Komisch, da scheint ein Ecke abgerissen zu sein.
 Robo: Ich nehme die Karte mal mit.
+set Global.Card_collected = true
+do hide_card()
 => END
 
 ~ pixeleditor
@@ -92,10 +94,24 @@ Inspector: Der Kunständler hatte das Gemälde gestohlen.
 Robo: Konnte es wiedergefunden werden?
 Inspector: Zum Glück ja.
 Inspector: Du warst eine große Hilfe!
+Inpector: Wie schwer fandest du den Fall?
+- Einfach.
+	set Global.Difficult = "einfach"
+	=> second_question
+- Mittel.
+	set Global.Difficult = "mittel"
+		=> second_question
+- Schwer.
+	set Global.Difficult = "schwer"
+		=> second_question
+
+~ second_question
 Inpector: Hat dir der Fall Spaß gemacht?
 - Ja!
-	set Global.Colour = "green"
+	set Global.Fun = "ja"
+	do show_end_animal()
 	=> END
 - Nein.
-	set Global.Colour = "red"
+	set Global.Fun = "nein"
+	do show_end_animal()
 	=> END

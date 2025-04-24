@@ -2,25 +2,18 @@
 
 [ext_resource type="Script" uid="uid://ccxu3cq8yx3d" path="res://Scripts/office.gd" id="1_llmbb"]
 [ext_resource type="Texture2D" uid="uid://dwrxsnyn8hsub" path="res://Assets/office.jpg" id="2_vggx3"]
+[ext_resource type="PackedScene" uid="uid://blg0ma8p77fjk" path="res://Scenes/End.tscn" id="3_vggx3"]
 
-[sub_resource type="GDScript" id="GDScript_llmbb"]
-script/source = "extends ColorRect
-"
-
-[node name="Office" type="Node2D" node_paths=PackedStringArray("colour")]
+[node name="Office" type="Node2D" node_paths=PackedStringArray("end_scene")]
 script = ExtResource("1_llmbb")
-colour = NodePath("ColorRect")
+end_scene = NodePath("End")
 
 [node name="Office" type="Sprite2D" parent="."]
 position = Vector2(575, 307)
 scale = Vector2(0.346, 0.346)
 texture = ExtResource("2_vggx3")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1164.0
-offset_bottom = 662.0
-color = Color(1, 1, 1, 0)
-script = SubResource("GDScript_llmbb")
+[node name="End" parent="." instance=ExtResource("3_vggx3")]
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)

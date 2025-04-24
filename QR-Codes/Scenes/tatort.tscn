@@ -2,14 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://c3rnpxq603tly" path="res://Assets/tatort.jpg" id="1_kl7lh"]
 [ext_resource type="Script" uid="uid://cvqpiprt1bsak" path="res://Scripts/cupboard.gd" id="3_b8mj1"]
+[ext_resource type="Texture2D" uid="uid://5l3t7y1sby8j" path="res://Assets/paper2.png" id="4_iqajy"]
 [ext_resource type="Texture2D" uid="uid://ct0txpg5ekunk" path="res://Assets/back-button.svg" id="4_k7fs2"]
 
 [sub_resource type="GDScript" id="GDScript_q5h7g"]
 script/source = "extends Camera2D
 "
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b8mj1"]
-load_path = "res://.godot/imported/paper.png-8ddf38491959bdccfaea64467966ff8f.ctex"
 
 [node name="CrimeScene" type="Node2D"]
 
@@ -92,21 +90,17 @@ offset_top = 346.0
 offset_right = 841.0
 offset_bottom = 455.0
 
-[node name="Paper" type="Button" parent="."]
+[node name="Paper" type="Sprite2D" parent="."]
 visible = false
-offset_left = 432.0
-offset_top = 34.0
-offset_right = 801.0
-offset_bottom = 380.0
-icon = SubResource("CompressedTexture2D_b8mj1")
+position = Vector2(565, 277)
+texture = ExtResource("4_iqajy")
 
 [node name="SolutionGrid" type="GridContainer" parent="Paper"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 68.0
-offset_top = 34.0
-offset_right = 268.0
-offset_bottom = 234.0
+offset_left = -102.0
+offset_top = -139.0
+offset_right = 98.0
+offset_bottom = 61.0
 
 [connection signal="gui_input" from="Picture" to="Picture" method="_on_gui_input"]
 [connection signal="gui_input" from="Picture" to="Cupboard" method="_on_picture_gui_input"]
@@ -119,4 +113,3 @@ offset_bottom = 234.0
 [connection signal="ready" from="Zoom_out" to="Zoom_out" method="_on_ready"]
 [connection signal="gui_input" from="Back" to="Cupboard" method="_on_back_gui_input"]
 [connection signal="gui_input" from="Cushion" to="Cupboard" method="_on_cushion_gui_input"]
-[connection signal="gui_input" from="Paper" to="Cupboard" method="_on_paper_gui_input"]
