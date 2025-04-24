@@ -1,0 +1,9 @@
+res://scenes/bombs/CentralExplosion.tscn
+res://scenes/intro_scenes/background.tres
+res://scenes/bombs/DirectionalExplosion.tscn
+res://scenes/PowerUp.tscn
+res://scenes/Brick_Wall.tscn
+res://scenes/game_window.tscn
+res://scenes/Player.tscn
+res://scenes/menus/mainmenu.tscn
+res://scenes/User_Interface.tscn

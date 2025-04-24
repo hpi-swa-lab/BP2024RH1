@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_io5jq"]
+
+[resource]
+script = ExtResource("1_io5jq")
+using_states = PackedStringArray()
+titles = {
+"bad": "5",
+"good": "1"
+}
+character_names = PackedStringArray()
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"id": "1",
+&"next_id": "2",
+&"text": "[b]Bravo! You now know where to find the cat godess.[/b]",
+&"type": "dialogue"
+},
+"2": {
+&"id": "2",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"3": {
+&"id": "3",
+&"next_id": "4",
+&"type": ""
+},
+"4": {
+&"id": "4",
+&"next_id": "5",
+&"type": "title"
+},
+"5": {
+&"id": "5",
+&"next_id": "6",
+&"text": "[b]You really are a bad person!!!![/b]",
+&"type": "dialogue"
+},
+"6": {
+&"id": "6",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"7": {
+&"id": "7",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ good
+[b]Bravo! You now know where to find the cat godess.[/b]
+=> END
+
+~ bad
+[b]You really are a bad person!!!![/b]
+=> END"
+metadata/dialogue_manager_version = "3.5.1"

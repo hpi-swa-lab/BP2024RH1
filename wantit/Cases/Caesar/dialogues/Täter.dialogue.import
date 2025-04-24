@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://mtwiv37gins3"
+path="res://.godot/imported/Täter.dialogue-d7087ec05f9586983c571f55ac3024ae.tres"
+
+[deps]
+
+source_file="res://Cases/Caesar/dialogues/Täter.dialogue"
+dest_files=["res://.godot/imported/Täter.dialogue-d7087ec05f9586983c571f55ac3024ae.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+extends Control
+
+var ziel_input: bool = false
+
+func _on_level_1_ziel_input_false() -> void:
+	ziel_input = false
+
+func _on_level_1_ziel_input_true() -> void:
+	ziel_input = true
+	
+
+
+func _on_check_button_pressed() -> void:
+	if ziel_input == true:
+		pass
+		#dialog strom funktioniert aber internet verbindung noch weg

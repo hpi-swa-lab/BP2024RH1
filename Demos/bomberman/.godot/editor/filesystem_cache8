@@ -1,0 +1,65 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1744014407
+icon.svg::CompressedTexture2D::982615302082409289::1729499086::1743429648::1::::<><>::
+::res://asserts/::1743429648
+182217.png::CompressedTexture2D::8394640126516407755::1742918638::1743429648::1::::<><>::
+AB_-_Speed_Up.webp::CompressedTexture2D::5325790171478211343::1742918608::1743429648::1::::<><>::
+BW_(AC)_-_Bomb_Up.webp::CompressedTexture2D::7418700113717066263::1742918555::1743429648::1::::<><>::
+BW_(AC)_-_Fire_Up.webp::CompressedTexture2D::7903733573555296910::1742918480::1743429648::1::::<><>::
+PowerUpBombUp.png::CompressedTexture2D::3913630942577189409::1741958872::1743429648::1::::<><>::
+PowerUpFireUp.png::CompressedTexture2D::1892421656140509346::1741958883::1743429648::1::::<><>::
+PowerUpSpeedUp.png::CompressedTexture2D::3450799997724405898::1741958893::1743429648::1::::<><>::
+PowerUpWallPass.png::CompressedTexture2D::8989700625975632232::1741958901::1743429648::1::::<><>::
+Screenshot 2025-03-25 160432.png::CompressedTexture2D::1540674023752004794::1742918672::1743429648::1::::<><>::
+Screenshot 2025-03-25 160508.png::CompressedTexture2D::3252813130339777091::1742918708::1743429648::1::::<><>::
+Sprites.png::CompressedTexture2D::4836148477312335765::1741958923::1743429648::1::::<><>::
+::res://assets/::1743768068
+building1.svg::CompressedTexture2D::8474472879109917374::1737052222::1743767875::1::::<><>::
+building2.svg::CompressedTexture2D::192876157556995674::1737052222::1743767875::1::::<><>::
+cloud1.svg::CompressedTexture2D::1176916025704621053::1737052222::1743767875::1::::<><>::
+cloud2.svg::CompressedTexture2D::2746874932986202341::1737052222::1743767875::1::::<><>::
+donut.png::CompressedTexture2D::8365453728997796888::1737052222::1743768068::1::::<><>::
+hangry_goose.svg::CompressedTexture2D::2218214315054811742::1737052222::1743767875::1::::<><>::
+high_goose.svg::CompressedTexture2D::8736358089565982103::1737052222::1743767875::1::::<><>::
+::res://assets/buttons/::1743767875
+main menu.png::CompressedTexture2D::4275725133026093144::1737052222::1743767875::1::::<><>::
+play.png::CompressedTexture2D::6544678012079051368::1737052222::1743767875::1::::<><>::
+quickplay.png::CompressedTexture2D::8415538879168970837::1737052222::1743767875::1::::<><>::
+restart.png::CompressedTexture2D::9147849069370154342::1737052222::1743767875::1::::<><>::
+::res://Resources/::1742938515
+bomb_up.tres::Resource/PowerUpRes::4663653106459339233::1742918873::0::1::::<><>::res://scripts/power_up_res.gd<>uid://bmlxmeydwstx0::::res://asserts/Screenshot 2025-03-25 160508.png
+fire_up.tres::Resource/PowerUpRes::2418422818443284727::1742918873::0::1::::<><>::res://scripts/power_up_res.gd<>uid://v7kw8sqtlnws::::res://asserts/Screenshot 2025-03-25 160432.png
+speed_up.tres::Resource/PowerUpRes::3517043530590308400::1742938515::0::1::::<><>::res://scripts/power_up_res.gd<>uid://ch438r3nowoix::::res://asserts/AB_-_Speed_Up.webp
+::res://scenes/::1743775229
+Brick_Wall.tscn::PackedScene::1755728914915980047::1743775228::0::1::::<><>::res://scripts/brick_wall.gd<>uid://ca5wwnvqtts7f::::res://asserts/Sprites.png
+game_window.tscn::PackedScene::8554360709173011105::1743775228::0::1::::<><>::res://scripts/game_window.gd<>res://scripts/brick_wall_sys.gd<>uid://yrmhkacc4sst::::res://scenes/map.tscn<>uid://dadxskuawyc1a::::res://scenes/Player.tscn
+map.tscn::PackedScene::1720368298930531463::1742917448::0::1::::<><>::uid://ca5wwnvqtts7f::::res://asserts/Sprites.png
+Player.tscn::PackedScene::7166884375625334940::1743775228::0::1::::<><>::uid://ca5wwnvqtts7f::::res://asserts/Sprites.png<>res://scripts/player.gd<>res://scripts/raycast.gd<>res://scripts/bomb_placement_sys.gd<>res://scripts/power_up_sys.gd
+PowerUp.tscn::PackedScene::4264559334168134383::1743775228::0::1::::<><>::res://scripts/power_up.gd<>uid://ch438r3nowoix::::res://asserts/AB_-_Speed_Up.webp
+User_Interface.tscn::PackedScene::3563682154678298526::1743775229::0::1::::<><>::res://scripts/user_interface.gd
+::res://scenes/bombs/::1743775228
+Bomb.tscn::PackedScene::7014056077769804069::1742917448::0::1::::<><>::res://scripts/bomb.gd<>uid://ca5wwnvqtts7f::::res://asserts/Sprites.png
+CentralExplosion.tscn::PackedScene::6213684472397366589::1743775228::0::1::::<><>::res://scripts/central_explosion.gd<>uid://ca5wwnvqtts7f::::res://asserts/Sprites.png
+DirectionalExplosion.tscn::PackedScene::2691380120068415735::1743775228::0::1::::<><>::res://scripts/directional_explosion.gd<>uid://ca5wwnvqtts7f::::res://asserts/Sprites.png
+::res://scenes/intro_scenes/::1743768092
+background.tres::GradientTexture2D::4586348543643663809::1743768092::0::1::::<><>::
+::res://scenes/menus/::1743775228
+intro.tscn::PackedScene::483296810681874468::1737052222::0::1::::<><>::res://scripts/intro.gd
+mainmenu.tscn::PackedScene::1965285500575890462::1743775228::0::1::::<><>::uid://b6lwqw7iq63vp::::res://scenes/intro_scenes/background.tres<>res://scripts/mainmenu.gd<>uid://dt42cofor3old::::res://scenes/game_window.tscn<>uid://c0ij5ju40gesu::::res://assets/buttons/play.png<>uid://dr5sxwmjxr6fx::::res://assets/buttons/quickplay.png<>uid://ds0dlhxrmwyly::::res://assets/building1.svg<>uid://c0ov3kqwmo4i::::res://assets/building2.svg<>uid://q1dvub2bi2xt::::res://assets/cloud1.svg<>uid://bfeuvm6iuaq2p::::res://assets/cloud2.svg
+::res://scripts/::1743775206
+bomb.gd::GDScript::-1::1742913142::0::1::::Bomb<>Area2D<>::
+bomb_placement_sys.gd::GDScript::-1::1743775165::0::1::::BombPlacementSys<>Node<>::
+brick_wall.gd::GDScript::-1::1743765764::0::1::::BrickWall<>Area2D<>::
+brick_wall_sys.gd::GDScript::-1::1743775206::0::1::::<>Node<>::
+central_explosion.gd::GDScript::-1::1742917263::0::1::::CentralExplosion<>Area2D<>::
+directional_explosion.gd::GDScript::-1::1742913854::0::1::::DirectionalExplosion<>Area2D<>::
+game_window.gd::GDScript::-1::1743772335::0::1::::<>Node<>::
+global.gd::GDScript::-1::1743775165::0::1::::<>Node<>::
+mainmenu.gd::GDScript::-1::1743768092::0::1::::<>Control<>::
+menugoose.gd::GDScript::-1::1737052222::0::1::::<>Control<>::
+player.gd::GDScript::-1::1743772808::0::1::::Player<>Area2D<>::
+power_up.gd::GDScript::-1::1742919224::0::1::::PowerUp<>Area2D<>::
+power_up_res.gd::GDScript::-1::1742918873::0::1::::PowerUpRes<>Resource<>::
+power_up_sys.gd::GDScript::-1::1743765919::0::1::::PowerUpSys<>Node<>::
+raycast.gd::GDScript::-1::1742481093::0::1::::Raycast<>Node2D<>::
+user_interface.gd::GDScript::-1::1743772234::0::1::::<>Control<>::

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://v8eg0wvcs4ea"]
+[gd_scene load_steps=9 format=3 uid="uid://v8eg0wvcs4ea"]
 
 [ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://logik_gatter/scenes/Baukasten/Start.tscn" id="1_4vy14"]
+[ext_resource type="Script" uid="uid://ch3hunh08n8eo" path="res://scripts/Minigames/level_1.gd" id="1_nujbg"]
 [ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://logik_gatter/scenes/Baukasten/Gatter/And_Gatter.tscn" id="2_nujbg"]
 [ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://logik_gatter/scenes/Baukasten/Gatter/Or_Gatter.tscn" id="3_gsj6i"]
 [ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://logik_gatter/scenes/Baukasten/Ziel.tscn" id="4_i7jti"]
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nujbg")
 
 [node name="Ziel" parent="." node_paths=PackedStringArray("input_connection") instance=ExtResource("4_i7jti")]
 position = Vector2(1064, 328)
@@ -180,3 +182,6 @@ offset_bottom = 351.0
 input_connection_1 = NodePath("../../connections/Connection_OrRight_AndMid")
 input_connection_2 = NodePath("../../connections/Connection_AndRight_AndMid")
 output_connection = NodePath("../../connections/Connection_AndMid_Ziel")
+
+[connection signal="ziel_input_false" from="Ziel" to="." method="_on_ziel_ziel_input_false"]
+[connection signal="ziel_input_true" from="Ziel" to="." method="_on_ziel_ziel_input_true"]
