@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://buij12itm0l0f"]
+[gd_scene load_steps=12 format=3 uid="uid://buij12itm0l0f"]
 
 [ext_resource type="Script" uid="uid://ckn4i25eajkk5" path="res://Scripts/tatort.gd" id="1_dsq52"]
 [ext_resource type="Texture2D" uid="uid://cpv5dp7ajsppy" path="res://Assets/Hintergrund.png" id="1_eik8t"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://biwmmsforlbi7" path="res://Assets/Buch.png" id="8_lre5u"]
 [ext_resource type="Texture2D" uid="uid://obb2c3u5n406" path="res://Assets/Zeitung.png" id="9_0ls3p"]
 [ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="11_0ls3p"]
+[ext_resource type="PackedScene" uid="uid://dhihuq2yyyy42" path="res://Scenes/reset_button.tscn" id="11_utn0o"]
 
 [node name="Tatort" type="Node2D"]
 script = ExtResource("1_dsq52")
@@ -93,6 +94,12 @@ offset_right = -547.0
 offset_bottom = 204.0
 Text = "In die Küche gehen"
 NextSceneString = "küche"
+
+[node name="ResetButton" parent="." instance=ExtResource("11_utn0o")]
+offset_left = 473.0
+offset_top = -293.0
+offset_right = 524.0
+offset_bottom = -262.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="input_event" from="Tür" to="." method="_on_tür_input_event"]

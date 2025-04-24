@@ -88,3 +88,15 @@ func load_game():
 			print("ℹ️ No data for scene: büro")
 
 	print("✅ Game loaded successfully.")
+	
+	
+func clear_save_data():
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	file.store_string("{}")
+	file.close()
+	
+	print("✅ Save file cleared.")
+	
+	
+func start_new_game():
+	SceneSwitcher.switch_scene("res://Scenes/game.tscn")

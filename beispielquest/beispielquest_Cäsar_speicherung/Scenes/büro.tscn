@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b46stxd7p1afr"]
+[gd_scene load_steps=21 format=3 uid="uid://b46stxd7p1afr"]
 
 [ext_resource type="Script" uid="uid://dkoa2u1y85nav" path="res://Scripts/büro.gd" id="1_p13xj"]
 [ext_resource type="Texture2D" uid="uid://ddvxwfxwi2a32" path="res://Assets/Büro.png" id="1_s0ldl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://0iryivg3ofi0" path="res://Assets/Marker.png" id="5_qrna5"]
 [ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="7_qrna5"]
 [ext_resource type="Texture2D" uid="uid://cf5h5p6f4pt64" path="res://Assets/Geheim.png" id="7_svqko"]
+[ext_resource type="PackedScene" uid="uid://dhihuq2yyyy42" path="res://Scenes/reset_button.tscn" id="8_svqko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3m75l"]
 size = Vector2(816.667, 460.303)
@@ -104,6 +105,12 @@ unique_name_in_owner = true
 visible = false
 position = Vector2(0, -41)
 texture = ExtResource("7_svqko")
+
+[node name="ResetButton" parent="." instance=ExtResource("8_svqko")]
+offset_left = 453.0
+offset_top = -290.0
+offset_right = 504.0
+offset_bottom = -259.0
 
 [connection signal="input_event" from="Control/Map" to="." method="_on_area_2d_input_event"]
 [connection signal="pressed" from="CloseMapButton" to="." method="_on_close_map_button_pressed"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Beispielquest"
-run/main_scene="res://Scenes/game.tscn"
+run/main_scene="uid://di08nlxgtwq3p"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
