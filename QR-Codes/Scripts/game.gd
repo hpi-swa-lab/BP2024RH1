@@ -150,6 +150,7 @@ func display_solution():
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "false_solution")
 	if correct_solution:
 		display.texture = load("res://Assets/museum2.jpg")
+		GlobalTimer.end_timer("Game")
 		Global.End = true
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "correct_solution")
 		
@@ -157,6 +158,7 @@ func display_solution():
 func _on_pixel_editor_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		edit_pixels()
+		GlobalTimer.start_timer("Game")
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "pixeleditor")
 		
 func edit_pixels():

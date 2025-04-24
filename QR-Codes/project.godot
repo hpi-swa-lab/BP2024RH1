@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/Global.gd"
 SceneSwitcher="*res://Scripts/Scene_Switcher.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GlobalTimer="*res://Scripts/Timer.gd"
 
 [display]
 

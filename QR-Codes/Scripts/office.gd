@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready() -> void:
 	if not Global.Intro_done:
+		GlobalTimer.start_timer("Total")
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "start")
 	if Global.End == true:
 		end_scene.show_dialogue()
@@ -14,4 +15,5 @@ func _on_button_gui_input(event: InputEvent) -> void:
 			get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 
 func show_end_animal():
+	GlobalTimer.end_timer("Total")
 	end_scene.show_animal()

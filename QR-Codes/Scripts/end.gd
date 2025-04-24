@@ -2,6 +2,7 @@ extends Node2D
 
 @export var colour: ColorRect
 @export var animal: Sprite2D
+@export var times: Label
 
 func show_dialogue():
 	DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "end_scene")
@@ -26,3 +27,4 @@ func show_animal():
 				animal.texture = load("res://Assets/animals/elephant.png")
 			"schwer":
 				animal.texture = load("res://Assets/animals/bear.jpg")
+	times.text = GlobalTimer.print_times()
