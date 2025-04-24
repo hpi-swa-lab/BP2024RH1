@@ -1,0 +1,16 @@
+~ start
+Bedienung: Guten Tag, was kann ich für Sie tun?
+Detective Turing: Ich bin Detective Turing und ermittele in einem neuen Fall. Ich hätte nur ein paar Fragen. 
+Detective Turing: War der Mann auf diesem Bild, John Byte, gestern Abend hier?
+Bedienung: Ja, ich erinnere mich. Er war hier mit jemand anderem, schien als hätten sie einen ziemlich heftigen Streit gehabt.
+Detective Turing: Haben Sie zufällig mitbekommen worum es ging?
+Bedienung: Nicht so richtig, ich musste mich ja noch um die anderen Gäste kümmern. Ich habe nur gehört wie der andere irgendwas gerufen hat von: ‘Du hast es gestohlen’ und ‘Das wirst du bereuen’ oder so ähnlich.
+Detective Turing: Das hilft mir schonmal weiter. Kennen Sie mir den Namen der anderen Person?
+Bedienung: Den sollte ich haben. Es war eine Reservierung auf seinen Namen. Einen Moment…
+Bedienung: Ah ja, er hieß Kai Netzer.
+Detective Turing: Vielen Dank für Ihre Hilfe und noch einen schönen Abend.
+Detective Turing: Ich sollte diesem Kai Netzer mal einen Besuch abstatten.
+set Global.caesar_decrypted = false
+set Global.Restaurant_visited = true
+do visit_culprit()
+=> END

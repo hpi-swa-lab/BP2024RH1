@@ -1,0 +1,16 @@
+~ start
+Kollege: Das Prinzip ist ganz einfach. Du verschiebst das ganze Alphabet um eine bestimmte Anzahl Stellen nach rechts.
+Kollege: Angenommen du hast eine Verschiebung von 6, wird aus A ein G, aus B ein H und so weiter ...
+Kollege: Auf der Scheibe ist zweimal das Alphabet abgebildet. [b]Außen[/b] ist das Alphabet für den verschlüsselten Text. [b]Innen[/b] steht der entsprechende Buchstabe im Originaltext.
+Kollege: Wenn du den Text jetzt entschlüsseln willst, drehst du einfach die innere Scheibe so, dass der innere Buchstabe dem äußeren nur (hier 6) Stellen weiter entspricht.
+Kollege: Hast du das soweit verstanden?
+- Könntest du das nochmal wiederholen => start
+- Ja, ich denke schon.
+Kollege: Super! Dann probier dass doch gleich mal aus, der verschlüsselte Text ist um 6 Stellen verschoben.
+=> END
+
+~ zurueck
+Kollege: Klasse! Du hast die Verschlüsselung geknackt. Viel Erfolg beim Lösen des Falls!
+set Global.office_szene = 2
+do go_back()
+=> END

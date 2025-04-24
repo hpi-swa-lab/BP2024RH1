@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c41fjqgioh0es"]
+
+[ext_resource type="PackedScene" uid="uid://cq2kn0806dpmu" path="res://Scenes/minispiel.tscn" id="1_ijd14"]
+[ext_resource type="Script" uid="uid://bkrs4cnjfspiy" path="res://Scripts/decrypting_caesar.gd" id="1_wr5gx"]
+[ext_resource type="PackedScene" uid="uid://c8frnlbfnegad" path="res://Scenes/nachricht.tscn" id="2_rn1w6"]
+[ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="3_rn1w6"]
+
+[node name="Decrypting_Caesar" type="Node2D"]
+script = ExtResource("1_wr5gx")
+
+[node name="Minispiel" parent="." instance=ExtResource("1_ijd14")]
+shown_text = ""
+
+[node name="Nachricht" parent="." instance=ExtResource("2_rn1w6")]
+unique_name_in_owner = true
+position = Vector2(-73, -140)
+size = 1
+
+[node name="SceneSwitcherButton" parent="." instance=ExtResource("3_rn1w6")]
+offset_left = 245.0
+offset_top = 223.0
+offset_right = 255.0
+offset_bottom = 231.0
+Text = "Inventar öffnen"
+NextSceneString = "inventory"
