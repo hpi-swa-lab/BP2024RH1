@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://lhhlmsmxrbey"
+path="res://.godot/imported/Decrypting.dialogue-530491038d972d8e72826333b742a2f3.tres"
+
+[deps]
+
+source_file="res://Cases/Caesar/dialogues/Decrypting.dialogue"
+dest_files=["res://.godot/imported/Decrypting.dialogue-530491038d972d8e72826333b742a2f3.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,62 @@
+~ start
+Detective Turing: Die Wohnung in der Kryptoallee ist vor kurzem abgebrannt, der Besitzer, John Byte, vermutet Brandstiftung und hat uns beauftragt das genauer zu untersuchen.
+Detective Turing: Am besten sollte ich mir einmal die Wohnung ansehen, vielleicht finde ich dort nützliche Hinweise.
+=> END
+
+~ Teil2
+Kollege: Und irgendwas gefunden?
+Detective Turing: Ja, da war eine seltsame Nachricht und eine Statue von Cäsar.
+Kollege: Der Text könnte verschlüsselt sein, oder?
+Detective Turing: Ja, aber was hat Cäsar damit zu tun?
+Kollege: Cäsar hat schon vor 2000 Jahren Nachrichten verschlüsselt, damit seine Feinde sie nicht lesen können. Dabei werden die Buchstaben des Alphabets um eine bestimmte Anzahl Stellen verschoben. 
+Kollege: Ich glaube, ich hatte sogar noch eine Scheibe irgendwo rumliegen, die beim Entschlüsseln helfen kann...
+Kollege: Ah, hier ist sie.
+Kollege: Kennst du die Cäsar Verschlüsselung schon oder soll ich sie dir erklären?
+- Nein, kannst du sie mir erklären? => Tutorial
+- Ja, die kenne ich schon.
+Kollege: Ok, dann viel Erfolg beim Entschlüsseln!!
+=> Teil3
+
+~ Tutorial
+Kollege: Ok, kein Problem.
+do SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/tutorial.tscn")
+=> Teil3
+
+~ Teil3
+if Globals.CaseGlobals.had_tutorial:
+	Kollege: Hast du das verstanden, oder soll ich es dir nochmal erklären?
+	- Könntest du es noch mal erklären? => Tutorial
+	- Ja, ich denke schon.
+Detective Turing: Und woher weiß, um wie viele Buchstaben verschoben werden muss? Gehe ich einfach alle durch?
+Kollege: Entweder das oder es gibt irgendwo einen Hinweis.
+set Globals.CaseGlobals.had_tutorial = true
+do SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/decrypting_caesar.tscn")
+=> END
+
+~ Teil4
+Detective Turing: Ich sollte mal beim BitStop vorbeischauen, ich habe es auf der Karte markiert.
+=> END
+
+~ Teil5
+
+Kollege: Wir haben in der Wohnung von John Byte tatsächlich ein paar verdächtige Unterlagen gefunden.
+Kollege: Vielleicht handelt es sich dabei um die gestohlenen Daten. Allerdings scheint die wichtigste Stelle wieder verschlüsselt zu sein.
+Detective Turing: Habt ihr bereits probiert die Nachricht zu entschlüsseln?
+Kollege: Ja, aber es handelt sich nicht um die gleiche Verschiebung wie bei der ersten Nachricht. Wir vermuten, dass ein Schlüsselwort genutzt wurde.
+Detective Turing: Ein Schlüsselwort?
+Kollege: Neben der Verschlüsselung durch Verschiebung des Alphabets gibt es auch noch die Cäsar-Verschlüsselung mit Schlüsselwort.
+Kollege: Soll ich dir diese Verschlüsselungsmethode noch genauer erklären?
+- Ja, gerne. =>< Erklaerung2
+- Nicht nötig. Ich erinnere mich.
+Kollege: Viel Erfolg beim Entschlüsseln!
+set Globals.CaseGlobals.culprit_found = true
+do SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/Cäsars_big_brother.tscn")
+=> END
+
+~ Erklaerung2
+Kollege: Zunächst werden doppelte Buchstaben aus dem Schlüsselwort entfernt. Aus 'Teller' würde also 'Telr'.
+Kollege: Anschließend setzt du das Schlüsselwort an den Anfang deines Alphabets. In diesem Fall wäre also A gleich T, B gleich E, C gleich L und D gleich R.
+Kollege: Abschließend schreibst du nun alle Buchstaben in ihrer üblichen Reihenfolge hinter das Schlüsselwort. Buchstaben, die bereits im Schlüsselwort vorkamen lässt du aus. Es gilt dann also E gleich A, F gleich B und so weiter...
+Kollege: War das verständlich oder soll ich es noch einmal wiederholen?
+- Bitte wiederhole es nochmal. => Erklaerung2
+- Ich denke, ich habe es verstanden.
