@@ -3,7 +3,7 @@ if Global.Intro_done == false
 	Inspector: Hallo Robo! Ich habe einen neuen Fall für dich.
 	Robo: Hmmm...
 	- Was ist passiert?
-		Inspector: Es war ein Einbruch!
+		Inspector: Es wurde eingebrochen!
 		- Ich werde mir sofort den Tatort angucken gehen.
 			do get_tree().change_scene_to_file("res://Scenes/tatort.tscn")
 		- Was ist über den Einbruch bekannt?
@@ -11,7 +11,7 @@ if Global.Intro_done == false
 			Inspector: Aber sonst komischerweise nichts.
 			Robo: Wer wusste, dass diese Gemälde dort hängt?
 			Inspector: Laut eigener Aussage wussten das nur seine Bekannten.
-			- Den Tatort untesuchen
+			- Den Tatort untersuchen
 			do get_tree().change_scene_to_file("res://Scenes/tatort.tscn")
 			
 	- Tut mir leid, aber ich bin zu beschäftigt für einen neuen Fall.
@@ -92,7 +92,7 @@ do get_tree().change_scene_to_file("res://Scenes/office.tscn")
 
 ~ end_scene
 Inspector: Vielen Dank für deine Hilfe Robo!
-Inspector: Der Kunständler hatte das Gemälde gestohlen.
+Inspector: Der Kunsthändler hatte das Gemälde gestohlen.
 Robo: Konnte es wiedergefunden werden?
 Inspector: Zum Glück ja.
 Inspector: Du warst eine große Hilfe!
