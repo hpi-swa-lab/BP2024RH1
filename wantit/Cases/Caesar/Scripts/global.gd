@@ -10,3 +10,6 @@ var optional_route: bool = false
 var verschiebung_found: bool = false
 
 var items_found: int = 0
+
+var fun: String = ""
+var difficulty: String = ""

@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://blg0ma8p77fjk"]
+
+[ext_resource type="Script" uid="uid://cipnw62npemjf" path="res://Cases/Caesar/Scripts/questionary.gd" id="1_c5now"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("colour", "animal", "times")]
+script = ExtResource("1_c5now")
+colour = NodePath("ColorRect")
+animal = NodePath("Sprite2D")
+times = NodePath("Label")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1160.0
+offset_bottom = 656.0
+color = Color(1, 1, 1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 319.0
+offset_bottom = 113.0
+
+[connection signal="ready" from="." to="." method="_on_ready"]

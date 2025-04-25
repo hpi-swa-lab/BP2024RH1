@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	GlobalTimer.start_timer("das 1. Rätsel")
 	DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Decrypting.dialogue"), "start")
 
 func go_back() -> void:
@@ -11,6 +12,7 @@ func go_back() -> void:
 
 func _on_minispiel_solved(value: bool) -> void:
 	if value:
+		GlobalTimer.end_timer("das 1. Rätsel")
 		DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Decrypting.dialogue"), "zurueck")
 	else:
 		DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Decrypting.dialogue"), "falsch")

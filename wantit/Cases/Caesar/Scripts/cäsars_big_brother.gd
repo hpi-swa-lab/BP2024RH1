@@ -13,6 +13,7 @@ const RADIUS_INNER := 118
 
 func _ready():
 	%Bella.hide()
+	GlobalTimer.start_timer("das 2. Rätsel")
 	DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Caesar2.dialogue"), "start")
 	%VerschlüsselterText.text = shown_text
 	
@@ -65,6 +66,7 @@ func _on_check_solution_pressed() -> void:
 		else:
 			input_text += " "
 	if input_text == original_text:
+		GlobalTimer.end_timer("das 2. Rätsel")
 		DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Caesar2.dialogue"), "fertig")
 	else:
 		DialogueManager.show_dialogue_balloon(load("res://Cases/Caesar/dialogues/Caesar2.dialogue"), "falsch")

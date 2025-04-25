@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://5yiwsjcgwsfb"
+path="res://.godot/imported/Questionary.dialogue-5ba088ef4efde5922972af757d9c6fd1.tres"
+
+[deps]
+
+source_file="res://Cases/Caesar/dialogues/Questionary.dialogue"
+dest_files=["res://.godot/imported/Questionary.dialogue-5ba088ef4efde5922972af757d9c6fd1.tres"]
+
+[params]
+
+defaults=true

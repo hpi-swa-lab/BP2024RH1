@@ -1,0 +1,23 @@
+~ questionary
+Inspector: Vielen Dank für deine Hilfe Robo!
+Inpector: Wie schwer fandest du den Fall?
+- Einfach.
+	set Globals.CaseGlobals.difficulty = "einfach"
+	=> second_question
+- Mittel.
+	set Globals.CaseGlobals.difficulty = "mittel"
+	=> second_question
+- Schwer.
+	set Globals.CaseGlobals.difficulty = "schwer"
+	=> second_question
+
+~ second_question
+Inpector: Hat dir der Fall Spaß gemacht?
+- Ja!
+	set Globals.CaseGlobals.fun = "ja"
+	do show_animal()
+	=> END
+- Nein.
+	set Globals.CaseGlobals.fun = "nein"
+	do show_animal()
+	=> END
