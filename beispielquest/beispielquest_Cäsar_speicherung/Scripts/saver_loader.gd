@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH := "res://progress.json"
+const SAVE_PATH := "user://progress.json"
 
 func save_game():
 	var save_data = {
