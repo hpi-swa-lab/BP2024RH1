@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dq0p2wm50lxnm"]
+
+[ext_resource type="Script" uid="uid://b5wconww6vhx7" path="res://testscene.gd" id="1_44gc5"]
+[ext_resource type="PackedScene" uid="uid://dcell8dtogr7h" path="res://inventory.tscn" id="1_jotil"]
+[ext_resource type="Texture2D" uid="uid://cayxhyt72uyf3" path="res://apple.png" id="3_asog6"]
+[ext_resource type="PackedScene" uid="uid://d3ciwnxu4qdhe" path="res://item.tscn" id="3_mawog"]
+[ext_resource type="Texture2D" uid="uid://dcpnp11oghpeh" path="res://book.png" id="4_mawog"]
+
+[node name="Testscene" type="Node2D"]
+script = ExtResource("1_44gc5")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 522.0
+offset_top = 586.0
+offset_right = 651.0
+offset_bottom = 617.0
+text = "Open Inventory"
+
+[node name="Inventory" parent="." instance=ExtResource("1_jotil")]
+unique_name_in_owner = true
+visible = false
+offset_left = 134.0
+offset_top = 79.0
+offset_right = 1064.0
+offset_bottom = 554.0
+
+[node name="Item" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("3_mawog")]
+offset_left = 420.0
+offset_top = 387.0
+offset_right = 932.0
+offset_bottom = 899.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("3_asog6")
+inventory = NodePath("../Inventory")
+
+[node name="Item2" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("3_mawog")]
+offset_left = 204.0
+offset_top = 391.0
+offset_right = 716.0
+offset_bottom = 903.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("4_mawog")
+inventory = NodePath("../Inventory")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

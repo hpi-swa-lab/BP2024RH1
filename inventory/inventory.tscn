@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcell8dtogr7h"]
+
+[ext_resource type="PackedScene" uid="uid://doulb80q5mxxn" path="res://inventory_slot.tscn" id="1_pohso"]
+[ext_resource type="Script" uid="uid://cohn0gsbcqlpa" path="res://inventory.gd" id="1_psafj"]
+[ext_resource type="Texture2D" uid="uid://cogmfnohc6qvj" path="res://close.png" id="3_5tt2m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrqgh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dw5ng"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xmy5"]
+
+[node name="Inventory" type="Control"]
+custom_minimum_size = Vector2(930, 475)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 930.0
+offset_bottom = 475.0
+script = ExtResource("1_psafj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 930.0
+offset_bottom = 475.0
+color = Color(1, 1, 0.776471, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 36.0
+offset_right = 1038.0
+offset_bottom = 540.0
+scale = Vector2(0.8, 0.8)
+columns = 4
+
+[node name="Inventory_slot" parent="GridContainer" instance=ExtResource("1_pohso")]
+layout_mode = 2
+
+[node name="Inventory_slot2" parent="GridContainer" instance=ExtResource("1_pohso")]
+layout_mode = 2
+
+[node name="Inventory_slot3" parent="GridContainer" instance=ExtResource("1_pohso")]
+layout_mode = 2
+
+[node name="Inventory_slot4" parent="GridContainer" instance=ExtResource("1_pohso")]
+layout_mode = 2
+
+[node name="Inventory_slot5" parent="GridContainer" instance=ExtResource("1_pohso")]
+layout_mode = 2
+
+[node name="Inventory_slot6" parent="GridContainer" instance=ExtResource("1_pohso")]
+layout_mode = 2
+
+[node name="Inventory_slot7" parent="GridContainer" instance=ExtResource("1_pohso")]
+layout_mode = 2
+
+[node name="Inventory_slot8" parent="GridContainer" instance=ExtResource("1_pohso")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 849.0
+offset_top = 5.0
+offset_right = 1361.0
+offset_bottom = 517.0
+scale = Vector2(0.15, 0.15)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mrqgh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dw5ng")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0xmy5")
+icon = ExtResource("3_5tt2m")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
