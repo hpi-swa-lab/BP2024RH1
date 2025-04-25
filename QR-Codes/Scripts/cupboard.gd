@@ -46,7 +46,7 @@ func _on_zoom_out_gui_input(event: InputEvent) -> void:
 
 func _on_picture_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "picture")
+		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "picture")
 
 func _on_book_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
@@ -54,7 +54,7 @@ func _on_book_gui_input(event: InputEvent) -> void:
 
 func _on_safe_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "safe")
+		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "safe")
 
 func _on_back_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
@@ -67,7 +67,7 @@ func _on_cushion_gui_input(event: InputEvent) -> void:
 			paper.visible = true
 			%SolutionGrid.columns = columns
 			add_solution_Grid(%SolutionGrid)
-			DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "paper")
+			DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "paper")
 
 func add_solution_Grid(Grid: GridContainer):
 	for i in range(columns * columns):

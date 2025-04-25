@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="QR-Codes"
-run/main_scene="uid://c0kcip623e00g"
+run/main_scene="uid://cotigpvpcwpql"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,10 @@ Global="*res://Scripts/Global.gd"
 SceneSwitcher="*res://Scripts/Scene_Switcher.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalTimer="*res://Scripts/Timer.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="uid://cflseqwu85fa8"
 
 [display]
 

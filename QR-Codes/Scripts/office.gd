@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	if not Global.Intro_done:
 		GlobalTimer.start_timer("Total")
-		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "start")
+		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "start")
 	if Global.End == true:
 		end_scene.show_dialogue()
 

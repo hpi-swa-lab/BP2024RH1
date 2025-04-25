@@ -6,7 +6,7 @@ extends Node2D
 @export var card3: ColorRect
 
 func _on_ready() -> void:
-	DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "book")
+	DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "book")
 	#show_card(Global.Card1_collected, card1)
 	#show_card(Global.Card2_collected, card2)
 	#show_card(Global.Card3_collected, card3)
@@ -28,16 +28,16 @@ func _on_back_gui_input(event: InputEvent) -> void:
 
 func _on_card_1_gui_input(event: InputEvent) -> void:
 	if  event is InputEventMouseButton and event.is_pressed():
-		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "florist")
+		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "florist")
 
 func _on_card_2_gui_input(event: InputEvent) -> void:
 	if  event is InputEventMouseButton and event.is_pressed():
-		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "kunsthaendler")
+		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "kunsthaendler")
 		Global.Card_collected = true
 
 func _on_card_3_gui_input(event: InputEvent) -> void:
 	if  event is InputEventMouseButton and event.is_pressed():
-		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "elektrikerin")
+		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "elektrikerin")
 
 func hide_card():
 	card2.visible = false

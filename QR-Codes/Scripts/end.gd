@@ -5,7 +5,7 @@ extends Node2D
 @export var times: Label
 
 func show_dialogue():
-	DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "end_scene")
+	DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "end_scene")
 	
 func show_animal():
 	animal.position = Vector2(593, 325)

@@ -1,5 +1,7 @@
 extends Node
 
+var portrait: CompressedTexture2D
+
 var Options: int
 var Tex: ImageTexture
 var Intro_done: bool = false

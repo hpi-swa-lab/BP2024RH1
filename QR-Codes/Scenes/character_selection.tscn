@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3 uid="uid://cotigpvpcwpql"]
+
+[ext_resource type="Script" uid="uid://cjkkmafrm235u" path="res://Scripts/character_selection.gd" id="1_fm6ub"]
+[ext_resource type="PackedScene" uid="uid://sabcryroa0cu" path="res://Scenes/portrait.tscn" id="2_235bc"]
+[ext_resource type="Texture2D" uid="uid://dh7kq4cj13lfo" path="res://Assets/characters/boy_detective.jpg" id="3_s1r7d"]
+[ext_resource type="Texture2D" uid="uid://ccoqhby5r1hxc" path="res://Assets/characters/female_detective1.jpg" id="4_0txfd"]
+[ext_resource type="Texture2D" uid="uid://j8l3xg3tn4gy" path="res://Assets/characters/female_detective2.jpg" id="5_6qipo"]
+[ext_resource type="Texture2D" uid="uid://ji0ucrviir66" path="res://Assets/characters/old_detective.jpg" id="6_0d3xi"]
+[ext_resource type="Texture2D" uid="uid://7ksukgc7rxm3" path="res://Assets/characters/robot2.jpg" id="7_awt4j"]
+[ext_resource type="Texture2D" uid="uid://2sqojjcscw25" path="res://Assets/characters/robot3.jpg" id="8_a2e1g"]
+[ext_resource type="Texture2D" uid="uid://dr33bsd7qdwu7" path="res://Assets/characters/robot.jpg" id="9_5ow1g"]
+[ext_resource type="Texture2D" uid="uid://c2cexacag3vk4" path="res://Assets/characters/young_detective.jpg" id="10_8eyk7"]
+
+[node name="Character_Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fm6ub")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -200.0
+offset_right = 328.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.993521, 1.00535)
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 100
+columns = 4
+
+[node name="Portrait" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("3_s1r7d")
+
+[node name="Portrait7" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("4_0txfd")
+
+[node name="Portrait8" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("5_6qipo")
+
+[node name="Portrait2" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("6_0d3xi")
+
+[node name="Portrait3" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("7_awt4j")
+
+[node name="Portrait4" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("8_a2e1g")
+
+[node name="Portrait5" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("9_5ow1g")
+
+[node name="Portrait6" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("10_8eyk7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.5
+offset_top = 38.0
+offset_right = 186.5
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Wähle einen Charakter aus:"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 568.0
+offset_right = 640.0
+offset_bottom = 610.0
+theme_override_font_sizes/font_size = 24
+text = "Auswählen"
+
+[connection signal="pressed" from="GridContainer/Portrait" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait7" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait8" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait2" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait3" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait4" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait5" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait6" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

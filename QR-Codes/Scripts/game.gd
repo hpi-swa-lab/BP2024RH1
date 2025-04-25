@@ -148,12 +148,12 @@ func display_solution():
 		var displays = [cinema, plants, time, zoo]
 		var random_display = displays[randi() % displays.size()]
 		display.texture = random_display
-		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "false_solution")
+		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "false_solution")
 	if correct_solution:
 		display.texture = load("res://Assets/museum2.jpg")
 		GlobalTimer.end_timer("Game")
 		Global.End = true
-		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "correct_solution")
+		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "correct_solution")
 		
 
 func _on_pixel_editor_gui_input(event: InputEvent) -> void:
@@ -161,7 +161,7 @@ func _on_pixel_editor_gui_input(event: InputEvent) -> void:
 		edit_pixels()
 		button.visible = true
 		GlobalTimer.start_timer("Game")
-		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "pixeleditor")
+		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "pixeleditor")
 		
 func edit_pixels():
 	monitor_label.visible = false
