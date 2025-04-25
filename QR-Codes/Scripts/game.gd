@@ -116,6 +116,7 @@ func _on_button_gui_input(event: InputEvent) -> void:
 			monitor_label.text = "QR-Code unvollständig"
 			pixel_editor.visible = true
 			button_label.text = "Webseite suchen"
+			button.visible = false
 			return
 		elif button_label.text == "Webseite suchen":
 			var grid_button: Button
@@ -158,6 +159,7 @@ func display_solution():
 func _on_pixel_editor_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		edit_pixels()
+		button.visible = true
 		GlobalTimer.start_timer("Game")
 		DialogueManager.show_example_dialogue_balloon(load ("res://dialogue/main.dialogue"), "pixeleditor")
 		

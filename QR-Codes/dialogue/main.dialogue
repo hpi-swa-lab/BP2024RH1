@@ -40,8 +40,10 @@ Robo: Welches Interesse könnte die Elektrikerin an einem Gemälde haben?
 => END
 
 ~ kunsthaendler
-Robo: Komisch, da scheint ein Ecke abgerissen zu sein.
+Robo: Komisch, da scheint eine Ecke abgerissen zu sein.
 Robo: Ich nehme die Karte mal mit.
+if Global.Paper_collected == false
+	Robo: Vielleicht finde ich den Schnipsel ja noch.
 set Global.Card_collected = true
 do hide_card()
 => END

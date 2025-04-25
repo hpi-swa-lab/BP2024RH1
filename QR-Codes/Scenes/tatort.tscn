@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsybfj7o8jp5r"]
+[gd_scene load_steps=7 format=3 uid="uid://dsybfj7o8jp5r"]
 
 [ext_resource type="Texture2D" uid="uid://c3rnpxq603tly" path="res://Assets/tatort.jpg" id="1_kl7lh"]
+[ext_resource type="Texture2D" uid="uid://dgdewgob0a8ux" path="res://Assets/circle.png" id="2_iqajy"]
 [ext_resource type="Script" uid="uid://cvqpiprt1bsak" path="res://Scripts/cupboard.gd" id="3_b8mj1"]
 [ext_resource type="Texture2D" uid="uid://5l3t7y1sby8j" path="res://Assets/paper2.png" id="4_iqajy"]
 [ext_resource type="Texture2D" uid="uid://ct0txpg5ekunk" path="res://Assets/back-button.svg" id="4_k7fs2"]
@@ -15,6 +16,18 @@ script/source = "extends Camera2D
 position = Vector2(648.625, 324.813)
 scale = Vector2(0.219458, 0.219458)
 texture = ExtResource("1_kl7lh")
+
+[node name="Picture_Background" type="ColorRect" parent="."]
+modulate = Color(0.870588, 0.866667, 0.85098, 1)
+offset_left = 542.0
+offset_top = 170.0
+offset_right = 679.0
+offset_bottom = 263.0
+
+[node name="Circle" type="Sprite2D" parent="."]
+position = Vector2(611, 177)
+scale = Vector2(0.0142094, 0.0142094)
+texture = ExtResource("2_iqajy")
 
 [node name="Picture" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -101,6 +114,16 @@ offset_left = -102.0
 offset_top = -139.0
 offset_right = 98.0
 offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.212305, 0.212305, 0.212305, 1)
+offset_left = 63.0
+offset_top = 283.0
+offset_right = 134.0
+offset_bottom = 306.0
+rotation = 1.29503
+scale = Vector2(0.4, 0.4)
+text = "Kontakte"
 
 [connection signal="gui_input" from="Picture" to="Picture" method="_on_gui_input"]
 [connection signal="gui_input" from="Picture" to="Cupboard" method="_on_picture_gui_input"]
