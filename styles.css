@@ -11,6 +11,7 @@ body {background-color: #e0fbfc;}
 .container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
     justify-content: space-evenly;
@@ -42,4 +43,40 @@ body {background-color: #e0fbfc;}
   .container button:hover {
     background-color: #98c1d9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      font-size: 50px; 
+    }
+  
+    .container {
+      font-size: 35px; 
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .container button {
+      min-width: 300px;
+      padding: 12px 25px;
+      font-size: 22px;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 480px) {
+    .header {
+      font-size: 45px;
+    }
+  
+    .container {
+      font-size: 25px;
+      flex-direction: column;
+    }
+  
+    .container button {
+      min-width: 280px;
+      padding: 10px 20px;
+      font-size: 18px;
+    }
   }
