@@ -1,0 +1,45 @@
+body {background-color: #e0fbfc;}
+
+.header {
+    font-family: 'Knewave', cursive;
+    font-size: 75px; 
+    font-weight: bold; 
+    text-align: center;
+    color: #293241;
+  }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: 'Knewave', cursive;
+  }
+
+  .container button {
+    font-family: 'Funnel Display', cursive;
+    font-size: 27px; 
+    min-width: 300px;
+    width: auto;
+    font-weight: bold;
+    padding: 17px 35px; 
+    background-color: #3d5a80;
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-focus-ring-color: transparent;
+  }
+  
+  .container button:hover {
+    background-color: #98c1d9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  }
