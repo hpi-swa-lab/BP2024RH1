@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://doulb80q5mxxn" path="res://inventory_slot.tscn" id="1_pohso"]
 [ext_resource type="Script" uid="uid://cohn0gsbcqlpa" path="res://inventory.gd" id="1_psafj"]
-[ext_resource type="Texture2D" uid="uid://cogmfnohc6qvj" path="res://close.png" id="3_5tt2m"]
+[ext_resource type="Texture2D" uid="uid://cogmfnohc6qvj" path="res://Assets/close.png" id="3_5tt2m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrqgh"]
 

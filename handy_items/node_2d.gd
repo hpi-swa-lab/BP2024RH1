@@ -11,3 +11,7 @@ func _input(event):
 		for child in %Items.get_children():
 			if child.position.distance_to(event.position) < 300:
 				child.highlight()
+
+
+func _on_button_3_pressed() -> void:
+	%Inventory.open()

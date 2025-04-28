@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://fwd7pp1jeb0t"]
+[gd_scene load_steps=12 format=3 uid="uid://fwd7pp1jeb0t"]
 
 [ext_resource type="Texture2D" uid="uid://bh6csba3en17v" path="res://Assets/magnifying-glass.png" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://b10uxvwp6kcxh" path="res://node_2d.gd" id="1_epypp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckgilkx8p3b3q" path="res://item.tscn" id="4_kdubu"]
 [ext_resource type="Texture2D" uid="uid://byurtrqbwj6iv" path="res://Assets/apple.png" id="5_d21ai"]
 [ext_resource type="Texture2D" uid="uid://drq7mq80wjsrk" path="res://Assets/book.png" id="6_rj586"]
+[ext_resource type="PackedScene" uid="uid://dcell8dtogr7h" path="res://inventory.tscn" id="7_d21ai"]
 
 [sub_resource type="Theme" id="Theme_0hol4"]
 
@@ -45,21 +46,39 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" parent="Items" instance=ExtResource("4_kdubu")]
+[node name="Button" parent="Items" node_paths=PackedStringArray("inventory") instance=ExtResource("4_kdubu")]
 layout_mode = 0
 offset_left = 208.0
 offset_top = 372.0
-offset_right = 308.0
-offset_bottom = 472.0
-icon = ExtResource("6_rj586")
+offset_right = 208.0
+offset_bottom = 372.0
+icon = ExtResource("5_d21ai")
+inventory = NodePath("../../Inventory")
 
-[node name="Button2" parent="Items" instance=ExtResource("4_kdubu")]
+[node name="Button2" parent="Items" node_paths=PackedStringArray("inventory") instance=ExtResource("4_kdubu")]
 layout_mode = 0
 offset_left = 625.0
 offset_top = 381.0
-offset_right = 725.0
-offset_bottom = 481.0
-icon = ExtResource("5_d21ai")
+offset_right = 625.0
+offset_bottom = 381.0
+icon = ExtResource("6_rj586")
+inventory = NodePath("../../Inventory")
+
+[node name="Inventory" parent="." instance=ExtResource("7_d21ai")]
+unique_name_in_owner = true
+visible = false
+offset_left = 134.0
+offset_top = 79.0
+offset_right = 1064.0
+offset_bottom = 554.0
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 522.0
+offset_top = 586.0
+offset_right = 651.0
+offset_bottom = 617.0
+text = "Open Inventory"
 
 [connection signal="pressed" from="Lupe" to="Lupe" method="_on_pressed"]
 [connection signal="searching" from="Lupe" to="." method="_on_lupe_searching"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://doulb80q5mxxn"]
 
-[ext_resource type="Texture2D" uid="uid://jotgfkbjq0sp" path="res://inventory-slot.png" id="1_42eed"]
+[ext_resource type="Texture2D" uid="uid://jotgfkbjq0sp" path="res://Assets/inventory-slot.png" id="1_42eed"]
 [ext_resource type="Script" uid="uid://coni1u2cj1t5c" path="res://inventory_slot.gd" id="1_f5bh6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5bh6"]
