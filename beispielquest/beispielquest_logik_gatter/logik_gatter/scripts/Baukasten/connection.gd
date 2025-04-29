@@ -5,7 +5,7 @@ class_name Connection
 @export var input: bool = false
 @export var output: bool = false 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if input:
 		default_color = "ff1100"
 	else:

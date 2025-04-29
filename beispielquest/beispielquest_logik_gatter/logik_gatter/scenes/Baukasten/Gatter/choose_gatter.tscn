@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dd23pklibjxcc"]
 
-[ext_resource type="Script" uid="uid://biy28kj3cud3y" path="res://scripts/Baukasten/Gatter/choose_gatter.gd" id="1_kpyvx"]
+[ext_resource type="Script" uid="uid://biy28kj3cud3y" path="res://logik_gatter/scripts/Baukasten/Gatter/choose_gatter.gd" id="1_kpyvx"]
 
 [node name="Choose_and_or" type="OptionButton"]
 allow_reselect = true

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dldwkuqwfxyqu"]
+[gd_scene load_steps=7 format=3 uid="uid://dldwkuqwfxyqu"]
 
 [ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://scenes/Minigames/Logik_Gatter_level_introduction.tscn" id="1_2iq3a"]
 [ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://scripts/minigames/minigame_introduction.gd" id="1_ooyhf"]
 [ext_resource type="Texture2D" uid="uid://cn421n1s4xu8x" path="res://assets/orange1.png" id="2_en5oq"]
 [ext_resource type="Texture2D" uid="uid://bhhr6i7ouguuq" path="res://assets/kabel_background.png" id="2_iyj0y"]
 [ext_resource type="Texture2D" uid="uid://crj8s6h8bbatp" path="res://assets/arrows.png" id="3_ooyhf"]
+[ext_resource type="PackedScene" uid="uid://dinkb6rvbmkhj" path="res://scenes/helpsys.tscn" id="6_03otk"]
 
 [node name="MinigameIntroduction" type="Control"]
 layout_mode = 3
@@ -26,23 +27,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_iyj0y")
 
-[node name="LogikGatterLevelIntroduction" parent="." instance=ExtResource("1_2iq3a")]
-layout_mode = 1
-
 [node name="explanation_start" type="Label" parent="."]
 layout_mode = 0
 offset_left = 289.0
 offset_top = 51.0
 offset_right = 448.0
 offset_bottom = 74.0
-text = "Start von Signal"
+text = "Quelle/Start vom Signal"
 
 [node name="highlight_start_button" type="TextureRect" parent="explanation_start"]
 z_index = -1
 layout_mode = 0
-offset_left = -147.0
+offset_left = -168.0
 offset_top = 56.0
-offset_right = -45.0
+offset_right = -26.0
 offset_bottom = 96.0
 texture = ExtResource("2_en5oq")
 expand_mode = 1
@@ -52,10 +50,13 @@ z_index = -1
 layout_mode = 0
 offset_left = -8.0
 offset_top = -4.0
-offset_right = 127.0
+offset_right = 185.0
 offset_bottom = 36.0
 texture = ExtResource("2_en5oq")
 expand_mode = 1
+
+[node name="LogikGatterLevelIntroduction" parent="." instance=ExtResource("1_2iq3a")]
+layout_mode = 1
 
 [node name="explanation_connection" type="Label" parent="."]
 visible = false
@@ -64,7 +65,7 @@ offset_left = 289.0
 offset_top = 51.0
 offset_right = 555.0
 offset_bottom = 74.0
-text = "Verbindungen, leiten Signal weiter"
+text = "Verbindungen: Leiten Signale weiter"
 
 [node name="highlight_connection" type="TextureRect" parent="explanation_connection"]
 z_index = -1
@@ -97,10 +98,10 @@ offset_bottom = 74.0
 [node name="arrow" type="TextureRect" parent="explanation_try_start"]
 z_index = -1
 layout_mode = 0
-offset_left = -45.0
-offset_top = 38.0
-offset_right = 90.0
-offset_bottom = 105.0
+offset_left = -25.0
+offset_top = 42.0
+offset_right = 110.0
+offset_bottom = 109.0
 texture = ExtResource("3_ooyhf")
 expand_mode = 1
 flip_h = true
@@ -116,10 +117,10 @@ offset_bottom = 74.0
 [node name="arrow" type="TextureRect" parent="explanation_try_start2"]
 z_index = -1
 layout_mode = 0
-offset_left = -69.0
-offset_top = 356.0
-offset_right = 66.0
-offset_bottom = 423.0
+offset_left = -34.0
+offset_top = 358.0
+offset_right = 101.0
+offset_bottom = 425.0
 texture = ExtResource("3_ooyhf")
 expand_mode = 1
 flip_h = true
@@ -131,7 +132,7 @@ offset_left = 278.0
 offset_top = 161.0
 offset_right = 544.0
 offset_bottom = 184.0
-text = "Gatter, Verbinden zwei Signale"
+text = "Gatter: Verbinden zwei Signale"
 
 [node name="highlight_connection" type="TextureRect" parent="explanation_Gatter"]
 z_index = -1
@@ -154,13 +155,12 @@ texture = ExtResource("2_en5oq")
 expand_mode = 1
 
 [node name="explanation_Ziel" type="Label" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 268.0
 offset_top = 460.0
 offset_right = 427.0
 offset_bottom = 483.0
-text = "Ziel vom Signal "
+text = "Lampe: Ziel vom Signal "
 
 [node name="highlight_Ziel" type="TextureRect" parent="explanation_Ziel"]
 z_index = -1
@@ -177,7 +177,7 @@ z_index = -1
 layout_mode = 0
 offset_left = -1.0
 offset_top = -4.0
-offset_right = 120.0
+offset_right = 196.0
 offset_bottom = 36.0
 texture = ExtResource("2_en5oq")
 expand_mode = 1
@@ -189,7 +189,7 @@ offset_left = 326.0
 offset_top = 78.0
 offset_right = 802.0
 offset_bottom = 101.0
-text = "Probier dich mit den SIgnalen aus bist du sie verstanden hast "
+text = "Probier dich mit den Signalen aus, bis du sie verstanden hast. "
 
 [node name="highlight_label" type="TextureRect" parent="explanation_end"]
 z_index = -1
@@ -210,6 +210,17 @@ offset_bottom = 578.0
 theme_override_font_sizes/font_size = 30
 text = "weiter"
 
+[node name="ColorRect" type="ColorRect" parent="next_button"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.915667, 1, 0.54, 1)
+
 [node name="back_button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 74.0
@@ -218,6 +229,17 @@ offset_right = 221.0
 offset_bottom = 574.0
 theme_override_font_sizes/font_size = 30
 text = "zurück"
+
+[node name="ColorRect" type="ColorRect" parent="back_button"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.915667, 1, 0.54, 1)
 
 [node name="end_button" type="Button" parent="."]
 visible = false
@@ -228,6 +250,17 @@ offset_right = 876.0
 offset_bottom = 577.0
 theme_override_font_sizes/font_size = 30
 text = "beenden"
+
+[node name="ColorRect" type="ColorRect" parent="end_button"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.915667, 1, 0.54, 1)
 
 [node name="Good_job" type="TextureRect" parent="."]
 visible = false
@@ -257,8 +290,8 @@ offset_bottom = -197.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-text = "Du hast es geschafft das Signal ist beim ZIel angekommen. 
-jetzt kannst du die Stromverbindung wiederherstellen in dem du die Signale überprüfst"
+text = "Du hast es geschafft. Das Signal ist beim Ziel angekommen. 
+Jetzt kannst du die Stromverbindung wiederherstellen, indem du die Signale überprüfst."
 autowrap_mode = 3
 
 [node name="start_minigame_1" type="Button" parent="Good_job"]
@@ -269,6 +302,36 @@ offset_right = 511.0
 offset_bottom = 311.0
 theme_override_font_sizes/font_size = 25
 text = "Strom wiederherstellen starten"
+
+[node name="Helpsys" parent="." instance=ExtResource("6_03otk")]
+layout_mode = 1
+offset_left = 1148.0
+offset_top = 13.0
+offset_right = -4.0
+offset_bottom = -635.0
+hint_1_text = "Klicke auf weiter um durch das Tutorial zu kommen"
+hint_2_text = "\"mindestens eins\" muss ein Eingangssignal bekommen um es weiter zu leiten"
+hint_3_text = "\"beides\" muss beide Eingangssignale bekommen um es weiter zu leiten"
+Timer_hint_2_time = 45.0
+Timer_hint_3_time = 45.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 39.0
+offset_right = 116.0
+offset_bottom = 62.0
+text = "Tutorial"
+
+[node name="highlight_label" type="TextureRect" parent="Label"]
+z_index = -1
+layout_mode = 0
+offset_left = -61.0
+offset_top = -6.0
+offset_right = 132.0
+offset_bottom = 34.0
+texture = ExtResource("2_en5oq")
+expand_mode = 1
 
 [connection signal="start_1" from="LogikGatterLevelIntroduction" to="." method="_on_logik_gatter_level_introduction_start_1"]
 [connection signal="start_2" from="LogikGatterLevelIntroduction" to="." method="_on_logik_gatter_level_introduction_start_2"]

@@ -13,6 +13,7 @@ anchors_preset = 0
 script = ExtResource("1_dtsx8")
 
 [node name="Background" type="TextureRect" parent="."]
+z_index = -1
 layout_mode = 0
 offset_left = -24.0
 offset_top = -13.0

@@ -22,6 +22,17 @@ offset_bottom = 80.0
 theme_override_font_sizes/font_size = 30
 text = "?"
 
+[node name="ColorRect" type="ColorRect" parent="Questionmark"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.915667, 1, 0.54, 1)
+
 [node name="Hints" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -96,6 +107,17 @@ offset_top = -31.0
 offset_right = 83.0
 grow_vertical = 0
 text = "schließen"
+
+[node name="ColorRect" type="ColorRect" parent="Hints/Close"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.915667, 1, 0.54, 1)
 
 [node name="Timer_Hint_2" type="Timer" parent="."]
 wait_time = 2.0

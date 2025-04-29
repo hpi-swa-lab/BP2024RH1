@@ -5,7 +5,7 @@ class_name Start_button
 @export var output_connection: Connection 
 var input: bool
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if input:
 		output_connection.input = true
 	else:
@@ -15,6 +15,6 @@ func _process(delta: float) -> void:
 func _on_toggled(toggled_on: bool) -> void:
 	input = toggled_on
 	if input:
-		text = "An"
+		text = "Quelle An"
 	else:
-		text = "Aus"
+		text = "Quelle Aus"

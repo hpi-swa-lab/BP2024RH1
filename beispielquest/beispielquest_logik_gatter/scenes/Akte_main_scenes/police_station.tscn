@@ -141,11 +141,11 @@ text = "Küche"
 
 [node name="Helpsys" parent="." instance=ExtResource("9_s3kkb")]
 layout_mode = 1
-hint_1_text = "Hier findest du hinweise, wenn du nicht weiter kommst. Sie erscheinen nicht alle Direkt zu Beginn."
-hint_2_text = "Wenn der Strom nicht funktioniert, lässt sich das problem vielleicht beim Stromkasten beheben. Dieser sollte sich im Technik Raum befinden"
-hint_3_text = "Klicke auf den Stromkasten im Technik Raum, um den Strom zu reparieren "
-Timer_hint_2_time = 15.0
-Timer_hint_3_time = 20.0
+hint_1_text = "Hier findest du Hinweise wenn du nicht weiter kommst. Sie erscheinen nicht alle direkt zu Beginn."
+hint_2_text = "Finde den Sicherungskasten."
+hint_3_text = "Der Sicherungskasten könnte im Technik Raum sein."
+Timer_hint_2_time = 30.0
+Timer_hint_3_time = 60.0
 
 [node name="show_helpsys" type="TextureRect" parent="."]
 layout_mode = 0

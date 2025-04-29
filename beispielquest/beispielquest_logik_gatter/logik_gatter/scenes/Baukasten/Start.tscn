@@ -1,9 +1,21 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwlgbeyj8pysr"]
 
-[ext_resource type="Script" uid="uid://cp5mdd5cx6b5y" path="res://scripts/Baukasten/start.gd" id="1_8t08e"]
+[ext_resource type="Script" uid="uid://cp5mdd5cx6b5y" path="res://logik_gatter/scripts/Baukasten/start.gd" id="1_8t08e"]
 
 [node name="Start" type="CheckButton"]
-text = "Aus"
+text = "Quelle Aus"
+flat = true
 script = ExtResource("1_8t08e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.36, 0.20934, 0.0684, 0.435294)
 
 [connection signal="toggled" from="." to="." method="_on_toggled"]

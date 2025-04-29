@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_as8t6")
-NAME_OF_CASE = "Sabotage"
+NAME_OF_CASE = "Sabotage!"
 
 [node name="board_as_background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -34,14 +34,16 @@ text = "schließen "
 
 [node name="Name_of_case" type="Label" parent="."]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 77.0
-offset_right = 237.0
-offset_bottom = 100.0
+offset_left = 196.0
+offset_top = 187.0
+offset_right = 973.0
+offset_bottom = 460.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 100
 text = "test"
+horizontal_alignment = 1
+vertical_alignment = 3
 script = ExtResource("3_os71b")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -11,6 +11,7 @@ anchors_preset = 0
 script = ExtResource("1_sx1e0")
 
 [node name="Background" type="TextureRect" parent="."]
+z_index = -1
 layout_mode = 0
 offset_right = 1148.0
 offset_bottom = 653.0

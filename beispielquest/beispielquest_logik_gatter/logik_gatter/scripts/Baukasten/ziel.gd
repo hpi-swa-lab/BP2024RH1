@@ -9,7 +9,7 @@ signal ziel_input_false
 
 var lv_complete = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	lv_complete = input_connection.output
 	if lv_complete:
 		texture = lv_complete_picture

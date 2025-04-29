@@ -22,13 +22,13 @@ func _on_computer_3_pressed() -> void:
 
 
 func _on_router_1_pressed() -> void:
-	emit_signal("computer_1_pressed")
+	emit_signal("router_1_pressed")
 
 
 func _on_router_2_pressed() -> void:
-	emit_signal("computer_2_pressed")
+	emit_signal("router_2_pressed")
 
 
 func _on_router_3_pressed() -> void:
-	emit_signal("computer_3_pressed")
+	emit_signal("router_3_pressed")
 	

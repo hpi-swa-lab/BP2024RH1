@@ -10,7 +10,7 @@ var input_2: bool = false
 @export var output_connection: Connection
 var output: bool = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	input_1 = input_connection_1.output
 	input_2 = input_connection_2.output
