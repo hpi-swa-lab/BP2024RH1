@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cyrbs54pns7n0"
+path="res://.godot/imported/monologue.dialogue-733e464f0e448b75833e4c3bdd6a8c41.tres"
+
+[deps]
+
+source_file="res://dialogue/monologue.dialogue"
+dest_files=["res://.godot/imported/monologue.dialogue-733e464f0e448b75833e4c3bdd6a8c41.tres"]
+
+[params]
+
+defaults=true

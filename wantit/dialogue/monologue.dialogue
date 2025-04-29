@@ -1,0 +1,98 @@
+
+
+# salesroom
+~ door_to_store
+if State.key_collected:
+	Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
+	set Status.door_inspected = true
+else:
+	An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
+=> END
+
+~ bitten_waffle
+Da scheint jemand Hunger gehabt zu haben.
+set State.waffle_collected = true
+=> END
+
+# bakers office
+~ shoe_prints_office
+if State.traces_in_bakery_inspected: 
+	Hier endet die Mehlspur.
+	set State.traces_in_office_inspected = true
+else:
+	Sieht aus als wäre der Dieb in Mehl getreten.
+	set State.traces_in_office_inspected = true
+=> END
+
+# Safe in office
+~ pliers
+Damit wollte der Dieb wohl den Safe aufbrechen.
+set State.pliers_collected = true
+=> END
+
+~ screwdriver
+Damit hat der Dieb scheinbar den Safe aufgebrochen.
+set State.screwdriver_collected = true
+=> END
+
+~ fingerprints
+Die müssen wir unbedingt sichern.
+set State.fingerprints_saved = true
+=> END
+
+~ key_on_safe
+Der Schlüssel passt nicht.
+=> END
+
+# bakery
+~ show_prints_bakery
+Sieht aus als wäre der Dieb in Mehl getreten. Die Spur führt ins Büro des Ladens.
+set State.traces_in_bakery_inspected = true
+=> END
+
+~ fallen_flour_sack
+if State.traces_in_bakery_inspected:
+	Das ist also der Ursprung der Mehlspuren.
+	set State.flour_sack_inspected = true
+else:
+	Sieht aus als wäre jemand über den Mehlsack gestolpert. 
+	set State.flour_sack_inspected = true
+=> END
+
+~ flour_sack_pushed
+Ein Schlüssel…den muss der Dieb verloren haben. Vielleicht gibt es hier ein passendes Schloss.
+set State.key_collected = true
+=> END
+
+~ minigame1_start
+Die Abbildungen der gesicherten Spuren und die Klebezettelchen stellen Daten dar. 
+Um die zwei Datensätze zu verbinden, brauche ich aber mehr Kontext. Wie komme ich an die nötige Information, die durch die Daten repräsentiert werden soll?
+=> END
+
+~ minigame1_end
+Geschafft!
+=> minigame1_test1
+
+~ minigame1_test1
+Die gesicherten Spuren sind...
+- Daten => minigame1_test2
+- Informationen => minigame1_test1
+=> END
+
+~ minigame1_test2
+Mittels der Lupe konnte ich sie...
+- interpretieren => minigame1_test3
+- repräsentieren => minigame1_test2
+
+~ minigame1_test3
+Die gewonnene Information konnte wiederum durch die Zettelchen...
+- repräsentiert werden => END
+- interpretiert werden => minigame1_test3
+
+~ office
+Auf der Hinweistafel werden alle wichtigen Bestandteile des Falls gesammelt. So kannst du auch später noch nachvollziehen, was in dem Fall passiert ist.
+Der Zeitstrahl zeigt an, wann was passiert ist und wo du dich derzeit im Fall befindest. Am Anfang steht die ausgeübte Tat.
+Auf dem Zeitstrahl werden auch die Rätsel angezeigt, die du lösen musstest.
+Außerdem werden alle gesammelten Spuren angezeigt.
+Neben den Spuren werden auch alle involvierten Personen angezeigt. Später kannst du dadurch mögliche Täter identifizieren.
+=> END
