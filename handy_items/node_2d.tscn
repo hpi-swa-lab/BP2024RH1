@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://fwd7pp1jeb0t"]
+[gd_scene load_steps=13 format=3 uid="uid://fwd7pp1jeb0t"]
 
 [ext_resource type="Texture2D" uid="uid://bh6csba3en17v" path="res://Assets/magnifying-glass.png" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://b10uxvwp6kcxh" path="res://node_2d.gd" id="1_epypp"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://byurtrqbwj6iv" path="res://Assets/apple.png" id="5_d21ai"]
 [ext_resource type="Texture2D" uid="uid://drq7mq80wjsrk" path="res://Assets/book.png" id="6_rj586"]
 [ext_resource type="PackedScene" uid="uid://dcell8dtogr7h" path="res://inventory.tscn" id="7_d21ai"]
+[ext_resource type="PackedScene" uid="uid://bfhmvi5qb81eb" path="res://inventory2.tscn" id="8_rj586"]
 
 [sub_resource type="Theme" id="Theme_0hol4"]
 
@@ -26,10 +27,10 @@ mouse_filter = 2
 color = Color(0.65098, 1, 1, 1)
 
 [node name="Lupe" type="Button" parent="."]
-offset_left = 995.0
-offset_top = 35.0
-offset_right = 1515.0
-offset_bottom = 555.0
+offset_left = 55.0
+offset_top = 40.0
+offset_right = 575.0
+offset_bottom = 560.0
 scale = Vector2(0.2, 0.2)
 theme = SubResource("Theme_0hol4")
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
@@ -48,21 +49,39 @@ offset_bottom = 40.0
 
 [node name="Button" parent="Items" node_paths=PackedStringArray("inventory") instance=ExtResource("4_kdubu")]
 layout_mode = 0
-offset_left = 208.0
-offset_top = 372.0
-offset_right = 208.0
-offset_bottom = 372.0
+offset_left = 194.0
+offset_top = 244.0
+offset_right = 294.0
+offset_bottom = 344.0
 icon = ExtResource("5_d21ai")
 inventory = NodePath("../../Inventory")
 
+[node name="Button3" parent="Items" node_paths=PackedStringArray("inventory") instance=ExtResource("4_kdubu")]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 249.0
+offset_right = 745.0
+offset_bottom = 349.0
+icon = ExtResource("5_d21ai")
+inventory = NodePath("../../Inventory2")
+
 [node name="Button2" parent="Items" node_paths=PackedStringArray("inventory") instance=ExtResource("4_kdubu")]
 layout_mode = 0
-offset_left = 625.0
-offset_top = 381.0
-offset_right = 625.0
-offset_bottom = 381.0
+offset_left = 186.0
+offset_top = 368.0
+offset_right = 286.0
+offset_bottom = 468.0
 icon = ExtResource("6_rj586")
 inventory = NodePath("../../Inventory")
+
+[node name="Button4" parent="Items" node_paths=PackedStringArray("inventory") instance=ExtResource("4_kdubu")]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 381.0
+offset_right = 748.0
+offset_bottom = 481.0
+icon = ExtResource("6_rj586")
+inventory = NodePath("../../Inventory2")
 
 [node name="Inventory" parent="." instance=ExtResource("7_d21ai")]
 unique_name_in_owner = true
@@ -78,6 +97,10 @@ offset_top = 586.0
 offset_right = 651.0
 offset_bottom = 617.0
 text = "Open Inventory"
+
+[node name="Inventory2" parent="." instance=ExtResource("8_rj586")]
+offset_left = 906.0
+offset_right = 906.0
 
 [connection signal="pressed" from="Lupe" to="Lupe" method="_on_pressed"]
 [connection signal="searching" from="Lupe" to="." method="_on_lupe_searching"]

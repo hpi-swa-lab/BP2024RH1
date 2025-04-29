@@ -1,3 +1,5 @@
+# Magnifying glass - pretty self explanatory, emits signal searching when pressed and changes cursor icon
+
 extends Button
 
 var cursor = Image.new()
@@ -5,7 +7,7 @@ var alreadyPressed: bool = false
 signal searching(start: bool)
 
 func _ready() -> void:
-	cursor = Image.load_from_file("res://Assets/magnifying-glass.png")
+	cursor = load("res://Assets/magnifying-glass.png").get_image()
 
 func _on_pressed() -> void:
 	if not alreadyPressed:

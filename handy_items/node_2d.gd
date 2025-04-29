@@ -5,9 +5,8 @@ var searching: bool
 func _on_lupe_searching(start: bool) -> void:
 	searching = start
 
-func _input(event):
+func _input(event):			# Needs to be copied when using the magnifying glass elsewhere
 	if event is InputEventMouseButton and searching:
-		#print("Mouse Click/Unclick at: ", event.position)
 		for child in %Items.get_children():
 			if child.position.distance_to(event.position) < 300:
 				child.highlight()

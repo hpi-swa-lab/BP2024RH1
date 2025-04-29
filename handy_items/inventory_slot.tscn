@@ -11,22 +11,24 @@
 
 [node name="Inventory_slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(250, 250)
-offset_right = 192.0
-offset_bottom = 192.0
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
 script = ExtResource("1_f5bh6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture_filter = 1
 scale = Vector2(15.625, 15.625)
 texture = ExtResource("1_42eed")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(250, 250)
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_right = 250.0
-offset_bottom = 250.0
+offset_right = 50.0
+offset_bottom = 50.0
 
 [node name="DisplayedItem" type="Button" parent="CenterContainer"]
 unique_name_in_owner = true
