@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0etnfychdoti"]
+
+[ext_resource type="Script" uid="uid://dro74xy83edco" path="res://Cases/Introduction_Case/Scripts/draggable.gd" id="1_23t8e"]
+
+[node name="Draggable" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_23t8e")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

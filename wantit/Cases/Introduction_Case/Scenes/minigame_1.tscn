@@ -1,0 +1,178 @@
+[gd_scene load_steps=10 format=3 uid="uid://ebi58jm4ckop"]
+
+[ext_resource type="Script" uid="uid://cu1gtpcebk1yi" path="res://Cases/Introduction_Case/Scripts/minigame_1.gd" id="1_5txvl"]
+[ext_resource type="PackedScene" uid="uid://b3w6b5y3gmolt" path="res://Cases/Introduction_Case/Scenes/clue.tscn" id="2_0uv5o"]
+[ext_resource type="Texture2D" uid="uid://c40dfv7v6dx02" path="res://Cases/Introduction_Case/assets/collectible_items/screwdriver.png" id="3_o7kty"]
+[ext_resource type="PackedScene" uid="uid://b0etnfychdoti" path="res://Cases/Introduction_Case/Scenes/draggable.tscn" id="4_jmcek"]
+[ext_resource type="Texture2D" uid="uid://ca4miwg37ehc3" path="res://Cases/Introduction_Case/assets/collectible_items/shoeprints_kitchen.png" id="4_wq7o3"]
+[ext_resource type="Texture2D" uid="uid://g6oerpbtvsjt" path="res://Cases/Introduction_Case/assets/collectible_items/waffle.png" id="5_a0wop"]
+[ext_resource type="PackedScene" uid="uid://bsrqm82ifqt23" path="res://Cases/Introduction_Case/Scenes/control_panel.tscn" id="5_ne1wf"]
+[ext_resource type="Texture2D" uid="uid://cf7od1i6s3y2r" path="res://Cases/Introduction_Case/assets/collectible_items/fingerprints_safe.png" id="6_wa13m"]
+[ext_resource type="Texture2D" uid="uid://bc7rt7bpgdqoj" path="res://Cases/Introduction_Case/assets/collectible_items/pliers.png" id="7_vae77"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5txvl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.933333, 1, 0.639216, 1)
+
+[node name="Control" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Screwdriver" parent="Control" instance=ExtResource("2_0uv5o")]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 361.0
+offset_right = 4609.0
+offset_bottom = 4493.0
+scale = Vector2(0.03, 0.03)
+icon = ExtResource("3_o7kty")
+labelText = "Schraubenzieher mit 
+einer Klingengröße von 
+1.1 mm x 1.9 mm"
+
+[node name="Footprint" parent="Control" instance=ExtResource("2_0uv5o")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -22.0
+offset_right = 3872.0
+offset_bottom = 2138.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("4_wq7o3")
+labelText = "Ein mehliger 
+Schuhabdruck der 
+Größe 43"
+
+[node name="Waffle" parent="Control" instance=ExtResource("2_0uv5o")]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 177.0
+offset_right = 3547.0
+offset_bottom = 3089.0
+scale = Vector2(0.03, 0.03)
+icon = ExtResource("5_a0wop")
+labelText = "Ein angebissenes 
+Waffelstück in Herzform"
+
+[node name="Fingerprints" parent="Control" instance=ExtResource("2_0uv5o")]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 249.0
+offset_right = 3834.0
+offset_bottom = 2409.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("6_wa13m")
+labelText = "5 verschiedene 
+Fingerabdrücke 
+vom Safe"
+
+[node name="Pliers" parent="Control" instance=ExtResource("2_0uv5o")]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 494.0
+offset_right = 3808.0
+offset_bottom = 3991.0
+scale = Vector2(0.03, 0.03)
+icon = ExtResource("7_vae77")
+labelText = "Eine Zange mit 3 cm 
+langen Seiten"
+
+[node name="Draggables" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Draggable" parent="Draggables" node_paths=PackedStringArray("correctClue") instance=ExtResource("4_jmcek")]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 389.0
+offset_right = 818.0
+offset_bottom = 443.0
+text = "<3"
+correctClue = NodePath("../../Control/Waffle")
+
+[node name="Draggable2" parent="Draggables" node_paths=PackedStringArray("correctClue") instance=ExtResource("4_jmcek")]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 499.0
+offset_right = 828.0
+offset_bottom = 567.0
+text = "1.1 mm x 1.9 mm"
+correctClue = NodePath("../../Control/Screwdriver")
+
+[node name="Draggable3" parent="Draggables" node_paths=PackedStringArray("correctClue") instance=ExtResource("4_jmcek")]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 266.0
+offset_right = 719.0
+offset_bottom = 324.0
+text = "3 cm"
+correctClue = NodePath("../../Control/Pliers")
+
+[node name="Draggable4" parent="Draggables" node_paths=PackedStringArray("correctClue") instance=ExtResource("4_jmcek")]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 148.0
+offset_right = 737.0
+offset_bottom = 201.0
+text = "5"
+correctClue = NodePath("../../Control/Fingerprints")
+
+[node name="Draggable5" parent="Draggables" node_paths=PackedStringArray("correctClue") instance=ExtResource("4_jmcek")]
+layout_mode = 0
+offset_left = 773.0
+offset_top = 99.0
+offset_right = 838.0
+offset_bottom = 157.0
+text = "43"
+correctClue = NodePath("../../Control/Footprint")
+
+[node name="ControlPanel" parent="." instance=ExtResource("5_ne1wf")]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 874.0
+offset_top = 98.0
+offset_right = 1140.0
+offset_bottom = 541.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 949.0
+offset_top = 549.0
+offset_right = 1062.0
+offset_bottom = 580.0
+text = "Überprüfen"
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 346.0
+offset_top = 311.0
+offset_right = 638.0
+offset_bottom = 392.0
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Das war leider Falsch.
+Probier es noch mal"
+
+[node name="TryAgain" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 87.0
+offset_right = 227.0
+offset_bottom = 118.0
+text = "Nochmal versuchen"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Label/TryAgain" to="." method="_on_try_again_pressed"]
