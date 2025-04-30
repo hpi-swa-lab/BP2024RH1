@@ -5,7 +5,6 @@ extends Node2D
 @onready var draggables = %Draggables.get_children()
 @onready var clues = %Control.get_children()
 
-var correctClue: bool
 var draggedItems = 0
 
 func _ready() -> void:
@@ -17,7 +16,6 @@ func check_draggables(draggable: Button):
 	var clueRect: Rect2
 	
 	for clue in clues:
-		correctClue = true
 		clueRect = Rect2(clue.position, clue.size * clue.scale)		# The size gets fucked when using pictures
 		draggableRect = Rect2(draggable.position, draggable.size)
 		
@@ -26,15 +24,13 @@ func check_draggables(draggable: Button):
 			%ControlPanel.add_items(clue, draggable)
 			draggable.hide()
 			clue.hide()
-			if draggable.correctClue != clue:
-				correctClue = false
 
 func _on_button_pressed() -> void:
-	if correctClue and draggedItems == 5:
+	if %ControlPanel.check_clues():
 		print("nice")
 		# Do something
 	else:
-		%Label.show()			# The logic should be changed cause items can be removed too, i'll do it tomorrow
+		%Label.show()
 
 func _on_try_again_pressed() -> void:
 	draggedItems = 0

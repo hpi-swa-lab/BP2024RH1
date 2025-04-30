@@ -6,6 +6,7 @@ var showing: bool
 func _ready() -> void:
 	%Label.text = labelText
 	%Label.position = Vector2(self.icon.get_size().x + 20, 0)
+	%Label.scale = Vector2(1, 1) / self.scale
 	self.size = self.icon.get_size()
 
 func _on_pressed() -> void:

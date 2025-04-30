@@ -1,5 +1,7 @@
 extends Control
 
+var addedClues = {}
+
 func add_items(Clue: Button, draggable: Button):
 	
 	var newClue = Button.new()
@@ -17,6 +19,8 @@ func add_items(Clue: Button, draggable: Button):
 	newDraggable.pressed.connect(func(): remove_item(newClue, newDraggable, Clue, draggable))
 	newClue.pressed.connect(func(): remove_item(newClue, newDraggable, Clue, draggable))
 	
+	addedClues[Clue] = (Clue == draggable.correctClue)
+	
 	%GridContainer.add_child(newClue)
 	%GridContainer.add_child(newDraggable)
 
@@ -33,5 +37,15 @@ func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale
 func remove_item(newClue: Button, newDraggable: Button, Clue: Button, draggable: Button):
 	%GridContainer.remove_child(newClue)
 	%GridContainer.remove_child(newDraggable)
+	addedClues.erase(Clue)
 	Clue.show()
 	draggable.show()
+
+func check_clues() -> bool:
+	var cluesCorrect = true
+	for Clue in addedClues:
+		if addedClues[Clue] == false:
+			cluesCorrect = false
+	if addedClues.size() != 5:
+		cluesCorrect = false
+	return cluesCorrect
