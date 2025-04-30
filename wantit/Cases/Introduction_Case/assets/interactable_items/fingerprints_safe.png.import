@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf7od1i6s3y2r"
-path="res://.godot/imported/fingerprints_safe.png-93376f45611b5558ad84f1bcda55a1e0.ctex"
+path="res://.godot/imported/fingerprints_safe.png-a3fe314cf28a6b0716676f8cca60ad11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cases/Introduction_Case/assets/collectible_items/fingerprints_safe.png"
-dest_files=["res://.godot/imported/fingerprints_safe.png-93376f45611b5558ad84f1bcda55a1e0.ctex"]
+source_file="res://Cases/Introduction_Case/assets/interactable_items/fingerprints_safe.png"
+dest_files=["res://.godot/imported/fingerprints_safe.png-a3fe314cf28a6b0716676f8cca60ad11.ctex"]
 
 [params]
 
