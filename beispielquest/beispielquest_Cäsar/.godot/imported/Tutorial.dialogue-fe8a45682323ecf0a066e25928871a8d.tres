@@ -1,0 +1,175 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_t7kq1"]
+
+[resource]
+script = ExtResource("1_t7kq1")
+using_states = PackedStringArray()
+titles = {
+"start": "1",
+"zurueck": "12"
+}
+character_names = PackedStringArray("Kollege")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Kollege",
+&"id": "1",
+&"next_id": "2",
+&"text": "Das Prinzip ist ganz einfach. Du verschiebst das ganze Alphabet um eine bestimmte Anzahl Stellen nach rechts.",
+&"type": "dialogue"
+},
+"10": {
+&"id": "10",
+&"next_id": "11",
+&"type": ""
+},
+"11": {
+&"id": "11",
+&"next_id": "12",
+&"type": "title"
+},
+"12": {
+&"character": "Kollege",
+&"id": "12",
+&"next_id": "13",
+&"text": "Klasse! Du hast die Verschlüsselung geknackt. Viel Erfolg beim Lösen des Falls!",
+&"type": "dialogue"
+},
+"13": {
+&"id": "13",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"i": 11,
+&"type": &"variable",
+&"value": "office_szene"
+}, {
+&"i": 24,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 26,
+&"type": &"number",
+&"value": 2
+}]),
+&"is_blocking": true
+},
+&"next_id": "14",
+&"type": "mutation"
+},
+"14": {
+&"id": "14",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"function": "go_back",
+&"i": 3,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 11,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "15",
+&"type": "mutation"
+},
+"15": {
+&"id": "15",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"16": {
+&"id": "16",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"2": {
+&"character": "Kollege",
+&"id": "2",
+&"next_id": "3",
+&"text": "Angenommen du hast eine Verschiebung von 6, wird aus A ein G, aus B ein H und so weiter ...",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Kollege",
+&"id": "3",
+&"next_id": "4",
+&"text": "Auf der Scheibe ist zweimal das Alphabet abgebildet. [b]Außen[/b] ist das Alphabet für den verschlüsselten Text. [b]Innen[/b] steht der entsprechende Buchstabe im Originaltext.",
+&"type": "dialogue"
+},
+"4": {
+&"character": "Kollege",
+&"id": "4",
+&"next_id": "5",
+&"text": "Wenn du den Text jetzt entschlüsseln willst, drehst du einfach die innere Scheibe so, dass der innere Buchstabe dem äußeren nur (hier 6) Stellen weiter entspricht.",
+&"type": "dialogue"
+},
+"5": {
+&"character": "Kollege",
+&"id": "5",
+&"next_id": "6",
+&"text": "Hast du das soweit verstanden?",
+&"type": "dialogue"
+},
+"6": {
+&"id": "6",
+&"next_id": "1",
+&"responses": PackedStringArray("6", "7"),
+&"text": "Könntest du das nochmal wiederholen",
+&"type": "response"
+},
+"7": {
+&"id": "7",
+&"next_id": "8",
+&"text": "Ja, ich denke schon.",
+&"type": "response"
+},
+"8": {
+&"character": "Kollege",
+&"id": "8",
+&"next_id": "9",
+&"text": "Super! Dann probier dass doch gleich mal aus, der verschlüsselte Text ist um 6 Stellen verschoben.",
+&"type": "dialogue"
+},
+"9": {
+&"id": "9",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ start
+Kollege: Das Prinzip ist ganz einfach. Du verschiebst das ganze Alphabet um eine bestimmte Anzahl Stellen nach rechts.
+Kollege: Angenommen du hast eine Verschiebung von 6, wird aus A ein G, aus B ein H und so weiter ...
+Kollege: Auf der Scheibe ist zweimal das Alphabet abgebildet. [b]Außen[/b] ist das Alphabet für den verschlüsselten Text. [b]Innen[/b] steht der entsprechende Buchstabe im Originaltext.
+Kollege: Wenn du den Text jetzt entschlüsseln willst, drehst du einfach die innere Scheibe so, dass der innere Buchstabe dem äußeren nur (hier 6) Stellen weiter entspricht.
+Kollege: Hast du das soweit verstanden?
+- Könntest du das nochmal wiederholen => start
+- Ja, ich denke schon.
+Kollege: Super! Dann probier dass doch gleich mal aus, der verschlüsselte Text ist um 6 Stellen verschoben.
+=> END
+
+~ zurueck
+Kollege: Klasse! Du hast die Verschlüsselung geknackt. Viel Erfolg beim Lösen des Falls!
+set Global.office_szene = 2
+do go_back()
+=> END"
+metadata/dialogue_manager_version = "3.5.1"

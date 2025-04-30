@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsaho1fwwino3"]
+
+[ext_resource type="Texture2D" uid="uid://bsmthr6tenpuw" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_office.png" id="1_vt4a7"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_y86e6"]
+[ext_resource type="Texture2D" uid="uid://c7hwvidnp7hi4" path="res://Cases/Introduction_Case/assets/interactable_items/safe.png" id="3_jkgmc"]
+
+[node name="Bakery Office" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299882, 0.299882)
+texture = ExtResource("1_vt4a7")
+
+[node name="Safe" parent="." instance=ExtResource("2_y86e6")]
+layout_mode = 0
+scale = Vector2(0.300293, 0.300293)
+texture_normal = ExtResource("3_jkgmc")
+NextSceneString = "safe_close_up"

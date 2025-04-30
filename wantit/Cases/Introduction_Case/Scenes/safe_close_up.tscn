@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhbqihv27a5x8"]
+
+[ext_resource type="Texture2D" uid="uid://c6blk2k6t2wp8" path="res://Cases/Introduction_Case/assets/backgrounds/safe_closeUp.png" id="1_ilqon"]
+[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_vqx4l"]
+[ext_resource type="Texture2D" uid="uid://bc7rt7bpgdqoj" path="res://Cases/Introduction_Case/assets/collectible_items/pliers.png" id="3_d2s8b"]
+[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="4_d2s8b"]
+[ext_resource type="Texture2D" uid="uid://c40dfv7v6dx02" path="res://Cases/Introduction_Case/assets/collectible_items/screwdriver.png" id="4_fiei6"]
+
+[node name="Safe CloseUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300012, 0.300012)
+texture = ExtResource("1_ilqon")
+
+[node name="Pliers" parent="." instance=ExtResource("2_vqx4l")]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 477.0
+offset_right = 4340.0
+offset_bottom = 3974.0
+scale = Vector2(0.0807828, 0.0443505)
+texture_normal = ExtResource("3_d2s8b")
+dialogue_resource = ExtResource("4_d2s8b")
+dialogue_start = "pliers"
+
+[node name="Screwdriver" parent="." instance=ExtResource("2_vqx4l")]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 396.0
+offset_right = 4368.0
+offset_bottom = 4520.0
+rotation = 0.535832
+scale = Vector2(0.0818099, 0.0510003)
+texture_normal = ExtResource("4_fiei6")
+dialogue_resource = ExtResource("4_d2s8b")
+dialogue_start = "screwdriver"

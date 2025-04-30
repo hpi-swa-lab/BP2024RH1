@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj2wmkkh47ywg"]
+
+[ext_resource type="Texture2D" uid="uid://dj4g6di643a60" path="res://Cases/Introduction_Case/assets/backgrounds/counter_closeUp.png" id="1_62q81"]
+
+[node name="Counter CloseUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300016, 0.300016)
+texture = ExtResource("1_62q81")
