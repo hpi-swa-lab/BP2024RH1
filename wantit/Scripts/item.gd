@@ -14,6 +14,6 @@ func _ready() -> void:
 	
 func _pressed() -> void:
 	print("You clicked on an item!")
-	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
+	DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
 	if is_collectible:
 		queue_free()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca4miwg37ehc3"
-path="res://.godot/imported/shoeprints_kitchen.png-2d269506e1d74e6e760c90f7410e67bb.ctex"
+uid="uid://bnowh8ifxibsv"
+path="res://.godot/imported/plate_empty.png-3ffe2eb6625e79e91728ee460571de28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cases/Introduction_Case/assets/collectible_items/shoeprints_kitchen.png"
-dest_files=["res://.godot/imported/shoeprints_kitchen.png-2d269506e1d74e6e760c90f7410e67bb.ctex"]
+source_file="res://Cases/Introduction_Case/assets/interactable_items/plate_empty.png"
+dest_files=["res://.godot/imported/plate_empty.png-3ffe2eb6625e79e91728ee460571de28.ctex"]
 
 [params]
 

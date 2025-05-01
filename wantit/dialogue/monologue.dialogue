@@ -4,7 +4,7 @@
 ~ door_to_store
 if State.key_collected:
 	Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
-	set Status.door_inspected = true
+	set State.door_inspected = true
 else:
 	An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
 => END
@@ -45,7 +45,7 @@ Der Schlüssel passt nicht.
 => END
 
 # bakery
-~ show_prints_bakery
+~ shoe_prints_bakery
 Sieht aus als wäre der Dieb in Mehl getreten. Die Spur führt ins Büro des Ladens.
 set State.traces_in_bakery_inspected = true
 => END
