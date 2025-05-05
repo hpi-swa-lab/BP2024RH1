@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ckn4i25eajkk5" path="res://Cases/Caesar/Scripts/tatort.gd" id="1_dsq52"]
 [ext_resource type="Texture2D" uid="uid://cpv5dp7ajsppy" path="res://Cases/Caesar/Assets/Hintergrund.png" id="1_eik8t"]
-[ext_resource type="PackedScene" uid="uid://jfkrjf40fn0i" path="res://Cases/Caesar/Scenes/item.tscn" id="3_iqajy"]
+[ext_resource type="PackedScene" uid="uid://jfkrjf40fn0i" path="res://Cases/Caesar/Scenes/item_caesar.tscn" id="3_iqajy"]
 [ext_resource type="Texture2D" uid="uid://sugbmdkyi5m7" path="res://Cases/Caesar/Assets/Restaurant_Karte.png" id="4_d1yf4"]
 [ext_resource type="Texture2D" uid="uid://b1jy2smo77m4t" path="res://Cases/Caesar/Assets/caesar.png" id="4_lre5u"]
 [ext_resource type="PackedScene" uid="uid://chluu1cjq7fdw" path="res://Cases/Caesar/Scenes/decorative_item.tscn" id="5_d1yf4"]

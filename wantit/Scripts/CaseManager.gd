@@ -55,8 +55,8 @@ func close_Case(CurrentCase: Case):
 	SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/Questionary.tscn")
 
 func add_Hint(HintPos: Vector2, HintTexture: CompressedTexture2D, HintScale: Vector2):
-	var new_Hint = Hint.new(HintPos, HintTexture, HintScale)
-	Hints.append(new_Hint)
+	var newHint = Hint.new(HintPos, HintTexture, HintScale)
+	Hints.append(newHint)
 
 func new_Location(LocationTex: CompressedTexture2D, LocationScale: Vector2, LocationPos: Vector2, LocationScene: PackedScene):
 	var newLocation = Location.new(LocationTex, LocationScale, LocationPos, LocationScene)

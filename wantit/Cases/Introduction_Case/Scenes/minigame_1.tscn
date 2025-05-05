@@ -83,6 +83,18 @@ icon = ExtResource("7_vae77")
 labelText = "Eine Zange mit 3 cm 
 langen Seiten"
 
+[node name="ControlPanel" parent="." instance=ExtResource("5_ne1wf")]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 874.0
+offset_top = 98.0
+offset_right = 1140.0
+offset_bottom = 541.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="Draggables" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 3
@@ -134,18 +146,6 @@ offset_right = 838.0
 offset_bottom = 157.0
 text = "43"
 correctClue = NodePath("../../Control/Footprint")
-
-[node name="ControlPanel" parent="." instance=ExtResource("5_ne1wf")]
-unique_name_in_owner = true
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 874.0
-offset_top = 98.0
-offset_right = 1140.0
-offset_bottom = 541.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="Button" type="Button" parent="."]
 offset_left = 949.0

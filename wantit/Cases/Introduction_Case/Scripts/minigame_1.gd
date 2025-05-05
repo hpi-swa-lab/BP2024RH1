@@ -6,20 +6,21 @@ extends Node2D
 @onready var clues = %Control.get_children()
 
 var draggedItems = 0
+var clueRects = {}
 
 func _ready() -> void:
 	for draggable in draggables:
 		draggable.check.connect(func(): check_draggables(draggable))
-	
+		
+	for clue in clues:
+		var clueRect = Rect2(clue.position, clue.size * clue.scale) # The size gets fucked when using pictures
+		clueRects[clue] = clueRect
+		
 func check_draggables(draggable: Button):
-	var draggableRect: Rect2
-	var clueRect: Rect2
+	var draggableRect: = Rect2(draggable.position, draggable.size)
 	
 	for clue in clues:
-		clueRect = Rect2(clue.position, clue.size * clue.scale)		# The size gets fucked when using pictures
-		draggableRect = Rect2(draggable.position, draggable.size)
-		
-		if draggableRect.intersects(clueRect):
+		if draggableRect.intersects(clueRects[clue]) and clue.visible:
 			draggedItems += 1
 			%ControlPanel.add_items(clue, draggable)
 			draggable.hide()

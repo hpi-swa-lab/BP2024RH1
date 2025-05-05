@@ -3,7 +3,6 @@ extends Control
 var addedClues = {}
 
 func add_items(Clue: Button, draggable: Button):
-	
 	var newClue = Button.new()
 	newClue.icon = update_item_size(Clue.icon)
 	var Style = StyleBoxEmpty.new()
