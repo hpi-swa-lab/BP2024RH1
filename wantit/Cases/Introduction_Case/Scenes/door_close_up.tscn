@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhq2pn0aifnxf"]
+[gd_scene load_steps=5 format=3 uid="uid://dhq2pn0aifnxf"]
 
 [ext_resource type="Texture2D" uid="uid://w8sagj0syxn3" path="res://Cases/Introduction_Case/assets/backgrounds/showroom_door_closeUp.png" id="1_wh2rv"]
 [ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_wqsao"]
-[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="3_wjhvh"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="4_orxwm"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="5_22ssn"]
 
@@ -23,16 +22,9 @@ texture = ExtResource("1_wh2rv")
 
 [node name="Key Hole" parent="." instance=ExtResource("2_wqsao")]
 layout_mode = 0
-offset_left = 871.0
-offset_top = 318.0
-offset_right = 911.0
-offset_bottom = 358.0
-scale = Vector2(1.03849, 1.57506)
-is_collectible = false
-dialogue_resource = ExtResource("3_wjhvh")
-dialogue_start = "door_to_store"
 
 [node name="Back Button" parent="." instance=ExtResource("4_orxwm")]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 528.0

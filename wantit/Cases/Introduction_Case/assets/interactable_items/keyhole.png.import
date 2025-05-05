@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oggi3b6r5m1u"
-path="res://.godot/imported/showroom_door_closeUp.png-2ac1605a301dda45d2a3b0ebce578b67.ctex"
+uid="uid://dylqwu1vukiuk"
+path="res://.godot/imported/keyhole.png-b81230e200df25025d356544e777d8b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cases/Introduction_Case/assets/backgrounds/showroom_door_closeUp.png"
-dest_files=["res://.godot/imported/showroom_door_closeUp.png-2ac1605a301dda45d2a3b0ebce578b67.ctex"]
+source_file="res://Cases/Introduction_Case/assets/interactable_items/keyhole.png"
+dest_files=["res://.godot/imported/keyhole.png-b81230e200df25025d356544e777d8b0.ctex"]
 
 [params]
 
