@@ -28,10 +28,12 @@ func check_draggables(draggable: Button):
 
 func _on_button_pressed() -> void:
 	if %ControlPanel.check_clues():
-		print("nice")
-		# Do something
+		%Label.text = "Richtig!"
+		%Label.show()
+		%TryAgain.hide()
 	else:
 		%Label.show()
+		%Label.text = "Das war leider Falsch.\nProbier es noch einmal"
 
 func _on_try_again_pressed() -> void:
 	draggedItems = 0

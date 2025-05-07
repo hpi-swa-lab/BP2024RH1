@@ -165,8 +165,10 @@ theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Das war leider Falsch.
 Probier es noch mal"
+horizontal_alignment = 1
 
 [node name="TryAgain" type="Button" parent="Label"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 65.0
 offset_top = 87.0
