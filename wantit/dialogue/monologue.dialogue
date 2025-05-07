@@ -2,42 +2,42 @@
 
 # salesroom
 ~ door_to_store
-if State.key_collected:
+if CaseManager.CaseGlobals.key_collected:
 	Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
-	set State.door_inspected = true
+	set CaseManager.CaseGlobals.door_inspected = true
 else:
 	An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
 => END
 
 ~ bitten_waffle
 Da scheint jemand Hunger gehabt zu haben.
-set State.waffle_collected = true
+set CaseManager.CaseGlobals.waffle_collected = true
 => END
 
 # bakers office
 ~ shoe_prints_office
-if State.traces_in_bakery_inspected: 
+if CaseManager.CaseGlobals.traces_in_bakery_inspected: 
 	Hier endet die Mehlspur.
-	set State.traces_in_office_inspected = true
+	set CaseManager.CaseGlobals.traces_in_office_inspected = true
 else:
 	Sieht aus als wäre der Dieb in Mehl getreten.
-	set State.traces_in_office_inspected = true
+	set CaseManager.CaseGlobals.traces_in_office_inspected = true
 => END
 
 # Safe in office
 ~ pliers
 Damit wollte der Dieb wohl den Safe aufbrechen.
-set State.pliers_collected = true
+set CaseManager.CaseGlobals.pliers_collected = true
 => END
 
 ~ screwdriver
 Damit hat der Dieb scheinbar den Safe aufgebrochen.
-set State.screwdriver_collected = true
+set CaseManager.CaseGlobals.screwdriver_collected = true
 => END
 
 ~ fingerprints
 Die müssen wir unbedingt sichern.
-set State.fingerprints_saved = true
+set CaseManager.CaseGlobals.fingerprints_saved = true
 => END
 
 ~ key_on_safe
@@ -47,21 +47,21 @@ Der Schlüssel passt nicht.
 # bakery
 ~ shoe_prints_bakery
 Sieht aus als wäre der Dieb in Mehl getreten. Die Spur führt ins Büro des Ladens.
-set State.traces_in_bakery_inspected = true
+set CaseManager.CaseGlobals.traces_in_bakery_inspected = true
 => END
 
 ~ fallen_flour_sack
-if State.traces_in_bakery_inspected:
+if CaseManager.CaseGlobals.traces_in_bakery_inspected:
 	Das ist also der Ursprung der Mehlspuren.
-	set State.flour_sack_inspected = true
+	set CaseManager.CaseGlobals.flour_sack_inspected = true
 else:
 	Sieht aus als wäre jemand über den Mehlsack gestolpert. 
-	set State.flour_sack_inspected = true
+	set CaseManager.CaseGlobals.flour_sack_inspected = true
 => END
 
 ~ flour_sack_pushed
 Ein Schlüssel…den muss der Dieb verloren haben. Vielleicht gibt es hier ein passendes Schloss.
-set State.key_collected = true
+set CaseManager.CaseGlobals.key_collected = true
 => END
 
 ~ minigame1_start

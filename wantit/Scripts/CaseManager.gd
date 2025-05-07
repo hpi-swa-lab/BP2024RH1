@@ -1,5 +1,30 @@
 extends Node
 
+var CaseGlobals: Node = null # The script for Globals in each Case will be loaded in here. The Globals can be accessed via: Globals.CaseGlobals.<var_name>
+
+var all_clues_found_scene: Resource
+
+var clues_completed: bool = false
+
+func clue_found() -> void:	
+	if all_clues_found():
+		clues_completed = true
+		change_scene()
+	
+func all_clues_found() -> bool:
+	for hint in CaseGlobals.get_hints():
+		if hint != true:
+			return false
+	return true	
+
+func change_scene() -> void:
+	if not "all_clues_found_scene" in CaseGlobals:
+		push_error("Invalid Global Script for Case: all_clues_found_Scene not found")
+		return
+	
+	all_clues_found_scene = CaseGlobals.all_clues_found_scene
+	SceneSwitcher.switch_scene(all_clues_found_scene)
+	 
 class Case:
 	var CaseName: String
 	var FirstScene: PackedScene
@@ -40,7 +65,7 @@ var Hints = []
 func add_Case(CaseName: String, FirstScene: PackedScene, GlobalScript: Node):
 	if not ClosedCases.has(CaseName):
 		var newCase = Case.new(CaseName, FirstScene, GlobalScript)
-		Globals.CaseGlobals = GlobalScript
+		CaseGlobals = GlobalScript
 		CaseList[newCase.CaseName] = newCase
 
 func close_Case(CurrentCase: Case):

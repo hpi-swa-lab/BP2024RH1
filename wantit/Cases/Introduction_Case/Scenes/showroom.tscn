@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8iypejva5d7t"]
 
 [ext_resource type="Texture2D" uid="uid://demx2h26soyul" path="res://Cases/Introduction_Case/assets/backgrounds/showroom.png" id="1_57uge"]
-[ext_resource type="Script" uid="uid://d1cahwbx6fs0v" path="res://Cases/Introduction_Case/Scripts/showroom.gd" id="1_itl10"]
+[ext_resource type="Script" uid="uid://d1cahwbx6fs0v" path="res://Cases/Introduction_Case/scripts/showroom.gd" id="1_itl10"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_5yvxj"]
 [ext_resource type="Texture2D" uid="uid://38rkcka7kf73" path="res://Cases/Introduction_Case/assets/interactable_items/plate.png" id="3_l0fl4"]
 [ext_resource type="Texture2D" uid="uid://b7h7dgrh34vm3" path="res://Cases/Introduction_Case/assets/interactable_items/door_showroom.png" id="4_l0fl4"]
