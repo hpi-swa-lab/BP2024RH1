@@ -4,6 +4,7 @@ func _ready() -> void:
 	# Setting Globals
 	Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
 	Globals.OfficeDialogueStart = "start_case"
+	Globals.OfficeDialogueDone = false
 	CaseManager.new_Location(load("res://Cases/Introduction_Case/assets/bakery_icon.png"), Vector2(0.1, 0.1), Vector2(130, 100), preload("res://Cases/Introduction_Case/Scenes/showroom.tscn"))
 	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 	GlobalTimer.start_timer("insgesamt")
