@@ -38,6 +38,7 @@ dialogue_resource = ExtResource("5_83px8")
 dialogue_start = "shoe_prints_office"
 
 [node name="Back Button" parent="." instance=ExtResource("2_y86e6")]
+layout_mode = 0
 offset_left = -7.0
 offset_top = 572.0
 offset_right = 505.0

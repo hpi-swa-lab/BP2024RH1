@@ -1,11 +1,14 @@
 extends Node3D
 
 func _ready() -> void:
-	add_basic_cases()
 	load_CaseBoard_Picture()
-	
-	if Globals.selectedCase != null and Globals.OfficeDialogue != null:
+	add_basic_cases()
+	if Globals.selectedCase == null:
+		Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
+		Globals.OfficeDialogueStart = "begin"
+	if  Globals.OfficeDialogue != null:
 		DialogueManager.show_dialogue_balloon(load(Globals.OfficeDialogue), Globals.OfficeDialogueStart)
+	
 	
 func _on_pc_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
@@ -37,5 +40,6 @@ func load_CaseBoard_Picture():
 
 func add_basic_cases():
 	CaseManager.add_Case("Caesar", load("res://Cases/Caesar/Scenes/Caesar_Start.tscn"), load("res://Cases/Caesar/Scripts/global.gd").new())
+	CaseManager.add_Case("Einführungsfall", load("res://Cases/Introduction_Case/Scenes/Introduction_Start.tscn"), load("res://dialogue/state.gd").new())
 	#CaseManager.add_Case("Test2", load("res://Scenes/testscene.tscn"), load("res://Cases/Caesar/Scripts/global.gd").new())
 	#CaseManager.add_Case("Test3", load("res://Scenes/testscene.tscn"), load("res://Cases/Caesar/Scripts/global.gd").new())

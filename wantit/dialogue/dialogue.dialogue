@@ -3,6 +3,7 @@
 Kollege: Willkommen im Präsidium!
 Kollege: Ich bin Klaas und werde dir bei deinen ersten Fällen als Unterstützung beiseite stehen.
 Klaas: So wie es aussieht haben wir auch bereits unseren ersten Fall.
+Klaas: Das Fälleverzeichnis findest du auf dem Computer auf dem Schreibtisch.
 => END
 
 ~ start_case
@@ -18,9 +19,10 @@ Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lip
 	- Wir werden unser bestes tun den Täter zu fassen.
 		Kollege: Wo fangen wir mit der Spurensicherung an?
 		# zum ⇒ Verkaufsraum wechseln
-		- Verkaufsraum 
+		- Verkaufsraum
 		# zum Büro des Bäckers wechseln
 		- Büro
+			do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/bakery_office.tscn")
 => END
 
 ~ found_hints

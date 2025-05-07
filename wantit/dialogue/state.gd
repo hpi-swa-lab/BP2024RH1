@@ -15,3 +15,6 @@ var fingerprints_saved: bool = false
 
 # bakery
 var flour_sack_inspected: bool = false
+
+#showroom
+var showroom_intro_shown: bool = false

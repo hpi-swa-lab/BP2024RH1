@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhq2pn0aifnxf"]
 
-[ext_resource type="Texture2D" uid="uid://w8sagj0syxn3" path="res://Cases/Introduction_Case/assets/backgrounds/showroom_door_closeUp.png" id="1_wh2rv"]
+[ext_resource type="Texture2D" uid="uid://oggi3b6r5m1u" path="res://Cases/Introduction_Case/assets/backgrounds/showroom_door_closeUp.png" id="1_wh2rv"]
 [ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_wqsao"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="4_orxwm"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="5_22ssn"]
