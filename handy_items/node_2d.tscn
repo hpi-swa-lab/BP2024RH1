@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://fwd7pp1jeb0t"]
+[gd_scene load_steps=14 format=3 uid="uid://fwd7pp1jeb0t"]
 
 [ext_resource type="Texture2D" uid="uid://bh6csba3en17v" path="res://Assets/magnifying-glass.png" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://b10uxvwp6kcxh" path="res://node_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://cdd0cm306alxw" path="res://lupe.gd" id="2_epypp"]
 [ext_resource type="PackedScene" uid="uid://ckgilkx8p3b3q" path="res://item.tscn" id="4_kdubu"]
 [ext_resource type="Texture2D" uid="uid://byurtrqbwj6iv" path="res://Assets/apple.png" id="5_d21ai"]
+[ext_resource type="Script" uid="uid://dlvyb7as5j6dp" path="res://new_script.gd" id="6_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://drq7mq80wjsrk" path="res://Assets/book.png" id="6_rj586"]
 [ext_resource type="PackedScene" uid="uid://dcell8dtogr7h" path="res://inventory.tscn" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://bfhmvi5qb81eb" path="res://inventory2.tscn" id="8_rj586"]
@@ -73,6 +74,7 @@ offset_right = 286.0
 offset_bottom = 468.0
 icon = ExtResource("6_rj586")
 inventory = NodePath("../../Inventory")
+ActionScript = ExtResource("6_4d7sh")
 
 [node name="Button4" parent="Items" node_paths=PackedStringArray("inventory") instance=ExtResource("4_kdubu")]
 layout_mode = 0
@@ -82,6 +84,7 @@ offset_right = 748.0
 offset_bottom = 481.0
 icon = ExtResource("6_rj586")
 inventory = NodePath("../../Inventory2")
+ActionScript = ExtResource("6_4d7sh")
 
 [node name="Inventory" parent="." instance=ExtResource("7_d21ai")]
 unique_name_in_owner = true

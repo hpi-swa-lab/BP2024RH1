@@ -1,6 +1,7 @@
 extends Button
 
 @export var inventory: Control
+@export var ActionScript: Script
 
 func _ready() -> void:
 	self.pivot_offset = self.size / 2

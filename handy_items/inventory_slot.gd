@@ -1,8 +1,7 @@
-# Resizable Container for the item slots in the inventory. Logic on what to do when an item is removed needs to be implmented 
-
 extends Panel
 
 var StoredItem: Button = null
+var ActionScript: Node
 
 func _ready() -> void:
 	%Sprite2D.scale = self.custom_minimum_size / %Sprite2D.texture.get_size()
@@ -10,10 +9,17 @@ func _ready() -> void:
 func add_item(Item: Button):
 	%CenterContainer.size = self.size
 	StoredItem = Item
+	if Item.ActionScript != null:
+		ActionScript = Item.ActionScript.new()
 	%DisplayedItem.icon = update_item_size(Item.icon)
 	%DisplayedItem.show()
 
 func remove_item():
+	if ActionScript != null:
+		if ActionScript.has_method("do_smt"):
+			ActionScript.do_smt(StoredItem)
+	
+	ActionScript = null
 	StoredItem = null
 	%DisplayedItem.hide()
 
@@ -26,4 +32,3 @@ func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale
 
 func _on_displayed_item_pressed() -> void:
 	remove_item()
-	print("Now do summin cool") # Should be changed once its clear which kinds of tasked should be done
