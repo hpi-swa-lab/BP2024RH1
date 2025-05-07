@@ -3,11 +3,15 @@ extends Node3D
 func _ready() -> void:
 	load_CaseBoard_Picture()
 	add_basic_cases()
-	if Globals.selectedCase == null:
-		Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
-		Globals.OfficeDialogueStart = "begin"
-	if  Globals.OfficeDialogue != null:
-		DialogueManager.show_dialogue_balloon(load(Globals.OfficeDialogue), Globals.OfficeDialogueStart)
+	
+	if not Globals.OfficeDialogueDone:
+		if Globals.selectedCase == null:
+			Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
+			Globals.OfficeDialogueStart = "begin"
+	
+		if  Globals.OfficeDialogue != null:
+			DialogueManager.show_dialogue_balloon(load(Globals.OfficeDialogue), Globals.OfficeDialogueStart)
+			Globals.OfficeDialogueDone = true
 	
 	
 func _on_pc_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
