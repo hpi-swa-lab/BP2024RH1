@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://3himp2aukp2f"]
+[gd_scene load_steps=3 format=3 uid="uid://dp1dxphtd4rfv"]
 
 [ext_resource type="Texture2D" uid="uid://beekojbmf1jpy" path="res://Assets/first_case/questionmark.png" id="1_g1pqc"]
-[ext_resource type="Script" uid="uid://601hcmu0w0j4" path="res://Scenes/first_scene/question_mark.gd" id="2_nbv03"]
+[ext_resource type="Script" uid="uid://b8jjijrkwwv20" path="res://Cases/Introduction_Case/Scripts/question_mark.gd" id="2_p51dk"]
 
 [node name="Question_mark" type="Button"]
 offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.15, 0.15)
 icon = ExtResource("1_g1pqc")
-script = ExtResource("2_nbv03")
+script = ExtResource("2_p51dk")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

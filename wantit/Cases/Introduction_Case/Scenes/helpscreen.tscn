@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c30s055m4ti57"]
+[gd_scene load_steps=4 format=3 uid="uid://dbq8p1fknj6fo"]
 
-[ext_resource type="Script" uid="uid://dl1dax7gohgy1" path="res://Scripts/first_case/helpscreen.gd" id="1_2n7gt"]
+[ext_resource type="Script" uid="uid://dl1dax7gohgy1" path="res://Cases/Introduction_Case/Scripts/helpscreen.gd" id="1_2n7gt"]
 [ext_resource type="Texture2D" uid="uid://bkfa3tiko8wxq" path="res://Assets/first_case/close.png" id="2_6qk7a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tffo2"]

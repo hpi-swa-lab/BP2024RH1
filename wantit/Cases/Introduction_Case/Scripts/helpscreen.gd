@@ -55,7 +55,7 @@ func load_bakery_hint():
 
 
 func _on_close_btn_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("left_click"):
+	if event is InputEventMouseButton: #is_action_pressed("left_click"):
 		visible = false
 		emit_signal("display_question_mark")
 	# delay until helpscreen can be used again (einblenden or disable) emit signal

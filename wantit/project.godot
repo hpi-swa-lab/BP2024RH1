@@ -23,7 +23,7 @@ CaseManager="*res://Scripts/CaseManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalTimer="*res://Scripts/timer.gd"
 State="*res://dialogue/state.gd"
-GlobalFirstScene="*res://Scripts/first_case/Global_first_scene.gd"
+GlobalFirstScene="*res://Cases/Introduction_Case/Scripts/Global_first_scene.gd"
 
 [dialogue_manager]
 
@@ -37,14 +37,6 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
-
-[input]
-
-left_click={
-"deadzone": 0.2,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
-]
-}
 
 [internationalization]
 
