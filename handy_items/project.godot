@@ -14,6 +14,10 @@ config/name="Handy_items"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalInventory="*res://GlobalInventory.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

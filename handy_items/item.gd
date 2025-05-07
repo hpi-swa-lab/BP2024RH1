@@ -1,6 +1,5 @@
 extends Button
 
-@export var inventory: Control
 @export var ActionScript: Script
 
 func _ready() -> void:
@@ -10,7 +9,7 @@ func highlight():
 	%AnimationPlayer.play("Highlight")
 
 func _on_pressed() -> void:
-	inventory.add_item(self)
+	GlobalInventory.add_item(self)
 	%AnimationPlayer.play("clicked")
 
 

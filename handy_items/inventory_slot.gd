@@ -17,8 +17,10 @@ func add_item(Item: Button):
 func remove_item():
 	if ActionScript != null:
 		if ActionScript.has_method("do_smt"):
+			get_tree().root.add_child(ActionScript)
 			ActionScript.do_smt(StoredItem)
 	
+	GlobalInventory.Items.erase(StoredItem.name)
 	ActionScript = null
 	StoredItem = null
 	%DisplayedItem.hide()
@@ -30,5 +32,5 @@ func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale
 	var newIcon = ImageTexture.create_from_image(img)
 	return newIcon
 
-func _on_displayed_item_pressed() -> void:
+func _on_displayed_item_button_down() -> void:
 	remove_item()

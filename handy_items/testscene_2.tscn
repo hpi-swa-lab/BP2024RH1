@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwvdgvrqyehu6"]
+
+[ext_resource type="Script" uid="uid://d0ndb2ujg4ggj" path="res://testscene_2.gd" id="1_a7p3f"]
+
+[node name="testscene2" type="Node2D"]
+script = ExtResource("1_a7p3f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 649.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 86.0
+offset_top = 569.0
+offset_right = 157.0
+offset_bottom = 600.0
+text = "Go Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

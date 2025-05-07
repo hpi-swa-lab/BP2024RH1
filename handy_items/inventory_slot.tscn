@@ -38,4 +38,4 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_bfyh4")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_75pi0")
 icon_alignment = 1
 
-[connection signal="pressed" from="CenterContainer/DisplayedItem" to="." method="_on_displayed_item_pressed"]
+[connection signal="button_down" from="CenterContainer/DisplayedItem" to="." method="_on_displayed_item_button_down"]

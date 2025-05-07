@@ -7,10 +7,11 @@ var slotCount = 8
 var opened: bool = true
 var columns = 2
 var slots: Array
-var slotScene: PackedScene
-var newSlot
 
 func _ready() -> void:
+	var newSlot: Control
+	var slotScene: PackedScene
+	
 	%GridContainer.columns = columns
 	for i in range(slotCount):
 		slotScene = load("res://inventory_slot.tscn")
@@ -18,6 +19,8 @@ func _ready() -> void:
 		newSlot.custom_minimum_size = Vector2(%GridContainer.size.x / columns, %GridContainer.size.x / columns)
 		%GridContainer.add_child(newSlot)
 	slots = %GridContainer.get_children()
+	
+	update_inventory()
 
 func add_item(Item: Button):
 	for slot in slots:
@@ -34,3 +37,10 @@ func _on_button_pressed() -> void:
 		%Control.show()
 		opened = true
 		%Button.text = "Hide"
+		
+func update_inventory():
+	for slot in slots:
+		if slot.StoredItem != null:
+			slot.remove_item()
+	for item in GlobalInventory.Items:
+		add_item(GlobalInventory.Items[item])
