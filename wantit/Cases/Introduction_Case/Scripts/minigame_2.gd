@@ -43,7 +43,7 @@ func check_Answers():
 	for child in %Buttons.get_children():
 		%Buttons.remove_child(child)
 	if correctAnswers:
-		%Label.text = "No Errors or Warnings, do cool stuff now"
+		%Label.text = "Spuren wurden erfolgreich digitalisiert"
 		Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
 		Globals.OfficeDialogueStart = "finish"
 		Globals.OfficeDialogueDone = false

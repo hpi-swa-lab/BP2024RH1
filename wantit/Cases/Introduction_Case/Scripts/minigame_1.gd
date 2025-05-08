@@ -9,6 +9,7 @@ var draggedItems = 0
 var clueRects = {}
 
 func _ready() -> void:
+	DialogueManager.show_dialogue_balloon(load("res://dialogue/monologue.dialogue"), "minigame1_start")
 	for draggable in draggables:
 		draggable.check.connect(func(): check_draggables(draggable))
 		
