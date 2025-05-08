@@ -23,7 +23,6 @@ CaseManager="*res://Scripts/CaseManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalTimer="*res://Scripts/timer.gd"
 State="*res://dialogue/state.gd"
-GlobalFirstScene="*res://Cases/Introduction_Case/Scripts/Global_first_scene.gd"
 GlobalInventory="*res://Scripts/GlobalInventory.gd"
 
 [dialogue_manager]

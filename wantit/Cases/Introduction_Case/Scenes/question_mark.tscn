@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dp1dxphtd4rfv"]
 
 [ext_resource type="Texture2D" uid="uid://beekojbmf1jpy" path="res://Assets/first_case/questionmark.png" id="1_g1pqc"]
-[ext_resource type="Script" path="res://Cases/Introduction_Case/Scripts/question_mark.gd" id="2_p51dk"]
+[ext_resource type="Script" uid="uid://b8jjijrkwwv20" path="res://Cases/Introduction_Case/Scripts/question_mark.gd" id="2_p51dk"]
 
 [node name="Question_mark" type="Button"]
 z_index = 1
