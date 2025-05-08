@@ -14,10 +14,7 @@ func _ready() -> void:
 	
 func _pressed() -> void:
 	DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
-	
 	await DialogueManager.dialogue_ended
-	
 	CaseManager.clue_found()
-	
 	if is_collectible:
 		queue_free()

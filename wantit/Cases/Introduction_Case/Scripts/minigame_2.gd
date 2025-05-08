@@ -44,6 +44,10 @@ func check_Answers():
 		%Buttons.remove_child(child)
 	if correctAnswers:
 		%Label.text = "No Errors or Warnings, do cool stuff now"
+		Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
+		Globals.OfficeDialogueStart = "finish"
+		Globals.OfficeDialogueDone = false
+		SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 	else:
 		var AnswerTexts: String = ""
 		for Answer in Answers:

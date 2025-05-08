@@ -4,10 +4,10 @@ extends Control
 @onready var pliers: TextureButton = $Pliers
 
 func _ready() -> void:
-	if State.pliers_collected:
+	if CaseManager.CaseGlobals.pliers_collected:
 		hide_item(pliers)
 		
-	if State.screwdriver_collected:
+	if CaseManager.CaseGlobals.screwdriver_collected:
 		hide_item(screwdriver)
 
 func hide_item(item: TextureButton) -> void:
