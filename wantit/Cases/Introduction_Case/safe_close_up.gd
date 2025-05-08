@@ -5,13 +5,13 @@ extends Control
 @onready var fingerprints: TextureButton = $Fingerprints
 
 func _ready() -> void:
-	if State.pliers_collected:
+	if CaseManager.CaseGlobals.pliers_collected:
 		pliers.disabled = true
 		pliers.hide()
 	
-	if State.screwdriver_collected:
+	if CaseManager.CaseGlobals.screwdriver_collected:
 		screwdriver.disabled = true
 		screwdriver.hide()
 		
-	if State.fingerprints_saved:
+	if CaseManager.CaseGlobals.fingerprints_saved:
 		fingerprints.disabled = true

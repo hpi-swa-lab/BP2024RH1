@@ -9,10 +9,10 @@ func _ready() -> void:
 	if CaseManager.clues_completed:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "found_hints")
 	
-	if State.flour_sack_inspected:
+	if CaseManager.CaseGlobals.flour_sack_inspected:
 		disable_floursack()
 	
-	if State.key_collected:
+	if CaseManager.CaseGlobals.key_collected:
 		key.disabled = true
 		key.hide()
 	
