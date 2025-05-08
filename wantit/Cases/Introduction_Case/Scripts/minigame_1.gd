@@ -5,6 +5,8 @@ extends Node2D
 @onready var draggables = %Draggables.get_children()
 @onready var clues = %Control.get_children()
 
+var searching: bool
+
 var draggedItems = 0
 var clueRects = {}
 
@@ -50,3 +52,17 @@ func _on_try_again_pressed() -> void:
 	for clue in clues:
 		clue.show()
 	%ControlPanel.remove_children()
+
+func _on_magnifying_glass_searching(start: bool) -> void:
+	searching = start
+	if not start:
+		for child in %Control.get_children():
+			child.not_hovered()
+
+func _input(event):
+	if event is InputEventMouseMotion and searching:
+		for child in %Control.get_children():
+			if child.is_hovered():
+				child.hovered()
+			else:
+				child.not_hovered()
