@@ -15,9 +15,15 @@ func _ready() -> void:
 		texture_click_mask = bitmap
 	
 func _pressed() -> void:
-	GlobalInventory.add_item(self)
-	DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
-	await DialogueManager.dialogue_ended
-	CaseManager.clue_found()
-	if is_collectible:
+	if not is_collectible:
+		DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
+		await DialogueManager.dialogue_ended
+		CaseManager.clue_found()
+	else:
+		GlobalInventory.add_item(self)
+		GlobalInventory.show_inventory()
+		DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
+		await DialogueManager.dialogue_ended
+		GlobalInventory.hide_inventory()
+		CaseManager.clue_found()
 		queue_free()

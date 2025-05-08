@@ -12,9 +12,13 @@ func get_inventory() -> Control:
 
 func add_item(Item: TextureButton):
 	if not Items.has(Item.name):
-		if InventoryInstance:
-			InventoryInstance.add_item(Item)
 		var duplicatedItem = Item.duplicate()
+		if InventoryInstance:
+			InventoryInstance.add_item(duplicatedItem)
 		Items[duplicatedItem.name] = duplicatedItem
-	else:
-		print("you already collected this item")
+
+func show_inventory():
+	InventoryInstance.show_inventory()
+	
+func hide_inventory():
+	InventoryInstance.hide_inventory()

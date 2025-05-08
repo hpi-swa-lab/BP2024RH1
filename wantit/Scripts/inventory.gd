@@ -21,11 +21,7 @@ func _ready() -> void:
 	slots = %GridContainer.get_children()
 	
 	update_inventory()
-	
-	%Control.hide()
-	opened = false
-	%Button.text = "Inventar"
-	self.MouseFilter.MOUSE_FILTER_IGNORE
+	hide_inventory()
 
 func add_item(Item: TextureButton):
 	for slot in slots:
@@ -35,16 +31,20 @@ func add_item(Item: TextureButton):
 
 func _on_button_pressed() -> void:
 	if opened:
-		%Control.hide()
-		opened = false
-		%Button.text = "Inventar"
-		self.MouseFilter.MOUSE_FILTER_IGNORE
+		hide_inventory()
 	else:
-		%Control.show()
-		opened = true
-		%Button.text = "Schließen"
-		self.MouseFilter.MOUSE_FILTER_STOP
+		show_inventory()
 		
 func update_inventory():
 	for item in GlobalInventory.Items:
 		add_item(GlobalInventory.Items[item])
+		
+func show_inventory():
+	%Control.show()
+	opened = true
+	%Button.text = "Schließen"
+	
+func hide_inventory():
+	%Control.hide()
+	opened = false
+	%Button.text = "Inventar"
