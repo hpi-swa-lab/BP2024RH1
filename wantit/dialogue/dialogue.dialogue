@@ -30,16 +30,19 @@ Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lip
 ~ found_hints
 Klaas: Scheint so als hätten wir alle wichtigen Spuren gesichert.
 **RUMMS!**
-Klaas: Na toll, der Praktikant ist gestolpert und  die ganzen gesicherten Spuren sind durcheinander gekommen. Jetzt müssen wir die Klebezettel wieder den richtigen Tütchen zuordnen.
+Klaas: Na toll, der Praktikant ist gestolpert und  die ganzen gesicherten Spuren sind durcheinander gekommen.
+do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/minigame_1.tscn")
 => END
 
 
 ~ minigame1_done
 Klaas: Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.
+do SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 => END
 
 ~ evaluate_traces
 Klaas: Um die Spuren vom Tatort effizient auszuwerten müssen wir sie digitalisieren. Dein Arbeitscomputer hat bereits die nötige Software installiert, sodass du direkt starten kannst.
+do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/minigame_2.tscn")
 => END
 
 ~ finish
@@ -48,4 +51,5 @@ Klaas: Die Fingerabrücke am Safe stimmen mit denen eines Mitarbeiters von “Wa
 Klaas: Der Bäckergehilfe konnte seinen Schlüssel nutzen, um den Laden aufzuschließen, hatte aber keinen Schlüssel für den Safe. Außerdem hatte er scheinbar so großen Hunger, dass er nicht einmal bei einem Diebstahl ohne Waffel auskam.
 Klaas: Wir werden gleich bei ihm Zuhause vorbeifahren. Dort befindet sich höchstwahrscheinlich auch das geklaute Geld.
 Klaas: Danke für deine Unterstützung. Ich freue mich auf unsere weitere Zusammenarbeit!
+do CaseManager.close_Case(Globals.selectedCase)
 => END

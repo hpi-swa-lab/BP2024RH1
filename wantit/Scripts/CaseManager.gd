@@ -72,12 +72,13 @@ func close_Case(CurrentCase: Case):
 	CaseList.erase(CurrentCase.CaseName)
 	Globals.selectedCase = null
 	Globals.nextScene = null
-	Globals.CaseGlobals = null
+	CaseGlobals = null
 	Hints.clear()
 	
 	ClosedCases[CurrentCase.CaseName] = CurrentCase
 	GlobalTimer.end_timer("insgesamt")
-	SceneSwitcher.switch_scene("res://Cases/Caesar/Scenes/Questionary.tscn")
+	
+	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 
 func add_Hint(HintPos: Vector2, HintTexture: CompressedTexture2D, HintScale: Vector2):
 	var newHint = Hint.new(HintPos, HintTexture, HintScale)

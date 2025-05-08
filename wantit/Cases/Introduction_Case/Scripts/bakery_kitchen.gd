@@ -4,13 +4,17 @@ extends Control
 @onready var key: TextureButton = $Key
 
 func _ready() -> void:
+	var Inventory = GlobalInventory.get_inventory()
+	Inventory.position = Vector2(908, 0)
+	add_child(Inventory)
+	
 	if CaseManager.clues_completed:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "found_hints")
 	
-	if State.flour_sack_inspected:
+	if CaseManager.CaseGlobals.flour_sack_inspected:
 		disable_floursack()
 	
-	if State.key_collected:
+	if CaseManager.CaseGlobals.key_collected:
 		key.disabled = true
 		key.hide()
 	

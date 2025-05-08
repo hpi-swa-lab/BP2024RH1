@@ -9,6 +9,7 @@ var draggedItems = 0
 var clueRects = {}
 
 func _ready() -> void:
+	DialogueManager.show_dialogue_balloon(load("res://dialogue/monologue.dialogue"), "minigame1_start")
 	for draggable in draggables:
 		draggable.check.connect(func(): check_draggables(draggable))
 		
@@ -31,6 +32,12 @@ func _on_button_pressed() -> void:
 		%Label.text = "Richtig!"
 		%Label.show()
 		%TryAgain.hide()
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/monologue.dialogue"), "minigame1_end")
+		await DialogueManager.dialogue_ended
+		Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
+		Globals.OfficeDialogueStart = "evaluate_traces"
+		Globals.OfficeDialogueDone = false
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "minigame1_done")
 	else:
 		%Label.show()
 		%Label.text = "Das war leider Falsch.\nProbier es noch einmal"

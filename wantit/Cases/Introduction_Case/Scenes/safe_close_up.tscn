@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c6blk2k6t2wp8" path="res://Cases/Introduction_Case/assets/backgrounds/safe_closeUp.png" id="1_ilqon"]
 [ext_resource type="Script" uid="uid://cirbjug0js4ir" path="res://Cases/Introduction_Case/safe_close_up.gd" id="1_unxiy"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="2_bm3em"]
+[ext_resource type="Script" uid="uid://cirbjug0js4ir" path="res://Cases/Introduction_Case/Scripts/safe_close_up.gd" id="1_unxiy"]
 [ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_vqx4l"]
 [ext_resource type="Texture2D" uid="uid://bc7rt7bpgdqoj" path="res://Cases/Introduction_Case/assets/collectible_items/pliers.png" id="3_d2s8b"]
 [ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="4_d2s8b"]
