@@ -4,6 +4,8 @@ extends Control
 @onready var key: TextureButton = $Key
 
 func _ready() -> void:
+	GlobalInventory.get_inventory()
+	
 	if CaseManager.clues_completed:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "found_hints")
 	

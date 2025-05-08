@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://doulb80q5mxxn"]
+
+[ext_resource type="Texture2D" uid="uid://denund86phf7u" path="res://Assets/inventory-slot.png" id="1_42eed"]
+[ext_resource type="Script" uid="uid://ctoadvnhqhrou" path="res://Scripts/inventory_slot.gd" id="1_f5bh6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5bh6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfyh4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75pi0"]
+
+[node name="Inventory_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("1_f5bh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(15.625, 15.625)
+texture = ExtResource("1_42eed")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="DisplayedItem" type="Button" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f5bh6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bfyh4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_75pi0")
+icon_alignment = 1
+
+[connection signal="button_down" from="CenterContainer/DisplayedItem" to="." method="_on_displayed_item_button_down"]
