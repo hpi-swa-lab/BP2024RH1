@@ -1,0 +1,974 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_l76jt"]
+
+[resource]
+script = ExtResource("1_l76jt")
+using_states = PackedStringArray()
+titles = {
+"bitten_waffle": "12",
+"door_to_store": "4",
+"fallen_flour_sack": "53",
+"fingerprints": "38",
+"flour_sack_pushed": "62",
+"key_on_safe": "43",
+"minigame1_end": "72",
+"minigame1_start": "67",
+"minigame1_test1": "76",
+"minigame1_test2": "82",
+"minigame1_test3": "87",
+"office": "92",
+"pliers": "28",
+"screwdriver": "33",
+"shoe_prints_bakery": "48",
+"shoe_prints_office": "18"
+}
+character_names = PackedStringArray()
+first_title = "3"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "3",
+&"type": ""
+},
+"10": {
+&"id": "10",
+&"next_id": "11",
+&"type": ""
+},
+"11": {
+&"id": "11",
+&"next_id": "12",
+&"type": "title"
+},
+"12": {
+&"id": "12",
+&"next_id": "13",
+&"text": "Da scheint jemand Hunger gehabt zu haben.",
+&"type": "dialogue"
+},
+"13": {
+&"id": "13",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "waffle_collected"
+}, {
+&"i": 27,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 29,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "14",
+&"type": "mutation"
+},
+"14": {
+&"id": "14",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"15": {
+&"id": "15",
+&"next_id": "17",
+&"type": ""
+},
+"17": {
+&"id": "17",
+&"next_id": "18",
+&"type": "title"
+},
+"18": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"i": 9,
+&"type": &"variable",
+&"value": "traces_in_bakery_inspected"
+}])
+},
+&"id": "18",
+&"next_id": "19",
+&"next_id_after": "24",
+&"next_sibling_id": "21",
+&"type": "condition"
+},
+"19": {
+&"id": "19",
+&"next_id": "20",
+&"text": "Hier endet die Mehlspur.",
+&"type": "dialogue"
+},
+"20": {
+&"id": "20",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "traces_in_office_inspected"
+}, {
+&"i": 37,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 39,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "24",
+&"type": "mutation"
+},
+"21": {
+&"condition": {},
+&"id": "21",
+&"next_id": "22",
+&"next_id_after": "24",
+&"type": "condition"
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"text": "Sieht aus als wäre der Dieb in Mehl getreten.",
+&"type": "dialogue"
+},
+"23": {
+&"id": "23",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "traces_in_office_inspected"
+}, {
+&"i": 37,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 39,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "24",
+&"type": "mutation"
+},
+"24": {
+&"id": "24",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"25": {
+&"id": "25",
+&"next_id": "27",
+&"type": ""
+},
+"27": {
+&"id": "27",
+&"next_id": "28",
+&"type": "title"
+},
+"28": {
+&"id": "28",
+&"next_id": "29",
+&"text": "Damit wollte der Dieb wohl den Safe aufbrechen.",
+&"type": "dialogue"
+},
+"29": {
+&"id": "29",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "pliers_collected"
+}, {
+&"i": 27,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 29,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "30",
+&"type": "mutation"
+},
+"3": {
+&"id": "3",
+&"next_id": "4",
+&"type": "title"
+},
+"30": {
+&"id": "30",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"31": {
+&"id": "31",
+&"next_id": "32",
+&"type": ""
+},
+"32": {
+&"id": "32",
+&"next_id": "33",
+&"type": "title"
+},
+"33": {
+&"id": "33",
+&"next_id": "34",
+&"text": "Damit hat der Dieb scheinbar den Safe aufgebrochen.",
+&"type": "dialogue"
+},
+"34": {
+&"id": "34",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "screwdriver_collected"
+}, {
+&"i": 32,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 34,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "35",
+&"type": "mutation"
+},
+"35": {
+&"id": "35",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"36": {
+&"id": "36",
+&"next_id": "37",
+&"type": ""
+},
+"37": {
+&"id": "37",
+&"next_id": "38",
+&"type": "title"
+},
+"38": {
+&"id": "38",
+&"next_id": "39",
+&"text": "Die müssen wir unbedingt sichern.",
+&"type": "dialogue"
+},
+"39": {
+&"id": "39",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "fingerprints_saved"
+}, {
+&"i": 29,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 31,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "40",
+&"type": "mutation"
+},
+"4": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"i": 9,
+&"type": &"variable",
+&"value": "key_collected"
+}])
+},
+&"id": "4",
+&"next_id": "5",
+&"next_id_after": "9",
+&"next_sibling_id": "7",
+&"type": "condition"
+},
+"40": {
+&"id": "40",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"41": {
+&"id": "41",
+&"next_id": "42",
+&"type": ""
+},
+"42": {
+&"id": "42",
+&"next_id": "43",
+&"type": "title"
+},
+"43": {
+&"id": "43",
+&"next_id": "44",
+&"text": "Der Schlüssel passt nicht.",
+&"type": "dialogue"
+},
+"44": {
+&"id": "44",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"45": {
+&"id": "45",
+&"next_id": "47",
+&"type": ""
+},
+"47": {
+&"id": "47",
+&"next_id": "48",
+&"type": "title"
+},
+"48": {
+&"id": "48",
+&"next_id": "49",
+&"text": "Sieht aus als wäre der Dieb in Mehl getreten. Die Spur führt ins Büro des Ladens.",
+&"type": "dialogue"
+},
+"49": {
+&"id": "49",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "traces_in_bakery_inspected"
+}, {
+&"i": 37,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 39,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "50",
+&"type": "mutation"
+},
+"5": {
+&"id": "5",
+&"next_id": "6",
+&"text": "Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.",
+&"type": "dialogue"
+},
+"50": {
+&"id": "50",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"51": {
+&"id": "51",
+&"next_id": "52",
+&"type": ""
+},
+"52": {
+&"id": "52",
+&"next_id": "53",
+&"type": "title"
+},
+"53": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 8,
+&"type": &"dot"
+}, {
+&"i": 9,
+&"type": &"variable",
+&"value": "traces_in_bakery_inspected"
+}])
+},
+&"id": "53",
+&"next_id": "54",
+&"next_id_after": "59",
+&"next_sibling_id": "56",
+&"type": "condition"
+},
+"54": {
+&"id": "54",
+&"next_id": "55",
+&"text": "Das ist also der Ursprung der Mehlspuren.",
+&"type": "dialogue"
+},
+"55": {
+&"id": "55",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "flour_sack_inspected"
+}, {
+&"i": 31,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 33,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "59",
+&"type": "mutation"
+},
+"56": {
+&"condition": {},
+&"id": "56",
+&"next_id": "57",
+&"next_id_after": "59",
+&"type": "condition"
+},
+"57": {
+&"id": "57",
+&"next_id": "58",
+&"text": "Sieht aus als wäre jemand über den Mehlsack gestolpert.",
+&"type": "dialogue"
+},
+"58": {
+&"id": "58",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "flour_sack_inspected"
+}, {
+&"i": 31,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 33,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "59",
+&"type": "mutation"
+},
+"59": {
+&"id": "59",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"6": {
+&"id": "6",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "door_inspected"
+}, {
+&"i": 25,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 27,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "9",
+&"type": "mutation"
+},
+"60": {
+&"id": "60",
+&"next_id": "61",
+&"type": ""
+},
+"61": {
+&"id": "61",
+&"next_id": "62",
+&"type": "title"
+},
+"62": {
+&"id": "62",
+&"next_id": "63",
+&"text": "Ein Schlüssel…den muss der Dieb verloren haben. Vielleicht gibt es hier ein passendes Schloss.",
+&"type": "dialogue"
+},
+"63": {
+&"id": "63",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "State"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "key_collected"
+}, {
+&"i": 24,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 26,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "64",
+&"type": "mutation"
+},
+"64": {
+&"id": "64",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"65": {
+&"id": "65",
+&"next_id": "66",
+&"type": ""
+},
+"66": {
+&"id": "66",
+&"next_id": "67",
+&"type": "title"
+},
+"67": {
+&"id": "67",
+&"next_id": "68",
+&"text": "Die Abbildungen der gesicherten Spuren und die Klebezettelchen stellen Daten dar.",
+&"type": "dialogue"
+},
+"68": {
+&"id": "68",
+&"next_id": "69",
+&"text": "Um die zwei Datensätze zu verbinden, brauche ich aber mehr Kontext. Wie komme ich an die nötige Information, die durch die Daten repräsentiert werden soll?",
+&"type": "dialogue"
+},
+"69": {
+&"id": "69",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"7": {
+&"condition": {},
+&"id": "7",
+&"next_id": "8",
+&"next_id_after": "9",
+&"type": "condition"
+},
+"70": {
+&"id": "70",
+&"next_id": "71",
+&"type": ""
+},
+"71": {
+&"id": "71",
+&"next_id": "72",
+&"type": "title"
+},
+"72": {
+&"id": "72",
+&"next_id": "73",
+&"text": "Geschafft!",
+&"type": "dialogue"
+},
+"73": {
+&"id": "73",
+&"is_snippet": false,
+&"next_id": "76",
+&"next_id_after": "",
+&"type": "goto"
+},
+"74": {
+&"id": "74",
+&"next_id": "75",
+&"type": ""
+},
+"75": {
+&"id": "75",
+&"next_id": "76",
+&"type": "title"
+},
+"76": {
+&"id": "76",
+&"next_id": "77",
+&"text": "Die gesicherten Spuren sind...",
+&"type": "dialogue"
+},
+"77": {
+&"id": "77",
+&"next_id": "82",
+&"responses": PackedStringArray("77", "78"),
+&"text": "Daten",
+&"type": "response"
+},
+"78": {
+&"id": "78",
+&"next_id": "76",
+&"text": "Informationen",
+&"type": "response"
+},
+"79": {
+&"id": "79",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"8": {
+&"id": "8",
+&"next_id": "9",
+&"text": "An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.",
+&"type": "dialogue"
+},
+"80": {
+&"id": "80",
+&"next_id": "81",
+&"type": ""
+},
+"81": {
+&"id": "81",
+&"next_id": "82",
+&"type": "title"
+},
+"82": {
+&"id": "82",
+&"next_id": "83",
+&"text": "Mittels der Lupe konnte ich sie...",
+&"type": "dialogue"
+},
+"83": {
+&"id": "83",
+&"next_id": "87",
+&"responses": PackedStringArray("83", "84"),
+&"text": "interpretieren",
+&"type": "response"
+},
+"84": {
+&"id": "84",
+&"next_id": "82",
+&"text": "repräsentieren",
+&"type": "response"
+},
+"85": {
+&"id": "85",
+&"next_id": "86",
+&"type": ""
+},
+"86": {
+&"id": "86",
+&"next_id": "87",
+&"type": "title"
+},
+"87": {
+&"id": "87",
+&"next_id": "88",
+&"text": "Die gewonnene Information konnte wiederum durch die Zettelchen...",
+&"type": "dialogue"
+},
+"88": {
+&"id": "88",
+&"next_id": "end",
+&"responses": PackedStringArray("88", "89"),
+&"text": "repräsentiert werden",
+&"type": "response"
+},
+"89": {
+&"id": "89",
+&"next_id": "87",
+&"text": "interpretiert werden",
+&"type": "response"
+},
+"9": {
+&"id": "9",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"90": {
+&"id": "90",
+&"next_id": "91",
+&"type": ""
+},
+"91": {
+&"id": "91",
+&"next_id": "92",
+&"type": "title"
+},
+"92": {
+&"id": "92",
+&"next_id": "93",
+&"text": "Auf der Hinweistafel werden alle wichtigen Bestandteile des Falls gesammelt. So kannst du auch später noch nachvollziehen, was in dem Fall passiert ist.",
+&"type": "dialogue"
+},
+"93": {
+&"id": "93",
+&"next_id": "94",
+&"text": "Der Zeitstrahl zeigt an, wann was passiert ist und wo du dich derzeit im Fall befindest. Am Anfang steht die ausgeübte Tat.",
+&"type": "dialogue"
+},
+"94": {
+&"id": "94",
+&"next_id": "95",
+&"text": "Auf dem Zeitstrahl werden auch die Rätsel angezeigt, die du lösen musstest.",
+&"type": "dialogue"
+},
+"95": {
+&"id": "95",
+&"next_id": "96",
+&"text": "Außerdem werden alle gesammelten Spuren angezeigt.",
+&"type": "dialogue"
+},
+"96": {
+&"id": "96",
+&"next_id": "97",
+&"text": "Neben den Spuren werden auch alle involvierten Personen angezeigt. Später kannst du dadurch mögliche Täter identifizieren.",
+&"type": "dialogue"
+},
+"97": {
+&"id": "97",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"98": {
+&"id": "98",
+&"next_id": "99",
+&"type": ""
+},
+"99": {
+&"id": "99",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "
+
+# salesroom
+~ door_to_store
+if State.key_collected:
+	Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
+	set State.door_inspected = true
+else:
+	An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
+=> END
+
+~ bitten_waffle
+Da scheint jemand Hunger gehabt zu haben.
+set State.waffle_collected = true
+=> END
+
+# bakers office
+~ shoe_prints_office
+if State.traces_in_bakery_inspected: 
+	Hier endet die Mehlspur.
+	set State.traces_in_office_inspected = true
+else:
+	Sieht aus als wäre der Dieb in Mehl getreten.
+	set State.traces_in_office_inspected = true
+=> END
+
+# Safe in office
+~ pliers
+Damit wollte der Dieb wohl den Safe aufbrechen.
+set State.pliers_collected = true
+=> END
+
+~ screwdriver
+Damit hat der Dieb scheinbar den Safe aufgebrochen.
+set State.screwdriver_collected = true
+=> END
+
+~ fingerprints
+Die müssen wir unbedingt sichern.
+set State.fingerprints_saved = true
+=> END
+
+~ key_on_safe
+Der Schlüssel passt nicht.
+=> END
+
+# bakery
+~ shoe_prints_bakery
+Sieht aus als wäre der Dieb in Mehl getreten. Die Spur führt ins Büro des Ladens.
+set State.traces_in_bakery_inspected = true
+=> END
+
+~ fallen_flour_sack
+if State.traces_in_bakery_inspected:
+	Das ist also der Ursprung der Mehlspuren.
+	set State.flour_sack_inspected = true
+else:
+	Sieht aus als wäre jemand über den Mehlsack gestolpert. 
+	set State.flour_sack_inspected = true
+=> END
+
+~ flour_sack_pushed
+Ein Schlüssel…den muss der Dieb verloren haben. Vielleicht gibt es hier ein passendes Schloss.
+set State.key_collected = true
+=> END
+
+~ minigame1_start
+Die Abbildungen der gesicherten Spuren und die Klebezettelchen stellen Daten dar. 
+Um die zwei Datensätze zu verbinden, brauche ich aber mehr Kontext. Wie komme ich an die nötige Information, die durch die Daten repräsentiert werden soll?
+=> END
+
+~ minigame1_end
+Geschafft!
+=> minigame1_test1
+
+~ minigame1_test1
+Die gesicherten Spuren sind...
+- Daten => minigame1_test2
+- Informationen => minigame1_test1
+=> END
+
+~ minigame1_test2
+Mittels der Lupe konnte ich sie...
+- interpretieren => minigame1_test3
+- repräsentieren => minigame1_test2
+
+~ minigame1_test3
+Die gewonnene Information konnte wiederum durch die Zettelchen...
+- repräsentiert werden => END
+- interpretiert werden => minigame1_test3
+
+~ office
+Auf der Hinweistafel werden alle wichtigen Bestandteile des Falls gesammelt. So kannst du auch später noch nachvollziehen, was in dem Fall passiert ist.
+Der Zeitstrahl zeigt an, wann was passiert ist und wo du dich derzeit im Fall befindest. Am Anfang steht die ausgeübte Tat.
+Auf dem Zeitstrahl werden auch die Rätsel angezeigt, die du lösen musstest.
+Außerdem werden alle gesammelten Spuren angezeigt.
+Neben den Spuren werden auch alle involvierten Personen angezeigt. Später kannst du dadurch mögliche Täter identifizieren.
+=> END
+"
+metadata/dialogue_manager_version = "3.5.1"

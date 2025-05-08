@@ -1,9 +1,7 @@
 extends Node2D
 
-func _ready() -> void:
-	Global.last_visited_scene = "res://Scenes/büro.tscn"
-	GameSaver.save_game()
-	
+
+func start_scene() -> void:	
 	Global.map_clicked = false
 	%NextButton.visible = false
 	%CloseMapButton.visible = false
@@ -44,13 +42,13 @@ func _on_close_map_button_pressed() -> void:
 	%NextButton.disabled = true
 
 func load_tutorial() -> void:
-	SceneSwitcher.switch_scene("res://Scenes/tutorial.tscn")
+	SceneSwitcher.switch_to_scene("res://Scenes/tutorial.tscn")
 
 func load_minigame() -> void:
-	SceneSwitcher.switch_scene("res://Scenes/decrypting_caesar.tscn")
+	SceneSwitcher.switch_to_scene("res://Scenes/decrypting_caesar.tscn")
 
 func load_second_game() -> void:
-	SceneSwitcher.switch_scene("res://Scenes/Cäsars_big_brother.tscn")
+	SceneSwitcher.switch_to_scene("res://Scenes/Cäsars_big_brother.tscn")
 
 func load_end():
-	SceneSwitcher.switch_scene("res://Scenes/ende.tscn")
+	SceneSwitcher.switch_to_scene("res://Scenes/ende.tscn")

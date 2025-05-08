@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8frnlbfnegad"]
+[gd_scene load_steps=15 format=3 uid="uid://c8frnlbfnegad"]
 
 [ext_resource type="Script" uid="uid://dsg36rq15gn71" path="res://Scripts/nachricht.gd" id="1_5plvf"]
 [ext_resource type="Texture2D" uid="uid://dunpdle60mim7" path="res://Assets/Nachricht - Kopie.png" id="2_5plvf"]
+[ext_resource type="Script" uid="uid://k4hoqvyhqe8d" path="res://Scripts/collectable.gd" id="3_0b565"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxi2m"]
 
@@ -43,5 +44,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_vnu5k")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_icae8")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_7jcnp")
 icon = ExtResource("2_5plvf")
+script = ExtResource("3_0b565")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

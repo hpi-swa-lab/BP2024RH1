@@ -6,29 +6,13 @@ func save_game():
 	var save_data = {
 		"global": {
 			"character_portrait_path": Global.character_portrait_path,
-			"current_scene": Global.last_visited_scene,
-			"items_found": Global.items_found
+			"current_scene_path": Global.current_scene_path
 		},
-		"scenes": {
-			"tatort": {
-				"Caesar_picked": Global.Caesar_picked,
-				"Businesskarte_picked": Global.Businesskarte_picked,
-				"Bild_picked": Global.Bild_picked
-			},
-			"küche": {
-				"Fenster_picked": Global.Fenster_picked,
-				"Nachricht_picked": Global.Nachricht_picked,
-				"Papierkorb_picked": Global.Papierkorb_picked
-			},
-			"büro": {
-				"office_szene" : Global.office_szene
-			},
-			"minispiel": {
-				
-			},
-			"restaurant": {
-				
-			}
+		"case": {
+			"dialogues_shown": Global.case.get("dialogues_shown", {}),
+			"scene_collectables_found": Global.case.get("scene_collectables_found", {}),
+			"scene_noncollectables_found": Global.case.get("scene_noncollectables_found", {}),
+			"next_scene": Global.case.get("next_scene", "")
 		}
 	}
 
@@ -54,51 +38,23 @@ func load_game():
 		return
 	
 	
+	# Global data loading
 	if result.has("global"):
 		var global_data = result["global"]
 		Global.character_portrait_path = global_data.get("character_portrait_path", "")
-		Global.last_visited_scene = global_data.get("current_scene", "")
-		Global.items_found = global_data.get("items_found", "")
+		Global.current_scene_path = global_data.get("current_scene_path", "")
 	else:
 		print("ℹ️ No global data found in save file.")
 
-	if result.has("scenes"):
-		var scenes_data = result["scenes"]
+	# Case data loading
+	if result.has("case"):
+		var case_data = result["case"]
+		Global.case.dialogues_shown = case_data.get("dialogues_shown", {})
+		Global.case.scene_collectables_found = case_data.get("scene_collectables_found", {})
+		Global.case.scene_noncollectables_found = case_data.get("scene_noncollectables_found", {})
+		Global.case.next_scene = case_data.get("next_scene", "")
+	else:
+		print("ℹ️ No case data found in save file.")
 
-		if scenes_data.has("tatort"):
-			var tatort = scenes_data["tatort"]
-			Global.Caesar_picked = tatort.get("Caesar_picked", false)
-			Global.Businesskarte_picked = tatort.get("Businesskarte_picked", false)
-			Global.Bild_picked = tatort.get("Bild_picked", false)
-		else:
-			print("ℹ️ No data for scene: tatort")
-			
-		if scenes_data.has("küche"):
-			var kueche = scenes_data["küche"]
-			Global.Fenster_picked = kueche.get("Fenster_picked", false)
-			Global.Nachricht_picked = kueche.get("Nachricht_picked", false)
-			Global.Papierkorb_picked = kueche.get("Papierkorb_picked", false)
-		else:
-			print("ℹ️ No data for scene: küche")
-		
-		if scenes_data.has("büro"):
-			var buero = scenes_data["büro"]
-			Global.office_szene = buero.get("office_szene", false)
-		else:
-			print("ℹ️ No data for scene: büro")
-
+	
 	print("✅ Game loaded successfully.")
-	
-	
-func clear_save_data():
-	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-	file.store_string("{}")
-	file.close()
-	
-	print("✅ Save file cleared.")
-	
-	
-func start_new_game():
-	SceneSwitcher.switch_scene("res://Scenes/game.tscn")
-	Global.reset_globals()
-	

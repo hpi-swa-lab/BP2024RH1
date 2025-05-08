@@ -1,0 +1,369 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_cjyhd"]
+
+[resource]
+script = ExtResource("1_cjyhd")
+using_states = PackedStringArray()
+titles = {
+"begin": "2",
+"crime_scene": "12",
+"evaluate_traces": "37",
+"finish": "41",
+"found_hints": "26",
+"minigame1_done": "33",
+"start_case": "8"
+}
+character_names = PackedStringArray("Kollege", "Klaas", "Bäcker")
+first_title = "1"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": ""
+},
+"1": {
+&"id": "1",
+&"next_id": "2",
+&"type": "title"
+},
+"10": {
+&"id": "10",
+&"next_id": "11",
+&"type": ""
+},
+"11": {
+&"id": "11",
+&"next_id": "12",
+&"type": "title"
+},
+"12": {
+&"character": "Klaas",
+&"id": "12",
+&"next_id": "13",
+&"text": "Hier hat aber jemand gewütet. Bevor wir uns den Tatort genauer anschauen, sollten wir mit dem Inhaber der Bäckerei reden.",
+&"type": "dialogue"
+},
+"13": {
+&"character": "Bäcker",
+&"id": "13",
+&"next_id": "14",
+&"text": "Willkommen bei “Waffle Overflow”. Hier gibt es keine Cookies - nur Waffeln.",
+&"type": "dialogue"
+},
+"14": {
+&"character": "Bäcker",
+&"id": "14",
+&"next_id": "15",
+&"text": "Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lippen. Aber jetzt ist wohl nicht der beste Zeitpunkt dafür.",
+&"type": "dialogue"
+},
+"15": {
+&"id": "15",
+&"next_id": "16",
+&"responses": PackedStringArray("15"),
+&"text": "Was genau ist denn passiert?",
+&"type": "response"
+},
+"16": {
+&"character": "Bäcker",
+&"id": "16",
+&"next_id": "17",
+&"text": "Es wurde eingebrochen und die Einnahmen vom gestrigen Tagesgeschäft wurden aus dem Safe geklaut. Ohne das Geld kann ich heute keine neuen Waffelzutaten kaufen…",
+&"type": "dialogue"
+},
+"17": {
+&"id": "17",
+&"next_id": "18",
+&"responses": PackedStringArray("17"),
+&"text": "Wir werden unser bestes tun den Täter zu fassen.",
+&"type": "response"
+},
+"18": {
+&"character": "Kollege",
+&"id": "18",
+&"next_id": "20",
+&"text": "Wo fangen wir mit der Spurensicherung an?",
+&"type": "dialogue"
+},
+"19": {
+&"id": "19",
+&"next_id": "20",
+&"type": ""
+},
+"2": {
+&"character": "Kollege",
+&"id": "2",
+&"next_id": "3",
+&"text": "Willkommen im Präsidium!",
+&"type": "dialogue"
+},
+"20": {
+&"id": "20",
+&"next_id": "23",
+&"responses": PackedStringArray("20", "22"),
+&"text": "Verkaufsraum",
+&"type": "response"
+},
+"21": {
+&"id": "21",
+&"next_id": "22",
+&"type": ""
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"text": "Büro",
+&"type": "response"
+},
+"23": {
+&"id": "23",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"24": {
+&"id": "24",
+&"next_id": "25",
+&"type": ""
+},
+"25": {
+&"id": "25",
+&"next_id": "26",
+&"type": "title"
+},
+"26": {
+&"character": "Klaas",
+&"id": "26",
+&"next_id": "27",
+&"text": "Scheint so als hätten wir alle wichtigen Spuren gesichert.",
+&"type": "dialogue"
+},
+"27": {
+&"id": "27",
+&"next_id": "28",
+&"text": "**RUMMS!**",
+&"type": "dialogue"
+},
+"28": {
+&"character": "Klaas",
+&"id": "28",
+&"next_id": "29",
+&"text": "Na toll, der Praktikant ist gestolpert und  die ganzen gesicherten Spuren sind durcheinander gekommen. Jetzt müssen wir die Klebezettel wieder den richtigen Tütchen zuordnen.",
+&"type": "dialogue"
+},
+"29": {
+&"id": "29",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"3": {
+&"character": "Kollege",
+&"id": "3",
+&"next_id": "4",
+&"text": "Ich bin Klaas und werde dir bei deinen ersten Fällen als Unterstützung beiseite stehen.",
+&"type": "dialogue"
+},
+"30": {
+&"id": "30",
+&"next_id": "32",
+&"type": ""
+},
+"32": {
+&"id": "32",
+&"next_id": "33",
+&"type": "title"
+},
+"33": {
+&"character": "Klaas",
+&"id": "33",
+&"next_id": "34",
+&"text": "Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.",
+&"type": "dialogue"
+},
+"34": {
+&"id": "34",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"35": {
+&"id": "35",
+&"next_id": "36",
+&"type": ""
+},
+"36": {
+&"id": "36",
+&"next_id": "37",
+&"type": "title"
+},
+"37": {
+&"character": "Klaas",
+&"id": "37",
+&"next_id": "38",
+&"text": "Um die Spuren vom Tatort effizient auszuwerten müssen wir sie digitalisieren. Dein Arbeitscomputer hat bereits die nötige Software installiert, sodass du direkt starten kannst.",
+&"type": "dialogue"
+},
+"38": {
+&"id": "38",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"39": {
+&"id": "39",
+&"next_id": "40",
+&"type": ""
+},
+"4": {
+&"character": "Klaas",
+&"id": "4",
+&"next_id": "5",
+&"text": "So wie es aussieht haben wir auch bereits unseren ersten Fall.",
+&"type": "dialogue"
+},
+"40": {
+&"id": "40",
+&"next_id": "41",
+&"type": "title"
+},
+"41": {
+&"character": "Klaas",
+&"id": "41",
+&"next_id": "42",
+&"text": "Gute Nachrichten, wir haben den Dieb!",
+&"type": "dialogue"
+},
+"42": {
+&"character": "Klaas",
+&"id": "42",
+&"next_id": "43",
+&"text": "Die Fingerabrücke am Safe stimmen mit denen eines Mitarbeiters von “Waffle Overflow” überein.",
+&"type": "dialogue"
+},
+"43": {
+&"character": "Klaas",
+&"id": "43",
+&"next_id": "44",
+&"text": "Der Bäckergehilfe konnte seinen Schlüssel nutzen, um den Laden aufzuschließen, hatte aber keinen Schlüssel für den Safe. Außerdem hatte er scheinbar so großen Hunger, dass er nicht einmal bei einem Diebstahl ohne Waffel auskam.",
+&"type": "dialogue"
+},
+"44": {
+&"character": "Klaas",
+&"id": "44",
+&"next_id": "45",
+&"text": "Wir werden gleich bei ihm Zuhause vorbeifahren. Dort befindet sich höchstwahrscheinlich auch das geklaute Geld.",
+&"type": "dialogue"
+},
+"45": {
+&"character": "Klaas",
+&"id": "45",
+&"next_id": "46",
+&"text": "Danke für deine Unterstützung. Ich freue mich auf unsere weitere Zusammenarbeit!",
+&"type": "dialogue"
+},
+"46": {
+&"id": "46",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"47": {
+&"id": "47",
+&"next_id": "48",
+&"type": ""
+},
+"48": {
+&"id": "48",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"5": {
+&"id": "5",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"6": {
+&"id": "6",
+&"next_id": "7",
+&"type": ""
+},
+"7": {
+&"id": "7",
+&"next_id": "8",
+&"type": "title"
+},
+"8": {
+&"character": "Klaas",
+&"id": "8",
+&"next_id": "9",
+&"text": "Im Waffelladen “Waffle Overflow” wurde der Geldsafe über Nacht ausgeräumt.",
+&"type": "dialogue"
+},
+"9": {
+&"id": "9",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "
+~ begin
+Kollege: Willkommen im Präsidium!
+Kollege: Ich bin Klaas und werde dir bei deinen ersten Fällen als Unterstützung beiseite stehen.
+Klaas: So wie es aussieht haben wir auch bereits unseren ersten Fall.
+=> END
+
+~ start_case
+Klaas: Im Waffelladen “Waffle Overflow” wurde der Geldsafe über Nacht ausgeräumt.
+=> END
+
+~ crime_scene
+Klaas: Hier hat aber jemand gewütet. Bevor wir uns den Tatort genauer anschauen, sollten wir mit dem Inhaber der Bäckerei reden.
+Bäcker: Willkommen bei “Waffle Overflow”. Hier gibt es keine Cookies - nur Waffeln.
+Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lippen. Aber jetzt ist wohl nicht der beste Zeitpunkt dafür.
+- Was genau ist denn passiert?
+	Bäcker: Es wurde eingebrochen und die Einnahmen vom gestrigen Tagesgeschäft wurden aus dem Safe geklaut. Ohne das Geld kann ich heute keine neuen Waffelzutaten kaufen…
+	- Wir werden unser bestes tun den Täter zu fassen.
+		Kollege: Wo fangen wir mit der Spurensicherung an?
+		# zum ⇒ Verkaufsraum wechseln
+		- Verkaufsraum 
+		# zum Büro des Bäckers wechseln
+		- Büro
+=> END
+
+~ found_hints
+Klaas: Scheint so als hätten wir alle wichtigen Spuren gesichert.
+**RUMMS!**
+Klaas: Na toll, der Praktikant ist gestolpert und  die ganzen gesicherten Spuren sind durcheinander gekommen. Jetzt müssen wir die Klebezettel wieder den richtigen Tütchen zuordnen.
+=> END
+
+
+~ minigame1_done
+Klaas: Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.
+=> END
+
+~ evaluate_traces
+Klaas: Um die Spuren vom Tatort effizient auszuwerten müssen wir sie digitalisieren. Dein Arbeitscomputer hat bereits die nötige Software installiert, sodass du direkt starten kannst.
+=> END
+
+~ finish
+Klaas: Gute Nachrichten, wir haben den Dieb! 
+Klaas: Die Fingerabrücke am Safe stimmen mit denen eines Mitarbeiters von “Waffle Overflow” überein.
+Klaas: Der Bäckergehilfe konnte seinen Schlüssel nutzen, um den Laden aufzuschließen, hatte aber keinen Schlüssel für den Safe. Außerdem hatte er scheinbar so großen Hunger, dass er nicht einmal bei einem Diebstahl ohne Waffel auskam.
+Klaas: Wir werden gleich bei ihm Zuhause vorbeifahren. Dort befindet sich höchstwahrscheinlich auch das geklaute Geld.
+Klaas: Danke für deine Unterstützung. Ich freue mich auf unsere weitere Zusammenarbeit!
+=> END
+"
+metadata/dialogue_manager_version = "3.5.1"

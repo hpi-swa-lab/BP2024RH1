@@ -21,6 +21,7 @@ Global="*res://Scripts/global.gd"
 SceneSwitcher="*res://Scripts/scene_switcher.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameSaver="*res://Scripts/saver_loader.gd"
+CaseManager="*res://Scripts/case_manager.gd"
 
 [dialogue_manager]
 
