@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crg7kenl0bu0q"
-path="res://.godot/imported/monitor.png-f39152448f2d26cf6afe43c4da19b265.ctex"
+uid="uid://cjph7fuw3nw0d"
+path="res://.godot/imported/single_fingerprint.png-f8a24d146e5f0e36f2582485dd561561.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cases/Introduction_Case/assets/minigame2/monitor.png"
-dest_files=["res://.godot/imported/monitor.png-f39152448f2d26cf6afe43c4da19b265.ctex"]
+source_file="res://Cases/Introduction_Case/assets/minigame2/single_fingerprint.png"
+dest_files=["res://.godot/imported/single_fingerprint.png-f8a24d146e5f0e36f2582485dd561561.ctex"]
 
 [params]
 
