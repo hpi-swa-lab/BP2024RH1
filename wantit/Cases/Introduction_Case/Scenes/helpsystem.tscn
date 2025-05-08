@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbq8p1fknj6fo" path="res://Cases/Introduction_Case/Scenes/helpscreen.tscn" id="3_vsfxq"]
 
 [node name="Helpsystem" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

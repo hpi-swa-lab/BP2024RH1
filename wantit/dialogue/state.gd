@@ -1,5 +1,6 @@
 extends Node
 
+# is needed for helpsystem to know in which scene you are currently in by pressing the question mark
 var current_scene: String
 
 # var total_clues: int = 9

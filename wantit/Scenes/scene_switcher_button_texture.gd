@@ -16,4 +16,5 @@ func _on_pressed() -> void:
 	#elif Globals.selectedCase != null:
 	#	Folder = "Cases/" + Globals.selectedCase.CaseName
 	#SceneSwitcher.switch_scene("res://" + Folder + "/Scenes/" + NextSceneString + ".tscn")
+	CaseManager.CaseGlobals.current_scene = NextSceneString
 	SceneSwitcher.switch_scene("res://Cases/Introduction_Case/scenes/" + NextSceneString + ".tscn")

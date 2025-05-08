@@ -20,9 +20,11 @@ Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lip
 		Kollege: Wo fangen wir mit der Spurensicherung an?
 		# zum ⇒ Verkaufsraum wechseln
 		- Verkaufsraum
+			set CaseManager.CaseGlobals.current_scene = "showroom"
 		# zum Büro des Bäckers wechseln
 		- Büro
 			do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/bakery_office.tscn")
+			set CaseManager.CaseGlobals.current_scene = "bakery_office"
 => END
 
 ~ found_hints
