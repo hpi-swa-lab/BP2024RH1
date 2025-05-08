@@ -6,10 +6,9 @@ var Items = {}
 
 var TextureCache = {}
 
-func get_inventory() -> void:
+func get_inventory() -> Control:
 	InventoryInstance = InventoryScene.instantiate()
-	InventoryInstance.position = Vector2(908, 0)
-	get_tree().root.add_child(InventoryInstance)
+	return InventoryInstance
 
 func add_item(Item: TextureButton):
 	if not Items.has(Item.name):

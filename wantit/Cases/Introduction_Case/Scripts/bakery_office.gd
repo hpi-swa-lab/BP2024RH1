@@ -1,4 +1,6 @@
 extends Control
 
 func _ready() -> void:
-	GlobalInventory.get_inventory()
+	var Inventory = GlobalInventory.get_inventory()
+	Inventory.position = Vector2(908, 0)
+	add_child(Inventory)

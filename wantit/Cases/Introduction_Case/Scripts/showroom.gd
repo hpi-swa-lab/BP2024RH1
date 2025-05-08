@@ -3,7 +3,9 @@ extends Control
 @onready var plate: TextureButton = $Plate
 
 func _ready() -> void:
-	GlobalInventory.get_inventory()
+	var Inventory = GlobalInventory.get_inventory()
+	Inventory.position = Vector2(908, 0)
+	add_child(Inventory)
 	
 	if CaseManager.CaseGlobals.showroom_intro_shown == false:
 		DialogueManager.show_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "crime_scene")
