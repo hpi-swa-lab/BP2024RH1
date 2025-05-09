@@ -41,6 +41,7 @@ Der Schlüssel passt nicht.
 ~ key_on_door
 Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
 set CaseManager.CaseGlobals.door_inspected = true
+set CaseManager.clue_found()
 => END
 
 # bakery

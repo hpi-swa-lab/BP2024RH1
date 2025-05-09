@@ -47,7 +47,6 @@ func check_down():
 		if Rect1.intersects(KeyRect):
 			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), DialogueStart)
 			await DialogueManager.dialogue_ended
-			CaseManager.clue_found()
 			return
 	GlobalInventory.add_item(oldItem)
 	
