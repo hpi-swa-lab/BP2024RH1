@@ -22,6 +22,9 @@ func _pressed() -> void:
 	else:
 		GlobalInventory.add_item(self)
 		GlobalInventory.show_inventory()
+		if not CaseManager.CaseGlobals.inventory_explained:
+			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), "inventory")
+			await DialogueManager.dialogue_ended
 		DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
 		await DialogueManager.dialogue_ended
 		GlobalInventory.hide_inventory()

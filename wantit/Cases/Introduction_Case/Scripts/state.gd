@@ -29,6 +29,7 @@ var waffle_collected: bool = false
 var traces_in_bakery_inspected: bool = false
 var flour_sack_inspected: bool = false
 
+var inventory_explained: bool = false
 var traces_in_office_inspected: bool = false
 var screwdriver_collected: bool = false
 var pliers_collected: bool = false
