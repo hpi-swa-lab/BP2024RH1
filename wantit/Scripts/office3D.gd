@@ -1,4 +1,4 @@
-extends Control
+extends Node3D
 
 func _ready() -> void:
 	load_CaseBoard_Picture()
@@ -13,11 +13,21 @@ func _ready() -> void:
 		if Globals.OfficeDialogue != null:
 			DialogueManager.show_dialogue_balloon(load(Globals.OfficeDialogue), Globals.OfficeDialogueStart)
 			Globals.OfficeDialogueDone = true
-			
-	create_bitmap(%clue_board)
-	create_bitmap(%computer)
-	create_bitmap(%map)
+	
+func _on_pc_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if not Globals.selectedCase:
+			SceneSwitcher.switch_scene("res://Scenes/fallübersicht.tscn")
+		else: 
+			print("Finish your Case first")
 
+func _on_map_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		SceneSwitcher.switch_scene("res://Scenes/map.tscn")
+
+func _on_board_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		SceneSwitcher.switch_scene("res://Scenes/hinweistafel.tscn")
 
 func load_CaseBoard_Picture():
 	var CaseBoardPicture
@@ -30,30 +40,8 @@ func load_CaseBoard_Picture():
 			#print("Fehler beim Laden des Bildes:", error)
 		#else:
 			#CaseBoardPicture = ImageTexture.new().create_from_image(image)
-	%clue_board.texture_normal = CaseBoardPicture
+	%CaseBoard.texture = CaseBoardPicture
 
 func add_basic_cases():
 	CaseManager.add_Case("Caesar", load("res://Cases/Caesar/Scenes/Caesar_Start.tscn"), load("res://Cases/Caesar/Scripts/global.gd").new())
 	CaseManager.add_Case("Einführungsfall", load("res://Cases/Introduction_Case/Scenes/Introduction_Start.tscn"), load("res://dialogue/state.gd").new())
-
-func create_bitmap(button: TextureButton):
-	if button.texture_normal:
-		var image: Image = button.texture_normal.get_image()
-		var bitmap: BitMap = BitMap.new()
-		bitmap.create_from_image_alpha(image)
-		button.texture_click_mask = bitmap
-
-func _on_clue_board_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		SceneSwitcher.switch_scene("res://Scenes/hinweistafel.tscn")
-
-
-func _on_computer_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		if not Globals.selectedCase:
-			SceneSwitcher.switch_scene("res://Scenes/fallübersicht.tscn")
-
-
-func _on_map_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		SceneSwitcher.switch_scene("res://Scenes/map.tscn")

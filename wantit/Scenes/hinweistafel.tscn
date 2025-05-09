@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://dapqp6nwfddm6"]
 
 [ext_resource type="Script" uid="uid://bod7i1s02e7f4" path="res://Scripts/hinweistafel.gd" id="1_myj6k"]
-[ext_resource type="Texture2D" uid="uid://24um6ha6ct7i" path="res://Assets/Hinweistafel_basic.png" id="2_hnhsw"]
+[ext_resource type="Texture2D" uid="uid://b0lnvppjqbrwk" path="res://Assets/office/clue_board.png" id="2_hnhsw"]
 [ext_resource type="PackedScene" uid="uid://c5wdqha4l66kp" path="res://Scenes/back_to_office_button.tscn" id="3_hnhsw"]
 
 [node name="Hinweistafel" type="Node2D"]
 script = ExtResource("1_myj6k")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
+position = Vector2(897, 414)
+scale = Vector2(1.55, 1.55)
 texture = ExtResource("2_hnhsw")
 
 [node name="Hinweise" type="Node2D" parent="."]
@@ -24,8 +25,7 @@ position = Vector2(576, 324)
 
 [node name="Back Button" parent="." instance=ExtResource("3_hnhsw")]
 unique_name_in_owner = true
-visible = false
-offset_left = 1000.0
-offset_top = 55.0
-offset_right = 1520.0
-offset_bottom = 575.0
+offset_left = 1090.0
+offset_top = 5.0
+offset_right = 1610.0
+offset_bottom = 525.0
