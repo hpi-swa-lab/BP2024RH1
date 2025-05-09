@@ -46,15 +46,11 @@ class Hint:					# Hints that are shown at the Board
 		HintScale = _HintScale
 
 class Location:
-	var LocationTex: CompressedTexture2D
-	var LocationScale: Vector2
-	var LocationPos: Vector2
+	var LocationTex: Texture2D
 	var LocationScene: PackedScene
 	
-	func _init(_LocationTex: CompressedTexture2D, _LocationScale: Vector2, _LocationPos: Vector2, _LocationScene: PackedScene):
+	func _init(_LocationTex: Texture2D, _LocationScene: PackedScene):
 		LocationTex = _LocationTex
-		LocationScale = _LocationScale
-		LocationPos = _LocationPos
 		LocationScene = _LocationScene
 
 var CaseList = {}
@@ -84,6 +80,6 @@ func add_Hint(HintPos: Vector2, HintTexture: CompressedTexture2D, HintScale: Vec
 	var newHint = Hint.new(HintPos, HintTexture, HintScale)
 	Hints.append(newHint)
 
-func new_Location(LocationTex: CompressedTexture2D, LocationScale: Vector2, LocationPos: Vector2, LocationScene: PackedScene):
-	var newLocation = Location.new(LocationTex, LocationScale, LocationPos, LocationScene)
+func new_Location(LocationTex: Texture2D, LocationScene: PackedScene):
+	var newLocation = Location.new(LocationTex, LocationScene)
 	Globals.nextScene = newLocation

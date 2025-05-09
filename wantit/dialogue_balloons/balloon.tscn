@@ -196,6 +196,7 @@ layout_mode = 2
 text = "Response example"
 
 [node name="Indicator" type="TextureRect" parent="Balloon"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

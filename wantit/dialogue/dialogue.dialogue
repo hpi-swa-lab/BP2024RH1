@@ -1,7 +1,7 @@
 
 ~ begin
-Kollege: Willkommen im Präsidium!
-Kollege: Ich bin Klaas und werde dir bei deinen ersten Fällen als Unterstützung beiseitestehen.
+Klaas: Willkommen im Präsidium!
+Klaas: Ich bin Klaas und werde dir bei deinen ersten Fällen als Unterstützung beiseitestehen.
 Klaas: So wie es aussieht, haben wir auch bereits unseren ersten Fall.
 Klaas: Das Fälleverzeichnis findest du im Computer auf dem Schreibtisch.
 => END
@@ -18,7 +18,7 @@ Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lip
 - Was genau ist denn passiert?
 	Bäcker: Es wurde eingebrochen und die Einnahmen vom gestrigen Tagesgeschäft wurden aus dem Safe geklaut. Ohne das Geld kann ich heute keine neuen Waffelzutaten kaufen…
 	- Wir werden unser Bestes tun, den Täter zu fassen.
-		Kollege: Wo fangen wir mit der Spurensicherung an?
+		Klaas: Wo fangen wir mit der Spurensicherung an?
 		# zum ⇒ Verkaufsraum wechseln
 		- Verkaufsraum
 			set CaseManager.CaseGlobals.current_scene = "showroom"

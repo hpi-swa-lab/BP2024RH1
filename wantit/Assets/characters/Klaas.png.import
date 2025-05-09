@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy4aq3utqrcgg"
-path="res://.godot/imported/door_kitchen.png-6c0ed9dfa029c1651ac340466910b9a7.ctex"
+uid="uid://b47dxtsaan7p0"
+path="res://.godot/imported/Klaas.png-cd6a4946ffe6891b0ffd0ae0b4447f41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cases/Introduction_Case/assets/interactable_items/door_kitchen.png"
-dest_files=["res://.godot/imported/door_kitchen.png-6c0ed9dfa029c1651ac340466910b9a7.ctex"]
+source_file="res://Assets/characters/Klaas.png"
+dest_files=["res://.godot/imported/Klaas.png-cd6a4946ffe6891b0ffd0ae0b4447f41.ctex"]
 
 [params]
 
