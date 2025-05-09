@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=14 format=3 uid="uid://bto1uem2cnbyr"]
 
 [ext_resource type="Script" uid="uid://bppek5pgmovcy" path="res://Cases/Introduction_Case/Scripts/bakery_kitchen.gd" id="1_l61y1"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="5_o1pjg"]
 [ext_resource type="Texture2D" uid="uid://cn256ss6v6oay" path="res://Cases/Introduction_Case/assets/interactable_items/floursack_key.png" id="6_l61y1"]
 [ext_resource type="Texture2D" uid="uid://cac4ru4ujuip0" path="res://Cases/Introduction_Case/assets/collectible_items/key.png" id="6_ts2v5"]
+[ext_resource type="Script" uid="uid://kke8b67onflp" path="res://Cases/Introduction_Case/Scripts/key_action.gd" id="11_k1qd0"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="11_lftgu"]
 [ext_resource type="Texture2D" uid="uid://dwtfx6evqouww" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_kitchen.png" id="11_snjqx"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
@@ -61,6 +62,7 @@ scale = Vector2(0.0146714, 0.0146714)
 texture_normal = ExtResource("6_ts2v5")
 dialogue_resource = ExtResource("5_o1pjg")
 dialogue_start = "flour_sack_pushed"
+ActionScript = ExtResource("11_k1qd0")
 
 [node name="Back Button" parent="." instance=ExtResource("2_3wxj5")]
 layout_mode = 0

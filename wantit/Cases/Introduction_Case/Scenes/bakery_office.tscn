@@ -25,19 +25,6 @@ offset_bottom = 2160.0
 scale = Vector2(0.299882, 0.299882)
 texture = ExtResource("1_vt4a7")
 
-[node name="Helpsystem" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-layout_mode = 1
-script = null
-
 [node name="Safe" parent="." instance=ExtResource("2_y86e6")]
 layout_mode = 0
 scale = Vector2(0.300293, 0.300293)
