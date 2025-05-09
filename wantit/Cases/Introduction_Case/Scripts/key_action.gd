@@ -46,6 +46,8 @@ func check_down():
 		var Rect1 = Rect2(node.position, node.size)
 		if Rect1.intersects(KeyRect):
 			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), DialogueStart)
+			await DialogueManager.dialogue_ended
+			CaseManager.clue_found()
 			return
 	GlobalInventory.add_item(oldItem)
 func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here

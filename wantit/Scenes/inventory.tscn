@@ -1,14 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://bfhmvi5qb81eb"]
 
-[ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_l6h3l"]
+[ext_resource type="Script" uid="uid://bufnrhtql8uv" path="res://Scripts/inventory.gd" id="1_l6h3l"]
 
 [node name="Inventory" type="Control"]
-custom_minimum_size = Vector2(244, 648)
+custom_minimum_size = Vector2(219, 448)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 908.0
+offset_left = 933.0
+offset_top = 120.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -23,28 +25,28 @@ mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
-offset_right = 244.0
-offset_bottom = 648.0
+offset_right = 219.0
+offset_bottom = 448.0
 mouse_filter = 2
 color = Color(0.999999, 0.99558, 0.761318, 1)
 
 [node name="GridContainer" type="GridContainer" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 6.0
-offset_top = 47.0
-offset_right = 237.0
-offset_bottom = 584.0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 200.0
+offset_bottom = 393.0
 mouse_filter = 2
 columns = 2
 
 [node name="Button" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 80.0
-offset_top = 595.0
-offset_right = 164.0
-offset_bottom = 626.0
+offset_left = 67.0
+offset_top = 402.0
+offset_right = 151.0
+offset_bottom = 433.0
 text = "Schließen"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

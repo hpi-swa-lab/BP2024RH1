@@ -1,13 +1,28 @@
 [gd_scene load_steps=9 format=3 uid="uid://doulb80q5mxxn"]
 
 [ext_resource type="Texture2D" uid="uid://denund86phf7u" path="res://Assets/inventory-slot.png" id="1_42eed"]
-[ext_resource type="Script" path="res://Scripts/inventory_slot.gd" id="1_f5bh6"]
+[ext_resource type="Script" uid="uid://ctoadvnhqhrou" path="res://Scripts/inventory_slot.gd" id="1_f5bh6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5bh6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfyh4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75pi0"]
+
+[sub_resource type="Animation" id="Animation_pnayc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/DisplayedItem:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_0cu6i"]
 resource_name = "remove_item"
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, -0.0872665, 0.0, 0.0872665, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_pnayc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CenterContainer/DisplayedItem:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pnayc"]
