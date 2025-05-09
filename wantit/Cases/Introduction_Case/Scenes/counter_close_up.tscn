@@ -25,6 +25,7 @@ scale = Vector2(0.300016, 0.300016)
 texture = ExtResource("1_62q81")
 
 [node name="Waffle" parent="." instance=ExtResource("2_4jvwb")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 506.0
 offset_top = 444.0

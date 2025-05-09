@@ -1,10 +1,6 @@
 # salesroom
 ~ door_to_store
-if CaseManager.CaseGlobals.key_collected:
-	Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
-	set CaseManager.CaseGlobals.door_inspected = true
-else:
-	An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
+An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
 => END
 
 ~ bitten_waffle
@@ -40,6 +36,11 @@ set CaseManager.CaseGlobals.fingerprints_saved = true
 
 ~ key_on_safe
 Der Schlüssel passt nicht.
+=> END
+
+~ key_on_door
+Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
+set CaseManager.CaseGlobals.door_inspected = true
 => END
 
 # bakery
