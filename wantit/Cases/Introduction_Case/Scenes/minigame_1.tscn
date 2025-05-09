@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bros46xum17n" path="res://Cases/Introduction_Case/assets/minigame1/photo_fingerprints.png" id="6_wa13m"]
 [ext_resource type="Texture2D" uid="uid://cte66c41s6312" path="res://Cases/Introduction_Case/assets/minigame1/bag_pliers.png" id="7_vae77"]
 [ext_resource type="Texture2D" uid="uid://b3bvsyfrfrcvg" path="res://Assets/magnifying-glass.png" id="10_a0wop"]
-[ext_resource type="Script" uid="uid://dlau6cnxv54l" path="res://Cases/Introduction_Case/Scripts/magnifying_glass.gd" id="10_wq7o3"]
+[ext_resource type="Script" path="res://Cases/Introduction_Case/Scripts/magnifying_glass.gd" id="10_wq7o3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5txvl")

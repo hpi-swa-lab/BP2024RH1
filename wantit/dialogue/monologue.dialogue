@@ -76,12 +76,24 @@ Geschafft!
 Die gesicherten Spuren sind...
 - Daten => minigame1_test2
 - Informationen => minigame1_test1
+- Ich verstehe die Begriffe nicht. => explain_test1
 => END
+
+~ explain_test1
+Daten sind einzelne Dinge wie Wörter, Zahlen, Bilder Töne oder sonst was, die für sich allein noch nichts sagen. 
+Eine Information entsteht, wenn diese Daten für uns eine Bedeutung bekommen.
+=> minigame1_test1
 
 ~ minigame1_test2
 Mittels der Lupe konnte ich sie...
 - interpretieren => minigame1_test3
 - repräsentieren => minigame1_test2
+- Ich verstehe die Begriffe nicht. => explain_test2
+
+~ explain_test2
+Interpretieren bedeutet, etwas so zu verstehen, dass man den Sinn oder die Absicht dahinter erkennt.
+Repräsentieren hingegen bedeutet, eine Darstellung durch eine andere Darstellung so abzubilden, dass sie stellvertretend für das Original stehen.
+=> minigame1_test2
 
 ~ minigame1_test3
 Die gewonnene Information konnte wiederum durch die Zettelchen...
