@@ -8,7 +8,7 @@ signal display_question_mark
 func _ready() -> void:
 	visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match CaseManager.CaseGlobals.current_scene:
 		"bakery_office":
 			load_office_hint()
@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 func load_showroom_hint():
 	if !CaseManager.CaseGlobals.waffle_collected:
 		hint_text.text = "Was liegt denn da auf der Theke?"
-	elif CaseManager.CaseGlobals.key_collected:
+	elif !CaseManager.CaseGlobals.key_collected:
 		hint_text.text = "Ich sollte mir die Ladentür noch einmal ansehen."
 	else:
 		hint_text.text = "Ziehe den Schlüssel auf die Ladentür."
@@ -34,13 +34,13 @@ func load_showroom_hint():
 func load_office_hint():
 	if !CaseManager.CaseGlobals.traces_in_office_inspected:
 		hint_text.text = "Was sind denn das für Spuren auf dem Boden?"
-	elif (!CaseManager.CaseGlobals.screwdriver_collected and !CaseManager.CaseGlobals.pliers_collected or !CaseManager.CaseGlobals.fingerprints_saved):
+	elif (!CaseManager.CaseGlobals.screwdriver_collected or !CaseManager.CaseGlobals.pliers_collected or !CaseManager.CaseGlobals.fingerprints_saved):
 		hint_text.text = "Ich sollte mir den Safe mal genauer anschauen."
 	else:
 		hint_text.text = "Hier scheint nichts auffälliges mehr zu sein" 
 	
 func load_safe_in_office_hint():
-	if (!CaseManager.CaseGlobals.screwdriver_collected and !CaseManager.CaseGlobals.pliers_collected):
+	if (!CaseManager.CaseGlobals.screwdriver_collected or !CaseManager.CaseGlobals.pliers_collected):
 		hint_text.text = "Was sind denn das für Werkzeuge?"
 	elif !CaseManager.CaseGlobals.fingerprints_saved:
 		hint_text.text = "Sind das Fingerabdrücke am Safe?"

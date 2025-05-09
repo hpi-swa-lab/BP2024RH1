@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ebi58jm4ckop"]
+[gd_scene load_steps=12 format=3 uid="uid://ebi58jm4ckop"]
 
 [ext_resource type="Script" uid="uid://cu1gtpcebk1yi" path="res://Cases/Introduction_Case/Scripts/minigame_1.gd" id="1_5txvl"]
 [ext_resource type="PackedScene" uid="uid://b3w6b5y3gmolt" path="res://Cases/Introduction_Case/Scenes/clue.tscn" id="2_0uv5o"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bsrqm82ifqt23" path="res://Cases/Introduction_Case/Scenes/control_panel.tscn" id="5_ne1wf"]
 [ext_resource type="Texture2D" uid="uid://bros46xum17n" path="res://Cases/Introduction_Case/assets/minigame1/photo_fingerprints.png" id="6_wa13m"]
 [ext_resource type="Texture2D" uid="uid://cte66c41s6312" path="res://Cases/Introduction_Case/assets/minigame1/bag_pliers.png" id="7_vae77"]
+[ext_resource type="Texture2D" uid="uid://b3bvsyfrfrcvg" path="res://Assets/magnifying-glass.png" id="10_a0wop"]
+[ext_resource type="Script" path="res://Cases/Introduction_Case/Scripts/magnifying_glass.gd" id="10_wq7o3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5txvl")
@@ -27,10 +29,10 @@ offset_bottom = 40.0
 
 [node name="Screwdriver" parent="Control" instance=ExtResource("2_0uv5o")]
 layout_mode = 0
-offset_left = 440.0
-offset_top = 361.0
-offset_right = 7456.0
-offset_bottom = 5322.0
+offset_left = 335.0
+offset_top = 455.0
+offset_right = 7351.0
+offset_bottom = 5416.0
 scale = Vector2(0.03, 0.03)
 icon = ExtResource("3_o7kty")
 labelText = "Schraubenzieher mit 
@@ -39,10 +41,10 @@ einer Klingengröße von
 
 [node name="Footprint" parent="Control" instance=ExtResource("2_0uv5o")]
 layout_mode = 0
-offset_left = 89.0
-offset_top = 57.0
-offset_right = 5089.0
-offset_bottom = 3508.0
+offset_left = 273.0
+offset_top = 119.0
+offset_right = 5273.0
+offset_bottom = 3570.0
 scale = Vector2(0.05, 0.05)
 icon = ExtResource("4_wq7o3")
 labelText = "Ein mehliger 
@@ -51,10 +53,10 @@ Größe 43"
 
 [node name="Waffle" parent="Control" instance=ExtResource("2_0uv5o")]
 layout_mode = 0
-offset_left = 450.0
-offset_top = 186.0
-offset_right = 5346.0
-offset_bottom = 4012.0
+offset_left = 72.0
+offset_top = 215.0
+offset_right = 4968.0
+offset_bottom = 4041.0
 scale = Vector2(0.03, 0.03)
 icon = ExtResource("5_a0wop")
 labelText = "Ein angebissenes 
@@ -62,10 +64,10 @@ Waffelstück in Herzform"
 
 [node name="Fingerprints" parent="Control" instance=ExtResource("2_0uv5o")]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 285.0
-offset_right = 4168.0
-offset_bottom = 3489.0
+offset_left = 78.0
+offset_top = 407.0
+offset_right = 4132.0
+offset_bottom = 3611.0
 scale = Vector2(0.05, 0.05)
 icon = ExtResource("6_wa13m")
 labelText = "5 verschiedene 
@@ -74,10 +76,10 @@ vom Safe"
 
 [node name="Pliers" parent="Control" instance=ExtResource("2_0uv5o")]
 layout_mode = 0
-offset_left = 167.0
-offset_top = 489.0
-offset_right = 7183.0
-offset_bottom = 5450.0
+offset_left = 326.0
+offset_top = 313.0
+offset_right = 7342.0
+offset_bottom = 5274.0
 scale = Vector2(0.03, 0.03)
 icon = ExtResource("7_vae77")
 labelText = "Eine Zange mit 3 cm 
@@ -176,5 +178,19 @@ offset_right = 227.0
 offset_bottom = 118.0
 text = "Nochmal versuchen"
 
+[node name="MagnifyingGlass" type="TextureButton" parent="."]
+offset_left = 60.0
+offset_top = 49.0
+offset_right = 572.0
+offset_bottom = 561.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("10_a0wop")
+texture_pressed = ExtResource("10_a0wop")
+texture_hover = ExtResource("10_a0wop")
+script = ExtResource("10_wq7o3")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Label/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="button_down" from="MagnifyingGlass" to="MagnifyingGlass" method="_on_button_down"]
+[connection signal="button_up" from="MagnifyingGlass" to="MagnifyingGlass" method="_on_button_up"]
+[connection signal="searching" from="MagnifyingGlass" to="." method="_on_magnifying_glass_searching"]

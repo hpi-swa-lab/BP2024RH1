@@ -20,15 +20,17 @@ Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lip
 		Kollege: Wo fangen wir mit der Spurensicherung an?
 		# zum ⇒ Verkaufsraum wechseln
 		- Verkaufsraum
+			set CaseManager.CaseGlobals.current_scene = "showroom"
 		# zum Büro des Bäckers wechseln
 		- Büro
+			set CaseManager.CaseGlobals.current_scene = "bakery_office"
 			do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/bakery_office.tscn")
 => END
 
 ~ found_hints
 Klaas: Es scheint so, als hätten wir alle wichtigen Spuren gesichert.
 **RUMMS!**
-Klaas: Na toll, der Praktikant ist gestolpert und die gesicherten Spuren sind durcheinander gekommen.
+Klaas: Na toll, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
 do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/minigame_1.tscn")
 => END
 

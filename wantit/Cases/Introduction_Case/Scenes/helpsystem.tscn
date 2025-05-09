@@ -1,14 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcpaey4nm176x"]
+[gd_scene load_steps=4 format=3 uid="uid://dcpaey4nm176x"]
 
 [ext_resource type="Script" uid="uid://0qp3xs1l0p41" path="res://Cases/Introduction_Case/Scripts/helpsystem.gd" id="1_cwl27"]
 [ext_resource type="PackedScene" uid="uid://dp1dxphtd4rfv" path="res://Cases/Introduction_Case/Scenes/question_mark.tscn" id="2_kriax"]
 [ext_resource type="PackedScene" uid="uid://dbq8p1fknj6fo" path="res://Cases/Introduction_Case/Scenes/helpscreen.tscn" id="3_vsfxq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cwl27"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kriax"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vsfxq"]
 
 [node name="Helpsystem" type="Control"]
 z_index = 1
@@ -26,9 +20,6 @@ offset_left = 1030.0
 offset_top = 30.0
 offset_right = 1550.0
 offset_bottom = 580.0
-theme_override_styles/hover = SubResource("StyleBoxEmpty_cwl27")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kriax")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_vsfxq")
 
 [node name="Helpscreen" parent="." instance=ExtResource("3_vsfxq")]
 layout_mode = 1

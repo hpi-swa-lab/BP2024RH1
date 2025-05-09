@@ -2,5 +2,7 @@ extends Control
 
 func _ready() -> void:
 	var Inventory = GlobalInventory.get_inventory()
-	Inventory.position = Vector2(908, 0)
 	add_child(Inventory)
+	
+	if CaseManager.CaseGlobals.waffle_collected:
+		%Waffle.hide()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://73iqgemjit3a"
-path="res://.godot/imported/key.png-f740ee482bd8417dfe3a7eb1ff39e3ea.ctex"
+uid="uid://b3bvsyfrfrcvg"
+path="res://.godot/imported/magnifying-glass.png-30d817052d276089b2770fb91e2eb38d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cases/Introduction_Case/assets/minigame2/key.png"
-dest_files=["res://.godot/imported/key.png-f740ee482bd8417dfe3a7eb1ff39e3ea.ctex"]
+source_file="res://Assets/magnifying-glass.png"
+dest_files=["res://.godot/imported/magnifying-glass.png-30d817052d276089b2770fb91e2eb38d.ctex"]
 
 [params]
 
