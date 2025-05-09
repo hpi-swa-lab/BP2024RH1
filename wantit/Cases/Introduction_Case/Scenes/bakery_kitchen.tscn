@@ -29,14 +29,15 @@ offset_bottom = 2160.0
 scale = Vector2(0.299885, 0.299885)
 texture = ExtResource("1_wyowh")
 
-[node name="Helpsystem" parent="." instance=ExtResource("12_7deum")]
-layout_mode = 1
-
 [node name="Door Office" parent="." instance=ExtResource("2_3wxj5")]
 layout_mode = 0
 scale = Vector2(0.300266, 0.300266)
 texture_normal = ExtResource("4_snjqx")
 NextSceneString = "bakery_office"
+
+[node name="Helpsystem" parent="." instance=ExtResource("12_7deum")]
+layout_mode = 1
+mouse_filter = 2
 
 [node name="Flour Sack" parent="." instance=ExtResource("4_knvnq")]
 z_index = 1
