@@ -8,7 +8,7 @@ signal display_question_mark
 func _ready() -> void:
 	visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match CaseManager.CaseGlobals.current_scene:
 		"bakery_office":
 			load_office_hint()

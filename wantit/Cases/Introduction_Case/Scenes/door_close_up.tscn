@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhq2pn0aifnxf"]
+[gd_scene load_steps=7 format=3 uid="uid://dhq2pn0aifnxf"]
 
 [ext_resource type="Script" path="res://Cases/Introduction_Case/Scripts/door_close_up.gd" id="1_0wdaq"]
 [ext_resource type="Texture2D" uid="uid://oggi3b6r5m1u" path="res://Cases/Introduction_Case/assets/backgrounds/showroom_door_closeUp.png" id="1_wh2rv"]
 [ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_wqsao"]
 [ext_resource type="Texture2D" uid="uid://dylqwu1vukiuk" path="res://Cases/Introduction_Case/assets/interactable_items/keyhole.png" id="3_22ssn"]
-[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="4_4ixgo"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="4_orxwm"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="5_22ssn"]
 
@@ -29,8 +28,6 @@ layout_mode = 0
 scale = Vector2(0.299254, 0.299254)
 texture_normal = ExtResource("3_22ssn")
 is_collectible = false
-dialogue_resource = ExtResource("4_4ixgo")
-dialogue_start = "door_to_store"
 
 [node name="Back Button" parent="." instance=ExtResource("4_orxwm")]
 layout_mode = 0

@@ -28,5 +28,3 @@ offset_right = 9.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.968086, 0.866519, 0.830288, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_rlkw3")
-
-[connection signal="pressed" from="." to="." method="_on_pressed"]
