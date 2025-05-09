@@ -1,116 +1,183 @@
-extends Node2D
+extends Control
 
-var LabelText = {}
-var Buttons = {}
-var Answers = []
+var LabelText: Dictionary = {}
+var Buttons: Dictionary = {}
+var Answers: Array[String] = []
 
-var LevelsNum = 4
+var LevelsNum: int = 4
 var Level: int = 0
-var correctAnswers = true
 var LevelAnswer: String
 
+var errors: Array[bool] = []
+
+var iteration_completed: bool = false
+
 func _ready() -> void:
-	LabelText[0] = "Fingerabdruck eines \nAngestellten."
-	LabelText[1] = "Es wurden mehrere \nFingerabrücke am Safe \ngesichert."
-	LabelText[2] = "Zur Ladentür des \nWafelparadieses gehört \nein Schlüssel mit dem \nNummernstempel 2056."
-	LabelText[3] = "Der Bäcker hat am \n09. April Geburtstag."
-	LabelText[4] = "Gestern waren 2 der 5 \nAngestellten bei \n'Waffle Overflow' tätig."
+	LabelText[0] = "Fingerabdruck eines Angestellten."
+	LabelText[1] = "Es wurden mehrere Fingerabrücke am Safe gesichert."
+	LabelText[2] = "Zur Ladentür des Waffelparadieses gehört ein Schlüssel mit dem Nummernstempel 2056."
+	LabelText[3] = "Der Bäcker hat am 09. April Geburtstag."
+	LabelText[4] = "Gestern waren 2 der 5 Angestellten bei 'Waffle Overflow' tätig."
 	
-	for i in range(0, LevelsNum + 1):
+	Answers.resize(LevelsNum + 1)
+	errors.resize(LevelsNum + 1)
+	
+	for i in range(0, LevelsNum):
+		Answers[i] = ""
+		errors[i] = true
+	
+	for i in range(0, LevelsNum + 1):		
 		var LevelArr = []
-		Buttons[i] = LevelArr
+		Buttons[i] = LevelArr 
 	
 	initialize_buttons()
 	load_level()
 
-func _on_next_button_pressed() -> void:
+func _on_next_button_pressed() -> void:	
+	if LevelAnswer != "":
+		Answers[Level] = LevelAnswer
+		errors[Level] = true
+	else:
+		errors[Level] = false
+	
 	if Level < LevelsNum:
 		Level += 1
 		load_level()
+		
+		if iteration_completed:
+			prepare_for_answer_checking()
+		
 	else:
-		check_Answers()
-		%nextButton.hide()
+		iteration_completed = true
+		prepare_for_answer_checking()
+
+func prepare_for_answer_checking() -> void:
+	%DataSelectionContainer.hide()
+	
+	for child in %DataCollectionGrid.get_children():
+		%DataCollectionGrid.remove_child(child)
+		
+	check_Answers()
+	
+	%NextButton.hide()
 	
 func load_level():
-	%nextButton.hide()
+	%NextButton.hide()
 	%ClueLabel.text = LabelText[Level]
 	create_level_buttons(Level)
-	if LevelAnswer != "":
-		Answers.append(LevelAnswer)
-		correctAnswers = false
 
 func check_Answers():
-	for child in %Buttons.get_children():
-		%Buttons.remove_child(child)
-	if correctAnswers:
-		%Label.text = "Spuren wurden erfolgreich digitalisiert"
-		Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
-		Globals.OfficeDialogueStart = "finish"
-		Globals.OfficeDialogueDone = false
-		SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+	if has_no_errors():
+		%SuccessLabel.show()
+		%FinishButton.show()
 	else:
-		var AnswerTexts: String = ""
-		for Answer in Answers:
-			AnswerTexts += Answer + "\n"
-		%Label.text = AnswerTexts
-		%RestartButton.show()
+		%ExplanationLabel.text = "Klicke auf die Fehlermeldung, um mehr zu erfahren!"
+		initialize_messages()	
+
+func has_no_errors() -> bool:
+	for error in errors:
+		if error:
+			return false
 	
-func add_button(LevelNum: int, ButtonText: String, ButtonPos: Vector2, ButtonTex: CompressedTexture2D, ButtonScale: Vector2, Answer: String):
+	return true
+		
+func add_button(LevelNum: int, ButtonText: String, ButtonTex: CompressedTexture2D, Answer: String) -> void:
 	var newButton = Button.new()
 	
-	newButton.position = ButtonPos
 	if ButtonText != null and ButtonTex == null:
 		newButton.text = ButtonText
 	else:
 		newButton.icon = ButtonTex
-		newButton.scale = ButtonScale
 	
 	newButton.pressed.connect(self.button_pressed.bind(Answer))
 	Buttons[LevelNum].append(newButton)
 
 func button_pressed(Answer: String):
 	LevelAnswer = Answer
-	%nextButton.show()
+	%NextButton.show()
 	if Level == LevelsNum:
-		%nextButton.text = "Überprüfen"
+		%NextButton.text = "Überprüfen"
 
 func create_level_buttons(LevelNum: int):
-	for child in %Buttons.get_children():
-		%Buttons.remove_child(child)
+	for child in %DataCollectionGrid.get_children():
+		%DataCollectionGrid.remove_child(child)
 	if LevelNum <= LevelsNum:
 		var LevelButtons = Buttons[LevelNum]
 		for button in LevelButtons:
-			%Buttons.add_child(button)
+			%DataCollectionGrid.add_child(button)
 
 func initialize_buttons():
-	add_button(0, "'Fingerabdruck'", Vector2(800, 200), null, Vector2(1, 1), "[WARNING] Wert 'Fingerabdruck' nicht präzise genug.")
-	add_button(0, "Ich bin 5 Abdrücke", Vector2(500, 100), null, Vector2(1, 1), "[ERROR] Ein Bild erwartet - mehrere erhalten")
-	add_button(0, "Ich bin 1 Abdruck", Vector2(700, 350), null, Vector2(1, 1), "")
+	add_button(0, "'Fingerabdruck'", null, "[WARNING] Wert 'Fingerabdruck' nicht präzise genug.")
+	add_button(0, "Ich bin 5 Abdrücke", load("res://Cases/Introduction_Case/assets/minigame2/photo_fingerprints.png"), "[ERROR] Ein Bild erwartet - mehrere erhalten")
+	add_button(0, "Ich bin 1 Abdruck", load("res://Cases/Introduction_Case/assets/minigame2/single_fingerprint.png"), "")
 	
-	add_button(1, "Ich bin 1 Abdruck", Vector2(600, 200), null, Vector2(1, 1), "[ERROR] Mehrere Bilder erwartet - eins erhalten")
-	add_button(1, "Ich bin 5 Abdrücke", Vector2(830, 120), null, Vector2(1, 1), "")
-	add_button(1, "'Fingerabdruck'", Vector2(500, 280), null, Vector2(1, 1), "[WARNING] Wert 'Fingerabdruck' nicht präzise genug.")
+	add_button(1, "Ich bin 1 Abdruck", load("res://Cases/Introduction_Case/assets/minigame2/single_fingerprint.png"), "[ERROR] Mehrere Bilder erwartet - eins erhalten")
+	add_button(1, "Ich bin 5 Abdrücke", load("res://Cases/Introduction_Case/assets/minigame2/photo_fingerprints.png"), "")
+	add_button(1, "'Fingerabdruck'", null, "[WARNING] Wert 'Fingerabdruck' nicht präzise genug.")
 	
-	add_button(2, "2056", Vector2(760, 200), null, Vector2(1, 1), "")
-	add_button(2, "6382", Vector2(600, 300), null, Vector2(1, 1), "[ERROR] Keine Tür mit der Nummer '6382' gefunden")
-	add_button(2, "Ich bin ein Schlüssel", Vector2(500, 150), null, Vector2(1, 1), "[ERROR] Nummer erwartet - Bild erhalten")
+	add_button(2, "2056", null, "")
+	add_button(2, "6382", null, "[ERROR] Keine Tür mit der Nummer '6382' gefunden")
+	add_button(2, "Ich bin ein Schlüssel", load("res://Cases/Introduction_Case/assets/minigame2/key.png"), "[ERROR] Nummer erwartet - Bild erhalten")
 	
-	add_button(3, "09.04", Vector2(600, 200), null, Vector2(1, 1), "")
-	add_button(3, "9.4", Vector2(850, 180), null, Vector2(1, 1), "[ERROR] Datumsformat nicht gültig - TT.MM. erwartet")
-	add_button(3, "April", Vector2(480, 350), null, Vector2(1, 1), "[WARNING] Wert 'April' nicht präzise genug")
-	add_button(3, "9", Vector2(500, 100), null, Vector2(1, 1), "[WARNING] Wert '9' nicht präzise genug")
-	add_button(3, "Ich bin ein Kuchen", Vector2(750, 320), null, Vector2(1, 1), "[ERROR] Nummer erwartet - Bild erhalten")
+	add_button(3, "09.04", null, "")
+	add_button(3, "9.4", null, "[ERROR] Datumsformat nicht gültig - TT.MM. erwartet")
+	add_button(3, "April", null, "[WARNING] Wert 'April' nicht präzise genug")
+	add_button(3, "9", null, "[WARNING] Wert '9' nicht präzise genug")
+	add_button(3, "Ich bin ein Kuchen", load("res://Cases/Introduction_Case/assets/minigame2/cake.png"), "[ERROR] Datum erwartet - Bild erhalten")
 	
-	add_button(4, "2/5", Vector2(600, 300), null, Vector2(1, 1), "")
-	add_button(4, "2", Vector2(500, 100), null, Vector2(1, 1), "[ERROR] '2' stimmt nicht mit Protokolldaten überein")
-	add_button(4, "5", Vector2(900, 250), null, Vector2(1, 1), "[ERROR] '5' stimmt nicht mit Protokolldaten überein")
-	add_button(4, "20%", Vector2(700, 120), null, Vector2(1, 1), "[WARNING] Wert '20%' nicht präzise genug")
+	add_button(4, "2/5", null, "")
+	add_button(4, "2", null, "[ERROR] '2' stimmt nicht mit Protokolldaten überein")
+	add_button(4, "5", null, "[ERROR] '5' stimmt nicht mit Protokolldaten überein")
+	add_button(4, "20%", null, "[WARNING] Wert '20%' nicht präzise genug")	
 
-func _on_restart_button_pressed() -> void:
-	correctAnswers = true
-	Answers = []
-	Level = 0
-	LevelAnswer = ""
-	%RestartButton.hide()
-	%Label.text = ""
+func initialize_messages() -> void:
+	var index: int = 0
+	
+	while index <= LevelsNum:
+		if Answers[index] != "" && Answers[index] != null: # Only a QUICK FIX: If some answer is incorrect and the correct answer for task 5 is chosen, there is an error, that message.text is null
+			var container: HBoxContainer = HBoxContainer.new()
+			container.add_theme_constant_override("separation", 200)
+			
+			var message_button: Button = create_error_message(Answers[index])
+			message_button.pressed.connect(self.on_error_message_button_pressed.bind(index))
+			
+			container.add_child(create_label(LabelText[index]))
+			container.add_child(message_button)
+			
+			%ErrorTable.add_child(container)
+		
+		index += 1
+		
+func on_error_message_button_pressed(level_index: int) -> void:
+	for child in %ErrorTable.get_children():
+		child.queue_free()
+	
+	%DataSelectionContainer.show()
+	
+	Level = level_index
+	Answers[level_index] = ""
+	
 	load_level()
+		
+func create_error_message(buttonText) -> Button:
+	var message: Button = Button.new()
+	message.text = buttonText
+	
+	return message
+	
+func create_label(labelText: String) -> Label:
+	var label: Label = Label.new()
+	
+	label.custom_minimum_size = Vector2(270, 0)
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0))
+
+	label.text = labelText
+	
+	return label
+
+func _on_finish_button_pressed() -> void:
+	Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
+	Globals.OfficeDialogueStart = "finish"
+	Globals.OfficeDialogueDone = false
+	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
