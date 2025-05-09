@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dnixrguyhb71s" path="res://Cases/Introduction_Case/Scripts/minigame_2.gd" id="1_vdqgs"]
 [ext_resource type="Texture2D" uid="uid://66lbp6w0oqer" path="res://Cases/Introduction_Case/assets/minigame2/monitor_and_notepad.png" id="2_0day8"]
 
+
 [node name="Minigame 2" type="Control"]
 layout_mode = 3
 anchors_preset = 15

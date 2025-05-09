@@ -30,7 +30,7 @@ set CaseManager.CaseGlobals.screwdriver_collected = true
 => END
 
 ~ fingerprints
-Die müssen wir unbedingt sichern.
+Die Fingerabdrücke müssen wir unbedingt sichern.
 set CaseManager.CaseGlobals.fingerprints_saved = true
 => END
 

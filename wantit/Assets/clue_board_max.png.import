@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pb2e08bypnbs"
-path="res://.godot/imported/museum_map.png-5f921335f4dc213219816856e59c51b9.ctex"
+uid="uid://cinsrfgtkmeal"
+path="res://.godot/imported/clue_board_max.png-b9c37884bd9ecc8c2f5a8ac3dfcedfab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/map/museum_map.png"
-dest_files=["res://.godot/imported/museum_map.png-5f921335f4dc213219816856e59c51b9.ctex"]
+source_file="res://Assets/clue_board_max.png"
+dest_files=["res://.godot/imported/clue_board_max.png-b9c37884bd9ecc8c2f5a8ac3dfcedfab.ctex"]
 
 [params]
 

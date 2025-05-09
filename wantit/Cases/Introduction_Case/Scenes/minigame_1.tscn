@@ -189,6 +189,36 @@ texture_pressed = ExtResource("10_a0wop")
 texture_hover = ExtResource("10_a0wop")
 script = ExtResource("10_wq7o3")
 
+[node name="description" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="traces" type="Label" parent="description"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 8.0
+offset_right = 368.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Spuren "
+
+[node name="Stickynote" type="Label" parent="description"]
+offset_left = 632.0
+offset_top = 8.0
+offset_right = 789.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Notizzettel"
+
+[node name="dividing_line" type="Line2D" parent="description"]
+points = PackedVector2Array(584, 64, 584, 576)
+width = 1.0
+default_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Label/TryAgain" to="." method="_on_try_again_pressed"]
 [connection signal="button_down" from="MagnifyingGlass" to="MagnifyingGlass" method="_on_button_down"]
