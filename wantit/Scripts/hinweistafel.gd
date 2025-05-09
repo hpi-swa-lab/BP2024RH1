@@ -1,6 +1,7 @@
-extends Node2D
+extends Control
 
 var HintArr := []
+var is_miniature_mode = false
 
 func _ready() -> void:
 	if Globals.selectedCase == null:
@@ -18,7 +19,7 @@ func _ready() -> void:
 	connect_hints()
 	
 	screenshot()
-
+	
 func add_Hint(Hint: CaseManager.Hint):
 	var newHint = Sprite2D.new()
 	newHint.position = Hint.HintPos
@@ -47,5 +48,5 @@ func screenshot():
 	var viewport = get_viewport()
 	var img = viewport.get_texture().get_image()
 	img.resize(1152, 648)
-	img.save_png("user://Assets/Hinweistafel.png")
+	img.save_png("user://Assets/clue_board_max.png")
 	%"Back Button".visible = true

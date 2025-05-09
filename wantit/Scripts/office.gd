@@ -22,7 +22,7 @@ func _ready() -> void:
 func load_CaseBoard_Picture():
 	var CaseBoardPicture
 	#if Globals.selectedCase == null:
-	CaseBoardPicture = load("res://Assets/Hinweistafel_basic.png")
+	CaseBoardPicture = load("res://Assets/clue_board_max.png")
 	#else:		# Doesnt work on web
 		#var image = Image.new()
 		#var error = image.load("user://Assets/Hinweistafel.png")

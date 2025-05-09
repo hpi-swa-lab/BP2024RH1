@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://b0lnvppjqbrwk" path="res://Assets/office/clue_board.png" id="2_hnhsw"]
 [ext_resource type="PackedScene" uid="uid://c5wdqha4l66kp" path="res://Scenes/back_to_office_button.tscn" id="3_hnhsw"]
 
-[node name="Hinweistafel" type="Node2D"]
+[node name="Hinweistafel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_myj6k")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(897, 414)
-scale = Vector2(1.55, 1.55)
+position = Vector2(903, 400)
+scale = Vector2(1.58, 1.79)
 texture = ExtResource("2_hnhsw")
 
 [node name="Hinweise" type="Node2D" parent="."]
@@ -25,7 +27,15 @@ position = Vector2(576, 324)
 
 [node name="Back Button" parent="." instance=ExtResource("3_hnhsw")]
 unique_name_in_owner = true
-offset_left = 1090.0
-offset_top = 5.0
-offset_right = 1610.0
-offset_bottom = 525.0
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 57.0
+offset_right = 1568.0
+offset_bottom = 577.0
+
+[node name="Back Button" parent="Back Button" instance=ExtResource("3_hnhsw")]
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 57.0
+offset_right = 1568.0
+offset_bottom = 577.0

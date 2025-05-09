@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://6cc8qa6b5s3n" path="res://Assets/textures/Prototype Textures/PNG/Orange/texture_09.png" id="6_vkspj"]
 [ext_resource type="Texture2D" uid="uid://cgavgb11pvp5v" path="res://Assets/textures/Prototype Textures/Vector/texture_02.svg" id="7_ha7cx"]
 [ext_resource type="Texture2D" uid="uid://d3qcxp0k2kojc" path="res://Assets/textures/Prototype Textures/PNG/Dark/texture_04.png" id="8_vspo1"]
-[ext_resource type="Texture2D" uid="uid://24um6ha6ct7i" path="res://Assets/Hinweistafel_basic.png" id="9_xkibt"]
 [ext_resource type="Texture2D" uid="uid://5wtmik02ares" path="res://Assets/textures/Prototype Textures/PNG/Dark/texture_13.png" id="10_kaey3"]
 [ext_resource type="Texture2D" uid="uid://qun8fv021gsn" path="res://Assets/ausblick.jpg" id="11_trilw"]
 [ext_resource type="Texture2D" uid="uid://lj0oyh7xx0de" path="res://Assets/photo_2025-04-14_14-41-11.jpg" id="12_3lg6v"]
@@ -45,6 +44,9 @@ albedo_texture = ExtResource("4_bll5k")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o2cca"]
 size = Vector3(1.98933, 1.01749, 0.162743)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8mayv"]
+load_path = "res://.godot/imported/Hinweistafel_basic.png-d5f753c43dbd95cba91eb7a2fd25a592.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1nwb"]
 albedo_texture = ExtResource("5_csj0m")
@@ -169,7 +171,7 @@ shape = SubResource("BoxShape3D_o2cca")
 [node name="CaseBoard" type="Sprite3D" parent="CSGRoom/CSGMissionBoard"]
 unique_name_in_owner = true
 transform = Transform3D(-0.17, 1.22392e-08, 0, 1.48619e-08, 0.14, 8.74228e-08, 1.29927e-15, 1.22392e-08, -1, 0.010072, 0.00346994, 0.00667989)
-texture = ExtResource("9_xkibt")
+texture = SubResource("CompressedTexture2D_8mayv")
 
 [node name="CSGBücherregal" type="CSGBox3D" parent="CSGRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34302, 1, 1.80318)
