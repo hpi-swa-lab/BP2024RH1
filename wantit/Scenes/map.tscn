@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://csoa2rt7yia0i"]
 
 [ext_resource type="Script" uid="uid://dxdeti0007cop" path="res://Scripts/map.gd" id="1_p3ir5"]
-[ext_resource type="Texture2D" uid="uid://bowwq64l886fn" path="res://Assets/map/map.png" id="2_p3ir5"]
+[ext_resource type="Texture2D" uid="uid://bkbjapdraryjo" path="res://Assets/map/map.png" id="2_p3ir5"]
 [ext_resource type="PackedScene" uid="uid://c5wdqha4l66kp" path="res://Scenes/back_to_office_button.tscn" id="3_p3ir5"]
 
 [node name="Map" type="Node2D"]

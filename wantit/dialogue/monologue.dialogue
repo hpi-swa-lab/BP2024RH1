@@ -18,6 +18,11 @@ else:
 	set CaseManager.CaseGlobals.traces_in_office_inspected = true
 => END
 
+~ inventory
+Du kannst manche Gegenstände im Inventar benutzen.
+set CaseManager.CaseGlobals.inventory_explained = true
+=> END
+
 # Safe in office
 ~ pliers
 Damit wollte der Dieb wohl den Safe aufbrechen.

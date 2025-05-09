@@ -31,7 +31,7 @@ Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lip
 ~ found_hints
 Klaas: Es scheint so, als hätten wir alle wichtigen Spuren gesichert.
 **RUMMS!**
-Klaas: Na toll, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
+Klaas: Ohh, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
 do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/minigame_1.tscn")
 => END
 
