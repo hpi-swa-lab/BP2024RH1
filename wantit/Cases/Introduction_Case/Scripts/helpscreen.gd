@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 func load_showroom_hint():
 	if !CaseManager.CaseGlobals.waffle_collected:
 		hint_text.text = "Was liegt denn da auf der Theke?"
-	elif CaseManager.CaseGlobals.key_collected:
+	elif !CaseManager.CaseGlobals.key_collected:
 		hint_text.text = "Ich sollte mir die Ladentür noch einmal ansehen."
 	else:
 		hint_text.text = "Ziehe den Schlüssel auf die Ladentür."

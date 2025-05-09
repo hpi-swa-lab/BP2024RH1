@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bw7q816wdvvla"]
 
-[ext_resource type="Script" uid="uid://dnixrguyhb71s" path="res://Cases/Introduction_Case/scripts/minigame_2.gd" id="1_vdqgs"]
-[ext_resource type="Texture2D" uid="uid://dj1t8p14icj6e" path="res://Cases/Introduction_Case/assets/minigame2/monitor_and_notepad.png" id="2_0day8"]
+[ext_resource type="Script" uid="uid://dnixrguyhb71s" path="res://Cases/Introduction_Case/Scripts/minigame_2.gd" id="1_vdqgs"]
+[ext_resource type="Texture2D" uid="uid://dbg5j4onoumsf" path="res://Cases/Introduction_Case/assets/minigame2/monitor_and_notepad.png" id="2_0day8"]
 
 [node name="Minigame 2" type="Control"]
 layout_mode = 3
