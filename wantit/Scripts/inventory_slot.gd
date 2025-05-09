@@ -12,9 +12,6 @@ func add_item(Item: TextureButton):
 	if Item.ActionScript != null:
 		ActionScript = Item.ActionScript.new()
 	%DisplayedItem.icon = update_item_size(Item.texture_normal)
-	
-	await get_tree().process_frame
-	%DisplayedItem.position = %Control - %DisplayedItem.size / 2
 	%DisplayedItem.show()
 
 func remove_item():
