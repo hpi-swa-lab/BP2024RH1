@@ -1,5 +1,3 @@
-
-
 # salesroom
 ~ door_to_store
 if CaseManager.CaseGlobals.key_collected:
@@ -20,7 +18,7 @@ if CaseManager.CaseGlobals.traces_in_bakery_inspected:
 	Hier endet die Mehlspur.
 	set CaseManager.CaseGlobals.traces_in_office_inspected = true
 else:
-	Sieht aus als wäre der Dieb in Mehl getreten.
+	Sieht so aus, als wäre der Dieb in Mehl getreten.
 	set CaseManager.CaseGlobals.traces_in_office_inspected = true
 => END
 
@@ -46,7 +44,7 @@ Der Schlüssel passt nicht.
 
 # bakery
 ~ shoe_prints_bakery
-Sieht aus als wäre der Dieb in Mehl getreten. Die Spur führt ins Büro des Ladens.
+Sieht so aus, als wäre der Dieb in Mehl getreten. Die Spur führt ins Büro des Ladens.
 set CaseManager.CaseGlobals.traces_in_bakery_inspected = true
 => END
 
@@ -55,7 +53,7 @@ if CaseManager.CaseGlobals.traces_in_bakery_inspected:
 	Das ist also der Ursprung der Mehlspuren.
 	set CaseManager.CaseGlobals.flour_sack_inspected = true
 else:
-	Sieht aus als wäre jemand über den Mehlsack gestolpert. 
+	Sieht so aus, als wäre jemand über den Mehlsack gestolpert. 
 	set CaseManager.CaseGlobals.flour_sack_inspected = true
 => END
 
