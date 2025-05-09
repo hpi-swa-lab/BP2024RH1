@@ -32,10 +32,3 @@ offset_left = 1048.0
 offset_top = 57.0
 offset_right = 1568.0
 offset_bottom = 577.0
-
-[node name="Back Button" parent="Back Button" instance=ExtResource("3_hnhsw")]
-layout_mode = 0
-offset_left = 1048.0
-offset_top = 57.0
-offset_right = 1568.0
-offset_bottom = 577.0
