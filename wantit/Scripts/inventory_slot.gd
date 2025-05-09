@@ -15,9 +15,11 @@ func add_item(Item: TextureButton):
 	%DisplayedItem.show()
 
 func remove_item():
-	if ActionScript != null:
-		if ActionScript.has_method("do_smt"):
+	if ActionScript != null and ActionScript is Node:
+		if not ActionScript.is_inside_tree():
 			get_tree().root.add_child(ActionScript)
+		await get_tree().process_frame
+		if ActionScript.has_method("do_smt"):
 			ActionScript.do_smt(StoredItem)
 	
 	GlobalInventory.Items.erase(StoredItem.name)
@@ -40,4 +42,8 @@ func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale
 		return newIcon
 
 func _on_displayed_item_button_down() -> void:
-	remove_item()
+	%DisplayedItem.pivot_offset = %DisplayedItem.size / 2
+	if ActionScript != null:
+		remove_item()
+	else:
+		%AnimationPlayer.play("remove_item")

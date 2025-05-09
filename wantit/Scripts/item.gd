@@ -16,9 +16,10 @@ func _ready() -> void:
 	
 func _pressed() -> void:
 	if not is_collectible:
-		DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
-		await DialogueManager.dialogue_ended
-		CaseManager.clue_found()
+		if dialogue_resource and dialogue_start:
+			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
+			await DialogueManager.dialogue_ended
+			CaseManager.clue_found()
 	else:
 		GlobalInventory.add_item(self)
 		GlobalInventory.show_inventory()
