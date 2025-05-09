@@ -1,7 +1,7 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 @onready var portrait: TextureRect = %Portrait
-@onready var indicator: TextureRect = $Balloon/Indicator
+#@onready var indicator: TextureRect = $Balloon/Indicator
 
 ## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
@@ -16,12 +16,12 @@ var resource: DialogueResource
 var temporary_game_states: Array = []
 
 ## See if we are waiting for the player
-var is_waiting_for_input: bool = false:
-	set(value):
-		is_waiting_for_input = value
-		indicator.visible = value
-	get:
-		return is_waiting_for_input
+var is_waiting_for_input: bool = false
+	#set(value):
+	#	is_waiting_for_input = value
+	#	indicator.visible = value
+	#get:
+	#	return is_waiting_for_input
 
 ## See if we are running a long mutation and should hide the balloon
 var will_hide_balloon: bool = false
@@ -60,7 +60,7 @@ var mutation_cooldown: Timer = Timer.new()
 
 
 func _ready() -> void:
-	indicator.hide()
+	#indicator.hide()
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
@@ -105,10 +105,18 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-	if dialogue_line.character == "Detective Turing":
-		portrait.texture = Globals.portrait
+	#if dialogue_line.character == "Detective Turing":
+	#	portrait.texture = Globals.portrait
+	#else:
+	#	portrait.texture = Globals.npc_icon
+	
+	var portrait_path_format: String = "res://Assets/characters/%s.png"
+	var portrait_path: String = portrait_path_format % dialogue_line.character.replace("ä", "ae").replace("ö", "oe").replace("ü", "ue")
+	
+	if ResourceLoader.exists(portrait_path):
+		portrait.texture = load(portrait_path)
 	else:
-		portrait.texture = Globals.npc_icon
+		portrait.texture = null
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
