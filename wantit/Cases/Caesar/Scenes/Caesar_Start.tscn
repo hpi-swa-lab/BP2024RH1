@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ki4b84pk5rs"]
-
-[ext_resource type="Script" uid="uid://dvjcl5liqo0ws" path="res://Cases/Caesar/Scripts/caesar_start.gd" id="1_vwlfo"]
-
-[node name="CaesarStart" type="Node2D"]
-script = ExtResource("1_vwlfo")

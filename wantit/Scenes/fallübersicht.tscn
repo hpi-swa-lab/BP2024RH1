@@ -26,6 +26,7 @@ offset_bottom = 216.0
 
 [node name="SelectButton" type="Button" parent="Caseboard_UI"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = -250.0
 offset_top = -240.0
