@@ -53,6 +53,8 @@ dialogue_resource = ExtResource("5_o1pjg")
 dialogue_start = "fallen_flour_sack"
 
 [node name="Key" parent="." instance=ExtResource("4_knvnq")]
+unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 189.0
 offset_top = 497.0

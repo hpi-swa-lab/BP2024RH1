@@ -19,6 +19,7 @@ func _ready() -> void:
 	
 func _on_flour_sack_pressed() -> void:
 	disable_floursack()
+	%Key.show()
 	
 func disable_floursack() -> void:
 	flour_sack.disabled = true
