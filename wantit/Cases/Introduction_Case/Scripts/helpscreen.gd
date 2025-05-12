@@ -18,6 +18,8 @@ func _process(_delta: float) -> void:
 			load_safe_in_office_hint()
 		"bakery_kitchen":
 			load_bakery_hint()
+		"minigame_2":
+			load_minigame2_hint()
 		_:
 			pass
 		
@@ -56,11 +58,13 @@ func load_bakery_hint():
 		hint_text.text = "In der Backstube sehe ich keine Auffälligkeiten mehr"
 
 
+func load_minigame2_hint():
+	hint_text.text = "Bei falschen Antworten werden Fehlermeldungen angezeigt."
+
+
 func _on_close_btn_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton: #is_action_pressed("left_click"):
 		visible = false
 		emit_signal("display_question_mark")
 	# delay until helpscreen can be used again (einblenden or disable) emit signal
 		print("close_btn") 
-
-		
