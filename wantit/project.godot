@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="WantIT"
-run/main_scene="uid://cotigpvpcwpql"
+run/main_scene="uid://byc5whva4dkys"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
