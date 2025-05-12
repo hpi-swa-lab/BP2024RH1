@@ -4,7 +4,7 @@ extends Node
 var current_scene: String
 
 # var total_clues: int = 9
-var all_clues_found_scene = load("res://Cases/Introduction_Case/scenes/bakery_kitchen.tscn")
+var all_clues_found_scene = load("res://Cases/Introduction_Case/Scenes/bakery_kitchen.tscn")
 
 var showroom_intro_shown: bool = false
 

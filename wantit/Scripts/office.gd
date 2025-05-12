@@ -33,7 +33,7 @@ func load_CaseBoard_Picture():
 	%clue_board.texture_normal = CaseBoardPicture
 
 func add_basic_cases():
-	CaseManager.add_Case("Einführungsfall", load("res://Cases/Introduction_Case/Scenes/Introduction_Start.tscn"), load("res://Cases/Introduction_Case/Scripts/state.gd").new(), load("res://Cases/Introduction_Case/Scenes/intro_endscreen.tscn"))
+	CaseManager.add_Case("Einführungsfall", load("res://Cases/Introduction_Case/Scenes/introduction_start.tscn"), load("res://Cases/Introduction_Case/Scripts/state.gd").new(), load("res://Cases/Introduction_Case/Scenes/intro_endscreen.tscn"))
 
 func create_bitmap(button: TextureButton):
 	if button.texture_normal:
