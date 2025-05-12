@@ -206,6 +206,7 @@ theme_override_font_sizes/font_size = 30
 text = "Spuren "
 
 [node name="Stickynote" type="Label" parent="description"]
+layout_mode = 0
 offset_left = 632.0
 offset_top = 8.0
 offset_right = 789.0

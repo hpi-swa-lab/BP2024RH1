@@ -50,6 +50,8 @@ func load_safe_in_office_hint():
 func load_bakery_hint():
 	if !CaseManager.CaseGlobals.traces_in_bakery_inspected:
 		hint_text.text = "Was sind denn das für Spuren auf dem Boden?"
+	elif !CaseManager.CaseGlobals.key_collected:
+		hint_text.text = "Der umgefallene Mehlsack sieht sehr verdächtig aus"
 	else:
 		hint_text.text = "In der Backstube sehe ich keine Auffälligkeiten mehr"
 
