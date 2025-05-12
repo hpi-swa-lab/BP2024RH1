@@ -13,6 +13,8 @@ var errors: Array[bool] = []
 var iteration_completed: bool = false
 
 func _ready() -> void:
+	CaseManager.CaseGlobals.current_scene = "minigame_2"
+	
 	LabelText[0] = "Fingerabdruck eines Angestellten."
 	LabelText[1] = "Es wurden mehrere Fingerabrücke am Safe gesichert."
 	LabelText[2] = "Zur Ladentür des Waffelparadieses gehört ein Schlüssel mit dem Nummernstempel 2056."
