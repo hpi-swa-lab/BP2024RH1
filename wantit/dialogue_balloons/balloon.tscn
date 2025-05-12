@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj6d4qjwusrni"]
+[gd_scene load_steps=9 format=3 uid="uid://cj6d4qjwusrni"]
 
 [ext_resource type="Script" uid="uid://clgync0ok55nx" path="res://dialogue_balloons/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
-[ext_resource type="Texture2D" uid="uid://b25e06jlbr6ob" path="res://Cases/Caesar/Assets/indicator.png" id="4_0jkkh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -63,41 +62,6 @@ MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 30
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
-
-[sub_resource type="Animation" id="Animation_p3rx7"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(600, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_wj7hq"]
-resource_name = "indicate"
-loop_mode = 1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(600, -0.25, 0, 0.25, 0, 583, -0.25, 0, 0.25, 0, 600, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5, 1)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_h8rcd"]
-_data = {
-&"RESET": SubResource("Animation_p3rx7"),
-&"indicate": SubResource("Animation_wj7hq")
-}
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -194,29 +158,6 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
 text = "Response example"
-
-[node name="Indicator" type="TextureRect" parent="Balloon"]
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -82.0
-offset_top = -48.0
-offset_right = 430.0
-offset_bottom = 464.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.0958182, 0.0958182)
-texture = ExtResource("4_0jkkh")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/Indicator"]
-libraries = {
-&"": SubResource("AnimationLibrary_h8rcd")
-}
-autoplay = "indicate"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

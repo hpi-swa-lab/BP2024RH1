@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bto1uem2cnbyr"]
 
-[ext_resource type="Script" uid="uid://bppek5pgmovcy" path="res://Cases/Introduction_Case/scripts/bakery_kitchen.gd" id="1_l61y1"]
+[ext_resource type="Script" uid="uid://bppek5pgmovcy" path="res://Cases/Introduction_Case/Scripts/bakery_kitchen.gd" id="1_l61y1"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_3wxj5"]
 [ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="4_knvnq"]
@@ -9,10 +9,10 @@
 [ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="5_o1pjg"]
 [ext_resource type="Texture2D" uid="uid://cn256ss6v6oay" path="res://Cases/Introduction_Case/assets/interactable_items/floursack_key.png" id="6_l61y1"]
 [ext_resource type="Texture2D" uid="uid://cac4ru4ujuip0" path="res://Cases/Introduction_Case/assets/collectible_items/key.png" id="6_ts2v5"]
-[ext_resource type="Script" uid="uid://kke8b67onflp" path="res://Cases/Introduction_Case/scripts/key_action.gd" id="11_k1qd0"]
+[ext_resource type="Script" uid="uid://kke8b67onflp" path="res://Cases/Introduction_Case/Scripts/key_action.gd" id="11_k1qd0"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="11_lftgu"]
 [ext_resource type="Texture2D" uid="uid://dwtfx6evqouww" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_kitchen.png" id="11_snjqx"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/scenes/helpsystem.tscn" id="12_7deum"]
+[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
 
 [node name="Bakery Kitchen" type="Control"]
 layout_mode = 3
@@ -53,6 +53,8 @@ dialogue_resource = ExtResource("5_o1pjg")
 dialogue_start = "fallen_flour_sack"
 
 [node name="Key" parent="." instance=ExtResource("4_knvnq")]
+unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 189.0
 offset_top = 497.0
