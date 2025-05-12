@@ -1,0 +1,56 @@
+
+~ begin
+Klaas: Willkommen im Präsidium!
+Klaas: Ich bin Klaas und werde dir bei deinen ersten Fällen als Unterstützung beiseitestehen.
+Klaas: So wie es aussieht, haben wir auch bereits unseren ersten Fall.
+Klaas: Das Fälleverzeichnis findest du im Computer auf dem Schreibtisch.
+=> END
+
+~ start_case
+Klaas: Im Waffelladen “Waffle Overflow” wurde der Safe über Nacht ausgeräumt.
+Klaas: Über die Stadtkarte an der rechten Wand findest du den Weg dorthin.
+=> END
+
+~ crime_scene
+Klaas: Hier hat aber jemand gewütet. Bevor wir uns den Tatort genauer anschauen, sollten wir mit dem Inhaber der Bäckerei reden.
+Bäcker: Willkommen bei “Waffle Overflow”. Hier gibt es keine Cookies - nur Waffeln.
+Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lippen. Aber jetzt ist wohl nicht der beste Zeitpunkt dafür.
+- Was genau ist denn passiert?
+	Bäcker: Es wurde eingebrochen und die Einnahmen vom gestrigen Tagesgeschäft wurden aus dem Safe geklaut. Ohne das Geld kann ich heute keine neuen Waffelzutaten kaufen…
+	- Wir werden unser Bestes tun, den Täter zu fassen.
+		Klaas: Wo fangen wir mit der Spurensicherung an?
+		# zum ⇒ Verkaufsraum wechseln
+		- Verkaufsraum
+			set CaseManager.CaseGlobals.current_scene = "showroom"
+		# zum Büro des Bäckers wechseln
+		- Büro
+			set CaseManager.CaseGlobals.current_scene = "bakery_office"
+			do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/bakery_office.tscn")
+=> END
+
+~ found_hints
+Klaas: Es scheint so, als hätten wir alle wichtigen Spuren gesichert.
+**RUMMS!**
+Klaas: Ohh, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
+do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/minigame_1.tscn")
+=> END
+
+
+~ minigame1_done
+Klaas: Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.
+do SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+=> END
+
+~ evaluate_traces
+Klaas: Um die Spuren vom Tatort effizient auszuwerten, müssen wir sie digitalisieren. Dein Arbeitscomputer hat bereits die nötige Software installiert, sodass du direkt starten kannst.
+do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/minigame_2.tscn")
+=> END
+
+~ finish
+Klaas: Gute Nachrichten: wir haben den Dieb! 
+Klaas: Die Fingerabrücke am Safe stimmen mit denen eines Mitarbeiters von “Waffle Overflow” überein.
+Klaas: Der Bäckergehilfe konnte seinen Schlüssel nutzen, um den Laden aufzuschließen, hatte aber keinen Schlüssel für den Safe. Außerdem hatte er scheinbar so großen Hunger, dass er nicht einmal bei einem Diebstahl ohne Waffel auskam.
+Klaas: Wir werden gleich bei ihm zu Hause vorbeifahren. Dort befindet sich höchstwahrscheinlich auch das geklaute Geld.
+Klaas: Danke für deine Unterstützung. Ich freue mich auf unsere weitere Zusammenarbeit!
+do CaseManager.close_Case(Globals.selectedCase)
+=> END

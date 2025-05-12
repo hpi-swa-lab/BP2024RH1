@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcpaey4nm176x"]
+
+[ext_resource type="Script" uid="uid://0qp3xs1l0p41" path="res://Cases/Introduction_Case/Scripts/helpsystem.gd" id="1_cwl27"]
+[ext_resource type="PackedScene" uid="uid://dp1dxphtd4rfv" path="res://Cases/Introduction_Case/Scenes/question_mark.tscn" id="2_kriax"]
+[ext_resource type="PackedScene" uid="uid://dbq8p1fknj6fo" path="res://Cases/Introduction_Case/Scenes/helpscreen.tscn" id="3_vsfxq"]
+
+[node name="Helpsystem" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cwl27")
+
+[node name="Question_mark" parent="." instance=ExtResource("2_kriax")]
+layout_mode = 0
+offset_left = 1030.0
+offset_top = 30.0
+offset_right = 1550.0
+offset_bottom = 580.0
+
+[node name="Helpscreen" parent="." instance=ExtResource("3_vsfxq")]
+layout_mode = 1
+
+[connection signal="gui_input" from="Question_mark" to="Question_mark" method="_on_gui_input"]

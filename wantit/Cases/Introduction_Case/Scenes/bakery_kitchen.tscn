@@ -1,0 +1,89 @@
+[gd_scene load_steps=14 format=3 uid="uid://bto1uem2cnbyr"]
+
+[ext_resource type="Script" uid="uid://bppek5pgmovcy" path="res://Cases/Introduction_Case/Scripts/bakery_kitchen.gd" id="1_l61y1"]
+[ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_3wxj5"]
+[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="4_knvnq"]
+[ext_resource type="Texture2D" uid="uid://db364nyl3k8a8" path="res://Cases/Introduction_Case/assets/interactable_items/door_office.png" id="4_snjqx"]
+[ext_resource type="Texture2D" uid="uid://bm5uradd7vnhp" path="res://Cases/Introduction_Case/assets/interactable_items/floursack.png" id="5_elfe8"]
+[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="5_o1pjg"]
+[ext_resource type="Texture2D" uid="uid://cn256ss6v6oay" path="res://Cases/Introduction_Case/assets/interactable_items/floursack_key.png" id="6_l61y1"]
+[ext_resource type="Texture2D" uid="uid://cac4ru4ujuip0" path="res://Cases/Introduction_Case/assets/collectible_items/key.png" id="6_ts2v5"]
+[ext_resource type="Script" uid="uid://kke8b67onflp" path="res://Cases/Introduction_Case/Scripts/key_action.gd" id="11_k1qd0"]
+[ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="11_lftgu"]
+[ext_resource type="Texture2D" uid="uid://dwtfx6evqouww" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_kitchen.png" id="11_snjqx"]
+[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
+
+[node name="Bakery Kitchen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l61y1")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.299885, 0.299885)
+texture = ExtResource("1_wyowh")
+
+[node name="Door Office" parent="." instance=ExtResource("2_3wxj5")]
+layout_mode = 0
+scale = Vector2(0.300266, 0.300266)
+texture_normal = ExtResource("4_snjqx")
+NextSceneString = "bakery_office"
+
+[node name="Helpsystem" parent="." instance=ExtResource("12_7deum")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="Flour Sack" parent="." instance=ExtResource("4_knvnq")]
+z_index = 1
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300016, 0.300016)
+texture_normal = ExtResource("5_elfe8")
+texture_disabled = ExtResource("6_l61y1")
+is_collectible = false
+dialogue_resource = ExtResource("5_o1pjg")
+dialogue_start = "fallen_flour_sack"
+
+[node name="Key" parent="." instance=ExtResource("4_knvnq")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 189.0
+offset_top = 497.0
+offset_right = 3728.0
+offset_bottom = 4036.0
+rotation = 0.145902
+scale = Vector2(0.0146714, 0.0146714)
+texture_normal = ExtResource("6_ts2v5")
+dialogue_resource = ExtResource("5_o1pjg")
+dialogue_start = "flour_sack_pushed"
+ActionScript = ExtResource("11_k1qd0")
+
+[node name="Back Button" parent="." instance=ExtResource("2_3wxj5")]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 572.0
+offset_right = 505.0
+offset_bottom = 1084.0
+rotation = -0.518
+scale = Vector2(0.188065, 0.188065)
+texture_normal = ExtResource("11_lftgu")
+NextSceneString = "showroom"
+
+[node name="Shoe Prints" parent="." instance=ExtResource("4_knvnq")]
+layout_mode = 0
+scale = Vector2(0.299523, 0.299523)
+texture_normal = ExtResource("11_snjqx")
+is_collectible = false
+dialogue_resource = ExtResource("5_o1pjg")
+dialogue_start = "shoe_prints_bakery"
+
+[connection signal="pressed" from="Flour Sack" to="." method="_on_flour_sack_pressed"]

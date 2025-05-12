@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bj2wmkkh47ywg"]
+
+[ext_resource type="Texture2D" uid="uid://dj4g6di643a60" path="res://Cases/Introduction_Case/assets/backgrounds/counter_closeUp.png" id="1_62q81"]
+[ext_resource type="Script" uid="uid://bj4qdrh78cjhw" path="res://Cases/Introduction_Case/Scripts/counter_close_up.gd" id="1_rw67b"]
+[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_4jvwb"]
+[ext_resource type="Texture2D" uid="uid://g6oerpbtvsjt" path="res://Cases/Introduction_Case/assets/collectible_items/waffle.png" id="3_rw67b"]
+[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="4_5ruto"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="6_5ruto"]
+[ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="6_174a0"]
+
+[node name="Counter CloseUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rw67b")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300016, 0.300016)
+texture = ExtResource("1_62q81")
+
+[node name="Waffle" parent="." instance=ExtResource("2_4jvwb")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 506.0
+offset_top = 444.0
+offset_right = 3557.0
+offset_bottom = 3356.0
+rotation = -0.204434
+scale = Vector2(0.0673684, 0.0512623)
+texture_normal = ExtResource("3_rw67b")
+dialogue_resource = ExtResource("4_5ruto")
+dialogue_start = "bitten_waffle"
+
+[node name="Back Button" parent="." instance=ExtResource("6_5ruto")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 528.0
+offset_bottom = 528.0
+scale = Vector2(0.188065, 0.188065)
+texture_normal = ExtResource("6_174a0")
+NextSceneString = "showroom"

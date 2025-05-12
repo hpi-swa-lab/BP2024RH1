@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbq8p1fknj6fo"]
+
+[ext_resource type="Script" uid="uid://dl1dax7gohgy1" path="res://Cases/Introduction_Case/Scripts/helpscreen.gd" id="1_2n7gt"]
+[ext_resource type="Texture2D" uid="uid://bkfa3tiko8wxq" path="res://Cases/Introduction_Case/assets/others/close.png" id="2_6qk7a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tffo2"]
+bg_color = Color(0.243137, 0.0784314, 0.345098, 0.588235)
+
+[node name="Helpscreen" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2n7gt")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.329
+offset_bottom = -0.192017
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tffo2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 213.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Hint_text" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+text = "404 keine Hinweise"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseBtn" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 60.0
+pivot_offset = Vector2(25, 25)
+texture = ExtResource("2_6qk7a")
+expand_mode = 1
+
+[connection signal="gui_input" from="CloseBtn" to="." method="_on_close_btn_gui_input"]
