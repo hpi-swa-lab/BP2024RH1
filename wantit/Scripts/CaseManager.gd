@@ -28,12 +28,14 @@ func change_scene() -> void:
 class Case:
 	var CaseName: String
 	var FirstScene: PackedScene
+	var EndScreen: PackedScene
 	var GlobalScript: Node
 	
-	func _init(_CaseName: String, _FirstScene: PackedScene, _GlobalScript: Node) -> void:
+	func _init(_CaseName: String, _FirstScene: PackedScene, _GlobalScript: Node, _EndScreen: PackedScene) -> void:
 		CaseName = _CaseName
 		FirstScene = _FirstScene
 		GlobalScript = _GlobalScript
+		EndScreen = _EndScreen
 
 class Hint:					# Hints that are shown at the Board
 	var HintPos: Vector2
@@ -58,9 +60,9 @@ var ClosedCases = {}
 
 var Hints = []
 
-func add_Case(CaseName: String, FirstScene: PackedScene, GlobalScript: Node):
+func add_Case(CaseName: String, FirstScene: PackedScene, GlobalScript: Node, EndScreen: PackedScene):
 	if not ClosedCases.has(CaseName):
-		var newCase = Case.new(CaseName, FirstScene, GlobalScript)
+		var newCase = Case.new(CaseName, FirstScene, GlobalScript, EndScreen)
 		CaseGlobals = GlobalScript
 		CaseList[newCase.CaseName] = newCase
 
@@ -74,7 +76,7 @@ func close_Case(CurrentCase: Case):
 	ClosedCases[CurrentCase.CaseName] = CurrentCase
 	GlobalTimer.end_timer("insgesamt")
 	
-	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+	SceneSwitcher.switch_scene(CurrentCase.EndScreen)
 
 func add_Hint(HintPos: Vector2, HintTexture: CompressedTexture2D, HintScale: Vector2):
 	var newHint = Hint.new(HintPos, HintTexture, HintScale)
