@@ -44,8 +44,12 @@ func check_down():
 		node = find_node()
 	if node:
 		var Rect1 = Rect2(node.position, node.size)
+		var ButtonPos = newItem.global_position - node.global_position
 		if Rect1.intersects(KeyRect):
+			print(node.texture_click_mask.get_size(), ButtonPos) 
 			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), DialogueStart)
+			if DialogueStart == "key_on_door":
+				node.texture_normal = load("res://Cases/Introduction_Case/assets/interactable_items/keyhole_with_key.png")
 			await DialogueManager.dialogue_ended
 			return
 	GlobalInventory.add_item(oldItem)
