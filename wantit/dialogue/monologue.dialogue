@@ -1,6 +1,7 @@
 # salesroom
 ~ door_to_store
-An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
+if CaseManager.CaseGlobals.door_inspected == false:
+	An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
 => END
 
 ~ bitten_waffle
@@ -71,8 +72,8 @@ set CaseManager.CaseGlobals.key_collected = true
 
 ~ minigame1_start
 Na toll, jetzt müssen wir die Klebezettel wieder den richtigen Tütchen zuordnen.
-Die Abbildungen der gesicherten Spuren und die Klebezettelchen stellen Daten dar. 
-Untersuche die Spuren mit der Lupe, um herauszufinden, welche Informationen durch die Daten repräsentiert werden.
+Die Spuren allein bringen mir nichts. Das sind einfach nur Daten. Ich brauche mehr Kontext, um sie zu verstehen.
+Wenn ich mir die Spuren mit der Lupe genauer anschaue, finde ich vielleicht heraus welche Information dahintersteckt.
 => END
 
 ~ minigame1_end
