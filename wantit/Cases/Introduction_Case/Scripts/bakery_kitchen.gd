@@ -1,7 +1,6 @@
 extends Control
 
 @onready var flour_sack: TextureButton = $"Flour Sack"
-@onready var key: TextureButton = $Key
 
 func _ready() -> void:
 	var Inventory = GlobalInventory.get_inventory()
@@ -14,13 +13,13 @@ func _ready() -> void:
 		disable_floursack()
 	
 	if CaseManager.CaseGlobals.key_collected:
-		key.disabled = true
-		key.hide()
+		%Key.disabled = true
+		%Key.hide()
 	
 func _on_flour_sack_pressed() -> void:
 	disable_floursack()
-	%Key.show()
 	
 func disable_floursack() -> void:
 	flour_sack.disabled = true
 	flour_sack.z_index = 0
+	%Key.show()

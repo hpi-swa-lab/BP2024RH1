@@ -44,9 +44,7 @@ func check_down():
 		node = find_node()
 	if node:
 		var Rect1 = Rect2(node.position, node.size)
-		var ButtonPos = newItem.global_position - node.global_position
 		if Rect1.intersects(KeyRect):
-			print(node.texture_click_mask.get_size(), ButtonPos) 
 			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), DialogueStart)
 			if DialogueStart == "key_on_door":
 				node.texture_normal = load("res://Cases/Introduction_Case/assets/interactable_items/keyhole_with_key.png")
@@ -56,7 +54,6 @@ func check_down():
 	
 func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
 	for child in get_tree().root.get_children():
-		print(child.name)
 		if child.name == "Door CloseUp":
 			DialogueStart = "key_on_door"
 			return child.find_child("Key Hole")

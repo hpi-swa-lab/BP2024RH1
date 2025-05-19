@@ -37,5 +37,4 @@ var fingerprints_saved: bool = false
 
 func get_hints() -> Array:
 	var hints: Array = [key_collected, door_inspected, waffle_collected, traces_in_bakery_inspected, flour_sack_inspected, traces_in_office_inspected, screwdriver_collected, pliers_collected, fingerprints_saved]
-	print(hints)
 	return hints
