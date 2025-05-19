@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://qtohmmfcprtr" path="res://logik_gatter/scripts/Baukasten/Gatter/or_gatter.gd" id="1_rgeqk"]
 
 [node name="Or_Gatter" type="Button"]
-text = "mindestens eins"
+text = "ODER"
 script = ExtResource("1_rgeqk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
