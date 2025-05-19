@@ -13,15 +13,22 @@ func start_timer(TimerName: String):	#You need to end the timer to restart it
 		Times[TimerName] = time - time_before
 	else:
 		Times[TimerName] = time
+	print("starting timer " + TimerName)
 	
 func end_timer(TimerName: String):
 	if Times.has(TimerName):
 		var startTime = Times[TimerName]
 		var endTime = Time.get_ticks_msec() / 1000.0
 		Times[TimerName] = endTime - startTime
+	print("ending timer " + TimerName)
+		
+func timer_active(TimerName: String) -> bool:
+	if Times.has(TimerName):
+		return true
+	return false
 
 func print_times() -> String:
 	var returnString = ""
 	for timer in Times.keys():
-		returnString += "Du hast " + timer + " " + str(Times[timer]) + " Sekunden gespielt.\n"
+		returnString += timer + ": " + str(Times[timer]) + "\n"
 	return returnString

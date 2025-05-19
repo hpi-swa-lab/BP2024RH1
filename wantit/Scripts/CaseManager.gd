@@ -67,6 +67,8 @@ func add_Case(CaseName: String, FirstScene: PackedScene, GlobalScript: Node, End
 		CaseList[newCase.CaseName] = newCase
 
 func close_Case(CurrentCase: Case):
+	print(GlobalTimer.print_times())
+	
 	CaseList.erase(CurrentCase.CaseName)
 	Globals.selectedCase = null
 	Globals.nextScene = null

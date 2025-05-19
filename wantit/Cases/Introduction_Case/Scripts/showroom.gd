@@ -16,5 +16,8 @@ func _ready() -> void:
 		await DialogueManager.dialogue_ended
 		helpsystem_timer.paused = false
 	
+	if not GlobalTimer.timer_active("waffle"):
+		GlobalTimer.start_timer("waffle")
+	
 	if CaseManager.CaseGlobals.waffle_collected:
 		plate.texture_normal = load("res://Cases/Introduction_Case/assets/interactable_items/plate_empty.png")

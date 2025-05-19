@@ -1,5 +1,6 @@
 
 ~ begin
+set GlobalTimer.start_timer("insgesamt")
 Klaas: Willkommen im Präsidium!
 Klaas: Ich bin Klaas und werde dir bei deinen ersten Fällen als Unterstützung beiseitestehen.
 Klaas: So wie es aussieht, haben wir auch bereits unseren ersten Fall.
@@ -7,6 +8,7 @@ Klaas: Das Fälleverzeichnis findest du im Computer auf dem Schreibtisch.
 => END
 
 ~ start_case
+set GlobalTimer.start_timer("introduction_case")
 Klaas: Im Waffelladen “Waffle Overflow” wurde der Safe über Nacht ausgeräumt.
 Klaas: Über die Stadtkarte an der rechten Wand findest du den Weg dorthin.
 => END
@@ -26,9 +28,11 @@ Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lip
 		- Büro
 			set CaseManager.CaseGlobals.current_scene = "bakery_office"
 			do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/bakery_office.tscn")
+set GlobalTimer.start_timer("all_clues_found")
 => END
 
 ~ found_hints
+set GlobalTimer.end_timer("all_clues_found")
 Klaas: Es scheint so, als hätten wir alle wichtigen Spuren gesichert.
 **RUMMS!**
 Klaas: Ohh, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
@@ -52,5 +56,7 @@ Klaas: Die Fingerabrücke am Safe stimmen mit denen eines Mitarbeiters von “Wa
 Klaas: Der Bäckergehilfe konnte seinen Schlüssel nutzen, um den Laden aufzuschließen, hatte aber keinen Schlüssel für den Safe. Außerdem hatte er scheinbar so großen Hunger, dass er nicht einmal bei einem Diebstahl ohne Waffel auskam.
 Klaas: Wir werden gleich bei ihm zu Hause vorbeifahren. Dort befindet sich höchstwahrscheinlich auch das geklaute Geld.
 Klaas: Danke für deine Unterstützung. Ich freue mich auf unsere weitere Zusammenarbeit!
+set GlobalTimer.end_timer("insgesamt")
+set GlobalTimer.end_timer("introduction_case")
 do CaseManager.close_Case(Globals.selectedCase)
 => END

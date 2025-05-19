@@ -7,4 +7,3 @@ func _ready() -> void:
 	Globals.OfficeDialogueDone = false
 	CaseManager.new_Location(load("res://Assets/map/bakery_map.png"), preload("res://Cases/Introduction_Case/Scenes/showroom.tscn"))
 	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
-	GlobalTimer.start_timer("insgesamt")
