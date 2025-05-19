@@ -29,19 +29,6 @@ func _ready() -> void:
 		explanation_ziel,
 		explanation_end
 	]
-	
-	
-	next_button.show()
-	back_button.hide()
-	end_button.hide()
-	explanation_start.show()
-	explanation_connection.hide()
-	explanation_try_start.hide()
-	explanation_try_start_2.hide()
-	explanation_gatter.hide()
-	explanation_ziel.hide()
-	explanation_end.hide()
-	
 
 func _process(_delta: float) -> void:
 	if explanation_end.visible:
@@ -91,13 +78,13 @@ func _on_logik_gatter_level_introduction_start_2() -> void:
 func _on_end_button_pressed() -> void:
 	if ziel_input:
 		# text das es geschaft wurde
-		explanation_end.text = "Du hast es geschafft das Signal ist beim ZIel angekommen."
+		explanation_end.text = "Du hast es geschafft das Signal ist beim ZIel angekommen"
 		#übergang zum richtigen minispiel
 		good_job.show()
 		explanation_end.hide()
 	else: 
 		#text das das signal noch nicht beim ziel ist
-		explanation_end.text = "Das Signal ist noch nicht beim Ziel angekommen."
+		explanation_end.text = "Das Signal ist noch nicht beim Ziel angekommen"
 
 func _on_logik_gatter_level_introduction_ziel_input_false() -> void:
 	ziel_input = false

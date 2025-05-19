@@ -139,9 +139,9 @@ text = "Küche"
 
 [node name="Helpsys" parent="." instance=ExtResource("9_87bkb")]
 layout_mode = 1
-hint_1_text = "Überprüfe die technischen Geräte."
-hint_2_text = "Finde den gehackten Router."
-hint_3_text = "Gehackter Router befindet sich im Großen Büro."
+hint_1_text = "überprüfe die technischen Geräte"
+hint_2_text = "finde den gehackten Router"
+hint_3_text = "gehackter Router befindet sich im Großen Büro"
 Timer_hint_2_time = 60.0
 
 [node name="computer_button_management_sys" type="Node" parent="."]
