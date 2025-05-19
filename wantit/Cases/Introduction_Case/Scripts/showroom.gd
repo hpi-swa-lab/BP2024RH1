@@ -6,7 +6,6 @@ extends Control
 func _ready() -> void:
 	var Inventory = GlobalInventory.get_inventory()
 	add_child(Inventory)
-	print (CaseManager.CaseGlobals.showroom_intro_shown)
 	
 	if CaseManager.CaseGlobals.showroom_intro_shown == false:
 		helpsystem_timer.paused = true

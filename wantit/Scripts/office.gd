@@ -3,7 +3,6 @@ extends Control
 func _ready() -> void:
 	load_CaseBoard_Picture()
 	add_basic_cases()
-	print(Globals.OfficeDialogueDone)
 	
 	if not Globals.OfficeDialogueDone:
 		if Globals.selectedCase == null:
