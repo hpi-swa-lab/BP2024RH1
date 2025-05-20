@@ -42,7 +42,7 @@ func print_times() -> String:
 func print_log() -> String:
 	var returnString = ""
 	for newlog in Log.keys():
-		returnString += newlog + ": " + str(Log[newlog]) + "\n"
+		returnString += str(Log[newlog]) + " :  " + newlog + "\n"
 	return returnString
 
 func export_analytics():
