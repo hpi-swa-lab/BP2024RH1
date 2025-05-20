@@ -3,6 +3,7 @@ extends Node2D
 @export var end_scene: Node2D
 
 func _ready() -> void:
+	GlobalTimer.add_log_entry("entered scene: office")
 	if not Global.Intro_done:
 		GlobalTimer.start_timer("Total")
 		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "start")

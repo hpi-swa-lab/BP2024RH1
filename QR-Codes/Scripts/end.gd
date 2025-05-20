@@ -8,6 +8,7 @@ func show_dialogue():
 	DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "end_scene")
 	
 func show_animal():
+	GlobalTimer.export_analytics()
 	animal.position = Vector2(593, 325)
 	animal.scale = Vector2(1.5, 1.5)
 	colour.color = Color(0.552, 0.973, 0.539) #grün

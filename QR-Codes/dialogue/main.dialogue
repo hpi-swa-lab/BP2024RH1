@@ -1,119 +1,162 @@
 ~ start
 if Global.Intro_done == false
+	set GlobalTimer.add_log_entry("start Dialogue: start")
 	Inspector: Hallo Robo! Ich habe einen neuen Fall für dich.
 	Robo: Hmmm...
 	- Was ist passiert?
 		Inspector: Es wurde eingebrochen!
 		- Ich werde mir sofort den Tatort angucken gehen.
+			set GlobalTimer.add_log_entry("end Dialogue: start -> sofort Tatort angucken")
 			do get_tree().change_scene_to_file("res://Scenes/tatort.tscn")
 		- Was ist über den Einbruch bekannt?
+			set GlobalTimer.add_log_entry("start Dialogue: start -> was ist bekannt")
 			Inspector: Es wurde ein sehr wertvolles Gemälde geklaut.
 			Inspector: Aber sonst komischerweise nichts.
 			Robo: Wer wusste, dass diese Gemälde dort hängt?
 			Inspector: Laut eigener Aussage wussten das nur seine Bekannten.
 			- Den Tatort untersuchen
+			set GlobalTimer.add_log_entry("end Dialogue: start -> Tatort untersuchen")
 			do get_tree().change_scene_to_file("res://Scenes/tatort.tscn")
 			
 	- Tut mir leid, aber ich bin zu beschäftigt für einen neuen Fall.
+		set GlobalTimer.add_log_entry("end Dialogue: start -> zu beschäftigt")
 		Inspector: Schade, vielleicht ein anderes Mal.
+	set GlobalTimer.add_log_entry("end Dialogue: start")
 	set Global.Intro_done = true
 => END
 
 ~ picture
+set GlobalTimer.add_log_entry("start Dialogue: picture")
 Robo: Da hing wohl das Gemälde.
+set GlobalTimer.add_log_entry("end Dialogue: picture")
 => END
 
 ~ safe
+set GlobalTimer.add_log_entry("start Dialogue: safe")
 Robo: Komisch, sie haben den Safe nicht aufgebrochen.
+set GlobalTimer.add_log_entry("end Dialogue: safe")
 => END
 
 ~ book
+set GlobalTimer.add_log_entry("start Dialogue: book")
 Robo: Interessant, hier sind Visitenkarten.
+set GlobalTimer.add_log_entry("end Dialogue: book")
 => END
 
 ~ florist
+set GlobalTimer.add_log_entry("start Dialogue: florist")
 Robo: Welches Interesse könnte der Florist an einem Gemälde haben?
+set GlobalTimer.add_log_entry("end Dialogue: florist")
 => END
 
 ~ elektrikerin
+set GlobalTimer.add_log_entry("start Dialogue: elektrikerin")
 Robo: Welches Interesse könnte die Elektrikerin an einem Gemälde haben?
+set GlobalTimer.add_log_entry("end Dialogue: elektrikerin")
 => END
 
 ~ kunsthaendler
+set GlobalTimer.add_log_entry("start Dialogue: kunsthaendler")
 Robo: Komisch, da scheint eine Ecke abgerissen zu sein.
 Robo: Ich nehme die Karte mal mit.
 if Global.Paper_collected == false
 	Robo: Vielleicht finde ich den Schnipsel ja noch.
 set Global.Card_collected = true
 do hide_card()
+set GlobalTimer.add_log_entry("end Dialogue: kunsthaendler")
 => END
 
 ~ pixeleditor
+set GlobalTimer.add_log_entry("start Dialogue: pixeleditor")
 Robo: Dann müssen wir die fehlenden Pixel wohl manuell hinzufügen.
 Robo: In Bildschirmen werden Pixel mit 0 und 1 codiert.
+set GlobalTimer.add_log_entry("end Dialogue: pixeleditor")
 => frage1
 
 ~ frage1
+set GlobalTimer.add_log_entry("start Dialogue: frage1")
 Robo: 0 heißt Licht aus. Welche Farbe ist das dann?
 - weiß
+	set GlobalTimer.add_log_entry("start Dialogue: frage1 -> weiß")
 	Robo: Nein, überleg noch einmal.
+	set GlobalTimer.add_log_entry("end Dialogue: frage1 -> weiß")
 	=> frage1
 - schwarz
+	set GlobalTimer.add_log_entry("start Dialogue: frage1 -> schwarz")
 	Robo: Genau!
+	set GlobalTimer.add_log_entry("end Dialogue: frage1 -> schwarz")
 => frage2
 
 ~ frage2
+set GlobalTimer.add_log_entry("start Dialogue: frage2")
 Robo: 1 heißt Licht an. Welche Farbe ist das dann?
 - weiß
+	set GlobalTimer.add_log_entry("start Dialogue: frage2 -> weiß")
 	Robo: Genau!
+	set GlobalTimer.add_log_entry("end Dialogue: frage2 -> weiß")
 - schwarz
+set GlobalTimer.add_log_entry("start Dialogue: frage2 -> schwarz")
 	Robo: Nein, überleg noch einmal.
+	set GlobalTimer.add_log_entry("end Dialogue: frage2 -> schwarz")
 	=> frage2
 => END
 
 ~ paper
+set GlobalTimer.add_log_entry("start Dialogue: paper")
 Robo: Das sieht mir nach einem Schnipsel von einem QR-Code aus.
 Robo: Ich nehme es mal mit.
+set GlobalTimer.add_log_entry("end Dialogue: paper")
 set Global.Paper_collected = true
 => END
 
 ~ false_solution
+set GlobalTimer.add_log_entry("start Dialogue: false_solution")
 Robo: Das scheint nicht die Webseite des Kunsthändlers zu sein.
 Robo: Wahrscheinlich war das der falsche QR-Code.
+set GlobalTimer.add_log_entry("end Dialogue: false_solution")
 set Global.button_label_stage = "Pixel ändern"
 => END
 
 ~ correct_solution
+set GlobalTimer.add_log_entry("start Dialogue: correct_solution")
 Robo: Perfekt! Das ist die Webseite des Kunsthändlers.
 Robo: Hier finde ich bestimmt seine Kontaktdaten, um ihn zu überführen!
 Robo: Ich werde es sofort dem Inspektor berichten!
+set GlobalTimer.add_log_entry("end Dialogue: correct_solution")
 do get_tree().change_scene_to_file("res://Scenes/office.tscn")
 => END
 
 ~ end_scene
+set GlobalTimer.add_log_entry("start Dialogue: end_scene")
 Inspector: Vielen Dank für deine Hilfe Robo!
 Inspector: Der Kunsthändler hatte das Gemälde gestohlen.
 Robo: Konnte es wiedergefunden werden?
 Inspector: Zum Glück ja.
 Inspector: Du warst eine große Hilfe!
 Inspector: Wie schwer fandest du den Fall?
+set GlobalTimer.add_log_entry("end Dialogue: ens_scene")
 - Einfach.
+	set GlobalTimer.add_log_entry("Auswertung: einfach")
 	set Global.Difficult = "einfach"
 	=> second_question
 - Mittel.
+	set GlobalTimer.add_log_entry("Auswertung: mittel")
 	set Global.Difficult = "mittel"
 		=> second_question
 - Schwer.
+	set GlobalTimer.add_log_entry("Auswertung: schwer")
 	set Global.Difficult = "schwer"
 		=> second_question
 
 ~ second_question
 Inspector: Hat dir der Fall Spaß gemacht?
 - Ja!
+	set GlobalTimer.add_log_entry("Auswertung: ja, spaß")
 	set Global.Fun = "ja"
 	do show_end_animal()
 	=> END
 - Nein.
+	set GlobalTimer.add_log_entry("Auswertung: kein spaß")
 	set Global.Fun = "nein"
 	do show_end_animal()
 	=> END

@@ -15,6 +15,7 @@ var columns = 8
 var solution = "10100010" + "00000001" + "11100011" + "10100110" + "11100011" + "00000010" + "00100001" + "11001100"
 
 func _on_ready() -> void:
+	GlobalTimer.add_log_entry("entered scene: tatort")
 	zoom_out.visible = false
 	book.visible = false
 	safe.visible = false

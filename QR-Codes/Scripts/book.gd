@@ -7,6 +7,7 @@ extends Node2D
 
 func _on_ready() -> void:
 	DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "book")
+	GlobalTimer.add_log_entry("entered scene: book")
 	#show_card(Global.Card1_collected, card1)
 	#show_card(Global.Card2_collected, card2)
 	#show_card(Global.Card3_collected, card3)

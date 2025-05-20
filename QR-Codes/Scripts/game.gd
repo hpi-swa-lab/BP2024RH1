@@ -13,6 +13,7 @@ var solution: String = "10100010" + "00000001" + "11100011" + "10100110" + "1110
 var correct_solution: bool = true
 
 func _ready() -> void:
+	GlobalTimer.add_log_entry("entered scene: game")
 	randomize()
 	#if Global.Options == 1:
 	#	solution = "11111111" + "11111111" + "10011111" + "00000000" + "00001101" + "10011111" + "11111111" + "11111111"
