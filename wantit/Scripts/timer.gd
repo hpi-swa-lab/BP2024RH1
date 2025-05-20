@@ -53,7 +53,8 @@ func export_analytics():
 	var combindedAnalytics = {
 		"timers": Times,
 		"logs": Log,
-		"case": Globals.selectedCase.CaseName
+		"case": Globals.selectedCase.CaseName,
+		"timestamp": Time.get_unix_time_from_system(),
 	}
 	
 	var json_data = JSON.stringify(combindedAnalytics)
