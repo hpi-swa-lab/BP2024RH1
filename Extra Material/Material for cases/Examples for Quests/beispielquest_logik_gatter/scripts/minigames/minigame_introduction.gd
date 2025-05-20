@@ -19,7 +19,7 @@ var explanation: Array[Label]
 @onready var good_job: TextureRect = $Good_job
 
 func _ready() -> void:
-	GlobalTimer.start_timer("Logik Gatter Mini Games")
+	GlobalTimer.add_log_entry("entered scene: minigame_introduction")
 	explanation = [
 		explanation_start,
 		explanation_connection,

@@ -1,34 +1,46 @@
 ~ start
+set GlobalTimer.add_log_entry("start Dialogue: start")
 Du: Stromausfall! Ich muss schnell zum SICHERUNGSKASTEN.
+set GlobalTimer.add_log_entry("end Dialogue: start")
 => END
 
 ~ computerError
+set GlobalTimer.add_log_entry("start Dialogue: computerError")
 Du: Der Computer hat keinen Strom.
+set GlobalTimer.add_log_entry("end Dialogue: computerError")
 => END
 
 ~ computerError2
+set GlobalTimer.add_log_entry("start Dialogue: computerError2")
 if Global.akt2_first_tech_item_dialogue:
 	Du: Das Internet funktioniert nicht, weil einer unserer Router gehackt wurde. 
 	Du: Wenn ich den gehackten Router finde, hat er die IP-Adresse des Täters vielleicht noch gespeichert.
 	set Global.akt2_first_tech_item_dialogue = false
 else: 
 	Du: Der Computer hat kein Internet.
+set GlobalTimer.add_log_entry("end Dialogue: computerError2")
 => END
 
 ~ routerError
+set GlobalTimer.add_log_entry("start Dialogue: routerError")
 Du: Der Router hat keinen Strom.
+set GlobalTimer.add_log_entry("end Dialogue: routerError")
 => END
 
 ~ electricityBox
+set GlobalTimer.add_log_entry("start Dialogue: electricityBox")
 Du: Stromkasten gefunden! Jetzt muss ich aufpassen bei den Sicherungen.
 - Strom reparieren => startMinigameIntroduction
 
 ~ startMinigameIntroduction
+set GlobalTimer.add_log_entry("end Dialogue: electricityBox")
 do Global.startMinigameIntroduction()
 => END
 
 ~ introRouterError
+set GlobalTimer.add_log_entry("start Dialogue: introRouterError")
 Du: Damit geht der Strom wieder, sehr gut! Aber die Computer scheinen Probleme zu haben.
+set GlobalTimer.add_log_entry("end Dialogue: introRouterError")
 => END
 
 ~ investigatePC
@@ -36,18 +48,27 @@ Du: Damit geht der Strom wieder, sehr gut! Aber die Computer scheinen Probleme z
 => END
 
 ~ investigateRouter1
+set GlobalTimer.add_log_entry("start Dialogue: investigateRouter1")
 Du: Sieht gut aus.
+set GlobalTimer.add_log_entry("end Dialogue: investigateRouter1")
 => END
 ~ investigateRouter2
+set GlobalTimer.add_log_entry("start Dialogue: investigateRouter2")
 Du: Sieht auch gut aus, ist aber falsch verkabelt.
+set GlobalTimer.add_log_entry("end Dialogue: investigateRouter2")
 => END
 ~ investigateRouter3
+set GlobalTimer.add_log_entry("start Dialogue: investigateRouter3")
 Du: Betroffen, aber nicht die Quelle.
+set GlobalTimer.add_log_entry("end Dialogue: investigateRouter3")
 => END
 ~ investigateRouter4
+set GlobalTimer.add_log_entry("start Dialogue: investigateRouter4")
 Du: Läuft fehlerfrei. 
+set GlobalTimer.add_log_entry("end Dialogue: investigateRouter4")
 => END
 ~ investigateRouter5
+set GlobalTimer.add_log_entry("start Dialogue: investigateRouter5")
 Du: Hier haben wir den Übeltäter. Jetzt rebooten und neu verkabeln, danach sollte ich wissen wer das hier verbrochen hat.
 - WLAN reparieren => neuerTeil
 => END
@@ -58,18 +79,25 @@ Du: Hier haben wir den Übeltäter. Jetzt rebooten und neu verkabeln, danach sol
 #=> END
 
 ~ act2PuzzleInfo1
+set GlobalTimer.add_log_entry("start Dialogue: act2PuzzleInfo1")
 Du: Aufgepasst, bei mehr als 3 Quellen überlastet das Netz.
+set GlobalTimer.add_log_entry("end Dialogue: act2PuzzleInfo1")
 => END
 
 ~ act2PuzzleInfo2
+set GlobalTimer.add_log_entry("start Dialogue: act2PuzzleInfo2")
 Du: Du versuchst gerade mehr als 3 Quellen zu benutzen.
+set GlobalTimer.add_log_entry("start Dialogue: act2PuzzleInfo2")
 => act2PuzzleInfo1
 
 ~ act2PuzzleFinished
+set GlobalTimer.add_log_entry("start Dialogue: act2PuzzleFinished")
 Du: Hier ist die IP-Adresse!
+set GlobalTimer.add_log_entry("end Dialogue: act2PuzzleFinished")
 => neuererTeil
 
 ~ neuerTeil
+set GlobalTimer.add_log_entry("end Dialogue: investigateRouter5")
 do Global.startMinigame2()
 => END
 
@@ -78,6 +106,7 @@ do Global.startEnd()
 => END
 
 ~ end_scene
+set GlobalTimer.add_log_entry("start Dialogue: end_scene")
 Inspector: Perfekt, ab hier übernehme ich. Vielen dank für deine Hilfe!
 Inspector: Wie schwer fandest du den Fall?
 - Einfach.
@@ -95,8 +124,12 @@ Inspector: Hat dir der Fall Spaß gemacht?
 - Ja!
 	set Global.Fun = "ja"
 	do show_animal()
+	set GlobalTimer.add_log_entry("end Dialogue: end_scene")
+	set GlobalTimer.export_analytics()
 	=> END
 - Nein.
 	set Global.Fun = "nein"
 	do show_animal()
+	set GlobalTimer.add_log_entry("end Dialogue: end_scene")
+	set GlobalTimer.export_analytics()
 	=> END
