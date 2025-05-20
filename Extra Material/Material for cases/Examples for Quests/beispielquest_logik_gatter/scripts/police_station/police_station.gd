@@ -8,7 +8,7 @@ var Start_Dialougue_Shown: bool = false
 @onready var dark_mode_blackout: Sprite2D = $Dark_Mode_Blackout
 
 func _ready() -> void:
-	GlobalTimer.start_timer("Logik Gatter Full Game")
+		GlobalTimer.add_log_entry("entered scene: akt_1")
 
 func _on_helpsys_questionmark_found() -> void:
 	if Questionmark_Found:
