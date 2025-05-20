@@ -40,11 +40,13 @@ func update_inventory():
 		add_item(GlobalInventory.Items[item])
 		
 func show_inventory():
+	GlobalTimer.add_log_entry("entered scene: inventory")
 	%Control.show()
 	opened = true
 	%Button.text = "Schließen"
 	
 func hide_inventory():
+	GlobalTimer.add_log_entry("closed scene: inventory")
 	%Control.hide()
 	opened = false
 	%Button.text = "Inventar"

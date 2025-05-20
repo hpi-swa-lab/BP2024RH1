@@ -3,6 +3,8 @@ extends Control
 func _ready() -> void:
 	load_CaseBoard_Picture()
 	add_basic_cases()
+
+	GlobalTimer.add_log_entry("entered scene: office")
 	
 	if not Globals.OfficeDialogueDone:
 		if Globals.selectedCase == null:

@@ -15,6 +15,7 @@ func _ready() -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton: #is_action_pressed("left_click"):	
 		print("Fragezeichen geklickt")
+		GlobalTimer.add_log_entry("entered scene: helpsystem")
 		#event.accept()
 		visible = false
 		emit_signal("display_helpscreen")

@@ -67,4 +67,5 @@ func _on_close_btn_gui_input(event: InputEvent) -> void:
 		visible = false
 		emit_signal("display_question_mark")
 	# delay until helpscreen can be used again (einblenden or disable) emit signal
+		GlobalTimer.add_log_entry("closed scene: helpsystem")
 		print("close_btn") 

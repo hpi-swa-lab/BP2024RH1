@@ -13,6 +13,7 @@ var errors: Array[bool] = []
 var iteration_completed: bool = false
 
 func _ready() -> void:
+	GlobalTimer.start_timer("minigame 2")
 	CaseManager.CaseGlobals.current_scene = "minigame_2"
 	
 	LabelText[0] = "Fingerabdruck eines Angestellten."
@@ -74,7 +75,7 @@ func check_Answers():
 		%FinishButton.show()
 	else:
 		%ExplanationLabel.text = "Klicke auf die Fehlermeldung, um mehr zu erfahren!"
-		initialize_messages()	
+		initialize_messages()
 
 func has_no_errors() -> bool:
 	for error in errors:
@@ -182,4 +183,5 @@ func _on_finish_button_pressed() -> void:
 	Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
 	Globals.OfficeDialogueStart = "finish"
 	Globals.OfficeDialogueDone = false
+	GlobalTimer.end_timer("minigame 2")
 	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
