@@ -54,7 +54,7 @@ func export_analytics():
 		"timers": Times,
 		"logs": Log,
 		"case": "Pixel",
-		"timestamp": Time.get_unix_time_from_system(),
+		"timestamp": Time.get_datetime_string_from_system(true),
 	}
 	
 	var json_data = JSON.stringify(combindedAnalytics)
