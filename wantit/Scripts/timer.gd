@@ -5,6 +5,12 @@ extends Node
 # Look at the scene as how to use it - By default the name of the Global should be GlobalTimer ig.
 
 var Times = {}
+var Log = {}
+
+func add_log_entry(EntryName: String):
+	var time = Time.get_ticks_msec() / 1000.0
+	Log[EntryName] = time
+	print("Log for " + EntryName + " at " + str(time))
 
 func start_timer(TimerName: String):	#You need to end the timer to restart it
 	var time = Time.get_ticks_msec() / 1000.0
@@ -31,4 +37,10 @@ func print_times() -> String:
 	var returnString = ""
 	for timer in Times.keys():
 		returnString += timer + ": " + str(Times[timer]) + "\n"
+	return returnString
+	
+func print_log() -> String:
+	var returnString = ""
+	for log in Log.keys():
+		returnString += log + ": " + str(Log[log]) + "\n"
 	return returnString

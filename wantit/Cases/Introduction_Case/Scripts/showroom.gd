@@ -7,6 +7,7 @@ func _ready() -> void:
 	var Inventory = GlobalInventory.get_inventory()
 	add_child(Inventory)
 	print (CaseManager.CaseGlobals.showroom_intro_shown)
+	GlobalTimer.add_log_entry("entered scene: showroom")
 	
 	if CaseManager.CaseGlobals.showroom_intro_shown == false:
 		helpsystem_timer.paused = true

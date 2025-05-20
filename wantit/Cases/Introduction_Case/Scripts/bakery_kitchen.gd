@@ -10,6 +10,8 @@ func _ready() -> void:
 	if not GlobalTimer.timer_active("flour"):
 		GlobalTimer.start_timer("flour")
 		
+	GlobalTimer.add_log_entry("entered scene: bakery_kitchen")
+		
 	if not GlobalTimer.timer_active("shoeprints_bakery"):
 		GlobalTimer.start_timer("shoeprints_bakery")
 	

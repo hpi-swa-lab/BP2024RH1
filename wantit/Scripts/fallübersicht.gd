@@ -3,6 +3,7 @@ extends Node2D
 func _ready() -> void:
 	for Case in CaseManager.CaseList:
 		load_Case(CaseManager.CaseList[Case])
+		GlobalTimer.add_log_entry("entered scene: falluebersicht")
 
 func load_Case(Case: CaseManager.Case) -> void:
 	var newCase = Button.new()
