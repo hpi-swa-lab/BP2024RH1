@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://d4dl55jbrqxrf"
+path="res://.godot/imported/Inventar.dialogue-4ce7ef2999db5cbaa74194b7469105ac.tres"
+
+[deps]
+
+source_file="res://dialogues/Inventar.dialogue"
+dest_files=["res://.godot/imported/Inventar.dialogue-4ce7ef2999db5cbaa74194b7469105ac.tres"]
+
+[params]
+
+defaults=true

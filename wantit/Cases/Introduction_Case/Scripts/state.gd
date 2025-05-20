@@ -4,7 +4,7 @@ extends Node
 var current_scene: String
 
 # var total_clues: int = 9
-var all_clues_found_scene = load("res://Cases/Introduction_Case/scenes/bakery_kitchen.tscn")
+var all_clues_found_scene = load("res://Cases/Introduction_Case/Scenes/bakery_kitchen.tscn")
 
 var showroom_intro_shown: bool = false
 
@@ -37,5 +37,4 @@ var fingerprints_saved: bool = false
 
 func get_hints() -> Array:
 	var hints: Array = [key_collected, door_inspected, waffle_collected, traces_in_bakery_inspected, flour_sack_inspected, traces_in_office_inspected, screwdriver_collected, pliers_collected, fingerprints_saved]
-	print(hints)
 	return hints

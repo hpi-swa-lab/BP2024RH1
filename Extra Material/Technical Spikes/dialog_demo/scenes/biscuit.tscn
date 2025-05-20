@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://1qon8srtld7"]
+
+[ext_resource type="Script" uid="uid://cesheh8hwef14" path="res://scripts/biscuit.gd" id="1_ug7ah"]
+[ext_resource type="Texture2D" uid="uid://cp3ex7l6m3bsj" path="res://assets/cat_sleeping.png" id="2_7b2ar"]
+
+[node name="Biscuit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ug7ah")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_7b2ar")
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]

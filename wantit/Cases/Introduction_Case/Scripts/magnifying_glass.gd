@@ -5,10 +5,10 @@ var alreadyPressed: bool = false
 signal searching(start: bool)
 
 func _ready() -> void:
-	cursor = load("res://Assets/magnifying-glass.png").get_image()
+	cursor = texture_normal.get_image()
 
 func _on_button_down() -> void:
-	cursor.resize(80, 80)
+	cursor.resize(100, 100)
 	Input.set_custom_mouse_cursor(cursor)
 	searching.emit(true)
 

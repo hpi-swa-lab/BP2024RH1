@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dobh0dh6l2t8n"]
+
+[ext_resource type="Script" uid="uid://bx6jhr8nuu1pl" path="res://logik_gatter/scripts/Baukasten/start_for_two.gd" id="1_cwa7p"]
+
+[node name="StartForTwo" type="CheckButton"]
+text = "Quelle Aus"
+script = ExtResource("1_cwa7p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.36, 0.20934, 0.0684, 0.435294)
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

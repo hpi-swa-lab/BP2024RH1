@@ -1,0 +1,118 @@
+[gd_scene load_steps=12 format=3 uid="uid://cotigpvpcwpql"]
+
+[ext_resource type="Script" uid="uid://wvmhdeebo0w0" path="res://Scripts/character_selection.gd" id="1_fm6ub"]
+[ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="1_i3nxn"]
+[ext_resource type="PackedScene" uid="uid://sabcryroa0cu" path="res://Scenes/portrait.tscn" id="2_235bc"]
+[ext_resource type="Texture2D" uid="uid://dd6rwrkwwn8r6" path="res://Assets/young_detective.jpg" id="3_mdkri"]
+[ext_resource type="Texture2D" uid="uid://g570nk1nhr5d" path="res://Assets/robot.jpg" id="4_0txfd"]
+[ext_resource type="Texture2D" uid="uid://d2dtoa1rqmf1q" path="res://Assets/robot2.jpg" id="5_6qipo"]
+[ext_resource type="Texture2D" uid="uid://b0leevnxnacu4" path="res://Assets/boy_detective.jpg" id="6_0d3xi"]
+[ext_resource type="Texture2D" uid="uid://bje4qrip6ls6u" path="res://Assets/female_detective2.jpg" id="7_awt4j"]
+[ext_resource type="Texture2D" uid="uid://d2gti6y1bnuqm" path="res://Assets/female_detective1.jpg" id="8_a2e1g"]
+[ext_resource type="Texture2D" uid="uid://dlyqpo1k14j3i" path="res://Assets/old_detective.jpg" id="9_5ow1g"]
+[ext_resource type="Texture2D" uid="uid://tegggankyql2" path="res://Assets/robot3.jpg" id="10_8eyk7"]
+
+[node name="Character_Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fm6ub")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -200.0
+offset_right = 328.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.993521, 1.00535)
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 100
+columns = 4
+
+[node name="Portrait" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("3_mdkri")
+
+[node name="Portrait7" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("4_0txfd")
+
+[node name="Portrait8" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("5_6qipo")
+
+[node name="Portrait2" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("6_0d3xi")
+
+[node name="Portrait3" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("7_awt4j")
+
+[node name="Portrait4" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("8_a2e1g")
+
+[node name="Portrait5" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("9_5ow1g")
+
+[node name="Portrait6" parent="GridContainer" instance=ExtResource("2_235bc")]
+layout_mode = 2
+icon = ExtResource("10_8eyk7")
+
+[node name="SceneSwitcherButton" parent="." instance=ExtResource("1_i3nxn")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.5
+offset_top = -86.0
+offset_right = 57.5
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+Text = "Auswählen"
+NextSceneString = "büro"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.5
+offset_top = 38.0
+offset_right = 186.5
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Wähle einen Charakter aus:"
+
+[connection signal="pressed" from="GridContainer/Portrait" to="GridContainer/Portrait" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait7" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait7" to="." method="_on_portrait_7_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait8" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait8" to="." method="_on_portrait_8_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait2" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait2" to="." method="_on_portrait_2_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait3" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait3" to="." method="_on_portrait_3_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait4" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait4" to="." method="_on_portrait_4_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait5" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait5" to="." method="_on_portrait_5_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait6" to="." method="_on_portrait_pressed"]
+[connection signal="pressed" from="GridContainer/Portrait6" to="." method="_on_portrait_6_pressed"]

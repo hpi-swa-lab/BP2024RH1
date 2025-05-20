@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c72qq08n0xu80"
+path="res://.godot/imported/tap-b.ogg-b691a0b401296b3ae1460657e954f6e0.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney/Kenney UI Pack/Sounds/tap-b.ogg"
+dest_files=["res://.godot/imported/tap-b.ogg-b691a0b401296b3ae1460657e954f6e0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

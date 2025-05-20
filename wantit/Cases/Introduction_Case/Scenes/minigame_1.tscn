@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bsrqm82ifqt23" path="res://Cases/Introduction_Case/Scenes/control_panel.tscn" id="5_ne1wf"]
 [ext_resource type="Texture2D" uid="uid://bros46xum17n" path="res://Cases/Introduction_Case/assets/minigame1/photo_fingerprints.png" id="6_wa13m"]
 [ext_resource type="Texture2D" uid="uid://cte66c41s6312" path="res://Cases/Introduction_Case/assets/minigame1/bag_pliers.png" id="7_vae77"]
-[ext_resource type="Texture2D" uid="uid://b3bvsyfrfrcvg" path="res://Assets/magnifying-glass.png" id="10_a0wop"]
-[ext_resource type="Script" path="res://Cases/Introduction_Case/Scripts/magnifying_glass.gd" id="10_wq7o3"]
+[ext_resource type="Texture2D" uid="uid://ervlrutkdb2d" path="res://Cases/Introduction_Case/assets/minigame1/magnifying_glass.png" id="10_6t3is"]
+[ext_resource type="Script" uid="uid://dlau6cnxv54l" path="res://Cases/Introduction_Case/Scripts/magnifying_glass.gd" id="10_wq7o3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5txvl")
@@ -183,10 +183,10 @@ offset_left = 60.0
 offset_top = 49.0
 offset_right = 572.0
 offset_bottom = 561.0
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("10_a0wop")
-texture_pressed = ExtResource("10_a0wop")
-texture_hover = ExtResource("10_a0wop")
+scale = Vector2(0.0409883, 0.0409883)
+texture_normal = ExtResource("10_6t3is")
+texture_pressed = ExtResource("10_6t3is")
+texture_hover = ExtResource("10_6t3is")
 script = ExtResource("10_wq7o3")
 
 [node name="description" type="Control" parent="."]

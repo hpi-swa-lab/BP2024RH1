@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://h6fwhyygn64k"]
+
+[ext_resource type="Texture2D" uid="uid://bokbhtv4e4his" path="res://assets/places/multiple_office.jpg" id="1_80rwx"]
+[ext_resource type="Script" uid="uid://dju8n5ctxlyha" path="res://scripts/places/big_office.gd" id="1_y8sb3"]
+[ext_resource type="Texture2D" uid="uid://bqvevd3fn3iuu" path="res://assets/objects/desktop.png" id="3_cgmxh"]
+[ext_resource type="Texture2D" uid="uid://cfj7o3thne24e" path="res://assets/objects/router2.png" id="4_cgmxh"]
+
+[node name="BigOffice" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_y8sb3")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 640.0
+texture = ExtResource("1_80rwx")
+
+[node name="Computer1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 213.0
+offset_right = 657.0
+offset_bottom = 725.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_cgmxh")
+
+[node name="Computer2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 70.0
+offset_right = 1205.0
+offset_bottom = 582.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_cgmxh")
+
+[node name="Computer3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 17.0
+offset_right = 836.0
+offset_bottom = 529.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_cgmxh")
+
+[node name="Router1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 54.0
+offset_right = 1026.0
+offset_bottom = 566.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("4_cgmxh")
+
+[node name="Router2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 355.0
+offset_right = 567.0
+offset_bottom = 867.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("4_cgmxh")
+
+[node name="Router3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 154.0
+offset_right = 1523.0
+offset_bottom = 666.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("4_cgmxh")
+
+[connection signal="pressed" from="Computer1" to="." method="_on_computer_1_pressed"]
+[connection signal="pressed" from="Computer2" to="." method="_on_computer_2_pressed"]
+[connection signal="pressed" from="Computer3" to="." method="_on_computer_3_pressed"]
+[connection signal="pressed" from="Router1" to="." method="_on_router_1_pressed"]
+[connection signal="pressed" from="Router2" to="." method="_on_router_2_pressed"]
+[connection signal="pressed" from="Router3" to="." method="_on_router_3_pressed"]

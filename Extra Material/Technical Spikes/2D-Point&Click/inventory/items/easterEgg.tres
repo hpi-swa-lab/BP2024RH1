@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://chh6i2cva5w3x"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_rjpru"]
+[ext_resource type="Texture2D" uid="uid://cpfe30wyh4kbm" path="res://images/Bild1.png" id="2_idrsd"]
+
+[resource]
+script = ExtResource("1_rjpru")
+name = "easterEgg"
+texture = ExtResource("2_idrsd")

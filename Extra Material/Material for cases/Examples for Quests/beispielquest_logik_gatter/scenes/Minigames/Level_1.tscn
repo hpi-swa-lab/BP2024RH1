@@ -1,0 +1,240 @@
+[gd_scene load_steps=10 format=3 uid="uid://v8eg0wvcs4ea"]
+
+[ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://logik_gatter/scenes/Baukasten/Start.tscn" id="1_4vy14"]
+[ext_resource type="Script" uid="uid://ch3hunh08n8eo" path="res://scripts/minigames/level_1.gd" id="1_nujbg"]
+[ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://logik_gatter/scenes/Baukasten/Gatter/And_Gatter.tscn" id="2_nujbg"]
+[ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://logik_gatter/scenes/Baukasten/Gatter/Or_Gatter.tscn" id="3_gsj6i"]
+[ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://logik_gatter/scenes/Baukasten/Ziel.tscn" id="4_i7jti"]
+[ext_resource type="Texture2D" uid="uid://genn6of8icim" path="res://logik_gatter/assets/lampe_an.png" id="5_uxhvd"]
+[ext_resource type="Texture2D" uid="uid://xmv2tryc7wd8" path="res://logik_gatter/assets/lampe_aus.png" id="6_3c18i"]
+[ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://logik_gatter/scenes/Baukasten/connection.tscn" id="7_froun"]
+[ext_resource type="Texture2D" uid="uid://bl3lno0iqtix" path="res://assets/objects/triangle.png" id="9_gsj6i"]
+
+[node name="Level1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nujbg")
+
+[node name="Ziel" parent="." node_paths=PackedStringArray("input_connection") instance=ExtResource("4_i7jti")]
+position = Vector2(1064, 328)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_3c18i")
+input_connection = NodePath("../connections/Connection_AndMid_Ziel")
+lv_complete_picture = ExtResource("5_uxhvd")
+lv_not_complete_picture = ExtResource("6_3c18i")
+
+[node name="Starts" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start_OrLeft_1" parent="Starts" node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 480.0
+offset_right = 195.0
+offset_bottom = 511.0
+output_connection = NodePath("../../connections/Connection_Input_OrLeft_1")
+
+[node name="Start_OrRight" parent="Starts" node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 56.0
+offset_right = 755.0
+offset_bottom = 87.0
+output_connection = NodePath("../../connections/Connection_Input_OrRight")
+
+[node name="Start_AndRight" parent="Starts" node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 552.0
+offset_right = 755.0
+offset_bottom = 583.0
+output_connection = NodePath("../../connections/Connection_Input__AndRight")
+
+[node name="Start_OrLeft_2" parent="Starts" node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 552.0
+offset_right = 299.0
+offset_bottom = 583.0
+output_connection = NodePath("../../connections/Connection_Input_OrLeft_2")
+
+[node name="Start_AndLeft_2" parent="Starts" node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 192.0
+offset_right = 155.0
+offset_bottom = 223.0
+output_connection = NodePath("../../connections/Connection_Input_AndLeft_2")
+
+[node name="Start_AndLeft_1" parent="Starts" node_paths=PackedStringArray("output_connection") instance=ExtResource("1_4vy14")]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 56.0
+offset_right = 299.0
+offset_bottom = 87.0
+output_connection = NodePath("../../connections/Connection_Input_AndLeft_1")
+
+[node name="connections" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Connection_AndRight_AndMid" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(840, 352)
+points = PackedVector2Array(-136, 48, 56, 48, 56, 0)
+
+[node name="Connection_OrRight_AndMid" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(832, 192)
+points = PackedVector2Array(-128, 48, 64, 48, 64, 128)
+
+[node name="Connection_AndMid_Ziel" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(904, 296)
+points = PackedVector2Array(16, 40, 112, 40)
+
+[node name="Connection_AndLeft_OrRight" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(368, 176)
+points = PackedVector2Array(-112, 64, 200, 64)
+
+[node name="Connection_OrLeft_AndRight" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(360, 432)
+points = PackedVector2Array(-104, -32, 288, -32)
+
+[node name="Connection_Input_AndLeft_1" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(160, 120)
+points = PackedVector2Array(72, -32, 72, 104)
+
+[node name="Connection_Input_AndLeft_2" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(32, 288)
+points = PackedVector2Array(168, -48, 48, -48, 48, -64)
+
+[node name="Connection_Input_OrLeft_1" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(-30, 440)
+points = PackedVector2Array(160, -24, 160, 40)
+
+[node name="Connection_Input_OrLeft_2" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(160, 512)
+points = PackedVector2Array(72, -96, 72, 40)
+
+[node name="Connection_Input_OrRight" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(600, 152)
+points = PackedVector2Array(88, -64, 88, 72)
+
+[node name="Connection_Input__AndRight" parent="connections" instance=ExtResource("7_froun")]
+position = Vector2(616, 480)
+points = PackedVector2Array(72, -64, 72, 72)
+
+[node name="Gatter" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AndLeft" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("2_nujbg")]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 224.0
+offset_right = 257.0
+offset_bottom = 255.0
+input_connection_1 = NodePath("../../connections/Connection_Input_AndLeft_1")
+input_connection_2 = NodePath("../../connections/Connection_Input_AndLeft_2")
+output_connection = NodePath("../../connections/Connection_AndLeft_OrRight")
+
+[node name="OrLeft" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("3_gsj6i")]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 384.0
+offset_right = 255.0
+offset_bottom = 415.0
+input_connection_1 = NodePath("../../connections/Connection_Input_OrLeft_1")
+input_connection_2 = NodePath("../../connections/Connection_Input_OrLeft_2")
+output_connection = NodePath("../../connections/Connection_OrLeft_AndRight")
+
+[node name="AndRight" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("2_nujbg")]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 384.0
+offset_right = 707.0
+offset_bottom = 415.0
+input_connection_1 = NodePath("../../connections/Connection_OrLeft_AndRight")
+input_connection_2 = NodePath("../../connections/Connection_Input__AndRight")
+output_connection = NodePath("../../connections/Connection_AndRight_AndMid")
+
+[node name="OrRight" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("3_gsj6i")]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 224.0
+offset_right = 703.0
+offset_bottom = 255.0
+input_connection_1 = NodePath("../../connections/Connection_AndLeft_OrRight")
+input_connection_2 = NodePath("../../connections/Connection_Input_OrRight")
+output_connection = NodePath("../../connections/Connection_OrRight_AndMid")
+
+[node name="AndMid" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("2_nujbg")]
+layout_mode = 0
+offset_left = 867.0
+offset_top = 320.0
+offset_right = 926.0
+offset_bottom = 351.0
+input_connection_1 = NodePath("../../connections/Connection_OrRight_AndMid")
+input_connection_2 = NodePath("../../connections/Connection_AndRight_AndMid")
+output_connection = NodePath("../../connections/Connection_AndMid_Ziel")
+
+[node name="Arrow" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow"]
+position = Vector2(304, 400)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_gsj6i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrow"]
+position = Vector2(608, 400)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_gsj6i")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Arrow"]
+position = Vector2(304, 240)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_gsj6i")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Arrow"]
+position = Vector2(768, 400)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_gsj6i")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Arrow"]
+position = Vector2(752, 240)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_gsj6i")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Arrow"]
+position = Vector2(520, 240)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_gsj6i")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Arrow"]
+position = Vector2(896, 390)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_gsj6i")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Arrow"]
+position = Vector2(896, 283)
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_gsj6i")
+
+[connection signal="ziel_input_false" from="Ziel" to="." method="_on_ziel_ziel_input_false"]
+[connection signal="ziel_input_true" from="Ziel" to="." method="_on_ziel_ziel_input_true"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk1fc7suond2r"]
+
+[ext_resource type="Script" uid="uid://d3gjfnxbnjekf" path="res://scripts/winkekatze.gd" id="1_jle7p"]
+[ext_resource type="Texture2D" uid="uid://bu7hqvsxydoxn" path="res://assets/waving_cat2.png" id="2_4f776"]
+[ext_resource type="AudioStream" uid="uid://bpmbxi2u4q33g" path="res://assets/sound/mechanical_sound.wav" id="3_q50wv"]
+
+[node name="Winkekatze" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jle7p")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -82.5
+offset_right = 84.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_4f776")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q50wv")
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_button_button_down"]

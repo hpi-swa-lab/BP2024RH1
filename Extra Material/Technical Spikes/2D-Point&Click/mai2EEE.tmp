@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://e2evntc8qmmm"]
+
+[ext_resource type="Texture2D" uid="uid://r72rg2eggcls" path="res://istockphoto-1418628408-612x612.jpg" id="1_3oc6c"]
+[ext_resource type="PackedScene" uid="uid://ctfjbnd0bh6gu" path="res://collectable.tscn" id="2_i7y1f"]
+[ext_resource type="PackedScene" uid="uid://cfdeu2an6hoig" path="res://hiding.tscn" id="3_72rl4"]
+[ext_resource type="Texture2D" uid="uid://cpfe30wyh4kbm" path="res://Bild1.png" id="3_leoax"]
+[ext_resource type="Texture2D" uid="uid://nuft58ouv6dc" path="res://Bild2.png" id="4_lpahi"]
+[ext_resource type="Script" path="res://control_collectable.gd" id="4_n2sol"]
+[ext_resource type="Script" path="res://control_hiding.gd" id="6_ol5qw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1164.0
+offset_bottom = 655.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3oc6c")
+
+[node name="Collectable" parent="." instance=ExtResource("2_i7y1f")]
+texture_filter = 1
+position = Vector2(1039, 574)
+
+[node name="Hiding" parent="." instance=ExtResource("3_72rl4")]
+texture_filter = 1
+position = Vector2(784, 500)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 711.0
+offset_top = 382.0
+offset_right = 819.0
+offset_bottom = 484.0
+script = ExtResource("4_n2sol")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(-596, 164)
+texture = ExtResource("3_leoax")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 711.0
+offset_top = 382.0
+offset_right = 751.0
+offset_bottom = 422.0
+script = ExtResource("6_ol5qw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control2"]
+position = Vector2(-514, 134)
+scale = Vector2(0.31203, 0.31203)
+texture = ExtResource("4_lpahi")

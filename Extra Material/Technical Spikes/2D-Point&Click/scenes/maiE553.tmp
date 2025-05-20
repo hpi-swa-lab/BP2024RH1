@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://e2evntc8qmmm"]
+
+[ext_resource type="Texture2D" uid="uid://r72rg2eggcls" path="res://images/istockphoto-1418628408-612x612.jpg" id="1_1qo2y"]
+[ext_resource type="PackedScene" uid="uid://ctfjbnd0bh6gu" path="res://scenes/collectable.tscn" id="2_fp5at"]
+[ext_resource type="Texture2D" uid="uid://cpfe30wyh4kbm" path="res://images/Bild1.png" id="3_e43m3"]
+[ext_resource type="Texture2D" uid="uid://nuft58ouv6dc" path="res://images/Bild2.png" id="4_atup7"]
+[ext_resource type="Script" path="res://scenes/hiding.gd" id="4_fx40v"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1164.0
+offset_bottom = 655.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1qo2y")
+
+[node name="Hiding" parent="." instance=ExtResource("2_fp5at")]
+texture_filter = 1
+offset_left = 729.0
+offset_top = 350.0
+offset_right = 1067.0
+offset_bottom = 655.0
+texture = ExtResource("4_atup7")
+expand_mode = 1
+script = ExtResource("4_fx40v")
+
+[node name="Collectable" parent="." instance=ExtResource("2_fp5at")]
+texture_filter = 1
+offset_left = 804.0
+offset_top = 450.0
+offset_right = 981.0
+offset_bottom = 618.0
+texture = ExtResource("3_e43m3")

@@ -1,0 +1,84 @@
+~ start
+
+match State.search_status:
+	when "not started"
+		Biscuit: [wave]Z Z z Z[/wave]
+		- Wake the cat. => wake_up
+		- Let him sleep.			
+		=> END
+	when "started"
+		Biscuit: Did you find my mouse?
+		- Not yet. Sorry...
+		=> END
+	when "successful"
+		Biscuit: Did you find my mouse?
+		- Yes. Here you go. => search_successful
+		- Yeah. But I changed my mind. I'll go now.
+			do State.set_emotion("angry")
+			Biscuit: Damn you!!
+			do State.set_emotion("upset")
+			Biscuit: At least give me my mouse back... => end_bad
+	else
+		=> END!
+
+~ wake_up
+do State.wake_up()
+do State.set_emotion("angry")
+Biscuit: Are you serious?
+do State.set_emotion("mad")
+Biscuit: Do you know anything about a good sleep?
+Biscuit: What do you want?
+- I need some information. => talk
+- Nevermind. Sorry for waking you up.
+	Biscuit: Damn you. Get lost and let me sleep... => go_to_sleep
+	
+~ go_to_sleep
+do State.set_emotion("sleeping")
+do State.go_to_sleep()
+=> END!
+
+~ talk
+Biscuit: Not sure why you're asking me...but what is it?
+- Do you know where the cat godess lives?
+	do State.set_emotion("think")
+	Biscuit: Let me think[speed=0.8]...[next=1]
+	do State.set_emotion("mad")
+	Biscuit: Yes! I do know. The question is rather, why do you think I would tell you?
+	- Ehmm...you wouldn't?
+		Biscuit: Not without something good in return.
+		- What do you have in mind?
+			do State.set_emotion("sad")
+			Biscuit: You see, I lost my little mouse toy somewhere here.
+			Biscuit: Without it, my sleep is only half as good.
+			Biscuit: If you could find it for me, I'll maybe give your request a second thought.
+			- Okay, then. I will search every inch of this room.
+				do State.start_search()
+				=> END
+		- Okay, nevermind. You can go back to sleep.
+			Biscuit: Get lost then.[next=2] => go_to_sleep
+			
+~ search_successful
+do State.set_emotion("tears")
+Biscuit: My little little mouse. I missed you soooo much.
+do State.set_emotion("shy")
+Biscuit: Thank you for bringing it back to me.
+- What about my request? Remember?
+	do State.set_emotion("mad")
+	Biscuit: Of course I remember.
+	do State.set_emotion("think")
+	Biscuit: The cat godess...
+	Biscuit: ...
+	Biscuit: She lives right upstairs. 
+	- Thank you!!
+		do State.set_emotion("mad")
+		Biscuit: Yeah yeah...just get lost now!! => end_good
+		
+~ end_good
+do State.end_search()
+do State.set_ending("good")
+=> go_to_sleep
+
+~ end_bad
+do State.end_search()
+do State.set_ending("bad")
+=> END

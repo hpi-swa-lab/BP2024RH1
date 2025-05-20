@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://e2evntc8qmmm"]
+
+[ext_resource type="Texture2D" uid="uid://r72rg2eggcls" path="res://istockphoto-1418628408-612x612.jpg" id="1_3oc6c"]
+[ext_resource type="PackedScene" uid="uid://ctfjbnd0bh6gu" path="res://collectable.tscn" id="2_i7y1f"]
+[ext_resource type="PackedScene" uid="uid://cfdeu2an6hoig" path="res://hiding.tscn" id="3_72rl4"]
+[ext_resource type="Texture2D" uid="uid://cpfe30wyh4kbm" path="res://Bild1.png" id="3_leoax"]
+[ext_resource type="Texture2D" uid="uid://nuft58ouv6dc" path="res://Bild2.png" id="4_lpahi"]
+[ext_resource type="Script" path="res://control_collectable.gd" id="4_n2sol"]
+[ext_resource type="Script" path="res://control_hiding.gd" id="6_ol5qw"]
+[ext_resource type="Script" path="res://area_2d.gd" id="8_lvsnk"]
+[ext_resource type="Script" path="res://area_2d_2.gd" id="10_7l2pa"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1164.0
+offset_bottom = 655.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3oc6c")
+
+[node name="Collectable" parent="." instance=ExtResource("2_i7y1f")]
+visible = false
+texture_filter = 1
+position = Vector2(793, 572)
+
+[node name="Hiding" parent="." instance=ExtResource("3_72rl4")]
+visible = false
+texture_filter = 1
+position = Vector2(919, 501)
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 719.0
+offset_top = 442.0
+offset_right = 827.0
+offset_bottom = 544.0
+mouse_filter = 2
+script = ExtResource("4_n2sol")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(60, 46)
+texture = ExtResource("3_leoax")
+
+[node name="Control2" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 77.0
+offset_top = 452.0
+offset_right = 323.0
+offset_bottom = 660.0
+mouse_filter = 2
+script = ExtResource("6_ol5qw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control2"]
+position = Vector2(134, 84)
+scale = Vector2(0.31203, 0.31203)
+texture = ExtResource("4_lpahi")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("8_lvsnk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(873, 559)
+texture = ExtResource("3_leoax")
+
+[node name="Control" type="Control" parent="Area2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 808.0
+offset_top = 499.0
+offset_right = 918.0
+offset_bottom = 615.0
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("10_7l2pa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+position = Vector2(870.75, 509.75)
+scale = Vector2(0.41627, 0.416219)
+texture = ExtResource("4_lpahi")
+
+[node name="Control" type="Control" parent="Area2D2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 804.0
+offset_top = 512.0
+offset_right = 914.0
+offset_bottom = 628.0
+mouse_filter = 1

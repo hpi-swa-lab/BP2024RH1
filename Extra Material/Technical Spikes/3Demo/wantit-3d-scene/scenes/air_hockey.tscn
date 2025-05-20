@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://vo3e56o6xakx"]
+
+[ext_resource type="Script" path="res://scripts/vending_machine.gd" id="1_7cmay"]
+[ext_resource type="PackedScene" uid="uid://c4m3sn4so58pq" path="res://assets/kenney/GLB format/air-hockey.glb" id="1_bqgap"]
+[ext_resource type="FontFile" uid="uid://c6ibhdq20lcf6" path="res://assets/kenney/Kenney UI Pack/Font/Kenney Future Narrow.ttf" id="2_2vjcs"]
+[ext_resource type="PackedScene" uid="uid://bmji7qiha54yt" path="res://scenes/in_game_ui.tscn" id="3_2krpn"]
+[ext_resource type="Texture2D" uid="uid://caoay4gem3nyt" path="res://assets/kenney/Previews/air-hockey.png" id="4_c2n06"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4saad"]
+size = Vector3(0.103552, 0.258789, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37d5b"]
+size = Vector3(1, 0.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqsr6"]
+size = Vector3(1.6, 1, 1.2)
+
+[node name="Air Hockey" type="StaticBody3D"]
+script = ExtResource("1_7cmay")
+
+[node name="air-hockey2" parent="." instance=ExtResource("1_bqgap")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00103156, 0.370605, 0)
+shape = SubResource("BoxShape3D_4saad")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_37d5b")
+
+[node name="inGameUI" parent="." instance=ExtResource("3_2krpn")]
+MainText = "Man kennt es man liebt es"
+NameText = "Air Hockey!"
+ProfilePicture = ExtResource("4_c2n06")
+
+[node name="ContextCollider" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ContextCollider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0, 0)
+shape = SubResource("BoxShape3D_iqsr6")
+
+[node name="PressLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visibility_range_begin = 1.0
+text = "press: E
+↓"
+font = ExtResource("2_2vjcs")
+font_size = 20
+outline_size = 7

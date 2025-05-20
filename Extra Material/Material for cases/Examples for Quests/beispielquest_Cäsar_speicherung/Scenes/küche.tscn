@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7vl5k21kn3wm"]
+
+[ext_resource type="Script" uid="uid://bpg7868eivfx0" path="res://Scripts/küche.gd" id="1_an7nt"]
+[ext_resource type="Texture2D" uid="uid://qkx15w8lr8ie" path="res://Assets/Küche.png" id="1_mreol"]
+[ext_resource type="Texture2D" uid="uid://cho02avh82141" path="res://Assets/Mikro.png" id="2_an7nt"]
+[ext_resource type="PackedScene" uid="uid://chluu1cjq7fdw" path="res://Scenes/decorative_item.tscn" id="3_3tx35"]
+[ext_resource type="Texture2D" uid="uid://crif1sg30ln8q" path="res://Assets/Papierkorb.png" id="4_esecr"]
+[ext_resource type="PackedScene" uid="uid://jfkrjf40fn0i" path="res://Scenes/item.tscn" id="5_0slcc"]
+[ext_resource type="PackedScene" uid="uid://c8frnlbfnegad" path="res://Scenes/nachricht.tscn" id="7_0slcc"]
+[ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="8_gqy8m"]
+[ext_resource type="PackedScene" uid="uid://dhihuq2yyyy42" path="res://Scenes/reset_button.tscn" id="9_835rn"]
+
+[node name="Küche" type="Node2D"]
+script = ExtResource("1_an7nt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Environment" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hintergrund" type="Sprite2D" parent="Environment"]
+texture = ExtResource("1_mreol")
+
+[node name="Mikrowelle" parent="Environment" instance=ExtResource("3_3tx35")]
+layout_mode = 0
+offset_left = 313.0
+offset_top = -177.0
+offset_right = 524.0
+offset_bottom = -52.0
+icon = ExtResource("2_an7nt")
+dialogue = "Küche"
+dialogue_start = "Mikrowelle"
+
+[node name="Papierkorb" parent="Environment" instance=ExtResource("5_0slcc")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 435.0
+offset_top = 59.0
+offset_right = 583.0
+offset_bottom = 232.0
+icon = ExtResource("4_esecr")
+dialogue = "Küche"
+dialogue_start = "Papierkorb"
+
+[node name="FensterAbdrücke" type="Area2D" parent="Environment"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/FensterAbdrücke"]
+polygon = PackedVector2Array(-372, -270, -474, -229, -446, -95, -325, -69, -268, 203, -110, 130, -133, -78, -38, -78, -22, -252, -108, -293)
+
+[node name="Nachricht" parent="Environment" instance=ExtResource("7_0slcc")]
+unique_name_in_owner = true
+position = Vector2(-440, -16)
+rotation = 0.120428
+scale = Vector2(-0.195582, -0.195582)
+skew = 0.47822
+dialogue = "Küche"
+dialogue_start = "Nachricht"
+
+[node name="SceneSwitcherButton" parent="." instance=ExtResource("8_gqy8m")]
+offset_left = 325.0
+offset_top = 266.0
+offset_right = 397.0
+offset_bottom = 283.0
+Text = "Zurück ins Wohnzimmer"
+NextSceneString = "tatort"
+
+[node name="ResetButton" parent="." instance=ExtResource("9_835rn")]
+offset_left = 443.0
+offset_top = -296.0
+offset_right = 494.0
+offset_bottom = -265.0
+
+[connection signal="pressed" from="Environment/Papierkorb" to="." method="_on_papierkorb_pressed"]
+[connection signal="input_event" from="Environment/FensterAbdrücke" to="." method="_on_fenster_abdrücke_input_event"]

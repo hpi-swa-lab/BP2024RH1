@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://28872u3abrny"]
+
+[ext_resource type="Texture2D" uid="uid://b6lwqw7iq63vp" path="res://scenes/intro_scenes/background.tres" id="1_swchb"]
+[ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_tw33j"]
+[ext_resource type="PackedScene" uid="uid://dt42cofor3old" path="res://scenes/game_window.tscn" id="2_qykaf"]
+[ext_resource type="Texture2D" uid="uid://c0ij5ju40gesu" path="res://assets/buttons/play.png" id="5_ubjxq"]
+[ext_resource type="Texture2D" uid="uid://dr5sxwmjxr6fx" path="res://assets/buttons/quickplay.png" id="6_ot7ka"]
+[ext_resource type="Texture2D" uid="uid://ds0dlhxrmwyly" path="res://assets/building1.svg" id="10_p3v5n"]
+[ext_resource type="Texture2D" uid="uid://c0ov3kqwmo4i" path="res://assets/building2.svg" id="11_nkpif"]
+[ext_resource type="Texture2D" uid="uid://q1dvub2bi2xt" path="res://assets/cloud1.svg" id="12_m513n"]
+[ext_resource type="Texture2D" uid="uid://bfeuvm6iuaq2p" path="res://assets/cloud2.svg" id="13_et2ix"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_tw33j")
+play_scene = ExtResource("2_qykaf")
+quick_play_scene = ExtResource("2_qykaf")
+goose_height_offset = 30
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_swchb")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_ubjxq")
+flat = true
+
+[node name="QuickplayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+icon = ExtResource("6_ot7ka")
+flat = true
+
+[node name="Building 1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -248.0
+offset_right = 166.0
+offset_bottom = 340.0
+grow_vertical = 0
+texture = ExtResource("10_p3v5n")
+
+[node name="Building 2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = -104.0
+offset_right = 245.0
+offset_bottom = 389.0
+grow_vertical = 0
+texture = ExtResource("11_nkpif")
+
+[node name="Cloud 1" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 160.0
+offset_top = 104.0
+offset_right = 327.0
+offset_bottom = 186.0
+texture = ExtResource("12_m513n")
+
+[node name="Cloud 2" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 448.0
+offset_top = 24.0
+offset_right = 642.0
+offset_bottom = 93.0
+texture = ExtResource("13_et2ix")
+
+[node name="Cloud 3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = -168.0
+offset_right = 487.0
+offset_bottom = -86.0
+grow_vertical = 0
+texture = ExtResource("12_m513n")
+
+[connection signal="button_up" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="CenterContainer/VBoxContainer/QuickplayButton" to="." method="_on_quickplay_button_button_up"]

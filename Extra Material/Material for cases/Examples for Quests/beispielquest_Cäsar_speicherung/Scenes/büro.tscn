@@ -1,0 +1,116 @@
+[gd_scene load_steps=21 format=3 uid="uid://b46stxd7p1afr"]
+
+[ext_resource type="Script" uid="uid://dkoa2u1y85nav" path="res://Scripts/büro.gd" id="1_p13xj"]
+[ext_resource type="Texture2D" uid="uid://ddvxwfxwi2a32" path="res://Assets/Büro.png" id="1_s0ldl"]
+[ext_resource type="Texture2D" uid="uid://napvm3u8gqbw" path="res://Assets/Karte.png" id="2_72037"]
+[ext_resource type="Script" uid="uid://ruescmh1nb8f" path="res://Scripts/map.gd" id="3_y8tqm"]
+[ext_resource type="Texture2D" uid="uid://0iryivg3ofi0" path="res://Assets/Marker.png" id="5_qrna5"]
+[ext_resource type="PackedScene" uid="uid://y3iiaavqo3c8" path="res://Scenes/scene_switcher_button.tscn" id="7_qrna5"]
+[ext_resource type="Texture2D" uid="uid://cf5h5p6f4pt64" path="res://Assets/Geheim.png" id="7_svqko"]
+[ext_resource type="PackedScene" uid="uid://dhihuq2yyyy42" path="res://Scenes/reset_button.tscn" id="8_svqko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m75l"]
+size = Vector2(816.667, 460.303)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66rrn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrna5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svqko"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_57yrd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thwer"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olwq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyt7o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aiyds"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5mod"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8eynd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dg8c"]
+
+[node name="Büro" type="Node2D"]
+script = ExtResource("1_p13xj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="Sprite2D" parent="Control"]
+texture = ExtResource("1_s0ldl")
+
+[node name="Map" type="Area2D" parent="Control"]
+unique_name_in_owner = true
+position = Vector2(236, -112)
+scale = Vector2(0.471429, 0.471429)
+script = ExtResource("3_y8tqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Map"]
+texture = ExtResource("2_72037")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Map"]
+position = Vector2(-3.18182, 1.06064)
+scale = Vector2(0.999999, 1)
+shape = SubResource("RectangleShape2D_3m75l")
+
+[node name="CloseMapButton" type="Button" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = -1.648
+anchor_top = -0.787
+offset_left = 233.0
+offset_top = 135.0
+offset_right = 295.0
+offset_bottom = 166.0
+disabled = true
+text = "Zurück"
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -89.0
+offset_top = 222.0
+offset_right = 240.0
+offset_bottom = 252.0
+theme_type_variation = &"HeaderSmall"
+text = "Benutze die Karte um zum Tatort zu kommen"
+
+[node name="NextButton" parent="." instance=ExtResource("7_qrna5")]
+unique_name_in_owner = true
+theme_override_styles/focus = SubResource("StyleBoxEmpty_66rrn")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_qrna5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_svqko")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_57yrd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_thwer")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_olwq6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jyt7o")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_aiyds")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f5mod")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_8eynd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8dg8c")
+disabled = true
+icon = ExtResource("5_qrna5")
+NextSceneString = "tatort"
+
+[node name="Geheim" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -41)
+texture = ExtResource("7_svqko")
+
+[node name="ResetButton" parent="." instance=ExtResource("8_svqko")]
+offset_left = 453.0
+offset_top = -290.0
+offset_right = 504.0
+offset_bottom = -259.0
+
+[connection signal="input_event" from="Control/Map" to="." method="_on_area_2d_input_event"]
+[connection signal="pressed" from="CloseMapButton" to="." method="_on_close_map_button_pressed"]
