@@ -3,7 +3,7 @@ extends Control
 var ziel_input: bool = false
 
 func _ready() -> void:
-	GlobalTimer.start_timer("Logik Gatter Mini Games")
+	GlobalTimer.add_log_entry("entered scene: minigame_1")
 
 func _on_level_1_ziel_input_false() -> void:
 	ziel_input = false

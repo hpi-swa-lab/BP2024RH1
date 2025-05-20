@@ -5,7 +5,7 @@ var ziel_input: bool  = false
 @onready var level_2: Control = $Level2
 
 func _ready() -> void:
-	GlobalTimer.start_timer("Logik Gatter Mini Games")
+	GlobalTimer.add_log_entry("entered scene: minigame_2")
 	DialogueManager.show_dialogue_balloon(load("res://dialogue/logik_gatter.dialogue"), "act2PuzzleInfo1")
 
 
