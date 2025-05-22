@@ -1,21 +1,22 @@
-extends Node #or Control?
+extends Node
 
 class_name Location
 
 @export var location_name: String
-@export var case: Case
+@export var case_slug: String
 @export var location_path: String
 @export var clues: Array[Clue] = []
-@export var hints: Array[Hint] = [] # or just array of strings?
-var intro_dialogue_path: String
-var intro_dialogue_title: String
+@export var hints: Array[Hint] = []
+@export var intro_dialogue_path: String
+@export var intro_dialogue_title: String
 
 signal collectable_clue_found(clue: Clue)
 signal non_collectable_clue_found(clue: Clue)
-signal on_switch_location(location_name: String)
+signal on_location_switch_requested(location_name: String)
 
 func _ready():
 	connect("clue_found", Callable(self, "_on_clue_found"))
+	connect("location_switch_requested", Callable(self, "_on_location_switch_requested"))
 	# update_hint_text()
 
 func _on_clue_found(clue: Clue) -> void:
@@ -27,8 +28,8 @@ func _on_clue_found(clue: Clue) -> void:
 		emit_signal("non_collectable_clue_found", clue)
 		#update_hint_text()
 	
-#func _on_location_change_pressed():
-	#pass`
+func _on_location_switch_requested(location_name: String):
+	emit_signal("on_location_switch_requested", location_name)
 
 func get_available_hints(player_items: Array[String]) -> Array[String]:
 	var results: Array[String] = []
@@ -38,9 +39,10 @@ func get_available_hints(player_items: Array[String]) -> Array[String]:
 	return results
 
 func update_items_visibility():
-	for item in clues:
-		if case.interactions.has(item) or case.inventory.has(item):
-			disable_item(item)
+	#for item in clues:
+		#if case.interactions.has(item) or case.inventory.has(item):
+			#disable_item(item)
+			pass
 
 func disable_item(item):
 	item.disabled = true

@@ -1,7 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=7 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
 
-[node name="Game2" type="Node"]
+[sub_resource type="PackedScene" id="PackedScene_e2o6t"]
+
+[sub_resource type="PackedScene" id="PackedScene_feb5d"]
+
+[sub_resource type="PackedScene" id="PackedScene_fc0e3"]
+
+[sub_resource type="Resource" id="Resource_feb5d"]
+script = ExtResource("2_e2o6t")
+case_slug = "intro_case"
+case_title = "Introduction"
+case_location_scenes = Array[PackedScene]([SubResource("PackedScene_e2o6t"), SubResource("PackedScene_feb5d"), SubResource("PackedScene_fc0e3"), null, null, null])
+metadata/_custom_type_script = "uid://ni774rbce31d"
+
+[node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_feb5d")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"

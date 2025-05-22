@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://1voxlq8dhiqa"]
 
-[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/scene_switcher_button_texture.gd" id="1_ttq77"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/switch_location_button.gd" id="1_ttq77"]
 
 [node name="SceneSwitcherButton" type="TextureButton"]
 offset_right = 8.0

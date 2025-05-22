@@ -13,6 +13,8 @@ var interactions: Array
 var is_completed: bool
 #@onready var location = $location
 
+signal on_location_switch_requested(location_name: String)
+
 func instantiate():
 	case_locations = case_location_scenes.map(func(scene): return scene.instantiate())
 
@@ -20,6 +22,7 @@ func _ready():
 	#connect("all_location_clues_found", Callable(self, "_on_all_location_clues_found"))
 	connect("collectable_clue_found", Callable(self, "_on_collectable_clue_found"))
 	connect("non_collectable_clue_found", Callable(self, "_on_non_collectable_clue_found"))
+	connect("on_location_switch_requested", Callable(self, "_on_location_switch_requested"))
 
 #func _on_all_location_clues_found(location_id: String):
 	#print("All clues found in location: {}".format(location_id))
@@ -43,11 +46,18 @@ func open_room(path):
 func add_to_inventory(item_id: String):
 	pass
 	
-func _on_location_change_requested(target_location_id: String):
-	pass
+func _on_location_switch_requested(location_name: String):
+	emit_signal("on_location_switch_requested", location_name)
 	
 func are_all_clues_found():
 	for location in case_locations:
 		if not location.are_all_clues_found():
 			return false
 	return true
+
+func get_location_by_name(location_name: String) -> Location:
+	for location in case_locations:
+		if location.location_name == location_name:
+			return location
+	#FIXME handle no location found
+	return null

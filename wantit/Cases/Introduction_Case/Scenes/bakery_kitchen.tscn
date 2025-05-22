@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=15 format=3 uid="uid://bto1uem2cnbyr"]
 
-[ext_resource type="Script" uid="uid://bppek5pgmovcy" path="res://Cases/Introduction_Case/Scripts/bakery_kitchen.gd" id="1_l61y1"]
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_k1qd0"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_3wxj5"]
 [ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="4_knvnq"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="11_lftgu"]
 [ext_resource type="Texture2D" uid="uid://dwtfx6evqouww" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_kitchen.png" id="11_snjqx"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="14_cpead"]
 
 [node name="Bakery Kitchen" type="Control"]
 layout_mode = 3
@@ -21,7 +22,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l61y1")
+script = ExtResource("1_k1qd0")
+location_name = "Bakery Kitchen"
+case_slug = "intro_case"
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -34,7 +37,7 @@ texture = ExtResource("1_wyowh")
 layout_mode = 0
 scale = Vector2(0.300266, 0.300266)
 texture_normal = ExtResource("4_snjqx")
-NextSceneString = "bakery_office"
+requested_location_name = "Bakery Office"
 
 [node name="Helpsystem" parent="." instance=ExtResource("12_7deum")]
 layout_mode = 1
@@ -75,13 +78,16 @@ offset_bottom = 1084.0
 rotation = -0.518
 scale = Vector2(0.188065, 0.188065)
 texture_normal = ExtResource("11_lftgu")
-NextSceneString = "showroom"
+requested_location_name = "Showroom"
 
 [node name="Shoe Prints" parent="." instance=ExtResource("4_knvnq")]
 layout_mode = 0
 scale = Vector2(0.299523, 0.299523)
 texture_normal = ExtResource("11_snjqx")
-dialogue_resource = ExtResource("5_o1pjg")
-dialogue_start = "shoe_prints_bakery"
+script = ExtResource("14_cpead")
+clue_name = "Shoe Prints"
+is_collectable = false
+clue_dialogue_path = ""
+clue_dialogue_start = ""
 
 [connection signal="pressed" from="Flour Sack" to="." method="_on_flour_sack_pressed"]

@@ -4,14 +4,12 @@ class_name Game
 
 var active_case_slug: String = ""
 var gamesaver = GameSaver.new()
-var current_location: Node
-
-#@export var default_location: Location # not sure if we need it though and game would know about Locations then
+var current_location: Location
 @export var cases: Array[Case]
 
 func _ready():
 	get_tree().auto_accept_quit = false
-	gamesaver.load_game()
+	gamesaver.load_game(self)
 	
 	if active_case_slug == "":
 		active_case_slug = cases[0].case_slug
@@ -20,7 +18,7 @@ func _ready():
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		gamesaver.save_game()
+		gamesaver.save_game(self)
 		get_tree().quit()
 
 func get_case_by_slug(case_slug: String) -> Case:
@@ -39,8 +37,6 @@ func start_case(case: Case) -> void:
 
 func _on_case_completed():
 	start_case(cases[cases.find_custom(func (case): return not case.is_completed)])
-	#OR
-	#SceneSwitcher.switch_scene(default_location)
 	#FIXME add error handling when null returned
 
 func get_completed_cases() -> Array:
@@ -61,4 +57,8 @@ func switch_location(location: Location):
 		var _location = case.case_locations[index]
 		switch_location(_location))
 	add_child(current_location)
-		
+
+func _on_location_switch_requested(location_name):
+	var current_case = get_case_by_slug(active_case_slug)
+	current_case.get_location_by_name(location_name)
+	switch_location(current_case.get_location_by_name(location_name))

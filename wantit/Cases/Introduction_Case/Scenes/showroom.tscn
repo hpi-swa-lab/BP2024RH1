@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8iypejva5d7t"]
 
 [ext_resource type="Texture2D" uid="uid://demx2h26soyul" path="res://Cases/Introduction_Case/assets/backgrounds/showroom.png" id="1_57uge"]
-[ext_resource type="Script" uid="uid://d1cahwbx6fs0v" path="res://Cases/Introduction_Case/Scripts/showroom.gd" id="1_itl10"]
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_mposb"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_5yvxj"]
 [ext_resource type="Texture2D" uid="uid://38rkcka7kf73" path="res://Cases/Introduction_Case/assets/interactable_items/plate.png" id="3_l0fl4"]
 [ext_resource type="Texture2D" uid="uid://b7h7dgrh34vm3" path="res://Cases/Introduction_Case/assets/interactable_items/door_showroom.png" id="4_l0fl4"]
@@ -10,12 +10,11 @@
 
 [node name="Showroom" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_itl10")
+anchors_preset = 0
+script = ExtResource("1_mposb")
+location_name = "Showroom"
+case_slug = "intro_case"
+location_path = "res://Cases/Introduction_Case/Scenes/showroom.tscn"
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -36,7 +35,6 @@ offset_bottom = 562.0
 scale = Vector2(0.330073, 0.330073)
 texture_normal = ExtResource("3_l0fl4")
 stretch_mode = 4
-NextSceneString = "counter_close_up"
 metadata/is_found = false
 
 [node name="Door" parent="." instance=ExtResource("2_5yvxj")]
@@ -44,10 +42,8 @@ layout_mode = 0
 scale = Vector2(0.299982, 0.299982)
 texture_normal = ExtResource("4_l0fl4")
 stretch_mode = 0
-NextSceneString = "door_close_up"
 
 [node name="Kitchen Door" parent="." instance=ExtResource("2_5yvxj")]
 layout_mode = 0
 scale = Vector2(0.299905, 0.299905)
 texture_normal = ExtResource("5_mb8qo")
-NextSceneString = "bakery_kitchen"
