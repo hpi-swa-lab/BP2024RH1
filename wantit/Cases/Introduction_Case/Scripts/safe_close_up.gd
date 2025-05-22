@@ -5,6 +5,11 @@ func _ready() -> void:
 	add_child(Inventory)
 	GlobalTimer.end_timer("safe")
 	
+	if CaseManager.CaseGlobals.pliers_collected:	# quick fix gets refactored anyway
+		%Pliers.hide()
+	if CaseManager.CaseGlobals.screwdriver_collected:
+		%Screwdriver.hide()
+	
 	if not GlobalTimer.timer_active("pliers"):
 		GlobalTimer.start_timer("pliers")
 		

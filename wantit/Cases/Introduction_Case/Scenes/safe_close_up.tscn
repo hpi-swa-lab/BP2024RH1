@@ -31,6 +31,7 @@ texture = ExtResource("1_ilqon")
 layout_mode = 1
 
 [node name="Pliers" parent="." instance=ExtResource("2_vqx4l")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 843.0
 offset_top = 477.0
@@ -42,6 +43,7 @@ dialogue_resource = ExtResource("4_d2s8b")
 dialogue_start = "pliers"
 
 [node name="Screwdriver" parent="." instance=ExtResource("2_vqx4l")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 244.0
 offset_top = 396.0
