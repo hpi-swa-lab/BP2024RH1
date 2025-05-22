@@ -57,7 +57,6 @@ dialogue_start = "screwdriver"
 layout_mode = 0
 scale = Vector2(0.299539, 0.299539)
 texture_normal = ExtResource("6_fiei6")
-is_collectible = false
 dialogue_resource = ExtResource("4_d2s8b")
 dialogue_start = "fingerprints"
 

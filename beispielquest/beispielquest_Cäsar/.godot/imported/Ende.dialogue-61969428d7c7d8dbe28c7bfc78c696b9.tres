@@ -1,0 +1,252 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_4o7oh"]
+
+[resource]
+script = ExtResource("1_4o7oh")
+using_states = PackedStringArray()
+titles = {
+"start": "1"
+}
+character_names = PackedStringArray("Detective Turing")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "Ende"
+}, {
+&"i": 15,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 18,
+&"type": &"number",
+&"value": 1
+}, {
+&"i": 20,
+&"type": &"and_or",
+&"value": "and"
+}, {
+&"i": 24,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 30,
+&"type": &"dot"
+}, {
+&"i": 31,
+&"type": &"variable",
+&"value": "optional_route"
+}, {
+&"i": 46,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 49,
+&"type": &"variable",
+&"value": "false"
+}])
+},
+&"id": "1",
+&"next_id": "2",
+&"next_id_after": "13",
+&"next_sibling_id": "5",
+&"type": "condition"
+},
+"10": {
+&"character": "Detective Turing",
+&"id": "10",
+&"next_id": "11",
+&"text": "Beide tragen Schuld.",
+&"type": "dialogue"
+},
+"11": {
+&"character": "Detective Turing",
+&"id": "11",
+&"next_id": "12",
+&"text": "Hätten sie moderne Verschlüsselungsmethoden benutzt wäre das nicht so leicht gegangen.",
+&"type": "dialogue"
+},
+"12": {
+&"id": "12",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"function": "quit",
+&"i": 3,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 8,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "13",
+&"type": "mutation"
+},
+"13": {
+&"id": "13",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"14": {
+&"id": "14",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"2": {
+&"character": "Detective Turing",
+&"id": "2",
+&"next_id": "3",
+&"text": "Wir haben den Brandstifter gefunden! Ob der Mieter ihm wohl tatsächlich Daten gestohlen hat?",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Detective Turing",
+&"id": "3",
+&"next_id": "4",
+&"text": "Hätte er moderne Verschlüsselungsmethoden benutzt wäre das nicht so leicht gegangen.",
+&"type": "dialogue"
+},
+"4": {
+&"id": "4",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"function": "quit",
+&"i": 3,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 8,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "13",
+&"type": "mutation"
+},
+"5": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 5,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 11,
+&"type": &"dot"
+}, {
+&"i": 12,
+&"type": &"variable",
+&"value": "Ende"
+}, {
+&"i": 17,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 20,
+&"type": &"number",
+&"value": 1
+}, {
+&"i": 22,
+&"type": &"and_or",
+&"value": "and"
+}, {
+&"i": 26,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 32,
+&"type": &"dot"
+}, {
+&"i": 33,
+&"type": &"variable",
+&"value": "optional_route"
+}, {
+&"i": 48,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 51,
+&"type": &"variable",
+&"value": "true"
+}])
+},
+&"id": "5",
+&"next_id": "6",
+&"next_id_after": "13",
+&"next_sibling_id": "9",
+&"type": "condition"
+},
+"6": {
+&"character": "Detective Turing",
+&"id": "6",
+&"next_id": "7",
+&"text": "Der Brandstifter ist der schuldige, unabhängig davon ob der andere ihm etwas gestohlen hat oder nicht.",
+&"type": "dialogue"
+},
+"7": {
+&"character": "Detective Turing",
+&"id": "7",
+&"next_id": "8",
+&"text": "Hätten die beiden moderne Verschlüsselungsmethoden benutzt wäre das nicht so leicht gegangen.",
+&"type": "dialogue"
+},
+"8": {
+&"id": "8",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"function": "quit",
+&"i": 3,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 8,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "13",
+&"type": "mutation"
+},
+"9": {
+&"condition": {},
+&"id": "9",
+&"next_id": "10",
+&"next_id_after": "13",
+&"type": "condition"
+}
+}
+raw_text = "~ start
+if Global.Ende == 1 and Global.optional_route == false:
+	Detective Turing: Wir haben den Brandstifter gefunden! Ob der Mieter ihm wohl tatsächlich Daten gestohlen hat?
+	Detective Turing: Hätte er moderne Verschlüsselungsmethoden benutzt wäre das nicht so leicht gegangen.
+	do quit()
+elif Global.Ende == 1 and Global.optional_route == true:
+	Detective Turing: Der Brandstifter ist der schuldige, unabhängig davon ob der andere ihm etwas gestohlen hat oder nicht.
+	Detective Turing: Hätten die beiden moderne Verschlüsselungsmethoden benutzt wäre das nicht so leicht gegangen.
+	do quit()
+else:
+	Detective Turing: Beide tragen Schuld.
+	Detective Turing: Hätten sie moderne Verschlüsselungsmethoden benutzt wäre das nicht so leicht gegangen.
+	do quit()
+=> END"
+metadata/dialogue_manager_version = "3.5.1"

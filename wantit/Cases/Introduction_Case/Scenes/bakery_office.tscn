@@ -39,7 +39,6 @@ NextSceneString = "safe_close_up"
 layout_mode = 0
 scale = Vector2(0.300072, 0.300072)
 texture_normal = ExtResource("5_gha41")
-is_collectible = false
 dialogue_resource = ExtResource("5_83px8")
 dialogue_start = "shoe_prints_office"
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="WantIT"
-run/main_scene="uid://byc5whva4dkys"
+run/main_scene="uid://dyj7yo7t4iqhf"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 SceneSwitcher="*res://Scripts/SceneSwitcher.gd"
 Globals="*res://Scripts/Globals.gd"
-CaseManager="*res://Scripts/CaseManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalTimer="*res://Scripts/timer.gd"
 State="*res://Cases/Introduction_Case/Scripts/state.gd"

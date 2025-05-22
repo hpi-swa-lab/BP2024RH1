@@ -4,7 +4,7 @@ signal display_question_mark
 
 @onready var hint_text = $MarginContainer/Hint_text
 
-
+ 
 func _ready() -> void:
 	visible = false
 

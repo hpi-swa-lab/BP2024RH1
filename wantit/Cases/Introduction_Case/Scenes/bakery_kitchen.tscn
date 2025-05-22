@@ -48,7 +48,6 @@ offset_bottom = 2160.0
 scale = Vector2(0.300016, 0.300016)
 texture_normal = ExtResource("5_elfe8")
 texture_disabled = ExtResource("6_l61y1")
-is_collectible = false
 dialogue_resource = ExtResource("5_o1pjg")
 dialogue_start = "fallen_flour_sack"
 
@@ -82,7 +81,6 @@ NextSceneString = "showroom"
 layout_mode = 0
 scale = Vector2(0.299523, 0.299523)
 texture_normal = ExtResource("11_snjqx")
-is_collectible = false
 dialogue_resource = ExtResource("5_o1pjg")
 dialogue_start = "shoe_prints_bakery"
 

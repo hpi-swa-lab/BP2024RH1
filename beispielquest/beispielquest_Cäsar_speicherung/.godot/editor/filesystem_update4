@@ -1,0 +1,9 @@
+res://Scenes/tatort.tscn
+res://Scenes/game.tscn
+res://Scenes/küche.tscn
+res://Scenes/nachricht.tscn
+res://Scenes/büro.tscn
+res://Scripts/global.gd
+res://Scripts/case_manager.gd
+res://Scripts/nachricht.gd
+res://Scripts/case.gd

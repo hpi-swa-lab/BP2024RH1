@@ -37,6 +37,7 @@ scale = Vector2(0.330073, 0.330073)
 texture_normal = ExtResource("3_l0fl4")
 stretch_mode = 4
 NextSceneString = "counter_close_up"
+metadata/is_found = false
 
 [node name="Door" parent="." instance=ExtResource("2_5yvxj")]
 layout_mode = 0

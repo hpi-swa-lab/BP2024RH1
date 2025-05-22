@@ -3,6 +3,10 @@
 
 extends Control
 
+class_name Inventory
+
+var items: Array[String] = []
+
 var slotCount = 8
 var opened: bool = true
 var columns = 2
@@ -23,7 +27,7 @@ func _ready() -> void:
 	update_inventory()
 	hide_inventory()
 
-func add_item(Item: TextureButton):
+func add_item(Item: Clue):
 	for slot in slots:
 		if slot.StoredItem == null:
 			slot.add_item(Item)
@@ -48,3 +52,10 @@ func hide_inventory():
 	%Control.hide()
 	opened = false
 	%Button.text = "Inventar"
+
+func get_items() -> Array[String]:  
+	var items = []
+	for slot in slots:
+		if slot.StoredItem:
+			items.push_back(slot.StoredItem.clue_name)
+	return items

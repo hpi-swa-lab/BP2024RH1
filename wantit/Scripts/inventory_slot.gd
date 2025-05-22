@@ -1,12 +1,12 @@
 extends Panel
 
-var StoredItem: TextureButton = null
+var StoredItem: Clue = null
 var ActionScript: Node
 
 func _ready() -> void:
 	%Sprite2D.scale = self.custom_minimum_size / %Sprite2D.texture.get_size()
 
-func add_item(Item: TextureButton):
+func add_item(Item: Clue):
 	%CenterContainer.size = self.size
 	StoredItem = Item
 	if Item.ActionScript != null:
