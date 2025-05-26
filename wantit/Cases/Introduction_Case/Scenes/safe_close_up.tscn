@@ -65,3 +65,4 @@ offset_bottom = 1084.0
 rotation = -0.518363
 scale = Vector2(0.188065, 0.188065)
 texture_normal = ExtResource("8_n6dj2")
+requested_location_name = "Showroom"

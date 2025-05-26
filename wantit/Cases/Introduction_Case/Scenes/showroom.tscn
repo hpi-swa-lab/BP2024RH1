@@ -68,9 +68,9 @@ metadata/is_found = false
 scale = Vector2(0.299982, 0.299982)
 texture_normal = ExtResource("4_l0fl4")
 stretch_mode = 0
-requested_location_name = "Safe Close Up"
+requested_location_name = "Door CloseUp"
 
 [node name="Kitchen Door" parent="." instance=ExtResource("2_5yvxj")]
 scale = Vector2(0.299905, 0.299905)
 texture_normal = ExtResource("5_mb8qo")
-requested_location_name = "Bakery Kitchen"
+requested_location_name = "Backery Kitchen"
