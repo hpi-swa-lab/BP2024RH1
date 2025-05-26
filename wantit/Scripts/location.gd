@@ -30,14 +30,13 @@ func _ready():
 	#await DialogueManager.dialogue_ended
 
 func _setup_connections():
-	#FIXME 
-	var clue = get_node_or_null("Clue")
-	if clue:
-		clue.connect("clue_found", Callable(self, "_on_clue_found"))
+	var clues = get_tree().get_nodes_in_group("location_clues")
+	for clue in clues:
+		clue.connect("clue_found", 
+						_on_clue_found)
 	
 	var buttons = get_tree().get_nodes_in_group("location_switch_buttons")
 	for button in buttons:
-		#print(button)
 		button.connect("location_switch_requested", 
 						_on_location_switch_requested)
 

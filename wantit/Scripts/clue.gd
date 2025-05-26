@@ -12,6 +12,8 @@ var is_found: bool
 
 #from item.gd
 func _ready() -> void:
+	add_to_group("location_clues")
+	
 	if texture_normal:
 		var image: Image = texture_normal.get_image()
 		var bitmap: BitMap = BitMap.new()
@@ -24,12 +26,12 @@ func _pressed():
 		return
 
 	mark_found()
-	if has_dialogue():
-		DialogueManager.show_dialogue_balloon_scene(
-			"res://dialogue_balloons/monologue/balloon_monologue.tscn",
-			clue_dialogue_resource,
-			clue_dialogue_start)
-		await DialogueManager.dialogue_ended
+	#if has_dialogue():
+		#DialogueManager.show_dialogue_balloon_scene(
+			#"res://dialogue_balloons/monologue/balloon_monologue.tscn",
+			#clue_dialogue_resource,
+			#clue_dialogue_start)
+		#await DialogueManager.dialogue_ended
 	emit_signal("clue_found", self)
 
 func mark_found():
