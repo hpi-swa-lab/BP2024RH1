@@ -14,6 +14,6 @@ func _ready() -> void:
 		bitmap.create_from_image_alpha(image)
 		texture_click_mask = bitmap
 
-func _on_pressed() -> void:
+func _pressed() -> void:
 	emit_signal("location_switch_requested", self.requested_location_name)
 	print("Switch to : %s requested." % requested_location_name)

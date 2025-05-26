@@ -25,7 +25,7 @@ offset_bottom = 533.0
 scale = Vector2(0.1, 0.1)
 requested_location_name = "Office"
 
-[node name="LocationSwitchButton" type="TextureButton" parent="."]
+[node name="ToBackery" type="TextureButton" parent="."]
 offset_left = 698.0
 offset_top = 331.0
 offset_right = 738.0
@@ -34,7 +34,9 @@ script = ExtResource("4_q0mm3")
 requested_location_name = "Showroom"
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
-[node name="BakeryMap" type="Sprite2D" parent="LocationSwitchButton"]
+[node name="BakeryMap" type="Sprite2D" parent="ToBackery"]
 position = Vector2(-129, -11)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("4_np2xp")
+
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]

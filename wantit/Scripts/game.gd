@@ -29,7 +29,7 @@ func get_case_by_slug(case_slug: String) -> Case:
 	return null
 
 func get_active_case():
-	get_case_by_slug(active_case_slug)
+	return get_case_by_slug(active_case_slug)
 
 func start_case(case: Case) -> void:
 	case.instantiate()
