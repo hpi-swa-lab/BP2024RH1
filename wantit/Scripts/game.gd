@@ -48,7 +48,7 @@ func get_completed_cases() -> Array:
 		
 func switch_location(location: Location):
 	if current_location:
-		current_location.queue_free()
+		current_location.get_parent().remove_child(current_location)
 	var case = get_active_case()
 	current_location = location
 	current_location.location_switch_requested.connect(func(name):

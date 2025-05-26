@@ -11,27 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="8_ikhkp"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="8_n6dj2"]
 
-[node name="Safe CloseUp" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Safe CloseUp" type="Node"]
 script = ExtResource("1_unxiy")
+location_name = "Safe Close Up"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.300012, 0.300012)
 texture = ExtResource("1_ilqon")
 
 [node name="Helpsystem" parent="." instance=ExtResource("2_bm3em")]
-layout_mode = 1
 
 [node name="Pliers" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 843.0
 offset_top = 477.0
 offset_right = 4340.0
@@ -44,7 +37,6 @@ clue_dialogue_start = "pliers"
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Screwdriver" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 244.0
 offset_top = 396.0
 offset_right = 4368.0
@@ -58,7 +50,6 @@ clue_dialogue_start = "screwdriver"
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Fingerprints" type="TextureButton" parent="."]
-layout_mode = 0
 scale = Vector2(0.299539, 0.299539)
 texture_normal = ExtResource("6_fiei6")
 script = ExtResource("5_unxiy")
@@ -67,7 +58,6 @@ clue_dialogue_start = "fingerprints"
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("8_ikhkp")]
-layout_mode = 0
 offset_left = -7.0
 offset_top = 572.0
 offset_right = 505.0

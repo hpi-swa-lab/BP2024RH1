@@ -4,7 +4,7 @@ class_name Location
 
 @export var location_name: String
 #@export var case_slug: String 
-@export var location_path: String
+#@export var location_path: String
 @export var clues: Array[Clue] = []
 @export var hints: Array[Hint] = []
 @export var dialogue_resource: DialogueResource

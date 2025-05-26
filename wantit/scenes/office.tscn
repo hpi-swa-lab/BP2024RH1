@@ -8,18 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://dhsfehg0vmn2l" path="res://Assets/office/map.png" id="4_7xo7e"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="5_eqlnk"]
 
-[node name="Office" type="Control"]
-physics_interpolation_mode = 0
-layout_mode = 3
-anchors_preset = 0
+[node name="Office" type="Node"]
 script = ExtResource("1_2jlrf")
 location_name = "Office"
-location_path = "res://Scenes/office.tscn"
 dialogue_resource = ExtResource("2_7xo7e")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Office" type="TextureRect" parent="."]
-layout_mode = 0
 offset_left = -2.0
 offset_top = -2.0
 offset_right = 3838.0
@@ -29,7 +24,6 @@ texture = ExtResource("1_a0wae")
 
 [node name="clue_board" type="TextureButton" parent="." groups=["location_switch_buttons"]]
 unique_name_in_owner = true
-layout_mode = 0
 offset_left = 427.0
 offset_top = 262.0
 offset_right = 2634.0
@@ -41,7 +35,6 @@ metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
 [node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
 unique_name_in_owner = true
-layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
@@ -51,7 +44,6 @@ metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
 [node name="map" type="TextureButton" parent="." groups=["location_switch_buttons"]]
 unique_name_in_owner = true
-layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)

@@ -10,35 +10,26 @@
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="8_12w5n"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="8_h7n3f"]
 
-[node name="Bakery Office" type="Control" node_paths=PackedStringArray("clues")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Bakery Office" type="Node" node_paths=PackedStringArray("clues")]
 script = ExtResource("1_12w5n")
-location_path = "res://Cases/Introduction_Case/Scenes/bakery_office.tscn"
+location_name = "Bakery Office"
 clues = [null]
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.299882, 0.299882)
 texture = ExtResource("1_vt4a7")
 
 [node name="Helpsystem" parent="." instance=ExtResource("3_12w5n")]
-layout_mode = 1
 
 [node name="Safe" parent="." instance=ExtResource("2_y86e6")]
-layout_mode = 0
 scale = Vector2(0.300293, 0.300293)
 texture_normal = ExtResource("3_jkgmc")
 requested_location_name = "Safe Close UP"
 
 [node name="Shoeprints" type="TextureButton" parent="."]
-layout_mode = 0
 scale = Vector2(0.300072, 0.300072)
 texture_normal = ExtResource("5_gha41")
 script = ExtResource("8_12w5n")
@@ -48,7 +39,6 @@ clue_dialogue_start = "shoe_prints_office"
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("2_y86e6")]
-layout_mode = 0
 offset_left = -7.0
 offset_top = 572.0
 offset_right = 505.0

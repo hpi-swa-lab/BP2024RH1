@@ -15,6 +15,7 @@
 
 [node name="Bakery Kitchen" type="Node"]
 script = ExtResource("1_k1qd0")
+location_name = "Backery Kitchen"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

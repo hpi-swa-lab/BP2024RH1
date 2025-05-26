@@ -8,6 +8,8 @@ signal location_switch_requested(requested_location_name: String)
 
 
 func _ready() -> void:
+	add_to_group("location_switch_buttons")
+	
 	if texture_normal:
 		var image: Image = texture_normal.get_image()
 		var bitmap: BitMap = BitMap.new()

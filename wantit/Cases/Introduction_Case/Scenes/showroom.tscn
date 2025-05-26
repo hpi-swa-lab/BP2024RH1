@@ -39,25 +39,21 @@ hint_text = "Ziehe den Schlüssel auf die Ladentür. "
 hint_condition = SubResource("Resource_peh6g")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
-[node name="Showroom" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Showroom" type="Node"]
 script = ExtResource("1_mposb")
-location_path = "res://Cases/Introduction_Case/Scenes/showroom.tscn"
+location_name = "Showroom"
 hints = Array[ExtResource("2_644s4")]([SubResource("Resource_m7tbu"), SubResource("Resource_64tni"), SubResource("Resource_n6bei")])
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.300037, 0.300037)
 texture = ExtResource("1_57uge")
 
 [node name="Helpsystem" parent="." instance=ExtResource("7_mposb")]
-layout_mode = 1
 
 [node name="Plate" parent="." instance=ExtResource("2_5yvxj")]
-layout_mode = 0
 offset_left = 740.0
 offset_top = 254.0
 offset_right = 1048.0
@@ -69,13 +65,12 @@ requested_location_name = "Counter Close Up"
 metadata/is_found = false
 
 [node name="Door" parent="." instance=ExtResource("2_5yvxj")]
-layout_mode = 0
 scale = Vector2(0.299982, 0.299982)
 texture_normal = ExtResource("4_l0fl4")
 stretch_mode = 0
+requested_location_name = "Safe Close Up"
 
 [node name="Kitchen Door" parent="." instance=ExtResource("2_5yvxj")]
-layout_mode = 0
 scale = Vector2(0.299905, 0.299905)
 texture_normal = ExtResource("5_mb8qo")
 requested_location_name = "Bakery Kitchen"
