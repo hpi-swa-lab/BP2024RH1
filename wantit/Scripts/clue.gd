@@ -19,7 +19,7 @@ func _ready() -> void:
 		texture_click_mask = bitmap
 
 
-func _on_pressed():
+func _pressed():
 	if is_found:
 		return
 

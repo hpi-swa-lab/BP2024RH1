@@ -27,7 +27,7 @@ texture = ExtResource("1_vt4a7")
 [node name="Safe" parent="." instance=ExtResource("2_y86e6")]
 scale = Vector2(0.300293, 0.300293)
 texture_normal = ExtResource("3_jkgmc")
-requested_location_name = "Safe Close UP"
+requested_location_name = "Safe CloseUp"
 
 [node name="Shoeprints" type="TextureButton" parent="."]
 scale = Vector2(0.300072, 0.300072)

@@ -54,6 +54,7 @@ func switch_location(location: Location):
 	current_location.location_switch_requested.connect(func(name):
 		var index = case.case_locations.find_custom( func (_location):
 			return _location.location_name == name)
+		assert(index >= 0)
 		var _location = case.case_locations[index]
 		switch_location(_location))
 	add_child(current_location)
