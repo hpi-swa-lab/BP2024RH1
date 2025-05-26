@@ -31,6 +31,7 @@ func _ready():
 	#await DialogueManager.dialogue_ended
 
 func _setup_connections():
+	#FIXME 
 	var clue = get_node_or_null("Clue")
 	if clue:
 		clue.connect("clue_found", Callable(self, "_on_clue_found"))
@@ -39,7 +40,7 @@ func _setup_connections():
 	for button in buttons:
 		#print(button)
 		button.connect("location_switch_requested", 
-						Callable(self, "_on_location_switch_requsted"))
+						_on_location_switch_requested)
 
 
 func _on_clue_found(clue: Clue) -> void:

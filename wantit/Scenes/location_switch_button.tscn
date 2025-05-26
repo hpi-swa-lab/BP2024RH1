@@ -7,5 +7,4 @@ offset_right = 8.0
 offset_bottom = 8.0
 script = ExtResource("1_wct62")
 
-[connection signal="location_switch_requested" from="." to="." method="_on_location_switch_requested"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

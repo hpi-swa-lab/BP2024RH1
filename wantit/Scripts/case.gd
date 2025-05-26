@@ -36,7 +36,7 @@ func _ready():
 	#connect("all_location_clues_found", Callable(self, "_on_all_location_clues_found"))
 	connect("collectable_clue_found", Callable(self, "_on_collectable_clue_found"))
 	connect("non_collectable_clue_found", Callable(self, "_on_non_collectable_clue_found"))
-	connect("on_location_switch_requested", Callable(self, "_on_location_switch_requested"))
+	connect("on_location_switch_requested", _on_location_switch_requested)
 	connect("inventory_items_requested", Callable(self, "_on_inventory_items_requested"))
 
 #func _on_all_location_clues_found(location_id: String):
