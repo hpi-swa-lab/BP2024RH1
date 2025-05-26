@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://1voxlq8dhiqa"]
+
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="1_wct62"]
+
+[node name="LocationSwitchButton" type="TextureButton"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_wct62")
+
+[connection signal="location_switch_requested" from="." to="." method="_on_location_switch_requested"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

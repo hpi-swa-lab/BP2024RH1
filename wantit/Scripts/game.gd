@@ -51,7 +51,7 @@ func switch_location(location: Location):
 		current_location.queue_free()
 	var case = get_active_case()
 	current_location = location
-	current_location.on_switch_location.connect(func(name):
+	current_location.location_switch_requested.connect(func(name):
 		var index = case.case_locations.find_custom( func (_location):
 			return _location.location_name == name)
 		var _location = case.case_locations[index]

@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://csoa2rt7yia0i"]
+[gd_scene load_steps=6 format=3 uid="uid://csoa2rt7yia0i"]
 
-[ext_resource type="Script" uid="uid://dxdeti0007cop" path="res://Scripts/map.gd" id="1_p3ir5"]
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_myvm1"]
 [ext_resource type="Texture2D" uid="uid://bkbjapdraryjo" path="res://Assets/map/map.png" id="2_p3ir5"]
-[ext_resource type="PackedScene" uid="uid://c5wdqha4l66kp" path="res://Scenes/back_to_office_button.tscn" id="3_p3ir5"]
+[ext_resource type="Texture2D" uid="uid://bpkfv76brea53" path="res://Assets/map/bakery_map.png" id="4_np2xp"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_q0mm3"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_q0mm3"]
 
-[node name="Map" type="Node2D"]
-script = ExtResource("1_p3ir5")
+[node name="Map" type="Node"]
+script = ExtResource("1_myvm1")
+location_name = "Map"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Map" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -13,15 +17,24 @@ position = Vector2(587, 321)
 scale = Vector2(0.305738, 0.322603)
 texture = ExtResource("2_p3ir5")
 
-[node name="Control" type="Control" parent="."]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BackButton" parent="." instance=ExtResource("5_q0mm3")]
+offset_left = 1068.0
+offset_top = 21.0
+offset_right = 1580.0
+offset_bottom = 533.0
+scale = Vector2(0.1, 0.1)
+requested_location_name = "Office"
 
-[node name="Back Button" parent="Control" instance=ExtResource("3_p3ir5")]
-offset_left = 1070.0
-offset_top = 20.0
-offset_right = 1590.0
-offset_bottom = 540.0
+[node name="LocationSwitchButton" type="TextureButton" parent="."]
+offset_left = 698.0
+offset_top = 331.0
+offset_right = 738.0
+offset_bottom = 371.0
+script = ExtResource("4_q0mm3")
+requested_location_name = "Showroom"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="BakeryMap" type="Sprite2D" parent="LocationSwitchButton"]
+position = Vector2(-129, -11)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_np2xp")

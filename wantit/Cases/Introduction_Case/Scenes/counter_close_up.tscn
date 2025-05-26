@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dj4g6di643a60" path="res://Cases/Introduction_Case/assets/backgrounds/counter_closeUp.png" id="1_62q81"]
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_luwce"]
-[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_4jvwb"]
 [ext_resource type="Texture2D" uid="uid://g6oerpbtvsjt" path="res://Cases/Introduction_Case/assets/collectible_items/waffle.png" id="3_rw67b"]
+[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="5_a4x6w"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="5_luwce"]
-[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="6_5ruto"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="6_5ruto"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="6_174a0"]
 
 [node name="Counter CloseUp" type="Control" node_paths=PackedStringArray("clues")]
@@ -16,10 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_luwce")
-location_name = "Counter CloseUp"
-case_slug = "intro_case"
 location_path = "res://Cases/Introduction_Case/Scenes/counter_close_up.tscn"
-clues = [NodePath("Waffle")]
+clues = [null]
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -28,7 +26,7 @@ offset_bottom = 40.0
 scale = Vector2(0.300016, 0.300016)
 texture = ExtResource("1_62q81")
 
-[node name="Waffle" parent="." instance=ExtResource("2_4jvwb")]
+[node name="Waffle" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 506.0
@@ -41,8 +39,9 @@ texture_normal = ExtResource("3_rw67b")
 script = ExtResource("5_luwce")
 clue_name = "Waffle"
 is_collectable = true
-clue_dialogue_path = ""
-clue_dialogue_start = ""
+clue_dialogue_resource = ExtResource("5_a4x6w")
+clue_dialogue_start = "bitten_waffle"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("6_5ruto")]
 layout_mode = 0
@@ -52,3 +51,4 @@ offset_right = 528.0
 offset_bottom = 528.0
 scale = Vector2(0.188065, 0.188065)
 texture_normal = ExtResource("6_174a0")
+requested_location_name = "Showroom"

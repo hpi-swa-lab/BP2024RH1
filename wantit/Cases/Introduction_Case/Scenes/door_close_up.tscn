@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bj8s3478b5vsq" path="res://Cases/Introduction_Case/Scripts/door_close_up.gd" id="1_0wdaq"]
 [ext_resource type="Texture2D" uid="uid://oggi3b6r5m1u" path="res://Cases/Introduction_Case/assets/backgrounds/showroom_door_closeUp.png" id="1_wh2rv"]
-[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_wqsao"]
 [ext_resource type="Texture2D" uid="uid://dylqwu1vukiuk" path="res://Cases/Introduction_Case/assets/interactable_items/keyhole.png" id="3_22ssn"]
-[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="4_orxwm"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="4_orxwm"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="4_poypm"]
 [ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="5_0wdaq"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="5_22ssn"]
 
@@ -24,13 +24,14 @@ offset_bottom = 40.0
 scale = Vector2(0.299976, 0.299976)
 texture = ExtResource("1_wh2rv")
 
-[node name="Key Hole" parent="." instance=ExtResource("2_wqsao")]
+[node name="Key Hole" type="TextureButton" parent="."]
 layout_mode = 0
 scale = Vector2(0.299254, 0.299254)
 texture_normal = ExtResource("3_22ssn")
-is_collectible = false
-dialogue_resource = ExtResource("5_0wdaq")
-dialogue_start = "door_to_store"
+script = ExtResource("4_poypm")
+clue_dialogue_resource = ExtResource("5_0wdaq")
+clue_dialogue_start = "door_to_store"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("4_orxwm")]
 layout_mode = 0
@@ -40,4 +41,3 @@ offset_right = 528.0
 offset_bottom = 528.0
 scale = Vector2(0.188065, 0.188065)
 texture_normal = ExtResource("5_22ssn")
-NextSceneString = "showroom"

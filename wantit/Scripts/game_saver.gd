@@ -7,9 +7,9 @@ const SAVE_PATH := "user://progress.json"
 func save_game(game: Game):
 	var save_data = {
 		"active_case_slug": game.active_case_slug,
-		"completed_cases": game.get_completed_cases()
-		#"inventory": inventory.to_dict(),
-		#"interactions": interactions.to_dict()
+		"completed_cases": game.get_completed_cases(),
+		"inventory": game.inventory.get_items_name(),
+		"interactions": game.interactions
 	}
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -31,12 +31,12 @@ func load_game(game: Game):
 		print("Failed to parse save file.")
 		return
 	
-	# Restore basic fields
 	game.active_case_slug = result.get("active_case_slug", "")
 	game.set_completed_cases(result.get("completed_cases", []))
-	
-	# If you plan to restore inventory and interactions in the future:
-	# game.inventory.from_dict(result.get("inventory", {}))
-	# game.interactions.from_dict(result.get("interactions", {}))
+	game.interactions = result.get("interactions", [])
+	var inventory_items_name = result.get("inventory", [])
+	if inventory_items_name:
+		#TODO restore items from their names
+		pass 
 
 	#print("Game loaded from: ", SAVE_PATH)

@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://bhbqihv27a5x8"]
 
 [ext_resource type="Texture2D" uid="uid://c6blk2k6t2wp8" path="res://Cases/Introduction_Case/assets/backgrounds/safe_closeUp.png" id="1_ilqon"]
-[ext_resource type="Script" uid="uid://cirbjug0js4ir" path="res://Cases/Introduction_Case/Scripts/safe_close_up.gd" id="1_unxiy"]
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_unxiy"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="2_bm3em"]
-[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_vqx4l"]
 [ext_resource type="Texture2D" uid="uid://bc7rt7bpgdqoj" path="res://Cases/Introduction_Case/assets/collectible_items/pliers.png" id="3_d2s8b"]
-[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="4_d2s8b"]
 [ext_resource type="Texture2D" uid="uid://c40dfv7v6dx02" path="res://Cases/Introduction_Case/assets/collectible_items/screwdriver.png" id="4_fiei6"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="5_unxiy"]
+[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="6_bm3em"]
 [ext_resource type="Texture2D" uid="uid://cqvcntkuj0tiy" path="res://Cases/Introduction_Case/assets/interactable_items/fingerprints_safe.png" id="6_fiei6"]
-[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="8_ikhkp"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="8_ikhkp"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="8_n6dj2"]
 
 [node name="Safe CloseUp" type="Control"]
@@ -30,7 +30,7 @@ texture = ExtResource("1_ilqon")
 [node name="Helpsystem" parent="." instance=ExtResource("2_bm3em")]
 layout_mode = 1
 
-[node name="Pliers" parent="." instance=ExtResource("2_vqx4l")]
+[node name="Pliers" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 843.0
 offset_top = 477.0
@@ -38,10 +38,12 @@ offset_right = 4340.0
 offset_bottom = 3974.0
 scale = Vector2(0.0807828, 0.0443505)
 texture_normal = ExtResource("3_d2s8b")
-dialogue_resource = ExtResource("4_d2s8b")
-dialogue_start = "pliers"
+script = ExtResource("5_unxiy")
+clue_dialogue_resource = ExtResource("6_bm3em")
+clue_dialogue_start = "pliers"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
-[node name="Screwdriver" parent="." instance=ExtResource("2_vqx4l")]
+[node name="Screwdriver" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 244.0
 offset_top = 396.0
@@ -50,15 +52,19 @@ offset_bottom = 4520.0
 rotation = 0.535832
 scale = Vector2(0.0818099, 0.0510003)
 texture_normal = ExtResource("4_fiei6")
-dialogue_resource = ExtResource("4_d2s8b")
-dialogue_start = "screwdriver"
+script = ExtResource("5_unxiy")
+clue_dialogue_resource = ExtResource("6_bm3em")
+clue_dialogue_start = "screwdriver"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
-[node name="Fingerprints" parent="." instance=ExtResource("2_vqx4l")]
+[node name="Fingerprints" type="TextureButton" parent="."]
 layout_mode = 0
 scale = Vector2(0.299539, 0.299539)
 texture_normal = ExtResource("6_fiei6")
-dialogue_resource = ExtResource("4_d2s8b")
-dialogue_start = "fingerprints"
+script = ExtResource("5_unxiy")
+clue_dialogue_resource = ExtResource("6_bm3em")
+clue_dialogue_start = "fingerprints"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("8_ikhkp")]
 layout_mode = 0
@@ -69,4 +75,3 @@ offset_bottom = 1084.0
 rotation = -0.518363
 scale = Vector2(0.188065, 0.188065)
 texture_normal = ExtResource("8_n6dj2")
-NextSceneString = "bakery_office"

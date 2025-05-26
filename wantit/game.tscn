@@ -1,19 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=11 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
-
-[sub_resource type="PackedScene" id="PackedScene_e2o6t"]
-
-[sub_resource type="PackedScene" id="PackedScene_feb5d"]
-
-[sub_resource type="PackedScene" id="PackedScene_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://byc5whva4dkys" path="res://Scenes/office.tscn" id="3_7jktm"]
+[ext_resource type="PackedScene" uid="uid://c8iypejva5d7t" path="res://Cases/Introduction_Case/Scenes/showroom.tscn" id="4_ryrav"]
+[ext_resource type="PackedScene" uid="uid://bto1uem2cnbyr" path="res://Cases/Introduction_Case/Scenes/bakery_kitchen.tscn" id="5_eow3j"]
+[ext_resource type="PackedScene" uid="uid://dsaho1fwwino3" path="res://Cases/Introduction_Case/Scenes/bakery_office.tscn" id="6_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://bhbqihv27a5x8" path="res://Cases/Introduction_Case/Scenes/safe_close_up.tscn" id="7_vef74"]
+[ext_resource type="PackedScene" uid="uid://bj2wmkkh47ywg" path="res://Cases/Introduction_Case/Scenes/counter_close_up.tscn" id="8_hve3p"]
+[ext_resource type="PackedScene" uid="uid://csoa2rt7yia0i" path="res://Scenes/map.tscn" id="9_vef74"]
 
 [sub_resource type="Resource" id="Resource_feb5d"]
 script = ExtResource("2_e2o6t")
 case_slug = "intro_case"
 case_title = "Introduction"
-case_location_scenes = Array[PackedScene]([SubResource("PackedScene_e2o6t"), SubResource("PackedScene_feb5d"), SubResource("PackedScene_fc0e3"), null, null, null])
+case_location_scenes = Array[PackedScene]([ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]

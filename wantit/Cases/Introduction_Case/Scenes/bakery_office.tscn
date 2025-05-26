@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_12w5n"]
 [ext_resource type="Texture2D" uid="uid://bsmthr6tenpuw" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_office.png" id="1_vt4a7"]
-[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_y86e6"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_y86e6"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="3_12w5n"]
 [ext_resource type="Texture2D" uid="uid://c7hwvidnp7hi4" path="res://Cases/Introduction_Case/assets/interactable_items/safe.png" id="3_jkgmc"]
-[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="4_vify8"]
 [ext_resource type="Texture2D" uid="uid://dmixct3itjen8" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_office.png" id="5_gha41"]
+[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="8_5hpsd"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="8_12w5n"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="8_h7n3f"]
 
@@ -18,12 +18,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_12w5n")
-location_name = "Bakery Office"
-case_slug = "intro_case"
 location_path = "res://Cases/Introduction_Case/Scenes/bakery_office.tscn"
-clues = [NodePath("Shoeprints")]
-intro_dialogue_path = "res://dialogue/dialogue.dialogue"
-intro_dialogue_title = "crime_scene"
+clues = [null]
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -41,15 +37,15 @@ scale = Vector2(0.300293, 0.300293)
 texture_normal = ExtResource("3_jkgmc")
 requested_location_name = "Safe Close UP"
 
-[node name="Shoeprints" parent="." instance=ExtResource("4_vify8")]
+[node name="Shoeprints" type="TextureButton" parent="."]
 layout_mode = 0
 scale = Vector2(0.300072, 0.300072)
 texture_normal = ExtResource("5_gha41")
 script = ExtResource("8_12w5n")
-clue_name = ""
-is_collectable = false
-clue_dialogue_path = ""
-clue_dialogue_start = ""
+clue_name = "Shoeprints"
+clue_dialogue_resource = ExtResource("8_5hpsd")
+clue_dialogue_start = "shoe_prints_office"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("2_y86e6")]
 layout_mode = 0

@@ -1,20 +1,50 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8iypejva5d7t"]
+[gd_scene load_steps=15 format=3 uid="uid://c8iypejva5d7t"]
 
 [ext_resource type="Texture2D" uid="uid://demx2h26soyul" path="res://Cases/Introduction_Case/assets/backgrounds/showroom.png" id="1_57uge"]
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_mposb"]
-[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_5yvxj"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_5yvxj"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_644s4"]
 [ext_resource type="Texture2D" uid="uid://38rkcka7kf73" path="res://Cases/Introduction_Case/assets/interactable_items/plate.png" id="3_l0fl4"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_m7tbu"]
 [ext_resource type="Texture2D" uid="uid://b7h7dgrh34vm3" path="res://Cases/Introduction_Case/assets/interactable_items/door_showroom.png" id="4_l0fl4"]
 [ext_resource type="Texture2D" uid="uid://cy4aq3utqrcgg" path="res://Cases/Introduction_Case/assets/interactable_items/door_kitchen.png" id="5_mb8qo"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="7_mposb"]
+
+[sub_resource type="Resource" id="Resource_m7tbu"]
+script = ExtResource("2_644s4")
+hint_text = "Was liegt denn da auf der Theke?"
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_7t8ii"]
+script = ExtResource("3_m7tbu")
+mode = 0
+required_items = Array[String](["Waffle"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_64tni"]
+script = ExtResource("2_644s4")
+hint_text = "Ich sollte mir die Ladentür noch einmal ansehen."
+hint_condition = SubResource("Resource_7t8ii")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_peh6g"]
+script = ExtResource("3_m7tbu")
+mode = 0
+required_items = Array[String](["Waffle", "Key"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_n6bei"]
+script = ExtResource("2_644s4")
+hint_text = "Ziehe den Schlüssel auf die Ladentür. "
+hint_condition = SubResource("Resource_peh6g")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [node name="Showroom" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mposb")
-location_name = "Showroom"
-case_slug = "intro_case"
 location_path = "res://Cases/Introduction_Case/Scenes/showroom.tscn"
+hints = Array[ExtResource("2_644s4")]([SubResource("Resource_m7tbu"), SubResource("Resource_64tni"), SubResource("Resource_n6bei")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -35,6 +65,7 @@ offset_bottom = 562.0
 scale = Vector2(0.330073, 0.330073)
 texture_normal = ExtResource("3_l0fl4")
 stretch_mode = 4
+requested_location_name = "Counter Close Up"
 metadata/is_found = false
 
 [node name="Door" parent="." instance=ExtResource("2_5yvxj")]
@@ -47,3 +78,4 @@ stretch_mode = 0
 layout_mode = 0
 scale = Vector2(0.299905, 0.299905)
 texture_normal = ExtResource("5_mb8qo")
+requested_location_name = "Bakery Kitchen"

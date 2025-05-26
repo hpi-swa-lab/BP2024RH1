@@ -1,63 +1,51 @@
-[gd_scene load_steps=15 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=13 format=3 uid="uid://bto1uem2cnbyr"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_k1qd0"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
-[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_3wxj5"]
-[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="4_knvnq"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_3wxj5"]
 [ext_resource type="Texture2D" uid="uid://db364nyl3k8a8" path="res://Cases/Introduction_Case/assets/interactable_items/door_office.png" id="4_snjqx"]
 [ext_resource type="Texture2D" uid="uid://bm5uradd7vnhp" path="res://Cases/Introduction_Case/assets/interactable_items/floursack.png" id="5_elfe8"]
-[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="5_o1pjg"]
 [ext_resource type="Texture2D" uid="uid://cn256ss6v6oay" path="res://Cases/Introduction_Case/assets/interactable_items/floursack_key.png" id="6_l61y1"]
 [ext_resource type="Texture2D" uid="uid://cac4ru4ujuip0" path="res://Cases/Introduction_Case/assets/collectible_items/key.png" id="6_ts2v5"]
-[ext_resource type="Script" uid="uid://kke8b67onflp" path="res://Cases/Introduction_Case/Scripts/key_action.gd" id="11_k1qd0"]
+[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="9_7deum"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="11_lftgu"]
 [ext_resource type="Texture2D" uid="uid://dwtfx6evqouww" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_kitchen.png" id="11_snjqx"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="14_cpead"]
 
-[node name="Bakery Kitchen" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Bakery Kitchen" type="Node"]
 script = ExtResource("1_k1qd0")
-location_name = "Bakery Kitchen"
-case_slug = "intro_case"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.299885, 0.299885)
 texture = ExtResource("1_wyowh")
 
 [node name="Door Office" parent="." instance=ExtResource("2_3wxj5")]
-layout_mode = 0
 scale = Vector2(0.300266, 0.300266)
 texture_normal = ExtResource("4_snjqx")
 requested_location_name = "Bakery Office"
 
 [node name="Helpsystem" parent="." instance=ExtResource("12_7deum")]
-layout_mode = 1
 mouse_filter = 2
 
-[node name="Flour Sack" parent="." instance=ExtResource("4_knvnq")]
+[node name="Flour Sack" type="TextureButton" parent="."]
 z_index = 1
-layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.300016, 0.300016)
 texture_normal = ExtResource("5_elfe8")
 texture_disabled = ExtResource("6_l61y1")
-dialogue_resource = ExtResource("5_o1pjg")
-dialogue_start = "fallen_flour_sack"
+script = ExtResource("14_cpead")
+clue_dialogue_resource = ExtResource("9_7deum")
+clue_dialogue_start = "fallen_flour_sack"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
-[node name="Key" parent="." instance=ExtResource("4_knvnq")]
+[node name="Key" type="TextureButton" parent="."]
 unique_name_in_owner = true
 visible = false
-layout_mode = 0
 offset_left = 189.0
 offset_top = 497.0
 offset_right = 3728.0
@@ -65,12 +53,12 @@ offset_bottom = 4036.0
 rotation = 0.145902
 scale = Vector2(0.0146714, 0.0146714)
 texture_normal = ExtResource("6_ts2v5")
-dialogue_resource = ExtResource("5_o1pjg")
-dialogue_start = "flour_sack_pushed"
-ActionScript = ExtResource("11_k1qd0")
+script = ExtResource("14_cpead")
+clue_dialogue_resource = ExtResource("9_7deum")
+clue_dialogue_start = "flour_sack_pushed"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("2_3wxj5")]
-layout_mode = 0
 offset_left = -7.0
 offset_top = 572.0
 offset_right = 505.0
@@ -80,14 +68,11 @@ scale = Vector2(0.188065, 0.188065)
 texture_normal = ExtResource("11_lftgu")
 requested_location_name = "Showroom"
 
-[node name="Shoe Prints" parent="." instance=ExtResource("4_knvnq")]
-layout_mode = 0
+[node name="Shoe Prints" type="TextureButton" parent="."]
 scale = Vector2(0.299523, 0.299523)
 texture_normal = ExtResource("11_snjqx")
 script = ExtResource("14_cpead")
 clue_name = "Shoe Prints"
-is_collectable = false
-clue_dialogue_path = ""
-clue_dialogue_start = ""
-
-[connection signal="pressed" from="Flour Sack" to="." method="_on_flour_sack_pressed"]
+clue_dialogue_resource = ExtResource("9_7deum")
+clue_dialogue_start = "shoe_prints_bakery"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"

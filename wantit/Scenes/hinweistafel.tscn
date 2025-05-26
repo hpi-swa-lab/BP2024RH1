@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bod7i1s02e7f4" path="res://Scripts/hinweistafel.gd" id="1_myj6k"]
 [ext_resource type="Texture2D" uid="uid://b0lnvppjqbrwk" path="res://Assets/office/clue_board.png" id="2_hnhsw"]
-[ext_resource type="PackedScene" uid="uid://c5wdqha4l66kp" path="res://Scenes/back_to_office_button.tscn" id="3_hnhsw"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="3_hnhsw"]
 
 [node name="Hinweistafel" type="Control"]
 layout_mode = 3
@@ -25,10 +25,11 @@ joint_mode = 2
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
-[node name="Back Button" parent="." instance=ExtResource("3_hnhsw")]
-unique_name_in_owner = true
+[node name="BackButton" parent="." instance=ExtResource("3_hnhsw")]
 layout_mode = 0
-offset_left = 1048.0
+offset_left = 1050.0
 offset_top = 57.0
-offset_right = 1568.0
-offset_bottom = 577.0
+offset_right = 1562.0
+offset_bottom = 569.0
+scale = Vector2(0.1, 0.1)
+requested_location_name = "Office"
