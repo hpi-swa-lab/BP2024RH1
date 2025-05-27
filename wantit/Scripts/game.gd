@@ -3,9 +3,10 @@ extends Node
 class_name Game
 
 var active_case_slug: String = ""
-var gamesaver = GameSaver.new()
 var current_location: Location
+var current_location_name: String = "" #one out of 2 should stay?
 @export var cases: Array[Case]
+var gamesaver = GameSaver.new()
 
 func _ready():
 	get_tree().auto_accept_quit = false
@@ -18,6 +19,7 @@ func _ready():
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		#TODO update current location
 		gamesaver.save_game(self)
 		get_tree().quit()
 
@@ -33,11 +35,15 @@ func get_active_case():
 
 func start_case(case: Case) -> void:
 	case.instantiate()
-	switch_location(case.case_locations[0])
+	
+	var location_index = 0
+	if current_location_name != "":
+		location_index = case.get_location_index_by_name(current_location_name)
+	switch_location(case.case_locations[location_index])
 
-func _on_case_completed():
-	start_case(cases[cases.find_custom(func (case): return not case.is_completed)])
-	#FIXME add error handling when null returned
+#func _on_case_completed():
+	#start_case(cases[cases.find_custom(func (case): return not case.is_completed)])
+	##FIXME add error handling when null returned
 
 func get_completed_cases() -> Array:
 	var completed_cases = []
@@ -63,3 +69,6 @@ func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)
 	current_case.get_location_by_name(location_name)
 	switch_location(current_case.get_location_by_name(location_name))
+
+func set_completed__cases():
+	pass

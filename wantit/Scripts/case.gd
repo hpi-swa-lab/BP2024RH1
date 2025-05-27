@@ -22,34 +22,28 @@ signal on_location_switch_requested(location_name: String)
 	#)
 
 func instantiate():
+	connect("on_location_switch_requested", _on_location_switch_requested)
+	
 	case_locations.clear()  # Optional, if already populated
 	for scene in case_location_scenes:
 		var instance := scene.instantiate()
 		if instance is Location:
 			var location := instance as Location
+			location.connect("non_collectable_clue_found", _on_non_collectable_clue_found)
+			location.connect("collectable_clue_found", _on_collectable_clue_found)
+			location.connect("inventory_items_requested", _on_inventory_items_requested)
 			case_locations.append(location)
 		else:
 			push_error("Scene does not instantiate to a Location: " + scene.resource_path)
 
-
-func _ready():
-	#connect("all_location_clues_found", Callable(self, "_on_all_location_clues_found"))
-	connect("collectable_clue_found", Callable(self, "_on_collectable_clue_found"))
-	connect("non_collectable_clue_found", Callable(self, "_on_non_collectable_clue_found"))
-	connect("on_location_switch_requested", _on_location_switch_requested)
-	connect("inventory_items_requested", Callable(self, "_on_inventory_items_requested"))
-
-#func _on_all_location_clues_found(location_id: String):
-	#print("All clues found in location: {}".format(location_id))
-	#if case_data.are_all_clues_found():
-		#emit_signal("all_case_clues_found", case_data.closing_scene) 
-		##this signal should be catched by a game and trigger scene switching
-		
 func _on_collectable_clue_found(clue: Clue) -> void:
-	inventory.add_clue(clue)
+	#inventory.add_item(clue)
+	print("Item: %s added to inventory" %clue.clue_name)	
 
 func _on_non_collectable_clue_found(clue_name: String) -> void:
 	interactions.append(clue_name)
+	print("Non-collectable clue: %s is added to interactions history." %clue_name)
+	#print(interactions)
 
 func open_room(path):
 	var room = load(path)
@@ -81,3 +75,9 @@ func _on_inventory_items_requested(location: Location):
 	var item_names = inventory.get_inventory_items_name()
 	location.set_inventory_items(item_names)
 	location.update_hint_text()
+
+func get_location_index_by_name(target_name: String):
+	for i in case_locations.size():
+		if case_locations[i].location_name == target_name:
+			return i
+	return null	

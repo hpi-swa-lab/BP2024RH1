@@ -4,12 +4,14 @@ extends Control
 @onready var helpscreen = $Helpscreen
 var hint_text: String
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	helpscreen.connect("display_question_mark", display_question_mark)
 	question_mark.connect("display_helpscreen", display_helpscreen)
-	var location = get_parent()
-	hint_text = location.active_hint_text
+	#var location = get_parent()
+	#if location and location.has_variable("hint_text"):
+		#hint_text = location.hint_text
+	#else:
+		#push_error("Parent node doesn't have a 'hint_text' field.")
 	
 func display_question_mark():
 	await get_tree().create_timer(5).timeout

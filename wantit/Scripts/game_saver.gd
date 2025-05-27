@@ -7,9 +7,10 @@ const SAVE_PATH := "user://progress.json"
 func save_game(game: Game):
 	var save_data = {
 		"active_case_slug": game.active_case_slug,
-		"completed_cases": game.get_completed_cases(),
-		"inventory": game.inventory.get_items_name(),
-		"interactions": game.interactions
+		"current_location_name": game.current_location.location_name
+		#"completed_cases": game.get_completed_cases(),
+		#"inventory": game.inventory.get_items_name(),
+		#"interactions": game.interactions
 	}
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -32,11 +33,13 @@ func load_game(game: Game):
 		return
 	
 	game.active_case_slug = result.get("active_case_slug", "")
-	game.set_completed_cases(result.get("completed_cases", []))
-	game.interactions = result.get("interactions", [])
-	var inventory_items_name = result.get("inventory", [])
-	if inventory_items_name:
+	game.current_location_name = result.get("current_location_name")
+	#game.current_location = 
+	#game.set_completed_cases(result.get("completed_cases", []))
+	#game.interactions = result.get("interactions", [])
+	#var inventory_items_name = result.get("inventory", [])
+	#if inventory_items_name:
 		#TODO restore items from their names
-		pass 
+	
 
 	#print("Game loaded from: ", SAVE_PATH)

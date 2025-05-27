@@ -5,7 +5,7 @@ extends Control
 
 class_name Inventory
 
-var items: Array[Clue] = []
+var inventory_items: Array[Clue] = []
 
 var slotCount = 8
 var opened: bool = true
@@ -27,10 +27,12 @@ func _ready() -> void:
 	update_inventory()
 	hide_inventory()
 
-func add_item(Item: Clue):
+func add_item(item: Clue):
+	inventory_items.append(item)
+	
 	for slot in slots:
 		if slot.StoredItem == null:
-			slot.add_item(Item)
+			slot.add_item(item)
 			break
 
 func _on_button_pressed() -> void:
@@ -62,6 +64,6 @@ func get_items() -> Array[String]:
 
 func get_inventory_items_name() -> Array[String]:
 	var items_name = []
-	for item in items:
+	for item in inventory_items:
 		items_name.append(item.clue_name)
 	return items_name

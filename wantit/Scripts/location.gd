@@ -8,7 +8,7 @@ class_name Location
 @export var hints: Array[Hint] = []
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String
-var active_hint_text: String = ""
+var hint_text: String = ""
 var inventory_items: Array[String]
 
 signal collectable_clue_found(clue: Clue)
@@ -22,7 +22,9 @@ func _ready():
 	call_deferred("_setup_connections")
 	
 	#TODO update hint text
-	request_current_inventory()
+	#set_hint_text()
+	
+	#request_current_inventory()
 	#DialogueManager.show_dialogue_balloon_scene(
 			#"res://dialogue_balloons/monologue/balloon_monologue.tscn",
 			#dialogue_resource,
@@ -39,7 +41,6 @@ func _setup_connections():
 	for button in buttons:
 		button.connect("location_switch_requested", 
 						_on_location_switch_requested)
-
 
 func _on_clue_found(clue: Clue) -> void:
 	print("Clue: %s found in location: %s" % [clue.clue_name, self.location_name])
@@ -81,10 +82,11 @@ func get_clue_by_name(clue_name: String) -> Clue:
 func request_current_inventory() -> void:
 	emit_signal("inventory_items_requested", self)
 
-func update_hint_text():
+func set_hint_text():
 	var valid_hints = get_available_hints(inventory_items)
+	print(valid_hints)
 	#FIXME choose one hint when several available
-	active_hint_text = valid_hints[0]
+	#hint_text = valid_hints[0]
 
 func set_inventory_items(item_names: Array[String]) -> void:
 	inventory_items = item_names.duplicate()

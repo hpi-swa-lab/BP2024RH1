@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8iypejva5d7t"]
+[gd_scene load_steps=16 format=3 uid="uid://c8iypejva5d7t"]
 
 [ext_resource type="Texture2D" uid="uid://demx2h26soyul" path="res://Cases/Introduction_Case/assets/backgrounds/showroom.png" id="1_57uge"]
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_mposb"]
@@ -10,15 +10,22 @@
 [ext_resource type="Texture2D" uid="uid://cy4aq3utqrcgg" path="res://Cases/Introduction_Case/assets/interactable_items/door_kitchen.png" id="5_mb8qo"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="7_mposb"]
 
+[sub_resource type="Resource" id="Resource_0lku5"]
+script = ExtResource("3_m7tbu")
+mode = 2
+required_items = Array[String](["Waffle"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
 [sub_resource type="Resource" id="Resource_m7tbu"]
 script = ExtResource("2_644s4")
 hint_text = "Was liegt denn da auf der Theke?"
+hint_condition = SubResource("Resource_0lku5")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_7t8ii"]
 script = ExtResource("3_m7tbu")
-mode = 0
-required_items = Array[String](["Waffle"])
+mode = 2
+required_items = Array[String](["Key"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_64tni"]
