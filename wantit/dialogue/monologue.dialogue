@@ -127,13 +127,13 @@ set GlobalTimer.add_log_entry("end Monologue: minigame1_end")
 
 ~ minigame1_test1
 set GlobalTimer.add_log_entry("start Monologue: minigame1_test1 ")
-Die gesicherten Spuren sind...
+Die gesicherten Spuren und Notizzettel sind...
 - Daten
 	set GlobalTimer.add_log_entry("end Monologue: minigame1_test1 => daten")
 	=> minigame1_test2
 - Informationen
-	set GlobalTimer.add_log_entry("end Monologue: minigame1_test1 => infromationen")
-	=> minigame1_test1
+	set GlobalTimer.add_log_entry("end Monologue: minigame1_test1 => informationen")
+	=> explain_test1
 - Ich verstehe die Begriffe nicht.
 	set GlobalTimer.add_log_entry("end Monologue: minigame1_test1 => verstehe nicht")
 	=> explain_test1
@@ -155,7 +155,7 @@ Mittels der Lupe konnte ich sie...
 	=> minigame1_test3
 - repräsentieren
 	set GlobalTimer.add_log_entry("end Monologue: minigame1_test2 => repräsentieren")
-	=> minigame1_test2
+	=> explain_test2
 - Ich verstehe die Begriffe nicht.
 	set GlobalTimer.add_log_entry("end Monologue: minigame1_test2 => verstehe nicht")
 	=> explain_test2
@@ -172,11 +172,19 @@ set GlobalTimer.add_log_entry("start Monologue: minigame1_test3")
 Die gewonnene Information konnte wiederum durch die Zettelchen...
 - interpretiert werden
 	set GlobalTimer.add_log_entry("end Monologue: minigame1_test3 => interpretiert werden")
-	=> minigame1_test3
+	=> explain_test3
 - repräsentiert werden
 	set GlobalTimer.end_timer("minigame 1")
 	set GlobalTimer.add_log_entry("end Monologue: minigame1_test3 => repräsentiert werden")
 	=> END
+
+~ explain_test3
+set GlobalTimer.add_log_entry("start Monologue: explain_test3")
+Die Notizzettel helfen die Information darzustellen.
+Interpretieren bedeutet, etwas so zu verstehen, dass man den Sinn oder die Absicht dahinter erkennt.
+Repräsentieren hingegen bedeutet, eine Darstellung durch eine andere Darstellung so abzubilden, dass sie stellvertretend für das Original stehen.
+set GlobalTimer.add_log_entry("end Monologue: explain_test3")
+=> minigame1_test3
 
 ~ office
 set GlobalTimer.add_log_entry("start Monologue: office")
