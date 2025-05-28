@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfhmvi5qb81eb"]
+[gd_scene load_steps=3 format=3 uid="uid://bfhmvi5qb81eb"]
 
-[ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_l6h3l"]
+[ext_resource type="Script" uid="uid://bufnrhtql8uv" path="res://Scripts/inventory.gd" id="1_l6h3l"]
+[ext_resource type="PackedScene" uid="uid://doulb80q5mxxn" path="res://Scenes/inventory_slot.tscn" id="2_k5gp2"]
 
 [node name="Inventory" type="Control"]
 custom_minimum_size = Vector2(219, 448)
@@ -15,6 +16,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_l6h3l")
+slot_count = 8
+slot_scene = ExtResource("2_k5gp2")
 
 [node name="Control" type="Control" parent="."]
 unique_name_in_owner = true

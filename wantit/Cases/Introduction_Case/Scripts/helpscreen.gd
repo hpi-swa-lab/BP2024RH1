@@ -2,11 +2,14 @@ extends Control
 
 signal display_question_mark
 
-@onready var hint_text = $MarginContainer/hint_text
+@onready var hint_text = $MarginContainer/Hint_text
 
  
 func _ready() -> void:
 	visible = false
+
+func set_hint_text(text: String) -> void:
+	hint_text.text = text
 
 #func _process(_delta: float) -> void:
 	#match CaseManager.CaseGlobals.current_scene:
@@ -58,8 +61,8 @@ func _ready() -> void:
 		#hint_text.text = "In der Backstube sehe ich keine Auffälligkeiten mehr"
 
 
-func load_minigame2_hint():
-	hint_text.text = "Bei falschen Antworten werden Fehlermeldungen angezeigt."
+#func load_minigame2_hint():
+	#hint_text.text = "Bei falschen Antworten werden Fehlermeldungen angezeigt."
 
 
 func _on_close_btn_gui_input(event: InputEvent) -> void:

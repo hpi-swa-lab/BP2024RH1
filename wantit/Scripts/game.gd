@@ -4,9 +4,10 @@ class_name Game
 
 var active_case_slug: String = ""
 var current_location: Location
-var current_location_name: String = "" #one out of 2 should stay?
+var current_location_name: String = ""
 @export var cases: Array[Case]
 var gamesaver = GameSaver.new()
+var inventory_items_names: Array[String]
 
 func _ready():
 	get_tree().auto_accept_quit = false
@@ -19,7 +20,6 @@ func _ready():
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		#TODO update current location
 		gamesaver.save_game(self)
 		get_tree().quit()
 
@@ -35,6 +35,8 @@ func get_active_case():
 
 func start_case(case: Case) -> void:
 	case.instantiate()
+	#var clue_list = create_clue_dictionary(case)
+	#case.inventory.restore_inventory(clue_list)
 	
 	var location_index = 0
 	if current_location_name != "":
@@ -70,5 +72,13 @@ func _on_location_switch_requested(location_name):
 	current_case.get_location_by_name(location_name)
 	switch_location(current_case.get_location_by_name(location_name))
 
-func set_completed__cases():
+func set_completed_cases():
 	pass
+
+#for mapping clue_name(s) after reloading the game
+func create_clue_dictionary(case: Case) -> Dictionary:
+	var result = {}
+	for location in case.case_locations:
+		for clue in location.clues:
+			result[clue.clue_name] = clue
+	return result
