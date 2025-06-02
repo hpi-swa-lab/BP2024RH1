@@ -19,26 +19,25 @@ signal on_location_switch_requested(location_name: String)
 func instantiate():
 	connect("on_location_switch_requested", _on_location_switch_requested)
 	
-	inventory = inventory_scene.instantiate() as Inventory
-	#TODO update inventory on loading game
-	var clue_list = create_clue_dictionary()
-	inventory.restore_inventory_items(clue_list, restored_inventory_items)
-	var inventory_items = inventory.get_inventory_items_name()
-	
 	case_locations.clear()  # Optional, if already populated
 	for scene in case_location_scenes:
 		var instance := scene.instantiate()
 		if instance is Location:
 			var location := instance as Location
-			
 			location.case = self
-			
 			location.connect("non_collectable_clue_found", _on_non_collectable_clue_found)
 			location.connect("collectable_clue_found", _on_collectable_clue_found)
-			location.update_hint_text(inventory_items)
+			#location.update_hint_text(inventory_items)
 			case_locations.append(location)
 		else:
 			push_error("Scene does not instantiate to a Location: " + scene.resource_path)
+	
+	inventory = inventory_scene.instantiate() as Inventory
+	#TODO update inventory on loading game
+	var clue_dictionary = create_clue_dictionary()
+	print("Items names restored in a case: %s" %[restored_inventory_items])
+	inventory.restore_inventory_items(clue_dictionary, restored_inventory_items)
+	var inventory_items = inventory.get_inventory_items_name()
 
 func _on_collectable_clue_found(clue: Clue) -> void:
 	inventory.add_item(clue)
@@ -90,6 +89,7 @@ func get_location_index_by_name(target_name: String):
 func create_clue_dictionary() -> Dictionary:
 	var result = {}
 	for location in case_locations:
+		#print("Location:", location.name, "Clues:", location.clues.size())
 		for clue in location.clues:
 			result[clue.clue_name] = clue
 	return result

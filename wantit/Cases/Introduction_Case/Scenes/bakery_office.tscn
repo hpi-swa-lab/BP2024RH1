@@ -13,7 +13,7 @@
 [node name="Bakery Office" type="Node" node_paths=PackedStringArray("clues")]
 script = ExtResource("1_12w5n")
 location_name = "Bakery Office"
-clues = [null]
+clues = [NodePath("Shoeprints")]
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

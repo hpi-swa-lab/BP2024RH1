@@ -19,7 +19,7 @@ func _ready():
 	await get_tree().process_frame
 	print("Setting up location: %s." % location_name)
 	call_deferred("_setup_connections")
-	#update_items_visibility()
+	update_items_visibility()
 	
 	#DialogueManager.show_dialogue_balloon_scene(
 			#"res://dialogue_balloons/monologue/balloon_monologue.tscn",

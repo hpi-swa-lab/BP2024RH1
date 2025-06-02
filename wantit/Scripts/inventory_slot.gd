@@ -4,21 +4,20 @@ class_name InventorySlot
 
 var stored_item: Clue = null
 var ActionScript: Node
-#@export var slot_scene: PackedScene
 
 func _ready() -> void:
 	%Sprite2D.scale = self.custom_minimum_size / %Sprite2D.texture.get_size()
 
 func add_item(new_item: Clue) -> void:
-	#%CenterContainer.size = self.size
+	%CenterContainer.size = self.size
 	
 	stored_item = new_item
 	print("Item just added to inventory: " + str(stored_item.clue_name))
 	
 	#if new_item.ActionScript != null:
 		#ActionScript = new_item.ActionScript.new()
-	#%DisplayedItem.icon = update_item_size(new_item.texture_normal)
-	#%DisplayedItem.show()
+	%DisplayedItem.icon = update_item_size(new_item.texture_normal)
+	%DisplayedItem.show()
 
 func remove_item():
 	if ActionScript != null and ActionScript is Node:
@@ -35,19 +34,13 @@ func remove_item():
 	stored_item = null
 	%DisplayedItem.hide()
 
-#func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale Icon Size
+func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale Icon Size
+	var ItemSize = self.size * 0.8
+	var img = Icon.get_image()
 	
-	#if GlobalInventory.TextureCache.has(stored_item.name):
-		#return GlobalInventory.TextureCache[stored_item.name]
-	#else:
-		#var ItemSize = self.size * 0.8
-		#var img = Icon.get_image()
-		#
-		#img.resize(ItemSize.x, ItemSize.y, Image.INTERPOLATE_LANCZOS)
-		#var newIcon = ImageTexture.create_from_image(img)
-		#
-		#GlobalInventory.TextureCache[stored_item.name] = newIcon
-		#return newIcon
+	img.resize(ItemSize.x, ItemSize.y, Image.INTERPOLATE_LANCZOS)
+	var newIcon = ImageTexture.create_from_image(img)
+	return newIcon
 
 func _on_displayed_item_button_down() -> void:
 	%DisplayedItem.pivot_offset = %DisplayedItem.size / 2

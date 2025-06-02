@@ -34,8 +34,8 @@ func get_active_case():
 	return get_case_by_slug(active_case_slug)
 
 func start_case(case: Case) -> void:
-	case.instantiate()
 	case.restored_inventory_items = inventory_items_names
+	case.instantiate()
 	
 	var location_index = 0
 	if current_location_name != "":
