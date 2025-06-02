@@ -6,7 +6,7 @@ extends Control
 class_name Inventory
 
 var inventory_slots: Array[InventorySlot] = []
-var inventory_items_names: Array[String] = []
+#var inventory_items_names: Array[String] = []
 var clue_dictionary: Dictionary
 @export var slot_count: int = 8
 @export var columns: int  = 2
@@ -19,7 +19,7 @@ func _ready() -> void:
 	grid_container.columns = columns
 	for i in range(slot_count):
 		var slot = slot_scene.instantiate() as InventorySlot
-		print("Inventory slot appended!")
+		slot.custom_minimum_size = Vector2(%GridContainer.size.x / columns, %GridContainer.size.x / columns)
 		inventory_slots.append(slot)
 		grid_container.add_child(slot)
 		
@@ -27,10 +27,7 @@ func _ready() -> void:
 			grid_container.size.x / columns,
 			grid_container.size.x / columns
 		)
-		#slotScene = load("res://Scenes/inventory_slot.tscn")
-		#newSlot = slotScene.instantiate()
-		#newSlot.custom_minimum_size = Vector2(%GridContainer.size.x / columns, %GridContainer.size.x / columns)
-		#%GridContainer.add_child(newSlot)
+		
 	#slots = %GridContainer.get_children()
 	
 	#update_inventory()
@@ -39,8 +36,8 @@ func _ready() -> void:
 func add_item(item: Clue) -> void:
 	for slot in inventory_slots:
 		if slot.is_empty():
-			print("Empty slot found!")
 			slot.add_item(item)
+			return
 
 func _on_button_pressed() -> void:
 	if opened:
@@ -48,11 +45,11 @@ func _on_button_pressed() -> void:
 	else:
 		show_inventory()
 		
-func update_inventory(): 
-	if inventory_items_names:
-		var restored_inventory_items = restore_inventory_items(clue_dictionary)
-		for item in restored_inventory_items:
-			add_item(item)
+#func update_inventory(): 
+	#if inventory_items_names:
+		#var restored_inventory_items = restore_inventory_items(clue_dictionary)
+		#for item in restored_inventory_items:
+			#add_item(item)
 
 func show_inventory():
 	%Control.show()
@@ -79,12 +76,14 @@ func get_inventory_items_name() -> Array[String]:
 			items_name.append(slot.stored_item.clue_name)
 	return items_name
 	
-func restore_inventory_items(clue_dictionary: Dictionary) -> Array[Clue]:
+func restore_inventory_items(clue_dictionary: Dictionary, items_list: Array) -> void:
 	var inventory_items: Array[Clue] = []
-	##inventory_items.clear() #is it necessary?
-	for item in inventory_items_names:
+	for item in items_list:
 		if clue_dictionary.has(item):
 			inventory_items.append(clue_dictionary[item])
 		else:
 			push_error("Missing object for id: %s" % item)
-	return inventory_items
+	
+	for item in inventory_items:
+		add_item(item)
+	print(inventory_items)

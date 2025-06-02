@@ -7,7 +7,7 @@ var current_location: Location
 var current_location_name: String = ""
 @export var cases: Array[Case]
 var gamesaver = GameSaver.new()
-var inventory_items_names: Array[String]
+var inventory_items_names: Array
 
 func _ready():
 	get_tree().auto_accept_quit = false
@@ -35,8 +35,7 @@ func get_active_case():
 
 func start_case(case: Case) -> void:
 	case.instantiate()
-	#var clue_list = create_clue_dictionary(case)
-	#case.inventory.restore_inventory(clue_list)
+	case.restored_inventory_items = inventory_items_names
 	
 	var location_index = 0
 	if current_location_name != "":
@@ -58,6 +57,7 @@ func switch_location(location: Location):
 	if current_location:
 		current_location.get_parent().remove_child(current_location)
 	var case = get_active_case()
+	location.set_inventory(case.inventory)
 	current_location = location
 	current_location.location_switch_requested.connect(func(name):
 		var index = case.case_locations.find_custom( func (_location):
@@ -75,10 +75,6 @@ func _on_location_switch_requested(location_name):
 func set_completed_cases():
 	pass
 
-#for mapping clue_name(s) after reloading the game
-func create_clue_dictionary(case: Case) -> Dictionary:
-	var result = {}
-	for location in case.case_locations:
-		for clue in location.clues:
-			result[clue.clue_name] = clue
-	return result
+func get_case_inventory() -> Array[String]:
+	var active_case = get_active_case()
+	return active_case.inventory.get_inventory_items_name()

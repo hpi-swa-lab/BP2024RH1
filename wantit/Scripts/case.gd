@@ -12,6 +12,7 @@ var case_locations: Array[Location]
 var inventory: Inventory
 var interactions: Array
 var is_completed: bool
+var restored_inventory_items: Array
 
 signal on_location_switch_requested(location_name: String)
 
@@ -19,6 +20,9 @@ func instantiate():
 	connect("on_location_switch_requested", _on_location_switch_requested)
 	
 	inventory = inventory_scene.instantiate() as Inventory
+	#TODO update inventory on loading game
+	var clue_list = create_clue_dictionary()
+	inventory.restore_inventory_items(clue_list, restored_inventory_items)
 	var inventory_items = inventory.get_inventory_items_name()
 	
 	case_locations.clear()  # Optional, if already populated
@@ -28,8 +32,6 @@ func instantiate():
 			var location := instance as Location
 			
 			location.case = self
-			#TODO add inventory node to each scene?
-			location.set_inventory(inventory)
 			
 			location.connect("non_collectable_clue_found", _on_non_collectable_clue_found)
 			location.connect("collectable_clue_found", _on_collectable_clue_found)
@@ -83,3 +85,11 @@ func get_location_index_by_name(target_name: String):
 		if case_locations[i].location_name == target_name:
 			return i
 	return null	
+
+#for mapping clue_name(s) after reloading the game
+func create_clue_dictionary() -> Dictionary:
+	var result = {}
+	for location in case_locations:
+		for clue in location.clues:
+			result[clue.clue_name] = clue
+	return result

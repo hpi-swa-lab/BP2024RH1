@@ -7,9 +7,9 @@ const SAVE_PATH := "user://progress.json"
 func save_game(game: Game):
 	var save_data = {
 		"active_case_slug": game.active_case_slug,
-		"current_location_name": game.current_location.location_name
+		"current_location_name": game.current_location.location_name,
 		#"completed_cases": game.get_completed_cases(),
-		#"inventory_items": game.inventory.get_inventory_items_name()
+		"inventory_items": game.get_case_inventory()
 		#"interactions": game.interactions
 	}
 	
@@ -34,7 +34,7 @@ func load_game(game: Game):
 	
 	game.active_case_slug = result.get("active_case_slug", "")
 	game.current_location_name = result.get("current_location_name")
-	#game.inventory.inventory_items_names = result.get("inventory_items", [])
+	game.inventory_items_names = result.get("inventory_items", [])
 	#game.current_location = 
 	#game.set_completed_cases(result.get("completed_cases", []))
 	#game.interactions = result.get("interactions", [])
