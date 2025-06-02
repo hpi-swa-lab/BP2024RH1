@@ -11,7 +11,9 @@
 [node name="Counter CloseUp" type="Node" node_paths=PackedStringArray("clues")]
 script = ExtResource("1_luwce")
 location_name = "Counter Close Up"
-clues = [null]
+clues = [NodePath("Waffle")]
+dialogue_resource = ExtResource("5_a4x6w")
+dialogue_start = "bitten_waffle"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

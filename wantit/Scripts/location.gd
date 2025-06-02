@@ -3,11 +3,13 @@ extends Node
 class_name Location
 
 @export var location_name: String
+var case: Case
 @export var clues: Array[Clue] = []
 @export var hints: Array[Hint] = []
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String
 var hint_text: String = "Default text"
+var inventory: Inventory
 
 signal collectable_clue_found(clue: Clue)
 signal non_collectable_clue_found(clue: Clue)
@@ -17,12 +19,22 @@ func _ready():
 	await get_tree().process_frame
 	print("Setting up location: %s." % location_name)
 	call_deferred("_setup_connections")
+	#update_items_visibility()
 	
 	#DialogueManager.show_dialogue_balloon_scene(
 			#"res://dialogue_balloons/monologue/balloon_monologue.tscn",
 			#dialogue_resource,
 			#dialogue_start)
 	#await DialogueManager.dialogue_ended
+
+func set_inventory(case_inventory: Inventory) -> void:
+	inventory = case_inventory
+	
+	if inventory.get_parent():
+		inventory.get_parent().remove_child(inventory)
+		
+	if not inventory.is_inside_tree():
+		add_child(inventory)
 
 func _setup_connections():
 	var clues = get_tree().get_nodes_in_group("location_clues")
@@ -55,10 +67,9 @@ func get_available_hints(player_items: Array[String]) -> Array[String]:
 	return results
 
 func update_items_visibility():
-	#for item in clues:
-		#if case.interactions.has(item) or case.inventory.has(item):
-			#disable_item(item)
-			pass
+	for item in clues:
+		if case.inventory.has(item):
+			disable_item(item)
 
 func disable_item(item):
 	item.disabled = true

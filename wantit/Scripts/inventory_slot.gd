@@ -4,6 +4,7 @@ class_name InventorySlot
 
 var stored_item: Clue = null
 var ActionScript: Node
+#@export var slot_scene: PackedScene
 
 func _ready() -> void:
 	%Sprite2D.scale = self.custom_minimum_size / %Sprite2D.texture.get_size()
@@ -29,24 +30,24 @@ func remove_item():
 	
 	#var parent = get_parent()
 	#parent.inventory_items.erase(stored_item.name)
-	GlobalInventory.Items.erase(stored_item.name)
+	#GlobalInventory.Items.erase(stored_item.name)
 	ActionScript = null
 	stored_item = null
 	%DisplayedItem.hide()
 
-func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale Icon Size
+#func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale Icon Size
 	
-	if GlobalInventory.TextureCache.has(stored_item.name):
-		return GlobalInventory.TextureCache[stored_item.name]
-	else:
-		var ItemSize = self.size * 0.8
-		var img = Icon.get_image()
-		
-		img.resize(ItemSize.x, ItemSize.y, Image.INTERPOLATE_LANCZOS)
-		var newIcon = ImageTexture.create_from_image(img)
-		
-		GlobalInventory.TextureCache[stored_item.name] = newIcon
-		return newIcon
+	#if GlobalInventory.TextureCache.has(stored_item.name):
+		#return GlobalInventory.TextureCache[stored_item.name]
+	#else:
+		#var ItemSize = self.size * 0.8
+		#var img = Icon.get_image()
+		#
+		#img.resize(ItemSize.x, ItemSize.y, Image.INTERPOLATE_LANCZOS)
+		#var newIcon = ImageTexture.create_from_image(img)
+		#
+		#GlobalInventory.TextureCache[stored_item.name] = newIcon
+		#return newIcon
 
 func _on_displayed_item_button_down() -> void:
 	%DisplayedItem.pivot_offset = %DisplayedItem.size / 2

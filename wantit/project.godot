@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalTimer="*res://Scripts/timer.gd"
-GlobalInventory="*res://Scripts/GlobalInventory.gd"
 
 [dialogue_manager]
 

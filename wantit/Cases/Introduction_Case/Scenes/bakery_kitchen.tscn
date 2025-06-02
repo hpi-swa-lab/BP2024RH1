@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=14 format=3 uid="uid://bto1uem2cnbyr"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_k1qd0"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_3wxj5"]
+[ext_resource type="Resource" uid="uid://dl40cnyqey87u" path="res://dialogue/dialogue.dialogue" id="2_k1qd0"]
 [ext_resource type="Texture2D" uid="uid://db364nyl3k8a8" path="res://Cases/Introduction_Case/assets/interactable_items/door_office.png" id="4_snjqx"]
 [ext_resource type="Texture2D" uid="uid://bm5uradd7vnhp" path="res://Cases/Introduction_Case/assets/interactable_items/floursack.png" id="5_elfe8"]
 [ext_resource type="Texture2D" uid="uid://cn256ss6v6oay" path="res://Cases/Introduction_Case/assets/interactable_items/floursack_key.png" id="6_l61y1"]
@@ -13,9 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="14_cpead"]
 
-[node name="Bakery Kitchen" type="Node"]
+[node name="Bakery Kitchen" type="Node" node_paths=PackedStringArray("clues")]
 script = ExtResource("1_k1qd0")
 location_name = "Backery Kitchen"
+clues = [NodePath("Key"), NodePath("Shoe Prints"), NodePath("Flour Sack")]
+dialogue_resource = ExtResource("2_k1qd0")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

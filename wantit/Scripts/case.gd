@@ -26,6 +26,11 @@ func instantiate():
 		var instance := scene.instantiate()
 		if instance is Location:
 			var location := instance as Location
+			
+			location.case = self
+			#TODO add inventory node to each scene?
+			location.set_inventory(inventory)
+			
 			location.connect("non_collectable_clue_found", _on_non_collectable_clue_found)
 			location.connect("collectable_clue_found", _on_collectable_clue_found)
 			location.update_hint_text(inventory_items)

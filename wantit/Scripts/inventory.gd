@@ -3,7 +3,6 @@
 
 extends Control
 #extends Node
-
 class_name Inventory
 
 var inventory_slots: Array[InventorySlot] = []
@@ -16,15 +15,9 @@ var opened: bool = true
 var columns = 2
 var slots: Array 
 
-func _ready() -> void:
-	#for i in range(slot_count):
-		#var slot = InventorySlot.new()
-		#inventory_slots.append(slot)
-	
-	#var newSlot: Control
-	#var slotScene: PackedScene
+func _init() -> void:
 	#%GridContainer.columns = columns
-	grid_container.columns = columns
+	#grid_container.columns = columns
 	for i in range(slot_count):
 		var slot = slot_scene.instantiate() as InventorySlot
 		inventory_slots.append(slot)

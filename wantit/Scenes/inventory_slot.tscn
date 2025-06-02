@@ -52,6 +52,7 @@ custom_minimum_size = Vector2(50, 50)
 offset_right = 50.0
 offset_bottom = 50.0
 script = ExtResource("1_f5bh6")
+slot_scene = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
