@@ -16,7 +16,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_l6h3l")
-slot_count = 8
 slot_scene = ExtResource("2_k5gp2")
 
 [node name="Control" type="Control" parent="."]

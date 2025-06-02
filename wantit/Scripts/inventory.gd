@@ -8,18 +8,18 @@ class_name Inventory
 var inventory_slots: Array[InventorySlot] = []
 var inventory_items_names: Array[String] = []
 var clue_dictionary: Dictionary
-@export var slot_count: int
+@export var slot_count: int = 8
+@export var columns: int  = 2
 @export var slot_scene: PackedScene
 @onready var grid_container: GridContainer = %GridContainer
 var opened: bool = true
-var columns = 2
-var slots: Array 
 
-func _init() -> void:
-	#%GridContainer.columns = columns
-	#grid_container.columns = columns
+
+func _ready() -> void:
+	grid_container.columns = columns
 	for i in range(slot_count):
 		var slot = slot_scene.instantiate() as InventorySlot
+		print("Inventory slot appended!")
 		inventory_slots.append(slot)
 		grid_container.add_child(slot)
 		
