@@ -9,8 +9,8 @@ func save_game(game: Game):
 		"active_case_slug": game.active_case_slug,
 		"current_location_name": game.current_location.location_name,
 		#"completed_cases": game.get_completed_cases(),
-		"inventory_items": game.get_case_inventory()
-		#"interactions": game.interactions
+		"inventory_items": game.get_case_inventory(),
+		"interactions": game.get_case_interactions()
 	}
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -35,9 +35,8 @@ func load_game(game: Game):
 	game.active_case_slug = result.get("active_case_slug", "")
 	game.current_location_name = result.get("current_location_name")
 	game.inventory_items_names = result.get("inventory_items", [])
-	#game.current_location = 
+	game.interactions_history = result.get("interactions", [])
 	#game.set_completed_cases(result.get("completed_cases", []))
-	#game.interactions = result.get("interactions", [])
 	#var inventory_items_name = result.get("inventory", [])
 	#if inventory_items_name:
 		#TODO restore items from their names

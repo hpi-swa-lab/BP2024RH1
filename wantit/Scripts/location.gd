@@ -10,6 +10,7 @@ var case: Case
 @export var dialogue_start: String
 var hint_text: String = "Default text"
 var inventory: Inventory
+@onready var helpsystem = $Helpsystem
 
 signal collectable_clue_found(clue: Clue, location: Location)
 signal non_collectable_clue_found(clue: Clue, location: Location)
@@ -81,3 +82,6 @@ func update_hint_text(player_items):
 	#FIXME choose one hint when several available
 	if valid_hints:
 		hint_text = valid_hints[0]
+		print("Updated hint text: %s" %[hint_text])
+		#helpsystem.set_hint_text()
+		helpsystem.call_deferred("set_hint_text")

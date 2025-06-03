@@ -10,7 +10,7 @@ var case_locations: Array[Location]
 # @export var closing_scene: PackedScene
 @export var inventory_scene: PackedScene
 var inventory: Inventory
-var interactions: Array[String]
+var interactions: Array
 var is_completed: bool
 var restored_inventory_items: Array
 
@@ -32,7 +32,6 @@ func instantiate():
 			push_error("Scene does not instantiate to a Location: " + scene.resource_path)
 	
 	inventory = inventory_scene.instantiate() as Inventory
-	#TODO update inventory on loading game
 	var clue_dictionary = create_clue_dictionary()
 	print("Items names restored in a case: %s" %[restored_inventory_items])
 	inventory.restore_inventory_items(clue_dictionary, restored_inventory_items)
@@ -40,12 +39,15 @@ func instantiate():
 
 func _on_collectable_clue_found(clue: Clue, location: Location) -> void:
 	inventory.add_item(clue)
-	location.update_hint_text(get_player_items())
+	var player_items = get_player_items()
+	location.update_hint_text(player_items)
 	print("Item: %s added to inventory" %clue.clue_name)
 
 func _on_non_collectable_clue_found(clue_name: String, location: Location) -> void:
 	interactions.append(clue_name)
-	location.update_hint_text(get_player_items())
+	var player_items = get_player_items()
+	#location.update_hint_text(player_items)
+	location.call_deferred("update_hint_text", player_items)
 	print("Non-collectable clue: %s is added to a list of interactions." %clue_name)
 
 func open_room(path):

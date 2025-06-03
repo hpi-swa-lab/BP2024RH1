@@ -8,6 +8,7 @@ var current_location_name: String = ""
 @export var cases: Array[Case]
 var gamesaver = GameSaver.new()
 var inventory_items_names: Array
+var interactions_history: Array
 
 func _ready():
 	get_tree().auto_accept_quit = false
@@ -35,6 +36,7 @@ func get_active_case():
 
 func start_case(case: Case) -> void:
 	case.restored_inventory_items = inventory_items_names
+	case.interactions = interactions_history
 	case.instantiate()
 	
 	var location_index = 0
@@ -60,8 +62,8 @@ func switch_location(location: Location):
 	location.set_inventory(case.inventory)
 	
 	var player_items = case.get_player_items()
-	#if player_items:
-	location.update_hint_text(player_items)
+	#location.update_hint_text(player_items)
+	location.call_deferred("update_hint_text", player_items)
 	
 	current_location = location
 	current_location.location_switch_requested.connect(func(name):
@@ -83,3 +85,7 @@ func set_completed_cases():
 func get_case_inventory() -> Array[String]:
 	var active_case = get_active_case()
 	return active_case.inventory.get_inventory_items_name()
+
+func get_case_interactions() -> Array:
+	var active_case = get_active_case()
+	return active_case.interactions
