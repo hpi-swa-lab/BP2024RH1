@@ -13,7 +13,7 @@
 [sub_resource type="Resource" id="Resource_0lku5"]
 script = ExtResource("3_m7tbu")
 mode = 2
-required_items = Array[String](["Waffle"])
+required_items = Array[String](["Waffle", "Key"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_m7tbu"]

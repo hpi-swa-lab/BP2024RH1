@@ -7,7 +7,7 @@ enum Mode { ALL, ANY, NONE }
 @export var mode: Mode = Mode.ALL
 @export var required_items: Array[String] = []
 
-func is_satisfied(player_items: Array[String]): #-> bool
+func is_satisfied(player_items: Array):
 	match mode:
 		Mode.ALL:
 			for item in required_items:
@@ -24,4 +24,3 @@ func is_satisfied(player_items: Array[String]): #-> bool
 				if player_items.has(item):
 					return false
 			return true
-	

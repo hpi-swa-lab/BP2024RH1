@@ -1,19 +1,58 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsaho1fwwino3"]
+[gd_scene load_steps=18 format=3 uid="uid://dsaho1fwwino3"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_12w5n"]
 [ext_resource type="Texture2D" uid="uid://bsmthr6tenpuw" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_office.png" id="1_vt4a7"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_guxia"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_y86e6"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="3_12w5n"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_ggvds"]
 [ext_resource type="Texture2D" uid="uid://c7hwvidnp7hi4" path="res://Cases/Introduction_Case/assets/interactable_items/safe.png" id="3_jkgmc"]
 [ext_resource type="Texture2D" uid="uid://dmixct3itjen8" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_office.png" id="5_gha41"]
 [ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="8_5hpsd"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="8_12w5n"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="8_h7n3f"]
 
+[sub_resource type="Resource" id="Resource_xnrjk"]
+script = ExtResource("3_ggvds")
+mode = 2
+required_items = Array[String](["ShoeprintsOffice", "Screwdriver", "Pliers", "Fingerprints"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_4361v"]
+script = ExtResource("2_guxia")
+hint_text = "Was sind denn das für Spuren auf dem Boden?"
+hint_condition = SubResource("Resource_xnrjk")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_kiky4"]
+script = ExtResource("3_ggvds")
+mode = 2
+required_items = Array[String](["Fingerprints", "Pliers", "Screwdriver"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_guxia"]
+script = ExtResource("2_guxia")
+hint_text = "Ich sollte mir den Safe mal genauer anschauen."
+hint_condition = SubResource("Resource_kiky4")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_88f4i"]
+script = ExtResource("3_ggvds")
+mode = 0
+required_items = Array[String](["ShoeprintsOffice", "Fingerprints", "Pliers", "Screwdriver"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_ggvds"]
+script = ExtResource("2_guxia")
+hint_text = "Hier scheint nichts auffälliges mehr zu sein"
+hint_condition = SubResource("Resource_88f4i")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
 [node name="Bakery Office" type="Node" node_paths=PackedStringArray("clues")]
 script = ExtResource("1_12w5n")
 location_name = "Bakery Office"
 clues = [NodePath("Shoeprints")]
+hints = Array[ExtResource("2_guxia")]([SubResource("Resource_4361v"), SubResource("Resource_guxia"), SubResource("Resource_ggvds")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

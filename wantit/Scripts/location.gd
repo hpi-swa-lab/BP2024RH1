@@ -11,8 +11,8 @@ var case: Case
 var hint_text: String = "Default text"
 var inventory: Inventory
 
-signal collectable_clue_found(clue: Clue)
-signal non_collectable_clue_found(clue: Clue)
+signal collectable_clue_found(clue: Clue, location: Location)
+signal non_collectable_clue_found(clue: Clue, location: Location)
 signal location_switch_requested(location_name: String)
 
 func _ready():
@@ -20,12 +20,6 @@ func _ready():
 	print("Setting up location: %s." % location_name)
 	call_deferred("_setup_connections")
 	update_items_visibility()
-	
-	#DialogueManager.show_dialogue_balloon_scene(
-			#"res://dialogue_balloons/monologue/balloon_monologue.tscn",
-			#dialogue_resource,
-			#dialogue_start)
-	#await DialogueManager.dialogue_ended
 
 func set_inventory(case_inventory: Inventory) -> void:
 	inventory = case_inventory
@@ -50,16 +44,15 @@ func _setup_connections():
 func _on_clue_found(clue: Clue) -> void:
 	print("Clue: %s found in location: %s" % [clue.clue_name, self.location_name])
 	if clue.is_collectable:
-		emit_signal("collectable_clue_found", clue)
+		emit_signal("collectable_clue_found", clue, self)
 		disable_item(clue) 
 	else:
-		emit_signal("non_collectable_clue_found", clue.clue_name)
-	#TODO update hint text
+		emit_signal("non_collectable_clue_found", clue.clue_name, self)
 	
 func _on_location_switch_requested(requested_location_name: String):
 	emit_signal("location_switch_requested", requested_location_name)
 
-func get_available_hints(player_items: Array[String]) -> Array[String]:
+func get_available_hints(player_items: Array) -> Array[String]:
 	var results: Array[String] = []
 	for hint in hints:
 		if hint.is_valid(player_items):
@@ -82,10 +75,8 @@ func get_clue_by_name(clue_name: String) -> Clue:
 	#FIXME add handle no clue found
 	return null
 
-#TODO add dialogues
-
-func update_hint_text(inventory_items):
-	var valid_hints = get_available_hints(inventory_items)
+func update_hint_text(player_items):
+	var valid_hints = get_available_hints(player_items)
 	#print(valid_hints)
 	#FIXME choose one hint when several available
 	if valid_hints:

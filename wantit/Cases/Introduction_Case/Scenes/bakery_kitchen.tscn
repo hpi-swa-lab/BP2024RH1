@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=21 format=3 uid="uid://bto1uem2cnbyr"]
 
 [ext_resource type="Script" uid="uid://c62j4fhwfi6xe" path="res://Cases/Introduction_Case/Scenes/bakery_kitchen.gd" id="1_7deum"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_3wxj5"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_cpead"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_24rd3"]
 [ext_resource type="Texture2D" uid="uid://db364nyl3k8a8" path="res://Cases/Introduction_Case/assets/interactable_items/door_office.png" id="4_snjqx"]
 [ext_resource type="Texture2D" uid="uid://bm5uradd7vnhp" path="res://Cases/Introduction_Case/assets/interactable_items/floursack.png" id="5_elfe8"]
 [ext_resource type="Texture2D" uid="uid://cn256ss6v6oay" path="res://Cases/Introduction_Case/assets/interactable_items/floursack_key.png" id="6_l61y1"]
@@ -13,10 +15,47 @@
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="14_cpead"]
 
+[sub_resource type="Resource" id="Resource_e1im7"]
+script = ExtResource("3_24rd3")
+mode = 2
+required_items = Array[String](["ShoeprintsKitchen", "Key"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_88u8x"]
+script = ExtResource("2_cpead")
+hint_text = "Was sind denn das für Spuren auf dem Boden?"
+hint_condition = SubResource("Resource_e1im7")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_fmamt"]
+script = ExtResource("3_24rd3")
+mode = 2
+required_items = Array[String](["Key"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_tcx5q"]
+script = ExtResource("2_cpead")
+hint_text = "Der umgefallene Mehlsack sieht sehr verdächtig aus"
+hint_condition = SubResource("Resource_fmamt")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_esf5q"]
+script = ExtResource("3_24rd3")
+mode = 0
+required_items = Array[String](["ShoeprintsKitchen", "Key"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_b6n05"]
+script = ExtResource("2_cpead")
+hint_text = "In der Backstube sehe ich keine Auffälligkeiten mehr"
+hint_condition = SubResource("Resource_esf5q")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
 [node name="Bakery Kitchen" type="Node" node_paths=PackedStringArray("clues")]
 script = ExtResource("1_7deum")
 location_name = "Backery Kitchen"
 clues = [NodePath("Key"), NodePath("Shoe Prints"), NodePath("Flour Sack")]
+hints = Array[ExtResource("2_cpead")]([SubResource("Resource_88u8x"), SubResource("Resource_tcx5q"), SubResource("Resource_b6n05")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

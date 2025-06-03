@@ -10,7 +10,7 @@ var case_locations: Array[Location]
 # @export var closing_scene: PackedScene
 @export var inventory_scene: PackedScene
 var inventory: Inventory
-var interactions: Array
+var interactions: Array[String]
 var is_completed: bool
 var restored_inventory_items: Array
 
@@ -19,7 +19,7 @@ signal on_location_switch_requested(location_name: String)
 func instantiate():
 	connect("on_location_switch_requested", _on_location_switch_requested)
 	
-	case_locations.clear()  # Optional, if already populated
+	case_locations.clear()
 	for scene in case_location_scenes:
 		var instance := scene.instantiate()
 		if instance is Location:
@@ -27,7 +27,6 @@ func instantiate():
 			location.case = self
 			location.connect("non_collectable_clue_found", _on_non_collectable_clue_found)
 			location.connect("collectable_clue_found", _on_collectable_clue_found)
-			#location.update_hint_text(inventory_items)
 			case_locations.append(location)
 		else:
 			push_error("Scene does not instantiate to a Location: " + scene.resource_path)
@@ -39,19 +38,15 @@ func instantiate():
 	inventory.restore_inventory_items(clue_dictionary, restored_inventory_items)
 	var inventory_items = inventory.get_inventory_items_name()
 
-func _on_collectable_clue_found(clue: Clue) -> void:
+func _on_collectable_clue_found(clue: Clue, location: Location) -> void:
 	inventory.add_item(clue)
+	location.update_hint_text(get_player_items())
 	print("Item: %s added to inventory" %clue.clue_name)
-	
-	var updated_inventory_items = inventory.get_inventory_items_name()
-	print("Updated inventory: " + str(updated_inventory_items))
-	for location in case_locations:
-		location.update_hint_text(updated_inventory_items)
 
-func _on_non_collectable_clue_found(clue_name: String) -> void:
+func _on_non_collectable_clue_found(clue_name: String, location: Location) -> void:
 	interactions.append(clue_name)
-	print("Non-collectable clue: %s is added to interactions history." %clue_name)
-	#print(interactions)
+	location.update_hint_text(get_player_items())
+	print("Non-collectable clue: %s is added to a list of interactions." %clue_name)
 
 func open_room(path):
 	var room = load(path)
@@ -60,13 +55,10 @@ func open_room(path):
 #func is_completed():
 	#pass
 	
-#func add_to_inventory(item_id: String):
-	#pass
-	
 func _on_location_switch_requested(location_name: String):
 	emit_signal("on_location_switch_requested", location_name)
 	
-func are_all_clues_found():
+func are_all_clues_found(): #Do we need it??
 	for location in case_locations:
 		if not location.are_all_clues_found():
 			return false
@@ -89,7 +81,12 @@ func get_location_index_by_name(target_name: String):
 func create_clue_dictionary() -> Dictionary:
 	var result = {}
 	for location in case_locations:
-		#print("Location:", location.name, "Clues:", location.clues.size())
 		for clue in location.clues:
 			result[clue.clue_name] = clue
 	return result
+
+func get_player_items() -> Array:
+	var player_items = []
+	player_items.append_array(inventory.get_inventory_items_name())
+	player_items.append_array(interactions)
+	return player_items
