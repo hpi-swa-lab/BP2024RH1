@@ -166,7 +166,7 @@ offset_left = 949.0
 offset_top = 549.0
 offset_right = 1062.0
 offset_bottom = 580.0
-text = "Überprüfen"
+text = "Check"
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
@@ -204,7 +204,7 @@ offset_right = 368.0
 offset_bottom = 50.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Spuren "
+text = "Clues"
 
 [node name="Mapping" type="Label" parent="description"]
 layout_mode = 0
@@ -224,7 +224,7 @@ offset_right = 789.0
 offset_bottom = 50.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Notizzettel"
+text = "Notepad"
 
 [node name="dividing_line" type="Line2D" parent="description"]
 points = PackedVector2Array(584, 64, 584, 576)

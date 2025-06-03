@@ -1,49 +1,46 @@
-
 ~ begin
-set GlobalTimer.start_timer("insgesamt")
+set GlobalTimer.start_timer("total")
 set GlobalTimer.add_log_entry("start Dialogue: begin")
-Klaas: Willkommen im Präsidium!
-Klaas: Ich bin Klaas und werde dir bei deinen ersten Fällen als Unterstützung beiseitestehen.
-Klaas: So wie es aussieht, haben wir auch bereits unseren ersten Fall.
-Klaas: Das Fälleverzeichnis findest du im Computer auf dem Schreibtisch.
+Klaas: Welcome to the headquarters!
+Klaas: I'm Klaas, and I'll be assisting you with your first cases.
+Klaas: It looks like we already have our first case.
+Klaas: You can find the case directory on the computer on the desk.
 set GlobalTimer.add_log_entry("end Dialogue: begin")
 => END
 
 ~ start_case
-set GlobalTimer.start_timer("introduction_case")
+set GlobalTimer.starttimer("introductioncase")
 set GlobalTimer.add_log_entry("start Dialogue: start_case")
-Klaas: Im Waffelladen “Waffle Overflow” wurde der Safe über Nacht ausgeräumt.
-Klaas: Über die Stadtkarte an der rechten Wand findest du den Weg dorthin.
+Klaas: The safe was cleared out overnight at the waffle shop “Waffle Overflow”.
+Klaas: You can find your way there using the city map on the right wall.
 set GlobalTimer.add_log_entry("end Dialogue: start_case")
 => END
 
 ~ crime_scene
 set GlobalTimer.add_log_entry("start Dialogue: crime_scene")
-Klaas: Hier hat aber jemand gewütet. Bevor wir uns den Tatort genauer anschauen, sollten wir mit dem Inhaber der Bäckerei reden.
-Bäcker: Willkommen bei “Waffle Overflow”. Hier gibt es keine Cookies - nur Waffeln.
-Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lippen. Aber jetzt ist wohl nicht der beste Zeitpunkt dafür.
-- Was genau ist denn passiert?
-	Bäcker: Es wurde eingebrochen und die Einnahmen vom gestrigen Tagesgeschäft wurden aus dem Safe geklaut. Ohne das Geld kann ich heute keine neuen Waffelzutaten kaufen…
-	- Wir werden unser Bestes tun, den Täter zu fassen.
-		Klaas: Wo fangen wir mit der Spurensicherung an?
-		# zum ⇒ Verkaufsraum wechseln
-		- Verkaufsraum
-			set GlobalTimer.add_log_entry("end Dialogue: crime_scene -> Verkaufsraum")
+Klaas: Someone really wreaked havoc here. Before we take a closer look at the crime scene, we should talk to the bakery owner.
+Bäcker: Welcome to “Waffle Overflow”. We don't have cookies - only waffles.
+Bäcker: Ah... I'm sorry, that slogan is always on my mind. But now is probably not the best time for that.
+- What exactly happened?
+	Bäcker: There was a break-in, and yesterday's sales revenue was stolen from the safe. Without the money, I can't buy new waffle ingredients today...
+	- We'll do our best to catch the perpetrator.
+		Klaas: Where do we start with the evidence collection?
+		- Salesroom
+			set GlobalTimer.add_log_entry("end Dialogue: crime_scene -> salesroom")
 			set CaseManager.CaseGlobals.current_scene = "showroom"
-		# zum Büro des Bäckers wechseln
-		- Büro
-			set GlobalTimer.add_log_entry("end Dialogue: crime_scene -> Büro")
-			set CaseManager.CaseGlobals.current_scene = "bakery_office"
+		- Office
+			set GlobalTimer.add_log_entry("end Dialogue: crime_scene -> office")
+			set CaseManager.CaseGlobals.currentscene = "bakeryoffice"
 			do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/bakery_office.tscn")
-set GlobalTimer.start_timer("all_clues_found")
+set GlobalTimer.starttimer("allclues_found")
 => END
 
 ~ found_hints
 set GlobalTimer.add_log_entry("start Dialogue: found_hints")
-set GlobalTimer.end_timer("all_clues_found")
-Klaas: Es scheint so, als hätten wir alle wichtigen Spuren gesichert.
-**RUMMS!**
-Klaas: Ohh, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
+set GlobalTimer.endtimer("allclues_found")
+Klaas: It seems like we've secured all important evidence.
+**THUD!**
+Klaas: Oh, the intern tripped, and all the secured evidence got mixed up.
 do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/minigame_1.tscn")
 set GlobalTimer.add_log_entry("end Dialogue: found_hints")
 => END
@@ -51,27 +48,27 @@ set GlobalTimer.add_log_entry("end Dialogue: found_hints")
 
 ~ minigame1_done
 set GlobalTimer.add_log_entry("start Dialogue: minigame1_done")
-Klaas: Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.
+Klaas: I'll take fingerprints from all the employees. Then we can return to headquarters.
 do SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 set GlobalTimer.add_log_entry("end Dialogue: minigame1_done")
 => END
 
 ~ evaluate_traces
 set GlobalTimer.add_log_entry("start Dialogue: evaluate_traces")
-Klaas: Um die Spuren vom Tatort effizient auszuwerten, müssen wir sie digitalisieren. Dein Arbeitscomputer hat bereits die nötige Software installiert, sodass du direkt starten kannst.
+Klaas: To efficiently evaluate the evidence from the crime scene, we need to digitize it. Your work computer has the necessary software installed, so you can start right away.
 set GlobalTimer.add_log_entry("end Dialogue: evaluate_traces")
 do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/minigame_2.tscn")
 => END
 
 ~ finish
 set GlobalTimer.add_log_entry("start Dialogue: finish")
-Klaas: Gute Nachrichten: wir haben den Dieb! 
-Klaas: Die Fingerabrücke am Safe stimmen mit denen eines Mitarbeiters von “Waffle Overflow” überein.
-Klaas: Der Bäckergehilfe konnte seinen Schlüssel nutzen, um den Laden aufzuschließen, hatte aber keinen Schlüssel für den Safe. Außerdem hatte er scheinbar so großen Hunger, dass er nicht einmal bei einem Diebstahl ohne Waffel auskam.
-Klaas: Wir werden gleich bei ihm zu Hause vorbeifahren. Dort befindet sich höchstwahrscheinlich auch das geklaute Geld.
-Klaas: Danke für deine Unterstützung. Ich freue mich auf unsere weitere Zusammenarbeit!
-set GlobalTimer.end_timer("insgesamt")
-set GlobalTimer.end_timer("introduction_case")
+Klaas: Good news: we've caught the thief!
+Klaas: The fingerprints on the safe match those of an employee from “Waffle Overflow”.
+Klaas: The bakery assistant used his key to unlock the shop but didn't have a key for the safe. Moreover, he seemed to be so hungry that he couldn't even resist a waffle during the theft.
+Klaas: We'll visit his home shortly, where the stolen money is most likely located.
+Klaas: Thank you for your support. I'm looking forward to our further collaboration!
+set GlobalTimer.end_timer("total")
+set GlobalTimer.endtimer("introductioncase")
 set GlobalTimer.add_log_entry("end Dialogue: finish")
 do CaseManager.close_Case(Globals.selectedCase)
 => END

@@ -5,7 +5,7 @@ extends Node2D
 @export var SecondGamePicture: Texture2D
 
 func _ready() -> void:
-	%Label.text = "In diesem Fall hast du etwas über " + Subject + " gelernt"
+	%Label.text = "In this case, you have learnt something about " + Subject
 	%FirstGame.texture = resize_image(FirstGamePicture)
 	%SecondGame.texture = resize_image(SecondGamePicture)
 	
