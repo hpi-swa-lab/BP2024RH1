@@ -7,9 +7,10 @@ extends Location
 @onready var minigame_clues = %Control.get_children()
 
 var searching: bool
-
 var draggedItems = 0
 var clueRects = {}
+
+#TODO add an interaction "minigame1" completed
 
 func _ready() -> void:
 	DialogueManager.show_dialogue_balloon_scene(load("res://dialogue_balloons/monologue/balloon_monologue.tscn"), load("res://dialogue/monologue.dialogue"), "minigame1_start")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=17 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://ebi58jm4ckop" path="res://Cases/Introduction_Case/Scenes/minigame_1.tscn" id="11_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://bfhmvi5qb81eb" path="res://Scenes/inventory.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://bw7q816wdvvla" path="res://Cases/Introduction_Case/Scenes/minigame_2.tscn" id="12_215e1"]
-[ext_resource type="PackedScene" uid="uid://d1wxqelioyvow" path="res://Cases/Introduction_Case/Scenes/intro_endscreen.tscn" id="13_215e1"]
 [ext_resource type="Script" uid="uid://btva00lvfk41s" path="res://Scripts/minigame_trigger.gd" id="15_7sc4i"]
 
 [sub_resource type="Resource" id="Resource_80cx4"]
@@ -22,19 +21,13 @@ location_name = "Minigame1"
 conditions = Array[String](["Waffle", "ShoeprintsKitchen", "Flour Sack", "ShoeprintsOffice", "Fingerprints", "Screwdriver", "Pliers", "Key"])
 metadata/_custom_type_script = "uid://btva00lvfk41s"
 
-[sub_resource type="Resource" id="Resource_7sc4i"]
-script = ExtResource("15_7sc4i")
-location_name = "Minigame2"
-conditions = Array[String]([])
-metadata/_custom_type_script = "uid://btva00lvfk41s"
-
 [sub_resource type="Resource" id="Resource_feb5d"]
 script = ExtResource("2_e2o6t")
 case_slug = "intro_case"
 case_title = "Introduction"
-case_location_scenes = Array[PackedScene]([ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p"), ExtResource("10_hve3p"), ExtResource("11_lc2xo"), ExtResource("12_215e1"), ExtResource("13_215e1")])
+case_location_scenes = Array[PackedScene]([ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p"), ExtResource("10_hve3p"), ExtResource("11_lc2xo"), ExtResource("12_215e1")])
 inventory_scene = ExtResource("11_mfdv2")
-minigame_triggers = Array[ExtResource("15_7sc4i")]([SubResource("Resource_80cx4"), SubResource("Resource_7sc4i")])
+minigame_triggers = Array[ExtResource("15_7sc4i")]([SubResource("Resource_80cx4")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]
