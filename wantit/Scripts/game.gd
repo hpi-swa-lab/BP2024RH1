@@ -39,6 +39,8 @@ func start_case(case: Case) -> void:
 	case.interactions = interactions_history
 	case.instantiate()
 	
+	case.connect("minigame_location_switch_requested", _on_location_switch_requested)
+	
 	var location_index = 0
 	if current_location_name != "":
 		location_index = case.get_location_index_by_name(current_location_name)
@@ -76,7 +78,7 @@ func switch_location(location: Location):
 
 func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)
-	current_case.get_location_by_name(location_name)
+	#current_case.get_location_by_name(location_name)
 	switch_location(current_case.get_location_by_name(location_name))
 
 func set_completed_cases():

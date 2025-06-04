@@ -1,4 +1,5 @@
-extends Control
+#extends Control
+extends Location
 
 var LabelText: Dictionary = {}
 var Buttons: Dictionary = {}
@@ -13,7 +14,7 @@ var errors: Array[bool] = []
 var iteration_completed: bool = false
 
 func _ready() -> void:
-	CaseManager.CaseGlobals.current_scene = "minigame_2"
+	#CaseManager.CaseGlobals.current_scene = "minigame_2"
 	
 	LabelText[0] = "Fingerabdruck eines Angestellten."
 	LabelText[1] = "Es wurden mehrere Fingerabrücke am Safe gesichert."
@@ -178,8 +179,8 @@ func create_label(labelText: String) -> Label:
 	
 	return label
 
-func _on_finish_button_pressed() -> void:
-	Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
-	Globals.OfficeDialogueStart = "finish"
-	Globals.OfficeDialogueDone = false
-	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+#func _on_finish_button_pressed() -> void:
+	#Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
+	#Globals.OfficeDialogueStart = "finish"
+	#Globals.OfficeDialogueDone = false
+	#SceneSwitcher.switch_scene("res://Scenes/office.tscn")

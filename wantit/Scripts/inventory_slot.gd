@@ -26,11 +26,10 @@ func remove_item():
 		await get_tree().process_frame
 		if ActionScript.has_method("do_smt"):
 			ActionScript.do_smt(stored_item)
-	
+	#
 	#var parent = get_parent()
 	#parent.inventory_items.erase(stored_item.name)
-	#GlobalInventory.Items.erase(stored_item.name)
-	ActionScript = null
+	#ActionScript = null
 	stored_item = null
 	%DisplayedItem.hide()
 
@@ -48,6 +47,8 @@ func _on_displayed_item_button_down() -> void:
 		remove_item()
 	else:
 		%AnimationPlayer.play("remove_item")
+	
+	#remove_item()
 
 func is_empty() -> bool:
 	if stored_item == null:

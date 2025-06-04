@@ -48,7 +48,7 @@ func check_down():
 			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), DialogueStart)
 			await DialogueManager.dialogue_ended
 			return
-	GlobalInventory.add_item(oldItem)
+	#GlobalInventory.add_item(oldItem)
 	
 func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
 	for child in get_tree().root.get_children():
@@ -58,7 +58,7 @@ func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
 			return child.find_child("Key Hole")
 		elif child.name == "Bakery Office":
 			DialogueStart = "key_on_safe"
-			GlobalInventory.add_item(oldItem)
+			#GlobalInventory.add_item(oldItem)
 			return child.find_child("Safe")
 	return null
 	

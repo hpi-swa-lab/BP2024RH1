@@ -1,21 +1,25 @@
 [gd_scene load_steps=12 format=3 uid="uid://ebi58jm4ckop"]
 
-[ext_resource type="Script" uid="uid://cu1gtpcebk1yi" path="res://Cases/Introduction_Case/Scripts/minigame_1.gd" id="1_5txvl"]
-[ext_resource type="PackedScene" uid="uid://b3w6b5y3gmolt" path="res://Cases/Introduction_Case/scenes/clue.tscn" id="2_0uv5o"]
+[ext_resource type="Script" uid="uid://c5frky55jhxc0" path="res://Cases/Introduction_Case/Scripts/minigame_1.gd" id="1_a0wop"]
+[ext_resource type="PackedScene" uid="uid://b3w6b5y3gmolt" path="res://Cases/Introduction_Case/Scenes/clue.tscn" id="2_0uv5o"]
 [ext_resource type="Texture2D" uid="uid://cb77c1eay6j6j" path="res://Cases/Introduction_Case/assets/minigame1/bag_screwdriver.png" id="3_o7kty"]
-[ext_resource type="PackedScene" uid="uid://b0etnfychdoti" path="res://Cases/Introduction_Case/scenes/draggable.tscn" id="4_jmcek"]
+[ext_resource type="PackedScene" uid="uid://b0etnfychdoti" path="res://Cases/Introduction_Case/Scenes/draggable.tscn" id="4_jmcek"]
 [ext_resource type="Texture2D" uid="uid://cjy13kd6648sg" path="res://Cases/Introduction_Case/assets/minigame1/photo_shoeprint.png" id="4_wq7o3"]
 [ext_resource type="Texture2D" uid="uid://hk1vyyeo8pcw" path="res://Cases/Introduction_Case/assets/minigame1/bag_waffle.png" id="5_a0wop"]
-[ext_resource type="PackedScene" uid="uid://bsrqm82ifqt23" path="res://Cases/Introduction_Case/scenes/control_panel.tscn" id="5_ne1wf"]
+[ext_resource type="PackedScene" uid="uid://bsrqm82ifqt23" path="res://Cases/Introduction_Case/Scenes/control_panel.tscn" id="5_ne1wf"]
 [ext_resource type="Texture2D" uid="uid://bros46xum17n" path="res://Cases/Introduction_Case/assets/minigame1/photo_fingerprints.png" id="6_wa13m"]
 [ext_resource type="Texture2D" uid="uid://cte66c41s6312" path="res://Cases/Introduction_Case/assets/minigame1/bag_pliers.png" id="7_vae77"]
 [ext_resource type="Texture2D" uid="uid://ervlrutkdb2d" path="res://Cases/Introduction_Case/assets/minigame1/magnifying_glass.png" id="10_6t3is"]
 [ext_resource type="Script" uid="uid://dlau6cnxv54l" path="res://Cases/Introduction_Case/Scripts/magnifying_glass.gd" id="10_wq7o3"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_5txvl")
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_a0wop")
+location_name = "Minigame1"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 647.0
 color = Color(0.933333, 1, 0.639216, 1)
@@ -150,6 +154,7 @@ text = "43"
 correctClue = NodePath("../../Control/Footprint")
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 949.0
 offset_top = 549.0
 offset_right = 1062.0
@@ -159,6 +164,7 @@ text = "Überprüfen"
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
 visible = false
+layout_mode = 0
 offset_left = 346.0
 offset_top = 311.0
 offset_right = 638.0
@@ -179,6 +185,7 @@ offset_bottom = 118.0
 text = "Nochmal versuchen"
 
 [node name="MagnifyingGlass" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 60.0
 offset_top = 49.0
 offset_right = 572.0
@@ -220,8 +227,5 @@ points = PackedVector2Array(584, 64, 584, 576)
 width = 1.0
 default_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Label/TryAgain" to="." method="_on_try_again_pressed"]
 [connection signal="button_down" from="MagnifyingGlass" to="MagnifyingGlass" method="_on_button_down"]
 [connection signal="button_up" from="MagnifyingGlass" to="MagnifyingGlass" method="_on_button_up"]
-[connection signal="searching" from="MagnifyingGlass" to="." method="_on_magnifying_glass_searching"]

@@ -9,6 +9,7 @@ signal clue_found(clue: Clue)
 var is_found: bool
 @export var clue_dialogue_resource: DialogueResource
 @export var clue_dialogue_start: String
+@export var action_script: Script
 
 #from item.gd
 func _ready() -> void:
