@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dsaho1fwwino3"]
+[gd_scene load_steps=17 format=3 uid="uid://dsaho1fwwino3"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_12w5n"]
 [ext_resource type="Texture2D" uid="uid://bsmthr6tenpuw" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_office.png" id="1_vt4a7"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_ggvds"]
 [ext_resource type="Texture2D" uid="uid://c7hwvidnp7hi4" path="res://Cases/Introduction_Case/assets/interactable_items/safe.png" id="3_jkgmc"]
 [ext_resource type="Texture2D" uid="uid://dmixct3itjen8" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_office.png" id="5_gha41"]
-[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="8_5hpsd"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="8_12w5n"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="8_h7n3f"]
 
@@ -73,8 +72,6 @@ scale = Vector2(0.300072, 0.300072)
 texture_normal = ExtResource("5_gha41")
 script = ExtResource("8_12w5n")
 clue_name = "ShoeprintsOffice"
-clue_dialogue_resource = ExtResource("8_5hpsd")
-clue_dialogue_start = "shoe_prints_office"
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("2_y86e6")]

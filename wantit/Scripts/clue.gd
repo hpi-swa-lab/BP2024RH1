@@ -7,8 +7,7 @@ signal clue_found(clue: Clue)
 @export var clue_name: String
 @export var is_collectable: bool
 var is_found: bool
-@export var clue_dialogue_resource: DialogueResource
-@export var clue_dialogue_start: String
+@export var dialogue: Dialogue
 @export var action_script: Script
 
 #from item.gd
@@ -21,22 +20,20 @@ func _ready() -> void:
 		bitmap.create_from_image_alpha(image)
 		texture_click_mask = bitmap
 
-
 func _pressed():
 	if is_found:
 		return
 
 	mark_found()
-	#if has_dialogue():
-		#DialogueManager.show_dialogue_balloon_scene(
-			#"res://dialogue_balloons/monologue/balloon_monologue.tscn",
-			#clue_dialogue_resource,
-			#clue_dialogue_start)
-		#await DialogueManager.dialogue_ended
+	if dialogue != null and not dialogue.is_started:
+		start_dialogue(dialogue)
 	emit_signal("clue_found", self)
+
+func start_dialogue(dialogue:Dialogue):
+	DialogueManager.show_dialogue_balloon_scene(
+			dialogue.baloon_type,
+			dialogue.dialogue_resource)
+	await DialogueManager.dialogue_ended
 
 func mark_found():
 	is_found = true
-
-func has_dialogue() -> bool:
-	return self.clue_dialogue_resource and self.clue_dialogue_start != ""

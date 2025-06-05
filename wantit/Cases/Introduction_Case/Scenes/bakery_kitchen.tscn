@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=24 format=3 uid="uid://bto1uem2cnbyr"]
 
 [ext_resource type="Script" uid="uid://c62j4fhwfi6xe" path="res://Cases/Introduction_Case/Scripts/bakery_kitchen.gd" id="1_7deum"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
@@ -9,12 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://bm5uradd7vnhp" path="res://Cases/Introduction_Case/assets/interactable_items/floursack.png" id="5_elfe8"]
 [ext_resource type="Texture2D" uid="uid://cn256ss6v6oay" path="res://Cases/Introduction_Case/assets/interactable_items/floursack_key.png" id="6_l61y1"]
 [ext_resource type="Texture2D" uid="uid://cac4ru4ujuip0" path="res://Cases/Introduction_Case/assets/collectible_items/key.png" id="6_ts2v5"]
-[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="9_7deum"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="11_lftgu"]
 [ext_resource type="Texture2D" uid="uid://dwtfx6evqouww" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_kitchen.png" id="11_snjqx"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
 [ext_resource type="Script" uid="uid://kke8b67onflp" path="res://Cases/Introduction_Case/Scripts/key_action.gd" id="13_24rd3"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="14_cpead"]
+[ext_resource type="Resource" uid="uid://ddaf0l8q8rygd" path="res://dialogue/shoe_prints_bakery.dialogue" id="15_e1im7"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="16_88u8x"]
 
 [sub_resource type="Resource" id="Resource_e1im7"]
 script = ExtResource("3_24rd3")
@@ -52,6 +53,13 @@ hint_text = "In der Backstube sehe ich keine Auffälligkeiten mehr"
 hint_condition = SubResource("Resource_esf5q")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
+[sub_resource type="Resource" id="Resource_q61cs"]
+script = ExtResource("16_88u8x")
+dialogue_resource = ExtResource("15_e1im7")
+is_dialogue = false
+is_monologue = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
 [node name="Bakery Kitchen" type="Node" node_paths=PackedStringArray("clues")]
 script = ExtResource("1_7deum")
 location_name = "Backery Kitchen"
@@ -82,8 +90,6 @@ texture_normal = ExtResource("5_elfe8")
 texture_disabled = ExtResource("6_l61y1")
 script = ExtResource("14_cpead")
 clue_name = "Flour Sack"
-clue_dialogue_resource = ExtResource("9_7deum")
-clue_dialogue_start = "fallen_flour_sack"
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Key" type="TextureButton" parent="."]
@@ -99,8 +105,6 @@ texture_normal = ExtResource("6_ts2v5")
 script = ExtResource("14_cpead")
 clue_name = "Key"
 is_collectable = true
-clue_dialogue_resource = ExtResource("9_7deum")
-clue_dialogue_start = "flour_sack_pushed"
 action_script = ExtResource("13_24rd3")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
@@ -119,8 +123,7 @@ scale = Vector2(0.299523, 0.299523)
 texture_normal = ExtResource("11_snjqx")
 script = ExtResource("14_cpead")
 clue_name = "ShoeprintsKitchen"
-clue_dialogue_resource = ExtResource("9_7deum")
-clue_dialogue_start = "shoe_prints_bakery"
+dialogue = SubResource("Resource_q61cs")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [connection signal="pressed" from="Flour Sack" to="." method="_on_flour_sack_pressed"]

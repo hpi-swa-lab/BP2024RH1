@@ -3,11 +3,6 @@
 An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
 => END
 
-~ bitten_waffle
-Da scheint jemand Hunger gehabt zu haben.
-set CaseManager.CaseGlobals.waffle_collected = true
-=> END
-
 # bakers office
 ~ shoe_prints_office
 if CaseManager.CaseGlobals.traces_in_bakery_inspected: 
@@ -24,21 +19,6 @@ set CaseManager.CaseGlobals.inventory_explained = true
 => END
 
 # Safe in office
-~ pliers
-Damit wollte der Dieb wohl den Safe aufbrechen.
-set CaseManager.CaseGlobals.pliers_collected = true
-=> END
-
-~ screwdriver
-Damit hat der Dieb scheinbar den Safe aufgebrochen.
-set CaseManager.CaseGlobals.screwdriver_collected = true
-=> END
-
-~ fingerprints
-Die Fingerabdrücke müssen wir unbedingt sichern.
-set CaseManager.CaseGlobals.fingerprints_saved = true
-=> END
-
 ~ key_on_safe
 Der Schlüssel passt nicht.
 => END
@@ -50,11 +30,6 @@ set CaseManager.clue_found()
 => END
 
 # bakery
-~ shoe_prints_bakery
-Sieht so aus, als wäre der Dieb in Mehl getreten. Die Spur führt ins Büro des Ladens.
-set CaseManager.CaseGlobals.traces_in_bakery_inspected = true
-=> END
-
 ~ fallen_flour_sack
 if CaseManager.CaseGlobals.traces_in_bakery_inspected:
 	Das ist also der Ursprung der Mehlspuren.

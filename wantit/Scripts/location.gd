@@ -33,6 +33,7 @@ func set_inventory(case_inventory: Inventory) -> void:
 		add_child(inventory)
 
 func _setup_connections():
+	#FIXME
 	DialogueManager.connect("location_switch_requested", _on_location_switch_requested)
 	
 	var clues = get_tree().get_nodes_in_group("location_clues")
@@ -45,7 +46,7 @@ func _setup_connections():
 
 func start_dialogue(dialogue: Dialogue):
 	DialogueManager.show_dialogue_balloon_scene(
-		"res://dialogue_balloons/monologue/balloon_monologue.tscn",
+		dialogue.baloon_type,
 		dialogue.dialogue_resource
 	)
 	dialogue.is_started = true

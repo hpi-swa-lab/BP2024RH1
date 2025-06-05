@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://6pv43wph1ge4"
+path="res://.godot/imported/fingerprints.dialogue-d260efa08d379b9f294f0a70367ab821.tres"
+
+[deps]
+
+source_file="res://dialogue/fingerprints.dialogue"
+dest_files=["res://.godot/imported/fingerprints.dialogue-d260efa08d379b9f294f0a70367ab821.tres"]
+
+[params]
+
+defaults=true
