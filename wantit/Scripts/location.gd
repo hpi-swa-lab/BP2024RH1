@@ -7,7 +7,7 @@ var case: Case
 @export var clues: Array[Clue] = []
 @export var hints: Array[Hint] = []
 #@export var dialogue_resource: DialogueResource
-@export var dialogues: Array[Dialogue]
+@export var dialogue: Dialogue
 var hint_text: String = "Default text"
 var inventory: Inventory
 
@@ -20,8 +20,8 @@ func _ready():
 	print("Setting up location: %s." % location_name)
 	call_deferred("_setup_connections")
 	update_items_visibility()
-	#TODO here comes the dialogue
-	#start_dialogue()
+	if dialogue != null and not dialogue.is_started:
+		start_dialogue(dialogue)
 
 func set_inventory(case_inventory: Inventory) -> void:
 	inventory = case_inventory
@@ -33,21 +33,22 @@ func set_inventory(case_inventory: Inventory) -> void:
 		add_child(inventory)
 
 func _setup_connections():
+	DialogueManager.connect("location_switch_requested", _on_location_switch_requested)
+	
 	var clues = get_tree().get_nodes_in_group("location_clues")
 	for clue in clues:
-		clue.connect("clue_found", 
-						_on_clue_found)
+		clue.connect("clue_found", _on_clue_found)
 	
 	var buttons = get_tree().get_nodes_in_group("location_switch_buttons")
 	for button in buttons:
-		button.connect("location_switch_requested", 
-						_on_location_switch_requested)
+		button.connect("location_switch_requested", _on_location_switch_requested)
 
-#func start_dialogue(dialogue_resource: DialogueResource):
-	#DialogueManager.show_dialogue_balloon_scene(
-		#"res://dialogue_balloons/monologue/balloon_monologue.tscn",
-		#dialogue_resource
-	#)
+func start_dialogue(dialogue: Dialogue):
+	DialogueManager.show_dialogue_balloon_scene(
+		"res://dialogue_balloons/monologue/balloon_monologue.tscn",
+		dialogue.dialogue_resource
+	)
+	dialogue.is_started = true
 
 func _on_clue_found(clue: Clue) -> void:
 	print("Clue: %s found in location: %s" % [clue.clue_name, self.location_name])

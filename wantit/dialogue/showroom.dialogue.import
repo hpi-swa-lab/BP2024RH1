@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://4pvtwiok5hs2"
+path="res://.godot/imported/showroom.dialogue-eb43f4413f19b18157ef816d2e7d9acf.tres"
+
+[deps]
+
+source_file="res://dialogue/showroom.dialogue"
+dest_files=["res://.godot/imported/showroom.dialogue-eb43f4413f19b18157ef816d2e7d9acf.tres"]
+
+[params]
+
+defaults=true
