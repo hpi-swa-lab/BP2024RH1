@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dsaho1fwwino3"]
+[gd_scene load_steps=21 format=3 uid="uid://dsaho1fwwino3"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_12w5n"]
 [ext_resource type="Texture2D" uid="uid://bsmthr6tenpuw" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_office.png" id="1_vt4a7"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="3_12w5n"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_ggvds"]
 [ext_resource type="Texture2D" uid="uid://c7hwvidnp7hi4" path="res://Cases/Introduction_Case/assets/interactable_items/safe.png" id="3_jkgmc"]
+[ext_resource type="Resource" uid="uid://b0n3b6jwuou8d" path="res://dialogue/backery_office.dialogue" id="4_ggvds"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="4_xnrjk"]
 [ext_resource type="Texture2D" uid="uid://dmixct3itjen8" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_office.png" id="5_gha41"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="5_xnrjk"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="8_12w5n"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="8_h7n3f"]
 
@@ -47,11 +50,20 @@ hint_text = "Hier scheint nichts auffälliges mehr zu sein"
 hint_condition = SubResource("Resource_88f4i")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
+[sub_resource type="Resource" id="Resource_2l70s"]
+script = ExtResource("5_xnrjk")
+dialogue_resource = ExtResource("4_ggvds")
+is_dialogue = false
+is_monologue = true
+conditions = Array[ExtResource("4_xnrjk")]([])
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
 [node name="Bakery Office" type="Node" node_paths=PackedStringArray("clues")]
 script = ExtResource("1_12w5n")
 location_name = "Bakery Office"
 clues = [NodePath("Shoeprints")]
 hints = Array[ExtResource("2_guxia")]([SubResource("Resource_4361v"), SubResource("Resource_guxia"), SubResource("Resource_ggvds")])
+dialogue = SubResource("Resource_2l70s")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

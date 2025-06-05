@@ -1,0 +1,23 @@
+~ begin
+Klaas: Willkommen im Präsidium!
+Klaas: Ich bin Klaas und werde dir bei deinen ersten Fällen als Unterstützung beiseitestehen.
+Klaas: So wie es aussieht, haben wir auch bereits unseren ersten Fall.
+Klaas: Das Fälleverzeichnis findest du im Computer auf dem Schreibtisch.
+=> END
+
+~ default
+Klaas: Im Waffelladen “Waffle Overflow” wurde der Safe über Nacht ausgeräumt.
+Klaas: Über die Stadtkarte an der rechten Wand findest du den Weg dorthin.
+=> END
+
+~ evaluate_traces
+Klaas: Um die Spuren vom Tatort effizient auszuwerten, müssen wir sie digitalisieren. Dein Arbeitscomputer hat bereits die nötige Software installiert, sodass du direkt starten kannst.
+=> END
+
+~ finish
+Klaas: Gute Nachrichten: wir haben den Dieb! 
+Klaas: Die Fingerabrücke am Safe stimmen mit denen eines Mitarbeiters von “Waffle Overflow” überein.
+Klaas: Der Bäckergehilfe konnte seinen Schlüssel nutzen, um den Laden aufzuschließen, hatte aber keinen Schlüssel für den Safe. Außerdem hatte er scheinbar so großen Hunger, dass er nicht einmal bei einem Diebstahl ohne Waffel auskam.
+Klaas: Wir werden gleich bei ihm zu Hause vorbeifahren. Dort befindet sich höchstwahrscheinlich auch das geklaute Geld.
+Klaas: Danke für deine Unterstützung. Ich freue mich auf unsere weitere Zusammenarbeit!
+=> END

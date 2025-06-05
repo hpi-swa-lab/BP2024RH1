@@ -3,16 +3,6 @@
 An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
 => END
 
-# bakers office
-~ shoe_prints_office
-if CaseManager.CaseGlobals.traces_in_bakery_inspected: 
-	Hier endet die Mehlspur.
-	set CaseManager.CaseGlobals.traces_in_office_inspected = true
-else:
-	Sieht so aus, als wäre der Dieb in Mehl getreten.
-	set CaseManager.CaseGlobals.traces_in_office_inspected = true
-=> END
-
 ~ inventory
 Du kannst manche Gegenstände im Inventar benutzen.
 set CaseManager.CaseGlobals.inventory_explained = true
@@ -27,21 +17,6 @@ Der Schlüssel passt nicht.
 Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
 set CaseManager.CaseGlobals.door_inspected = true
 set CaseManager.clue_found()
-=> END
-
-# bakery
-~ fallen_flour_sack
-if CaseManager.CaseGlobals.traces_in_bakery_inspected:
-	Das ist also der Ursprung der Mehlspuren.
-	set CaseManager.CaseGlobals.flour_sack_inspected = true
-else:
-	Sieht so aus, als wäre jemand über den Mehlsack gestolpert. 
-	set CaseManager.CaseGlobals.flour_sack_inspected = true
-=> END
-
-~ flour_sack_pushed
-Ein Schlüssel…den muss der Dieb verloren haben. Vielleicht gibt es hier ein passendes Schloss.
-set CaseManager.CaseGlobals.key_collected = true
 => END
 
 ~ minigame1_start

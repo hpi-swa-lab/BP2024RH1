@@ -21,7 +21,11 @@ func _ready():
 	call_deferred("_setup_connections")
 	update_items_visibility()
 	if dialogue != null and not dialogue.is_started:
-		start_dialogue(dialogue)
+		if dialogue.has_condition():
+			#emit_signal("inventory_state_requested")
+			pass
+		else:
+			start_dialogue(dialogue)
 
 func set_inventory(case_inventory: Inventory) -> void:
 	inventory = case_inventory
@@ -44,10 +48,11 @@ func _setup_connections():
 	for button in buttons:
 		button.connect("location_switch_requested", _on_location_switch_requested)
 
-func start_dialogue(dialogue: Dialogue):
+func start_dialogue(dialogue: Dialogue, dialogue_start: String = "default"):
 	DialogueManager.show_dialogue_balloon_scene(
 		dialogue.baloon_type,
-		dialogue.dialogue_resource
+		dialogue.dialogue_resource,
+		dialogue_start
 	)
 	dialogue.is_started = true
 

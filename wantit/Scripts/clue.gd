@@ -29,10 +29,11 @@ func _pressed():
 		start_dialogue(dialogue)
 	emit_signal("clue_found", self)
 
-func start_dialogue(dialogue:Dialogue):
+func start_dialogue(dialogue:Dialogue, dialogue_start: String = "default"):
 	DialogueManager.show_dialogue_balloon_scene(
 			dialogue.baloon_type,
-			dialogue.dialogue_resource)
+			dialogue.dialogue_resource,
+			dialogue_start)
 	await DialogueManager.dialogue_ended
 
 func mark_found():

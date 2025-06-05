@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://p48khhl5trq3"
+path="res://.godot/imported/flour_sack.dialogue-834e51fa72cbae518b7ac84b978e31c2.tres"
+
+[deps]
+
+source_file="res://dialogue/flour_sack.dialogue"
+dest_files=["res://.godot/imported/flour_sack.dialogue-834e51fa72cbae518b7ac84b978e31c2.tres"]
+
+[params]
+
+defaults=true
