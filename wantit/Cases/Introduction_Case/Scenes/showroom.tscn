@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8iypejva5d7t"]
+[gd_scene load_steps=19 format=3 uid="uid://c8iypejva5d7t"]
 
 [ext_resource type="Texture2D" uid="uid://demx2h26soyul" path="res://Cases/Introduction_Case/assets/backgrounds/showroom.png" id="1_57uge"]
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_mposb"]
@@ -6,8 +6,10 @@
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_644s4"]
 [ext_resource type="Texture2D" uid="uid://38rkcka7kf73" path="res://Cases/Introduction_Case/assets/interactable_items/plate.png" id="3_l0fl4"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_m7tbu"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_64tni"]
 [ext_resource type="Texture2D" uid="uid://b7h7dgrh34vm3" path="res://Cases/Introduction_Case/assets/interactable_items/door_showroom.png" id="4_l0fl4"]
 [ext_resource type="Texture2D" uid="uid://cy4aq3utqrcgg" path="res://Cases/Introduction_Case/assets/interactable_items/door_kitchen.png" id="5_mb8qo"]
+[ext_resource type="Resource" uid="uid://dl40cnyqey87u" path="res://dialogue/dialogue.dialogue" id="5_n6bei"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="7_mposb"]
 
 [sub_resource type="Resource" id="Resource_0lku5"]
@@ -46,10 +48,19 @@ hint_text = "Ziehe den Schlüssel auf die Ladentür. "
 hint_condition = SubResource("Resource_peh6g")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
+[sub_resource type="Resource" id="Resource_uixrf"]
+script = ExtResource("4_64tni")
+dialogue = ExtResource("5_n6bei")
+condition_items = Array[String]([])
+auto_start = false
+started = false
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
 [node name="Showroom" type="Node"]
 script = ExtResource("1_mposb")
 location_name = "Showroom"
 hints = Array[ExtResource("2_644s4")]([SubResource("Resource_m7tbu"), SubResource("Resource_64tni"), SubResource("Resource_n6bei")])
+dialogues = Array[ExtResource("4_64tni")]([SubResource("Resource_uixrf")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

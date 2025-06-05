@@ -6,8 +6,8 @@ class_name Location
 var case: Case
 @export var clues: Array[Clue] = []
 @export var hints: Array[Hint] = []
-@export var dialogue_resource: DialogueResource
-@export var dialogue_start: String
+#@export var dialogue_resource: DialogueResource
+@export var dialogues: Array[Dialogue]
 var hint_text: String = "Default text"
 var inventory: Inventory
 
@@ -20,6 +20,8 @@ func _ready():
 	print("Setting up location: %s." % location_name)
 	call_deferred("_setup_connections")
 	update_items_visibility()
+	#TODO here comes the dialogue
+	#start_dialogue()
 
 func set_inventory(case_inventory: Inventory) -> void:
 	inventory = case_inventory
@@ -40,6 +42,12 @@ func _setup_connections():
 	for button in buttons:
 		button.connect("location_switch_requested", 
 						_on_location_switch_requested)
+
+#func start_dialogue(dialogue_resource: DialogueResource):
+	#DialogueManager.show_dialogue_balloon_scene(
+		#"res://dialogue_balloons/monologue/balloon_monologue.tscn",
+		#dialogue_resource
+	#)
 
 func _on_clue_found(clue: Clue) -> void:
 	print("Clue: %s found in location: %s" % [clue.clue_name, self.location_name])
