@@ -12,7 +12,7 @@ var interactions_history: Array
 
 func _ready():
 	get_tree().auto_accept_quit = false
-	gamesaver.load_game(self)
+	#gamesaver.load_game(self)
 	
 	if active_case_slug == "":
 		active_case_slug = cases[0].case_slug
@@ -61,6 +61,7 @@ func switch_location(location: Location):
 	if current_location:
 		current_location.get_parent().remove_child(current_location)
 	var case = get_active_case()
+	print(location)
 	location.set_inventory(case.inventory)
 	
 	var player_items = case.get_player_items()
@@ -79,6 +80,7 @@ func switch_location(location: Location):
 func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)
 	#current_case.get_location_by_name(location_name)
+	print(current_case.get_location_by_name(location_name))
 	switch_location(current_case.get_location_by_name(location_name))
 
 func set_completed_cases():

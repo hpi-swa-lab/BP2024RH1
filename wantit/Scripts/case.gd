@@ -92,9 +92,12 @@ func _on_location_switch_requested(location_name: String):
 
 func get_location_by_name(location_name: String) -> Location:
 	for location in case_locations:
+		print(location.location_name)
 		if location.location_name == location_name:
 			return location
 	#FIXME handle no location found
+		else:
+			print(location_name, "dat suchen wir")
 	return null
 
 func get_location_index_by_name(target_name: String):

@@ -1,8 +1,6 @@
 #extends Node2D
 extends Location
 
-# got a bit laggy when adding the new pictures, probably because of the resizing and stuff
-
 @onready var draggables = %Draggables.get_children()
 @onready var minigame_clues = %Control.get_children()
 

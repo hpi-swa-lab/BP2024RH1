@@ -37,8 +37,8 @@ func set_inventory(case_inventory: Inventory) -> void:
 		add_child(inventory)
 
 func _setup_connections():
-	#FIXME
-	DialogueManager.connect("location_switch_requested", _on_location_switch_requested)
+	#FIXME - DialogueManager can use the functions of the scene its called in 
+	#DialogueManager.connect("location_switch_requested", _on_location_switch_requested)
 	
 	var clues = get_tree().get_nodes_in_group("location_clues")
 	for clue in clues:

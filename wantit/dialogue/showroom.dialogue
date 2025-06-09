@@ -10,5 +10,5 @@ Bäcker: Ah… tut mir leid, der Werbespruch liegt mir einfach immer auf den Lip
 		- Verkaufsraum
 		# zum Büro des Bäckers wechseln
 		- Büro
-			do Location.emit_signal("location_switch_requested", "Bakery Office")
+			do _on_location_switch_requested("Bakery Office")
 => END

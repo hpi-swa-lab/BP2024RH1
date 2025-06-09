@@ -50,7 +50,7 @@ hint_text = "Hier scheint nichts auffälliges mehr zu sein"
 hint_condition = SubResource("Resource_88f4i")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
-[sub_resource type="Resource" id="Resource_2l70s"]
+[sub_resource type="Resource" id="Resource_mwdyl"]
 script = ExtResource("5_xnrjk")
 dialogue_resource = ExtResource("4_ggvds")
 is_dialogue = false
@@ -63,7 +63,6 @@ script = ExtResource("1_12w5n")
 location_name = "Bakery Office"
 clues = [NodePath("Shoeprints")]
 hints = Array[ExtResource("2_guxia")]([SubResource("Resource_4361v"), SubResource("Resource_guxia"), SubResource("Resource_ggvds")])
-dialogue = SubResource("Resource_2l70s")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -84,6 +83,7 @@ scale = Vector2(0.300072, 0.300072)
 texture_normal = ExtResource("5_gha41")
 script = ExtResource("8_12w5n")
 clue_name = "ShoeprintsOffice"
+dialogue = SubResource("Resource_mwdyl")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("2_y86e6")]

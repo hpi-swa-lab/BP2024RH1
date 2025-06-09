@@ -117,7 +117,6 @@ texture_normal = ExtResource("5_elfe8")
 texture_disabled = ExtResource("6_l61y1")
 script = ExtResource("14_cpead")
 clue_name = "Flour Sack"
-dialogue = SubResource("Resource_nnyh4")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Key" type="TextureButton" parent="."]
@@ -133,6 +132,7 @@ texture_normal = ExtResource("6_ts2v5")
 script = ExtResource("14_cpead")
 clue_name = "Key"
 is_collectable = true
+dialogue = SubResource("Resource_nnyh4")
 action_script = ExtResource("13_24rd3")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
