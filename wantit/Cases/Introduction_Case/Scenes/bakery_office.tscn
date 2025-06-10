@@ -63,6 +63,7 @@ script = ExtResource("1_12w5n")
 location_name = "Bakery Office"
 clues = [NodePath("Shoeprints")]
 hints = Array[ExtResource("2_guxia")]([SubResource("Resource_4361v"), SubResource("Resource_guxia"), SubResource("Resource_ggvds")])
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

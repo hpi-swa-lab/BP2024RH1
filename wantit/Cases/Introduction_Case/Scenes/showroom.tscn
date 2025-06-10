@@ -62,6 +62,7 @@ script = ExtResource("1_mposb")
 location_name = "Showroom"
 hints = Array[ExtResource("2_644s4")]([SubResource("Resource_m7tbu"), SubResource("Resource_64tni"), SubResource("Resource_n6bei")])
 dialogue = SubResource("Resource_uixrf")
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

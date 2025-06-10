@@ -62,7 +62,8 @@ func switch_location(location: Location):
 		current_location.get_parent().remove_child(current_location)
 	var case = get_active_case()
 	print(location)
-	location.set_inventory(case.inventory)
+	if location.has_inventory:
+		location.set_inventory(case.inventory)
 	
 	var player_items = case.get_player_items()
 	#location.update_hint_text(player_items)

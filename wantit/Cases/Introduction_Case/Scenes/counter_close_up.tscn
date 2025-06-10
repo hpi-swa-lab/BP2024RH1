@@ -22,6 +22,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_luwce")
 location_name = "Counter Close Up"
 clues = [NodePath("Waffle")]
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

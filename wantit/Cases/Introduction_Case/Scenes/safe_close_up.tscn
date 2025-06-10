@@ -82,6 +82,7 @@ script = ExtResource("1_unxiy")
 location_name = "Safe CloseUp"
 clues = [NodePath("Pliers"), NodePath("Screwdriver"), NodePath("Fingerprints")]
 hints = Array[ExtResource("2_nnv67")]([SubResource("Resource_dhqo4"), SubResource("Resource_mucgs"), SubResource("Resource_nnv67")])
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

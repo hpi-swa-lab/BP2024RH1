@@ -92,6 +92,7 @@ location_name = "Backery Kitchen"
 clues = [NodePath("Key"), NodePath("Shoe Prints"), NodePath("Flour Sack")]
 hints = Array[ExtResource("2_cpead")]([SubResource("Resource_88u8x"), SubResource("Resource_tcx5q"), SubResource("Resource_b6n05")])
 dialogue = SubResource("Resource_yhauu")
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

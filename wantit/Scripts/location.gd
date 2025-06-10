@@ -8,6 +8,7 @@ var case: Case
 @export var hints: Array[Hint] = []
 #@export var dialogue_resource: DialogueResource
 @export var dialogue: Dialogue
+@export var has_inventory: bool
 var hint_text: String = "Default text"
 var inventory: Inventory
 
