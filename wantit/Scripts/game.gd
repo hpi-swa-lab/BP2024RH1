@@ -13,7 +13,6 @@ var restored_game_data
 
 func _ready():
 	get_tree().auto_accept_quit = false
-	#gamesaver.load_game(self)
 	gamesaver.load_saved_game_data(self)
 	if restored_game_data:
 		load_game()
@@ -42,7 +41,7 @@ func start_case(case: Case) -> void:
 	case.restored_inventory_items = inventory_items_names
 	case.interactions = interactions_history
 	case.instantiate()
-	case.connect("on_event_location_switch_requested", _on_location_switch_requested)
+	case.connect("event_location_switch_requested", _on_location_switch_requested)
 	var location_index = 0
 	if current_location_name != "":
 		location_index = case.get_location_index_by_name(current_location_name)
@@ -62,9 +61,9 @@ func switch_location(location: Location):
 	if current_location:
 		current_location.get_parent().remove_child(current_location)
 	var case = get_active_case()
-	print(location)
-	if location.has_inventory:
-		location.set_inventory(case.inventory)
+		
+	#if location.has_inventory:
+	location.set_inventory(case.inventory)
 	
 	var player_items = case.get_player_items()
 	#location.update_hint_text(player_items)
@@ -82,9 +81,8 @@ func switch_location(location: Location):
 
 func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)
-	#current_case.get_location_by_name(location_name)
-	print(current_case.get_location_by_name(location_name))
-	switch_location(current_case.get_location_by_name(location_name))
+	var location = current_case.get_location_by_name(location_name)
+	switch_location(location)
 
 func set_completed_cases():
 	pass

@@ -12,7 +12,8 @@ var hint_text: String = "Default text"
 var inventory: Inventory
 
 signal collectable_clue_found(clue: Clue, location: Location)
-signal non_collectable_clue_found(clue: Clue, location: Location)
+#signal non_collectable_clue_found(clue: Clue, location: Location)
+signal non_collectable_clue_found(clue: Clue)
 signal location_switch_requested(location_name: String)
 
 func _ready():
@@ -64,13 +65,16 @@ func play_dialogue(dialogue: Dialogue, dialogue_start: String = "default"):
 	await DialogueManager.dialogue_ended
 
 func _on_clue_found(clue: Clue) -> void:
-	print("Clue: %s found in location: %s" % [clue.clue_name, self.location_name])
 	if clue.is_collectable:
 		emit_signal("collectable_clue_found", clue, self)
 		disable_item(clue) 
 	else:
-		emit_signal("non_collectable_clue_found", clue.clue_name, self)
-	
+		#emit_signal("non_collectable_clue_found", clue.clue_name, self)
+		emit_signal("non_collectable_clue_found", clue.clue_name)
+
+func interaction_happened(interaction_name: String) -> void:
+	emit_signal("non_collectable_clue_found", interaction_name)
+
 func _on_location_switch_requested(requested_location_name: String):
 	emit_signal("location_switch_requested", requested_location_name)
 

@@ -10,11 +10,10 @@ Das ist also der Ursprung der Mehlspuren.
 Klaas: Es scheint so, als hätten wir alle wichtigen Spuren gesichert.
 **RUMMS!**
 Klaas: Ohh, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
-do _on_non_collectable_clue_found("All clues found")
+do _on_location_switch_requested("Minigame1")
 => END
-
 
 ~ minigame1_done
 Klaas: Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.
-#do SceneSwitcher.switch_scene("res://Scenes/office.tscn")
-=> END
+do _on_location_switch_requested("Office")
+=> END 

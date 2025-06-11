@@ -34,4 +34,12 @@ Repräsentieren hingegen bedeutet, eine Darstellung durch eine andere Darstellun
 ~ minigame1_test3
 Die gewonnene Information konnte wiederum durch die Zettelchen...
 - interpretiert werden => minigame1_test3
-- repräsentiert werden => END
+- repräsentiert werden => add_interaction
+
+~ add_interaction
+#do self.interaction_happened("Minigame1 completed") 
+=> return_from_minigame
+
+~ return_from_minigame
+do _on_location_switch_requested("Backery Kitchen")
+=> END

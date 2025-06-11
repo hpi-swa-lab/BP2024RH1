@@ -18,7 +18,7 @@ func save_game(game: Game):
 	file.close()
 	#print("Game saved to: ", SAVE_PATH)
 	
-func load_game(game: Game):
+func load_saved_game_data(game: Game):
 	if not FileAccess.file_exists(SAVE_PATH):
 		print("Save file not found.")
 		return
@@ -32,10 +32,11 @@ func load_game(game: Game):
 		print("Failed to parse save file.")
 		return
 	
-	game.active_case_slug = result.get("active_case_slug", "")
-	game.current_location_name = result.get("current_location_name")
-	game.inventory_items_names = result.get("inventory_items", [])
-	game.interactions_history = result.get("interactions", [])
+	game.restored_game_data = result
+	#game.active_case_slug = result.get("active_case_slug", "")
+	#game.current_location_name = result.get("current_location_name")
+	#game.inventory_items_names = result.get("inventory_items", [])
+	#game.interactions_history = result.get("interactions", [])
 	#game.set_completed_cases(result.get("completed_cases", []))
 	#var inventory_items_name = result.get("inventory", [])
 	#if inventory_items_name:

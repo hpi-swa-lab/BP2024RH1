@@ -1,4 +1,3 @@
-#extends Node2D
 extends Location
 
 @onready var draggables = %Draggables.get_children()
@@ -8,9 +7,9 @@ var searching: bool
 var draggedItems = 0
 var clueRects = {}
 
-#TODO add an interaction "minigame1" completed
-
 func _ready() -> void:
+	case.inventory.hide()
+	
 	DialogueManager.show_dialogue_balloon_scene(load("res://dialogue_balloons/monologue/balloon_monologue.tscn"), load("res://dialogue/monologue.dialogue"), "minigame1_start")
 	for draggable in draggables:
 		draggable.check.connect(func(): check_draggables(draggable))
@@ -34,12 +33,8 @@ func _on_button_pressed() -> void:
 		%Label.text = "Richtig!"
 		%Label.show()
 		%TryAgain.hide()
-		DialogueManager.show_dialogue_balloon_scene(load("res://dialogue_balloons/monologue/balloon_monologue.tscn"), load("res://dialogue/monologue.dialogue"), "minigame1_end")
+		DialogueManager.show_dialogue_balloon_scene(load("res://dialogue_balloons/monologue/balloon_monologue.tscn"), load("res://dialogue/minigame1.dialogue"), "minigame1_end")
 		await DialogueManager.dialogue_ended
-		#Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
-		#Globals.OfficeDialogueStart = "evaluate_traces"
-		#Globals.OfficeDialogueDone = false
-		DialogueManager.show_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "minigame1_done")
 	else:
 		%Label.show()
 		%Label.text = "Das war leider Falsch.\nProbier es noch einmal"

@@ -10,7 +10,6 @@ var baloon_type: String
 
 var monologue_baloon_path: String = "res://dialogue_balloons/monologue/balloon_monologue.tscn"
 var dialogue_baloon_path: String = "res://dialogue_balloons/monologue/balloon_monologue.tscn"
-#@export var auto_start: bool = false # auto-start when condition met?
 
 func _init():
 	set_baloon_type()	
@@ -24,8 +23,7 @@ func set_baloon_type():
 func choose_dialogue_under_condition(player_items: Array):
 	for condition in conditions:
 		if is_subset(condition.dialogue_conditions, player_items):
-			return condition.dialogue_start 
-		#else return "default"
+			return condition.dialogue_start
 		
 func is_subset(subset: Array, superset: Array) -> bool:
 	for item in subset:

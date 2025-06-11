@@ -12,11 +12,11 @@ var inventory: Inventory
 var interactions: Array
 var is_completed: bool
 var restored_inventory_items: Array
-@export var minigame_triggers: Array[MinigameTrigger]
+@export var event_triggers: Array[EventTrigger]
 
 
 signal on_location_switch_requested(location_name: String)
-signal minigame_location_switch_requested(location_name: String)
+signal event_location_switch_requested(location_name: String)
 
 func instantiate():
 	connect("on_location_switch_requested", _on_location_switch_requested)
@@ -45,19 +45,28 @@ func _on_collectable_clue_found(clue: Clue, location: Location) -> void:
 	location.update_hint_text(player_items)
 	print("Item: %s added to inventory" %clue.clue_name) 
 	print("Updated player items: %s" %[player_items])
-	var minigame_location = check_matching_minigame(player_items)
-	print("Minigame location available: %s" %[minigame_location])
-	if minigame_location:
-		print("Starting minigame")
-		start_minigame(minigame_location)
+	start_event(player_items)
+	#var minigame_location = check_matching_minigame(player_items)
+	#print("Minigame location available: %s" %[minigame_location])
+	#if minigame_location:
+		#print("Starting minigame")
+		#start_minigame(minigame_location)
 
-func _on_non_collectable_clue_found(clue_name: String, location: Location) -> void:
+func _on_non_collectable_clue_found(clue_name: String) -> void:
 	interactions.append(clue_name)
 	var player_items = get_player_items()
 	#location.update_hint_text(player_items)
-	location.call_deferred("update_hint_text", player_items)
+	#location.call_deferred("update_hint_text", player_items)
 	print("Non-collectable clue: %s is added to a list of interactions." %clue_name)
 	print("Updated player items: %s" %[player_items])
+	start_event(player_items)
+	#var minigame_location = check_matching_minigame(player_items)
+	#print("Minigame location available: %s" %[minigame_location])
+	#if minigame_location:
+		#print("Starting minigame")
+		#start_minigame(minigame_location)
+
+func start_event(player_items: Array):
 	var minigame_location = check_matching_minigame(player_items)
 	print("Minigame location available: %s" %[minigame_location])
 	if minigame_location:
@@ -65,7 +74,7 @@ func _on_non_collectable_clue_found(clue_name: String, location: Location) -> vo
 		start_minigame(minigame_location)
 	
 func check_matching_minigame(player_items: Array):
-	for trigger in minigame_triggers:
+	for trigger in event_triggers:
 		if not trigger.is_started and is_subset(trigger.conditions, player_items):
 			trigger.is_started = true
 			return trigger.location_name
@@ -78,26 +87,16 @@ func is_subset(subset: Array, superset: Array) -> bool:
 	return true
 
 func start_minigame(location_name: String):
-	emit_signal("minigame_location_switch_requested", location_name)
-	
-#func open_room(path):
-	#var room = load(path)
-	#room.case = self
-
-#func is_completed():
-	#pass
+	emit_signal("event_location_switch_requested", location_name)
 	
 func _on_location_switch_requested(location_name: String):
 	emit_signal("on_location_switch_requested", location_name)
 
 func get_location_by_name(location_name: String) -> Location:
 	for location in case_locations:
-		print(location.location_name)
 		if location.location_name == location_name:
 			return location
 	#FIXME handle no location found
-		else:
-			print(location_name, "dat suchen wir")
 	return null
 
 func get_location_index_by_name(target_name: String):
