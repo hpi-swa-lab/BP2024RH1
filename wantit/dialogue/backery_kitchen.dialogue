@@ -1,20 +1,20 @@
-
-#if CaseManager.CaseGlobals.traces_in_bakery_inspected:
-#	Das ist also der Ursprung der Mehlspuren.
-#	set CaseManager.CaseGlobals.flour_sack_inspected = true
-#else:
+~ default
 Sieht so aus, als wäre jemand über den Mehlsack gestolpert.
+=> END
+
+~ office_trace_expected
+Das ist also der Ursprung der Mehlspuren.
 => END
 
 ~ found_hints
 Klaas: Es scheint so, als hätten wir alle wichtigen Spuren gesichert.
 **RUMMS!**
 Klaas: Ohh, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
-do SceneSwitcher.switch_scene("res://Cases/Introduction_Case/Scenes/minigame_1.tscn")
+do _on_non_collectable_clue_found("All clues found")
 => END
 
 
 ~ minigame1_done
 Klaas: Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.
-do SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+#do SceneSwitcher.switch_scene("res://Scenes/office.tscn")
 => END

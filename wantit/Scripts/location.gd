@@ -6,7 +6,6 @@ class_name Location
 var case: Case
 @export var clues: Array[Clue] = []
 @export var hints: Array[Hint] = []
-#@export var dialogue_resource: DialogueResource
 @export var dialogue: Dialogue
 @export var has_inventory: bool
 var hint_text: String = "Default text"
@@ -21,12 +20,7 @@ func _ready():
 	print("Setting up location: %s." % location_name)
 	call_deferred("_setup_connections")
 	update_items_visibility()
-	if dialogue != null and not dialogue.is_started:
-		if dialogue.has_condition():
-			#emit_signal("inventory_state_requested")
-			pass
-		else:
-			start_dialogue(dialogue)
+	start_dialogue()
 
 func set_inventory(case_inventory: Inventory) -> void:
 	inventory = case_inventory
@@ -39,8 +33,7 @@ func set_inventory(case_inventory: Inventory) -> void:
 
 func _setup_connections():
 	#FIXME - DialogueManager can use the functions of the scene its called in 
-	#DialogueManager.connect("location_switch_requested", _on_location_switch_requested)
-	
+	##DialogueManager.connect("location_switch_requested", _on_location_switch_requested)
 	var clues = get_tree().get_nodes_in_group("location_clues")
 	for clue in clues:
 		clue.connect("clue_found", _on_clue_found)
@@ -49,13 +42,26 @@ func _setup_connections():
 	for button in buttons:
 		button.connect("location_switch_requested", _on_location_switch_requested)
 
-func start_dialogue(dialogue: Dialogue, dialogue_start: String = "default"):
+func start_dialogue():
+	if dialogue != null:
+		if dialogue.has_condition():
+			var player_items = case.get_player_items()
+			var dialogue_condition = dialogue.choose_dialogue_under_condition(player_items)
+			if dialogue_condition:
+				play_dialogue(dialogue, dialogue_condition)
+			else:
+				play_dialogue(dialogue)
+		elif not dialogue.is_started:
+			play_dialogue(dialogue)
+
+func play_dialogue(dialogue: Dialogue, dialogue_start: String = "default"):
 	DialogueManager.show_dialogue_balloon_scene(
 		dialogue.baloon_type,
 		dialogue.dialogue_resource,
 		dialogue_start
 	)
 	dialogue.is_started = true
+	await DialogueManager.dialogue_ended
 
 func _on_clue_found(clue: Clue) -> void:
 	print("Clue: %s found in location: %s" % [clue.clue_name, self.location_name])
@@ -77,7 +83,8 @@ func get_available_hints(player_items: Array) -> Array[String]:
 
 func update_items_visibility():
 	for item in clues:
-		if case.inventory.has(item):
+		if case.inventory.has(item) or case.interactions.has(item):
+			item.mark_found()
 			disable_item(item)
 
 func disable_item(item):

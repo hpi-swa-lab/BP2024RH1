@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ebi58jm4ckop" path="res://Cases/Introduction_Case/Scenes/minigame_1.tscn" id="11_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://bfhmvi5qb81eb" path="res://Scenes/inventory.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://bw7q816wdvvla" path="res://Cases/Introduction_Case/Scenes/minigame_2.tscn" id="12_215e1"]
-[ext_resource type="Script" uid="uid://btva00lvfk41s" path="res://Scripts/minigame_trigger.gd" id="15_7sc4i"]
+[ext_resource type="Script" path="res://Scripts/minigame_trigger.gd" id="15_7sc4i"]
 
 [sub_resource type="Resource" id="Resource_80cx4"]
 script = ExtResource("15_7sc4i")

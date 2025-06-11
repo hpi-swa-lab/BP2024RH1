@@ -9,10 +9,14 @@ var current_location_name: String = ""
 var gamesaver = GameSaver.new()
 var inventory_items_names: Array
 var interactions_history: Array
+var restored_game_data
 
 func _ready():
 	get_tree().auto_accept_quit = false
 	#gamesaver.load_game(self)
+	gamesaver.load_saved_game_data(self)
+	if restored_game_data:
+		load_game()
 	
 	if active_case_slug == "":
 		active_case_slug = cases[0].case_slug
@@ -38,9 +42,7 @@ func start_case(case: Case) -> void:
 	case.restored_inventory_items = inventory_items_names
 	case.interactions = interactions_history
 	case.instantiate()
-	
-	case.connect("minigame_location_switch_requested", _on_location_switch_requested)
-	
+	case.connect("on_event_location_switch_requested", _on_location_switch_requested)
 	var location_index = 0
 	if current_location_name != "":
 		location_index = case.get_location_index_by_name(current_location_name)
@@ -48,7 +50,6 @@ func start_case(case: Case) -> void:
 
 #func _on_case_completed():
 	#start_case(cases[cases.find_custom(func (case): return not case.is_completed)])
-	##FIXME add error handling when null returned
 
 func get_completed_cases() -> Array:
 	var completed_cases = []
@@ -68,6 +69,7 @@ func switch_location(location: Location):
 	var player_items = case.get_player_items()
 	#location.update_hint_text(player_items)
 	location.call_deferred("update_hint_text", player_items)
+	location.call_deferred("start_dialogue")
 	
 	current_location = location
 	current_location.location_switch_requested.connect(func(name):
@@ -94,3 +96,9 @@ func get_case_inventory() -> Array[String]:
 func get_case_interactions() -> Array:
 	var active_case = get_active_case()
 	return active_case.interactions
+
+func load_game():
+	active_case_slug = restored_game_data.get("active_case_slug", "")
+	current_location_name = restored_game_data.get("current_location_name")
+	inventory_items_names = restored_game_data.get("inventory_items", [])
+	interactions_history = restored_game_data.get("interactions", [])
