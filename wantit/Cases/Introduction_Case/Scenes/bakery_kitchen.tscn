@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=34 format=3 uid="uid://bto1uem2cnbyr"]
 
 [ext_resource type="Script" uid="uid://c62j4fhwfi6xe" path="res://Cases/Introduction_Case/Scripts/bakery_kitchen.gd" id="1_7deum"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://kke8b67onflp" path="res://Cases/Introduction_Case/Scripts/key_action.gd" id="13_24rd3"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="14_cpead"]
 [ext_resource type="Resource" uid="uid://ddaf0l8q8rygd" path="res://dialogue/shoe_prints_bakery.dialogue" id="15_e1im7"]
+[ext_resource type="Resource" uid="uid://denb1mkdgx7go" path="res://dialogue/key.dialogue" id="15_tcx5q"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="16_88u8x"]
 
 [sub_resource type="Resource" id="Resource_e1im7"]
@@ -59,7 +60,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 [sub_resource type="Resource" id="Resource_8hhtx"]
 script = ExtResource("4_tcx5q")
 dialogue_start = "found_hints"
-dialogue_conditions = ["Waffle", "Key", "Pliers", "Screwdriver", "ShoeprintsKitchen", "Flour Sack", "ShoeprintsOffice", "Fingerprints"]
+dialogue_conditions = Array[String](["Waffle", "Key", "Pliers", "Screwdriver", "ShoeprintsKitchen", "Flour Sack", "ShoeprintsOffice", "Fingerprints"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_ntdmg"]
@@ -82,9 +83,17 @@ is_monologue = true
 conditions = Array[ExtResource("4_tcx5q")]([SubResource("Resource_8hhtx"), SubResource("Resource_ntdmg"), SubResource("Resource_w4ixk")])
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[sub_resource type="Resource" id="Resource_nnyh4"]
+[sub_resource type="Resource" id="Resource_5sn1g"]
 script = ExtResource("16_88u8x")
 dialogue_resource = ExtResource("11_88u8x")
+is_dialogue = false
+is_monologue = false
+conditions = Array[ExtResource("4_tcx5q")]([])
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_nnyh4"]
+script = ExtResource("16_88u8x")
+dialogue_resource = ExtResource("15_tcx5q")
 is_dialogue = false
 is_monologue = true
 conditions = Array[ExtResource("4_tcx5q")]([])
@@ -122,6 +131,7 @@ requested_location_name = "Bakery Office"
 mouse_filter = 2
 
 [node name="Flour Sack" type="TextureButton" parent="."]
+unique_name_in_owner = true
 z_index = 1
 offset_right = 3840.0
 offset_bottom = 2160.0
@@ -130,6 +140,7 @@ texture_normal = ExtResource("5_elfe8")
 texture_disabled = ExtResource("6_l61y1")
 script = ExtResource("14_cpead")
 clue_name = "Flour Sack"
+dialogue = SubResource("Resource_5sn1g")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Key" type="TextureButton" parent="."]

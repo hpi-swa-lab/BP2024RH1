@@ -27,6 +27,7 @@ func _pressed():
 	mark_found()
 	if dialogue != null and not dialogue.is_started:
 		start_dialogue(dialogue)
+		await DialogueManager.dialogue_ended
 	emit_signal("clue_found", self)
 
 func start_dialogue(dialogue:Dialogue, dialogue_start: String = "default"):
