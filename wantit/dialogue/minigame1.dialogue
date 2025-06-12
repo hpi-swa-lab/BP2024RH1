@@ -37,7 +37,7 @@ Die gewonnene Information konnte wiederum durch die Zettelchen...
 - repräsentiert werden => add_interaction
 
 ~ add_interaction
-#do self.interaction_happened("Minigame1 completed") 
+do interaction_happened("Minigame1 completed") 
 => return_from_minigame
 
 ~ return_from_minigame

@@ -12,6 +12,7 @@ Klaas: Über die Stadtkarte an der rechten Wand findest du den Weg dorthin.
 
 ~ evaluate_traces
 Klaas: Um die Spuren vom Tatort effizient auszuwerten, müssen wir sie digitalisieren. Dein Arbeitscomputer hat bereits die nötige Software installiert, sodass du direkt starten kannst.
+do _on_location_switch_requested("Minigame2")
 => END
 
 ~ finish

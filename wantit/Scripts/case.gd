@@ -77,6 +77,7 @@ func check_matching_minigame(player_items: Array):
 	for trigger in event_triggers:
 		if not trigger.is_started and is_subset(trigger.conditions, player_items):
 			trigger.is_started = true
+			print("Event: %s is available" %[trigger.event_name])
 			return trigger.location_name
 	return null
 

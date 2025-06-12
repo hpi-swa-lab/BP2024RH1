@@ -72,7 +72,7 @@ metadata/_custom_type_script = "uid://bnkm50q3eocad"
 [sub_resource type="Resource" id="Resource_w4ixk"]
 script = ExtResource("4_tcx5q")
 dialogue_start = "minigame1_done"
-dialogue_conditions = Array[String](["Minigame1 completed"])
+dialogue_conditions = Array[String](["Minigame1 completed", "Waffle", "Key", "Pliers", "Screwdriver", "ShoeprintsKitchen", "Flour Sack", "ShoeprintsOffice", "Fingerprints"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_yhauu"]

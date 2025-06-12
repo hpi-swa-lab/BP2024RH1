@@ -1,4 +1,3 @@
-#extends Control
 extends Location
 
 var LabelText: Dictionary = {}
@@ -179,7 +178,9 @@ func create_label(labelText: String) -> Label:
 	
 	return label
 
-#func _on_finish_button_pressed() -> void:
+func _on_finish_button_pressed() -> void:
+	pass
+	emit_signal("non_collectable_clue_found", "Minigame2 completed")
 	#Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
 	#Globals.OfficeDialogueStart = "finish"
 	#Globals.OfficeDialogueDone = false

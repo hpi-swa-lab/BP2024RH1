@@ -21,7 +21,8 @@ func _ready():
 	print("Setting up location: %s." % location_name)
 	call_deferred("_setup_connections")
 	update_items_visibility()
-	start_dialogue()
+	if dialogue != null:
+		start_dialogue()
 
 func set_inventory(case_inventory: Inventory) -> void:
 	if not has_inventory:
@@ -74,9 +75,6 @@ func _on_clue_found(clue: Clue) -> void:
 	else:
 		#emit_signal("non_collectable_clue_found", clue.clue_name, self)
 		emit_signal("non_collectable_clue_found", clue.clue_name)
-
-func interaction_happened(interaction_name: String) -> void:
-	emit_signal("non_collectable_clue_found", interaction_name)
 
 func _on_location_switch_requested(requested_location_name: String):
 	emit_signal("location_switch_requested", requested_location_name)

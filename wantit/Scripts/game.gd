@@ -13,7 +13,7 @@ var restored_game_data
 
 func _ready():
 	get_tree().auto_accept_quit = false
-	#gamesaver.load_saved_game_data(self)
+	gamesaver.load_saved_game_data(self)
 	if restored_game_data:
 		load_game()
 	
@@ -100,3 +100,8 @@ func load_game():
 	current_location_name = restored_game_data.get("current_location_name")
 	inventory_items_names = restored_game_data.get("inventory_items", [])
 	interactions_history = restored_game_data.get("interactions", [])
+
+#enable adding interaction from dialogue
+func interaction_happened(interaction_name: String) -> void:
+	var current_case = get_case_by_slug(active_case_slug)
+	current_case._on_non_collectable_clue_found(interaction_name)
