@@ -42,6 +42,8 @@ func start_case(case: Case) -> void:
 	case.interactions = interactions_history
 	case.instantiate()
 	case.connect("event_location_switch_requested", _on_location_switch_requested)
+	case.connect("on_location_switch_requested", _on_location_switch_requested)
+	case.connect("case_overview_opened", _on_case_overview_opened)
 	var location_index = 0
 	if current_location_name != "":
 		location_index = case.get_location_index_by_name(current_location_name)
@@ -105,3 +107,15 @@ func load_game():
 func interaction_happened(interaction_name: String) -> void:
 	var current_case = get_case_by_slug(active_case_slug)
 	current_case._on_non_collectable_clue_found(interaction_name)
+
+func _on_case_overview_opened(location: Location) -> void:
+	var active_case = get_active_case()
+	var location_index = active_case.get_location_index_by_name(location.location_name)
+	var cases_titles = get_cases_titles()
+	active_case.case_locations[location_index].add_cases(cases_titles)
+
+func get_cases_titles() -> Array:
+	var case_titles = []
+	for case in cases.slice(1):
+		case_titles.append(case.case_title)
+	return case_titles

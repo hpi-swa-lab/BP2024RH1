@@ -1,5 +1,4 @@
 extends TextureButton
-
 class_name LocationSwitchButton
 
 @export var requested_location_name: String

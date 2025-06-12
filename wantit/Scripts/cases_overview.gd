@@ -1,0 +1,30 @@
+extends Location
+
+signal case_overview_opened(location: Location)
+
+func _ready() -> void:
+	super._ready()
+	case_overview_opened.emit(self)
+
+#func Case_button_pressed(Case) -> void:
+	#%SelectButton.visible = true
+	#Globals.selectedCase = Case
+	#
+#func _on_select_button_pressed() -> void:
+	#SceneSwitcher.switch_scene(Globals.selectedCase.FirstScene)
+	##var img = load("res://Assets/Hinweistafel_basic.png").get_image()	# Doesnt work on web
+	##img.save_png("user://Assets/Hinweistafel.png")
+	#CaseManager.Hints.clear()
+
+func add_cases(cases_list: Array) -> void:
+	for case in cases_list:
+		add_case(case)
+
+func add_case(case_title) -> void:
+	#create pre-configured button
+	var new_case = Button.new()
+	new_case.text = case_title
+	new_case.custom_minimum_size.y = 40
+	new_case.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	#new_case.pressed.connect(self.Case_button_pressed.bind(Case))
+	%VBoxContainer.add_child(new_case)

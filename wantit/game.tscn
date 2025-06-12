@@ -1,19 +1,31 @@
-[gd_scene load_steps=19 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=24 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://byc5whva4dkys" path="res://Scenes/office.tscn" id="3_7jktm"]
+[ext_resource type="PackedScene" uid="uid://byc5whva4dkys" path="res://Cases/Introduction_Case/Scenes/office.tscn" id="3_7jktm"]
+[ext_resource type="PackedScene" uid="uid://brr5qpixvv86d" path="res://Scenes/default_office.tscn" id="3_7sc4i"]
+[ext_resource type="PackedScene" uid="uid://cjeu3pdw5el04" path="res://Scenes/cases_overview.tscn" id="4_80cx4"]
 [ext_resource type="PackedScene" uid="uid://c8iypejva5d7t" path="res://Cases/Introduction_Case/Scenes/showroom.tscn" id="4_ryrav"]
+[ext_resource type="PackedScene" uid="uid://u3d6wp8ra4je" path="res://Scenes/empty_map.tscn" id="5_e8heu"]
 [ext_resource type="PackedScene" uid="uid://bto1uem2cnbyr" path="res://Cases/Introduction_Case/Scenes/bakery_kitchen.tscn" id="5_eow3j"]
 [ext_resource type="PackedScene" uid="uid://dsaho1fwwino3" path="res://Cases/Introduction_Case/Scenes/bakery_office.tscn" id="6_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://bhbqihv27a5x8" path="res://Cases/Introduction_Case/Scenes/safe_close_up.tscn" id="7_vef74"]
 [ext_resource type="PackedScene" uid="uid://bj2wmkkh47ywg" path="res://Cases/Introduction_Case/Scenes/counter_close_up.tscn" id="8_hve3p"]
-[ext_resource type="PackedScene" uid="uid://csoa2rt7yia0i" path="res://Scenes/map.tscn" id="9_vef74"]
+[ext_resource type="PackedScene" uid="uid://csoa2rt7yia0i" path="res://Cases/Introduction_Case/Scenes/map.tscn" id="9_vef74"]
 [ext_resource type="PackedScene" uid="uid://dhq2pn0aifnxf" path="res://Cases/Introduction_Case/Scenes/door_close_up.tscn" id="10_hve3p"]
 [ext_resource type="PackedScene" uid="uid://ebi58jm4ckop" path="res://Cases/Introduction_Case/Scenes/minigame_1.tscn" id="11_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://bfhmvi5qb81eb" path="res://Scenes/inventory.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://bw7q816wdvvla" path="res://Cases/Introduction_Case/Scenes/minigame_2.tscn" id="12_215e1"]
 [ext_resource type="Script" uid="uid://btva00lvfk41s" path="res://Scripts/event_trigger.gd" id="14_215e1"]
+
+[sub_resource type="Resource" id="Resource_e8heu"]
+script = ExtResource("2_e2o6t")
+case_slug = "default"
+case_title = ""
+case_location_scenes = Array[PackedScene]([ExtResource("3_7sc4i"), ExtResource("4_80cx4"), ExtResource("5_e8heu")])
+inventory_scene = ExtResource("11_mfdv2")
+event_triggers = Array[ExtResource("14_215e1")]([])
+metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_215e1"]
 script = ExtResource("14_215e1")
@@ -45,7 +57,15 @@ inventory_scene = ExtResource("11_mfdv2")
 event_triggers = Array[ExtResource("14_215e1")]([SubResource("Resource_215e1"), SubResource("Resource_7sc4i"), SubResource("Resource_80cx4")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="Resource" id="Resource_rvswv"]
+script = ExtResource("2_e2o6t")
+case_slug = ""
+case_title = "Fake News"
+case_location_scenes = Array[PackedScene]([])
+event_triggers = Array[ExtResource("14_215e1")]([])
+metadata/_custom_type_script = "uid://ni774rbce31d"
+
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_feb5d")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"

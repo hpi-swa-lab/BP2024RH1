@@ -17,6 +17,7 @@ var restored_inventory_items: Array
 
 signal on_location_switch_requested(location_name: String)
 signal event_location_switch_requested(location_name: String)
+signal case_overview_opened(location: Location)
 
 func instantiate():
 	connect("on_location_switch_requested", _on_location_switch_requested)
@@ -29,6 +30,7 @@ func instantiate():
 			location.case = self
 			location.connect("non_collectable_clue_found", _on_non_collectable_clue_found)
 			location.connect("collectable_clue_found", _on_collectable_clue_found)
+			location.connect("case_overview_opened", _on_case_overview_opened)
 			case_locations.append(location)
 		else:
 			push_error("Scene does not instantiate to a Location: " + scene.resource_path)
@@ -119,3 +121,6 @@ func get_player_items() -> Array:
 	player_items.append_array(inventory.get_inventory_items_name())
 	player_items.append_array(interactions)
 	return player_items
+
+func _on_case_overview_opened(location: Location):
+	case_overview_opened.emit(location)

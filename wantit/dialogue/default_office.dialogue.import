@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bfmar36edgpkb"
+path="res://.godot/imported/default_office.dialogue-758c890e42a721b4b33a03536f55418b.tres"
+
+[deps]
+
+source_file="res://dialogue/default_office.dialogue"
+dest_files=["res://.godot/imported/default_office.dialogue-758c890e42a721b4b33a03536f55418b.tres"]
+
+[params]
+
+defaults=true

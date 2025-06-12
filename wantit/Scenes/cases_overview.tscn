@@ -1,12 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjeu3pdw5el04"]
 
-[ext_resource type="Script" uid="uid://nhqberbk3drv" path="res://Scripts/fallübersicht.gd" id="1_odww0"]
-[ext_resource type="PackedScene" uid="uid://c5wdqha4l66kp" path="res://Scenes/back_to_office_button.tscn" id="2_2j6l2"]
+[ext_resource type="Script" uid="uid://nhqberbk3drv" path="res://Scripts/cases_overview.gd" id="1_a64gf"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="2_a64gf"]
 
 [sub_resource type="Theme" id="Theme_00qau"]
 
-[node name="Fallübersicht" type="Node2D"]
-script = ExtResource("1_odww0")
+[node name="CasesOverview" type="Node"]
+script = ExtResource("1_a64gf")
+location_name = "CasesOverview"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -48,11 +50,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Back Button" parent="." instance=ExtResource("2_2j6l2")]
-offset_left = 204.0
-offset_top = -248.0
-offset_right = 724.0
-offset_bottom = 272.0
-scale = Vector2(0.09, 0.09)
-
-[connection signal="pressed" from="Caseboard_UI/SelectButton" to="." method="_on_select_button_pressed"]
+[node name="BackButton" parent="." instance=ExtResource("2_a64gf")]
+offset_left = 200.0
+offset_top = -241.0
+offset_right = 712.0
+offset_bottom = 271.0
+scale = Vector2(0.1, 0.1)
+requested_location_name = "DefaultOffice"
