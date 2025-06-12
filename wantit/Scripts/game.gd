@@ -16,7 +16,9 @@ func _ready():
 	gamesaver.load_saved_game_data(self)
 	if restored_game_data:
 		load_game()
-	
+	start_current_case()
+
+func start_current_case():
 	if active_case_slug == "":
 		active_case_slug = cases[0].case_slug
 	var active_case = get_case_by_slug(active_case_slug)
@@ -44,13 +46,18 @@ func start_case(case: Case) -> void:
 	case.connect("event_location_switch_requested", _on_location_switch_requested)
 	case.connect("on_location_switch_requested", _on_location_switch_requested)
 	case.connect("case_overview_opened", _on_case_overview_opened)
+	case.connect("on_case_selected", _on_start_new_case)
 	var location_index = 0
 	if current_location_name != "":
 		location_index = case.get_location_index_by_name(current_location_name)
 	switch_location(case.case_locations[location_index])
 
-#func _on_case_completed():
-	#start_case(cases[cases.find_custom(func (case): return not case.is_completed)])
+func complete_case() -> void:
+	var current_case = get_case_by_slug(active_case_slug)
+	current_case.is_completed = true
+	#var current_case_index = get_case_index_by_slug(active_case_slug)
+	active_case_slug = "default"
+	start_current_case() #name of the function is absolutely not perfect here
 
 func get_completed_cases() -> Array:
 	var completed_cases = []
@@ -119,3 +126,15 @@ func get_cases_titles() -> Array:
 	for case in cases.slice(1):
 		case_titles.append(case.case_title)
 	return case_titles
+
+func _on_start_new_case(case_title: String):
+	var requested_case_slug = get_case_slug_by_title(case_title)
+	active_case_slug = requested_case_slug
+	current_location_name = ""
+	start_current_case()
+
+func get_case_slug_by_title(target_title: String):
+	for case in cases:
+		if case.case_title == target_title:
+			return case.case_slug
+	return null

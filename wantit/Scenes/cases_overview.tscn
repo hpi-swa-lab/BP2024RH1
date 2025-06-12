@@ -39,7 +39,7 @@ text = "Fall auswählen"
 [node name="ScrollContainer" type="ScrollContainer" parent="Caseboard_UI"]
 layout_mode = 0
 offset_left = -250.0
-offset_top = -200.0
+offset_top = -180.0
 offset_right = 250.0
 offset_bottom = 200.0
 theme = SubResource("Theme_00qau")

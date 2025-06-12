@@ -1,6 +1,7 @@
 extends Location
 
 signal case_overview_opened(location: Location)
+signal case_selected(case_title: String)
 
 func _ready() -> void:
 	super._ready()
@@ -21,10 +22,13 @@ func add_cases(cases_list: Array) -> void:
 		add_case(case)
 
 func add_case(case_title) -> void:
-	#create pre-configured button
+	#create pre-configured case_selection_button
 	var new_case = Button.new()
 	new_case.text = case_title
 	new_case.custom_minimum_size.y = 40
 	new_case.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	#new_case.pressed.connect(self.Case_button_pressed.bind(Case))
+	new_case.pressed.connect(self.on_case_selected.bind(case_title))
 	%VBoxContainer.add_child(new_case)
+
+func on_case_selected(case_title: String):
+	case_selected.emit(case_title)

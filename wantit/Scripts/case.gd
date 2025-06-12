@@ -10,7 +10,7 @@ var case_locations: Array[Location]
 @export var inventory_scene: PackedScene
 var inventory: Inventory
 var interactions: Array
-var is_completed: bool
+var is_completed: bool = false
 var restored_inventory_items: Array
 @export var event_triggers: Array[EventTrigger]
 
@@ -18,6 +18,7 @@ var restored_inventory_items: Array
 signal on_location_switch_requested(location_name: String)
 signal event_location_switch_requested(location_name: String)
 signal case_overview_opened(location: Location)
+signal on_case_selected(case_title: String)
 
 func instantiate():
 	connect("on_location_switch_requested", _on_location_switch_requested)
@@ -31,6 +32,7 @@ func instantiate():
 			location.connect("non_collectable_clue_found", _on_non_collectable_clue_found)
 			location.connect("collectable_clue_found", _on_collectable_clue_found)
 			location.connect("case_overview_opened", _on_case_overview_opened)
+			location.connect("case_selected", _on_case_selected)
 			case_locations.append(location)
 		else:
 			push_error("Scene does not instantiate to a Location: " + scene.resource_path)
@@ -48,11 +50,6 @@ func _on_collectable_clue_found(clue: Clue, location: Location) -> void:
 	print("Item: %s added to inventory" %clue.clue_name) 
 	print("Updated player items: %s" %[player_items])
 	start_event(player_items)
-	#var minigame_location = check_matching_minigame(player_items)
-	#print("Minigame location available: %s" %[minigame_location])
-	#if minigame_location:
-		#print("Starting minigame")
-		#start_minigame(minigame_location)
 
 func _on_non_collectable_clue_found(clue_name: String) -> void:
 	interactions.append(clue_name)
@@ -62,11 +59,6 @@ func _on_non_collectable_clue_found(clue_name: String) -> void:
 	print("Non-collectable clue: %s is added to a list of interactions." %clue_name)
 	print("Updated player items: %s" %[player_items])
 	start_event(player_items)
-	#var minigame_location = check_matching_minigame(player_items)
-	#print("Minigame location available: %s" %[minigame_location])
-	#if minigame_location:
-		#print("Starting minigame")
-		#start_minigame(minigame_location)
 
 func start_event(player_items: Array):
 	var minigame_location = check_matching_minigame(player_items)
@@ -124,3 +116,7 @@ func get_player_items() -> Array:
 
 func _on_case_overview_opened(location: Location):
 	case_overview_opened.emit(location)
+
+func _on_case_selected(case_title: String):
+	on_case_selected.emit(case_title)
+	
