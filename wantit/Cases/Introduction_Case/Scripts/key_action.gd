@@ -3,7 +3,6 @@ extends Node
 var dragging: bool
 var newItem: Button
 var oldItem: TextureButton
-var DialogueStart: String
 
 func do_smt(Item: TextureButton):
 	oldItem = Item
@@ -39,26 +38,22 @@ func _input(event: InputEvent) -> void:
 
 func check_down():
 	var KeyRect = Rect2(newItem.position, newItem.size)
-	var node: Node = null
-	if not node:
-		node = find_node()
-	if node:
-		var Rect1 = Rect2(node.position, node.size)
+	var clue: Clue = null
+	if not clue:
+		clue = find_node()
+	if clue:
+		var Rect1 = Rect2(clue.position, clue.size)
 		if Rect1.intersects(KeyRect):
-			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), DialogueStart)
-			await DialogueManager.dialogue_ended
-			return
-	#GlobalInventory.add_item(oldItem)
+			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/door.dialogue"), "key_used")
+			
+			clue.clue_name = "Door"
+			clue.emit_signal("clue_found", clue)
+	oldItem.emit_signal("clue_found", oldItem)
 	
 func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
-	for child in get_tree().root.get_children():
+	for child in get_parent().get_children():
 		print(child.name)
 		if child.name == "Door CloseUp":
-			DialogueStart = "key_on_door"
 			return child.find_child("Key Hole")
-		elif child.name == "Bakery Office":
-			DialogueStart = "key_on_safe"
-			#GlobalInventory.add_item(oldItem)
-			return child.find_child("Safe")
 	return null
 	

@@ -60,7 +60,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 [sub_resource type="Resource" id="Resource_8hhtx"]
 script = ExtResource("4_tcx5q")
 dialogue_start = "found_hints"
-dialogue_conditions = Array[String](["Waffle", "Key", "Pliers", "Screwdriver", "ShoeprintsKitchen", "Flour Sack", "ShoeprintsOffice", "Fingerprints"])
+dialogue_conditions = Array[String](["Waffle", "Key", "Pliers", "Screwdriver", "ShoeprintsKitchen", "Flour Sack", "ShoeprintsOffice", "Fingerprints", "Door"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_ntdmg"]
