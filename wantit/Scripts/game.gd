@@ -57,6 +57,8 @@ func complete_case() -> void:
 	current_case.is_completed = true
 	#var current_case_index = get_case_index_by_slug(active_case_slug)
 	active_case_slug = "default"
+	current_location_name = ""
+	#TODO add some text to motivate user to open another case
 	start_current_case() #name of the function is absolutely not perfect here
 
 func get_completed_cases() -> Array:
