@@ -19,7 +19,7 @@
 script = ExtResource("14_215e1")
 event_name = "On all clues found"
 location_name = "Backery Kitchen"
-conditions = Array[String](["Pliers", "Screwdriver", "Key", "Waffle", "ShoeprintsOffice", "Fingerprints", "ShoeprintsKitchen", "Flour Sack"])
+conditions = Array[String](["Pliers", "Screwdriver", "Key", "Waffle", "ShoeprintsOffice", "Fingerprints", "ShoeprintsKitchen", "Flour Sack", "Door"])
 metadata/_custom_type_script = "uid://btva00lvfk41s"
 
 [sub_resource type="Resource" id="Resource_7sc4i"]
