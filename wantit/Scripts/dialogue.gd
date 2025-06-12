@@ -20,18 +20,20 @@ func set_baloon_type():
 	else:
 		baloon_type = monologue_baloon_path
 
-func choose_dialogue_under_condition(player_items: Array):
+func choose_dialogue_by_requierements(player_items: Array):
+	var best_match = null
 	for condition in conditions:
-		if is_subset(condition.dialogue_conditions, player_items):
-			return condition.dialogue_start
-		
+		if is_subset(condition.required_items, player_items):
+			if best_match == null or best_match.required_items.size() < condition.required_items.size():
+				best_match = condition
+	
+	if best_match != null and best_match.required_items.size() > 0:
+		return best_match.dialogue_start
+	else:
+		return null
+	
 func is_subset(subset: Array, superset: Array) -> bool:
 	for item in subset:
 		if not superset.has(item):
 			return false
-	return true
-
-func has_condition():
-	if conditions.is_empty():
-		return false
 	return true

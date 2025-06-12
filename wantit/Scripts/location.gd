@@ -12,7 +12,6 @@ var hint_text: String = "Default text"
 var inventory: Inventory
 
 signal collectable_clue_found(clue: Clue, location: Location)
-#signal non_collectable_clue_found(clue: Clue, location: Location)
 signal non_collectable_clue_found(clue: Clue)
 signal location_switch_requested(location_name: String)
 
@@ -37,8 +36,6 @@ func set_inventory(case_inventory: Inventory) -> void:
 		add_child(inventory)
 
 func _setup_connections():
-	#FIXME - DialogueManager can use the functions of the scene its called in 
-	##DialogueManager.connect("location_switch_requested", _on_location_switch_requested)
 	var clues = get_tree().get_nodes_in_group("location_clues")
 	for clue in clues:
 		clue.connect("clue_found", _on_clue_found)
@@ -49,13 +46,10 @@ func _setup_connections():
 
 func start_dialogue():
 	if dialogue != null:
-		if dialogue.has_condition():
-			var player_items = case.get_player_items()
-			var dialogue_condition = dialogue.choose_dialogue_under_condition(player_items)
-			if dialogue_condition:
-				play_dialogue(dialogue, dialogue_condition)
-			else:
-				play_dialogue(dialogue)
+		var player_items = case.get_player_items()
+		var dialogue_condition = dialogue.choose_dialogue_by_requierements(player_items)
+		if dialogue_condition != null:
+			play_dialogue(dialogue, dialogue_condition)
 		elif not dialogue.is_started:
 			play_dialogue(dialogue)
 
@@ -73,7 +67,6 @@ func _on_clue_found(clue: Clue) -> void:
 		emit_signal("collectable_clue_found", clue, self)
 		disable_item(clue) 
 	else:
-		#emit_signal("non_collectable_clue_found", clue.clue_name, self)
 		emit_signal("non_collectable_clue_found", clue.clue_name)
 
 func _on_location_switch_requested(requested_location_name: String):

@@ -2,5 +2,4 @@ extends Resource
 class_name DialogueCondition
 
 @export var dialogue_start: String
-@export var dialogue_conditions: Array[String]
-var is_shown: bool = false
+@export var required_items: Array[String]

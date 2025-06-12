@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=32 format=3 uid="uid://bto1uem2cnbyr"]
 
 [ext_resource type="Script" uid="uid://c62j4fhwfi6xe" path="res://Cases/Introduction_Case/Scripts/bakery_kitchen.gd" id="1_7deum"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
@@ -60,19 +60,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 [sub_resource type="Resource" id="Resource_8hhtx"]
 script = ExtResource("4_tcx5q")
 dialogue_start = "found_hints"
-dialogue_conditions = Array[String](["Waffle", "Key", "Pliers", "Screwdriver", "ShoeprintsKitchen", "Flour Sack", "ShoeprintsOffice", "Fingerprints"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_ntdmg"]
-script = ExtResource("4_tcx5q")
-dialogue_start = "office_trace_expected"
-dialogue_conditions = Array[String](["ShoeprintsOffice"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_w4ixk"]
-script = ExtResource("4_tcx5q")
-dialogue_start = "minigame1_done"
-dialogue_conditions = Array[String](["Minigame1 completed", "Waffle", "Key", "Pliers", "Screwdriver", "ShoeprintsKitchen", "Flour Sack", "ShoeprintsOffice", "Fingerprints"])
+required_items = Array[String](["Waffle", "Key", "Flour Sack", "ShoeprintsKitchen", "ShoeprintsOffice", "Fingerprints", "Pliers", "Screwdriver"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_yhauu"]
@@ -80,7 +68,7 @@ script = ExtResource("16_88u8x")
 dialogue_resource = ExtResource("4_fmamt")
 is_dialogue = false
 is_monologue = true
-conditions = Array[ExtResource("4_tcx5q")]([SubResource("Resource_8hhtx"), SubResource("Resource_ntdmg"), SubResource("Resource_w4ixk")])
+conditions = Array[ExtResource("4_tcx5q")]([SubResource("Resource_8hhtx")])
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [sub_resource type="Resource" id="Resource_5sn1g"]

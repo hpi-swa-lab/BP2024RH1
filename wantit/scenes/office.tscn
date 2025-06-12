@@ -13,13 +13,13 @@
 [sub_resource type="Resource" id="Resource_2vylc"]
 script = ExtResource("2_2vylc")
 dialogue_start = "evaluate_traces"
-dialogue_conditions = Array[String](["Minigame1 completed"])
+required_items = Array[String](["Minigame1 completed"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_4luf0"]
 script = ExtResource("2_2vylc")
 dialogue_start = "finish"
-dialogue_conditions = Array[String](["Minigame2 completed"])
+required_items = Array[String](["Minigame1 completed", "Minigame2 completed"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_rs1ao"]

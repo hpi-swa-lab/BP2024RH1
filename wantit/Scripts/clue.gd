@@ -1,8 +1,5 @@
 extends TextureButton
-
 class_name Clue
-
-signal clue_found(clue: Clue)
 
 @export var clue_name: String
 @export var is_collectable: bool
@@ -10,7 +7,8 @@ var is_found: bool
 @export var dialogue: Dialogue
 @export var action_script: Script
 
-#from item.gd
+signal clue_found(clue: Clue)
+
 func _ready() -> void:
 	add_to_group("location_clues")
 	
@@ -27,7 +25,6 @@ func _pressed():
 	mark_found()
 	if dialogue != null and not dialogue.is_started:
 		start_dialogue(dialogue)
-		await DialogueManager.dialogue_ended
 	emit_signal("clue_found", self)
 
 func start_dialogue(dialogue:Dialogue, dialogue_start: String = "default"):

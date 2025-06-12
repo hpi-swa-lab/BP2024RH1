@@ -1,8 +1,5 @@
 ~ default
-=> END
-
-~ office_trace_expected
-Das ist also der Ursprung der Mehlspuren.
+Sieht so aus, als wäre der Dieb in Mehl getreten. Die Spur führt ins Büro des Ladens.
 => END
 
 ~ found_hints

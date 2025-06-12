@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dsaho1fwwino3"]
+[gd_scene load_steps=24 format=3 uid="uid://dsaho1fwwino3"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_12w5n"]
 [ext_resource type="Texture2D" uid="uid://bsmthr6tenpuw" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_office.png" id="1_vt4a7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_ggvds"]
 [ext_resource type="Texture2D" uid="uid://c7hwvidnp7hi4" path="res://Cases/Introduction_Case/assets/interactable_items/safe.png" id="3_jkgmc"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="4_xnrjk"]
+[ext_resource type="Resource" uid="uid://b0n3b6jwuou8d" path="res://dialogue/backery_office.dialogue" id="5_4361v"]
 [ext_resource type="Texture2D" uid="uid://dmixct3itjen8" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_office.png" id="5_gha41"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="5_xnrjk"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="8_12w5n"]
@@ -50,6 +51,20 @@ hint_text = "Hier scheint nichts auffälliges mehr zu sein"
 hint_condition = SubResource("Resource_88f4i")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
+[sub_resource type="Resource" id="Resource_b5wox"]
+script = ExtResource("4_xnrjk")
+dialogue_start = "kitchen_traces_expected"
+required_items = Array[String](["ShoeprintsKitchen"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_2l70s"]
+script = ExtResource("5_xnrjk")
+dialogue_resource = ExtResource("5_4361v")
+is_dialogue = false
+is_monologue = true
+conditions = Array[ExtResource("4_xnrjk")]([SubResource("Resource_b5wox")])
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
 [sub_resource type="Resource" id="Resource_mwdyl"]
 script = ExtResource("5_xnrjk")
 dialogue_resource = ExtResource("11_xnrjk")
@@ -63,6 +78,7 @@ script = ExtResource("1_12w5n")
 location_name = "Bakery Office"
 clues = [NodePath("Shoeprints")]
 hints = Array[ExtResource("2_guxia")]([SubResource("Resource_4361v"), SubResource("Resource_guxia"), SubResource("Resource_ggvds")])
+dialogue = SubResource("Resource_2l70s")
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
