@@ -24,6 +24,9 @@ func _ready():
 	start_dialogue()
 
 func set_inventory(case_inventory: Inventory) -> void:
+	if not has_inventory:
+		return
+	
 	inventory = case_inventory
 	
 	if inventory.get_parent():

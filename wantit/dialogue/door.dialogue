@@ -1,0 +1,7 @@
+~ default
+An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
+=> END
+
+~ key_used
+Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
+=> END

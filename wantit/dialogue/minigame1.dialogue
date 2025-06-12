@@ -41,5 +41,6 @@ Die gewonnene Information konnte wiederum durch die Zettelchen...
 => return_from_minigame
 
 ~ return_from_minigame
-do _on_location_switch_requested("Backery Kitchen")
+Klaas: Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.
+do _on_location_switch_requested("Office")
 => END

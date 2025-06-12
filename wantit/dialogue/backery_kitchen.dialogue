@@ -1,5 +1,4 @@
 ~ default
-Sieht so aus, als wäre jemand über den Mehlsack gestolpert.
 => END
 
 ~ office_trace_expected
@@ -12,8 +11,3 @@ Klaas: Es scheint so, als hätten wir alle wichtigen Spuren gesichert.
 Klaas: Ohh, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
 do _on_location_switch_requested("Minigame1")
 => END
-
-~ minigame1_done
-Klaas: Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.
-do _on_location_switch_requested("Office")
-=> END 
