@@ -1,20 +1,12 @@
-extends Control
+extends Location
 
 @onready var plate: TextureButton = $Plate
 @onready var helpsystem_timer = $Helpsystem/Question_mark/Timer
 
 func _ready() -> void:
-	var Inventory = GlobalInventory.get_inventory()
-	add_child(Inventory)
-	print (CaseManager.CaseGlobals.showroom_intro_shown)
-	
-	if CaseManager.CaseGlobals.showroom_intro_shown == false:
-		helpsystem_timer.paused = true
-		CaseManager.CaseGlobals.showroom_intro_shown = true
-		DialogueManager.show_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "crime_scene")
-	
-		await DialogueManager.dialogue_ended
-		helpsystem_timer.paused = false
-	
-	if CaseManager.CaseGlobals.waffle_collected:
+	super._ready()
+	#update_plate_image()
+
+func update_plate_image(player_items: Array):
+	if player_items.has("Waffle"):
 		plate.texture_normal = load("res://Cases/Introduction_Case/assets/interactable_items/plate_empty.png")
