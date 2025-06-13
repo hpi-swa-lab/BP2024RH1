@@ -21,10 +21,10 @@
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
 case_slug = "default"
-case_title = ""
+case_title = null
 case_location_scenes = Array[PackedScene]([ExtResource("3_7sc4i"), ExtResource("4_80cx4"), ExtResource("5_e8heu")])
 inventory_scene = ExtResource("11_mfdv2")
-event_triggers = Array[ExtResource("14_215e1")]([])
+event_triggers = null
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_215e1"]
@@ -59,10 +59,10 @@ metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_rvswv"]
 script = ExtResource("2_e2o6t")
-case_slug = ""
+case_slug = null
 case_title = "Fake News"
-case_location_scenes = Array[PackedScene]([])
-event_triggers = Array[ExtResource("14_215e1")]([])
+case_location_scenes = null
+event_triggers = null
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]

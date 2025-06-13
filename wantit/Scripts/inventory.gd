@@ -2,11 +2,10 @@
 # or resize the Gridcontainer. If you want more slots increase the slotCount
 
 extends Control
-#extends Node
 class_name Inventory
 
 var inventory_slots: Array[InventorySlot] = []
-var clue_dictionary: Dictionary
+var item_dictionary: Dictionary
 @export var slot_count: int = 8
 @export var columns: int  = 2
 @export var slot_scene: PackedScene
@@ -38,7 +37,7 @@ func _ready() -> void:
 		restore_inventory_items(_pending_restore_data[0], _pending_restore_data[1])
 		_pending_restore_data.clear()
 
-func add_item(item: Clue) -> void:
+func add_item(item: Item) -> void:
 	for slot in inventory_slots:
 		if slot.is_empty():
 			slot.add_item(item)
@@ -64,33 +63,33 @@ func hide_inventory():
 	#var items = []
 	#for slot in slots:
 		#if slot.StoredItem:
-			#items.push_back(slot.StoredItem.clue_name)
+			#items.push_back(slot.StoredItem.item_name)
 	#return items
 
 func get_inventory_items_name() -> Array[String]:
 	var items_name: Array[String] = []
 	for slot in inventory_slots:
 		if slot.stored_item != null:
-			items_name.append(slot.stored_item.clue_name)
+			items_name.append(slot.stored_item.item_name)
 	return items_name
 	
-func restore_inventory_items(clue_dictionary: Dictionary, items_list: Array) -> void:
+func restore_inventory_items(item_dictionary: Dictionary, items_list: Array) -> void:
 	if not _restore_ready:
-		_pending_restore_data = [clue_dictionary, items_list]
+		_pending_restore_data = [item_dictionary, items_list]
 		return
 	
-	var inventory_items: Array[Clue] = []
+	var inventory_items: Array[Item] = []
 	for item in items_list:
-		if clue_dictionary.has(item):
-			inventory_items.append(clue_dictionary[item])
+		if item_dictionary.has(item):
+			inventory_items.append(item_dictionary[item])
 		else:
 			push_error("Missing object for id: %s" % item)
 	
 	for item in inventory_items:
 		self.add_item(item)
 
-func has(clue: Clue) -> bool:
+func has(item: Item) -> bool:
 	for slot in inventory_slots:
-		if slot.stored_item == clue:
+		if slot.stored_item == item:
 			return true
 	return false
