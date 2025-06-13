@@ -1,22 +1,7 @@
-# salesroom
-~ door_to_store
-An der Tür sind keine Einbruchsspuren zu erkennen. Der Dieb muss einen Dietrich oder einen Schlüssel gehabt haben.
-=> END
 
 ~ inventory
 Du kannst manche Gegenstände im Inventar benutzen.
 set CaseManager.CaseGlobals.inventory_explained = true
-=> END
-
-# Safe in office
-~ key_on_safe
-Der Schlüssel passt nicht.
-=> END
-
-~ key_on_door
-Der Schlüssel passt. Der Dieb hatte also einen Schlüssel zum Laden.
-set CaseManager.CaseGlobals.door_inspected = true
-set CaseManager.clue_found()
 => END
 
 ~ office

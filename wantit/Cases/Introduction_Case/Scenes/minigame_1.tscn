@@ -72,9 +72,8 @@ offset_right = 4968.0
 offset_bottom = 4041.0
 scale = Vector2(0.03, 0.03)
 icon = ExtResource("5_a0wop")
-labelText = "Ein angebissenes 
-Waffelstück in Herzform, 
-etwas DNA vom Täter hängt noch dran"
+labelText = "Beim Bissabdruck 
+fehlt der Zahn 11"
 
 [node name="Fingerprints" parent="Control" instance=ExtResource("2_0uv5o")]
 layout_mode = 0
@@ -125,7 +124,7 @@ offset_left = 742.0
 offset_top = 389.0
 offset_right = 818.0
 offset_bottom = 443.0
-text = "DNA Spuren"
+text = "11f"
 correctClue = NodePath("../../Control/Waffle")
 
 [node name="Draggable2" parent="Draggables" node_paths=PackedStringArray("correctClue") instance=ExtResource("4_jmcek")]
@@ -152,7 +151,7 @@ offset_left = 655.0
 offset_top = 148.0
 offset_right = 737.0
 offset_bottom = 201.0
-text = "5"
+text = "Safe"
 correctClue = NodePath("../../Control/Fingerprints")
 
 [node name="Draggable5" parent="Draggables" node_paths=PackedStringArray("correctClue") instance=ExtResource("4_jmcek")]
@@ -218,6 +217,16 @@ offset_bottom = 50.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Notizzettel"
+
+[node name="Zuordnung" type="Label" parent="description"]
+layout_mode = 0
+offset_left = 925.0
+offset_top = 8.0
+offset_right = 1085.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Zuordnung"
 
 [node name="dividing_line" type="Line2D" parent="description"]
 points = PackedVector2Array(584, 64, 584, 576)

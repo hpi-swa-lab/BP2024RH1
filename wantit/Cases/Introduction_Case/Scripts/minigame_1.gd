@@ -34,7 +34,6 @@ func _on_button_pressed() -> void:
 		%Label.show()
 		%TryAgain.hide()
 		DialogueManager.show_dialogue_balloon_scene(load("res://dialogue_balloons/monologue/balloon_monologue.tscn"), load("res://dialogue/minigame1.dialogue"), "minigame1_end")
-		await DialogueManager.dialogue_ended
 	else:
 		%Label.show()
 		%Label.text = "Das war leider Falsch.\nProbier es noch einmal"

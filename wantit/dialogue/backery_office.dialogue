@@ -1,7 +1,6 @@
 ~ default
-Sieht so aus, als wäre der Dieb in Mehl getreten.
+Sieht so aus, als wäre der Dieb in Mehl getreten. Die Spur kommt aus der Küche
 => END
 
 ~ kitchen_traces_expected
-Hier endet die Mehlspur.
 => END

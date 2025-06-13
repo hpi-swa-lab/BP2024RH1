@@ -24,6 +24,8 @@ var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
 
+#signal dialogue_ended
+
 ## The current line
 var dialogue_line: DialogueLine:
 	set(value):

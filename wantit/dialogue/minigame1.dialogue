@@ -23,7 +23,7 @@ Eine Information entsteht, wenn diese Daten für uns eine Bedeutung bekommen.
 ~ minigame1_test2
 Mittels der Lupe konnte ich sie...
 - interpretieren => minigame1_test3
-- repräsentieren => minigame1_test2
+- repräsentieren => explain_test2
 - Ich verstehe die Begriffe nicht. => explain_test2
 
 ~ explain_test2
@@ -33,8 +33,14 @@ Repräsentieren hingegen bedeutet, eine Darstellung durch eine andere Darstellun
 
 ~ minigame1_test3
 Die gewonnene Information konnte wiederum durch die Zettelchen...
-- interpretiert werden => minigame1_test3
+- interpretiert werden => explain_test3
 - repräsentiert werden => add_interaction
+
+~ explain_test3
+Die Notizzettel helfen, die Information darzustellen.
+Interpretieren bedeutet, etwas so zu verstehen, dass man den Sinn oder die Absicht dahinter erkennt.
+Repräsentieren hingegen bedeutet, eine Darstellung durch eine andere Darstellung so abzubilden, dass sie stellvertretend für das Original stehen.
+=> minigame1_test3
 
 ~ add_interaction
 do interaction_happened("Minigame1 completed") 
