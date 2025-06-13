@@ -22,7 +22,7 @@ func add_cases(cases_list: Array) -> void:
 		add_case(case)
 
 func add_case(case_title) -> void:
-	#create pre-configured case_selection_button
+	#create pre-configured case_selection_button that could be enabled/disabled for completed cases
 	var new_case = Button.new()
 	new_case.text = case_title
 	new_case.custom_minimum_size.y = 40

@@ -31,8 +31,10 @@ func instantiate():
 			location.case = self
 			location.connect("non_collectable_clue_found", _on_non_collectable_clue_found)
 			location.connect("collectable_clue_found", _on_collectable_clue_found)
-			location.connect("case_overview_opened", _on_case_overview_opened)
-			location.connect("case_selected", _on_case_selected)
+			if location.has_signal("case_overview_opened"):
+				location.connect("case_overview_opened", _on_case_overview_opened)
+			if location.has_signal("case_selected"):
+				location.connect("case_selected", _on_case_selected)
 			case_locations.append(location)
 		else:
 			push_error("Scene does not instantiate to a Location: " + scene.resource_path)
