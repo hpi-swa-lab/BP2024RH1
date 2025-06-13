@@ -1,16 +1,16 @@
 extends TextureButton
-class_name Clue
+class_name Item
 
-@export var clue_name: String
+@export var item_name: String
 @export var is_collectable: bool
 var is_found: bool
 @export var dialogue: Dialogue
 @export var action_script: Script
 
-signal clue_found(clue: Clue)
+signal item_found(item: Item)
 
 func _ready() -> void:
-	add_to_group("location_clues")
+	add_to_group("location_items")
 	
 	if texture_normal:
 		var image: Image = texture_normal.get_image()
@@ -22,10 +22,12 @@ func _pressed():
 	if is_found:
 		return
 
-	mark_found()
-	if dialogue != null and not dialogue.is_started:
+	if not is_found:
+		mark_found()
+		item_found.emit(self)
+	if dialogue != null:
 		start_dialogue(dialogue)
-	emit_signal("clue_found", self)
+	
 
 func start_dialogue(dialogue:Dialogue, dialogue_start: String = "default"):
 	DialogueManager.show_dialogue_balloon_scene(

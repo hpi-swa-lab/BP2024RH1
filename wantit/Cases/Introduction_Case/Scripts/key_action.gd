@@ -1,17 +1,22 @@
-extends Node
+#extends Node
+extends Item
 
 var dragging: bool
 var newItem: Button
 var oldItem: TextureButton
-var clue: Clue = null
+#<<<<<<< Updated upstream
+#var clue: Clue = null
+#=======
+var clue: Item = null
+#>>>>>>> Stashed changes
 
-func do_smt(Item: TextureButton):
-	oldItem = Item
+func do_smt(item: TextureButton):
+	oldItem = item
 	var Style = StyleBoxEmpty.new()
 	
 	var button = Button.new()
-	button.icon= Item.texture_normal
-	button.scale = Item.scale
+	button.icon= item.texture_normal
+	button.scale = item.scale
 	
 	button.button_up.connect(item_up)
 	button.global_position = get_viewport().get_mouse_position() - button.icon.get_size() / 2 * button.scale
@@ -47,7 +52,11 @@ func check_down():
 			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/door.dialogue"), "key_used")
 			await DialogueManager.dialogue_ended
 			_on_dialogue_ended()
-	oldItem.emit_signal("clue_found", oldItem)
+#<<<<<<< Updated upstream
+	#oldItem.emit_signal("clue_found", oldItem)
+#=======
+	#oldItem.emit_signal("item_found", oldItem)
+#>>>>>>> Stashed changes
 	
 func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
 	for child in get_parent().get_children():
@@ -55,8 +64,15 @@ func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
 		if child.name == "Door CloseUp":
 			return child.find_child("Key Hole")
 	return null
-	
+#<<<<<<< Updated upstream
+#func _on_dialogue_ended() -> void:
+	#print("test")
+	#clue.clue_name = "Door"
+	#clue.emit_signal("clue_found", clue)
+#=======
+
 func _on_dialogue_ended() -> void:
 	print("test")
-	clue.clue_name = "Door"
-	clue.emit_signal("clue_found", clue)
+	clue.item_name = "Door"
+	clue.emit_signal("item_found", clue)	
+#>>>>>>> Stashed changes

@@ -4,7 +4,7 @@ class_name Dialogue
 @export var dialogue_resource: DialogueResource
 @export var is_dialogue: bool
 @export var is_monologue: bool
-var is_started: bool = false
+#var is_started: bool = false
 var baloon_type: String
 @export var conditions: Array[DialogueCondition] 
 
@@ -27,7 +27,7 @@ func choose_dialogue_by_requierements(player_items: Array):
 			if best_match == null or best_match.required_items.size() < condition.required_items.size():
 				best_match = condition
 	
-	if best_match != null and best_match.required_items.size() > 0:
+	if best_match != null:#and best_match.required_items.size() > 0:
 		return best_match.dialogue_start
 	else:
 		return null
@@ -37,3 +37,9 @@ func is_subset(subset: Array, superset: Array) -> bool:
 		if not superset.has(item):
 			return false
 	return true
+
+func get_condition_index_by_dialogue_start(target: String):
+	for i in conditions.size():
+		if conditions[i].dialogue_start == target:
+			return i
+	return null

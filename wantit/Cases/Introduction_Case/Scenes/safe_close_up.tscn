@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_1y1xn"]
 [ext_resource type="Texture2D" uid="uid://bc7rt7bpgdqoj" path="res://Cases/Introduction_Case/assets/collectible_items/pliers.png" id="3_d2s8b"]
 [ext_resource type="Texture2D" uid="uid://c40dfv7v6dx02" path="res://Cases/Introduction_Case/assets/collectible_items/screwdriver.png" id="4_fiei6"]
-[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="5_unxiy"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="5_unxiy"]
 [ext_resource type="Texture2D" uid="uid://cqvcntkuj0tiy" path="res://Cases/Introduction_Case/assets/interactable_items/fingerprints_safe.png" id="6_fiei6"]
 [ext_resource type="Resource" uid="uid://df42rn40kppmv" path="res://dialogue/pliers.dialogue" id="8_1y1xn"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="8_ikhkp"]
@@ -77,10 +77,10 @@ is_monologue = true
 conditions = Array[ExtResource("8_mucgs")]([])
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="Safe CloseUp" type="Node" node_paths=PackedStringArray("clues")]
+[node name="Safe CloseUp" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_unxiy")
 location_name = "Safe CloseUp"
-clues = [NodePath("Pliers"), NodePath("Screwdriver"), NodePath("Fingerprints")]
+items = [NodePath("Pliers"), NodePath("Screwdriver"), NodePath("Fingerprints")]
 hints = Array[ExtResource("2_nnv67")]([SubResource("Resource_dhqo4"), SubResource("Resource_mucgs"), SubResource("Resource_nnv67")])
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
@@ -101,7 +101,7 @@ offset_bottom = 3974.0
 scale = Vector2(0.0807828, 0.0443505)
 texture_normal = ExtResource("3_d2s8b")
 script = ExtResource("5_unxiy")
-clue_name = "Pliers"
+item_name = "Pliers"
 is_collectable = true
 dialogue = SubResource("Resource_utbbk")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
@@ -115,7 +115,7 @@ rotation = 0.535832
 scale = Vector2(0.0818099, 0.0510003)
 texture_normal = ExtResource("4_fiei6")
 script = ExtResource("5_unxiy")
-clue_name = "Screwdriver"
+item_name = "Screwdriver"
 is_collectable = true
 dialogue = SubResource("Resource_3mx5k")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
@@ -124,7 +124,7 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 scale = Vector2(0.299539, 0.299539)
 texture_normal = ExtResource("6_fiei6")
 script = ExtResource("5_unxiy")
-clue_name = "Fingerprints"
+item_name = "Fingerprints"
 dialogue = SubResource("Resource_xm0pu")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 

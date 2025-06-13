@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="5_12xxd"]
 [ext_resource type="Resource" uid="uid://cd6d0naefqhjx" path="res://dialogue/waffle.dialogue" id="5_807iu"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="5_a4x6w"]
-[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/clue.gd" id="5_luwce"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="5_luwce"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="6_5ruto"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="6_174a0"]
 
@@ -18,10 +18,10 @@ is_monologue = false
 conditions = Array[ExtResource("5_12xxd")]([])
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="Counter CloseUp" type="Node" node_paths=PackedStringArray("clues")]
+[node name="Counter CloseUp" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_luwce")
 location_name = "Counter Close Up"
-clues = [NodePath("Waffle")]
+items = [NodePath("Waffle")]
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
@@ -41,7 +41,7 @@ rotation = -0.204434
 scale = Vector2(0.0673684, 0.0512623)
 texture_normal = ExtResource("3_rw67b")
 script = ExtResource("5_luwce")
-clue_name = "Waffle"
+item_name = "Waffle"
 is_collectable = true
 dialogue = SubResource("Resource_807iu")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"

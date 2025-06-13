@@ -2,17 +2,17 @@ extends Panel
 
 class_name InventorySlot
 
-var stored_item: Clue = null
+var stored_item: Item = null
 var action_script: Node
 
 func _ready() -> void:
 	%Sprite2D.scale = self.custom_minimum_size / %Sprite2D.texture.get_size()
 
-func add_item(new_item: Clue) -> void:
+func add_item(new_item: Item) -> void:
 	%CenterContainer.size = self.size
 	
 	stored_item = new_item
-	print("Item just added to inventory: " + str(stored_item.clue_name))
+	#print("Item just added to inventory: " + str(stored_item.item_name))
 	
 	if new_item.action_script != null:
 		action_script = new_item.action_script.new()
