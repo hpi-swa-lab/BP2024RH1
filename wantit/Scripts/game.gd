@@ -125,8 +125,10 @@ func load_game_data():
 #enable adding interaction from dialogue
 func interaction_happened(interaction_name: String) -> void:
 	var current_case = get_case_by_slug(active_case_slug)
-	#FIXME you also need to add some location in this function
-	current_case._on_non_collectable_item_found(interaction_name)
+	var interaction_item = Item.new()
+	interaction_item.item_name = interaction_name
+	interaction_item.is_collectable = false
+	current_case._on_item_found(interaction_item)
 
 func _on_case_overview_opened(location: Location) -> void:
 	var active_case = get_active_case()

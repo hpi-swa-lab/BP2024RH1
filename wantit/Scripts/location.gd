@@ -99,5 +99,6 @@ func update_hint_text(player_items):
 	#FIXME choose one hint when several available
 	if valid_hints:
 		hint_text = valid_hints[0]
+		print("Hint to be shown: %s" %[hint_text])
 		if $Helpsystem:
 			$Helpsystem.call_deferred("set_hint_text")

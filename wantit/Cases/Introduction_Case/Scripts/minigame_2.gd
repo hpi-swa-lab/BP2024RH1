@@ -12,9 +12,7 @@ var errors: Array[bool] = []
 
 var iteration_completed: bool = false
 
-func _ready() -> void:
-	#CaseManager.CaseGlobals.current_scene = "minigame_2"
-	
+func _ready() -> void:	
 	LabelText[0] = "Fingerabdruck eines Angestellten."
 	LabelText[1] = "Es wurden mehrere Fingerabrücke am Safe gesichert."
 	LabelText[2] = "Zur Ladentür des Waffelparadieses gehört ein Schlüssel mit dem Nummernstempel 2056."
@@ -179,9 +177,7 @@ func create_label(labelText: String) -> Label:
 	return label
 
 func _on_finish_button_pressed() -> void:
-	pass
-	emit_signal("non_collectable_clue_found", "Minigame2 completed")
-	#Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
-	#Globals.OfficeDialogueStart = "finish"
-	#Globals.OfficeDialogueDone = false
-	#SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+	var interaction_item = Item.new()
+	interaction_item.item_name = "Minigame2 completed"
+	interaction_item.is_collectable = false
+	item_found.emit(interaction_item)

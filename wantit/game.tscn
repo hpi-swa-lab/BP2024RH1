@@ -21,17 +21,17 @@
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
 case_slug = "default"
-case_title = null
+case_title = ""
 case_location_scenes = Array[PackedScene]([ExtResource("3_7sc4i"), ExtResource("4_80cx4"), ExtResource("5_e8heu")])
 inventory_scene = ExtResource("11_mfdv2")
-event_triggers = null
+event_triggers = Array[ExtResource("14_215e1")]([])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_215e1"]
 script = ExtResource("14_215e1")
 event_name = "On all clues found"
 location_name = "Backery Kitchen"
-conditions = Array[String](["Pliers", "Screwdriver", "Key", "Waffle", "ShoeprintsOffice", "Fingerprints", "ShoeprintsKitchen", "Flour Sack", "Door"])
+conditions = Array[String](["Pliers", "Screwdriver", "Waffle", "ShoeprintsOffice", "Fingerprints", "ShoeprintsKitchen", "Flour Sack", "Door"])
 metadata/_custom_type_script = "uid://btva00lvfk41s"
 
 [sub_resource type="Resource" id="Resource_7sc4i"]
@@ -59,10 +59,10 @@ metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_rvswv"]
 script = ExtResource("2_e2o6t")
-case_slug = null
+case_slug = ""
 case_title = "Fake News"
-case_location_scenes = null
-event_triggers = null
+case_location_scenes = Array[PackedScene]([])
+event_triggers = Array[ExtResource("14_215e1")]([])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]

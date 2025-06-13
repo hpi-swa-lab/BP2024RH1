@@ -52,15 +52,15 @@ func instantiate():
 	inventory.restore_inventory_items(item_dictionary, restored_inventory_items)
 	var inventory_items = inventory.get_inventory_items_name()
 
-func _on_item_found(item: Item, location: Location) -> void:
+func _on_item_found(item: Item, location: Location = null) -> void:
 	if item.is_collectable:
 		inventory.add_item(item)
 	else:
 		interactions.append(item.item_name)
 	var player_items = get_player_items()
-	location.update_hint_text(player_items)
-	#location.call_deferred("update_hint_text", player_items)
-	print("Item: %s added to player items." %item.item_name) 
+	if location != null:
+		location.update_hint_text(player_items)
+	#print("Item: %s added to player items." %item.item_name) 
 	print("Updated player items: %s" %[player_items])
 	start_event(player_items)
 
