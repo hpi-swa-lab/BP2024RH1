@@ -78,7 +78,7 @@ func get_completed_cases() -> Array:
 	var completed_cases = []
 	for case in cases:
 		if case.is_completed:
-			completed_cases.append(case)
+			completed_cases.append(case.case_slug)
 	return completed_cases
 		
 func switch_location(location: Location):
