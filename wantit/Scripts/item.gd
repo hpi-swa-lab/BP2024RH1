@@ -21,20 +21,19 @@ func _ready() -> void:
 func _pressed():
 	if is_found:
 		return
-
-	if not is_found:
-		mark_found()
-		item_found.emit(self)
+	
 	if dialogue != null:
 		start_dialogue(dialogue)
 	
+	await DialogueManager.dialogue_ended
+	mark_found()
+	item_found.emit(self)
 
 func start_dialogue(dialogue:Dialogue, dialogue_start: String = "default"):
 	DialogueManager.show_dialogue_balloon_scene(
 			dialogue.baloon_type,
 			dialogue.dialogue_resource,
 			dialogue_start)
-	await DialogueManager.dialogue_ended
 
 func mark_found():
 	is_found = true
