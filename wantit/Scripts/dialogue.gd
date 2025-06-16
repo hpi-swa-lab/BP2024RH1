@@ -4,7 +4,6 @@ class_name Dialogue
 @export var dialogue_resource: DialogueResource
 @export var is_dialogue: bool
 @export var is_monologue: bool
-#var is_started: bool = false
 var baloon_type: String
 @export var conditions: Array[DialogueCondition] 
 

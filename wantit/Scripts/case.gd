@@ -124,3 +124,12 @@ func _on_case_overview_opened(location: Location):
 func _on_case_selected(case_title: String):
 	on_case_selected.emit(case_title)
 	
+func clear_case_data() -> void:
+	interactions = []
+	inventory.inventory_slots = []
+	
+	for location in case_locations:
+		if location.dialogue:
+			for condition in location.dialogue.conditions:
+				condition.is_started = false
+	print("Cleared current case data.")

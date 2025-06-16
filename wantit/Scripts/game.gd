@@ -63,7 +63,7 @@ func set_connections(case: Case):
 func complete_case() -> void:
 	var current_case = get_case_by_slug(active_case_slug)
 	current_case.is_completed = true
-	#var current_case_index = get_case_index_by_slug(active_case_slug)
+	current_case.clear_case_data()
 	active_case_slug = "default"
 	current_location_name = ""
 	#TODO add some text to motivate user to open another case
