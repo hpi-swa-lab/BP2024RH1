@@ -129,6 +129,7 @@ offset_left = 648.0
 offset_top = 296.0
 offset_right = 811.0
 offset_bottom = 327.0
+text = "Programm beenden"
 
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]

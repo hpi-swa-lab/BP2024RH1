@@ -115,9 +115,9 @@ func initialize_buttons():
 	add_button(1, "Ich bin 5 Abdrücke", load("res://Cases/Introduction_Case/assets/minigame2/photo_fingerprints.png"), "")
 	add_button(1, "'Fingerabdruck'", null, "[WARNING] Wert 'Fingerabdruck' nicht präzise genug.")
 	
-	add_button(2, "2056", null, "")
-	add_button(2, "6382", null, "[ERROR] Keine Tür mit der Nummer '6382' gefunden")
-	add_button(2, "Ich bin ein Schlüssel", load("res://Cases/Introduction_Case/assets/minigame2/key.png"), "[ERROR] Nummer erwartet - Bild erhalten")
+	add_button(2, "", load("res://Cases/Introduction_Case/assets/minigame2/key2056.png"), "")
+	add_button(2, "2056", null, "[ERROR] Nummer erhalten - Bild erwartet")
+	add_button(2, "", load("res://Cases/Introduction_Case/assets/minigame2/key.png"), "[ERROR] Keine Tür ohne Nummer gefunden")
 	
 	add_button(3, "09.04", null, "")
 	add_button(3, "9.4", null, "[ERROR] Datumsformat nicht gültig - TT.MM. erwartet")

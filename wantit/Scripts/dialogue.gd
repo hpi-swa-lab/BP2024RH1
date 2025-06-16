@@ -8,7 +8,7 @@ class_name Dialogue
 var baloon_type: String
 @export var conditions: Array[DialogueCondition] 
 
-var monologue_baloon_path: String = "res://dialogue_balloons/monologue/balloon_monologue.tscn"
+var monologue_baloon_path: String = "res://dialogue_balloons/balloon.tscn"
 var dialogue_baloon_path: String = "res://dialogue_balloons/monologue/balloon_monologue.tscn"
 
 func _init():
