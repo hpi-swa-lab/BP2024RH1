@@ -10,6 +10,12 @@
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_q644x"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="5_eqlnk"]
 
+[sub_resource type="Resource" id="Resource_xas0k"]
+script = ExtResource("2_2vylc")
+dialogue_start = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
 [sub_resource type="Resource" id="Resource_2vylc"]
 script = ExtResource("2_2vylc")
 dialogue_start = "evaluate_traces"
@@ -22,18 +28,12 @@ dialogue_start = "finish"
 required_items = Array[String](["Minigame1 completed", "Minigame2 completed"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
-[sub_resource type="Resource" id="Resource_xas0k"]
-script = ExtResource("2_2vylc")
-dialogue_start = "default"
-required_items = Array[String]([])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
 [sub_resource type="Resource" id="Resource_rs1ao"]
 script = ExtResource("4_q644x")
 dialogue_resource = ExtResource("3_4luf0")
 is_dialogue = true
 is_monologue = false
-conditions = Array[ExtResource("2_2vylc")]([SubResource("Resource_2vylc"), SubResource("Resource_4luf0"), SubResource("Resource_xas0k")])
+conditions = Array[ExtResource("2_2vylc")]([SubResource("Resource_xas0k"), SubResource("Resource_2vylc"), SubResource("Resource_4luf0")])
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Office" type="Node"]

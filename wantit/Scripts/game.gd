@@ -64,10 +64,15 @@ func complete_case() -> void:
 	var current_case = get_case_by_slug(active_case_slug)
 	current_case.is_completed = true
 	current_case.clear_case_data()
+	gamesaver.save_game(self)
+	setup_default_case()
+	start_current_case() #name of the function is absolutely not perfect here
+
+func setup_default_case() -> void:
 	active_case_slug = "default"
 	current_location_name = ""
+	#played_dialogues["default_office"] = "default"
 	#TODO add some text to motivate user to open another case
-	start_current_case() #name of the function is absolutely not perfect here
 
 func get_completed_cases() -> Array:
 	var completed_cases = []

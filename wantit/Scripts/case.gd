@@ -48,7 +48,7 @@ func instantiate():
 	
 	inventory = inventory_scene.instantiate() as Inventory
 	var item_dictionary = create_item_dictionary()
-	print("Items names restored in a case: %s" %[restored_inventory_items])
+	print("Items restored in a case: %s" %[restored_inventory_items])
 	inventory.restore_inventory_items(item_dictionary, restored_inventory_items)
 	var inventory_items = inventory.get_inventory_items_name()
 
@@ -125,11 +125,15 @@ func _on_case_selected(case_title: String):
 	on_case_selected.emit(case_title)
 	
 func clear_case_data() -> void:
-	interactions = []
-	inventory.inventory_slots = []
+	interactions.clear()
+	inventory.inventory_slots.clear()
+	restored_inventory_items.clear()
+	restored_played_dialogues.clear()
 	
 	for location in case_locations:
 		if location.dialogue:
 			for condition in location.dialogue.conditions:
 				condition.is_started = false
 	print("Cleared current case data.")
+	var player_items = get_player_items()
+	print(player_items)
