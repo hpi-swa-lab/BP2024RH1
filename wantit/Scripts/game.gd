@@ -14,7 +14,6 @@ var played_dialogues: Dictionary
 
 func _ready():
 	get_tree().auto_accept_quit = false
-	
 	gamesaver.load_saved_game_data(self)
 	if restored_game_data:
 		load_game_data()

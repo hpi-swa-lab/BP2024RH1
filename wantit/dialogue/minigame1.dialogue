@@ -6,14 +6,19 @@ Untersuche die Spuren mit der Lupe, um herauszufinden, welche Informationen durc
 
 ~ minigame1_end
 Geschafft!
+Um das Minigame abzuschließen, wollen wir noch Dein Wissen testen.
 => minigame1_test1
 
 ~ minigame1_test1
 Die gesicherten Spuren sind...
 - Daten => minigame1_test2
-- Informationen => minigame1_test1
+- Informationen => minigame1_test1_wrong
 - Ich verstehe die Begriffe nicht. => explain_test1
 => END
+
+~ minigame1_test1_wrong
+Das ist leider falsch.
+=> explain_test1
 
 ~ explain_test1
 Daten sind einzelne Dinge wie Wörter, Zahlen, Bilder, Töne und Ähnliches, die für sich allein noch nichts sagen. 
@@ -23,8 +28,12 @@ Eine Information entsteht, wenn diese Daten für uns eine Bedeutung bekommen.
 ~ minigame1_test2
 Mittels der Lupe konnte ich sie...
 - interpretieren => minigame1_test3
-- repräsentieren => explain_test2
+- repräsentieren => minigame1_test2_wrong
 - Ich verstehe die Begriffe nicht. => explain_test2
+
+~ minigame1_test2_wrong
+Das ist leider falsch.
+=> explain_test2
 
 ~ explain_test2
 Interpretieren bedeutet, etwas so zu verstehen, dass man den Sinn oder die Absicht dahinter erkennt.
@@ -33,10 +42,10 @@ Repräsentieren hingegen bedeutet, eine Darstellung durch eine andere Darstellun
 
 ~ minigame1_test3
 Die gewonnene Information konnte wiederum durch die Zettelchen...
-- interpretiert werden => explain_test3
+- interpretiert werden => minigame1_test3_wrong
 - repräsentiert werden => add_interaction
 
-~ explain_test3
+~ minigame1_test3_wrong
 Die Notizzettel helfen, die Information darzustellen.
 Interpretieren bedeutet, etwas so zu verstehen, dass man den Sinn oder die Absicht dahinter erkennt.
 Repräsentieren hingegen bedeutet, eine Darstellung durch eine andere Darstellung so abzubilden, dass sie stellvertretend für das Original stehen.
