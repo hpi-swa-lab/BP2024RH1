@@ -120,6 +120,7 @@ func load_game_data():
 	inventory_items_names = restored_game_data.get("inventory_items", [])
 	interactions_history = restored_game_data.get("interactions", [])
 	played_dialogues = restored_game_data.get("dialogues", {})
+	#completed_cases = restored_game_data.get("completed_cases", [])
 
 #enable adding interaction from dialogue
 func interaction_happened(interaction_name: String) -> void:
