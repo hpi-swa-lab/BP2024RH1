@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://byc5whva4dkys"]
+[gd_scene load_steps=14 format=3 uid="uid://byc5whva4dkys"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_2jlrf"]
 [ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="1_a0wae"]
@@ -22,12 +22,18 @@ dialogue_start = "finish"
 required_items = Array[String](["Minigame1 completed", "Minigame2 completed"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
+[sub_resource type="Resource" id="Resource_xas0k"]
+script = ExtResource("2_2vylc")
+dialogue_start = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
 [sub_resource type="Resource" id="Resource_rs1ao"]
 script = ExtResource("4_q644x")
 dialogue_resource = ExtResource("3_4luf0")
 is_dialogue = true
 is_monologue = false
-conditions = Array[ExtResource("2_2vylc")]([SubResource("Resource_2vylc"), SubResource("Resource_4luf0")])
+conditions = Array[ExtResource("2_2vylc")]([SubResource("Resource_2vylc"), SubResource("Resource_4luf0"), SubResource("Resource_xas0k")])
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Office" type="Node"]

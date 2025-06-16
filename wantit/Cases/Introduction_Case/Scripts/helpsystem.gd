@@ -7,7 +7,6 @@ extends Control
 func _ready() -> void:
 	helpscreen.connect("display_question_mark", display_question_mark)
 	question_mark.connect("display_helpscreen", display_helpscreen)
-	
 	set_hint_text()
 
 
@@ -19,8 +18,4 @@ func display_helpscreen():
 	helpscreen.visible = true
 	
 func set_hint_text() -> void:
-	$Helpscreen.set_hint_text(location.hint_text)
-
-#func _on_helpscreen_hide_question_mark() -> void:
-	#question_mark.visible = false
-	#print("not visible")
+	helpscreen.set_hint_text(location.hint_text)

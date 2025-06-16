@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw7q816wdvvla"]
+[gd_scene load_steps=8 format=3 uid="uid://bw7q816wdvvla"]
 
 [ext_resource type="Script" uid="uid://dnixrguyhb71s" path="res://Cases/Introduction_Case/Scripts/minigame_2.gd" id="1_vdqgs"]
 [ext_resource type="Texture2D" uid="uid://66lbp6w0oqer" path="res://Cases/Introduction_Case/assets/minigame2/monitor_and_notepad.png" id="2_0day8"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_nbqiy"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_fo310"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="3_wxs41"]
+
+[sub_resource type="Resource" id="Resource_k1xbk"]
+script = ExtResource("3_fo310")
+mode = 2
+required_items = Array[String](["Minigame2 completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_attsq"]
+script = ExtResource("2_nbqiy")
+hint_text = "Am Ende der Fragerunde siehst du, welche Antworten nicht korrekt waren."
+hint_condition = SubResource("Resource_k1xbk")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [node name="Minigame 2" type="Control"]
 layout_mode = 3
@@ -13,6 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vdqgs")
 location_name = "Minigame2"
+hints = Array[ExtResource("2_nbqiy")]([SubResource("Resource_attsq")])
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -114,7 +129,6 @@ offset_left = 648.0
 offset_top = 296.0
 offset_right = 811.0
 offset_bottom = 327.0
-text = "Programm beenden"
 
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]

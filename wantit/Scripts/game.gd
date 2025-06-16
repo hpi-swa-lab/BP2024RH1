@@ -10,12 +10,13 @@ var gamesaver = GameSaver.new()
 var inventory_items_names: Array
 var interactions_history: Array
 var restored_game_data
+var played_dialogues: Dictionary
 
 func _ready():
 	get_tree().auto_accept_quit = false
-	#gamesaver.load_saved_game_data(self)
+	gamesaver.load_saved_game_data(self)
 	if restored_game_data:
-		load_game()
+		load_game_data()
 	start_current_case()
 
 func start_current_case():
@@ -42,15 +43,22 @@ func get_active_case():
 func start_case(case: Case) -> void:
 	case.restored_inventory_items = inventory_items_names
 	case.interactions = interactions_history
+	#if played_dialogues
+	case.restored_played_dialogues = played_dialogues
+	
 	case.instantiate()
-	case.connect("event_location_switch_requested", _on_location_switch_requested)
-	case.connect("on_location_switch_requested", _on_location_switch_requested)
-	case.connect("case_overview_opened", _on_case_overview_opened)
-	case.connect("on_case_selected", _on_start_new_case)
+	set_connections(case)
+
 	var location_index = 0
 	if current_location_name != "":
 		location_index = case.get_location_index_by_name(current_location_name)
 	switch_location(case.case_locations[location_index])
+
+func set_connections(case: Case):
+	case.connect("event_location_switch_requested", _on_location_switch_requested)
+	case.connect("on_location_switch_requested", _on_location_switch_requested)
+	case.connect("case_overview_opened", _on_case_overview_opened)
+	case.connect("on_case_selected", _on_start_new_case)
 
 func complete_case() -> void:
 	var current_case = get_case_by_slug(active_case_slug)
@@ -106,16 +114,20 @@ func get_case_interactions() -> Array:
 	var active_case = get_active_case()
 	return active_case.interactions
 
-func load_game():
+func load_game_data():
 	active_case_slug = restored_game_data.get("active_case_slug", "")
 	current_location_name = restored_game_data.get("current_location_name")
 	inventory_items_names = restored_game_data.get("inventory_items", [])
 	interactions_history = restored_game_data.get("interactions", [])
+	played_dialogues = restored_game_data.get("dialogues", {})
 
 #enable adding interaction from dialogue
 func interaction_happened(interaction_name: String) -> void:
 	var current_case = get_case_by_slug(active_case_slug)
-	current_case._on_non_collectable_clue_found(interaction_name)
+	var interaction_item = Item.new()
+	interaction_item.item_name = interaction_name
+	interaction_item.is_collectable = false
+	current_case._on_item_found(interaction_item)
 
 func _on_case_overview_opened(location: Location) -> void:
 	var active_case = get_active_case()
@@ -140,3 +152,14 @@ func get_case_slug_by_title(target_title: String):
 		if case.case_title == target_title:
 			return case.case_slug
 	return null
+
+func get_played_dialogues() -> Dictionary:
+	var played_dialogues := {}
+	var opened_case = get_case_by_slug(active_case_slug)
+
+	for location in opened_case.case_locations:
+		if location.dialogue!= null:
+			for condition in location.dialogue.conditions:
+				if condition.is_started:
+					played_dialogues[location.location_name] = condition.dialogue_start
+	return played_dialogues
