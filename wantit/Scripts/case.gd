@@ -30,15 +30,17 @@ func instantiate():
 		if instance is Location:
 			var location := instance as Location
 			location.case = self
+			location.call_deferred("setup_components", self)
 			
-			var location_dialogue_component = instance.get_node_or_null("DialogueComponent")
-			if location_dialogue_component:
-					location_dialogue_component.inventory_provider = self
-			
-			for item in location.items:
-				var item_dialogue_component = item.get_node_or_null("DialogueComponent")
-				if item_dialogue_component:
-					item_dialogue_component.inventory_provider = self
+			#var location_dialogue_component = instance.get_node_or_null("DialogueComponent")
+			#if location_dialogue_component:
+					#location_dialogue_component.inventory_provider = self
+			#
+			#
+			#for item in location.items:
+				#var item_dialogue_component = item.get_node_or_null("DialogueComponent")
+				#if item_dialogue_component:
+					#item_dialogue_component.inventory_provider = self
 			
 			#`FIXME
 			#if restored_played_dialogues.has(location.location_name):

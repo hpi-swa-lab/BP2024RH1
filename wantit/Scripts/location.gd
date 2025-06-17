@@ -1,16 +1,14 @@
 extends Node
-
 class_name Location
 
 @export var location_name: String
 var case: Case
 @export var items: Array[Item] = []
-@export var hints: Array[Hint] = []
-#@export var dialogue: Dialogue
 @export var has_inventory: bool
 var hint_text: String = "Default text"
 var inventory: Inventory
 @onready var dialogue = $DialogueComponent
+@onready var helpsystem = $Helpsystem
 
 signal item_found(item: Item, location: Location)
 signal location_switch_requested(location_name: String)
@@ -44,24 +42,6 @@ func _setup_connections():
 	for button in buttons:
 		button.connect("location_switch_requested", _on_location_switch_requested)
 
-#func start_dialogue():
-	#if dialogue != null:
-		#var player_items = case.get_player_items()
-		#var dialogue_condition = dialogue.choose_dialogue_by_requierements(player_items)
-		#if dialogue_condition != null:
-			#var index = dialogue.get_condition_index_by_dialogue_start(dialogue_condition)
-			#if index != null and not dialogue.conditions[index].is_started:
-				#dialogue.conditions[index].is_started = true
-				#play_dialogue(dialogue, dialogue_condition)
-#
-#func play_dialogue(dialogue: Dialogue, dialogue_start: String = "default"):
-	#DialogueManager.show_dialogue_balloon_scene(
-		#dialogue.baloon_type,
-		#dialogue.dialogue_resource,
-		#dialogue_start
-	#)
-	#await DialogueManager.dialogue_ended
-
 func _on_item_found(item: Item) -> void:
 	if item.is_collectable:
 		disable_item(item) 
@@ -69,13 +49,6 @@ func _on_item_found(item: Item) -> void:
 
 func _on_location_switch_requested(requested_location_name: String):
 	location_switch_requested.emit(requested_location_name)
-
-func get_available_hints(player_items: Array) -> Array[String]:
-	var results: Array[String] = []
-	for hint in hints:
-		if hint.is_valid(player_items):
-			results.append(hint.hint_text)
-	return results
 
 func update_items_visibility():
 	for item in items:
@@ -95,10 +68,17 @@ func get_item_by_name(item_name: String) -> Item:
 	#FIXME add handle no item found
 	return null
 
-func update_hint_text(player_items):
-	var valid_hints = get_available_hints(player_items)
-	#FIXME choose one hint when several available
-	if valid_hints:
-		hint_text = valid_hints[0]
-		if $Helpsystem:
-			$Helpsystem.call_deferred("set_hint_text")
+func setup_components(inventory_provider):
+	var location_dialogue_component = get_node_or_null("DialogueComponent")
+	if location_dialogue_component:
+		location_dialogue_component.inventory_provider = inventory_provider
+	
+	for item in items:
+		var item_dialogue_component = item.get_node_or_null("DialogueComponent")
+		if item_dialogue_component:
+			item_dialogue_component.inventory_provider = inventory_provider
+	
+	if helpsystem:
+		var helpsystem_dialogue_component = helpsystem.get_node_or_null("DialogueComponent")
+		if helpsystem_dialogue_component:
+			helpsystem_dialogue_component.inventory_provider = inventory_provider
