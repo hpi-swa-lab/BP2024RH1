@@ -20,6 +20,7 @@ signal on_location_switch_requested(location_name: String)
 signal event_location_switch_requested(location_name: String)
 signal case_overview_opened(location: Location)
 signal on_case_selected(case_title: String)
+signal item_found(item: Item)
 
 func instantiate():
 	connect("on_location_switch_requested", _on_location_switch_requested)
@@ -62,6 +63,7 @@ func _on_item_found(item: Item, location: Location = null) -> void:
 		location.update_hint_text(player_items)
 	#print("Item: %s added to player items." %item.item_name) 
 	print("Updated player items: %s" %[player_items])
+	item_found.emit(item)
 	start_event(player_items)
 
 func start_event(player_items: Array):
