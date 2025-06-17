@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://drxlix3lrp182"]
+
+[ext_resource type="Script" uid="uid://bm5k1aro0wkoc" path="res://Scripts/statements.gd" id="1_xmqch"]
+
+[node name="Statement" type="Control"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 150.0
+script = ExtResource("1_xmqch")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 150.0
+color = Color(1, 1, 0.52549, 1)
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 25.0
+offset_right = 300.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="Speaker" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.0
+offset_right = 300.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
