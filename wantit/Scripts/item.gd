@@ -4,8 +4,8 @@ class_name Item
 @export var item_name: String
 @export var is_collectable: bool
 var is_found: bool
-@export var dialogue: Dialogue
 @export var action_script: Script
+@onready var dialogue = $DialogueComponent
 
 signal item_found(item: Item)
 
@@ -22,18 +22,12 @@ func _pressed():
 	if is_found:
 		return
 	
-	if dialogue != null:
-		start_dialogue(dialogue)
+	if dialogue:
+		dialogue.start_dialogue()
 	
 	await DialogueManager.dialogue_ended
 	mark_found()
 	item_found.emit(self)
-
-func start_dialogue(dialogue:Dialogue, dialogue_start: String = "default"):
-	DialogueManager.show_dialogue_balloon_scene(
-			dialogue.baloon_type,
-			dialogue.dialogue_resource,
-			dialogue_start)
 
 func mark_found():
 	is_found = true

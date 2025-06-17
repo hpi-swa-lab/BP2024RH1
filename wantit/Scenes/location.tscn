@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dplpo1ep3k0gy"]
+[gd_scene load_steps=3 format=3 uid="uid://dplpo1ep3k0gy"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_sv8x7"]
+[ext_resource type="PackedScene" uid="uid://7juvfcyuftu4" path="res://Scenes/dialogue_component.tscn" id="2_6f0q5"]
 
 [node name="Location" type="Node"]
 script = ExtResource("1_sv8x7")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="DialogueComponent" parent="." instance=ExtResource("2_6f0q5")]

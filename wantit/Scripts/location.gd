@@ -6,10 +6,11 @@ class_name Location
 var case: Case
 @export var items: Array[Item] = []
 @export var hints: Array[Hint] = []
-@export var dialogue: Dialogue
+#@export var dialogue: Dialogue
 @export var has_inventory: bool
 var hint_text: String = "Default text"
 var inventory: Inventory
+@onready var dialogue = $DialogueComponent
 
 signal item_found(item: Item, location: Location)
 signal location_switch_requested(location_name: String)
@@ -19,8 +20,8 @@ func _ready():
 	print("Setting up location: %s." % location_name)
 	call_deferred("_setup_connections")
 	update_items_visibility()
-	if dialogue != null:
-		start_dialogue()
+	if dialogue:
+		dialogue.start_dialogue()
 
 func set_inventory(case_inventory: Inventory) -> void:
 	if not has_inventory:
@@ -43,23 +44,23 @@ func _setup_connections():
 	for button in buttons:
 		button.connect("location_switch_requested", _on_location_switch_requested)
 
-func start_dialogue():
-	if dialogue != null:
-		var player_items = case.get_player_items()
-		var dialogue_condition = dialogue.choose_dialogue_by_requierements(player_items)
-		if dialogue_condition != null:
-			var index = dialogue.get_condition_index_by_dialogue_start(dialogue_condition)
-			if index != null and not dialogue.conditions[index].is_started:
-				dialogue.conditions[index].is_started = true
-				play_dialogue(dialogue, dialogue_condition)
-
-func play_dialogue(dialogue: Dialogue, dialogue_start: String = "default"):
-	DialogueManager.show_dialogue_balloon_scene(
-		dialogue.baloon_type,
-		dialogue.dialogue_resource,
-		dialogue_start
-	)
-	await DialogueManager.dialogue_ended
+#func start_dialogue():
+	#if dialogue != null:
+		#var player_items = case.get_player_items()
+		#var dialogue_condition = dialogue.choose_dialogue_by_requierements(player_items)
+		#if dialogue_condition != null:
+			#var index = dialogue.get_condition_index_by_dialogue_start(dialogue_condition)
+			#if index != null and not dialogue.conditions[index].is_started:
+				#dialogue.conditions[index].is_started = true
+				#play_dialogue(dialogue, dialogue_condition)
+#
+#func play_dialogue(dialogue: Dialogue, dialogue_start: String = "default"):
+	#DialogueManager.show_dialogue_balloon_scene(
+		#dialogue.baloon_type,
+		#dialogue.dialogue_resource,
+		#dialogue_start
+	#)
+	#await DialogueManager.dialogue_ended
 
 func _on_item_found(item: Item) -> void:
 	if item.is_collectable:

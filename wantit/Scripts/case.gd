@@ -1,5 +1,4 @@
 extends Resource
-
 class_name Case
 
 ## may not be changed after save files where slug exists, case_slug = case_id
@@ -32,11 +31,21 @@ func instantiate():
 			var location := instance as Location
 			location.case = self
 			
-			if restored_played_dialogues.has(location.location_name):
-				var dialogue_start = restored_played_dialogues[location.location_name]
-				var index = location.dialogue.get_condition_index_by_dialogue_start(dialogue_start)
-				if index != null:
-					location.dialogue.conditions[index].is_started = true
+			var location_dialogue_component = instance.get_node_or_null("DialogueComponent")
+			if location_dialogue_component:
+					location_dialogue_component.inventory_provider = self
+			
+			for item in location.items:
+				var item_dialogue_component = item.get_node_or_null("DialogueComponent")
+				if item_dialogue_component:
+					item_dialogue_component.inventory_provider = self
+			
+			#`FIXME
+			#if restored_played_dialogues.has(location.location_name):
+				#var dialogue_start = restored_played_dialogues[location.location_name]
+				#var index = location.dialogue.get_condition_index_by_dialogue_start(dialogue_start)
+				#if index != null:
+					#location.dialogue.conditions[index].is_started = true
 			
 			location.connect("item_found", _on_item_found)
 			if location.has_signal("case_overview_opened"):
