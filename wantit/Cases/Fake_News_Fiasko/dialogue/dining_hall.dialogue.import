@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bbtvfwspw3o07"
+path="res://.godot/imported/dining_hall.dialogue-5ad12c6b597e2362beb10d7785bec218.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/dining_hall.dialogue"
+dest_files=["res://.godot/imported/dining_hall.dialogue-5ad12c6b597e2362beb10d7785bec218.tres"]
+
+[params]
+
+defaults=true
