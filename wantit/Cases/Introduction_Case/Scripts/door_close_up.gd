@@ -1,5 +1,4 @@
-extends Control
+extends Location
 
 func _ready() -> void:
-	var Inventory = GlobalInventory.get_inventory()
-	add_child(Inventory)
+	pass

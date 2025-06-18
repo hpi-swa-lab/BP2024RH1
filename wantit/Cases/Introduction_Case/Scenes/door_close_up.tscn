@@ -1,43 +1,48 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhq2pn0aifnxf"]
+[gd_scene load_steps=11 format=3 uid="uid://dhq2pn0aifnxf"]
 
-[ext_resource type="Script" uid="uid://bj8s3478b5vsq" path="res://Cases/Introduction_Case/Scripts/door_close_up.gd" id="1_0wdaq"]
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_0wdaq"]
 [ext_resource type="Texture2D" uid="uid://oggi3b6r5m1u" path="res://Cases/Introduction_Case/assets/backgrounds/showroom_door_closeUp.png" id="1_wh2rv"]
-[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="2_wqsao"]
 [ext_resource type="Texture2D" uid="uid://dylqwu1vukiuk" path="res://Cases/Introduction_Case/assets/interactable_items/keyhole.png" id="3_22ssn"]
-[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="4_orxwm"]
-[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="5_0wdaq"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="4_orxwm"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_poypm"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="5_5gehc"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="5_22ssn"]
+[ext_resource type="Resource" uid="uid://bl7wd84g2853w" path="res://dialogue/door.dialogue" id="6_ght3f"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_80yv7"]
 
-[node name="Door CloseUp" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="Resource" id="Resource_5ifhu"]
+script = ExtResource("7_80yv7")
+dialogue_resource = ExtResource("6_ght3f")
+is_dialogue = false
+is_monologue = true
+conditions = Array[ExtResource("5_5gehc")]([])
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Door CloseUp" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_0wdaq")
+location_name = "Door CloseUp"
+items = [NodePath("Key Hole")]
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.299976, 0.299976)
 texture = ExtResource("1_wh2rv")
 
-[node name="Key Hole" parent="." instance=ExtResource("2_wqsao")]
-layout_mode = 0
+[node name="Key Hole" type="TextureButton" parent="."]
 scale = Vector2(0.299254, 0.299254)
 texture_normal = ExtResource("3_22ssn")
-is_collectible = false
-dialogue_resource = ExtResource("5_0wdaq")
-dialogue_start = "door_to_store"
+script = ExtResource("4_poypm")
+dialogue = SubResource("Resource_5ifhu")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("4_orxwm")]
-layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 528.0
 offset_bottom = 528.0
 scale = Vector2(0.188065, 0.188065)
 texture_normal = ExtResource("5_22ssn")
-NextSceneString = "showroom"
+requested_location_name = "Showroom"

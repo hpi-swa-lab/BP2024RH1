@@ -1,50 +1,115 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsaho1fwwino3"]
+[gd_scene load_steps=25 format=3 uid="uid://dsaho1fwwino3"]
 
-[ext_resource type="Script" uid="uid://najt42l51xvh" path="res://Cases/Introduction_Case/Scripts/bakery_office.gd" id="1_nau1g"]
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_12w5n"]
 [ext_resource type="Texture2D" uid="uid://bsmthr6tenpuw" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_office.png" id="1_vt4a7"]
-[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_y86e6"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_guxia"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_y86e6"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="3_12w5n"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_ggvds"]
 [ext_resource type="Texture2D" uid="uid://c7hwvidnp7hi4" path="res://Cases/Introduction_Case/assets/interactable_items/safe.png" id="3_jkgmc"]
-[ext_resource type="PackedScene" uid="uid://k8cdsj4iakj1" path="res://Scenes/item.tscn" id="4_vify8"]
-[ext_resource type="Resource" uid="uid://cyrbs54pns7n0" path="res://dialogue/monologue.dialogue" id="5_83px8"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="4_xnrjk"]
+[ext_resource type="Resource" uid="uid://b0n3b6jwuou8d" path="res://dialogue/backery_office.dialogue" id="5_4361v"]
 [ext_resource type="Texture2D" uid="uid://dmixct3itjen8" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_office.png" id="5_gha41"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="5_xnrjk"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="8_12w5n"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="8_h7n3f"]
+[ext_resource type="Resource" uid="uid://ctgsbip7t2wtl" path="res://dialogue/shoe_prints_bakery_office.dialogue" id="11_xnrjk"]
 
-[node name="Bakery Office" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_nau1g")
+[sub_resource type="Resource" id="Resource_xnrjk"]
+script = ExtResource("3_ggvds")
+mode = 2
+required_items = Array[String](["ShoeprintsOffice", "Screwdriver", "Pliers", "Fingerprints"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_4361v"]
+script = ExtResource("2_guxia")
+hint_text = "Was sind denn das für Spuren auf dem Boden?"
+hint_condition = SubResource("Resource_xnrjk")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_kiky4"]
+script = ExtResource("3_ggvds")
+mode = 2
+required_items = Array[String](["Fingerprints", "Pliers", "Screwdriver"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_guxia"]
+script = ExtResource("2_guxia")
+hint_text = "Ich sollte mir den Safe mal genauer anschauen."
+hint_condition = SubResource("Resource_kiky4")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_88f4i"]
+script = ExtResource("3_ggvds")
+mode = 0
+required_items = Array[String](["ShoeprintsOffice", "Fingerprints", "Pliers", "Screwdriver"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_ggvds"]
+script = ExtResource("2_guxia")
+hint_text = "Hier scheint nichts auffälliges mehr zu sein"
+hint_condition = SubResource("Resource_88f4i")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_b5wox"]
+script = ExtResource("4_xnrjk")
+dialogue_start = "kitchen_traces_expected"
+required_items = Array[String](["ShoeprintsKitchen"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_jm4om"]
+script = ExtResource("4_xnrjk")
+dialogue_start = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_2l70s"]
+script = ExtResource("5_xnrjk")
+dialogue_resource = ExtResource("5_4361v")
+is_dialogue = false
+is_monologue = true
+conditions = Array[ExtResource("4_xnrjk")]([SubResource("Resource_b5wox"), SubResource("Resource_jm4om")])
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_mwdyl"]
+script = ExtResource("5_xnrjk")
+dialogue_resource = ExtResource("11_xnrjk")
+is_dialogue = false
+is_monologue = true
+conditions = Array[ExtResource("4_xnrjk")]([])
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Bakery Office" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_12w5n")
+location_name = "Bakery Office"
+items = [NodePath("Shoeprints")]
+hints = Array[ExtResource("2_guxia")]([SubResource("Resource_4361v"), SubResource("Resource_guxia"), SubResource("Resource_ggvds")])
+dialogue = SubResource("Resource_2l70s")
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.299882, 0.299882)
 texture = ExtResource("1_vt4a7")
 
 [node name="Helpsystem" parent="." instance=ExtResource("3_12w5n")]
-layout_mode = 1
 
 [node name="Safe" parent="." instance=ExtResource("2_y86e6")]
-layout_mode = 0
 scale = Vector2(0.300293, 0.300293)
 texture_normal = ExtResource("3_jkgmc")
-NextSceneString = "safe_close_up"
+requested_location_name = "Safe CloseUp"
 
-[node name="Shoeprints" parent="." instance=ExtResource("4_vify8")]
-layout_mode = 0
+[node name="Shoeprints" type="TextureButton" parent="."]
 scale = Vector2(0.300072, 0.300072)
 texture_normal = ExtResource("5_gha41")
-is_collectible = false
-dialogue_resource = ExtResource("5_83px8")
-dialogue_start = "shoe_prints_office"
+script = ExtResource("8_12w5n")
+item_name = "ShoeprintsOffice"
+dialogue = SubResource("Resource_mwdyl")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("2_y86e6")]
-layout_mode = 0
 offset_left = -7.0
 offset_top = 572.0
 offset_right = 505.0
@@ -52,4 +117,4 @@ offset_bottom = 1084.0
 rotation = -0.518
 scale = Vector2(0.188065, 0.188065)
 texture_normal = ExtResource("8_h7n3f")
-NextSceneString = "bakery_kitchen"
+requested_location_name = "Backery Kitchen"

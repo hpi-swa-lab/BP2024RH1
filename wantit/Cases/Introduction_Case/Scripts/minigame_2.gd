@@ -1,4 +1,4 @@
-extends Control
+extends Location
 
 var LabelText: Dictionary = {}
 var Buttons: Dictionary = {}
@@ -12,10 +12,7 @@ var errors: Array[bool] = []
 
 var iteration_completed: bool = false
 
-func _ready() -> void:
-	GlobalTimer.start_timer("minigame 2")
-	CaseManager.CaseGlobals.current_scene = "minigame_2"
-	
+func _ready() -> void:	
 	LabelText[0] = "Fingerabdruck eines Angestellten."
 	LabelText[1] = "Es wurden mehrere Fingerabrücke am Safe gesichert."
 	LabelText[2] = "Zur Ladentür des Waffelparadieses gehört ein Schlüssel mit dem Nummernstempel 2056."
@@ -75,7 +72,7 @@ func check_Answers():
 		%FinishButton.show()
 	else:
 		%ExplanationLabel.text = "Klicke auf die Fehlermeldung, um mehr zu erfahren!"
-		initialize_messages()
+		initialize_messages()	
 
 func has_no_errors() -> bool:
 	for error in errors:
@@ -111,11 +108,11 @@ func create_level_buttons(LevelNum: int):
 
 func initialize_buttons():
 	add_button(0, "'Fingerabdruck'", null, "[WARNING] Wert 'Fingerabdruck' nicht präzise genug.")
-	add_button(0, "", load("res://Cases/Introduction_Case/assets/minigame2/photo_fingerprints.png"), "[ERROR] Ein Bild erwartet - mehrere erhalten")
-	add_button(0, "", load("res://Cases/Introduction_Case/assets/minigame2/single_fingerprint.png"), "")
+	add_button(0, "Ich bin 5 Abdrücke", load("res://Cases/Introduction_Case/assets/minigame2/photo_fingerprints.png"), "[ERROR] Ein Bild erwartet - mehrere erhalten")
+	add_button(0, "Ich bin 1 Abdruck", load("res://Cases/Introduction_Case/assets/minigame2/single_fingerprint.png"), "")
 	
-	add_button(1, "", load("res://Cases/Introduction_Case/assets/minigame2/single_fingerprint.png"), "[ERROR] Mehrere Bilder erwartet - eins erhalten")
-	add_button(1, "", load("res://Cases/Introduction_Case/assets/minigame2/photo_fingerprints.png"), "")
+	add_button(1, "Ich bin 1 Abdruck", load("res://Cases/Introduction_Case/assets/minigame2/single_fingerprint.png"), "[ERROR] Mehrere Bilder erwartet - eins erhalten")
+	add_button(1, "Ich bin 5 Abdrücke", load("res://Cases/Introduction_Case/assets/minigame2/photo_fingerprints.png"), "")
 	add_button(1, "'Fingerabdruck'", null, "[WARNING] Wert 'Fingerabdruck' nicht präzise genug.")
 	
 	add_button(2, "", load("res://Cases/Introduction_Case/assets/minigame2/key2056.png"), "")
@@ -126,7 +123,7 @@ func initialize_buttons():
 	add_button(3, "9.4", null, "[ERROR] Datumsformat nicht gültig - TT.MM. erwartet")
 	add_button(3, "April", null, "[WARNING] Wert 'April' nicht präzise genug")
 	add_button(3, "9", null, "[WARNING] Wert '9' nicht präzise genug")
-	add_button(3, "", load("res://Cases/Introduction_Case/assets/minigame2/cake.png"), "[ERROR] Datum erwartet - Bild erhalten")
+	add_button(3, "Ich bin ein Kuchen", load("res://Cases/Introduction_Case/assets/minigame2/cake.png"), "[ERROR] Datum erwartet - Bild erhalten")
 	
 	add_button(4, "2/5", null, "")
 	add_button(4, "2", null, "[ERROR] '2' stimmt nicht mit Protokolldaten überein")
@@ -180,8 +177,7 @@ func create_label(labelText: String) -> Label:
 	return label
 
 func _on_finish_button_pressed() -> void:
-	Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
-	Globals.OfficeDialogueStart = "finish"
-	Globals.OfficeDialogueDone = false
-	GlobalTimer.end_timer("minigame 2")
-	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+	var interaction_item = Item.new()
+	interaction_item.item_name = "Minigame2 completed"
+	interaction_item.is_collectable = false
+	item_found.emit(interaction_item)

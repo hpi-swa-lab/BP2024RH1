@@ -1,17 +1,18 @@
-extends Node
+#extends Node
+extends Item
 
 var dragging: bool
 var newItem: Button
 var oldItem: TextureButton
-var DialogueStart: String
+var clue: Item = null
 
-func do_smt(Item: TextureButton):
-	oldItem = Item
+func do_smt(item: TextureButton):
+	oldItem = item
 	var Style = StyleBoxEmpty.new()
 	
 	var button = Button.new()
-	button.icon= Item.texture_normal
-	button.scale = Item.scale
+	button.icon= item.texture_normal
+	button.scale = item.scale
 	
 	button.button_up.connect(item_up)
 	button.global_position = get_viewport().get_mouse_position() - button.icon.get_size() / 2 * button.scale
@@ -28,7 +29,7 @@ func do_smt(Item: TextureButton):
 	set_process_input(true)
 
 func item_up():
-	check_down()
+	await check_down()
 	newItem.queue_free()
 	queue_free()
 
@@ -39,27 +40,24 @@ func _input(event: InputEvent) -> void:
 
 func check_down():
 	var KeyRect = Rect2(newItem.position, newItem.size)
-	var node: Node = null
-	if not node:
-		node = find_node()
-	if node:
-		var Rect1 = Rect2(node.position, node.size)
+	if not clue:
+		clue = find_node()
+	if clue:
+		var Rect1 = Rect2(clue.position, clue.size)
 		if Rect1.intersects(KeyRect):
-			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), DialogueStart)
-			if DialogueStart == "key_on_door":
-				node.texture_normal = load("res://Cases/Introduction_Case/assets/interactable_items/keyhole_with_key.png")
+			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/door.dialogue"), "key_used")
 			await DialogueManager.dialogue_ended
-			return
-	GlobalInventory.add_item(oldItem)
+			_on_dialogue_ended()
+	#oldItem.emit_signal("item_found", oldItem)
 	
 func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
-	for child in get_tree().root.get_children():
+	for child in get_parent().get_children():
+		print(child.name)
 		if child.name == "Door CloseUp":
-			DialogueStart = "key_on_door"
 			return child.find_child("Key Hole")
-		elif child.name == "Bakery Office":
-			DialogueStart = "key_on_safe"
-			GlobalInventory.add_item(oldItem)
-			return child.find_child("Safe")
 	return null
-	
+
+func _on_dialogue_ended() -> void:
+	print("test")
+	clue.item_name = "Door"
+	clue.emit_signal("item_found", clue)	

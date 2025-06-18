@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://brr5qpixvv86d"]
+
+[ext_resource type="Script" uid="uid://chbrol0ryriml" path="res://Scripts/default_office.gd" id="1_cg5kq"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="2_dtkj6"]
+[ext_resource type="Resource" uid="uid://bfmar36edgpkb" path="res://dialogue/default_office.dialogue" id="3_8j0lg"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_oyeku"]
+[ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="5_i5sty"]
+[ext_resource type="Texture2D" uid="uid://b5rpc8qen503n" path="res://Assets/office/clue_board_max.png" id="6_pn7l5"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="7_4vsjr"]
+[ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="8_uaoae"]
+[ext_resource type="Texture2D" uid="uid://dhsfehg0vmn2l" path="res://Assets/office/map.png" id="9_chlwp"]
+
+[sub_resource type="Resource" id="Resource_ml3xy"]
+script = ExtResource("2_dtkj6")
+dialogue_start = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_8j0lg"]
+script = ExtResource("4_oyeku")
+dialogue_resource = ExtResource("3_8j0lg")
+is_dialogue = true
+is_monologue = false
+conditions = Array[ExtResource("2_dtkj6")]([SubResource("Resource_ml3xy")])
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="DefaultOffice" type="Node"]
+script = ExtResource("1_cg5kq")
+location_name = "DefaultOffice"
+dialogue = SubResource("Resource_8j0lg")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Office" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.301736, 0.301736)
+texture = ExtResource("5_i5sty")
+
+[node name="clue_board" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 427.0
+offset_top = 262.0
+offset_right = 2634.0
+offset_bottom = 1357.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("6_pn7l5")
+
+[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_uaoae")
+script = ExtResource("7_4vsjr")
+requested_location_name = "CasesOverview"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="map" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+action_mode = 0
+texture_normal = ExtResource("9_chlwp")
+script = ExtResource("7_4vsjr")
+requested_location_name = "EmptyMap"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

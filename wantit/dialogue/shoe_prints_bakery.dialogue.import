@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://ddaf0l8q8rygd"
+path="res://.godot/imported/shoe_prints_bakery.dialogue-a1d2959bd10fb32334f3458ba8edaaf2.tres"
+
+[deps]
+
+source_file="res://dialogue/shoe_prints_bakery.dialogue"
+dest_files=["res://.godot/imported/shoe_prints_bakery.dialogue-a1d2959bd10fb32334f3458ba8edaaf2.tres"]
+
+[params]
+
+defaults=true

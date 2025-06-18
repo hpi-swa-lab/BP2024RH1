@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://df42rn40kppmv"
+path="res://.godot/imported/pliers.dialogue-e42df4e795315fbc599774328ed31736.tres"
+
+[deps]
+
+source_file="res://dialogue/pliers.dialogue"
+dest_files=["res://.godot/imported/pliers.dialogue-e42df4e795315fbc599774328ed31736.tres"]
+
+[params]
+
+defaults=true

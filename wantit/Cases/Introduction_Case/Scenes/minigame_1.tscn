@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://ebi58jm4ckop"]
 
-[ext_resource type="Script" uid="uid://cu1gtpcebk1yi" path="res://Cases/Introduction_Case/Scripts/minigame_1.gd" id="1_5txvl"]
+[ext_resource type="Script" uid="uid://c5frky55jhxc0" path="res://Cases/Introduction_Case/Scripts/minigame_1.gd" id="1_5txvl"]
 [ext_resource type="PackedScene" uid="uid://b3w6b5y3gmolt" path="res://Cases/Introduction_Case/Scenes/clue.tscn" id="2_0uv5o"]
 [ext_resource type="Texture2D" uid="uid://cb77c1eay6j6j" path="res://Cases/Introduction_Case/assets/minigame1/bag_screwdriver.png" id="3_o7kty"]
 [ext_resource type="PackedScene" uid="uid://b0etnfychdoti" path="res://Cases/Introduction_Case/Scenes/draggable.tscn" id="4_jmcek"]
@@ -12,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://ervlrutkdb2d" path="res://Cases/Introduction_Case/assets/minigame1/magnifying_glass.png" id="10_6t3is"]
 [ext_resource type="Script" uid="uid://dlau6cnxv54l" path="res://Cases/Introduction_Case/Scripts/magnifying_glass.gd" id="10_wq7o3"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node"]
 script = ExtResource("1_5txvl")
+location_name = "Minigame1"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
@@ -40,10 +42,10 @@ offset_bottom = 40.0
 
 [node name="Screwdriver" parent="Control" instance=ExtResource("2_0uv5o")]
 layout_mode = 0
-offset_left = 314.0
-offset_top = 476.0
-offset_right = 7330.0
-offset_bottom = 5437.0
+offset_left = 335.0
+offset_top = 455.0
+offset_right = 7351.0
+offset_bottom = 5416.0
 scale = Vector2(0.03, 0.03)
 icon = ExtResource("3_o7kty")
 labelText = "Schraubenzieher mit 
@@ -75,10 +77,10 @@ fehlt der Zahn 11"
 
 [node name="Fingerprints" parent="Control" instance=ExtResource("2_0uv5o")]
 layout_mode = 0
-offset_left = 55.0
-offset_top = 420.0
-offset_right = 4109.0
-offset_bottom = 3624.0
+offset_left = 78.0
+offset_top = 407.0
+offset_right = 4132.0
+offset_bottom = 3611.0
 scale = Vector2(0.05, 0.05)
 icon = ExtResource("6_wa13m")
 labelText = "5 verschiedene 
@@ -87,10 +89,10 @@ vom Safe"
 
 [node name="Pliers" parent="Control" instance=ExtResource("2_0uv5o")]
 layout_mode = 0
-offset_left = 309.0
-offset_top = 297.0
-offset_right = 7325.0
-offset_bottom = 5258.0
+offset_left = 326.0
+offset_top = 313.0
+offset_right = 7342.0
+offset_bottom = 5274.0
 scale = Vector2(0.03, 0.03)
 icon = ExtResource("7_vae77")
 labelText = "Eine Zange mit 3 cm 
@@ -136,10 +138,10 @@ correctClue = NodePath("../../Control/Screwdriver")
 
 [node name="Draggable3" parent="Draggables" node_paths=PackedStringArray("correctClue") instance=ExtResource("4_jmcek")]
 layout_mode = 0
-offset_left = 677.0
-offset_top = 270.0
-offset_right = 753.0
-offset_bottom = 328.0
+offset_left = 643.0
+offset_top = 266.0
+offset_right = 719.0
+offset_bottom = 324.0
 text = "3 cm"
 correctClue = NodePath("../../Control/Pliers")
 
@@ -206,16 +208,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Spuren "
 
-[node name="Mapping" type="Label" parent="description"]
-layout_mode = 0
-offset_left = 923.0
-offset_top = 8.0
-offset_right = 1083.0
-offset_bottom = 50.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "Zuordnung"
-
 [node name="Stickynote" type="Label" parent="description"]
 layout_mode = 0
 offset_left = 632.0
@@ -225,6 +217,16 @@ offset_bottom = 50.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Notizzettel"
+
+[node name="Zuordnung" type="Label" parent="description"]
+layout_mode = 0
+offset_left = 925.0
+offset_top = 8.0
+offset_right = 1085.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Zuordnung"
 
 [node name="dividing_line" type="Line2D" parent="description"]
 points = PackedVector2Array(584, 64, 584, 576)

@@ -1,0 +1,82 @@
+[gd_scene load_steps=14 format=3 uid="uid://byc5whva4dkys"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_2jlrf"]
+[ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="1_a0wae"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="2_2vylc"]
+[ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="3_2jlrf"]
+[ext_resource type="Resource" uid="uid://dkj4p3bgt6aj7" path="res://dialogue/office.dialogue" id="3_4luf0"]
+[ext_resource type="Texture2D" uid="uid://b5rpc8qen503n" path="res://Assets/office/clue_board_max.png" id="3_7xo7e"]
+[ext_resource type="Texture2D" uid="uid://dhsfehg0vmn2l" path="res://Assets/office/map.png" id="4_7xo7e"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_q644x"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="5_eqlnk"]
+
+[sub_resource type="Resource" id="Resource_xas0k"]
+script = ExtResource("2_2vylc")
+dialogue_start = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_2vylc"]
+script = ExtResource("2_2vylc")
+dialogue_start = "evaluate_traces"
+required_items = Array[String](["Minigame1 completed"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_4luf0"]
+script = ExtResource("2_2vylc")
+dialogue_start = "finish"
+required_items = Array[String](["Minigame1 completed", "Minigame2 completed"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_rs1ao"]
+script = ExtResource("4_q644x")
+dialogue_resource = ExtResource("3_4luf0")
+is_dialogue = true
+is_monologue = false
+conditions = Array[ExtResource("2_2vylc")]([SubResource("Resource_xas0k"), SubResource("Resource_2vylc"), SubResource("Resource_4luf0")])
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Office" type="Node"]
+script = ExtResource("1_2jlrf")
+location_name = "Office"
+dialogue = SubResource("Resource_rs1ao")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Office" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.301736, 0.301736)
+texture = ExtResource("1_a0wae")
+
+[node name="clue_board" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_left = 427.0
+offset_top = 262.0
+offset_right = 2634.0
+offset_bottom = 1357.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_7xo7e")
+script = ExtResource("5_eqlnk")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_2jlrf")
+script = ExtResource("5_eqlnk")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="map" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+action_mode = 0
+texture_normal = ExtResource("4_7xo7e")
+script = ExtResource("5_eqlnk")
+requested_location_name = "Map"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

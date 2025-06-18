@@ -12,7 +12,6 @@ func _ready() -> void:
 		%VBoxContainer.add_child(%HBoxContainer.duplicate())
 
 func add_items(Clue: Button, draggable: Button):
-	print(%VBoxContainer.get_children())
 	var pair = %VBoxContainer.get_child(addedPairs)
 	
 	var newClue = pair.get_child(0)
@@ -40,7 +39,7 @@ func remove_item(pair: HBoxContainer, Clue: Button, draggable: Button):
 	draggable.show()
 	addedPairs -= 1
 
-func check_clues() -> bool:
+func check_minigame_clues() -> bool:
 	var cluesCorrect = true
 	for Clue in addedClues:
 		if addedClues[Clue] == false:

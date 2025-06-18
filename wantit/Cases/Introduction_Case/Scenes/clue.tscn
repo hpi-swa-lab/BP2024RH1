@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3w6b5y3gmolt"]
 
-[ext_resource type="Script" uid="uid://18evv76avsg3" path="res://Cases/Introduction_Case/Scripts/clue.gd" id="1_rlkw3"]
+[ext_resource type="Script" uid="uid://18evv76avsg3" path="res://Cases/Introduction_Case/Scripts/item.gd" id="1_rlkw3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wf53t"]
 
@@ -11,7 +11,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlkw3"]
 bg_color = Color(0.0364616, 0.16297, 0.189684, 1)
 
-[node name="Clue" type="Button"]
+[node name="Item" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
 theme_override_styles/hover = SubResource("StyleBoxEmpty_wf53t")

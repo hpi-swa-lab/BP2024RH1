@@ -2,51 +2,94 @@
 # or resize the Gridcontainer. If you want more slots increase the slotCount
 
 extends Control
+class_name Inventory
 
-var slotCount = 8
+var inventory_slots: Array[InventorySlot] = []
+var item_dictionary: Dictionary
+@export var slot_count: int = 8
+@export var columns: int  = 2
+@export var slot_scene: PackedScene
+@onready var grid_container: GridContainer = %GridContainer
 var opened: bool = true
-var columns = 2
-var slots: Array
+
+var _pending_restore_data: Array = []
+var _restore_ready: bool = false
+
 
 func _ready() -> void:
-	var newSlot: Control
-	var slotScene: PackedScene
+	_restore_ready = true
 	
-	%GridContainer.columns = columns
-	for i in range(slotCount):
-		slotScene = load("res://Scenes/inventory_slot.tscn")
-		newSlot = slotScene.instantiate()
-		newSlot.custom_minimum_size = Vector2(%GridContainer.size.x / columns, %GridContainer.size.x / columns)
-		%GridContainer.add_child(newSlot)
-	slots = %GridContainer.get_children()
-	
-	update_inventory()
-	hide_inventory()
+	grid_container.columns = columns
+	for i in range(slot_count):
+		var slot = slot_scene.instantiate() as InventorySlot
+		slot.custom_minimum_size = Vector2(%GridContainer.size.x / columns, %GridContainer.size.x / columns)
+		inventory_slots.append(slot)
+		grid_container.add_child(slot)
+		
+		slot.custom_minimum_size = Vector2(
+			grid_container.size.x / columns,
+			grid_container.size.x / columns
+		)
 
-func add_item(Item: TextureButton):
-	for slot in slots:
-		if slot.StoredItem == null:
-			slot.add_item(Item)
-			break
+	hide_inventory()
+	# Restore items if called early
+	if _pending_restore_data.size() > 0:
+		restore_inventory_items(_pending_restore_data[0], _pending_restore_data[1])
+		_pending_restore_data.clear()
+
+func add_item(item: Item) -> void:
+	for slot in inventory_slots:
+		if slot.is_empty():
+			slot.add_item(item)
+			return
 
 func _on_button_pressed() -> void:
 	if opened:
 		hide_inventory()
 	else:
 		show_inventory()
-		
-func update_inventory():
-	for item in GlobalInventory.Items:
-		add_item(GlobalInventory.Items[item])
-		
+
 func show_inventory():
-	GlobalTimer.add_log_entry("entered scene: inventory")
 	%Control.show()
 	opened = true
 	%Button.text = "Schließen"
-	
+
 func hide_inventory():
-	GlobalTimer.add_log_entry("closed scene: inventory")
 	%Control.hide()
 	opened = false
 	%Button.text = "Inventar"
+
+#func get_items() -> Array[String]:  
+	#var items = []
+	#for slot in slots:
+		#if slot.StoredItem:
+			#items.push_back(slot.StoredItem.item_name)
+	#return items
+
+func get_inventory_items_name() -> Array[String]:
+	var items_name: Array[String] = []
+	for slot in inventory_slots:
+		if slot.stored_item != null:
+			items_name.append(slot.stored_item.item_name)
+	return items_name
+	
+func restore_inventory_items(item_dictionary: Dictionary, items_list: Array) -> void:
+	if not _restore_ready:
+		_pending_restore_data = [item_dictionary, items_list]
+		return
+	
+	var inventory_items: Array[Item] = []
+	for item in items_list:
+		if item_dictionary.has(item):
+			inventory_items.append(item_dictionary[item])
+		else:
+			push_error("Missing object for id: %s" % item)
+	
+	for item in inventory_items:
+		self.add_item(item)
+
+func has(item: Item) -> bool:
+	for slot in inventory_slots:
+		if slot.stored_item == item:
+			return true
+	return false

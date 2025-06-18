@@ -1,32 +1,39 @@
 extends TextureButton
+class_name Item
 
-@export var is_collectible: bool = true
+@export var item_name: String
+@export var is_collectable: bool
+var is_found: bool
+@export var dialogue: Dialogue
+@export var action_script: Script
 
-@export var dialogue_resource: Resource
-@export var dialogue_start: String
-
-@export var ActionScript: Script
+signal item_found(item: Item)
 
 func _ready() -> void:
+	add_to_group("location_items")
+	
 	if texture_normal:
 		var image: Image = texture_normal.get_image()
 		var bitmap: BitMap = BitMap.new()
 		bitmap.create_from_image_alpha(image)
 		texture_click_mask = bitmap
+
+func _pressed():
+	if is_found:
+		return
 	
-func _pressed() -> void:
-	if not is_collectible:
-		DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
-		await DialogueManager.dialogue_ended
-		CaseManager.clue_found()
-	else:
-		GlobalInventory.add_item(self)
-		GlobalInventory.show_inventory()
-		if not CaseManager.CaseGlobals.inventory_explained:
-			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), "inventory")
-			await DialogueManager.dialogue_ended
-		DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", dialogue_resource, dialogue_start)
-		await DialogueManager.dialogue_ended
-		GlobalInventory.hide_inventory()
-		CaseManager.clue_found()
-		queue_free()
+	if dialogue != null:
+		start_dialogue(dialogue)
+	
+	await DialogueManager.dialogue_ended
+	mark_found()
+	item_found.emit(self)
+
+func start_dialogue(dialogue:Dialogue, dialogue_start: String = "default"):
+	DialogueManager.show_dialogue_balloon_scene(
+			dialogue.baloon_type,
+			dialogue.dialogue_resource,
+			dialogue_start)
+
+func mark_found():
+	is_found = true

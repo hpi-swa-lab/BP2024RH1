@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dlmuxdhf6uoyi"
+path="res://.godot/imported/minigame1.dialogue-f1baa19210fae8cb0cc7f66b6225d3fc.tres"
+
+[deps]
+
+source_file="res://dialogue/minigame1.dialogue"
+dest_files=["res://.godot/imported/minigame1.dialogue-f1baa19210fae8cb0cc7f66b6225d3fc.tres"]
+
+[params]
+
+defaults=true
