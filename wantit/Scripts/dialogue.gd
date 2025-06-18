@@ -2,6 +2,7 @@ extends Resource
 class_name Dialogue
 
 @export var dialogue_resource: DialogueResource
+@export var dialogue_id: String
 @export var is_dialogue: bool
 @export var is_monologue: bool
 var baloon_type: String

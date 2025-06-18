@@ -1,10 +1,10 @@
 extends Control
+class_name Helpsystem
 
 @export var hints: Array[Hint] = []
 var inventory_provider # Should support get_player_items()
 @onready var question_mark = $Question_mark
 @onready var helpscreen = $Helpscreen
-#@onready var location = get_parent()
 
 func _ready() -> void:
 	helpscreen.connect("display_question_mark", display_question_mark)

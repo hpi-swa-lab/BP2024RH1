@@ -25,3 +25,4 @@ offset_bottom = 580.0
 layout_mode = 1
 
 [connection signal="gui_input" from="Question_mark" to="Question_mark" method="_on_gui_input"]
+[connection signal="pressed" from="Question_mark" to="Question_mark" method="_on_pressed"]

@@ -89,10 +89,10 @@ func switch_location(location: Location):
 	#if location.has_inventory:
 	location.set_inventory(case.inventory)
 	
-	var player_items = case.get_player_items()
+	#var player_items = case.get_player_items()
 	#location.update_hint_text(player_items)
-	location.call_deferred("update_hint_text", player_items)
-	location.call_deferred("start_dialogue")
+	#location.call_deferred("update_hint_text", player_items)
+	#location.call_deferred("start_dialogue")
 	
 	current_location = location
 	current_location.location_switch_requested.connect(func(name):

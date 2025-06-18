@@ -5,10 +5,9 @@ class_name Location
 var case: Case
 @export var items: Array[Item] = []
 @export var has_inventory: bool
-var hint_text: String = "Default text"
 var inventory: Inventory
-@onready var dialogue = $DialogueComponent
-@onready var helpsystem = $Helpsystem
+var dialogue: DialogueComponent
+var helpsystem: Helpsystem
 
 signal item_found(item: Item, location: Location)
 signal location_switch_requested(location_name: String)
@@ -17,6 +16,9 @@ func _ready():
 	await get_tree().process_frame
 	print("Setting up location: %s." % location_name)
 	call_deferred("_setup_connections")
+	dialogue = get_node_or_null("DialogueComponent")
+	helpsystem = get_node_or_null("Helpsystem")
+	call_deferred("setup_components", case)
 	update_items_visibility()
 	if dialogue:
 		dialogue.start_dialogue()
@@ -69,16 +71,13 @@ func get_item_by_name(item_name: String) -> Item:
 	return null
 
 func setup_components(inventory_provider):
-	var location_dialogue_component = get_node_or_null("DialogueComponent")
-	if location_dialogue_component:
-		location_dialogue_component.inventory_provider = inventory_provider
+	if dialogue:
+		dialogue.inventory_provider = inventory_provider
+	
+	if helpsystem:
+		helpsystem.inventory_provider = inventory_provider
 	
 	for item in items:
 		var item_dialogue_component = item.get_node_or_null("DialogueComponent")
 		if item_dialogue_component:
 			item_dialogue_component.inventory_provider = inventory_provider
-	
-	if helpsystem:
-		var helpsystem_dialogue_component = helpsystem.get_node_or_null("DialogueComponent")
-		if helpsystem_dialogue_component:
-			helpsystem_dialogue_component.inventory_provider = inventory_provider
