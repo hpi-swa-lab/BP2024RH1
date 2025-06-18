@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cydygchkdkfkk"
+path="res://.godot/imported/plates.dialogue-76356e3737787c5234140027177704ba.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/plates.dialogue"
+dest_files=["res://.godot/imported/plates.dialogue-76356e3737787c5234140027177704ba.tres"]
+
+[params]
+
+defaults=true

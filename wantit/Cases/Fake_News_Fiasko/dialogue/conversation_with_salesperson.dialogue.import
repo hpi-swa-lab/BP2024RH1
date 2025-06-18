@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b1sci5hex8k3v"
+path="res://.godot/imported/conversation_with_salesperson.dialogue-9b1228cc341e3a4a57592af976016bb5.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/conversation_with_salesperson.dialogue"
+dest_files=["res://.godot/imported/conversation_with_salesperson.dialogue-9b1228cc341e3a4a57592af976016bb5.tres"]
+
+[params]
+
+defaults=true

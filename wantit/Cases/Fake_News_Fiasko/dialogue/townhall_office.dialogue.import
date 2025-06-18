@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://csm2tff3xwpau"
+path="res://.godot/imported/townhall_office.dialogue-7cb1131950082365c4634d109b1d1695.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/townhall_office.dialogue"
+dest_files=["res://.godot/imported/townhall_office.dialogue-7cb1131950082365c4634d109b1d1695.tres"]
+
+[params]
+
+defaults=true

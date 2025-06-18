@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cra8eeth8r2on"
+path="res://.godot/imported/olive_oil.dialogue-5c0d36b247e596a5eb43c371df7df8c5.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/olive_oil.dialogue"
+dest_files=["res://.godot/imported/olive_oil.dialogue-5c0d36b247e596a5eb43c371df7df8c5.tres"]
+
+[params]
+
+defaults=true

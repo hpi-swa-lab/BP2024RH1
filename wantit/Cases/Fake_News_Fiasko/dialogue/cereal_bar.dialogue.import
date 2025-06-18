@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://4lc413o3i3pm"
+path="res://.godot/imported/cereal_bar.dialogue-e6a3309b40b082702343807b24f7ed9c.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/cereal_bar.dialogue"
+dest_files=["res://.godot/imported/cereal_bar.dialogue-e6a3309b40b082702343807b24f7ed9c.tres"]
+
+[params]
+
+defaults=true

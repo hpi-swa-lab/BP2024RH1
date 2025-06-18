@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://c56qadgnnokp0"
+path="res://.godot/imported/empty_glass.dialogue-b561d1456924df4a2a8dc7db21f6df6d.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/empty_glass.dialogue"
+dest_files=["res://.godot/imported/empty_glass.dialogue-b561d1456924df4a2a8dc7db21f6df6d.tres"]
+
+[params]
+
+defaults=true

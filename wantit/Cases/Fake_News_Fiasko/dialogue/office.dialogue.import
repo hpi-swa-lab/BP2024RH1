@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dmwc2w11g4gud"
+path="res://.godot/imported/office.dialogue-4016af700e7d12a022d3b3f576d7f99d.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/office.dialogue"
+dest_files=["res://.godot/imported/office.dialogue-4016af700e7d12a022d3b3f576d7f99d.tres"]
+
+[params]
+
+defaults=true

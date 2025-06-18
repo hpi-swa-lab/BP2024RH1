@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dauvt7dp31ggi"
+path="res://.godot/imported/entrance_door.dialogue-a738523246f0c3da28069c5cf6d22523.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/entrance_door.dialogue"
+dest_files=["res://.godot/imported/entrance_door.dialogue-a738523246f0c3da28069c5cf6d22523.tres"]
+
+[params]
+
+defaults=true

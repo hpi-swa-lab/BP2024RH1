@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bnyww2cbkld6c"
+path="res://.godot/imported/minigame1.dialogue-53b0bc8d81c5db283fa733f72ee84cef.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/minigame1.dialogue"
+dest_files=["res://.godot/imported/minigame1.dialogue-53b0bc8d81c5db283fa733f72ee84cef.tres"]
+
+[params]
+
+defaults=true

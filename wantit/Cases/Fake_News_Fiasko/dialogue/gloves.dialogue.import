@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://66uwkdkwad5u"
+path="res://.godot/imported/gloves.dialogue-53baf26b49a63d2abcb71cea7c9bbee3.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/gloves.dialogue"
+dest_files=["res://.godot/imported/gloves.dialogue-53baf26b49a63d2abcb71cea7c9bbee3.tres"]
+
+[params]
+
+defaults=true
