@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://t5u3fgl8w0o4"]
+
+[ext_resource type="Script" uid="uid://bg1djgt3gqc4f" path="res://Cases/Fake_News_Fiasko/minigame2/Scripts/evidence.gd" id="1_5v7yu"]
+
+[node name="Evidence" type="Control"]
+custom_minimum_size = Vector2(250, 175)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 150.0
+script = ExtResource("1_5v7yu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 250.0
+offset_bottom = 175.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
