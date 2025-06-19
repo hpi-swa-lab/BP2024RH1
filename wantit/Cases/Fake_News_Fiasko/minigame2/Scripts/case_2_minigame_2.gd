@@ -1,17 +1,19 @@
 extends Location
 
 var selected_statement: Control
-var statement_count: int
+var statement_count: int = 6
+var correct_selection: bool = true
+var statements: Array
 
-var true_statements = []
-var wrong_conc_statements = []
-var exagerated_statements = []
-var generelized_statements = []
+var categorized_statements = {}
+var wrong_categorized_statement = []
 
 func _ready() -> void:
+	statements = %Statements.get_children()
+	
 	for evidence in %Evidence.get_children():
 		evidence.evidence_inspected.connect(_on_evidence_inspected)
-	for statement in %Statements.get_children():
+	for statement in statements:
 		statement.statement_selected.connect(_on_statement_selected)
 
 func _on_evidence_inspected(Texture1: Texture2D, Texture2: Texture2D):
@@ -30,49 +32,58 @@ func _on_h_box_container_gui_input(event: InputEvent) -> void:
 		%HBoxContainer.hide()
 
 func _on_statement_selected(new_statement: Control):
-	for statement in %Statements.get_children():
+	for statement in statements:
 		statement.update_highlight(false)
 	selected_statement = new_statement
 
 func _on_true_pressed() -> void:
-	add_statement_to_array(true_statements)
+	add_statement_to_array(0)
 
 func _on_wrong_conclusion_pressed() -> void:
-	add_statement_to_array(wrong_conc_statements)
+	add_statement_to_array(1)
 
-func _on_generalazation_pressed() -> void:
-	add_statement_to_array(generelized_statements)
+func _on_generalization_pressed() -> void:
+	add_statement_to_array(2)
 
 func _on_exageration_pressed() -> void:
-	add_statement_to_array(exagerated_statements)
+	add_statement_to_array(3)
 
-func add_statement_to_array(array: Array):
-	if statement_count == 5:
+func add_statement_to_array(category_value: int):
+	check_statement_count()
+	if selected_statement != null:
+		categorized_statements[selected_statement] = category_value
 		selected_statement.hide()
+		selected_statement = null
+		statement_count -= 1
+
+func check_solution() -> bool:
+	for statement in statements:
+		if categorized_statements[statement] != statement.category:
+			correct_selection = false
+			wrong_categorized_statement.append(statement)
+	return correct_selection
+
+func retry_level():
+	%Wrong_conclusion.show()
+	%Generalization.show()
+	%Exageration.show()
+	%True.text = "Wahr"
+	statement_count = 0
+	correct_selection = true
+	selected_statement = null
+	for statement in wrong_categorized_statement:
+		statement.show()
+		statement_count += 1
+	wrong_categorized_statement = []
+
+func check_statement_count():
+	if statement_count == 1:
 		%Wrong_conclusion.hide()
-		%Generalazation.hide()
+		%Generalization.hide()
 		%Exageration.hide()
 		%True.text = "Überprüfen"
-	elif statement_count < 5:
-		if selected_statement != null:
-			array.append(selected_statement)
-			selected_statement.hide()
-			statement_count += 1
-			selected_statement = null
-	else:
+	elif statement_count == 0:
 		if check_solution():
 			print("nice") # Dialogue and scene switching
 		else:
 			retry_level()
-
-func check_solution() -> bool:
-	for statement in %Statements.get_children():
-		match statement.Category:
-			0: return statement in true_statements
-			1: return statement in wrong_conc_statements
-			2: return statement in generelized_statements
-			3: return statement in exagerated_statements
-	return true
-
-func retry_level():
-	pass
