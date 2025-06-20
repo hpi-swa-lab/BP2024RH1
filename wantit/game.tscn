@@ -60,7 +60,7 @@ metadata/_custom_type_script = "uid://ni774rbce31d"
 [sub_resource type="Resource" id="Resource_rvswv"]
 script = ExtResource("2_e2o6t")
 case_slug = ""
-case_title = "Fake News"
+case_title = "Fake News Fiasko"
 case_location_scenes = Array[PackedScene]([])
 event_triggers = Array[ExtResource("14_215e1")]([])
 metadata/_custom_type_script = "uid://ni774rbce31d"
