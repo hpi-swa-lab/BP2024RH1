@@ -24,7 +24,7 @@ func add_dialogue_player(_dialogue: Dialogue, _inventory_provider: Resource, _da
 		dialogue_player = DialoguePlayer.new(_dialogue, _inventory_provider, _data)
 
 func _pressed():
-	print("%s clicked" %[item_name])
+	#print("%s clicked" %[item_name])
 	#if is_found:
 		#return
 	if dialogue_player:

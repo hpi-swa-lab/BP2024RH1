@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://btva00lvfk41s"
 script = ExtResource("14_215e1")
 event_name = "On minigame2 completed"
 location_name = "Office"
-conditions = Array[String](["Minigame2 completed", "Waffle", "Pliers", "Screwdriver", "Fingerprints", "ShoeprintsKitchen", "ShoeprintsOffice", "Flour Sack", "Door", "Minigame1 completed"])
+conditions = Array[String](["Minigame2 completed", "Minigame1 completed"])
 metadata/_custom_type_script = "uid://btva00lvfk41s"
 
 [sub_resource type="Resource" id="Resource_feb5d"]

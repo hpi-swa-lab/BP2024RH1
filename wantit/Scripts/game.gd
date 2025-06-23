@@ -97,8 +97,8 @@ func switch_location(location: Location):
 		current_location.get_parent().remove_child(current_location)
 	var case = get_active_case()
 		
-	#if location.has_inventory:
-	location.set_inventory(case.inventory)
+	if location.has_inventory:
+		location.set_inventory(case.inventory)
 	if location.dialogue_player:
 		location.dialogue_player.start_dialogue()
 	

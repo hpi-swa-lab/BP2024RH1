@@ -21,13 +21,16 @@ func _ready():
 	
 	if not hints.is_empty():
 		helpsystem = get_node_or_null("Helpsystem")
-		helpsystem.inventory_provider = case
-		helpsystem.set_hints(hints)
+		if helpsystem:
+			helpsystem.inventory_provider = case
+			helpsystem.set_hints(hints)
+		else:
+			push_warning("Helpsystem node not found in Location: %s" % location_name)
 	
 	call_deferred("_setup_connections")
 	update_items_visibility()
 	
-func add_dialogue_player(_location_dialogue: Dialogue, _inventory_provider: Resource, _data: Array) -> void:
+func setup_dialogue_player(_location_dialogue: Dialogue, _inventory_provider: Resource, _data: Array) -> void:
 	dialogue_player = DialoguePlayer.new(_location_dialogue, _inventory_provider, _data)
 
 func set_inventory(case_inventory: Inventory) -> void:
@@ -35,11 +38,11 @@ func set_inventory(case_inventory: Inventory) -> void:
 		return
 	inventory = case_inventory
 	if inventory.get_parent():
-		inventory.get_parent().remove_child(inventory)	
+		inventory.get_parent().remove_child(inventory)
 	if not inventory.is_inside_tree():
 		add_child(inventory)
 
-func _setup_connections():
+func _setup_connections() -> void:
 	var items = get_tree().get_nodes_in_group("location_items")
 	for item in items:
 		item.connect("item_found", _on_item_found)
@@ -67,13 +70,14 @@ func disable_item(item):
 	if item.is_collectable:
 		item.hide()
 
-func get_item_by_name(item_name: String) -> Item:
+func get_item_by_name(_item_name: String) -> Item:
 	for item in items:
-		if item.item_name == item_name:
+		if item.item_name == _item_name:
 			return item
-	#FIXME add handle no item found
+	push_error("Item not found in location '%s': %s" % [location_name, _item_name])
 	return null
 
 func set_item_dialogues() -> void:
 	for item in items:
-		item.add_dialogue_player(item.item_dialogue, case, [])
+		if item.item_dialogue:
+			item.add_dialogue_player(item.item_dialogue, case, [])

@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_fo310"]
 script = ExtResource("3_nbqiy")
 mode = 1
-required_items = Array[String]([])
+required_items = Array[String](["Minigame1 completed"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_nbqiy"]
@@ -26,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vdqgs")
+location_name = "Minigame2"
 hints = Array[ExtResource("2_v5uee")]([SubResource("Resource_nbqiy")])
 
 [node name="Background" type="ColorRect" parent="."]

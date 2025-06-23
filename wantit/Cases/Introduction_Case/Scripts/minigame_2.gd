@@ -12,7 +12,9 @@ var errors: Array[bool] = []
 
 var iteration_completed: bool = false
 
-func _ready() -> void:	
+func _ready() -> void:
+	super._ready()
+	
 	LabelText[0] = "Fingerabdruck eines Angestellten."
 	LabelText[1] = "Es wurden mehrere Fingerabrücke am Safe gesichert."
 	LabelText[2] = "Zur Ladentür des Waffelparadieses gehört ein Schlüssel mit dem Nummernstempel 2056."
@@ -177,6 +179,7 @@ func create_label(labelText: String) -> Label:
 	return label
 
 func _on_finish_button_pressed() -> void:
+	print("Minigame2 completed")
 	var interaction_item = Item.new()
 	interaction_item.item_name = "Minigame2 completed"
 	interaction_item.is_collectable = false

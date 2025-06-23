@@ -44,3 +44,7 @@ func restore_dialogues(data: Array) -> void:
 	for trigger in dialogue.dialogue_triggers:
 		if data.has(trigger.start_marker):
 			trigger.is_started = true
+
+func reset_played_dialogues() -> void:
+	for trigger in dialogue.dialogue_triggers:
+		trigger.is_started = false

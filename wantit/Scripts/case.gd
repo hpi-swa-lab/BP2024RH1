@@ -40,7 +40,7 @@ func _setup_location(location_instance: Location):
 	location.case = self
 	if location.location_dialogue:
 		var restored_location_data = get_restored_location_data(location)
-		location.add_dialogue_player(location.location_dialogue, self, restored_location_data)
+		location.setup_dialogue_player(location.location_dialogue, self, restored_location_data)
 	_setup_location_connections(location)
 	case_locations.append(location)
 
@@ -93,7 +93,7 @@ func start_event(location_name: String):
 func _on_location_switch_requested(location_name: String):
 	location_switch_requested.emit(location_name)
 
-func get_location_by_name(location_name: String) -> Location:
+func get_location_by_name(location_name: String):
 	for location in case_locations:
 		if location.location_name == location_name:
 			return location
@@ -133,11 +133,9 @@ func clear_case_data() -> void:
 	played_location_dialogues.clear()
 	
 	for location in case_locations:
-		if location.dialogue:
-			for condition in location.dialogue.conditions:
-				condition.is_started = false
+		if location.dialogue_player:
+			location.dialogue_player.reset_played_dialogues()
 	print("Cleared current case data.")
-	var player_items = get_player_items()
 
 func get_restored_location_data(location: Location):
 	if played_location_dialogues.has(location.location_name):

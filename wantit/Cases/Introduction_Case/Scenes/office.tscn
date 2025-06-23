@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://byc5whva4dkys"]
+[gd_scene load_steps=14 format=3 uid="uid://byc5whva4dkys"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_2jlrf"]
 [ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="1_a0wae"]
@@ -16,11 +16,23 @@ start_marker = "default"
 required_items = Array[String]([])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
+[sub_resource type="Resource" id="Resource_xas0k"]
+script = ExtResource("3_fayb1")
+start_marker = "evaluate_traces"
+required_items = Array[String](["Minigame1 completed"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_fayb1"]
+script = ExtResource("3_fayb1")
+start_marker = "finish"
+required_items = Array[String](["Minigame1 completed", "Minigame2 completed"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
 [sub_resource type="Resource" id="Resource_ufx7h"]
 script = ExtResource("4_alyqe")
 dialogue_resource = ExtResource("2_xas0k")
 is_dialogue = true
-dialogue_triggers = Array[ExtResource("3_fayb1")]([SubResource("Resource_j5oil")])
+dialogue_triggers = Array[ExtResource("3_fayb1")]([SubResource("Resource_j5oil"), SubResource("Resource_xas0k"), SubResource("Resource_fayb1")])
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
