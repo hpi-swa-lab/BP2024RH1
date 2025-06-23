@@ -5,7 +5,6 @@ extends Control
 class_name Inventory
 
 var inventory_slots: Array[InventorySlot] = []
-var item_dictionary: Dictionary
 @export var slot_count: int = 8
 @export var columns: int  = 2
 @export var slot_scene: PackedScene
@@ -59,13 +58,6 @@ func hide_inventory():
 	opened = false
 	%Button.text = "Inventar"
 
-#func get_items() -> Array[String]:  
-	#var items = []
-	#for slot in slots:
-		#if slot.StoredItem:
-			#items.push_back(slot.StoredItem.item_name)
-	#return items
-
 func get_inventory_items_name() -> Array[String]:
 	var items_name: Array[String] = []
 	for slot in inventory_slots:
@@ -73,20 +65,16 @@ func get_inventory_items_name() -> Array[String]:
 			items_name.append(slot.stored_item.item_name)
 	return items_name
 	
-func restore_inventory_items(item_dictionary: Dictionary, items_list: Array) -> void:
+func restore_inventory_items(_case_items: Dictionary, _restored_items: Array) -> void:
 	if not _restore_ready:
-		_pending_restore_data = [item_dictionary, items_list]
+		_pending_restore_data = [_case_items, _restored_items]
 		return
 	
-	var inventory_items: Array[Item] = []
-	for item in items_list:
-		if item_dictionary.has(item):
-			inventory_items.append(item_dictionary[item])
+	for item in _restored_items:
+		if _case_items.has(item):
+			self.add_item(_case_items[item])
 		else:
 			push_error("Missing object for id: %s" % item)
-	
-	for item in inventory_items:
-		self.add_item(item)
 
 func has(item: Item) -> bool:
 	for slot in inventory_slots:

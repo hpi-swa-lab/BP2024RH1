@@ -1,6 +1,6 @@
 extends Resource
-class_name DialogueCondition
+class_name DialogueTrigger
 
-@export var dialogue_start: String
+@export var start_marker: String
 @export var required_items: Array[String]
 var is_started: bool = false

@@ -7,10 +7,10 @@ func save_game(game: Game):
 	var save_data = {
 		"active_case_slug": game.active_case_slug,
 		"current_location_name": game.current_location.location_name,
-		"completed_cases": game.get_completed_cases(),
+		#"completed_cases": game.get_completed_cases(),
 		"inventory_items": game.get_case_inventory(),
 		"interactions": game.get_case_interactions(),
-		"dialogues": game.get_played_dialogues()
+		"location_dialogues": game.get_played_location_dialogues()
 	}
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)

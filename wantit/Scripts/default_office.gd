@@ -9,7 +9,6 @@ func _ready() -> void:
 	create_bitmap(%computer)
 	create_bitmap(%map)
 
-
 func load_CaseBoard_Picture():
 	var CaseBoardPicture
 	#if Globals.selectedCase == null:

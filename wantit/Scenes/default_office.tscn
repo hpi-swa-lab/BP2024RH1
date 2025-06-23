@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://brr5qpixvv86d"]
 
 [ext_resource type="Script" uid="uid://chbrol0ryriml" path="res://Scripts/default_office.gd" id="1_cg5kq"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="2_dtkj6"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="2_dtkj6"]
 [ext_resource type="Resource" uid="uid://bfmar36edgpkb" path="res://dialogue/default_office.dialogue" id="3_8j0lg"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_oyeku"]
 [ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="5_i5sty"]
@@ -10,24 +10,24 @@
 [ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="8_uaoae"]
 [ext_resource type="Texture2D" uid="uid://dhsfehg0vmn2l" path="res://Assets/office/map.png" id="9_chlwp"]
 
-[sub_resource type="Resource" id="Resource_ml3xy"]
+[sub_resource type="Resource" id="Resource_8j0lg"]
 script = ExtResource("2_dtkj6")
-dialogue_start = "default"
+start_marker = "default"
 required_items = Array[String]([])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
-[sub_resource type="Resource" id="Resource_8j0lg"]
+[sub_resource type="Resource" id="Resource_ml3xy"]
 script = ExtResource("4_oyeku")
 dialogue_resource = ExtResource("3_8j0lg")
 is_dialogue = true
-is_monologue = false
-conditions = Array[ExtResource("2_dtkj6")]([SubResource("Resource_ml3xy")])
+dialogue_triggers = Array[ExtResource("2_dtkj6")]([SubResource("Resource_8j0lg")])
+start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="DefaultOffice" type="Node"]
 script = ExtResource("1_cg5kq")
 location_name = "DefaultOffice"
-dialogue = SubResource("Resource_8j0lg")
+location_dialogue = SubResource("Resource_ml3xy")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Office" type="TextureRect" parent="."]

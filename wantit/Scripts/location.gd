@@ -4,34 +4,38 @@ class_name Location
 @export var location_name: String
 var case: Case
 @export var items: Array[Item] = []
+@export var hints: Array[Hint]
 @export var has_inventory: bool
+@export var location_dialogue: Dialogue
 var inventory: Inventory
-var dialogue: DialogueComponent
+var dialogue_player: DialoguePlayer
 var helpsystem: Helpsystem
 
 signal item_found(item: Item, location: Location)
 signal location_switch_requested(location_name: String)
 
 func _ready():
-	await get_tree().process_frame
-	print("Setting up location: %s." % location_name)
+	set_item_dialogues()
+	if dialogue_player:
+		dialogue_player.activate()
+	
+	if not hints.is_empty():
+		helpsystem = get_node_or_null("Helpsystem")
+		helpsystem.inventory_provider = case
+		helpsystem.set_hints(hints)
+	
 	call_deferred("_setup_connections")
-	dialogue = get_node_or_null("DialogueComponent")
-	helpsystem = get_node_or_null("Helpsystem")
-	call_deferred("setup_components", case)
 	update_items_visibility()
-	if dialogue:
-		dialogue.start_dialogue()
+	
+func add_dialogue_player(_location_dialogue: Dialogue, _inventory_provider: Resource, _data: Array) -> void:
+	dialogue_player = DialoguePlayer.new(_location_dialogue, _inventory_provider, _data)
 
 func set_inventory(case_inventory: Inventory) -> void:
 	if not has_inventory:
 		return
-	
 	inventory = case_inventory
-	
 	if inventory.get_parent():
-		inventory.get_parent().remove_child(inventory)
-		
+		inventory.get_parent().remove_child(inventory)	
 	if not inventory.is_inside_tree():
 		add_child(inventory)
 
@@ -70,14 +74,6 @@ func get_item_by_name(item_name: String) -> Item:
 	#FIXME add handle no item found
 	return null
 
-func setup_components(inventory_provider):
-	if dialogue:
-		dialogue.inventory_provider = inventory_provider
-	
-	if helpsystem:
-		helpsystem.inventory_provider = inventory_provider
-	
+func set_item_dialogues() -> void:
 	for item in items:
-		var item_dialogue_component = item.get_node_or_null("DialogueComponent")
-		if item_dialogue_component:
-			item_dialogue_component.inventory_provider = inventory_provider
+		item.add_dialogue_player(item.item_dialogue, case, [])

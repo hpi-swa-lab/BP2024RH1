@@ -1,7 +1,6 @@
 extends Location
 
 @onready var plate: TextureButton = $Plate
-@onready var helpsystem_timer = $Helpsystem/Question_mark/Timer
 
 func _ready() -> void:
 	super._ready()
