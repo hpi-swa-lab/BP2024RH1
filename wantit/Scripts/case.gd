@@ -123,8 +123,8 @@ func get_player_items() -> Array:
 func _on_case_overview_opened(location: Location):
 	case_overview_opened.emit(location)
 
-func _on_case_selected(case_title: String):
-	case_selected.emit(case_title)
+func _on_case_selected(_case_title: String):
+	case_selected.emit(_case_title)
 	
 func clear_case_data() -> void:
 	interactions.clear()

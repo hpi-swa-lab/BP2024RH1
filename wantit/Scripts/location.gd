@@ -43,8 +43,8 @@ func set_inventory(case_inventory: Inventory) -> void:
 		add_child(inventory)
 
 func _setup_connections() -> void:
-	var items = get_tree().get_nodes_in_group("location_items")
-	for item in items:
+	var _items = get_tree().get_nodes_in_group("location_items")
+	for item in _items:
 		item.connect("item_found", _on_item_found)
 	
 	var buttons = get_tree().get_nodes_in_group("location_switch_buttons")

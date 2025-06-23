@@ -18,7 +18,8 @@ func activate():
 func start_dialogue():
 	var dialogue_trigger = get_dialogue_start()
 	if dialogue_trigger and not dialogue_trigger.is_started:
-		await DialogueManager.show_dialogue_balloon_scene(
+		#await DialogueManager.show_dialogue_balloon_scene(
+		DialogueManager.show_dialogue_balloon_scene(
 			dialogue.baloon_type,
 			dialogue.dialogue_resource,
 			dialogue_trigger.start_marker
