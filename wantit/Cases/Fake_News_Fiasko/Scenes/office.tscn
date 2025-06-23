@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://bfpnjqdy1k8iy"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_2bl4k"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="2_3tr3j"]
+[ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="2_efu73"]
+[ext_resource type="Texture2D" uid="uid://b5rpc8qen503n" path="res://Assets/office/clue_board_max.png" id="3_5ajrk"]
+[ext_resource type="Resource" uid="uid://dmwc2w11g4gud" path="res://Cases/Fake_News_Fiasko/dialogue/office.dialogue" id="3_dfypo"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_3tr3j"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_e5sbx"]
+[ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="5_dfypo"]
+[ext_resource type="Texture2D" uid="uid://dhsfehg0vmn2l" path="res://Assets/office/map.png" id="6_e5sbx"]
+
+[sub_resource type="Resource" id="Resource_u2u63"]
+script = ExtResource("2_3tr3j")
+dialogue_start = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_np2hu"]
+script = ExtResource("4_e5sbx")
+dialogue_resource = ExtResource("3_dfypo")
+is_dialogue = true
+is_monologue = false
+conditions = Array[ExtResource("2_3tr3j")]([SubResource("Resource_u2u63")])
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Office" type="Node"]
+script = ExtResource("1_2bl4k")
+location_name = "Office"
+dialogue = SubResource("Resource_np2hu")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Office" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.301736, 0.301736)
+texture = ExtResource("2_efu73")
+
+[node name="clue_board" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_left = 427.0
+offset_top = 262.0
+offset_right = 2634.0
+offset_bottom = 1357.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_5ajrk")
+script = ExtResource("4_3tr3j")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_dfypo")
+script = ExtResource("4_3tr3j")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="map" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+action_mode = 0
+texture_normal = ExtResource("6_e5sbx")
+script = ExtResource("4_3tr3j")
+requested_location_name = "Map"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

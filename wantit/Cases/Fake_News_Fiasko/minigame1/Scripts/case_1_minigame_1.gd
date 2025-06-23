@@ -1,4 +1,4 @@
-extends Control
+extends Location
 
 var selected_statement: Control
 var statement_count: int = 5

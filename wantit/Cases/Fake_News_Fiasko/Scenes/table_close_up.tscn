@@ -19,6 +19,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Table CloseUp" type="Node"]
 script = ExtResource("1_0d07a")
+location_name = "Table CloseUp"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -48,3 +49,4 @@ offset_right = 499.0
 offset_bottom = 1036.0
 rotation = -0.391716
 scale = Vector2(0.286492, 0.286492)
+requested_location_name = "Restaurant Dining Hall Pre"

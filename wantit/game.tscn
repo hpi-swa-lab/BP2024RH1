@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=36 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -17,14 +17,25 @@
 [ext_resource type="PackedScene" uid="uid://bfhmvi5qb81eb" path="res://Scenes/inventory.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://bw7q816wdvvla" path="res://Cases/Introduction_Case/Scenes/minigame_2.tscn" id="12_215e1"]
 [ext_resource type="Script" uid="uid://btva00lvfk41s" path="res://Scripts/event_trigger.gd" id="14_215e1"]
+[ext_resource type="PackedScene" uid="uid://bfpnjqdy1k8iy" path="res://Cases/Fake_News_Fiasko/Scenes/office.tscn" id="18_xa8c5"]
+[ext_resource type="PackedScene" uid="uid://dka3ysce41yd0" path="res://Cases/Fake_News_Fiasko/Scenes/map.tscn" id="19_5b14r"]
+[ext_resource type="PackedScene" uid="uid://cqy6w5jhxa2tq" path="res://Cases/Fake_News_Fiasko/Scenes/market.tscn" id="20_bnpwn"]
+[ext_resource type="PackedScene" uid="uid://b63bftslmjany" path="res://Cases/Fake_News_Fiasko/Scenes/restaurant_dining_hall_post.tscn" id="21_36jdj"]
+[ext_resource type="PackedScene" uid="uid://c56icebaulvkr" path="res://Cases/Fake_News_Fiasko/Scenes/restaurant_dining_hall_pre.tscn" id="22_xfvwf"]
+[ext_resource type="PackedScene" uid="uid://ymhk1mswieql" path="res://Cases/Fake_News_Fiasko/Scenes/restaurant_kitchen_post.tscn" id="23_dhpj7"]
+[ext_resource type="PackedScene" uid="uid://h5osa7tfgokv" path="res://Cases/Fake_News_Fiasko/Scenes/staff_room_post.tscn" id="24_7knny"]
+[ext_resource type="PackedScene" uid="uid://yqylabdsb17c" path="res://Cases/Fake_News_Fiasko/Scenes/staff_room_pre.tscn" id="25_082n1"]
+[ext_resource type="PackedScene" uid="uid://dxecgnfn3r2iq" path="res://Cases/Fake_News_Fiasko/Scenes/table_close_up.tscn" id="26_xex6t"]
+[ext_resource type="PackedScene" uid="uid://bldto10pnrgj1" path="res://Cases/Fake_News_Fiasko/Scenes/townhall_office.tscn" id="27_aa0lp"]
+[ext_resource type="PackedScene" uid="uid://j51e1b0fsl7f" path="res://Cases/Fake_News_Fiasko/Scenes/restaurant_kitchen_pre.tscn" id="28_5b14r"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
 case_slug = "default"
-case_title = ""
+case_title = null
 case_location_scenes = Array[PackedScene]([ExtResource("3_7sc4i"), ExtResource("4_80cx4"), ExtResource("5_e8heu")])
 inventory_scene = ExtResource("11_mfdv2")
-event_triggers = Array[ExtResource("14_215e1")]([])
+event_triggers = null
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_215e1"]
@@ -57,12 +68,20 @@ inventory_scene = ExtResource("11_mfdv2")
 event_triggers = Array[ExtResource("14_215e1")]([SubResource("Resource_215e1"), SubResource("Resource_7sc4i"), SubResource("Resource_80cx4")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="Resource" id="Resource_xa8c5"]
+script = ExtResource("14_215e1")
+event_name = "all_clues_found"
+location_name = "Restaurant Dining Hall Pre"
+conditions = Array[String](["Tomato", "Plates", "Newspaper", "Computer", "Bill", "Salesperson", "Business Card", "Menu"])
+metadata/_custom_type_script = "uid://btva00lvfk41s"
+
 [sub_resource type="Resource" id="Resource_rvswv"]
 script = ExtResource("2_e2o6t")
-case_slug = ""
+case_slug = "fake_news"
 case_title = "Fake News Fiasko"
-case_location_scenes = Array[PackedScene]([])
-event_triggers = Array[ExtResource("14_215e1")]([])
+case_location_scenes = Array[PackedScene]([ExtResource("18_xa8c5"), ExtResource("19_5b14r"), ExtResource("20_bnpwn"), ExtResource("21_36jdj"), ExtResource("22_xfvwf"), ExtResource("23_dhpj7"), ExtResource("24_7knny"), ExtResource("25_082n1"), ExtResource("26_xex6t"), ExtResource("27_aa0lp"), ExtResource("28_5b14r")])
+inventory_scene = ExtResource("11_mfdv2")
+event_triggers = Array[ExtResource("14_215e1")]([SubResource("Resource_xa8c5")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]

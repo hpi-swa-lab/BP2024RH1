@@ -38,7 +38,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Office" type="Node"]
 script = ExtResource("1_2jlrf")
-location_name = "Office"
+location_name = "OfficeFakeNews"
 dialogue = SubResource("Resource_rs1ao")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
@@ -78,5 +78,5 @@ scale = Vector2(0.3, 0.3)
 action_mode = 0
 texture_normal = ExtResource("4_7xo7e")
 script = ExtResource("5_eqlnk")
-requested_location_name = "Map"
+requested_location_name = "MapFakeNews"
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
