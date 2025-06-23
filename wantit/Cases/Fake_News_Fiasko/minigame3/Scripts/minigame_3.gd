@@ -1,4 +1,4 @@
-extends Control
+extends Location
 
 var selected_post: Control
 var selected_scrollable_post: post

@@ -20,6 +20,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [node name="Table CloseUp" type="Node"]
 script = ExtResource("1_0d07a")
 location_name = "Table CloseUp"
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

@@ -31,6 +31,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [node name="Staff Room Pre" type="Node"]
 script = ExtResource("1_egatl")
 location_name = "Staff Room Pre"
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

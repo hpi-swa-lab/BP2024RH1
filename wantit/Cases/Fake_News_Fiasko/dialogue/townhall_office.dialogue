@@ -15,4 +15,5 @@ Bürgermeister Honigwald: Was verschafft mir denn die Ehre?
 
 ~ further
 Klaas: Nur, weil Honigwald der Bürgermeister ist, heißt das nicht, dass er die Wahrheit sagt. Wir sollten nochmal zurück ins Büro und die Aussagen überprüfen.
+do _on_location_switch_requested("Minigame2")
 => END

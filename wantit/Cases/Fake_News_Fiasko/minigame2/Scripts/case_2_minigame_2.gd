@@ -84,6 +84,9 @@ func check_statement_count():
 		%True.text = "Überprüfen"
 	elif statement_count == 0:
 		if check_solution():
-			print("nice") # Dialogue and scene switching
+			var interaction_item = Item.new()
+			interaction_item.item_name = "Minigame2 completed"
+			interaction_item.is_collectable = false
+			item_found.emit(interaction_item)
 		else:
 			retry_level()

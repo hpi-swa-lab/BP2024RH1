@@ -56,6 +56,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_nkg13")
 location_name = "Restaurant Dining Hall Pre"
 dialogue = SubResource("Resource_harlk")
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

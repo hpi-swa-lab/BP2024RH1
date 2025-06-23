@@ -45,7 +45,11 @@ func check_statement_count():
 
 func _on_check_pressed() -> void:
 	if check_solution():
-		print("Nicely done!") # Dialogue and scene switching
+		
+		var interaction_item = Item.new()
+		interaction_item.item_name = "Minigame1 completed"
+		interaction_item.is_collectable = false
+		item_found.emit(interaction_item)
 	else:
 		retry_level()
 

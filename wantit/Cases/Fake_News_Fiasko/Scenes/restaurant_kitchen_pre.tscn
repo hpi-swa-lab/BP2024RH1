@@ -33,6 +33,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [node name="Restaurant Kitchen Pre" type="Node"]
 script = ExtResource("1_2wrt1")
 location_name = "Restaurant Kitchen Pre"
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
