@@ -4,14 +4,15 @@ class_name GameSaver
 const SAVE_PATH := "user://progress.json"
 
 func save_game(game: Game):
-	var save_data = {
-		"active_case_slug": game.active_case_slug,
-		"current_location_name": game.current_location.location_name,
-		#"completed_cases": game.get_completed_cases(),
-		"inventory_items": game.get_case_inventory(),
-		"interactions": game.get_case_interactions(),
-		"location_dialogues": game.get_played_location_dialogues()
-	}
+	#var save_data = {
+		#"active_case_slug": game.active_case_slug,
+		#"current_location_name": game.current_location.location_name,
+		##"completed_cases": game.get_completed_cases(),
+		#"inventory_items": game.get_case_inventory(),
+		#"interactions": game.get_case_interactions(),
+		#"location_dialogues": game.get_played_location_dialogues()
+	#}
+	var save_data = game.get_save_data()
 	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data, "\t"))
@@ -31,4 +32,4 @@ func load_saved_game_data(game: Game):
 		print("Failed to parse save file.")
 		return
 	
-	game.restored_game_data = result
+	game.saved_game_data = result

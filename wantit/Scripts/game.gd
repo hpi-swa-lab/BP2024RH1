@@ -20,6 +20,7 @@ func _ready():
 		start_new_game()
 
 func restore_saved_game():
+	load_game_data()
 	var active_case = get_case_by_slug(active_case_slug)
 	start_case(active_case, saved_case_data)
 
@@ -61,19 +62,28 @@ func setup_case_connections(case: Case):
 	case.connect("case_selected", _on_start_case)
 
 func complete_case() -> void:
-	var current_case = get_case_by_slug(active_case_slug)
-	current_case.is_completed = true
-	current_case.clear_case_data()
-	gamesaver.save_game(self)
-	setup_default_case()
-	#FIXME
-	#start_current_case() 
+	mark_case_completed()
+	save_current_progress()
+	reset_to_default_case()	
+	start_new_case()
 
-func setup_default_case() -> void:
+func mark_case_completed() -> void:
+	var current_case = get_case_by_slug(active_case_slug)
+	#current_case.is_completed = true
+	current_case.clear_case_data()
+
+func reset_to_default_case() -> void:
 	active_case_slug = "default"
 	current_location_name = ""
 	#played_dialogues["default_office"] = "default"
 	#TODO add some text to motivate user to open another case
+
+func start_new_case() -> void:
+	var default_case = get_case_by_slug(active_case_slug)
+	start_case(default_case)
+
+func save_current_progress() -> void:
+	gamesaver.save_game(self)
 
 func get_completed_cases() -> Array:
 	var completed_cases = []
@@ -105,9 +115,6 @@ func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)
 	var location = current_case.get_location_by_name(location_name)
 	switch_location(location)
-
-func set_completed_cases():
-	pass
 
 func get_case_inventory() -> Array[String]:
 	var active_case = get_active_case()
@@ -165,3 +172,12 @@ func get_played_location_dialogues() -> Dictionary:
 		if location.dialogue_player!= null:	
 			played_dialogues[location.location_name] = location.dialogue_player.get_played_dialogues()
 	return played_dialogues
+
+func get_save_data() -> Dictionary:
+	var save_data = {}
+	save_data["active_case_slug"] = active_case_slug
+	save_data["current_location_name"] = current_location.location_name
+	save_data["inventory_items"] = get_case_inventory()
+	save_data["interactions"] = get_case_interactions()
+	save_data["location_dialogues"] = get_played_location_dialogues()
+	return save_data
