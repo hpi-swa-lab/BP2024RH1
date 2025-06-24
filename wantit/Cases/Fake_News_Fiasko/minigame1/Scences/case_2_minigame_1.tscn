@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bdunf63688abk"]
+[gd_scene load_steps=49 format=3 uid="uid://bdunf63688abk"]
 
 [ext_resource type="Texture2D" uid="uid://xiw5b3ky4thj" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/newspaper_cutout.png" id="2_2j0md"]
 [ext_resource type="Texture2D" uid="uid://cinsrfgtkmeal" path="res://Assets/clue_board_max.png" id="2_drn2o"]
@@ -26,18 +26,12 @@ dialogue_start = "default"
 required_items = Array[String]([])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
-[sub_resource type="Resource" id="Resource_t12x8"]
-script = ExtResource("2_fpywy")
-dialogue_start = "minigame_completed"
-required_items = Array[String](["Minigame1 completed"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
 [sub_resource type="Resource" id="Resource_b0ifq"]
 script = ExtResource("4_f74x3")
 dialogue_resource = ExtResource("3_a7tbl")
 is_dialogue = false
 is_monologue = false
-conditions = Array[ExtResource("2_fpywy")]([SubResource("Resource_xf4ha"), SubResource("Resource_t12x8")])
+conditions = Array[ExtResource("2_fpywy")]([SubResource("Resource_xf4ha")])
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [sub_resource type="LabelSettings" id="LabelSettings_ueprj"]
@@ -143,6 +137,7 @@ expand_margin_right = 3.0
 expand_margin_bottom = 3.0
 
 [sub_resource type="SystemFont" id="SystemFont_nat3h"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_obinr"]
 font_size = 14

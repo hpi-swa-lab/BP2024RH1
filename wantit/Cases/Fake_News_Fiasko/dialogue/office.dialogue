@@ -5,6 +5,7 @@ Klaas: Sie meinte, dass du einfach zum Restaurant kommen sollst, wenn du Zeit ha
 
 ~ after_inspection
 Klaas: Viele der Gäste haben nach dem Abend auf Social Media gepostet. Vielleicht finden wir ja dort etwas, dass auf den Täter hindeutet.
+do _on_location_switch_requested("Minigame3")
 => END
 
 ~ after_minigame3

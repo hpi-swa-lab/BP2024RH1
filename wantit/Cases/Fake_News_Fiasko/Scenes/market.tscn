@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cqy6w5jhxa2tq"]
 
-[ext_resource type="Script" uid="uid://bl1613jvx7tbd" path="res://Cases/Fake_News_Fiasko/Scenes/market.gd" id="1_gn0um"]
+[ext_resource type="Script" uid="uid://bl1613jvx7tbd" path="res://Cases/Fake_News_Fiasko/Scripts/market.gd" id="1_gn0um"]
 [ext_resource type="Texture2D" uid="uid://co8u4d6f76x3j" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/market.png" id="2_g4mgd"]
 [ext_resource type="Resource" uid="uid://b1sci5hex8k3v" path="res://Cases/Fake_News_Fiasko/dialogue/conversation_with_salesperson.dialogue" id="3_86yk7"]
 [ext_resource type="Texture2D" uid="uid://72gpm3fpcw5" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/mouldy_tomato.png" id="4_gn0um"]

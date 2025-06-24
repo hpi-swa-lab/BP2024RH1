@@ -82,7 +82,11 @@ func set_level():
 			if post not in relevant_posts:
 				%VBoxContainer.remove_child(element)
 	else:
-		print("nice") #Dialogue and switch scene and stuff 
+		DialogueManager.show_dialogue_balloon_scene(
+			dialogue.baloon_type,
+			dialogue.dialogue_resource,
+			"minigame_completed")
+		await DialogueManager.dialogue_ended
 	relevant_posts = []
 
 func _on_option_1_pressed() -> void:
