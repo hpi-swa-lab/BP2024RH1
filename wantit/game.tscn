@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=25 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -65,7 +65,15 @@ case_location_scenes = Array[PackedScene]([])
 event_triggers = Array[ExtResource("14_215e1")]([])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="Resource" id="Resource_boyg6"]
+script = ExtResource("2_e2o6t")
+case_slug = "Nachricht aus der Asche"
+case_title = ""
+case_location_scenes = Array[PackedScene]([])
+event_triggers = Array[ExtResource("14_215e1")]([])
+metadata/_custom_type_script = "uid://ni774rbce31d"
+
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv"), SubResource("Resource_boyg6")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"

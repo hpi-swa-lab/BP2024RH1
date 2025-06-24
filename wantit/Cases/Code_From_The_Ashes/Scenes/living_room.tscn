@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://dq7i6tek3v1ks"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_fkbp5"]
+[ext_resource type="Texture2D" uid="uid://tckt1os6xt7r" path="res://Cases/Code_From_The_Ashes/Assets/Backgrounds/living_room.png" id="2_t5me7"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_05acy"]
+[ext_resource type="Texture2D" uid="uid://bww7eyvmf0sqc" path="res://Cases/Code_From_The_Ashes/Assets/Scene_Switcher/corridor.png" id="4_pjhar"]
+[ext_resource type="Texture2D" uid="uid://c4ocjcngpfx7o" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/caesar_statue.png" id="5_qw0nm"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_w07sj"]
+[ext_resource type="Texture2D" uid="uid://boye1skv5tnvs" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/book.png" id="7_5v2a3"]
+[ext_resource type="Texture2D" uid="uid://bqojcc0feydtv" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/dog_picture.png" id="8_ca5xi"]
+[ext_resource type="Texture2D" uid="uid://dehxhbtggiinm" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/punch_card.png" id="9_pjhar"]
+[ext_resource type="Texture2D" uid="uid://xl725b5y32e" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/easel.png" id="9_w3de0"]
+[ext_resource type="Texture2D" uid="uid://b87ed0b313fjr" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/newspaper.png" id="10_qw0nm"]
+
+[node name="Living Room" type="Node"]
+script = ExtResource("1_fkbp5")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300001, 0.300001)
+texture = ExtResource("2_t5me7")
+
+[node name="Corridor" parent="." instance=ExtResource("3_05acy")]
+scale = Vector2(0.299993, 0.299993)
+texture_normal = ExtResource("4_pjhar")
+
+[node name="Caesar Statue" type="TextureButton" parent="."]
+offset_left = 400.0
+offset_top = 359.0
+offset_right = 1376.0
+offset_bottom = 1335.0
+scale = Vector2(0.143917, 0.143917)
+texture_normal = ExtResource("5_qw0nm")
+script = ExtResource("6_w07sj")
+item_name = "Caesar"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Book" type="TextureButton" parent="."]
+offset_left = 436.0
+offset_top = 223.0
+offset_right = 752.0
+offset_bottom = 296.0
+scale = Vector2(0.291301, 0.291301)
+texture_normal = ExtResource("7_5v2a3")
+script = ExtResource("6_w07sj")
+item_name = "Book"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Dog Picture" type="TextureButton" parent="."]
+offset_left = 1085.0
+offset_top = 312.0
+offset_right = 2820.0
+offset_bottom = 2047.0
+rotation = 0.0849856
+scale = Vector2(0.0492998, 0.0492998)
+texture_normal = ExtResource("8_ca5xi")
+script = ExtResource("6_w07sj")
+item_name = "Picture"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Punch Card" type="TextureButton" parent="."]
+offset_left = 740.0
+offset_top = 498.0
+offset_right = 2744.0
+offset_bottom = 998.0
+scale = Vector2(0.044944, 0.044944)
+texture_normal = ExtResource("9_pjhar")
+script = ExtResource("6_w07sj")
+item_name = "Punch Card"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Newspaper" type="TextureButton" parent="."]
+offset_left = 492.0
+offset_top = 468.0
+offset_right = 2477.0
+offset_bottom = 964.0
+rotation = -0.0888437
+scale = Vector2(0.178789, 0.178789)
+texture_normal = ExtResource("10_qw0nm")
+script = ExtResource("6_w07sj")
+item_name = "Newspaper"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Easel" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300004, 0.300004)
+texture_normal = ExtResource("9_w3de0")
+script = ExtResource("6_w07sj")
+item_name = "Easel"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"

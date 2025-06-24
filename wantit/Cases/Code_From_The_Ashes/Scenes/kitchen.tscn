@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccytljyn6i5ir"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_4fosp"]
+[ext_resource type="Texture2D" uid="uid://6ufw5dceetui" path="res://Cases/Code_From_The_Ashes/Assets/Backgrounds/kitchen.png" id="2_g1w3k"]
+[ext_resource type="Texture2D" uid="uid://chflcllyljutb" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/window_and_footprints.png" id="3_rcbp2"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_ticb1"]
+[ext_resource type="Texture2D" uid="uid://cjp5dms0gpu0l" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/note.png" id="5_2hrpd"]
+[ext_resource type="Texture2D" uid="uid://bw871lb0ivvm8" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/bin.png" id="6_4fphp"]
+[ext_resource type="Texture2D" uid="uid://46wyh1wjw406" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/microwave.png" id="7_qchn1"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="8_jrfsk"]
+
+[node name="Kitchen" type="Node"]
+script = ExtResource("1_4fosp")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299994, 0.299994)
+texture = ExtResource("2_g1w3k")
+
+[node name="Window and Footprints" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299994, 0.299994)
+texture_normal = ExtResource("3_rcbp2")
+script = ExtResource("4_ticb1")
+item_name = "Window and Footprints"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Note" type="TextureButton" parent="."]
+offset_left = -38.0
+offset_top = 398.0
+offset_right = 2085.0
+offset_bottom = 521.0
+rotation = -0.0091792
+scale = Vector2(0.157192, 0.157192)
+texture_normal = ExtResource("5_2hrpd")
+script = ExtResource("4_ticb1")
+item_name = "Note"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Paper Bin" type="TextureButton" parent="."]
+offset_left = 1005.0
+offset_top = 482.0
+offset_right = 2277.0
+offset_bottom = 1924.0
+scale = Vector2(0.134456, 0.134456)
+texture_normal = ExtResource("6_4fphp")
+script = ExtResource("4_ticb1")
+item_name = "Bin"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Microwave" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300097, 0.300097)
+texture_normal = ExtResource("7_qchn1")
+script = ExtResource("4_ticb1")
+item_name = "Microwave"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="BackButton" parent="." instance=ExtResource("8_jrfsk")]
+offset_left = 1137.0
+offset_top = 106.0
+offset_right = 1649.0
+offset_bottom = 618.0
+rotation = 3.13692
+scale = Vector2(0.189916, 0.189916)
