@@ -1,0 +1,281 @@
+[gd_scene load_steps=13 format=3 uid="uid://c2bi0h58ogcem"]
+
+[ext_resource type="Script" uid="uid://cc5hsdbevkmaw" path="res://scripts/Minigames/level_2.gd" id="1_elwrv"]
+[ext_resource type="Texture2D" uid="uid://df8kpp4el6p1k" path="res://assets/places/grundriss.jpg" id="1_udyx4"]
+[ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://logik_gatter/scenes/Baukasten/Ziel.tscn" id="2_12rdr"]
+[ext_resource type="Texture2D" uid="uid://caet4wba1ppwn" path="res://assets/objects/no-wifi.png" id="3_183rv"]
+[ext_resource type="Texture2D" uid="uid://c2mcovd2mlugj" path="res://assets/objects/wifi.png" id="4_o4wao"]
+[ext_resource type="Texture2D" uid="uid://cfj7o3thne24e" path="res://assets/objects/router2.png" id="5_ej7eh"]
+[ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://logik_gatter/scenes/Baukasten/Gatter/And_Gatter.tscn" id="6_1gmlg"]
+[ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://logik_gatter/scenes/Baukasten/Gatter/Or_Gatter.tscn" id="7_elwrv"]
+[ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://logik_gatter/scenes/Baukasten/Start.tscn" id="8_ku0cy"]
+[ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://logik_gatter/scenes/Baukasten/connection.tscn" id="9_snf2q"]
+[ext_resource type="PackedScene" uid="uid://dobh0dh6l2t8n" path="res://logik_gatter/scenes/Baukasten/Start_for_two.tscn" id="10_1gmlg"]
+[ext_resource type="Texture2D" uid="uid://bl3lno0iqtix" path="res://assets/objects/triangle.png" id="12_ku0cy"]
+
+[node name="Level2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_elwrv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+layout_mode = 0
+offset_left = -8.0
+offset_top = 667.0
+offset_right = 753.0
+offset_bottom = 1833.0
+rotation = -1.5708
+texture = ExtResource("1_udyx4")
+expand_mode = 1
+
+[node name="Connections" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -8.0
+offset_top = 667.0
+offset_right = 32.0
+offset_bottom = 707.0
+
+[node name="Connection_Input_AndLeft" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(160, -491)
+
+[node name="Connection_AndLeft_AndChef" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(296, -475)
+points = PackedVector2Array(0, 1, 0, 304)
+
+[node name="Connection_OrLeft_AndLeft" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(232, -523)
+points = PackedVector2Array(272, 32, 88, 32)
+
+[node name="Connection_Input_OrLeft_1" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(512, -555)
+points = PackedVector2Array(112, 48, 112, -8)
+
+[node name="Connection_Input_OrLeft_2" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(672, -420)
+points = PackedVector2Array(-48, -56, -48, 0)
+
+[node name="Connection_Input_AndRight" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(728, -547)
+points = PackedVector2Array(-40, -32, 112, -32, 112, 40)
+
+[node name="Connection_AndRight_AndKitchen" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(624, -307)
+points = PackedVector2Array(200, -168, 200, 136)
+
+[node name="Connection_OrRight_AndRight" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(864, -491)
+
+[node name="Connection_Input_OrRight_1" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(1000, -531)
+points = PackedVector2Array(48, -32, 48, 24)
+
+[node name="Connection_Input_OrRight_2" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(1000, -459)
+points = PackedVector2Array(48, 280, 48, -16)
+
+[node name="Connection_AndChef_ZIel" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(144, -155)
+
+[node name="Connection_AndKitchen_AndChef" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(528, -139)
+points = PackedVector2Array(-224, -16, 264, -16)
+
+[node name="Connection_Input_AndKitchen" parent="Connections" instance=ExtResource("9_snf2q")]
+position = Vector2(976, -267)
+points = PackedVector2Array(-128, 112, 0, 112)
+
+[node name="Ziel" parent="." node_paths=PackedStringArray("input_connection") instance=ExtResource("2_12rdr")]
+position = Vector2(96, 456)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_183rv")
+input_connection = NodePath("../Connections/Connection_AndChef_ZIel")
+lv_complete_picture = ExtResource("4_o4wao")
+lv_not_complete_picture = ExtResource("3_183rv")
+
+[node name="TextureRect2" type="TextureRect" parent="Ziel"]
+offset_left = -266.667
+offset_top = 160.0
+offset_right = 245.333
+offset_bottom = 672.0
+texture = ExtResource("5_ej7eh")
+
+[node name="Starts" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start_OrRight" parent="Starts" node_paths=PackedStringArray("output_connection") instance=ExtResource("8_ku0cy")]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 72.0
+offset_right = 1107.0
+offset_bottom = 103.0
+output_connection = NodePath("../../Connections/Connection_Input_OrRight_1")
+
+[node name="Start_OrLeft" parent="Starts" node_paths=PackedStringArray("output_connection") instance=ExtResource("8_ku0cy")]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 248.0
+offset_right = 683.0
+offset_bottom = 279.0
+output_connection = NodePath("../../Connections/Connection_Input_OrLeft_2")
+
+[node name="Start_AndLeft" parent="Starts" node_paths=PackedStringArray("output_connection") instance=ExtResource("8_ku0cy")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 160.0
+offset_right = 155.0
+offset_bottom = 191.0
+output_connection = NodePath("../../Connections/Connection_Input_AndLeft")
+
+[node name="StartForTwo_OrLeft_AndRight" parent="Starts" node_paths=PackedStringArray("output_connection_1", "output_connection_2") instance=ExtResource("10_1gmlg")]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 72.0
+offset_right = 681.0
+offset_bottom = 103.0
+output_connection_1 = NodePath("../../Connections/Connection_Input_OrLeft_1")
+output_connection_2 = NodePath("../../Connections/Connection_Input_AndRight")
+
+[node name="StartForTwo_AndKitchen_OrRight" parent="Starts" node_paths=PackedStringArray("output_connection_1", "output_connection_2") instance=ExtResource("10_1gmlg")]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 488.0
+offset_right = 1099.0
+offset_bottom = 519.0
+output_connection_1 = NodePath("../../Connections/Connection_Input_OrRight_2")
+output_connection_2 = NodePath("../../Connections/Connection_Input_AndKitchen")
+
+[node name="Gatter" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 96.0
+offset_top = 456.0
+offset_right = 136.0
+offset_bottom = 496.0
+
+[node name="AndLeft" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("6_1gmlg")]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -296.0
+offset_right = 219.0
+offset_bottom = -265.0
+input_connection_1 = NodePath("../../Connections/Connection_Input_AndLeft")
+input_connection_2 = NodePath("../../Connections/Connection_OrLeft_AndLeft")
+output_connection = NodePath("../../Connections/Connection_AndLeft_AndChef")
+
+[node name="OrLeft" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("7_elwrv")]
+layout_mode = 0
+offset_left = 400.0
+offset_top = -296.0
+offset_right = 535.0
+offset_bottom = -265.0
+input_connection_1 = NodePath("../../Connections/Connection_Input_OrLeft_1")
+input_connection_2 = NodePath("../../Connections/Connection_Input_OrLeft_2")
+output_connection = NodePath("../../Connections/Connection_OrLeft_AndLeft")
+
+[node name="AndRight" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("6_1gmlg")]
+layout_mode = 0
+offset_left = 703.0
+offset_top = -296.0
+offset_right = 762.0
+offset_bottom = -265.0
+input_connection_1 = NodePath("../../Connections/Connection_Input_AndRight")
+input_connection_2 = NodePath("../../Connections/Connection_OrRight_AndRight")
+output_connection = NodePath("../../Connections/Connection_AndRight_AndKitchen")
+
+[node name="OrRight" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("7_elwrv")]
+layout_mode = 0
+offset_left = 864.0
+offset_top = -296.0
+offset_right = 999.0
+offset_bottom = -265.0
+input_connection_1 = NodePath("../../Connections/Connection_Input_OrRight_1")
+input_connection_2 = NodePath("../../Connections/Connection_Input_OrRight_2")
+output_connection = NodePath("../../Connections/Connection_OrRight_AndRight")
+
+[node name="AndKitchen" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("6_1gmlg")]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 40.0
+offset_right = 747.0
+offset_bottom = 71.0
+input_connection_1 = NodePath("../../Connections/Connection_AndRight_AndKitchen")
+input_connection_2 = NodePath("../../Connections/Connection_Input_AndKitchen")
+output_connection = NodePath("../../Connections/Connection_AndKitchen_AndChef")
+
+[node name="AndChef" parent="Gatter" node_paths=PackedStringArray("input_connection_1", "input_connection_2", "output_connection") instance=ExtResource("6_1gmlg")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 42.0
+offset_right = 203.0
+offset_bottom = 73.0
+input_connection_1 = NodePath("../../Connections/Connection_AndLeft_AndChef")
+input_connection_2 = NodePath("../../Connections/Connection_AndKitchen_AndChef")
+output_connection = NodePath("../../Connections/Connection_AndChef_ZIel")
+
+[node name="Arrows" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrows"]
+position = Vector2(288, 460)
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_ku0cy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrows"]
+position = Vector2(816, 463)
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_ku0cy")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Arrows"]
+position = Vector2(408, 176)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_ku0cy")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Arrows"]
+position = Vector2(336, 512)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_ku0cy")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Arrows"]
+position = Vector2(912, 176)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_ku0cy")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Arrows"]
+position = Vector2(288, 227)
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_ku0cy")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Arrows"]
+position = Vector2(748, 512)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_ku0cy")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Arrows"]
+position = Vector2(816, 224)
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_ku0cy")
+
+[connection signal="ziel_input_false" from="Ziel" to="." method="_on_ziel_ziel_input_false"]
+[connection signal="ziel_input_true" from="Ziel" to="." method="_on_ziel_ziel_input_true"]
+[connection signal="toggled" from="Starts/Start_OrRight" to="." method="_on_start_or_right_toggled"]
+[connection signal="toggled" from="Starts/Start_OrLeft" to="." method="_on_start_or_left_toggled"]
+[connection signal="toggled" from="Starts/Start_AndLeft" to="." method="_on_start_and_left_toggled"]
+[connection signal="toggled" from="Starts/StartForTwo_OrLeft_AndRight" to="." method="_on_start_for_two_or_left_and_right_toggled"]
+[connection signal="toggled" from="Starts/StartForTwo_AndKitchen_OrRight" to="." method="_on_start_for_two_and_kitchen_or_right_toggled"]

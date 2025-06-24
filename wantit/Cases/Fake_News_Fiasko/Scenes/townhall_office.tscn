@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bldto10pnrgj1"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_r34er"]
+[ext_resource type="Texture2D" uid="uid://ci6q43wqygr8t" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/townHall_office.png" id="2_r6f05"]
+
+[node name="Townhall Office" type="Node"]
+script = ExtResource("1_r34er")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299993, 0.299993)
+texture = ExtResource("2_r6f05")

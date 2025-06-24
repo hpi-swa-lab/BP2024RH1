@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://ccj76lj634433"
+path="res://.godot/imported/tomato.dialogue-7655bad40e404a9e5437024f5b261590.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/tomato.dialogue"
+dest_files=["res://.godot/imported/tomato.dialogue-7655bad40e404a9e5437024f5b261590.tres"]
+
+[params]
+
+defaults=true

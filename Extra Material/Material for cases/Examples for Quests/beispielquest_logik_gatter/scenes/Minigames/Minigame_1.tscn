@@ -67,9 +67,9 @@ offset_left = 1151.0
 offset_top = 3.0
 offset_right = -1.0
 offset_bottom = -645.0
-hint_1_text = "\"mindestens eins\" muss ein Eingangssignal bekommen, um es weiter zu leiten."
-hint_2_text = "\"beides\" muss beide Eingangssignale bekommen, um es weiter zu leiten."
-hint_3_text = "Probiere verschiedene Quellen anzuschalten, bis die Lampe leuchtet."
+hint_1_text = "\"mindestens eins\" muss ein eingangssignal bekommen um es weiter zu leiten"
+hint_2_text = "\"beides\" muss beide eingangssignale bekommen um es weiter zu leiten"
+hint_3_text = "Probiere verschiedene Quellen an zu schalten bis die Lampe leuchtet"
 Timer_hint_2_time = 2.0
 Timer_hint_3_time = 60.0
 

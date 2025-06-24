@@ -1,4 +1,8 @@
-body {background-color: #e0fbfc;}
+body {
+    background-color: #e0fbfc;
+    margin: 0;
+    padding: 0;
+  }
 
 .header {
     font-family: 'Knewave', cursive;
@@ -10,7 +14,7 @@ body {background-color: #e0fbfc;}
 
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     gap: 10px;

@@ -7,16 +7,6 @@ func _ready() -> void:
 	super._ready()
 	case_overview_opened.emit(self)
 
-#func Case_button_pressed(Case) -> void:
-	#%SelectButton.visible = true
-	#Globals.selectedCase = Case
-	#
-#func _on_select_button_pressed() -> void:
-	#SceneSwitcher.switch_scene(Globals.selectedCase.FirstScene)
-	##var img = load("res://Assets/Hinweistafel_basic.png").get_image()	# Doesnt work on web
-	##img.save_png("user://Assets/Hinweistafel.png")
-	#CaseManager.Hints.clear()
-
 func add_cases(cases_list: Array) -> void:
 	for _case in cases_list:
 		add_case(_case)

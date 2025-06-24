@@ -1,0 +1,33 @@
+~ default
+Maria: Schön, dass du es einrichten konntest. Ich brauche wirklich deine Hilfe. Ansonsten werde ich noch wahnsinnig.
+- Das klingt ja gar nicht gut. Ist etwas vorgefallen?
+	Maria: Es ist Honigwald. Ich glaube, er stellt mir nach und versucht die Neueröffnung von “Bitza” zu ruinieren.
+	- Bürgermeister Honigwald? => first_chosen
+	- Er verfolgt dich? => second_chosen
+
+~ first_chosen
+Maria: Ja genau. Jedes Mal, wenn ich frische Zutaten kaufen möchte, sind sie angeblich bereits für jemand anderen reserviert.
+Maria: Letzte Woche habe ich ihn dann gesehen, wie er mit der Standverkäuferin geredet hat.
+- Er verfolgt dich? 
+=> chase
+
+~ second_chosen
+Maria: Gestern lief mir auf dem Weg zum Restaurant die ganze Zeit eine Gestalt hinterher. Ich habe richtig Angst bekommen.
+=> Honigwald
+
+~ chase
+Maria: Gestern lief mir auf dem Weg zum Restaurant die ganze Zeit eine Gestalt hinterher. Ich habe richtig Angst bekommen.
+=> further
+
+~ Honigwald
+Maria: Ja genau. Jedes Mal, wenn ich frische Zutaten kaufen möchte, sind sie angeblich bereits für jemand anderen reserviert.
+Maria: Letzte Woche habe ich ihn dann gesehen, wie er mit der Standverkäuferin geredet hat.
+=> further
+
+~ further
+Maria: Letzte Woche gab es sogar einen versuchten Einbruch hier.
+- Das klingt wirklich ernst. Ich übernehme den Fall.
+Maria: Danke, endlich hört mir mal jemand zu!
+- Darf ich mich hier denn noch etwas umsehen?
+Maria: Aber klar doch.
+=> END

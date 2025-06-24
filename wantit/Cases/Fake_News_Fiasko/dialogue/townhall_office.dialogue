@@ -1,0 +1,18 @@
+~ default
+Bürgermeister Honigwald: Wenn das nicht der neue Stadtdetektiv ist! Endlich lernen wir uns auch mal kennen.
+Bürgermeister Honigwald: Was verschafft mir denn die Ehre?
+- Es gibt Hinweise darauf, jemand dem Ruf von Bitza schädigen möchte. 
+	Bürgermeister Honigwald: Bitza?
+	Bürgermeister Honigwald: Wenn überhaupt, dann ist es Maria selbst, die dem Ruf ihres Restaurants schädigt.
+	- Was meinen Sie damit?
+		Bürgermeister Honigwald: Die Hygienestandards sind ein Desaster. Das Geschirr ist immer dreckig.
+		Bürgermeister Honigwald: Außerdem zahlt Maria ihre Rechnungen zu spät und das Essen ist auch nicht gut. => further
+	- Ihr Auto ist beim Einbruch letzte Woche auf den Überwachunsgkameras von Bitza zu sehen.
+		Bürgermeister Honigwald: Das war ich nicht! Mein Auto wurde vor einiger Zeit geklaut. 
+		- Inwiefern schadet Maria selbst dem Ruf von “Bitza”?
+		Bürgermeister Honigwald: Die Hygienestandards sind ein Desaster. Das Geschirr ist immer dreckig.
+		Bürgermeister Honigwald: Außerdem zahlt Maria ihre Rechnungen zu spät und das Essen ist auch nicht gut. => further
+
+~ further
+Klaas: Nur, weil Honigwald der Bürgermeister ist, heißt das nicht, dass er die Wahrheit sagt. Wir sollten nochmal zurück ins Büro und die Aussagen überprüfen.
+=> END

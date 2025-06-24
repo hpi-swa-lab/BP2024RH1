@@ -107,8 +107,6 @@ func apply_dialogue_line() -> void:
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	#if dialogue_line.character == "Detective Turing":
 	#	portrait.texture = Globals.portrait
-	#else:
-	#	portrait.texture = Globals.npc_icon
 	
 	var portrait_path_format: String = "res://Assets/characters/%s.png"
 	var portrait_path: String = portrait_path_format % dialogue_line.character.replace("ä", "ae").replace("ö", "oe").replace("ü", "ue")

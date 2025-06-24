@@ -14,10 +14,31 @@
     <body>
         <h1 class="header">WantIT</h1>
         <div class="container">
-            <a href="Exports/Pixel_v5/Pixel_v5.html" target="_blank"><button>Diebstahl</button></a>
-            <a href="Exports/export_WantIT/export_WantIT.html" target="_blank"><button>Brandstiftung</button></a>
-            <a href="Exports/logik_gatter/beispielquest_logik_gatter.html" target="_blank"><button>Sabotage</button></a>
+            <a href="Exports/export_WantIT_en/export_WantIT_en.html" target="_blank"><button>English MVP</button></a>
             <a href="Exports/export_MVP/WantIT.html" target="_blank"><button>MVP</button></a>
+            <a href="Exports/export_logik_gatter/export_logik_gatter.html" target="_blank"><button>Sabotage</button></a>
+            <a href="Exports/pixel_export/Pixel_export.html" target="_blank"><button>Diebstahl</button></a>
+            <a href="Exports/export_WantIT/export_WantIT.html" target="_blank"><button>Brandstiftung</button></a>
+        </div>
+        <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background-color: #333; color: white; padding: 1em; display: none; z-index: 1000;">
+            <p style="margin: 0;">
+                Diese Website sammelt anonymisierte Daten zur Spielerfahrung. Durch Klick auf "Akzeptieren" stimmst du dem zu. 
+                <a href="datenschutz.html" style="color: #0af;">Mehr erfahren</a>
+            </p>
+            <button id="accept-cookies">
+                Akzeptieren
+            </button>
         </div>
     </body>
 </html>
+
+<script>
+  if (!localStorage.getItem("trackingConsent")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+
+  document.getElementById("accept-cookies").addEventListener("click", function() {
+    localStorage.setItem("trackingConsent", "true");
+    document.getElementById("cookie-banner").style.display = "none";
+  });
+</script>
