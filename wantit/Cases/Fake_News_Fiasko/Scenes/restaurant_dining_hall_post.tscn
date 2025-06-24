@@ -56,10 +56,12 @@ texture = ExtResource("2_ypx6j")
 [node name="Corridor" parent="." instance=ExtResource("3_7jjxw")]
 scale = Vector2(0.299943, 0.299943)
 texture_normal = ExtResource("5_u0ljl")
+requested_location_name = "Staff Room Post"
 
 [node name="Kitchen Door" parent="." instance=ExtResource("3_7jjxw")]
 scale = Vector2(0.299989, 0.299989)
 texture_normal = ExtResource("6_awnt1")
+requested_location_name = "Restaurant Kitchen Post"
 
 [node name="Restaurant Door" type="TextureButton" parent="."]
 offset_right = 40.0
