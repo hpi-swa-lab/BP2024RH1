@@ -70,16 +70,10 @@ func try_start_event() -> void:
 	
 func check_matching_event():
 	var player_items = get_player_items()
-	var best_match = null
 	for trigger in event_triggers:
-		if is_subset(trigger.conditions, player_items):
-			if best_match == null or best_match.conditions.size() < trigger.conditions.size():
-				best_match = trigger
-	
-	if best_match != null:
-		return best_match.location_name
-	else:
-		return null
+		if trigger.is_valid(player_items):
+			return trigger.location_name
+	return null
 
 func is_subset(subset: Array, superset: Array) -> bool:
 	for item in subset:
