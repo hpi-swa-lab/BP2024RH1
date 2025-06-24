@@ -125,10 +125,10 @@ item_dialogue = SubResource("Resource_3mx5k")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Screwdriver" type="TextureButton" parent="."]
-offset_left = 244.0
+offset_left = 236.0
 offset_top = 396.0
-offset_right = 4368.0
-offset_bottom = 4520.0
+offset_right = 4036.0
+offset_bottom = 4196.0
 rotation = 0.535832
 scale = Vector2(0.0818099, 0.0510003)
 texture_normal = ExtResource("4_fiei6")
