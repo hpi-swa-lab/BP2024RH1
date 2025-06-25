@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=28 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -16,7 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://ebi58jm4ckop" path="res://Cases/Introduction_Case/Scenes/minigame_1.tscn" id="11_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://bfhmvi5qb81eb" path="res://Scenes/inventory.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://bw7q816wdvvla" path="res://Cases/Introduction_Case/Scenes/minigame_2.tscn" id="12_215e1"]
-[ext_resource type="Script" uid="uid://btva00lvfk41s" path="res://Scripts/event_trigger.gd" id="14_215e1"]
+[ext_resource type="Script" uid="uid://duxdni5nv4je5" path="res://Scripts/event.gd" id="14_215e1"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="18_rvswv"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -24,28 +25,46 @@ case_slug = "default"
 case_title = ""
 case_location_scenes = Array[PackedScene]([ExtResource("3_7sc4i"), ExtResource("4_80cx4"), ExtResource("5_e8heu")])
 inventory_scene = ExtResource("11_mfdv2")
-event_triggers = Array[ExtResource("14_215e1")]([])
+events = Array[ExtResource("14_215e1")]([])
 metadata/_custom_type_script = "uid://ni774rbce31d"
+
+[sub_resource type="Resource" id="Resource_boyg6"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Pliers", "Screwdriver", "Waffle", "ShoeprintsOffice", "Fingerprints", "ShoeprintsKitchen", "Flour Sack", "Door"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_215e1"]
 script = ExtResource("14_215e1")
 event_name = "On all clues found"
 location_name = "Backery Kitchen"
-conditions = Array[String](["Pliers", "Screwdriver", "Waffle", "ShoeprintsOffice", "Fingerprints", "ShoeprintsKitchen", "Flour Sack", "Door"])
+start_condition = SubResource("Resource_boyg6")
 metadata/_custom_type_script = "uid://btva00lvfk41s"
+
+[sub_resource type="Resource" id="Resource_e36ub"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame1 completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_7sc4i"]
 script = ExtResource("14_215e1")
 event_name = "On minigame 1 completed"
 location_name = "Office"
-conditions = Array[String](["Minigame1 completed", "Waffle", "Key", "Pliers", "Screwdriver", "ShoeprintsKitchen", "Flour Sack", "ShoeprintsOffice", "Fingerprints"])
+start_condition = SubResource("Resource_e36ub")
 metadata/_custom_type_script = "uid://btva00lvfk41s"
+
+[sub_resource type="Resource" id="Resource_hb5m1"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame1 completed", "Minigame2 completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_80cx4"]
 script = ExtResource("14_215e1")
 event_name = "On minigame2 completed"
 location_name = "Office"
-conditions = Array[String](["Minigame2 completed", "Minigame1 completed"])
+start_condition = SubResource("Resource_hb5m1")
 metadata/_custom_type_script = "uid://btva00lvfk41s"
 
 [sub_resource type="Resource" id="Resource_feb5d"]
@@ -54,7 +73,7 @@ case_slug = "intro_case"
 case_title = "Introduction"
 case_location_scenes = Array[PackedScene]([ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p"), ExtResource("10_hve3p"), ExtResource("11_lc2xo"), ExtResource("12_215e1")])
 inventory_scene = ExtResource("11_mfdv2")
-event_triggers = Array[ExtResource("14_215e1")]([SubResource("Resource_215e1"), SubResource("Resource_7sc4i"), SubResource("Resource_80cx4")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_215e1"), SubResource("Resource_7sc4i"), SubResource("Resource_80cx4")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_rvswv"]
@@ -62,7 +81,7 @@ script = ExtResource("2_e2o6t")
 case_slug = ""
 case_title = "Fake News Fiasko"
 case_location_scenes = Array[PackedScene]([])
-event_triggers = Array[ExtResource("14_215e1")]([])
+events = Array[ExtResource("14_215e1")]([])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]
