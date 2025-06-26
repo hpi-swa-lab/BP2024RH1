@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c56icebaulvkr"]
+[gd_scene load_steps=24 format=3 uid="uid://c56icebaulvkr"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_nkg13"]
 [ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_dlka3"]
+[ext_resource type="Resource" uid="uid://bcscqbuobpwxi" path="res://Cases/Fake_News_Fiasko/dialogue/bitza_before_the_incident.dialogue" id="2_sc1h7"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_howjd"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_vgtot"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_8dvih"]
 [ext_resource type="Texture2D" uid="uid://cwy0eoxlbb6q1" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_door.png" id="4_sc1h7"]
 [ext_resource type="Texture2D" uid="uid://bls8b146qm6wj" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_corridor.png" id="5_vgtot"]
 [ext_resource type="Texture2D" uid="uid://bbo48asfsrktd" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_diningHall_kitchenDoor.png" id="6_8dvih"]
@@ -10,9 +13,69 @@
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="8_f0fo3"]
 [ext_resource type="Texture2D" uid="uid://dwwmecml2ao7j" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/menu.png" id="9_harlk"]
 [ext_resource type="Texture2D" uid="uid://cxk6i4v561glk" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_table.png" id="10_kl1bo"]
+[ext_resource type="Resource" uid="uid://4eus2ra4mm37" path="res://Cases/Fake_News_Fiasko/dialogue/newspaper.dialogue" id="12_8dvih"]
+[ext_resource type="Resource" uid="uid://ch8xnx8eiv6rm" path="res://Cases/Fake_News_Fiasko/dialogue/menu.dialogue" id="14_kkpox"]
 
-[node name="Restaurant Dining Hall Pre" type="Node"]
+[sub_resource type="Resource" id="Resource_kkpox"]
+script = ExtResource("3_vgtot")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_f0fo3"]
+script = ExtResource("3_vgtot")
+start_marker = "all_found"
+required_items = Array[String](["Tomato", "Newspaper", "Bill", "Menu", "Salesperson", "Business Card", "Plates", "Computer"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_ia5nu"]
+script = ExtResource("3_vgtot")
+start_marker = "evening"
+required_items = Array[String](["Minigame2 completed"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_harlk"]
+script = ExtResource("4_8dvih")
+dialogue_resource = ExtResource("2_sc1h7")
+is_dialogue = true
+dialogue_triggers = Array[ExtResource("3_vgtot")]([SubResource("Resource_kkpox"), SubResource("Resource_f0fo3"), SubResource("Resource_ia5nu")])
+start_automatically = false
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_8dvih"]
+script = ExtResource("3_vgtot")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_kl1bo"]
+script = ExtResource("4_8dvih")
+dialogue_resource = ExtResource("12_8dvih")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_vgtot")]([SubResource("Resource_8dvih")])
+start_automatically = false
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_1f00s"]
+script = ExtResource("3_vgtot")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_ur82f"]
+script = ExtResource("4_8dvih")
+dialogue_resource = ExtResource("14_kkpox")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_vgtot")]([SubResource("Resource_1f00s")])
+start_automatically = false
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Restaurant Dining Hall Pre" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_nkg13")
+location_name = "Restaurant Dining Hall Pre"
+items = [NodePath("Newspaper"), NodePath("Menu")]
+has_inventory = true
+location_dialogue = SubResource("Resource_harlk")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -24,14 +87,17 @@ texture = ExtResource("2_dlka3")
 [node name="Restaurant Door" parent="." instance=ExtResource("3_howjd")]
 scale = Vector2(0.300006, 0.300006)
 texture_normal = ExtResource("4_sc1h7")
+requested_location_name = "Market"
 
 [node name="Corridor" parent="." instance=ExtResource("3_howjd")]
 scale = Vector2(0.299943, 0.299943)
 texture_normal = ExtResource("5_vgtot")
+requested_location_name = "Staff Room Pre"
 
 [node name="Kitchen Door" parent="." instance=ExtResource("3_howjd")]
 scale = Vector2(0.299989, 0.299989)
 texture_normal = ExtResource("6_8dvih")
+requested_location_name = "Restaurant Kitchen Pre"
 
 [node name="Newspaper" type="TextureButton" parent="."]
 offset_left = 647.0
@@ -44,6 +110,7 @@ texture_normal = ExtResource("7_kkpox")
 script = ExtResource("8_f0fo3")
 item_name = "Newspaper"
 is_collectable = true
+item_dialogue = SubResource("Resource_kl1bo")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Menu" type="TextureButton" parent="."]
@@ -57,11 +124,13 @@ texture_normal = ExtResource("9_harlk")
 script = ExtResource("8_f0fo3")
 item_name = "Menu"
 is_collectable = true
+item_dialogue = SubResource("Resource_ur82f")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Table" parent="." instance=ExtResource("3_howjd")]
 scale = Vector2(0.300115, 0.300115)
 texture_normal = ExtResource("10_kl1bo")
+requested_location_name = "Table CloseUp"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
