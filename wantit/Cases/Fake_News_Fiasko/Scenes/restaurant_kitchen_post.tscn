@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ymhk1mswieql"]
+[gd_scene load_steps=11 format=3 uid="uid://ymhk1mswieql"]
 
 [ext_resource type="Script" uid="uid://be6xv7tkfnm7k" path="res://Cases/Fake_News_Fiasko/Scripts/restaurant_kitchen_pre.gd" id="1_1hnin"]
 [ext_resource type="Texture2D" uid="uid://bkkhrgyx3xaor" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_kitchen.png" id="2_2wem3"]
@@ -6,39 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bslcgs8ca8pwk" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_kitchen_kitchenDoor.png" id="4_8a1a2"]
 [ext_resource type="Texture2D" uid="uid://cqaa16jfvxo51" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/olive_oil.png" id="5_2wem3"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_nmolw"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="7_pjjgk"]
-[ext_resource type="Resource" uid="uid://cra8eeth8r2on" path="res://Cases/Fake_News_Fiasko/dialogue/olive_oil.dialogue" id="8_nmolw"]
 [ext_resource type="Texture2D" uid="uid://c757tqbn4dnl3" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/cupboard_halfOpen.png" id="8_uf524"]
-[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="9_1hnin"]
-[ext_resource type="Texture2D" uid="uid://bmwbnnhqnousl" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/plate_with_bruschetta.png" id="9_eomkl"]
+[ext_resource type="Texture2D" uid="uid://c34f2687jecy4" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/plate_with_bruschetta.png" id="9_eomkl"]
 [ext_resource type="Texture2D" uid="uid://cr81owgk86j2m" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/cupboard_open.png" id="9_i5lmj"]
 [ext_resource type="Texture2D" uid="uid://bnbgg0jt8015i" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/gloves.png" id="10_8a1a2"]
-[ext_resource type="Resource" uid="uid://c50ttg2in6ont" path="res://Cases/Fake_News_Fiasko/dialogue/plate_with_bruschetta.dialogue" id="13_nmolw"]
-[ext_resource type="Resource" uid="uid://66uwkdkwad5u" path="res://Cases/Fake_News_Fiasko/dialogue/gloves.dialogue" id="15_1hnin"]
-
-[sub_resource type="Resource" id="Resource_uf524"]
-script = ExtResource("9_1hnin")
-dialogue_resource = ExtResource("8_nmolw")
-is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("7_pjjgk")]([])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
-
-[sub_resource type="Resource" id="Resource_1hnin"]
-script = ExtResource("9_1hnin")
-dialogue_resource = ExtResource("13_nmolw")
-is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("7_pjjgk")]([])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
-
-[sub_resource type="Resource" id="Resource_i5lmj"]
-script = ExtResource("9_1hnin")
-dialogue_resource = ExtResource("15_1hnin")
-is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("7_pjjgk")]([])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Restaurant Kitchen Post" type="Node"]
 script = ExtResource("1_1hnin")
@@ -66,7 +37,6 @@ texture_normal = ExtResource("5_2wem3")
 script = ExtResource("6_nmolw")
 item_name = "Olive Oil"
 is_collectable = true
-dialogue = SubResource("Resource_uf524")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Cupboard halfOpen" type="TextureButton" parent="."]
@@ -100,7 +70,6 @@ texture_normal = ExtResource("9_eomkl")
 script = ExtResource("6_nmolw")
 item_name = "Bruschetta"
 is_collectable = true
-dialogue = SubResource("Resource_1hnin")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Gloves" type="TextureButton" parent="."]
@@ -114,5 +83,4 @@ texture_normal = ExtResource("10_8a1a2")
 script = ExtResource("6_nmolw")
 item_name = "Gloves"
 is_collectable = true
-dialogue = SubResource("Resource_i5lmj")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"

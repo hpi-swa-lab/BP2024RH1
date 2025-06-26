@@ -8,8 +8,8 @@ func _ready() -> void:
 	case_overview_opened.emit(self)
 
 func add_cases(cases_list: Array) -> void:
-	for case in cases_list:
-		add_case(case)
+	for _case in cases_list:
+		add_case(_case)
 
 func add_case(case_title) -> void:
 	#create pre-configured case_selection_button that could be enabled/disabled for completed cases

@@ -46,8 +46,8 @@ func check_statement_count():
 func _on_check_pressed() -> void:
 	if check_solution():
 		DialogueManager.show_dialogue_balloon_scene(
-			dialogue.baloon_type,
-			dialogue.dialogue_resource,
+			location_dialogue.baloon_type,
+			location_dialogue.dialogue_resource,
 			"minigame_completed")
 		await DialogueManager.dialogue_ended
 		

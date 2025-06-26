@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://yqylabdsb17c"]
+[gd_scene load_steps=8 format=3 uid="uid://yqylabdsb17c"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_egatl"]
 [ext_resource type="Texture2D" uid="uid://bn70t63m1ncmv" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_staffRoom.png" id="2_vo8kx"]
@@ -56,7 +56,6 @@ texture_normal = ExtResource("5_ki6wb")
 script = ExtResource("6_s635b")
 item_name = "Bill"
 is_collectable = true
-dialogue = SubResource("Resource_s635b")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Computer" type="TextureButton" parent="."]
@@ -66,5 +65,4 @@ scale = Vector2(0.299978, 0.299978)
 texture_normal = ExtResource("7_ss0xk")
 script = ExtResource("6_s635b")
 item_name = "Computer"
-dialogue = SubResource("Resource_ss0xk")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"

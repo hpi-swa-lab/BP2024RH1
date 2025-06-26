@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://h5osa7tfgokv"]
+[gd_scene load_steps=7 format=3 uid="uid://h5osa7tfgokv"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_433j7"]
 [ext_resource type="Texture2D" uid="uid://bn70t63m1ncmv" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_staffRoom.png" id="2_b8ubl"]
@@ -6,17 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://o658ibljvhy6" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_staffRoom_door.png" id="4_m5xvr"]
 [ext_resource type="Texture2D" uid="uid://cvr74k3yv2q00" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/cereal_bar.png" id="5_f5kq4"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_h4rxl"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="7_x80cb"]
-[ext_resource type="Resource" uid="uid://4lc413o3i3pm" path="res://Cases/Fake_News_Fiasko/dialogue/cereal_bar.dialogue" id="8_m5xvr"]
-[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="9_dxrd4"]
-
-[sub_resource type="Resource" id="Resource_h4rxl"]
-script = ExtResource("9_dxrd4")
-dialogue_resource = ExtResource("8_m5xvr")
-is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("7_x80cb")]([])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Staff Room Post" type="Node"]
 script = ExtResource("1_433j7")
@@ -44,5 +33,4 @@ scale = Vector2(0.153755, 0.153755)
 texture_normal = ExtResource("5_f5kq4")
 script = ExtResource("6_h4rxl")
 item_name = "Cereal Bar"
-dialogue = SubResource("Resource_h4rxl")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"

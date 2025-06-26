@@ -57,7 +57,6 @@ texture_normal = ExtResource("4_gn0um")
 script = ExtResource("5_86yk7")
 item_name = "Tomato"
 is_collectable = true
-dialogue = SubResource("Resource_blr12")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("9_dea4o")]

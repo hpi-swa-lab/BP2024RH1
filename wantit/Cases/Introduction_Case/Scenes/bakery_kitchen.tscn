@@ -1,113 +1,131 @@
-[gd_scene load_steps=33 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=36 format=3 uid="uid://bto1uem2cnbyr"]
 
 [ext_resource type="Script" uid="uid://c62j4fhwfi6xe" path="res://Cases/Introduction_Case/Scripts/bakery_kitchen.gd" id="1_7deum"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_3wxj5"]
-[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_cpead"]
-[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_24rd3"]
-[ext_resource type="Resource" uid="uid://5h6ml2l8cdb1" path="res://dialogue/backery_kitchen.dialogue" id="4_fmamt"]
+[ext_resource type="Resource" uid="uid://5h6ml2l8cdb1" path="res://dialogue/backery_kitchen.dialogue" id="2_24rd3"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_tcx5q"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_e1im7"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_esf5q"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_88u8x"]
 [ext_resource type="Texture2D" uid="uid://db364nyl3k8a8" path="res://Cases/Introduction_Case/assets/interactable_items/door_office.png" id="4_snjqx"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="4_tcx5q"]
 [ext_resource type="Texture2D" uid="uid://bm5uradd7vnhp" path="res://Cases/Introduction_Case/assets/interactable_items/floursack.png" id="5_elfe8"]
 [ext_resource type="Texture2D" uid="uid://cn256ss6v6oay" path="res://Cases/Introduction_Case/assets/interactable_items/floursack_key.png" id="6_l61y1"]
 [ext_resource type="Texture2D" uid="uid://cac4ru4ujuip0" path="res://Cases/Introduction_Case/assets/collectible_items/key.png" id="6_ts2v5"]
-[ext_resource type="Resource" uid="uid://p48khhl5trq3" path="res://dialogue/flour_sack.dialogue" id="11_88u8x"]
+[ext_resource type="Resource" uid="uid://p48khhl5trq3" path="res://dialogue/flour_sack.dialogue" id="11_fmamt"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="11_lftgu"]
 [ext_resource type="Texture2D" uid="uid://dwtfx6evqouww" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_kitchen.png" id="11_snjqx"]
 [ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
 [ext_resource type="Script" uid="uid://kke8b67onflp" path="res://Cases/Introduction_Case/Scripts/key_action.gd" id="13_24rd3"]
+[ext_resource type="Resource" uid="uid://denb1mkdgx7go" path="res://dialogue/key.dialogue" id="13_e1im7"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="14_cpead"]
-[ext_resource type="Resource" uid="uid://ddaf0l8q8rygd" path="res://dialogue/shoe_prints_bakery.dialogue" id="15_e1im7"]
-[ext_resource type="Resource" uid="uid://denb1mkdgx7go" path="res://dialogue/key.dialogue" id="15_tcx5q"]
-[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="16_88u8x"]
+[ext_resource type="Resource" uid="uid://ddaf0l8q8rygd" path="res://dialogue/shoe_prints_bakery.dialogue" id="16_88u8x"]
 
-[sub_resource type="Resource" id="Resource_e1im7"]
-script = ExtResource("3_24rd3")
+[sub_resource type="Resource" id="Resource_5k172"]
+script = ExtResource("3_esf5q")
 mode = 2
-required_items = Array[String](["ShoeprintsKitchen", "Key"])
+required_items = Array[String](["ShoeprintsKitchen"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
-[sub_resource type="Resource" id="Resource_88u8x"]
-script = ExtResource("2_cpead")
+[sub_resource type="Resource" id="Resource_ntdmg"]
+script = ExtResource("2_tcx5q")
 hint_text = "Was sind denn das für Spuren auf dem Boden?"
-hint_condition = SubResource("Resource_e1im7")
+hint_condition = SubResource("Resource_5k172")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
-[sub_resource type="Resource" id="Resource_fmamt"]
-script = ExtResource("3_24rd3")
+[sub_resource type="Resource" id="Resource_frhi8"]
+script = ExtResource("3_esf5q")
 mode = 2
 required_items = Array[String](["Key"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
-[sub_resource type="Resource" id="Resource_tcx5q"]
-script = ExtResource("2_cpead")
+[sub_resource type="Resource" id="Resource_w4ixk"]
+script = ExtResource("2_tcx5q")
 hint_text = "Der umgefallene Mehlsack sieht sehr verdächtig aus"
-hint_condition = SubResource("Resource_fmamt")
+hint_condition = SubResource("Resource_frhi8")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
-[sub_resource type="Resource" id="Resource_esf5q"]
-script = ExtResource("3_24rd3")
+[sub_resource type="Resource" id="Resource_lso0w"]
+script = ExtResource("3_esf5q")
 mode = 0
-required_items = Array[String](["ShoeprintsKitchen", "Key"])
+required_items = Array[String](["Key", "ShoeprintsKitchen"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
-[sub_resource type="Resource" id="Resource_b6n05"]
-script = ExtResource("2_cpead")
+[sub_resource type="Resource" id="Resource_5sn1g"]
+script = ExtResource("2_tcx5q")
 hint_text = "In der Backstube sehe ich keine Auffälligkeiten mehr"
-hint_condition = SubResource("Resource_esf5q")
+hint_condition = SubResource("Resource_lso0w")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
-[sub_resource type="Resource" id="Resource_8hhtx"]
-script = ExtResource("4_tcx5q")
-dialogue_start = "found_hints"
-required_items = Array[String](["Waffle", "Flour Sack", "ShoeprintsKitchen", "ShoeprintsOffice", "Fingerprints", "Pliers", "Screwdriver", "Door"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_ntdmg"]
-script = ExtResource("4_tcx5q")
-dialogue_start = "default"
+[sub_resource type="Resource" id="Resource_fmamt"]
+script = ExtResource("3_e1im7")
+start_marker = "default"
 required_items = Array[String]([])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
+[sub_resource type="Resource" id="Resource_tcx5q"]
+script = ExtResource("3_e1im7")
+start_marker = "found_hints"
+required_items = Array[String](["Door", "Fingerprints", "Waffle", "Pliers", "Screwdriver", "ShoeprintsKitchen", "ShoeprintsOffice", "Flour Sack"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_esf5q"]
+script = ExtResource("4_88u8x")
+dialogue_resource = ExtResource("2_24rd3")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_e1im7")]([SubResource("Resource_fmamt"), SubResource("Resource_tcx5q")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
 [sub_resource type="Resource" id="Resource_yhauu"]
-script = ExtResource("16_88u8x")
-dialogue_resource = ExtResource("4_fmamt")
+script = ExtResource("3_e1im7")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_8hhtx"]
+script = ExtResource("4_88u8x")
+dialogue_resource = ExtResource("11_fmamt")
 is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("4_tcx5q")]([SubResource("Resource_8hhtx"), SubResource("Resource_ntdmg")])
+dialogue_triggers = Array[ExtResource("3_e1im7")]([SubResource("Resource_yhauu")])
+start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[sub_resource type="Resource" id="Resource_5sn1g"]
-script = ExtResource("16_88u8x")
-dialogue_resource = ExtResource("11_88u8x")
-is_dialogue = false
-is_monologue = false
-conditions = Array[ExtResource("4_tcx5q")]([])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+[sub_resource type="Resource" id="Resource_88u8x"]
+script = ExtResource("3_e1im7")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
-[sub_resource type="Resource" id="Resource_nnyh4"]
-script = ExtResource("16_88u8x")
-dialogue_resource = ExtResource("15_tcx5q")
+[sub_resource type="Resource" id="Resource_b6n05"]
+script = ExtResource("4_88u8x")
+dialogue_resource = ExtResource("13_e1im7")
 is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("4_tcx5q")]([])
+dialogue_triggers = Array[ExtResource("3_e1im7")]([SubResource("Resource_88u8x")])
+start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [sub_resource type="Resource" id="Resource_q61cs"]
-script = ExtResource("16_88u8x")
-dialogue_resource = ExtResource("15_e1im7")
+script = ExtResource("3_e1im7")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_nnyh4"]
+script = ExtResource("4_88u8x")
+dialogue_resource = ExtResource("16_88u8x")
 is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("4_tcx5q")]([])
+dialogue_triggers = Array[ExtResource("3_e1im7")]([SubResource("Resource_q61cs")])
+start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Bakery Kitchen" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_7deum")
 location_name = "Backery Kitchen"
-items = [NodePath("Key"), NodePath("Shoe Prints"), NodePath("Flour Sack")]
-hints = Array[ExtResource("2_cpead")]([SubResource("Resource_88u8x"), SubResource("Resource_tcx5q"), SubResource("Resource_b6n05")])
-dialogue = SubResource("Resource_yhauu")
+items = [NodePath("Flour Sack"), NodePath("Key"), NodePath("Shoe Prints")]
+hints = Array[ExtResource("2_tcx5q")]([SubResource("Resource_ntdmg"), SubResource("Resource_w4ixk"), SubResource("Resource_5sn1g")])
 has_inventory = true
+location_dialogue = SubResource("Resource_esf5q")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -121,9 +139,6 @@ scale = Vector2(0.300266, 0.300266)
 texture_normal = ExtResource("4_snjqx")
 requested_location_name = "Bakery Office"
 
-[node name="Helpsystem" parent="." instance=ExtResource("12_7deum")]
-mouse_filter = 2
-
 [node name="Flour Sack" type="TextureButton" parent="."]
 unique_name_in_owner = true
 z_index = 1
@@ -134,7 +149,7 @@ texture_normal = ExtResource("5_elfe8")
 texture_disabled = ExtResource("6_l61y1")
 script = ExtResource("14_cpead")
 item_name = "Flour Sack"
-dialogue = SubResource("Resource_5sn1g")
+item_dialogue = SubResource("Resource_8hhtx")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Key" type="TextureButton" parent="."]
@@ -150,8 +165,8 @@ texture_normal = ExtResource("6_ts2v5")
 script = ExtResource("14_cpead")
 item_name = "Key"
 is_collectable = true
-dialogue = SubResource("Resource_nnyh4")
 action_script = ExtResource("13_24rd3")
+item_dialogue = SubResource("Resource_b6n05")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("2_3wxj5")]
@@ -165,12 +180,17 @@ texture_normal = ExtResource("11_lftgu")
 requested_location_name = "Showroom"
 
 [node name="Shoe Prints" type="TextureButton" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
 scale = Vector2(0.299523, 0.299523)
 texture_normal = ExtResource("11_snjqx")
 script = ExtResource("14_cpead")
 item_name = "ShoeprintsKitchen"
-dialogue = SubResource("Resource_q61cs")
+item_dialogue = SubResource("Resource_nnyh4")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Helpsystem" parent="." instance=ExtResource("12_7deum")]
+mouse_filter = 2
 
 [connection signal="pressed" from="Flour Sack" to="." method="_on_flour_sack_pressed"]
 [connection signal="pressed" from="Key" to="." method="_on_key_pressed"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://c56icebaulvkr"]
+[gd_scene load_steps=11 format=3 uid="uid://c56icebaulvkr"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_nkg13"]
 [ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_dlka3"]
-[ext_resource type="Resource" uid="uid://bcscqbuobpwxi" path="res://Cases/Fake_News_Fiasko/dialogue/bitza_before_the_incident.dialogue" id="3_8dvih"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_howjd"]
 [ext_resource type="Texture2D" uid="uid://cwy0eoxlbb6q1" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_door.png" id="4_sc1h7"]
 [ext_resource type="Texture2D" uid="uid://bls8b146qm6wj" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_corridor.png" id="5_vgtot"]
@@ -10,58 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://c6x65cchj11l2" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/newspaper.png" id="7_kkpox"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="8_f0fo3"]
 [ext_resource type="Texture2D" uid="uid://dwwmecml2ao7j" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/menu.png" id="9_harlk"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="9_sc1h7"]
 [ext_resource type="Texture2D" uid="uid://cxk6i4v561glk" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_table.png" id="10_kl1bo"]
-[ext_resource type="Resource" uid="uid://4eus2ra4mm37" path="res://Cases/Fake_News_Fiasko/dialogue/newspaper.dialogue" id="10_vgtot"]
-[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="11_8dvih"]
-[ext_resource type="Resource" uid="uid://ch8xnx8eiv6rm" path="res://Cases/Fake_News_Fiasko/dialogue/menu.dialogue" id="13_vgtot"]
-
-[sub_resource type="Resource" id="Resource_f0fo3"]
-script = ExtResource("9_sc1h7")
-dialogue_start = "default"
-required_items = Array[String]([])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_kl1bo"]
-script = ExtResource("9_sc1h7")
-dialogue_start = "all_found"
-required_items = Array[String](["Tomato", "Newspaper", "Menu", "Bill", "Plates", "Salesperson", "Business Card", "Computer"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_ur82f"]
-script = ExtResource("9_sc1h7")
-dialogue_start = "evening"
-required_items = Array[String](["Tomato", "Newspaper", "Menu", "Bill", "Plates", "Salesperson", "Computer", "Business Card", "Minigame1 completed"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_harlk"]
-script = ExtResource("11_8dvih")
-dialogue_resource = ExtResource("3_8dvih")
-is_dialogue = true
-is_monologue = false
-conditions = Array[ExtResource("9_sc1h7")]([SubResource("Resource_f0fo3"), SubResource("Resource_kl1bo"), SubResource("Resource_ur82f")])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
-
-[sub_resource type="Resource" id="Resource_kkpox"]
-script = ExtResource("11_8dvih")
-dialogue_resource = ExtResource("10_vgtot")
-is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("9_sc1h7")]([])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
-
-[sub_resource type="Resource" id="Resource_8dvih"]
-script = ExtResource("11_8dvih")
-dialogue_resource = ExtResource("13_vgtot")
-is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("9_sc1h7")]([])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Restaurant Dining Hall Pre" type="Node"]
 script = ExtResource("1_nkg13")
 location_name = "Restaurant Dining Hall Pre"
-dialogue = SubResource("Resource_harlk")
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
@@ -97,7 +49,6 @@ texture_normal = ExtResource("7_kkpox")
 script = ExtResource("8_f0fo3")
 item_name = "Newspaper"
 is_collectable = true
-dialogue = SubResource("Resource_kkpox")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Menu" type="TextureButton" parent="."]
@@ -111,7 +62,6 @@ texture_normal = ExtResource("9_harlk")
 script = ExtResource("8_f0fo3")
 item_name = "Menu"
 is_collectable = true
-dialogue = SubResource("Resource_8dvih")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Table" parent="." instance=ExtResource("3_howjd")]

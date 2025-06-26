@@ -83,8 +83,8 @@ func set_level():
 				%VBoxContainer.remove_child(element)
 	else:
 		DialogueManager.show_dialogue_balloon_scene(
-			dialogue.baloon_type,
-			dialogue.dialogue_resource,
+			location_dialogue.baloon_type,
+			location_dialogue.dialogue_resource,
 			"minigame_completed")
 		await DialogueManager.dialogue_ended
 	relevant_posts = []

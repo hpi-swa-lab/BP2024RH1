@@ -45,15 +45,15 @@ text = "404 keine Hinweise"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CloseBtn" type="TextureRect" parent="."]
+[node name="CloseButton" type="TextureButton" parent="."]
 z_index = 1
 layout_mode = 2
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 60.0
-offset_bottom = 60.0
+offset_left = -14.0
+offset_top = -15.0
+offset_right = 498.0
+offset_bottom = 497.0
+scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(25, 25)
-texture = ExtResource("2_6qk7a")
-expand_mode = 1
+texture_normal = ExtResource("2_6qk7a")
 
-[connection signal="gui_input" from="CloseBtn" to="." method="_on_close_btn_gui_input"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

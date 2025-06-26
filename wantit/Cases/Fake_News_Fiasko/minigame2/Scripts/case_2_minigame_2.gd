@@ -85,8 +85,8 @@ func check_statement_count():
 	elif statement_count == 0:
 		if check_solution():
 			DialogueManager.show_dialogue_balloon_scene(
-			dialogue.baloon_type,
-			dialogue.dialogue_resource,
+			location_dialogue.baloon_type,
+			location_dialogue.dialogue_resource,
 			"minigame_completed")
 			await DialogueManager.dialogue_ended
 			

@@ -1,50 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://b63bftslmjany"]
+[gd_scene load_steps=9 format=3 uid="uid://b63bftslmjany"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_q2nd0"]
 [ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_ypx6j"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_7jjxw"]
-[ext_resource type="Resource" uid="uid://cl2lyl8px4w0e" path="res://Cases/Fake_News_Fiasko/dialogue/bitza_after_the_incident.dialogue" id="3_36tf7"]
 [ext_resource type="Texture2D" uid="uid://cwy0eoxlbb6q1" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_door.png" id="4_36tf7"]
 [ext_resource type="Texture2D" uid="uid://bls8b146qm6wj" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_corridor.png" id="5_u0ljl"]
 [ext_resource type="Texture2D" uid="uid://bbo48asfsrktd" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_diningHall_kitchenDoor.png" id="6_awnt1"]
 [ext_resource type="Texture2D" uid="uid://dsbsaf1p0rnor" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/glass.png" id="8_2fy1u"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="8_wabrf"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="9_ypx6j"]
-[ext_resource type="Resource" uid="uid://c56qadgnnokp0" path="res://Cases/Fake_News_Fiasko/dialogue/empty_glass.dialogue" id="10_7jjxw"]
-[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="11_36tf7"]
-
-[sub_resource type="Resource" id="Resource_7jjxw"]
-script = ExtResource("9_ypx6j")
-dialogue_start = "default"
-required_items = Array[String]([])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_36tf7"]
-script = ExtResource("9_ypx6j")
-dialogue_start = "all_found"
-required_items = Array[String](["Olive Oil", "Bruschetta"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_awnt1"]
-script = ExtResource("11_36tf7")
-dialogue_resource = ExtResource("3_36tf7")
-is_dialogue = true
-is_monologue = false
-conditions = Array[ExtResource("9_ypx6j")]([SubResource("Resource_7jjxw"), SubResource("Resource_36tf7")])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
-
-[sub_resource type="Resource" id="Resource_u0ljl"]
-script = ExtResource("11_36tf7")
-dialogue_resource = ExtResource("10_7jjxw")
-is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("9_ypx6j")]([])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Restaurant Dining Hall Post" type="Node"]
 script = ExtResource("1_q2nd0")
 location_name = "Restaurant Dining Hall Post"
-dialogue = SubResource("Resource_awnt1")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -80,5 +47,4 @@ scale = Vector2(0.072621, 0.072621)
 texture_normal = ExtResource("8_2fy1u")
 script = ExtResource("8_wabrf")
 item_name = "Glass"
-dialogue = SubResource("Resource_u0ljl")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
