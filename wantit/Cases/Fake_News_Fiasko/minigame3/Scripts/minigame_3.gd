@@ -78,15 +78,16 @@ func set_level():
 		%Option1.text = "Glaubwürdig"
 		%Option2.text = "Unglaubwürdig"
 		for element in %VBoxContainer.get_children():
+			print(element)
 			element.show()
-			if post not in relevant_posts:
+			if element not in relevant_posts:
+				print("removing", element)
 				%VBoxContainer.remove_child(element)
 	else:
-		DialogueManager.show_dialogue_balloon_scene(
-			location_dialogue.baloon_type,
-			location_dialogue.dialogue_resource,
-			"minigame_completed")
-		await DialogueManager.dialogue_ended
+		var interaction_item = Item.new()
+		interaction_item.item_name = "Minigame3 completed"
+		item_found.emit(interaction_item)
+		
 	relevant_posts = []
 
 func _on_option_1_pressed() -> void:

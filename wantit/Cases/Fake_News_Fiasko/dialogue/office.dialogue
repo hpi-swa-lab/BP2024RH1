@@ -15,9 +15,12 @@ Klaas: Und? Wen sollen wir noch einmal genauer befragen?
 	- Die gute Nachricht zuerst
 		Klaas: Alle Gäste haben sich von dem Vorfall erholt.
 		Klaas: Allerdings konnten wir Maria nichts nachweisen. Nach dem Spektakel möchte sie Bitza aber auch nicht weiterführen. Sie meint, es werden ja sowieso keine Gäste mehr kommen.
+		do complete_case()
 	- Die schlechte Nachricht zuerst
 		Klaas: Wir konnten Maria nichts nachweisen. Nach dem Spektakel möchte sie Bitza aber auch nicht weiterführen. Sie meint, es werden ja sowieso keine Gäste mehr kommen.
 		Klaas: Jetzt die gute Nachricht. Alle Gäste haben sich von dem Vorfall erholt.
+		do complete_case()
 - Honigwald
 	Klaas: Honigwald hat es tatsächlich zugegeben. “Bitza” läuft jetzt auch wieder, nachdem klar ist, dass Maria ihre Gäste nicht vergiften wollte. Jetzt brauchen wir wohl nur einen neuen Bürgermeister.
+	do complete_case()
 => END

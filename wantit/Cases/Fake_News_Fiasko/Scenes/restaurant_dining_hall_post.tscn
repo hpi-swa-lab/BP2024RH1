@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b63bftslmjany"]
+[gd_scene load_steps=21 format=3 uid="uid://b63bftslmjany"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_q2nd0"]
 [ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_ypx6j"]
@@ -34,11 +34,17 @@ dialogue_triggers = Array[ExtResource("9_ypx6j")]([SubResource("Resource_awnt1")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
+[sub_resource type="Resource" id="Resource_bdbmp"]
+script = ExtResource("9_ypx6j")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
 [sub_resource type="Resource" id="Resource_36tf7"]
 script = ExtResource("11_36tf7")
 dialogue_resource = ExtResource("8_7jjxw")
 is_dialogue = false
-dialogue_triggers = Array[ExtResource("9_ypx6j")]([])
+dialogue_triggers = Array[ExtResource("9_ypx6j")]([SubResource("Resource_bdbmp")])
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
@@ -56,9 +62,10 @@ dialogue_triggers = Array[ExtResource("9_ypx6j")]([SubResource("Resource_urpk3")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="Restaurant Dining Hall Post" type="Node"]
+[node name="Restaurant Dining Hall Post" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_q2nd0")
 location_name = "Restaurant Dining Hall Post"
+items = [NodePath("Empty Glass"), NodePath("Restaurant Door")]
 location_dialogue = SubResource("Resource_wabrf")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 

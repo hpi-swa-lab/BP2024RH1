@@ -23,11 +23,11 @@ func _on_statement_selected(new_statement: Control):
 	selected_statement = new_statement
 
 func _on_false_button_pressed() -> void:
-	add_statement_to_array(0)
+	add_statement_to_array(1)
 
 
 func _on_true_button_pressed() -> void:
-	add_statement_to_array(1)
+	add_statement_to_array(0)
 
 
 func add_statement_to_array(category_value: int):

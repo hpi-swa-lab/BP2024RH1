@@ -61,7 +61,8 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [node name="Restaurant Kitchen Post" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_1hnin")
 location_name = "Restaurant Kitchen Post"
-items = [NodePath("Gloves"), NodePath("Olive Oil"), NodePath("Bruschetta")]
+items = [NodePath("Olive Oil"), NodePath("Bruschetta"), NodePath("Gloves")]
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -135,3 +136,6 @@ item_name = "Gloves"
 is_collectable = true
 item_dialogue = SubResource("Resource_pl671")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[connection signal="pressed" from="Cupboard halfOpen" to="." method="_on_cupboard_half_open_pressed"]
+[connection signal="pressed" from="Cupboard open" to="." method="_on_cupboard_open_pressed"]

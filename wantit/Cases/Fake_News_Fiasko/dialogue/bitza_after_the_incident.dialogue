@@ -10,4 +10,5 @@ Maria: Ich überprüfe meine Zutaten regelmäßig. Jemand muss das Reinigungsmit
 Maria: Das war bestimmt Honigwald. Er möchte mein Business sabotieren!
 Bürgermeister Honigwald: Nein! Das war Maria selbst und behauptet jetzt, dass ich es gewesen bin, um mich öffentlich zu ruinieren.
 Klaas: Beruhigen Sie sich! Wir werden schon noch herausfinden, wer es gewesen ist.
+do _on_location_switch_requested("Office")
 => END
