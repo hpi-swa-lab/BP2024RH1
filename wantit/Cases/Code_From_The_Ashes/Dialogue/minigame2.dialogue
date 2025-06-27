@@ -1,0 +1,16 @@
+~ default
+Was könnte das Schlüsselwort sein? Gibt es noch einen Gegenstand vom Tatort, der mir weiterhelfen kann?
+=> END
+
+# evtl sollten diese Texte für die Items zu den Items?
+~ punch_card
+Ich glaube nicht, dass der Name des Restaurants das Schlüsselwort ist.
+=> END
+
+~ caesar_statue
+Die Verschiebung hilft mir nicht weiter.
+=> END
+
+~ dog_picture
+Die Verschiebung hilft mir nicht weiter.
+=> END

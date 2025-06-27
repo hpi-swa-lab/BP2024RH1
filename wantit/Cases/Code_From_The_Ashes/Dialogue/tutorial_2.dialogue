@@ -1,0 +1,18 @@
+~ default
+Klaas: Nehmen wir mal an, das Schlüsselwort ist [b]Teller[\b].
+Klaas: Zunächst werden alle doppelten Buchstaben entfernt.
+
+Klaas: Aus TELLER wird dann also TELR.
+
+Klaas: Betrachten wir nun das Alphabet.
+
+Klaas: Das modifizierte Schlüsselwort wird an den Anfang des Alphabets geschrieben.
+
+Klaas: Anschließend schreiben wir das restliche Alphabet dahinter.
+Klaas: Buchstaben, die bereits im Schlüsselwort enthalten sind, lassen wir dabei aus.
+
+Klaas: Schlussendlich besteht unser Geheimalphabet aus dem Schlüsselwort am Anfang und den verbleibenden Buchstaben in ihrer bekannten Reihenfolge danach.
+
+Klaas: Hast du das soweit verstanden?
+- Könntest du die Erklärung nochmal wiederholen? => default
+- Ja, ich denke schon. => END

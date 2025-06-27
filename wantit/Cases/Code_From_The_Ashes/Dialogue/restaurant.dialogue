@@ -1,0 +1,31 @@
+~ default
+Bedienung: Guten Abend, haben Sie noch keinen Tisch gefunden?
+- Ich habe eigentlich nur ein paar Fragen.
+Bedienung: Fragen?
+- War die Frau auf diesem Bild, Alice Wunder, in letzter Zeit hier?
+Bedienung:  Ach, Alice. Die ist öfter hier. 
+Bedienung: Allerdings habe ich sie seit letztem Mittwoch nicht mehr gesehen. Ihre Begleitung hat ihr wohl den Abend vermiest.
+- Wie meinen Sie das?
+	Bedienung: Er hat ihr die ganze Zeit Vorwürfe gemacht. "Du hast es gestohlen…" und "Das wirst du bereuen". Richtig unangenehm. Und dann lag da noch dieser seltsame Zettel auf dem Tisch.
+	- Wissen Sie noch seinen Namen?
+		Bedienung: Den sollte ich haben. Die Reservierung ging auf ihn. Einen Moment…
+		Bedienung: Ah, hier ist er. Er heißt Bob Maler.
+		- Ein Zettel?
+			Bedienung: Da standen irgendwelche sinnlos aneinander gereihten Buchstaben drauf.
+			- Haben Sie den Zettel noch?
+				Bedienung: Nein, den habe ich weggeschmissen. Aber ich habe noch ein Foto gemacht.
+				Bedienung: Hier, ich schreibe es Ihnen auf.
+				Bedienung: Ich muss dann aber auch zurück an die Arbeit. Schönen Abend noch! => after_interview
+	- Ein Zettel?
+		Bedienung: Da standen irgendwelche sinnlos aneinander gereihten Buchstaben drauf.
+		- Haben Sie den Zettel noch?
+			Bedienung: Nein, den habe ich weggeschmissen. Aber ich habe noch ein Foto gemacht.
+			Bedienung: Hier, ich schreibe es Ihnen auf.
+			- Danke. Wissen Sie noch den Namen von Frau Wunders Begleitung?
+				Bedienung: Den sollte ich haben. Die Reservierung ging auf ihn. Einen Moment…
+				Bedienung: Ah, hier ist er. Er heißt Bob Maler.
+				Bedienung: Ich muss dann aber auch zurück an die Arbeit. Schönen Abend noch! => after_interview
+
+~ after_interview
+Es scheint eine hitzige Diskussion zwischen Alice Wunder und diesem Bob Maler gegeben zu haben. Ich sollte mir den Zettel auf jeden Fall einmal genauer anschauen.
+=> END
