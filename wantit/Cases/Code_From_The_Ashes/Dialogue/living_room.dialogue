@@ -1,0 +1,12 @@
+~ default
+Klaas: Im Schlaf- und Badezimmer war der Täter scheinbar nicht. Wie sieht es bei dir aus?
+- Ich habe eine verschlüsselte Nachricht gefunden.
+	Klaas: Die Nachricht gibt uns vielleicht einen Hinweis auf den Brandstifter. Wir müssen sie unbedingt entschlüsseln.
+	- Ich habe außerdem eine Büste von Caesar gefunden.
+		Klaas: Das ist ja interessant. Klingt ganz nach Caesar-Verschlüsselung.
+		Klaas: Lass uns jetzt aber erstmal zurück ins Büro. Ich muss diesen Rußgeruch endlich loswerden! => END
+- Ich habe eine Büste von Caesar gefunden.
+	Klaas: Caesar? Der römische Feldherr? Gab es noch etwas?
+	- In der Küche lag eine verschlüsselte Nachricht.
+		Klaas: Das ist ja interessant. Sagt dir Caesar-Verschlüsselung etwas?
+		Klaas: Lass uns jetzt aber erstmal zurück ins Büro. Ich muss diesen Rußgeruch endlich loswerden! => END

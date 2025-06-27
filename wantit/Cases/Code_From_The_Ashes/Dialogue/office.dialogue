@@ -1,0 +1,50 @@
+~ default
+Klaas: In der Wohnung in der Kryptoallee 42 hat es vor kurzem gebrannt. Die Besitzerin Alice Wunder vermutet Brandstiftung und hat uns beauftragt das näher zu untersuchen.
+=> END
+
+~ after_inspection
+Klaas: Nun zu der Nachricht. Kennst du die Caesar-Verschlüsselung bereits?
+- Ja 
+	Klaas: Dann würde ich das Entschlüsseln der Nachricht jetzt dir überlassen. Viel Erfolg!
+# zu Tutorial 1 überspringen
+- Nein
+# zu Tutorial 1
+
+~ after_tutorial
+Klaas: Dann würde ich das Entschlüsseln der Nachricht jetzt dir überlassen. Viel Erfolg!
+=> END
+
+~ after_minigame1
+Scheinbar gab es ein Treffen im "Bitza". Ich sollte mich dort einmal umsehen.
+=> END
+
+~ after_restaurant
+Klaas: Konntest du etwas nützliches herausfinden?
+- Ich habe eine weitere verschlüsselte Nachricht gefunden.
+	Klaas: Hmm…mit der alten Verschiebung kommt nur Blödsinn raus. Auch andere Verschiebungen funktionieren nicht.
+	Klaas: Vielleicht handelt es sich um Caesar-Verschlüsselung mit Schlüsselwort. Kennst du diese Verschlüsselung bereits?
+	- Ja 
+	# Tutorial 2 überspringen
+		- Bob Maler könnte der Brandstifter sein.
+			Klaas: Bob Maler…
+		Klaas: Ich werde schauen, ob ich etwas über ihn herausfinden kann.
+		Klaas: Dann überlasse ich dir mal die Entschlüsselung. Sag Bescheid, wenn du es gelöst hast! => END
+	- Nein
+	# zu Tutorial 2 
+- Bob Maler könnte der Brandstifter sein.
+	Klaas: Bob Maler…
+	Klaas: Ich werde schauen, ob ich etwas über ihn herausfinden kann.
+	- Ich habe eine weitere verschlüsselte Nachricht gefunden.
+		Klaas: Hmm…mit der alten Verschiebung kommt nur Blödsinn raus. Auch andere Verschiebungen funktionieren nicht.
+		Klaas: Vielleicht handelt es sich um Caesar-Verschlüsselung mit Schlüsselwort. Kennst du diese Verschlüsselung bereits?
+		- Ja => END
+		# Tutorial 2 überspringen
+		- Nein
+		# zu Tutorial 2 
+
+# Wenn noch Dialog folgen soll (Option 1 ausgewählt)
+~ after_tutorial2
+- Bob Maler könnte der Brandstifter sein.
+	Klaas: Bob Maler…
+	Klaas: Ich werde schauen, ob ich etwas über ihn herausfinden kann.
+	Klaas: Dann überlasse ich dir mal die Entschlüsselung. Sag Bescheid, wenn du es gelöst hast!

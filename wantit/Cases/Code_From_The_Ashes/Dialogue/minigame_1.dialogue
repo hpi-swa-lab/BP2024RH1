@@ -1,0 +1,17 @@
+~ default
+Was könnte die Verschiebung sein? Vielleicht sollte ich mir die Gegenstände vom Tatort noch einmal genauer anschauen.
+=> END
+
+# evtl sollten die Texte für die Items zu den Items?
+~ punch_card
+Die Karte hilft mir im Moment nicht weiter
+=> END
+
+~ caesar_statue
+Da steht etwas auf der Rückseite der Büste.
+GEIWEV = CAESAR
+=> END
+
+~ dog_picture
+Das Foto trägt den Namen "Picasso". Vielleicht heißt der Hund so.  Das Wort allein hilft mir bei der Verschiebung nicht.
+=> END

@@ -1,0 +1,12 @@
+~ default
+Klaas: Bei der Caesar-Verschlüsselung wird das ganze Alphabet um eine bestimmte Anzahl an Stellen, dem [b]Schlüssel[\b], nach rechts verschoben. 
+Klaas: Angenommen du hast eine Verschiebung von 2, wird aus A ein C, aus B ein D und so weiter.
+Klaas: Eine sogenannte [b]Chiffrierscheibe[\b] kann beim Ver- und Entschlüsseln helfen.
+Klaas: Auf der Scheibe ist zweimal das Alphabet abgebildet.
+Klaas: Außen ist das [b]Geheimalphabet[\b] abgebildet.
+Klaas: Innen stehen die [b]Klartext[\b]-Buchstaben.
+Klaas: Wenn du den Text jetzt entschlüsseln willst, drehst du die innere Scheibe so, dass der innere Buchstabe dem äußeren nur 2 Stellen weiter entspricht.
+Klaas: Hast du das soweit verstanden?
+- Könntest du die Erklärung nochmal wiederholen? => default
+- Ja, ich denke schon.
+	Klaas: Super! Dann probier das doch gleich mal aus. Der Schlüssel ist 6. => END
