@@ -1,8 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://c56icebaulvkr"]
+[gd_scene load_steps=33 format=3 uid="uid://c56icebaulvkr"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_nkg13"]
 [ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_dlka3"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_f0fo3"]
 [ext_resource type="Resource" uid="uid://bcscqbuobpwxi" path="res://Cases/Fake_News_Fiasko/dialogue/bitza_before_the_incident.dialogue" id="2_sc1h7"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_harlk"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_howjd"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_vgtot"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_8dvih"]
@@ -15,6 +17,43 @@
 [ext_resource type="Texture2D" uid="uid://cxk6i4v561glk" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_table.png" id="10_kl1bo"]
 [ext_resource type="Resource" uid="uid://4eus2ra4mm37" path="res://Cases/Fake_News_Fiasko/dialogue/newspaper.dialogue" id="12_8dvih"]
 [ext_resource type="Resource" uid="uid://ch8xnx8eiv6rm" path="res://Cases/Fake_News_Fiasko/dialogue/menu.dialogue" id="14_kkpox"]
+[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="18_harlk"]
+
+[sub_resource type="Resource" id="Resource_5w6rp"]
+script = ExtResource("3_harlk")
+mode = 2
+required_items = Array[String](["Newspaper"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_n3c5l"]
+script = ExtResource("2_f0fo3")
+hint_text = "Vielleicht hat ein Magazin wichtige Informationen für uns."
+hint_condition = SubResource("Resource_5w6rp")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_2s8rp"]
+script = ExtResource("3_harlk")
+mode = 2
+required_items = Array[String](["Menu"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_3hes8"]
+script = ExtResource("2_f0fo3")
+hint_text = "Wenn wir wissen, was es heute zu Essen gab, hilft uns das bestimmt weiter."
+hint_condition = SubResource("Resource_2s8rp")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_1lv1u"]
+script = ExtResource("3_harlk")
+mode = 0
+required_items = Array[String](["Newspaper", "Menu"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_128i1"]
+script = ExtResource("2_f0fo3")
+hint_text = "Hier sehe ich nichts mehr, ich kann mir noch die anderen Räume anschauen"
+hint_condition = SubResource("Resource_1lv1u")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_kkpox"]
 script = ExtResource("3_vgtot")
@@ -74,6 +113,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_nkg13")
 location_name = "Restaurant Dining Hall Pre"
 items = [NodePath("Newspaper"), NodePath("Menu")]
+hints = Array[ExtResource("2_f0fo3")]([SubResource("Resource_n3c5l"), SubResource("Resource_3hes8"), SubResource("Resource_128i1")])
 has_inventory = true
 location_dialogue = SubResource("Resource_harlk")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
@@ -148,3 +188,5 @@ offset_bottom = 110.348
 scale = Vector2(0.05, 0.107)
 theme_override_font_sizes/font_size = 70
 text = "Eine Stunde später..."
+
+[node name="Helpsystem" parent="." instance=ExtResource("18_harlk")]

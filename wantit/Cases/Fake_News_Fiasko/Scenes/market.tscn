@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqy6w5jhxa2tq"]
+[gd_scene load_steps=22 format=3 uid="uid://cqy6w5jhxa2tq"]
 
 [ext_resource type="Script" uid="uid://de4a8oqi2odpg" path="res://Cases/Fake_News_Fiasko/Scripts/market.gd" id="1_gn0um"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_2pm8y"]
 [ext_resource type="Texture2D" uid="uid://co8u4d6f76x3j" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/market.png" id="2_g4mgd"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_5ddp0"]
 [ext_resource type="Resource" uid="uid://b1sci5hex8k3v" path="res://Cases/Fake_News_Fiasko/dialogue/conversation_with_salesperson.dialogue" id="3_86yk7"]
 [ext_resource type="Texture2D" uid="uid://72gpm3fpcw5" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/mouldy_tomato.png" id="4_gn0um"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="5_86yk7"]
@@ -10,6 +12,31 @@
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="8_dea4o"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="9_dea4o"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="10_blr12"]
+[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="13_5ddp0"]
+
+[sub_resource type="Resource" id="Resource_8tg65"]
+script = ExtResource("3_5ddp0")
+mode = 2
+required_items = Array[String](["Tomato"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_j40nf"]
+script = ExtResource("2_2pm8y")
+hint_text = "Sehen wir uns  das Gemüse mal genauer an."
+hint_condition = SubResource("Resource_8tg65")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_pp4o1"]
+script = ExtResource("3_5ddp0")
+mode = 0
+required_items = Array[String](["Tomato", "Salesperson"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_jvtxu"]
+script = ExtResource("2_2pm8y")
+hint_text = "Auf dem Marktstand haben wir alles Wichtige gefunden."
+hint_condition = SubResource("Resource_pp4o1")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_5ddp0"]
 script = ExtResource("6_gn0um")
@@ -43,6 +70,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_gn0um")
 location_name = "Market"
 items = [NodePath("Mouldy Tomato")]
+hints = Array[ExtResource("2_2pm8y")]([SubResource("Resource_j40nf"), SubResource("Resource_jvtxu")])
 has_inventory = true
 location_dialogue = SubResource("Resource_dea4o")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
@@ -76,3 +104,5 @@ rotation = -2.522
 scale = Vector2(0.288, 0.288)
 texture_normal = ExtResource("10_blr12")
 requested_location_name = "Restaurant Dining Hall Pre"
+
+[node name="Helpsystem" parent="." instance=ExtResource("13_5ddp0")]

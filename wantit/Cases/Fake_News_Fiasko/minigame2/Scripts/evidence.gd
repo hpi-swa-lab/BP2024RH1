@@ -6,10 +6,8 @@ extends Control
 signal evidence_inspected(Texture1: Texture2D, Texture2: Texture2D)
 
 func _ready() -> void:
-	randomize()
 	%HBoxContainer.show()
 	check_and_apply_textures()
-	self.rotation = randf_range(-0.1745, 0.1745)
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():

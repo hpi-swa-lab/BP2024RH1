@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bn70t63m1ncmv" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_staffRoom.png" id="2_b8ubl"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_x80cb"]
 [ext_resource type="Texture2D" uid="uid://o658ibljvhy6" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_staffRoom_door.png" id="4_m5xvr"]
-[ext_resource type="Texture2D" uid="uid://ei52tftxgqw3" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/cereal_bar.png" id="5_f5kq4"]
+[ext_resource type="Texture2D" uid="uid://bcxrqujr7qiv8" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/cereal_bar.png" id="5_f5kq4"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_h4rxl"]
 [ext_resource type="Resource" uid="uid://4lc413o3i3pm" path="res://Cases/Fake_News_Fiasko/dialogue/cereal_bar.dialogue" id="7_x80cb"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="8_m5xvr"]
