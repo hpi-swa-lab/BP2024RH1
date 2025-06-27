@@ -24,7 +24,7 @@ layout_mode = 0
 offset_left = -260.0
 offset_top = -250.0
 offset_right = 260.0
-offset_bottom = 160.0
+offset_bottom = 216.0
 
 [node name="SelectButton" type="Button" parent="Caseboard_UI"]
 unique_name_in_owner = true
@@ -41,7 +41,7 @@ layout_mode = 0
 offset_left = -236.0
 offset_top = -180.0
 offset_right = 250.0
-offset_bottom = 139.0
+offset_bottom = 200.0
 theme = SubResource("Theme_00qau")
 
 [node name="VBoxContainer" type="GridContainer" parent="Caseboard_UI/ScrollContainer"]
@@ -50,9 +50,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="BackButton" parent="." instance=ExtResource("2_a64gf")]
-offset_left = -248.0
-offset_top = -237.0
-offset_right = 264.0
-offset_bottom = 275.0
+offset_left = 200.0
+offset_top = -241.0
+offset_right = 712.0
+offset_bottom = 271.0
 scale = Vector2(0.1, 0.1)
 requested_location_name = "DefaultOffice"

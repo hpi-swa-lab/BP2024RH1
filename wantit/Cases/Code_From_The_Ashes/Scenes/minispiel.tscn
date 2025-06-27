@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq2kn0806dpmu"]
+
+[ext_resource type="Script" uid="uid://dh0qdgikb7h2y" path="res://Cases/Code_From_The_Ashes/Scripts/minispiel.gd" id="1_k10lx"]
+[ext_resource type="Texture2D" uid="uid://cyxbo3gftpds5" path="res://Cases/Code_From_The_Ashes/Assets/Minigame1/Caesar_außen.png" id="2_drk55"]
+[ext_resource type="Texture2D" uid="uid://e8hui528qw51" path="res://Cases/Code_From_The_Ashes/Assets/Minigame1/Cäsar_innen.png" id="3_16kq3"]
+[ext_resource type="Texture2D" uid="uid://cynjkaa4ec6bh" path="res://Cases/Code_From_The_Ashes/Assets/Minigame1/arrow_left.png" id="4_16kq3"]
+[ext_resource type="Texture2D" uid="uid://cnb53qpkgvkt5" path="res://Cases/Code_From_The_Ashes/Assets/Minigame1/arrow_right.png" id="5_w2e1w"]
+
+[node name="Minispiel" type="Node2D"]
+script = ExtResource("1_k10lx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Cäsar_außen" type="Sprite2D" parent="."]
+position = Vector2(-300, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_drk55")
+
+[node name="Drehen" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-300, 2)
+
+[node name="Cäsar_innen" type="Sprite2D" parent="Drehen"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_16kq3")
+
+[node name="Area2D" type="Area2D" parent="Drehen"]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drehen/Area2D"]
+unique_name_in_owner = true
+polygon = PackedVector2Array(-16, -128, -13, -106, -1, -107, 12, -106, 15, -128, -1, -129)
+
+[node name="links" type="Button" parent="."]
+offset_left = -496.0
+offset_top = 140.0
+offset_right = -176.0
+offset_bottom = 456.0
+scale = Vector2(0.191489, 0.191489)
+text = "
+"
+icon = ExtResource("4_16kq3")
+flat = true
+
+[node name="rechts" type="Button" parent="."]
+offset_left = -160.0
+offset_top = 134.0
+offset_right = 156.0
+offset_bottom = 450.0
+scale = Vector2(0.194077, 0.194077)
+icon = ExtResource("5_w2e1w")
+flat = true
+
+[node name="VerschlüsselterText" type="Label" parent="."]
+unique_name_in_owner = true
+offset_top = -56.0
+offset_right = 466.0
+offset_bottom = -22.0
+theme_type_variation = &"HeaderMedium"
+
+[node name="CheckSolution" type="Button" parent="."]
+offset_left = 136.0
+offset_top = 99.0
+offset_right = 299.0
+offset_bottom = 153.0
+text = "Check Solution"
+
+[node name="Hinweis" type="Label" parent="."]
+offset_left = -416.0
+offset_top = -264.0
+offset_right = -180.0
+offset_bottom = -222.0
+theme_override_font_sizes/font_size = 30
+text = "Geiwev = Caesar"
+
+[connection signal="pressed" from="links" to="." method="_on_links_pressed"]
+[connection signal="pressed" from="rechts" to="." method="_on_rechts_pressed"]
+[connection signal="pressed" from="CheckSolution" to="." method="_on_check_solution_pressed"]
