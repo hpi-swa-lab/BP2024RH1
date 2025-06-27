@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0vmlrauu0it7"]
+
+[ext_resource type="Script" uid="uid://c3wcusn7j2b88" path="res://Cases/Introduction_Case/knowledge_test/Scripts/answer_button.gd" id="1_bng0w"]
+
+[node name="AnswerButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_bng0w")
