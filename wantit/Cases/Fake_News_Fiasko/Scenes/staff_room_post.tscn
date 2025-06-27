@@ -1,25 +1,34 @@
-[gd_scene load_steps=11 format=3 uid="uid://h5osa7tfgokv"]
+[gd_scene load_steps=12 format=3 uid="uid://h5osa7tfgokv"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_433j7"]
 [ext_resource type="Texture2D" uid="uid://bn70t63m1ncmv" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_staffRoom.png" id="2_b8ubl"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_x80cb"]
 [ext_resource type="Texture2D" uid="uid://o658ibljvhy6" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_staffRoom_door.png" id="4_m5xvr"]
-[ext_resource type="Texture2D" uid="uid://c6v5ifw4pw2ns" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/cereal_bar.png" id="5_f5kq4"]
+[ext_resource type="Texture2D" uid="uid://ei52tftxgqw3" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/cereal_bar.png" id="5_f5kq4"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_h4rxl"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="7_x80cb"]
-[ext_resource type="Resource" uid="uid://4lc413o3i3pm" path="res://Cases/Fake_News_Fiasko/dialogue/cereal_bar.dialogue" id="8_m5xvr"]
+[ext_resource type="Resource" uid="uid://4lc413o3i3pm" path="res://Cases/Fake_News_Fiasko/dialogue/cereal_bar.dialogue" id="7_x80cb"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="8_m5xvr"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="9_dxrd4"]
+
+[sub_resource type="Resource" id="Resource_x80cb"]
+script = ExtResource("8_m5xvr")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_h4rxl"]
 script = ExtResource("9_dxrd4")
-dialogue_resource = ExtResource("8_m5xvr")
+dialogue_resource = ExtResource("7_x80cb")
 is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("7_x80cb")]([])
+dialogue_triggers = Array[ExtResource("8_m5xvr")]([SubResource("Resource_x80cb")])
+start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="Staff Room Post" type="Node"]
+[node name="Staff Room Post" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_433j7")
+location_name = "Staff Room Post"
+items = [NodePath("Cereal Bar")]
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -31,6 +40,7 @@ texture = ExtResource("2_b8ubl")
 [node name="Door" parent="." instance=ExtResource("3_x80cb")]
 scale = Vector2(0.299951, 0.299951)
 texture_normal = ExtResource("4_m5xvr")
+requested_location_name = "Restaurant Dining Hall Post"
 
 [node name="Cereal Bar" type="TextureButton" parent="."]
 offset_left = 838.0
@@ -42,5 +52,6 @@ scale = Vector2(0.153755, 0.153755)
 texture_normal = ExtResource("5_f5kq4")
 script = ExtResource("6_h4rxl")
 item_name = "Cereal Bar"
-dialogue = SubResource("Resource_h4rxl")
+is_collectable = true
+item_dialogue = SubResource("Resource_h4rxl")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"

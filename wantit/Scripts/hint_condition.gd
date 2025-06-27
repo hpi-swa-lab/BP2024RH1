@@ -1,6 +1,6 @@
 extends Resource
 
-class_name HintCondition
+class_name Condition
 
 enum Mode { ALL, ANY, NONE }
 

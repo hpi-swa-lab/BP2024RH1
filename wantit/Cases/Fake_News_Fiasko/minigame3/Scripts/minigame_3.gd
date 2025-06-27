@@ -1,4 +1,4 @@
-extends Control
+extends Location
 
 var selected_post: Control
 var selected_scrollable_post: post
@@ -78,11 +78,16 @@ func set_level():
 		%Option1.text = "Glaubwürdig"
 		%Option2.text = "Unglaubwürdig"
 		for element in %VBoxContainer.get_children():
+			print(element)
 			element.show()
-			if post not in relevant_posts:
+			if element not in relevant_posts:
+				print("removing", element)
 				%VBoxContainer.remove_child(element)
 	else:
-		print("nice") #Dialogue and switch scene and stuff 
+		var interaction_item = Item.new()
+		interaction_item.item_name = "Minigame3 completed"
+		item_found.emit(interaction_item)
+		
 	relevant_posts = []
 
 func _on_option_1_pressed() -> void:

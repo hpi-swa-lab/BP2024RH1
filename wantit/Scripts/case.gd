@@ -11,7 +11,7 @@ var inventory: Inventory
 var interactions: Array
 var is_completed: bool = false
 var restored_inventory_items: Array
-@export var event_triggers: Array[EventTrigger]
+@export var events: Array[Event]
 var played_location_dialogues: Dictionary
 #var event_tracker: CaseEventTracker -> CaseEvent
 
@@ -70,16 +70,11 @@ func try_start_event() -> void:
 	
 func check_matching_event():
 	var player_items = get_player_items()
-	var best_match = null
-	for trigger in event_triggers:
-		if is_subset(trigger.conditions, player_items):
-			if best_match == null or best_match.conditions.size() < trigger.conditions.size():
-				best_match = trigger
-	
-	if best_match != null:
-		return best_match.location_name
-	else:
-		return null
+	for trigger in events:
+		if trigger.is_valid(player_items):
+			trigger.has_started = true
+			return trigger.location_name
+	return null
 
 func is_subset(subset: Array, superset: Array) -> bool:
 	for item in subset:

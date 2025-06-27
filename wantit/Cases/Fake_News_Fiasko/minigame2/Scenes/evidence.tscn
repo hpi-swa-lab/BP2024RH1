@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://t5u3fgl8w0o4"]
+[gd_scene load_steps=3 format=3 uid="uid://t5u3fgl8w0o4"]
 
 [ext_resource type="Script" uid="uid://bg1djgt3gqc4f" path="res://Cases/Fake_News_Fiasko/minigame2/Scripts/evidence.gd" id="1_5v7yu"]
+[ext_resource type="Texture2D" uid="uid://c001qvllq827j" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="2_qjdon"]
 
 [node name="Evidence" type="Control"]
 custom_minimum_size = Vector2(250, 175)
@@ -16,17 +17,58 @@ layout_mode = 2
 offset_right = 250.0
 offset_bottom = 175.0
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-unique_name_in_owner = true
+[node name="Control" type="Control" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 175.0
 size_flags_horizontal = 3
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+[node name="Pin1" type="TextureRect" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.0
+offset_right = 2.0
+offset_bottom = 20.0
+grow_horizontal = 2
+texture = ExtResource("2_qjdon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/Control2"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 121.0
+offset_bottom = 175.0
+size_flags_horizontal = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin2" type="TextureRect" parent="HBoxContainer/Control2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.0
+offset_right = 10.0
+offset_bottom = 20.0
+grow_horizontal = 2
+texture = ExtResource("2_qjdon")
 expand_mode = 1
 stretch_mode = 5
 
