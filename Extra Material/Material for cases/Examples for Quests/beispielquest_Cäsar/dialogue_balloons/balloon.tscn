@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj6d4qjwusrni"]
+[gd_scene load_steps=13 format=3 uid="uid://eyhj8h4v5yfd"]
 
 [ext_resource type="Script" uid="uid://clgync0ok55nx" path="res://dialogue_balloons/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]

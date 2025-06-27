@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://denund86phf7u"
-path="res://.godot/imported/inventory-slot.png-a7d7979445b5bae3bd42ceb54500b5d2.ctex"
+path="res://.godot/imported/Mikro.png-b727d289c651f711758e825b6bd9a5ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/inventory-slot.png"
-dest_files=["res://.godot/imported/inventory-slot.png-a7d7979445b5bae3bd42ceb54500b5d2.ctex"]
+source_file="res://Assets/Mikro.png"
+dest_files=["res://.godot/imported/Mikro.png-b727d289c651f711758e825b6bd9a5ad.ctex"]
 
 [params]
 
