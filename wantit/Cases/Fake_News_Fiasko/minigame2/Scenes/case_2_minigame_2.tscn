@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://de08xwxsx122u"]
+[gd_scene load_steps=17 format=3 uid="uid://de08xwxsx122u"]
 
 [ext_resource type="Script" uid="uid://egb6p06xlqm8" path="res://Cases/Fake_News_Fiasko/minigame2/Scripts/case_2_minigame_2.gd" id="1_k8new"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="2_1ij1e"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cmrfxgfrjufyv" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/plate_footage.png" id="8_1ij1e"]
 [ext_resource type="Texture2D" uid="uid://e5k332u53tfr" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/bill_cutout.png" id="9_3mcq3"]
 [ext_resource type="PackedScene" uid="uid://b1ceb32i5th4a" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/statement_game2.tscn" id="10_wd6p0"]
+[ext_resource type="Texture2D" uid="uid://c08h44cgeoror" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="14_3mcq3"]
 
 [sub_resource type="Resource" id="Resource_1ij1e"]
 script = ExtResource("2_1ij1e")
@@ -46,6 +47,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="Evidence" parent="Evidence" instance=ExtResource("3_84nej")]
 offset_left = 588.0
@@ -153,6 +155,118 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 13
 text = "Übertreibung"
+
+[node name="Pins" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Pin1" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1002.0
+offset_top = 186.0
+offset_right = 1022.0
+offset_bottom = 206.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin2" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 912.0
+offset_top = 408.0
+offset_right = 932.0
+offset_bottom = 428.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin3" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 896.0
+offset_top = 185.0
+offset_right = 916.0
+offset_bottom = 205.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin4" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 617.0
+offset_top = 445.0
+offset_right = 637.0
+offset_bottom = 465.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin5" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 613.0
+offset_top = 260.0
+offset_right = 633.0
+offset_bottom = 280.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin6" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 751.0
+offset_top = 98.0
+offset_right = 771.0
+offset_bottom = 118.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin7" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 628.0
+offset_top = 73.0
+offset_right = 648.0
+offset_bottom = 93.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
