@@ -2,7 +2,8 @@
   {
 	"question": "Wann werden Daten zu Informationen?",
 	"answers": ["Wenn sie in einem Zusammenhang interpretiert werden", "Wenn sie gespeichert werden.", "Nie.", "Übermorgen."],
-	"correct": 0
+	"correct": 0,
+	"image": "Spielumfrage.png"  
   },
   {
 	"question": "Was ist der Hauptunterschied zwischen Daten und Informationen?",
@@ -17,7 +18,8 @@
   {
 	"question": "Eine Information kann verschiedene Repräsentationen haben.",
 	"answers": ["richtig", "falsch", "", ""],
-	"correct": 1
+	"correct": 1,
+	"image": "Spielumfrage.png"  
   },
   {
 	"question": "Beschrifte die Spalten.",

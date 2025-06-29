@@ -30,9 +30,9 @@ texture = ExtResource("4_42480")
 
 [node name="QuestionWrap" type="HBoxContainer" parent="."]
 offset_left = 60.0
-offset_top = 309.0
+offset_top = 241.0
 offset_right = 1096.0
-offset_bottom = 574.0
+offset_bottom = 603.0
 
 [node name="QuestionBox" parent="QuestionWrap" instance=ExtResource("2_2a1w8")]
 layout_mode = 2

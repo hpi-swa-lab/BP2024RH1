@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://cctrjm1m78knp"]
+
+[ext_resource type="Script" uid="uid://qdm1qa0g4m2h" path="res://Cases/Introduction_Case/knowledge_test/Scripts/slider_box.gd" id="1_si7nf"]
+[ext_resource type="PackedScene" uid="uid://c0vmlrauu0it7" path="res://Cases/Introduction_Case/knowledge_test/Scenes/answer_button.tscn" id="2_m2qs7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gk70f"]
+font_size = 25
+font_color = Color(0.219608, 0.180392, 0.160784, 1)
+
+[node name="SliderBox" type="VBoxContainer"]
+offset_right = 1080.0
+offset_bottom = 150.0
+script = ExtResource("1_si7nf")
+
+[node name="QuestionLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "Dieser Text ist nur Likert."
+label_settings = SubResource("LabelSettings_gk70f")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VibeContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorVibe" type="ColorRect" parent="VibeContainer"]
+custom_minimum_size = Vector2(500, 30)
+layout_mode = 2
+color = Color(0.145098, 1, 0.415686, 1)
+
+[node name="TextualVibe" type="Label" parent="VibeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Neutral"
+horizontal_alignment = 1
+
+[node name="Scale" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="Scale"]
+visible = false
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="A1" parent="Scale/MarginContainer" instance=ExtResource("2_m2qs7")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.879264, 0.542061, 0.302989, 1)
+disabled = true
+button_mask = 0
+text = "Stimme voll zu "
+script = null
+
+[node name="OpinionSlider" type="HSlider" parent="Scale"]
+custom_minimum_size = Vector2(500, 42)
+layout_mode = 2
+max_value = 6.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Scale"]
+visible = false
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="A7" parent="Scale/MarginContainer2" instance=ExtResource("2_m2qs7")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.921569, 0.34902, 0.352941, 1)
+disabled = true
+button_mask = 0
+text = "Stimme gar nicht zu"
+script = null
+
+[node name="SubmitButtonContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SubmitButton" type="Button" parent="SubmitButtonContainer"]
+layout_mode = 2
+text = "Abschicken"
