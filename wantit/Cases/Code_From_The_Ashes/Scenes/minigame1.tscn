@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://w3jwwhr2jth1"]
+
+[ext_resource type="Script" uid="uid://cbvpmidgb4g6a" path="res://Cases/Code_From_The_Ashes/Scripts/minigame_1.gd" id="1_o3mho"]
+[ext_resource type="PackedScene" uid="uid://cq2kn0806dpmu" path="res://Cases/Code_From_The_Ashes/Scenes/minispiel.tscn" id="2_lvfr3"]
+
+[node name="Location" type="Node"]
+script = ExtResource("1_o3mho")
+location_name = "Minigame1"
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="DefaultMinigame" parent="." instance=ExtResource("2_lvfr3")]
+interaction_name = "Minigame 1"
+original_text = "Bitza zehn Uhr"
+shown_text = "FMXDE DILR YLV"
+
+[connection signal="Minigame_completed" from="DefaultMinigame" to="." method="_on_default_minigame_minigame_completed"]

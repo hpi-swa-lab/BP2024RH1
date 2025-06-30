@@ -1,22 +1,22 @@
-extends Node2D
+extends Location
 
 const alphabet = "TUVWXYZABCDEFGHIJKLMNOPQRS"
 var textfield_index = 0
 var text_fields
 
-@export var original_text = "BITSTOP ZEHN UHR" # Muss in Großbuchtaben geschrieben werden
-@export var shown_text = " F M  X W  X  S  T    D   I  L  R     Y  L  V"
-@onready var input_container = %HBoxContainer
-@onready var hinweis: Label = $Hinweis
+signal Minigame_completed()
 
+@export var interaction_name: String
+@export var original_text: String
+@export var shown_text: String
 
 func _ready():
-	hinweis.hide()
+	initialize_disk()
+	set_lineEdits()
+	set_encrypted_text()
 	
-	if Global.verschiebung_found:
-		hinweis.show()
-	
-	%"VerschlüsselterText".text = shown_text
+
+func initialize_disk():
 	var rot_angle = deg_to_rad(13.84)
 	
 	for i in range(alphabet.length()):
@@ -31,25 +31,40 @@ func _ready():
 
 		clickable_letter.add_child(new_shape)
 		%Area2D.add_child(clickable_letter)
-	
-	var custom_theme = Theme.new()
-	custom_theme.set_constant("minimum_character_width", "LineEdit", 1)
-	
-	
-	for char in original_text:
-		if char == " ":
+
+func set_lineEdits():
+		var custom_theme = Theme.new()
+		custom_theme.set_constant("minimum_character_width", "LineEdit", 1)
+		
+		for letter in original_text:
+			if letter == " ":
+				var spacer = Control.new()
+				spacer.custom_minimum_size = Vector2(10, 0)
+				%HBoxContainer.add_child(spacer)
+			else:
+				var field = LineEdit.new()
+				field.max_length = 1
+				field.placeholder_text = "_"
+				%HBoxContainer.add_child(field)
+				field.theme = custom_theme
+				field.alignment = 1
+		text_fields = %HBoxContainer.get_children()
+		text_fields[0].grab_focus()
+
+func set_encrypted_text():
+	for letter in shown_text:
+		if letter == " ":
 			var spacer = Control.new()
 			spacer.custom_minimum_size = Vector2(10, 0)
-			input_container.add_child(spacer)
+			%EncryptedText.add_child(spacer)
 		else:
-			var field = LineEdit.new()
-			field.max_length = 1
-			field.placeholder_text = "_"
-			input_container.add_child(field)
-			field.theme = custom_theme
-			field.alignment = 1
-	text_fields = %HBoxContainer.get_children()
-	text_fields[0].grab_focus()
+			var label = Label.new()
+			label.add_theme_color_override("font_color", Color.BLACK)
+			label.text = letter.to_upper()
+			label.custom_minimum_size = Vector2(23, 0)
+			label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			%EncryptedText.add_child(label)
+		
 
 func _on_letter_clicked(_viewport, event, _shape_idx, letter):
 	for i in range(text_fields.size()):
@@ -73,12 +88,20 @@ func _on_rechts_pressed() -> void:
 	%Drehen.rotation += deg_to_rad(13.84)
 
 func _on_check_solution_pressed() -> void:
-	var input_text:String
+	var input_text: String = ""
 	for i in range(text_fields.size()):
 		if text_fields[i] is LineEdit:
 			input_text += text_fields[i].text
 		else:
 			input_text += " "
-	if input_text == original_text:
-		print("congrats")
-		Global.caesar_decrypted = true
+	if input_text == original_text.to_upper():
+		if location_dialogue:
+			DialogueManager.show_dialogue_balloon_scene(
+				location_dialogue.baloon_type,
+				location_dialogue.dialogue_resource,
+				"minigame_completed")
+			await DialogueManager.dialogue_ended
+				
+		var interaction_item = Item.new()
+		interaction_item.item_name = interaction_name
+		item_found.emit(interaction_item)

@@ -1,9 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://dq7i6tek3v1ks"]
+[gd_scene load_steps=48 format=3 uid="uid://dq7i6tek3v1ks"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_fkbp5"]
 [ext_resource type="Resource" uid="uid://dqljl767oo00f" path="res://Cases/Code_From_The_Ashes/Dialogue/living_room.dialogue" id="2_ca5xi"]
-[ext_resource type="Texture2D" uid="uid://8pdnlk8pnkti" path="res://Cases/Code_From_The_Ashes/Assets/Backgrounds/living_room.png" id="2_t5me7"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_mrvv8"]
+[ext_resource type="Texture2D" uid="uid://8pdnlk8pnkti" path="res://Cases/Code_From_The_Ashes/Assets/Backgrounds/Living_Room.png" id="2_t5me7"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_05acy"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_qym0v"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_w3de0"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_ph52o"]
 [ext_resource type="Texture2D" uid="uid://ktdgxepiq7ua" path="res://Cases/Code_From_The_Ashes/Assets/Scene_Switcher/corridor.png" id="4_pjhar"]
@@ -20,6 +22,66 @@
 [ext_resource type="Resource" uid="uid://jg7t4icdnrrp" path="res://Cases/Code_From_The_Ashes/Dialogue/punch_card.dialogue" id="16_08k2f"]
 [ext_resource type="Resource" uid="uid://dns4litwb7l8v" path="res://Cases/Code_From_The_Ashes/Dialogue/newspaper.dialogue" id="18_ch50r"]
 [ext_resource type="Resource" uid="uid://bhw45svvt5qdy" path="res://Cases/Code_From_The_Ashes/Dialogue/easel.dialogue" id="20_uyy4s"]
+
+[sub_resource type="Resource" id="Resource_dqm0p"]
+script = ExtResource("3_qym0v")
+mode = 2
+required_items = Array[String](["Caesar"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_poedq"]
+script = ExtResource("2_mrvv8")
+hint_text = "Warum steht dort eine Cäsar-Statue?"
+hint_condition = SubResource("Resource_dqm0p")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_wnv5g"]
+script = ExtResource("3_qym0v")
+mode = 2
+required_items = Array[String](["Punch Card"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_tcwmh"]
+script = ExtResource("2_mrvv8")
+hint_text = "Von wem die Karte auf dem Tisch wohl stammt?"
+hint_condition = SubResource("Resource_wnv5g")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_lwm7x"]
+script = ExtResource("3_qym0v")
+mode = 2
+required_items = Array[String](["Picture"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_l14bl"]
+script = ExtResource("2_mrvv8")
+hint_text = "Wer ist denn auf dem Bild auf der Komode zu sehen?"
+hint_condition = SubResource("Resource_lwm7x")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_020t0"]
+script = ExtResource("3_qym0v")
+mode = 2
+required_items = Array[String](["Easel"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_ucue3"]
+script = ExtResource("2_mrvv8")
+hint_text = "Alice malt wohl gerne."
+hint_condition = SubResource("Resource_020t0")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_4d4yu"]
+script = ExtResource("3_qym0v")
+mode = 0
+required_items = Array[String](["Easel", "Picture", "Punch Card", "Caesar"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_yx3mx"]
+script = ExtResource("2_mrvv8")
+hint_text = "Hier dürften wir alles Wichtige untersucht haben."
+hint_condition = SubResource("Resource_4d4yu")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_ca5xi"]
 script = ExtResource("3_w3de0")
@@ -129,6 +191,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_fkbp5")
 location_name = "Living Room"
 items = [NodePath("Caesar Statue"), NodePath("Book"), NodePath("Dog Picture"), NodePath("Punch Card"), NodePath("Newspaper"), NodePath("Easel")]
+hints = Array[ExtResource("2_mrvv8")]([SubResource("Resource_poedq"), SubResource("Resource_tcwmh"), SubResource("Resource_l14bl"), SubResource("Resource_ucue3"), SubResource("Resource_yx3mx")])
 has_inventory = true
 location_dialogue = SubResource("Resource_pb5cj")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"

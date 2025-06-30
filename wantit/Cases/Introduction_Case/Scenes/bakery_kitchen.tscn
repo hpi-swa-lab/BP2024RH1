@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bto1uem2cnbyr"]
+[gd_scene load_steps=35 format=3 uid="uid://bto1uem2cnbyr"]
 
 [ext_resource type="Script" uid="uid://c62j4fhwfi6xe" path="res://Cases/Introduction_Case/Scripts/bakery_kitchen.gd" id="1_7deum"]
 [ext_resource type="Texture2D" uid="uid://b0qulmgiqje7j" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_kitchen.png" id="1_wyowh"]
@@ -15,7 +15,6 @@
 [ext_resource type="Resource" uid="uid://p48khhl5trq3" path="res://dialogue/flour_sack.dialogue" id="11_fmamt"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="11_lftgu"]
 [ext_resource type="Texture2D" uid="uid://dwtfx6evqouww" path="res://Cases/Introduction_Case/assets/interactable_items/shoeprints_kitchen.png" id="11_snjqx"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="12_7deum"]
 [ext_resource type="Script" uid="uid://kke8b67onflp" path="res://Cases/Introduction_Case/Scripts/key_action.gd" id="13_24rd3"]
 [ext_resource type="Resource" uid="uid://denb1mkdgx7go" path="res://dialogue/key.dialogue" id="13_e1im7"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="14_cpead"]
@@ -188,9 +187,6 @@ script = ExtResource("14_cpead")
 item_name = "ShoeprintsKitchen"
 item_dialogue = SubResource("Resource_nnyh4")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
-
-[node name="Helpsystem" parent="." instance=ExtResource("12_7deum")]
-mouse_filter = 2
 
 [connection signal="pressed" from="Flour Sack" to="." method="_on_flour_sack_pressed"]
 [connection signal="pressed" from="Key" to="." method="_on_key_pressed"]

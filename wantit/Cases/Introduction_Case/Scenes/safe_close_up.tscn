@@ -1,8 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://bhbqihv27a5x8"]
+[gd_scene load_steps=28 format=3 uid="uid://bhbqihv27a5x8"]
 
 [ext_resource type="Texture2D" uid="uid://c6blk2k6t2wp8" path="res://Cases/Introduction_Case/assets/backgrounds/safe_closeUp.png" id="1_ilqon"]
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_unxiy"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="2_bm3em"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_nnv67"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_1y1xn"]
 [ext_resource type="Texture2D" uid="uid://bc7rt7bpgdqoj" path="res://Cases/Introduction_Case/assets/collectible_items/pliers.png" id="3_d2s8b"]
@@ -108,8 +107,6 @@ offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.300012, 0.300012)
 texture = ExtResource("1_ilqon")
-
-[node name="Helpsystem" parent="." instance=ExtResource("2_bm3em")]
 
 [node name="Pliers" type="TextureButton" parent="."]
 offset_left = 843.0

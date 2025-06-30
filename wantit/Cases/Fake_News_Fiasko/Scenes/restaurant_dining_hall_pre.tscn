@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c56icebaulvkr"]
+[gd_scene load_steps=32 format=3 uid="uid://c56icebaulvkr"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_nkg13"]
 [ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_dlka3"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cxk6i4v561glk" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_table.png" id="10_kl1bo"]
 [ext_resource type="Resource" uid="uid://4eus2ra4mm37" path="res://Cases/Fake_News_Fiasko/dialogue/newspaper.dialogue" id="12_8dvih"]
 [ext_resource type="Resource" uid="uid://ch8xnx8eiv6rm" path="res://Cases/Fake_News_Fiasko/dialogue/menu.dialogue" id="14_kkpox"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="18_harlk"]
 
 [sub_resource type="Resource" id="Resource_5w6rp"]
 script = ExtResource("3_harlk")
@@ -188,5 +187,3 @@ offset_bottom = 110.348
 scale = Vector2(0.05, 0.107)
 theme_override_font_sizes/font_size = 70
 text = "Eine Stunde später..."
-
-[node name="Helpsystem" parent="." instance=ExtResource("18_harlk")]

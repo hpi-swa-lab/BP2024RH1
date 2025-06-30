@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2hq3xd6omjt1"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_viq2m"]
+[ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_gcyo8"]
+
+[node name="Location" type="Node"]
+script = ExtResource("1_viq2m")
+location_name = "Bitza"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_gcyo8")
+expand_mode = 1
