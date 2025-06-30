@@ -75,6 +75,9 @@ func set_level():
 		%Option1.text = "Relevant"
 		%Option2.text = "Irrelevant"
 	elif level == 1:
+		var interaction_item = Item.new()
+		interaction_item.item_name = "minigame first part completed"
+		item_found.emit(interaction_item)
 		%Option1.text = "Glaubwürdig"
 		%Option2.text = "Unglaubwürdig"
 		for element in %VBoxContainer.get_children():
