@@ -17,8 +17,8 @@
 
 [sub_resource type="Resource" id="Resource_jm4om"]
 script = ExtResource("3_4361v")
-mode = 1
-required_items = Array[String]([])
+mode = 2
+required_items = Array[String](["ShoeprintOffice"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_88f4i"]
