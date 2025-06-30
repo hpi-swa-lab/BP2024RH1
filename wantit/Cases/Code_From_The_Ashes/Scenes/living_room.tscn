@@ -1,19 +1,136 @@
-[gd_scene load_steps=12 format=3 uid="uid://dq7i6tek3v1ks"]
+[gd_scene load_steps=36 format=3 uid="uid://dq7i6tek3v1ks"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_fkbp5"]
-[ext_resource type="Texture2D" uid="uid://bjsooonhk4cdi" path="res://Cases/Code_From_The_Ashes/Assets/Backgrounds/living_room.png" id="2_t5me7"]
+[ext_resource type="Resource" uid="uid://dqljl767oo00f" path="res://Cases/Code_From_The_Ashes/Dialogue/living_room.dialogue" id="2_ca5xi"]
+[ext_resource type="Texture2D" uid="uid://8pdnlk8pnkti" path="res://Cases/Code_From_The_Ashes/Assets/Backgrounds/living_room.png" id="2_t5me7"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_05acy"]
-[ext_resource type="Texture2D" uid="uid://b0hrxfe33pth5" path="res://Cases/Code_From_The_Ashes/Assets/Scene_Switcher/corridor.png" id="4_pjhar"]
-[ext_resource type="Texture2D" uid="uid://dkigqug31k7e2" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/caesar_statue.png" id="5_qw0nm"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_w3de0"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_ph52o"]
+[ext_resource type="Texture2D" uid="uid://ktdgxepiq7ua" path="res://Cases/Code_From_The_Ashes/Assets/Scene_Switcher/corridor.png" id="4_pjhar"]
+[ext_resource type="Texture2D" uid="uid://c6axpnmhyb2kr" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/caesar_statue.png" id="5_qw0nm"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_w07sj"]
-[ext_resource type="Texture2D" uid="uid://l7qy2muef2m8" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/book.png" id="7_5v2a3"]
-[ext_resource type="Texture2D" uid="uid://crprbesnpr6mu" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/dog_picture.png" id="8_ca5xi"]
-[ext_resource type="Texture2D" uid="uid://bnnx2anihdho" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/punch_card.png" id="9_pjhar"]
-[ext_resource type="Texture2D" uid="uid://1pnqcno3qog5" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/easel.png" id="9_w3de0"]
-[ext_resource type="Texture2D" uid="uid://b6m5gucsrqraw" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/newspaper.png" id="10_qw0nm"]
+[ext_resource type="Texture2D" uid="uid://c1itpbkhdknjt" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/book.png" id="7_5v2a3"]
+[ext_resource type="Texture2D" uid="uid://brckeqr6gr7ac" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/dog_picture.png" id="8_ca5xi"]
+[ext_resource type="Texture2D" uid="uid://hysjm8cvg5ph" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/punch_card.png" id="9_pjhar"]
+[ext_resource type="Texture2D" uid="uid://bweo4gyp13xpu" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/easel.png" id="9_w3de0"]
+[ext_resource type="Texture2D" uid="uid://sbpk1ykoiepw" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/newspaper.png" id="10_qw0nm"]
+[ext_resource type="Resource" uid="uid://bi48qv8krub2d" path="res://Cases/Code_From_The_Ashes/Dialogue/caesar_statue.dialogue" id="10_w3de0"]
+[ext_resource type="Resource" uid="uid://c847xhwlt6ixv" path="res://Cases/Code_From_The_Ashes/Dialogue/book.dialogue" id="12_ph52o"]
+[ext_resource type="Resource" uid="uid://b6tjedcg7mi62" path="res://Cases/Code_From_The_Ashes/Dialogue/dog_picture.dialogue" id="14_pb5cj"]
+[ext_resource type="Resource" uid="uid://jg7t4icdnrrp" path="res://Cases/Code_From_The_Ashes/Dialogue/punch_card.dialogue" id="16_08k2f"]
+[ext_resource type="Resource" uid="uid://dns4litwb7l8v" path="res://Cases/Code_From_The_Ashes/Dialogue/newspaper.dialogue" id="18_ch50r"]
+[ext_resource type="Resource" uid="uid://bhw45svvt5qdy" path="res://Cases/Code_From_The_Ashes/Dialogue/easel.dialogue" id="20_uyy4s"]
 
-[node name="Living Room" type="Node"]
+[sub_resource type="Resource" id="Resource_ca5xi"]
+script = ExtResource("3_w3de0")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_w3de0"]
+script = ExtResource("3_w3de0")
+start_marker = "all_found"
+required_items = Array[String](["Caesar", "Picture", "Punch Card", "Window and Footprints", "Note", "Bin", "Easel"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_pb5cj"]
+script = ExtResource("4_ph52o")
+dialogue_resource = ExtResource("2_ca5xi")
+is_dialogue = true
+dialogue_triggers = Array[ExtResource("3_w3de0")]([SubResource("Resource_ca5xi"), SubResource("Resource_w3de0")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_ph52o"]
+script = ExtResource("3_w3de0")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_08k2f"]
+script = ExtResource("4_ph52o")
+dialogue_resource = ExtResource("10_w3de0")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_w3de0")]([SubResource("Resource_ph52o")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_nw7m4"]
+script = ExtResource("3_w3de0")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_ch50r"]
+script = ExtResource("4_ph52o")
+dialogue_resource = ExtResource("12_ph52o")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_w3de0")]([SubResource("Resource_nw7m4")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_uyy4s"]
+script = ExtResource("3_w3de0")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_mrvv8"]
+script = ExtResource("4_ph52o")
+dialogue_resource = ExtResource("14_pb5cj")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_w3de0")]([SubResource("Resource_uyy4s")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_qym0v"]
+script = ExtResource("3_w3de0")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_n0obf"]
+script = ExtResource("4_ph52o")
+dialogue_resource = ExtResource("16_08k2f")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_w3de0")]([SubResource("Resource_qym0v")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_51cwr"]
+script = ExtResource("3_w3de0")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_043y3"]
+script = ExtResource("4_ph52o")
+dialogue_resource = ExtResource("18_ch50r")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_w3de0")]([SubResource("Resource_51cwr")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_2hoj3"]
+script = ExtResource("3_w3de0")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_xmhm6"]
+script = ExtResource("4_ph52o")
+dialogue_resource = ExtResource("20_uyy4s")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_w3de0")]([SubResource("Resource_2hoj3")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Living Room" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_fkbp5")
+location_name = "Living Room"
+items = [NodePath("Caesar Statue"), NodePath("Book"), NodePath("Dog Picture"), NodePath("Punch Card"), NodePath("Newspaper"), NodePath("Easel")]
+has_inventory = true
+location_dialogue = SubResource("Resource_pb5cj")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -25,6 +142,7 @@ texture = ExtResource("2_t5me7")
 [node name="Corridor" parent="." instance=ExtResource("3_05acy")]
 scale = Vector2(0.299993, 0.299993)
 texture_normal = ExtResource("4_pjhar")
+requested_location_name = "Kitchen"
 
 [node name="Caesar Statue" type="TextureButton" parent="."]
 offset_left = 400.0
@@ -36,6 +154,7 @@ texture_normal = ExtResource("5_qw0nm")
 script = ExtResource("6_w07sj")
 item_name = "Caesar"
 is_collectable = true
+item_dialogue = SubResource("Resource_08k2f")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Book" type="TextureButton" parent="."]
@@ -48,6 +167,7 @@ texture_normal = ExtResource("7_5v2a3")
 script = ExtResource("6_w07sj")
 item_name = "Book"
 is_collectable = true
+item_dialogue = SubResource("Resource_ch50r")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Dog Picture" type="TextureButton" parent="."]
@@ -61,6 +181,7 @@ texture_normal = ExtResource("8_ca5xi")
 script = ExtResource("6_w07sj")
 item_name = "Picture"
 is_collectable = true
+item_dialogue = SubResource("Resource_mrvv8")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Punch Card" type="TextureButton" parent="."]
@@ -73,6 +194,7 @@ texture_normal = ExtResource("9_pjhar")
 script = ExtResource("6_w07sj")
 item_name = "Punch Card"
 is_collectable = true
+item_dialogue = SubResource("Resource_n0obf")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Newspaper" type="TextureButton" parent="."]
@@ -85,6 +207,7 @@ scale = Vector2(0.178789, 0.178789)
 texture_normal = ExtResource("10_qw0nm")
 script = ExtResource("6_w07sj")
 item_name = "Newspaper"
+item_dialogue = SubResource("Resource_043y3")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Easel" type="TextureButton" parent="."]
@@ -94,4 +217,5 @@ scale = Vector2(0.300004, 0.300004)
 texture_normal = ExtResource("9_w3de0")
 script = ExtResource("6_w07sj")
 item_name = "Easel"
+item_dialogue = SubResource("Resource_xmhm6")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
