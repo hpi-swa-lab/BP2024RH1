@@ -2,16 +2,17 @@ extends Resource
 class_name Dialogue
 
 @export var dialogue_resource: DialogueResource
-@export var is_dialogue: bool
-@export var is_monologue: bool
+@export var is_dialogue: bool:
+	get: return is_dialogue
+	set(v):
+		is_dialogue = v
+		set_baloon_type()
+
 var baloon_type: String
-@export var conditions: Array[DialogueCondition] 
-
-var monologue_baloon_path: String = "res://dialogue_balloons/balloon.tscn"
-var dialogue_baloon_path: String = "res://dialogue_balloons/monologue/balloon_monologue.tscn"
-
-func _init():
-	set_baloon_type()	
+@export var dialogue_triggers: Array[DialogueTrigger]
+@export var start_automatically: bool = true
+var monologue_baloon_path: String = "res://dialogue_balloons/monologue/balloon_monologue.tscn"
+var dialogue_baloon_path: String = "res://dialogue_balloons/balloon.tscn"
 
 func set_baloon_type():
 	if is_dialogue:
@@ -19,15 +20,16 @@ func set_baloon_type():
 	else:
 		baloon_type = monologue_baloon_path
 
-func choose_dialogue_by_requierements(player_items: Array):
+func choose_dialogue_trigger_by_requierements(player_items: Array):
 	var best_match = null
-	for condition in conditions:
-		if is_subset(condition.required_items, player_items):
+	for condition in dialogue_triggers:
+		if is_subset(condition.required_items, player_items) and not condition.was_played:
 			if best_match == null or best_match.required_items.size() < condition.required_items.size():
 				best_match = condition
+				condition.was_played = true
 	
 	if best_match != null:#and best_match.required_items.size() > 0:
-		return best_match.dialogue_start
+		return best_match
 	else:
 		return null
 	
@@ -38,7 +40,7 @@ func is_subset(subset: Array, superset: Array) -> bool:
 	return true
 
 func get_condition_index_by_dialogue_start(target: String):
-	for i in conditions.size():
-		if conditions[i].dialogue_start == target:
+	for i in dialogue_triggers.size():
+		if dialogue_triggers[i].dialogue_start == target:
 			return i
 	return null

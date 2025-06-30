@@ -1,5 +1,8 @@
-# wird am Ende des Minispiels abgespielt
 ~ default
+Klaas: Jetzt können wir wieder die Aussagen von Bürgermeister Hongiwald und die gefundenen Spuren vergleichen.
+=> END
+
+~ minigame_completed
 Klaas: Die meisten der Aussagen des Bürgermeisters waren falsch oder nur Halbwahrheiten. Mein Verdacht gegenüber ihm verstärkt sich.
 Klaas: Morgen Abend ist bereits die Neueröffnung von Bitza. Wir sollten Honigwald dort auf jeden Fall im Auge behalten.
 => END

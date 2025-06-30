@@ -1,4 +1,4 @@
-extends Control
+extends Location
 
 var selected_statement: Control
 var statement_count: int = 5
@@ -23,11 +23,11 @@ func _on_statement_selected(new_statement: Control):
 	selected_statement = new_statement
 
 func _on_false_button_pressed() -> void:
-	add_statement_to_array(0)
+	add_statement_to_array(1)
 
 
 func _on_true_button_pressed() -> void:
-	add_statement_to_array(1)
+	add_statement_to_array(0)
 
 
 func add_statement_to_array(category_value: int):
@@ -45,7 +45,15 @@ func check_statement_count():
 
 func _on_check_pressed() -> void:
 	if check_solution():
-		print("Nicely done!") # Dialogue and scene switching
+		DialogueManager.show_dialogue_balloon_scene(
+			location_dialogue.baloon_type,
+			location_dialogue.dialogue_resource,
+			"minigame_completed")
+		await DialogueManager.dialogue_ended
+		
+		var interaction_item = Item.new()
+		interaction_item.item_name = "Minigame1 completed"
+		item_found.emit(interaction_item)
 	else:
 		retry_level()
 

@@ -1,21 +1,40 @@
-[gd_scene load_steps=44 format=3 uid="uid://bdunf63688abk"]
+[gd_scene load_steps=51 format=3 uid="uid://bdunf63688abk"]
 
 [ext_resource type="Texture2D" uid="uid://xiw5b3ky4thj" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/newspaper_cutout.png" id="2_2j0md"]
 [ext_resource type="Texture2D" uid="uid://cinsrfgtkmeal" path="res://Assets/clue_board_max.png" id="2_drn2o"]
-[ext_resource type="Texture2D" uid="uid://bdg4mifqc88lo" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_false.png" id="2_n0miw"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="2_fpywy"]
+[ext_resource type="Texture2D" uid="uid://jga683hkar4x" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_false.png" id="2_n0miw"]
 [ext_resource type="Script" uid="uid://cpb3p8s01tafo" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/statement.gd" id="2_wyel3"]
+[ext_resource type="Resource" uid="uid://bnyww2cbkld6c" path="res://Cases/Fake_News_Fiasko/dialogue/minigame1.dialogue" id="3_a7tbl"]
 [ext_resource type="Texture2D" uid="uid://c2cgb6pbu6lde" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_follower3.png" id="3_knt34"]
-[ext_resource type="Texture2D" uid="uid://c7cfab1nr30qi" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_true.png" id="3_ys2pk"]
+[ext_resource type="Texture2D" uid="uid://cv6b5hix5pnsf" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_true.png" id="3_ys2pk"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_f74x3"]
 [ext_resource type="Texture2D" uid="uid://dlqy3u7jxto5t" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_follower2.png" id="4_jhfol"]
 [ext_resource type="Texture2D" uid="uid://cwnbawivho4pl" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_follower1.png" id="5_elp5d"]
 [ext_resource type="Texture2D" uid="uid://de7mun6uvrbrp" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/business_card.png" id="7_1haqu"]
-[ext_resource type="Texture2D" uid="uid://riltqwdr0myk" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_breakIn.png" id="7_5ok2b"]
+[ext_resource type="Texture2D" uid="uid://dbki57auv83s7" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_breakIn.png" id="7_5ok2b"]
+[ext_resource type="Texture2D" uid="uid://c001qvllq827j" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="7_egs20"]
 [ext_resource type="Script" uid="uid://dl5tu0rs75qlq" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/case_1_minigame_1.gd" id="8_knt34"]
 [ext_resource type="Script" uid="uid://bvoja0113kl2h" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup.gd" id="9_1haqu"]
 [ext_resource type="Script" uid="uid://d3qcc0y6ic0" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_2.gd" id="10_4ckjm"]
 [ext_resource type="Script" uid="uid://8b4w60tgymnp" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_newspaper_cutout.gd" id="11_1haqu"]
 [ext_resource type="Script" uid="uid://bgu7c8nrr4lcb" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_conversation.gd" id="12_4ckjm"]
 [ext_resource type="Script" uid="uid://8el3otcsc60s" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_business_card.gd" id="13_5ok2b"]
+[ext_resource type="Texture2D" uid="uid://c3ox41n1otos6" path="res://Cases/Fake_News_Fiasko/Assets/tape.png" id="13_fpywy"]
+
+[sub_resource type="Resource" id="Resource_f74x3"]
+script = ExtResource("2_fpywy")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_xf4ha"]
+script = ExtResource("4_f74x3")
+dialogue_resource = ExtResource("3_a7tbl")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("2_fpywy")]([SubResource("Resource_f74x3")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [sub_resource type="LabelSettings" id="LabelSettings_ueprj"]
 font_size = 35
@@ -120,6 +139,7 @@ expand_margin_right = 3.0
 expand_margin_bottom = 3.0
 
 [sub_resource type="SystemFont" id="SystemFont_nat3h"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_obinr"]
 font_size = 14
@@ -210,14 +230,11 @@ expand_margin_bottom = 3.0
 [sub_resource type="LabelSettings" id="LabelSettings_6c04f"]
 font_size = 20
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Minigame1" type="Node"]
 script = ExtResource("8_knt34")
+location_name = "Minigame1"
+location_dialogue = SubResource("Resource_xf4ha")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -225,7 +242,6 @@ scale = Vector2(0.521976, 0.591781)
 texture = ExtResource("2_drn2o")
 
 [node name="Faktencheck" type="Label" parent="."]
-layout_mode = 0
 offset_left = 470.0
 offset_top = 55.0
 offset_right = 682.0
@@ -235,7 +251,6 @@ label_settings = SubResource("LabelSettings_ueprj")
 
 [node name="Check" type="Button" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
 offset_left = 202.0
 offset_top = 580.0
 offset_right = 301.0
@@ -243,6 +258,7 @@ offset_bottom = 611.0
 text = "Überprüfen"
 
 [node name="Check_button" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -270,14 +286,12 @@ texture_pressed = ExtResource("3_ys2pk")
 texture_hover = ExtResource("3_ys2pk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
 offset_left = 54.0
 offset_top = 97.0
 offset_right = 450.0
 offset_bottom = 578.0
 
 [node name="Panel2" type="Panel" parent="."]
-layout_mode = 0
 offset_left = 155.0
 offset_top = 108.0
 offset_right = 350.0
@@ -292,7 +306,6 @@ text = "Aussagen von Maria"
 label_settings = SubResource("LabelSettings_x5wrr")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
 offset_left = 769.0
 offset_top = 92.0
 offset_right = 858.0
@@ -308,6 +321,7 @@ label_settings = SubResource("LabelSettings_mdu5q")
 
 [node name="Statements" type="Control" parent="."]
 unique_name_in_owner = true
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -419,11 +433,17 @@ label_settings = SubResource("LabelSettings_obinr")
 horizontal_alignment = 1
 
 [node name="Hints" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Newspaper_cutout" type="TextureRect" parent="Hints"]
+[node name="Newspaper_cutout" type="Control" parent="Hints"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Newspaper_cutout" type="TextureRect" parent="Hints/Newspaper_cutout"]
 layout_mode = 0
 offset_left = 576.0
 offset_top = 153.0
@@ -431,6 +451,15 @@ offset_right = 1324.0
 offset_bottom = 653.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_2j0md")
+
+[node name="Pin" type="TextureRect" parent="Hints/Newspaper_cutout"]
+layout_mode = 0
+offset_left = 671.0
+offset_top = 137.0
+offset_right = 906.0
+offset_bottom = 372.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
 
 [node name="SecurityFootage" type="Control" parent="Hints"]
 anchors_preset = 0
@@ -466,6 +495,14 @@ offset_bottom = 2170.0
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_elp5d")
 
+[node name="Pin" type="TextureRect" parent="Hints/SecurityFootage"]
+layout_mode = 0
+offset_left = 89.0
+offset_right = 324.0
+offset_bottom = 235.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
+
 [node name="BreakIn" type="Control" parent="Hints"]
 anchors_preset = 0
 offset_left = 835.0
@@ -497,7 +534,26 @@ offset_bottom = 17.0
 text = "Kennzeichen des Bürgermeisters: BTR HWD 1"
 label_settings = SubResource("LabelSettings_lu6ni")
 
-[node name="Panel" type="Panel" parent="Hints"]
+[node name="Pin" type="TextureRect" parent="Hints/BreakIn"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = -10.0
+offset_right = 334.0
+offset_bottom = 225.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
+
+[node name="Tape" type="TextureRect" parent="Hints/BreakIn"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 87.0
+offset_right = 457.0
+offset_bottom = 446.0
+rotation = 0.820305
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("13_fpywy")
+
+[node name="TextSnippet" type="Panel" parent="Hints"]
 layout_mode = 0
 offset_left = 770.0
 offset_top = 490.0
@@ -505,7 +561,7 @@ offset_right = 1101.0
 offset_bottom = 567.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ccd35")
 
-[node name="Conversation" type="Label" parent="Hints/Panel"]
+[node name="Conversation" type="Label" parent="Hints/TextSnippet"]
 layout_mode = 0
 offset_right = 331.0
 offset_bottom = 77.0
@@ -514,6 +570,15 @@ antwortete die Gemüseverkäuferin:
 ”Noch nicht, der Bürgermeister war heute noch nicht da. 
 Er sollte aber demnächst vorbeikommen.”"
 label_settings = SubResource("LabelSettings_208dm")
+
+[node name="Pin" type="TextureRect" parent="Hints/TextSnippet"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = -21.0
+offset_right = 394.0
+offset_bottom = 214.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
 
 [node name="Business_card" type="Control" parent="Hints"]
 anchors_preset = 0
@@ -534,9 +599,9 @@ texture = ExtResource("7_1haqu")
 [node name="Panel" type="Panel" parent="Hints/Business_card"]
 layout_mode = 0
 offset_left = -10.0
-offset_top = 140.0
+offset_top = 135.0
 offset_right = 261.0
-offset_bottom = 197.0
+offset_bottom = 192.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_56wsw")
 
 [node name="Label" type="Label" parent="Hints/Business_card/Panel"]
@@ -550,10 +615,10 @@ label_settings = SubResource("LabelSettings_ccd35")
 
 [node name="Panel2" type="Panel" parent="Hints/Business_card"]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 65.0
-offset_right = 308.0
-offset_bottom = 113.0
+offset_left = 200.0
+offset_top = 35.0
+offset_right = 320.0
+offset_bottom = 83.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_a3qdw")
 
 [node name="Label2" type="Label" parent="Hints/Business_card/Panel2"]
@@ -566,8 +631,58 @@ verloren hat"
 label_settings = SubResource("LabelSettings_o6ktf")
 horizontal_alignment = 1
 
+[node name="Tape" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 65.0
+offset_right = 581.0
+offset_bottom = 424.0
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_fpywy")
+
+[node name="Tape2" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 18.0
+offset_right = 696.0
+offset_bottom = 377.0
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_fpywy")
+
+[node name="Tape3" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 106.0
+offset_right = 339.0
+offset_bottom = 465.0
+rotation = 0.261799
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_fpywy")
+
+[node name="Tape4" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 103.0
+offset_right = 571.0
+offset_bottom = 462.0
+rotation = 0.698132
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_fpywy")
+
+[node name="Pin" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = -20.0
+offset_right = 335.0
+offset_bottom = 215.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
+
 [node name="Popup_breakIn" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_left = 36.0
 offset_top = 40.0
@@ -588,6 +703,7 @@ offset_top = 69.0
 offset_right = 3997.0
 offset_bottom = 2229.0
 scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_5ok2b")
 
 [node name="Label" type="Label" parent="Popup_breakIn"]
 layout_mode = 0
@@ -600,6 +716,7 @@ label_settings = SubResource("LabelSettings_0iep1")
 
 [node name="Popup_security_footage" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_left = 36.0
 offset_top = 40.0
@@ -640,6 +757,7 @@ text = "zurück"
 
 [node name="Popup_newspaper_cutout" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_left = 36.0
 offset_top = 40.0
@@ -663,6 +781,7 @@ texture = ExtResource("2_2j0md")
 
 [node name="Popup_conversation" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_left = 36.0
 offset_top = 40.0
@@ -697,6 +816,7 @@ horizontal_alignment = 1
 
 [node name="Popup_business_card" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_left = 36.0
 offset_top = 40.0
@@ -745,10 +865,10 @@ Restaurantbesucher verloren hat."
 [connection signal="gui_input" from="Statements/Statement3" to="Statements/Statement3" method="_on_gui_input"]
 [connection signal="gui_input" from="Statements/Statement4" to="Statements/Statement4" method="_on_gui_input"]
 [connection signal="gui_input" from="Statements/Statement5" to="Statements/Statement5" method="_on_gui_input"]
-[connection signal="gui_input" from="Hints/Newspaper_cutout" to="Popup_newspaper_cutout" method="_on_newspaper_cutout_gui_input"]
+[connection signal="gui_input" from="Hints/Newspaper_cutout/Newspaper_cutout" to="Popup_newspaper_cutout" method="_on_newspaper_cutout_gui_input"]
 [connection signal="gui_input" from="Hints/SecurityFootage" to="Popup_security_footage" method="_on_security_footage_gui_input"]
 [connection signal="gui_input" from="Hints/BreakIn" to="Popup_breakIn" method="_on_break_in_gui_input"]
-[connection signal="gui_input" from="Hints/Panel" to="Popup_conversation" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Hints/TextSnippet" to="Popup_conversation" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Hints/Business_card/TextureRect" to="Popup_business_card" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="Popup_breakIn/ColorRect" to="Popup_breakIn" method="_on_color_rect_gui_input"]
 [connection signal="gui_input" from="Popup_security_footage/ColorRect" to="Popup_security_footage" method="_on_color_rect_gui_input"]

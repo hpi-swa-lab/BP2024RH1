@@ -1,5 +1,4 @@
 extends Panel
-
 class_name InventorySlot
 
 var stored_item: Item = null

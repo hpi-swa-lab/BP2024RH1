@@ -12,7 +12,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_cwl27")
+
+[node name="Helpscreen" parent="." instance=ExtResource("3_vsfxq")]
+layout_mode = 1
+mouse_filter = 2
 
 [node name="Question_mark" parent="." instance=ExtResource("2_kriax")]
 layout_mode = 0
@@ -21,7 +26,5 @@ offset_top = 30.0
 offset_right = 1550.0
 offset_bottom = 580.0
 
-[node name="Helpscreen" parent="." instance=ExtResource("3_vsfxq")]
-layout_mode = 1
-
 [connection signal="gui_input" from="Question_mark" to="Question_mark" method="_on_gui_input"]
+[connection signal="pressed" from="Question_mark" to="Question_mark" method="_on_pressed"]

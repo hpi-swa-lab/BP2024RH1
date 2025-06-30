@@ -31,3 +31,17 @@ Maria: Danke, endlich hört mir mal jemand zu!
 - Darf ich mich hier denn noch etwas umsehen?
 Maria: Aber klar doch.
 => END
+
+~ all_found
+Ich denke, ich habe alles. Ich muss mir die Spuren einmal im Büro in Ruhe anschauen.
+do _on_location_switch_requested("Minigame1")
+=> END
+
+~ evening
+**Undurchdringliches Stimmengewirr**
+Maria: Da bist du ja! Ich freue mich, dass du kommen konntest. Der Tisch hier vorne ist für dich!
+Maria: Wir fangen gleich mit der Vorspeise an. Es gibt klassische Bruschetta.
+- Ich vertrage Olivenöl leider nicht so gut.
+	Maria: Kein Problem. Dafür finden wir sicherlich eine Lösung.
+do _on_location_switch_requested("Time Skip")
+=> END

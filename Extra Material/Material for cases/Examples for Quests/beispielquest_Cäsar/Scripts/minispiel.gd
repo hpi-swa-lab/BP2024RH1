@@ -17,6 +17,7 @@ func _ready():
 		hinweis.show()
 	
 	%"VerschlüsselterText".text = shown_text
+	%"VerschlüsselterText".add_theme_color_override("font_color", Color(0,0,0))
 	var rot_angle = deg_to_rad(13.84)
 	
 	for i in range(alphabet.length()):

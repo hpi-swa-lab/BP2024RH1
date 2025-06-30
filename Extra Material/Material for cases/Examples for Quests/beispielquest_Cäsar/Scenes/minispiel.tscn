@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq2kn0806dpmu"]
+[gd_scene load_steps=8 format=3 uid="uid://cq2kn0806dpmu"]
 
 [ext_resource type="Script" uid="uid://cxwi83pqvt4fk" path="res://Scripts/minispiel.gd" id="1_k10lx"]
 [ext_resource type="Texture2D" uid="uid://dey5u0abogkd" path="res://Assets/Caesar_außen.png" id="2_drk55"]
 [ext_resource type="Texture2D" uid="uid://vx7bwsjh032j" path="res://Assets/Cäsar_innen.png" id="3_16kq3"]
 [ext_resource type="Texture2D" uid="uid://4604ftawrbhk" path="res://Assets/arrow_left.png" id="4_16kq3"]
 [ext_resource type="Texture2D" uid="uid://bgrmpcrchx761" path="res://Assets/arrow_right.png" id="5_w2e1w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16kq3"]
+bg_color = Color(0.356863, 0.227451, 0.160784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2e1w"]
+bg_color = Color(0.569211, 0.380416, 0.28358, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="Minispiel" type="Node2D"]
 script = ExtResource("1_k10lx")
@@ -13,6 +23,7 @@ script = ExtResource("1_k10lx")
 unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.4, 1.4)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -62,12 +73,15 @@ offset_top = -56.0
 offset_right = 466.0
 offset_bottom = -22.0
 theme_type_variation = &"HeaderMedium"
+theme_override_font_sizes/font_size = 27
 
 [node name="CheckSolution" type="Button" parent="."]
-offset_left = 136.0
+offset_left = 138.0
 offset_top = 99.0
-offset_right = 299.0
+offset_right = 301.0
 offset_bottom = 153.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_16kq3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w2e1w")
 text = "Check Solution"
 
 [node name="Hinweis" type="Label" parent="."]
