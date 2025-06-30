@@ -143,14 +143,7 @@ func interaction_happened(interaction_name: String) -> void:
 func _on_case_overview_opened(location: Location) -> void:
 	var active_case = get_active_case()
 	var location_index = active_case.get_location_index_by_name(location.location_name)
-	var cases_titles = get_cases_titles()
-	active_case.case_locations[location_index].add_cases(cases_titles)
-
-func get_cases_titles() -> Array:
-	var case_titles = []
-	for case in cases.slice(1):
-		case_titles.append(case.case_title)
-	return case_titles
+	active_case.case_locations[location_index].add_cases(cases.slice(1))
 
 func _on_start_case(_case_title: String):
 	var case_slug = get_case_slug_by_title(_case_title)

@@ -4,6 +4,7 @@ class_name Case
 ## may not be changed after save files where slug exists, case_slug = case_id
 @export var case_slug: String
 @export var case_title: String
+@export var case_topic: String
 @export var case_location_scenes: Array[PackedScene]
 var case_locations: Array[Location]
 @export var inventory_scene: PackedScene
