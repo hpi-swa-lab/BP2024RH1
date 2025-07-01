@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxpdv3si2n5eh"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_7xvjs"]
+
+[node name="TechnicRoom" type="Node"]
+script = ExtResource("1_7xvjs")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
