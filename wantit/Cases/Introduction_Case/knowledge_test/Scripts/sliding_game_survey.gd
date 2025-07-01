@@ -21,7 +21,7 @@ func load_questions():
 
 func show_next_question():
 	if current_question >= questions.size():
-		print("Quiz Finished! Final score: ", score)
+		print("IC Survey done! They chose: ", score)
 		return
 	slider_box.show_question(questions[current_question])
 

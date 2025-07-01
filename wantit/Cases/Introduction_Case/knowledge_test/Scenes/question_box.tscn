@@ -25,6 +25,19 @@ texture = ExtResource("2_wjd10")
 expand_mode = 2
 stretch_mode = 5
 
+[node name="ABox" type="TextEdit" parent="."]
+visible = false
+custom_minimum_size = Vector2(500, 70)
+layout_mode = 2
+placeholder_text = "Antwort"
+wrap_mode = 1
+
+[node name="ASubmit" parent="." instance=ExtResource("2_o7t1u")]
+visible = false
+layout_mode = 2
+text = "A"
+script = null
+
 [node name="A1" parent="." instance=ExtResource("2_o7t1u")]
 layout_mode = 2
 text = "A"

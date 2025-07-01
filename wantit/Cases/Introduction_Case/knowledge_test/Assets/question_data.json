@@ -13,6 +13,7 @@
   {
 	"question": "Welches Medium kann Daten enthalten?",
 	"answers": ["Ein Textdokument", "Ein Bild", "Ein Lied", ""],
+	"isWrite": [],
 	"correct": 1
   },
   {
