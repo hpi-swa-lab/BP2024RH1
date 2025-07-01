@@ -4,8 +4,6 @@ const alphabet = "TUVWXYZABCDEFGHIJKLMNOPQRS"
 var textfield_index = 0
 var text_fields
 
-signal Minigame_completed()
-
 @export var interaction_name: String
 @export var original_text: String
 @export var shown_text: String
@@ -95,6 +93,7 @@ func _on_check_solution_pressed() -> void:
 		else:
 			input_text += " "
 	if input_text == original_text.to_upper():
+		print("checking")
 		if location_dialogue:
 			DialogueManager.show_dialogue_balloon_scene(
 				location_dialogue.baloon_type,
@@ -104,4 +103,6 @@ func _on_check_solution_pressed() -> void:
 				
 		var interaction_item = Item.new()
 		interaction_item.item_name = interaction_name
+		interaction_item.is_collectable = false
 		item_found.emit(interaction_item)
+		print("emitting: " +  interaction_name)

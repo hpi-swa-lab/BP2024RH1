@@ -21,6 +21,7 @@ script = ExtResource("1_k10lx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
 offset_left = -576.0
 offset_top = -324.0
 offset_right = 576.0
@@ -51,6 +52,7 @@ position = Vector2(0, 1)
 polygon = PackedVector2Array(-16.67, -128.914, -13, -106, -1, -107, 12, -106, 15.3296, -129.082, -0.675446, -129.998)
 
 [node name="links" type="Button" parent="."]
+layout_mode = 0
 offset_left = -496.0
 offset_top = 140.0
 offset_right = -176.0
@@ -62,6 +64,7 @@ icon = ExtResource("4_16kq3")
 flat = true
 
 [node name="rechts" type="Button" parent="."]
+layout_mode = 0
 offset_left = -160.0
 offset_top = 134.0
 offset_right = 156.0
@@ -73,6 +76,7 @@ icon = ExtResource("5_w2e1w")
 flat = true
 
 [node name="CheckSolution" type="Button" parent="."]
+layout_mode = 0
 offset_left = 136.0
 offset_top = 99.0
 offset_right = 299.0

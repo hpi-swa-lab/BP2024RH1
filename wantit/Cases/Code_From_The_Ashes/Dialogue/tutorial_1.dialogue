@@ -10,3 +10,8 @@ Klaas: Hast du das soweit verstanden?
 - Könntest du die Erklärung nochmal wiederholen? => default
 - Ja, ich denke schon.
 	Klaas: Super! Dann probier das doch gleich mal aus. Der Schlüssel ist 6. => END
+	
+~ minigame_completed
+Klaas: Dann würde ich das Entschlüsseln der Nachricht jetzt dir überlassen. Viel Erfolg!
+do _on_location_switch_requested("Minigame1")
+=> END

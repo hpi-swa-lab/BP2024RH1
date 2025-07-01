@@ -4,11 +4,10 @@ Klaas: In der Wohnung in der Kryptoallee 42 hat es vor kurzem gebrannt. Die Besi
 
 ~ after_inspection
 Klaas: Nun zu der Nachricht. Kennst du die Caesar-Verschlüsselung bereits?
-- Ja 
-	Klaas: Dann würde ich das Entschlüsseln der Nachricht jetzt dir überlassen. Viel Erfolg!
-	do _on_location_switch_requested("Minigame1")
+- Ja => after_tutorial
 - Nein
 	do _on_location_switch_requested("Tutorial")
+	=> END
 
 ~ after_tutorial
 Klaas: Dann würde ich das Entschlüsseln der Nachricht jetzt dir überlassen. Viel Erfolg!

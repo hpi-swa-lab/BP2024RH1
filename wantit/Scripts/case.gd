@@ -61,6 +61,7 @@ func handle_item_found(_item: Item, _location: Location = null) -> void:
 		inventory.add_item(_item)
 	else:
 		interactions.append(_item.item_name)
+		print(_item.item_name)
 	item_found.emit(_item)
 	try_start_event()
 	

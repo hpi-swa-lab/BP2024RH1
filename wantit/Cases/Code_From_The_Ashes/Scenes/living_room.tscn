@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dq7i6tek3v1ks"]
+[gd_scene load_steps=49 format=3 uid="uid://dq7i6tek3v1ks"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_fkbp5"]
 [ext_resource type="Resource" uid="uid://dqljl767oo00f" path="res://Cases/Code_From_The_Ashes/Dialogue/living_room.dialogue" id="2_ca5xi"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://c847xhwlt6ixv" path="res://Cases/Code_From_The_Ashes/Dialogue/book.dialogue" id="12_ph52o"]
 [ext_resource type="Resource" uid="uid://b6tjedcg7mi62" path="res://Cases/Code_From_The_Ashes/Dialogue/dog_picture.dialogue" id="14_pb5cj"]
 [ext_resource type="Resource" uid="uid://jg7t4icdnrrp" path="res://Cases/Code_From_The_Ashes/Dialogue/punch_card.dialogue" id="16_08k2f"]
+[ext_resource type="Script" uid="uid://cplulkktgmqb7" path="res://Cases/Code_From_The_Ashes/Scripts/item_action_minigame1.gd" id="16_qym0v"]
 [ext_resource type="Resource" uid="uid://dns4litwb7l8v" path="res://Cases/Code_From_The_Ashes/Dialogue/newspaper.dialogue" id="18_ch50r"]
 [ext_resource type="Resource" uid="uid://bhw45svvt5qdy" path="res://Cases/Code_From_The_Ashes/Dialogue/easel.dialogue" id="20_uyy4s"]
 
@@ -217,6 +218,7 @@ texture_normal = ExtResource("5_qw0nm")
 script = ExtResource("6_w07sj")
 item_name = "Caesar"
 is_collectable = true
+action_script = ExtResource("16_qym0v")
 item_dialogue = SubResource("Resource_08k2f")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
@@ -244,6 +246,7 @@ texture_normal = ExtResource("8_ca5xi")
 script = ExtResource("6_w07sj")
 item_name = "Picture"
 is_collectable = true
+action_script = ExtResource("16_qym0v")
 item_dialogue = SubResource("Resource_mrvv8")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
@@ -257,6 +260,7 @@ texture_normal = ExtResource("9_pjhar")
 script = ExtResource("6_w07sj")
 item_name = "Punch Card"
 is_collectable = true
+action_script = ExtResource("16_qym0v")
 item_dialogue = SubResource("Resource_n0obf")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 

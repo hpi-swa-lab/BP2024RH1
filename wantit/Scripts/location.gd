@@ -58,6 +58,7 @@ func _on_item_found(item: Item) -> void:
 	if item.is_collectable:
 		disable_item(item) 
 	item_found.emit(item, self)
+	print("emitting further:" + item.item_name)
 
 func _on_location_switch_requested(requested_location_name: String):
 	location_switch_requested.emit(requested_location_name)
