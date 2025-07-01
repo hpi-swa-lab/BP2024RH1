@@ -1,0 +1,106 @@
+[gd_scene load_steps=19 format=3 uid="uid://brb5udqhuuouj"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_4x7lb"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_22ihq"]
+[ext_resource type="Resource" uid="uid://dkj4p3bgt6aj7" path="res://dialogue/office.dialogue" id="2_mun2x"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_c6d25"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_oymn0"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_dqrf4"]
+[ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="5_ppomr"]
+[ext_resource type="Texture2D" uid="uid://b5rpc8qen503n" path="res://Assets/office/clue_board_max.png" id="6_wv2d5"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="7_n3alp"]
+[ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="8_das7n"]
+[ext_resource type="Texture2D" uid="uid://dhsfehg0vmn2l" path="res://Assets/office/map.png" id="9_o0i3f"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="12_evvr1"]
+
+[sub_resource type="Resource" id="Resource_573ma"]
+script = ExtResource("3_c6d25")
+mode = 2
+required_items = Array[String](["Documents_on_table"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_psvkd"]
+script = ExtResource("2_22ihq")
+hint_text = "Der Papierkram muss erledigt werden. Die Dokumente Liegen schon auf meinem Tisch"
+hint_condition = SubResource("Resource_573ma")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_j5oil"]
+script = ExtResource("3_oymn0")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_xas0k"]
+script = ExtResource("3_oymn0")
+start_marker = "evaluate_traces"
+required_items = Array[String](["Minigame1 completed"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_fayb1"]
+script = ExtResource("3_oymn0")
+start_marker = "finish"
+required_items = Array[String](["Minigame1 completed", "Minigame2 completed"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_ufx7h"]
+script = ExtResource("4_dqrf4")
+dialogue_resource = ExtResource("2_mun2x")
+is_dialogue = true
+dialogue_triggers = Array[ExtResource("3_oymn0")]([SubResource("Resource_j5oil"), SubResource("Resource_xas0k"), SubResource("Resource_fayb1")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Office" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_4x7lb")
+location_name = "Office"
+items = [NodePath("Documents_on_table")]
+hints = Array[ExtResource("2_22ihq")]([SubResource("Resource_psvkd")])
+location_dialogue = SubResource("Resource_ufx7h")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Office" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.301736, 0.301736)
+texture = ExtResource("5_ppomr")
+
+[node name="clue_board" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_left = 427.0
+offset_top = 262.0
+offset_right = 2634.0
+offset_bottom = 1357.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("6_wv2d5")
+script = ExtResource("7_n3alp")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_das7n")
+script = ExtResource("7_n3alp")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="map" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+action_mode = 0
+texture_normal = ExtResource("9_o0i3f")
+script = ExtResource("7_n3alp")
+requested_location_name = "Map"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="Documents_on_table" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_evvr1")
+item_name = "Documents_on_table"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
