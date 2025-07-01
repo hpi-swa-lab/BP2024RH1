@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ovgubqjktpfk"]
+[gd_scene load_steps=24 format=3 uid="uid://ovgubqjktpfk"]
 
 [ext_resource type="Script" uid="uid://duybxgj0n5kmn" path="res://Cases/Fake_News_Fiasko/minigame3/Scripts/minigame_3.gd" id="1_ihkhm"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_2cb3y"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jdtbuh11axxx" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/post_close_up.tscn" id="3_6sdpr"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_fipg2"]
 [ext_resource type="Texture2D" uid="uid://cbg320vongeqq" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_bitza.png" id="3_lr4ld"]
+[ext_resource type="Resource" uid="uid://gpamh6uyoh8s" path="res://Cases/Fake_News_Fiasko/dialogue/minigame3.dialogue" id="4_0qow0"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="4_6sanc"]
 [ext_resource type="Texture2D" uid="uid://bkbjqsorkv1fh" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_hospital.png" id="4_mu65p"]
 [ext_resource type="Texture2D" uid="uid://ox3itie2kkk3" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_selfie.png" id="4_rpf30"]
@@ -37,7 +38,7 @@ metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_m8l0e"]
 script = ExtResource("2_2cb3y")
-hint_text = ""
+hint_text = "Links siehst du Internet-Posts. Prüfe, ob sie unglaubwürdig oder unglaubwürdig sind."
 hint_condition = SubResource("Resource_ym31t")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
@@ -49,6 +50,7 @@ metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_rsikw"]
 script = ExtResource("5_0qow0")
+dialogue_resource = ExtResource("4_0qow0")
 is_dialogue = false
 dialogue_triggers = Array[ExtResource("4_6sanc")]([SubResource("Resource_ghn6i")])
 start_automatically = true
@@ -202,7 +204,7 @@ grow_horizontal = 1
 grow_vertical = 1
 Post_picture = ExtResource("4_rpf30")
 Profile_name = "selfieProfi3"
-Description = "Nices Restaurant, dieses Bitza. Aber wer ist dieser Typ im Hintergrund"
+Description = "Nices Restaurant, dieses Bitza. Aber wer ist dieser Typ im Hintergrund?"
 
 [node name="Post3" parent="Connected_posts" instance=ExtResource("11_5plo5")]
 visible = false

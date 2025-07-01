@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_ypx6j"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_2ot87"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_7jjxw"]
-[ext_resource type="Resource" uid="uid://1drlvxv8h0f" path="res://Cases/Fake_News_Fiasko/dialogue/bitza_after_the_incident.dialogue" id="3_36tf7"]
+[ext_resource type="Resource" uid="uid://badnodq6hfr8w" path="res://Cases/Fake_News_Fiasko/dialogue/bitza_after_the_incident.dialogue" id="3_36tf7"]
 [ext_resource type="Texture2D" uid="uid://cwy0eoxlbb6q1" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_door.png" id="4_36tf7"]
 [ext_resource type="Texture2D" uid="uid://bls8b146qm6wj" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_corridor.png" id="5_u0ljl"]
 [ext_resource type="Texture2D" uid="uid://bbo48asfsrktd" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_diningHall_kitchenDoor.png" id="6_awnt1"]
