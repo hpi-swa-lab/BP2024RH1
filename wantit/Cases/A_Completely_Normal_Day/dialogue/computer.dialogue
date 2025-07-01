@@ -4,4 +4,18 @@ Dieser Computer scheint keinen Strom zu haben.
 
 ~ Search_szene_1
 Klaas schau mal, der Computer hat keine Internet verbindung. 
+Klaas: Ob das an den Routern liegt?
+=> END
+
+~ Search_szene_2_Quelle
+Hier haben wir den Übeltäter.
+#dialog lan wirr war
+=> END
+
+~ Search_szene_2_neighbor_quelle
+Hier scheint es ein paar Probleme zu geben. Vielleicht sind wir der Quelle sehr nah. 
+=> END
+
+~ Search_szene_2_other
+Dieser Computer hat zwar Strom, aber kein Internet
 => END
