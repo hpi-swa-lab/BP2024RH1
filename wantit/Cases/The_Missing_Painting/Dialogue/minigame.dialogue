@@ -1,0 +1,28 @@
+~ frage1
+Robo: 0 heißt Licht aus. Welche Farbe ist das dann?
+- weiß
+	Robo: Nein, überleg noch einmal.
+	=> frage1
+- schwarz
+	Robo: Genau!
+=> frage2
+
+~ frage2
+Robo: 1 heißt Licht an. Welche Farbe ist das dann?
+- weiß
+	Robo: Genau!
+- schwarz
+	Robo: Nein, überleg noch einmal.
+	=> frage2
+=> END
+
+~ false_solution
+Robo: Das scheint nicht die Webseite des Kunsthändlers zu sein.
+Robo: Wahrscheinlich war das der falsche QR-Code.
+=> END
+
+~ correct_solution
+Robo: Perfekt! Das ist die Webseite des Kunsthändlers.
+Robo: Hier finde ich bestimmt seine Kontaktdaten, um ihn zu überführen!
+Robo: Ich werde es sofort dem Inspektor berichten!
+=> END

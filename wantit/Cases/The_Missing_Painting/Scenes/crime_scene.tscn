@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://t54jjw3ubnea"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_0hrjt"]
+[ext_resource type="Texture2D" uid="uid://ch2bm700phma6" path="res://Cases/The_Missing_Painting/Assets/Backgrounds/living_room.png" id="2_wiovm"]
+[ext_resource type="Texture2D" uid="uid://b6t6n3wxdojxb" path="res://Cases/The_Missing_Painting/Assets/Scene_Switcher/shelf.png" id="3_emee1"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_3hqj3"]
+[ext_resource type="Texture2D" uid="uid://cjje2npqkl52j" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/missing_picture.png" id="6_khtxx"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="7_mxtko"]
+[ext_resource type="Texture2D" uid="uid://dd6uvbu7gxbm5" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/background_qrcode_piece.png" id="7_wiovm"]
+[ext_resource type="Texture2D" uid="uid://b88qm4yy2hu27" path="res://Cases/The_Missing_Painting/Assets/pillow.png" id="8_emee1"]
+
+[node name="Location" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_0hrjt")
+location_name = "CrimeScene"
+items = [NodePath("Picture"), NodePath("Paper")]
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Living_Room" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_wiovm")
+expand_mode = 1
+
+[node name="ToShelf" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299916, 0.299916)
+texture_normal = ExtResource("3_emee1")
+script = ExtResource("4_3hqj3")
+requested_location_name = "ShelfCloseup"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="Paper" type="TextureButton" parent="."]
+offset_left = 923.0
+offset_top = 482.0
+offset_right = 1947.0
+offset_bottom = 1506.0
+rotation = -1.72613
+scale = Vector2(0.108083, 0.10759)
+texture_normal = ExtResource("7_wiovm")
+script = ExtResource("7_mxtko")
+item_name = "Paper"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Picture" type="TextureButton" parent="."]
+offset_top = 2.0
+offset_right = 3840.0
+offset_bottom = 2162.0
+scale = Vector2(0.299743, 0.30007)
+texture_normal = ExtResource("6_khtxx")
+script = ExtResource("7_mxtko")
+item_name = "Picture"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Pillow" type="TextureRect" parent="."]
+offset_left = 0.999938
+offset_top = 3.05176e-05
+offset_right = 3841.0
+offset_bottom = 2160.0
+scale = Vector2(0.299775, 0.299775)
+mouse_filter = 2
+texture = ExtResource("8_emee1")

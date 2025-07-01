@@ -1,0 +1,20 @@
+~ book
+Robo: Interessant, hier sind Visitenkarten.
+=> END
+
+~ florist
+Robo: Welches Interesse könnte der Florist an einem Gemälde haben?
+=> END
+
+~ electric
+Robo: Welches Interesse könnte die Elektrikerin an einem Gemälde haben?
+=> END
+
+~ art
+Robo: Komisch, da scheint eine Ecke abgerissen zu sein.
+Robo: Ich nehme die Karte mal mit.
+=> END
+
+~ find
+Robo: Vielleicht finde ich den Schnipsel ja noch.
+=> END

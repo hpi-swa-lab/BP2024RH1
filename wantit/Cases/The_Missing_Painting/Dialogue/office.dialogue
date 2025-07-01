@@ -1,0 +1,21 @@
+~ start
+Inspector: Hallo Robo! Ich habe einen neuen Fall für dich.
+Robo: Hmmm...
+Robo: Was ist passiert?
+Inspector: Es wurde eingebrochen!
+- Ich werde mir sofort den Tatort angucken gehen.
+- Was ist über den Einbruch bekannt?
+	Inspector: Es wurde ein sehr wertvolles Gemälde geklaut.
+	Inspector: Aber sonst komischerweise nichts.
+	Robo: Wer wusste, dass diese Gemälde dort hängt?
+	Inspector: Laut eigener Aussage wussten das nur seine Bekannten.
+=> END
+
+~ end_scene
+Inspector: Vielen Dank für deine Hilfe Robo!
+Inspector: Der Kunsthändler hatte das Gemälde gestohlen.
+Robo: Konnte es wiedergefunden werden?
+Inspector: Zum Glück ja.
+Inspector: Du warst eine große Hilfe!
+Inspector: Wie schwer fandest du den Fall?
+=>

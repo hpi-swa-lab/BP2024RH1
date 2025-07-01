@@ -32,6 +32,11 @@
 [ext_resource type="PackedScene" uid="uid://de08xwxsx122u" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/case_2_minigame_2.tscn" id="30_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://ovgubqjktpfk" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/minigame_3.tscn" id="31_7knny"]
 [ext_resource type="PackedScene" uid="uid://caun4d48wfmce" path="res://Cases/Fake_News_Fiasko/Scenes/time_skip.tscn" id="32_dhpj7"]
+[ext_resource type="PackedScene" uid="uid://bcqn6wdr4ydt2" path="res://Cases/The_Missing_Painting/Scenes/contacts.tscn" id="18_x5p1p"]
+[ext_resource type="PackedScene" uid="uid://t54jjw3ubnea" path="res://Cases/The_Missing_Painting/Scenes/crime_scene.tscn" id="19_qhcbd"]
+[ext_resource type="PackedScene" uid="uid://bm23u6l4roygm" path="res://Cases/The_Missing_Painting/Scenes/map.tscn" id="20_f1jbl"]
+[ext_resource type="PackedScene" uid="uid://dk5yd0nfgmxtt" path="res://Cases/The_Missing_Painting/Scenes/office.tscn" id="21_vaj68"]
+[ext_resource type="PackedScene" uid="uid://bn384alyhc0fv" path="res://Cases/The_Missing_Painting/Scenes/shelf_closeup.tscn" id="22_i2p71"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -163,5 +168,5 @@ metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv"), SubResource("Resource_xa8c5")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"

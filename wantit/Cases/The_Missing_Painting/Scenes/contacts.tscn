@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcqn6wdr4ydt2"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_jdea1"]
+[ext_resource type="Texture2D" uid="uid://cigsymvp5p4vk" path="res://Cases/The_Missing_Painting/Assets/Backgrounds/contacts_closeUp.png" id="2_jvnlj"]
+[ext_resource type="Texture2D" uid="uid://vwul30kxhmcu" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/contact_electronics.png" id="3_bue6e"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_mo3rg"]
+[ext_resource type="Texture2D" uid="uid://bev5a1w8s2hhc" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/contact_floristics.png" id="5_1vff7"]
+[ext_resource type="Texture2D" uid="uid://dj33iffnveg2b" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/qr_code_with_cut.png" id="6_qatv3"]
+
+[node name="Location" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_jdea1")
+location_name = "Contacts"
+items = [NodePath("Electric"), NodePath("Florist"), NodePath("Art")]
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300103, 0.300103)
+texture = ExtResource("2_jvnlj")
+
+[node name="Electric" type="TextureButton" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300324, 0.300324)
+texture_normal = ExtResource("3_bue6e")
+script = ExtResource("4_mo3rg")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Florist" type="TextureButton" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300324, 0.300324)
+texture_normal = ExtResource("5_1vff7")
+script = ExtResource("4_mo3rg")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Art" type="TextureButton" parent="."]
+offset_left = 636.0
+offset_top = 77.0
+offset_right = 4476.0
+offset_bottom = 2237.0
+scale = Vector2(0.300324, 0.300324)
+texture_normal = ExtResource("6_qatv3")
+script = ExtResource("4_mo3rg")
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
