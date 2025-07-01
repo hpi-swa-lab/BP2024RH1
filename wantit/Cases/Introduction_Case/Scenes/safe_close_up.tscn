@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bhbqihv27a5x8"]
+[gd_scene load_steps=29 format=3 uid="uid://bhbqihv27a5x8"]
 
 [ext_resource type="Texture2D" uid="uid://c6blk2k6t2wp8" path="res://Cases/Introduction_Case/assets/backgrounds/safe_closeUp.png" id="1_ilqon"]
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_unxiy"]
@@ -9,13 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://c40dfv7v6dx02" path="res://Cases/Introduction_Case/assets/collectible_items/screwdriver.png" id="4_fiei6"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="5_unxiy"]
 [ext_resource type="Texture2D" uid="uid://cqvcntkuj0tiy" path="res://Cases/Introduction_Case/assets/interactable_items/fingerprints_safe.png" id="6_fiei6"]
-[ext_resource type="Resource" uid="uid://df42rn40kppmv" path="res://dialogue/pliers.dialogue" id="8_1y1xn"]
+[ext_resource type="Resource" uid="uid://df42rn40kppmv" path="res://dialogue/pliers.dialogue" id="8_ft3px"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="8_ikhkp"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_condition.gd" id="8_mucgs"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="8_n6dj2"]
-[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="9_ft3px"]
-[ext_resource type="Resource" uid="uid://4m5x25k6hyo0" path="res://dialogue/screwdriver.dialogue" id="11_ft3px"]
-[ext_resource type="Resource" uid="uid://6pv43wph1ge4" path="res://dialogue/fingerprints.dialogue" id="13_dhqo4"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="9_dhqo4"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="10_mucgs"]
+[ext_resource type="Resource" uid="uid://4m5x25k6hyo0" path="res://dialogue/screwdriver.dialogue" id="12_dhqo4"]
+[ext_resource type="Resource" uid="uid://6pv43wph1ge4" path="res://dialogue/fingerprints.dialogue" id="14_mucgs"]
 
 [sub_resource type="Resource" id="Resource_ft3px"]
 script = ExtResource("3_1y1xn")
@@ -54,27 +54,45 @@ hint_condition = SubResource("Resource_pohap")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_utbbk"]
-script = ExtResource("9_ft3px")
-dialogue_resource = ExtResource("8_1y1xn")
-is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("8_mucgs")]([])
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+script = ExtResource("9_dhqo4")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_3mx5k"]
-script = ExtResource("9_ft3px")
-dialogue_resource = ExtResource("11_ft3px")
+script = ExtResource("10_mucgs")
+dialogue_resource = ExtResource("8_ft3px")
 is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("8_mucgs")]([])
+dialogue_triggers = Array[ExtResource("9_dhqo4")]([SubResource("Resource_utbbk")])
+start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [sub_resource type="Resource" id="Resource_xm0pu"]
-script = ExtResource("9_ft3px")
-dialogue_resource = ExtResource("13_dhqo4")
+script = ExtResource("9_dhqo4")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_lb82d"]
+script = ExtResource("10_mucgs")
+dialogue_resource = ExtResource("12_dhqo4")
 is_dialogue = false
-is_monologue = true
-conditions = Array[ExtResource("8_mucgs")]([])
+dialogue_triggers = Array[ExtResource("9_dhqo4")]([SubResource("Resource_xm0pu")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_h1n7o"]
+script = ExtResource("9_dhqo4")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_cppay"]
+script = ExtResource("10_mucgs")
+dialogue_resource = ExtResource("14_mucgs")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_dhqo4")]([SubResource("Resource_h1n7o")])
+start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Safe CloseUp" type="Node" node_paths=PackedStringArray("items")]
@@ -103,21 +121,21 @@ texture_normal = ExtResource("3_d2s8b")
 script = ExtResource("5_unxiy")
 item_name = "Pliers"
 is_collectable = true
-dialogue = SubResource("Resource_utbbk")
+item_dialogue = SubResource("Resource_3mx5k")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Screwdriver" type="TextureButton" parent="."]
-offset_left = 244.0
+offset_left = 236.0
 offset_top = 396.0
-offset_right = 4368.0
-offset_bottom = 4520.0
+offset_right = 4036.0
+offset_bottom = 4196.0
 rotation = 0.535832
 scale = Vector2(0.0818099, 0.0510003)
 texture_normal = ExtResource("4_fiei6")
 script = ExtResource("5_unxiy")
 item_name = "Screwdriver"
 is_collectable = true
-dialogue = SubResource("Resource_3mx5k")
+item_dialogue = SubResource("Resource_lb82d")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Fingerprints" type="TextureButton" parent="."]
@@ -125,7 +143,7 @@ scale = Vector2(0.299539, 0.299539)
 texture_normal = ExtResource("6_fiei6")
 script = ExtResource("5_unxiy")
 item_name = "Fingerprints"
-dialogue = SubResource("Resource_xm0pu")
+item_dialogue = SubResource("Resource_cppay")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Back Button" parent="." instance=ExtResource("8_ikhkp")]

@@ -1,4 +1,8 @@
-# Erst am Ende des Minispiels
 ~ default
+Ich habe einmal Marias Verdachte und die gefundenen Spuren gesammelt.
+Vielleicht kann ich die Verdachte überprüfen wenn ich mir die Spuren genauer anschaue.
+=> END
+
+~ minigame_completed
 Der Bürgermeister scheint tatsächlich irgendwie in die Sache verwickelt zu sein. Wir sollten ihm einen Besuch abstatten.
 => END

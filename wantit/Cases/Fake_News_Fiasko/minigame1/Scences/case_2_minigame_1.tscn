@@ -1,0 +1,879 @@
+[gd_scene load_steps=51 format=3 uid="uid://bdunf63688abk"]
+
+[ext_resource type="Texture2D" uid="uid://xiw5b3ky4thj" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/newspaper_cutout.png" id="2_2j0md"]
+[ext_resource type="Texture2D" uid="uid://cinsrfgtkmeal" path="res://Assets/clue_board_max.png" id="2_drn2o"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="2_fpywy"]
+[ext_resource type="Texture2D" uid="uid://jga683hkar4x" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_false.png" id="2_n0miw"]
+[ext_resource type="Script" uid="uid://cpb3p8s01tafo" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/statement.gd" id="2_wyel3"]
+[ext_resource type="Resource" uid="uid://bnyww2cbkld6c" path="res://Cases/Fake_News_Fiasko/dialogue/minigame1.dialogue" id="3_a7tbl"]
+[ext_resource type="Texture2D" uid="uid://c2cgb6pbu6lde" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_follower3.png" id="3_knt34"]
+[ext_resource type="Texture2D" uid="uid://cv6b5hix5pnsf" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_true.png" id="3_ys2pk"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_f74x3"]
+[ext_resource type="Texture2D" uid="uid://dlqy3u7jxto5t" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_follower2.png" id="4_jhfol"]
+[ext_resource type="Texture2D" uid="uid://cwnbawivho4pl" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_follower1.png" id="5_elp5d"]
+[ext_resource type="Texture2D" uid="uid://de7mun6uvrbrp" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/business_card.png" id="7_1haqu"]
+[ext_resource type="Texture2D" uid="uid://dbki57auv83s7" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_breakIn.png" id="7_5ok2b"]
+[ext_resource type="Texture2D" uid="uid://c001qvllq827j" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="7_egs20"]
+[ext_resource type="Script" uid="uid://dl5tu0rs75qlq" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/case_1_minigame_1.gd" id="8_knt34"]
+[ext_resource type="Script" uid="uid://bvoja0113kl2h" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup.gd" id="9_1haqu"]
+[ext_resource type="Script" uid="uid://d3qcc0y6ic0" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_2.gd" id="10_4ckjm"]
+[ext_resource type="Script" uid="uid://8b4w60tgymnp" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_newspaper_cutout.gd" id="11_1haqu"]
+[ext_resource type="Script" uid="uid://bgu7c8nrr4lcb" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_conversation.gd" id="12_4ckjm"]
+[ext_resource type="Script" uid="uid://8el3otcsc60s" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_business_card.gd" id="13_5ok2b"]
+[ext_resource type="Texture2D" uid="uid://c3ox41n1otos6" path="res://Cases/Fake_News_Fiasko/Assets/tape.png" id="13_fpywy"]
+
+[sub_resource type="Resource" id="Resource_f74x3"]
+script = ExtResource("2_fpywy")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_xf4ha"]
+script = ExtResource("4_f74x3")
+dialogue_resource = ExtResource("3_a7tbl")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("2_fpywy")]([SubResource("Resource_f74x3")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="LabelSettings" id="LabelSettings_ueprj"]
+font_size = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqy6e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_x5wrr"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4hcp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdu5q"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iep1"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_nat3h"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6c04f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3dtk"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e55vd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_hd3kj"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjv3u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_pui4r"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahpr8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="SystemFont" id="SystemFont_nat3h"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_obinr"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rryph"]
+bg_color = Color(0.807843, 0.807843, 0.807843, 0.568627)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_lu6ni"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccd35"]
+bg_color = Color(0.807843, 0.807843, 0.807843, 0.568627)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_208dm"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56wsw"]
+bg_color = Color(0.807843, 0.807843, 0.807843, 0.568627)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ccd35"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3qdw"]
+bg_color = Color(0.807843, 0.807843, 0.807843, 0.568627)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_o6ktf"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0iep1"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6ktf"]
+bg_color = Color(0.650128, 0.650128, 0.650128, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_6c04f"]
+font_size = 20
+
+[node name="Minigame1" type="Node"]
+script = ExtResource("8_knt34")
+location_name = "Minigame1"
+location_dialogue = SubResource("Resource_xf4ha")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.521976, 0.591781)
+texture = ExtResource("2_drn2o")
+
+[node name="Faktencheck" type="Label" parent="."]
+offset_left = 470.0
+offset_top = 55.0
+offset_right = 682.0
+offset_bottom = 104.0
+text = "Faktencheck"
+label_settings = SubResource("LabelSettings_ueprj")
+
+[node name="Check" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 202.0
+offset_top = 580.0
+offset_right = 301.0
+offset_bottom = 611.0
+text = "Überprüfen"
+
+[node name="Check_button" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="False_button" type="TextureButton" parent="Check_button"]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 564.0
+offset_right = 1128.0
+offset_bottom = 1082.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("2_n0miw")
+texture_pressed = ExtResource("2_n0miw")
+texture_hover = ExtResource("2_n0miw")
+
+[node name="True_button" type="TextureButton" parent="Check_button"]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 564.0
+offset_right = 1031.0
+offset_bottom = 1087.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("3_ys2pk")
+texture_pressed = ExtResource("3_ys2pk")
+texture_hover = ExtResource("3_ys2pk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 54.0
+offset_top = 97.0
+offset_right = 450.0
+offset_bottom = 578.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 155.0
+offset_top = 108.0
+offset_right = 350.0
+offset_bottom = 136.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oqy6e")
+
+[node name="Aussagen_von_Maria" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 28.0
+text = "Aussagen von Maria"
+label_settings = SubResource("LabelSettings_x5wrr")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 769.0
+offset_top = 92.0
+offset_right = 858.0
+offset_bottom = 120.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a4hcp")
+
+[node name="Hinweise" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 89.0
+offset_bottom = 28.0
+text = "Hinweise"
+label_settings = SubResource("LabelSettings_mdu5q")
+
+[node name="Statements" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Statement1" type="Panel" parent="Statements"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 152.0
+offset_right = 324.0
+offset_bottom = 172.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0iep1")
+script = ExtResource("2_wyel3")
+category = 1
+
+[node name="Label" type="Label" parent="Statements/Statement1"]
+layout_mode = 0
+offset_right = 139.0
+offset_bottom = 20.0
+mouse_filter = 1
+text = "\"Ich werde verfolgt.\""
+label_settings = SubResource("LabelSettings_nat3h")
+
+[node name="Statement2" type="Panel" parent="Statements"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 188.0
+offset_right = 414.0
+offset_bottom = 277.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6c04f")
+script = ExtResource("2_wyel3")
+category = 0
+
+[node name="Label2" type="Label" parent="Statements/Statement2"]
+layout_mode = 0
+offset_right = 316.0
+offset_bottom = 89.0
+mouse_filter = 1
+text = "\"Letztens kam ein Restaurantbesucher 
+und hat mich vor allen Kunden runtergmacht.\"
+\"Der hat bestimmt etwas mit dem 
+Bürgermeister zu tun.\""
+label_settings = SubResource("LabelSettings_c3dtk")
+horizontal_alignment = 1
+
+[node name="Statement3" type="Panel" parent="Statements"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 292.0
+offset_right = 397.0
+offset_bottom = 335.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e55vd")
+script = ExtResource("2_wyel3")
+category = 0
+
+[node name="Label3" type="Label" parent="Statements/Statement3"]
+layout_mode = 0
+offset_right = 285.0
+offset_bottom = 43.0
+mouse_filter = 1
+text = "“Der Bürgermeister reserviert alle Waren, 
+bevor ich sie kaufen kann.”"
+label_settings = SubResource("LabelSettings_hd3kj")
+horizontal_alignment = 1
+
+[node name="Statement4" type="Panel" parent="Statements"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 350.0
+offset_right = 361.0
+offset_bottom = 393.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rjv3u")
+script = ExtResource("2_wyel3")
+category = 0
+
+[node name="Label4" type="Label" parent="Statements/Statement4"]
+layout_mode = 0
+offset_right = 194.0
+offset_bottom = 43.0
+mouse_filter = 1
+text = "“Letzte Woche wollten seine 
+Leute hier einbrechen.”"
+label_settings = SubResource("LabelSettings_pui4r")
+horizontal_alignment = 1
+
+[node name="Statement5" type="Panel" parent="Statements"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 407.0
+offset_right = 412.0
+offset_bottom = 565.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahpr8")
+script = ExtResource("2_wyel3")
+category = 1
+
+[node name="Label5" type="Label" parent="Statements/Statement5"]
+layout_mode = 0
+offset_right = 303.0
+offset_bottom = 158.0
+mouse_filter = 1
+theme_override_fonts/font = SubResource("SystemFont_nat3h")
+text = "“Ich habe vermehrt Ratten in der Umgebung 
+des Restaurants gesichtet. 
+Außerdem habe den Bürgermeister 
+letztens im Tierhandel gesehen, 
+wie er zwei Ratten gekauft hat. 
+Der Bürgermeister muss die Ratten 
+ausgesetzt haben.”"
+label_settings = SubResource("LabelSettings_obinr")
+horizontal_alignment = 1
+
+[node name="Hints" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Newspaper_cutout" type="Control" parent="Hints"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Newspaper_cutout" type="TextureRect" parent="Hints/Newspaper_cutout"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 153.0
+offset_right = 1324.0
+offset_bottom = 653.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_2j0md")
+
+[node name="Pin" type="TextureRect" parent="Hints/Newspaper_cutout"]
+layout_mode = 0
+offset_left = 671.0
+offset_top = 137.0
+offset_right = 906.0
+offset_bottom = 372.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
+
+[node name="SecurityFootage" type="Control" parent="Hints"]
+anchors_preset = 0
+offset_left = 864.0
+offset_top = 125.0
+offset_right = 1058.0
+offset_bottom = 240.0
+
+[node name="TextureRect3" type="TextureRect" parent="Hints/SecurityFootage"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 19.0
+offset_right = 3827.0
+offset_bottom = 2179.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_knt34")
+
+[node name="TextureRect2" type="TextureRect" parent="Hints/SecurityFootage"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 14.0
+offset_right = 3831.0
+offset_bottom = 2174.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_jhfol")
+
+[node name="TextureRect" type="TextureRect" parent="Hints/SecurityFootage"]
+layout_mode = 2
+offset_left = -4.99999
+offset_top = 9.99999
+offset_right = 3835.0
+offset_bottom = 2170.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_elp5d")
+
+[node name="Pin" type="TextureRect" parent="Hints/SecurityFootage"]
+layout_mode = 0
+offset_left = 89.0
+offset_right = 324.0
+offset_bottom = 235.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
+
+[node name="BreakIn" type="Control" parent="Hints"]
+anchors_preset = 0
+offset_left = 835.0
+offset_top = 298.0
+offset_right = 856.0
+offset_bottom = 341.0
+
+[node name="BreakIn" type="TextureRect" parent="Hints/BreakIn"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 3847.0
+offset_bottom = 2166.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_5ok2b")
+
+[node name="Panel" type="Panel" parent="Hints/BreakIn"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 112.0
+offset_right = 250.0
+offset_bottom = 129.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rryph")
+
+[node name="Label" type="Label" parent="Hints/BreakIn/Panel"]
+layout_mode = 0
+offset_right = 262.0
+offset_bottom = 17.0
+text = "Kennzeichen des Bürgermeisters: BTR HWD 1"
+label_settings = SubResource("LabelSettings_lu6ni")
+
+[node name="Pin" type="TextureRect" parent="Hints/BreakIn"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = -10.0
+offset_right = 334.0
+offset_bottom = 225.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
+
+[node name="Tape" type="TextureRect" parent="Hints/BreakIn"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 87.0
+offset_right = 457.0
+offset_bottom = 446.0
+rotation = 0.820305
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("13_fpywy")
+
+[node name="TextSnippet" type="Panel" parent="Hints"]
+layout_mode = 0
+offset_left = 770.0
+offset_top = 490.0
+offset_right = 1101.0
+offset_bottom = 567.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ccd35")
+
+[node name="Conversation" type="Label" parent="Hints/TextSnippet"]
+layout_mode = 0
+offset_right = 331.0
+offset_bottom = 77.0
+text = "Auf die Frage, ob die Waren bereits reserviert seien, 
+antwortete die Gemüseverkäuferin:
+”Noch nicht, der Bürgermeister war heute noch nicht da. 
+Er sollte aber demnächst vorbeikommen.”"
+label_settings = SubResource("LabelSettings_208dm")
+
+[node name="Pin" type="TextureRect" parent="Hints/TextSnippet"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = -21.0
+offset_right = 394.0
+offset_bottom = 214.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
+
+[node name="Business_card" type="Control" parent="Hints"]
+anchors_preset = 0
+offset_left = 483.0
+offset_top = 323.0
+offset_right = 523.0
+offset_bottom = 363.0
+
+[node name="TextureRect" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = -2.00001
+offset_top = -5.00001
+offset_right = 585.0
+offset_bottom = 383.0
+scale = Vector2(0.359, 0.359)
+texture = ExtResource("7_1haqu")
+
+[node name="Panel" type="Panel" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 135.0
+offset_right = 261.0
+offset_bottom = 192.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_56wsw")
+
+[node name="Label" type="Label" parent="Hints/Business_card/Panel"]
+layout_mode = 0
+offset_right = 271.0
+offset_bottom = 57.0
+text = "Aussage des besagten Restaurantbesuchers:
+”Das Essen ist so schlecht. 
+Da hole ich mir doch lieber eine Tiefkühlpizza.”"
+label_settings = SubResource("LabelSettings_ccd35")
+
+[node name="Panel2" type="Panel" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 35.0
+offset_right = 320.0
+offset_bottom = 83.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a3qdw")
+
+[node name="Label2" type="Label" parent="Hints/Business_card/Panel2"]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 48.0
+text = "Visitenkarte, die 
+der Restaurantbesucher 
+verloren hat"
+label_settings = SubResource("LabelSettings_o6ktf")
+horizontal_alignment = 1
+
+[node name="Tape" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 65.0
+offset_right = 581.0
+offset_bottom = 424.0
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_fpywy")
+
+[node name="Tape2" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 18.0
+offset_right = 696.0
+offset_bottom = 377.0
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_fpywy")
+
+[node name="Tape3" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 106.0
+offset_right = 339.0
+offset_bottom = 465.0
+rotation = 0.261799
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_fpywy")
+
+[node name="Tape4" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 103.0
+offset_right = 571.0
+offset_bottom = 462.0
+rotation = 0.698132
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_fpywy")
+
+[node name="Pin" type="TextureRect" parent="Hints/Business_card"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = -20.0
+offset_right = 335.0
+offset_bottom = 215.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_egs20")
+
+[node name="Popup_breakIn" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 1118.0
+offset_bottom = 609.0
+script = ExtResource("9_1haqu")
+
+[node name="ColorRect" type="ColorRect" parent="Popup_breakIn"]
+layout_mode = 0
+offset_right = 1082.0
+offset_bottom = 569.0
+color = Color(0.0562916, 0.0562916, 0.0562916, 0.654902)
+
+[node name="TextureRect" type="TextureRect" parent="Popup_breakIn"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 69.0
+offset_right = 3997.0
+offset_bottom = 2229.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_5ok2b")
+
+[node name="Label" type="Label" parent="Popup_breakIn"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 500.0
+offset_right = 668.0
+offset_bottom = 523.0
+text = "Kennzeichen des Bürgermeisters: BTR HWD 1"
+label_settings = SubResource("LabelSettings_0iep1")
+
+[node name="Popup_security_footage" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 1118.0
+offset_bottom = 609.0
+script = ExtResource("10_4ckjm")
+
+[node name="ColorRect" type="ColorRect" parent="Popup_security_footage"]
+layout_mode = 0
+offset_right = 1082.0
+offset_bottom = 569.0
+color = Color(0.0562916, 0.0562916, 0.0562916, 0.654902)
+
+[node name="TextureRect" type="TextureRect" parent="Popup_security_footage"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 69.0
+offset_right = 3997.0
+offset_bottom = 2229.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_elp5d")
+
+[node name="Weiter" type="Button" parent="Popup_security_footage"]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 276.0
+offset_right = 913.0
+offset_bottom = 307.0
+text = "weiter"
+
+[node name="Zurück" type="Button" parent="Popup_security_footage"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 275.0
+offset_right = 234.0
+offset_bottom = 306.0
+text = "zurück"
+
+[node name="Popup_newspaper_cutout" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 1118.0
+offset_bottom = 609.0
+script = ExtResource("11_1haqu")
+
+[node name="ColorRect" type="ColorRect" parent="Popup_newspaper_cutout"]
+layout_mode = 0
+offset_right = 1082.0
+offset_bottom = 569.0
+color = Color(0.054902, 0.054902, 0.054902, 0.654902)
+
+[node name="TextureRect" type="TextureRect" parent="Popup_newspaper_cutout"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 56.0
+offset_right = 925.0
+offset_bottom = 515.0
+texture = ExtResource("2_2j0md")
+
+[node name="Popup_conversation" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 1118.0
+offset_bottom = 609.0
+script = ExtResource("12_4ckjm")
+
+[node name="ColorRect" type="ColorRect" parent="Popup_conversation"]
+layout_mode = 0
+offset_right = 1082.0
+offset_bottom = 569.0
+color = Color(0.054902, 0.054902, 0.054902, 0.654902)
+
+[node name="Panel" type="Panel" parent="Popup_conversation"]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 231.0
+offset_right = 808.0
+offset_bottom = 352.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6ktf")
+
+[node name="Label" type="Label" parent="Popup_conversation/Panel"]
+layout_mode = 0
+offset_right = 551.0
+offset_bottom = 121.0
+text = "Auf die Frage, ob die Waren bereits reserviert seien, 
+antwortete die Gemüseverkäuferin:
+”Noch nicht, der Bürgermeister war heute noch nicht da. 
+Er sollte aber demnächst vorbeikommen.”"
+label_settings = SubResource("LabelSettings_6c04f")
+horizontal_alignment = 1
+
+[node name="Popup_business_card" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 1118.0
+offset_bottom = 609.0
+script = ExtResource("13_5ok2b")
+
+[node name="ColorRect" type="ColorRect" parent="Popup_business_card"]
+layout_mode = 0
+offset_right = 1082.0
+offset_bottom = 569.0
+color = Color(0.054902, 0.054902, 0.054902, 0.654902)
+
+[node name="TextureRect" type="TextureRect" parent="Popup_business_card"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 69.0
+offset_right = 925.0
+offset_bottom = 501.0
+texture = ExtResource("7_1haqu")
+script = ExtResource("8_knt34")
+
+[node name="Label" type="Label" parent="Popup_business_card"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 510.0
+offset_right = 494.0
+offset_bottom = 559.0
+text = "Aussage des besagten Restaurantbesuchers: ”Das Essen ist 
+so schlecht. Da hole ich mir doch lieber eine Tiefkühlpizza.”"
+
+[node name="Label2" type="Label" parent="Popup_business_card"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = 507.0
+offset_right = 898.0
+offset_bottom = 556.0
+text = "Visitenkarte, die der 
+Restaurantbesucher verloren hat."
+
+[connection signal="pressed" from="Check" to="." method="_on_check_pressed"]
+[connection signal="pressed" from="Check_button/False_button" to="." method="_on_false_button_pressed"]
+[connection signal="pressed" from="Check_button/True_button" to="." method="_on_true_button_pressed"]
+[connection signal="gui_input" from="Statements/Statement1" to="Statements/Statement1" method="_on_gui_input"]
+[connection signal="gui_input" from="Statements/Statement2" to="Statements/Statement2" method="_on_gui_input"]
+[connection signal="gui_input" from="Statements/Statement3" to="Statements/Statement3" method="_on_gui_input"]
+[connection signal="gui_input" from="Statements/Statement4" to="Statements/Statement4" method="_on_gui_input"]
+[connection signal="gui_input" from="Statements/Statement5" to="Statements/Statement5" method="_on_gui_input"]
+[connection signal="gui_input" from="Hints/Newspaper_cutout/Newspaper_cutout" to="Popup_newspaper_cutout" method="_on_newspaper_cutout_gui_input"]
+[connection signal="gui_input" from="Hints/SecurityFootage" to="Popup_security_footage" method="_on_security_footage_gui_input"]
+[connection signal="gui_input" from="Hints/BreakIn" to="Popup_breakIn" method="_on_break_in_gui_input"]
+[connection signal="gui_input" from="Hints/TextSnippet" to="Popup_conversation" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Hints/Business_card/TextureRect" to="Popup_business_card" method="_on_texture_rect_gui_input"]
+[connection signal="gui_input" from="Popup_breakIn/ColorRect" to="Popup_breakIn" method="_on_color_rect_gui_input"]
+[connection signal="gui_input" from="Popup_security_footage/ColorRect" to="Popup_security_footage" method="_on_color_rect_gui_input"]
+[connection signal="pressed" from="Popup_security_footage/Weiter" to="Popup_security_footage" method="_on_weiter_pressed"]
+[connection signal="pressed" from="Popup_security_footage/Zurück" to="Popup_security_footage" method="_on_zurück_pressed"]
+[connection signal="gui_input" from="Popup_newspaper_cutout/ColorRect" to="Popup_newspaper_cutout" method="_on_color_rect_gui_input"]
+[connection signal="gui_input" from="Popup_conversation/ColorRect" to="Popup_conversation" method="_on_color_rect_gui_input"]
+[connection signal="gui_input" from="Popup_business_card/ColorRect" to="Popup_business_card" method="_on_color_rect_gui_input"]

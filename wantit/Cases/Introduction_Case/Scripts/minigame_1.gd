@@ -8,6 +8,7 @@ var draggedItems = 0
 var clueRects = {}
 
 func _ready() -> void:
+	super._ready()
 	case.inventory.hide()
 	
 	DialogueManager.show_dialogue_balloon_scene(load("res://dialogue_balloons/monologue/balloon_monologue.tscn"), load("res://dialogue/minigame1.dialogue"), "minigame1_start")
