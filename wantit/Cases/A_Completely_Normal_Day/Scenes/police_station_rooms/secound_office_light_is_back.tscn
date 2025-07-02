@@ -6,20 +6,20 @@
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_dtd0x"]
 [ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="5_edpt3"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="6_2cnp6"]
-[ext_resource type="Resource" uid="uid://btvc1gy2lre7m" path="res://Cases/A_Completely_Normal_Day/Scenes/secound_office_light_is_back.tres" id="7_i1e8m"]
+[ext_resource type="Resource" uid="uid://btvc1gy2lre7m" path="res://Cases/A_Completely_Normal_Day/dialogue_trigger/secound_office_light_is_back.tres" id="7_i1e8m"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_rc8m8"]
 [ext_resource type="Texture2D" uid="uid://bf6xas1fhnvdx" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop1.png" id="8_2cnp6"]
 [ext_resource type="Resource" uid="uid://dulikdvcbntlc" path="res://Cases/A_Completely_Normal_Day/dialogue/computer.dialogue" id="9_6b326"]
 [ext_resource type="Texture2D" uid="uid://de4bdlorqqx2p" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop2.png" id="10_rc8m8"]
-[ext_resource type="Resource" uid="uid://cjskqfjynrwte" path="res://Cases/A_Completely_Normal_Day/Scenes/computer_other_light_is_back.tres" id="11_ablj6"]
+[ext_resource type="Resource" uid="uid://cjskqfjynrwte" path="res://Cases/A_Completely_Normal_Day/dialogue_trigger/computer_other_light_is_back.tres" id="11_ablj6"]
 [ext_resource type="Texture2D" uid="uid://clwvngjx6el8o" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop3.png" id="11_i1e8m"]
-[ext_resource type="Resource" uid="uid://d2vovmpetx8w4" path="res://Cases/A_Completely_Normal_Day/Scenes/computer_neighbor_of_source_light_is_back.tres" id="11_rc8m8"]
+[ext_resource type="Resource" uid="uid://d2vovmpetx8w4" path="res://Cases/A_Completely_Normal_Day/dialogue_trigger/computer_neighbor_of_source_light_is_back.tres" id="11_rc8m8"]
 [ext_resource type="Texture2D" uid="uid://ddkc3n6g44rt8" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop4.png" id="12_6b326"]
 [ext_resource type="Texture2D" uid="uid://dncftbfya8q7t" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop5.png" id="13_xig8o"]
 [ext_resource type="Texture2D" uid="uid://cg154aae1v3as" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer1.png" id="14_ablj6"]
 [ext_resource type="Resource" uid="uid://b8synbond6ikw" path="res://Cases/A_Completely_Normal_Day/dialogue/tower.dialogue" id="15_2cnp6"]
 [ext_resource type="Texture2D" uid="uid://ur0v3br2pepx" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer2.png" id="16_10en0"]
-[ext_resource type="Resource" uid="uid://dxfy0qmknuj6t" path="res://Cases/A_Completely_Normal_Day/Scenes/tower_light_is_back.tres" id="16_xig8o"]
+[ext_resource type="Resource" uid="uid://dxfy0qmknuj6t" path="res://Cases/A_Completely_Normal_Day/dialogue_trigger/tower_light_is_back.tres" id="16_xig8o"]
 [ext_resource type="Texture2D" uid="uid://dkefpd0ojaem4" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer3.png" id="17_3pncj"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="18_rc8m8"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="19_i1e8m"]
@@ -83,7 +83,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [node name="secound_office_light_is_back" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_1157y")
 location_name = "secound_office_light_is_back"
-items = [NodePath("router_secound_office"), NodePath("desktop_1"), NodePath(""), NodePath(""), NodePath("desktop_4"), NodePath("desktop_5"), NodePath("tower_1_quelle"), NodePath("tower_2_quelle"), NodePath("tower_3_quelle")]
+items = [NodePath("router_secound_office"), NodePath("desktop_1"), null, null, NodePath("desktop_4"), NodePath("desktop_5"), NodePath("tower_1_quelle"), NodePath("tower_2_quelle"), NodePath("tower_3_quelle")]
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

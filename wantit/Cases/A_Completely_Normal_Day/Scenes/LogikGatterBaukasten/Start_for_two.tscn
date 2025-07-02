@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dobh0dh6l2t8n"]
 
-[ext_resource type="Script" uid="uid://ci7qphwmyc26v" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/start_for_two.gd" id="1_8ihck"]
+[ext_resource type="Script" uid="uid://ci7qphwmyc26v" path="res://Cases/A_Completely_Normal_Day/Scripts/LogikGatterBaukasten/start_for_two.gd" id="1_8ihck"]
 
 [node name="StartForTwo" type="CheckButton"]
 text = "Quelle Aus"

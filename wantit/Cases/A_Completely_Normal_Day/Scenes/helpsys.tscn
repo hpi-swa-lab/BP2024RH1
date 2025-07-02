@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dinkb6rvbmkhj"]
 
-[ext_resource type="Script" uid="uid://dtfuudcwk12nn" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/helpsys.gd" id="1_l7wxm"]
+[ext_resource type="Script" uid="uid://dtfuudcwk12nn" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/helpsys.gd" id="1_l7wxm"]
 
 [node name="Helpsys" type="Control"]
 layout_mode = 3

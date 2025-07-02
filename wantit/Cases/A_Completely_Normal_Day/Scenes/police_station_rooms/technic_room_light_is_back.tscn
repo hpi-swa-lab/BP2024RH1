@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://do4smil4jhtb1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/router_technical_room.png" id="8_i8qce"]
 [ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="8_nf4nj"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="10_4qphq"]
-[ext_resource type="Resource" uid="uid://cd7qe1fe44due" path="res://Cases/A_Completely_Normal_Day/Scenes/technic_room_light_is_back.tres" id="10_5wlgl"]
+[ext_resource type="Resource" uid="uid://cd7qe1fe44due" path="res://Cases/A_Completely_Normal_Day/dialogue_trigger/technic_room_light_is_back.tres" id="10_5wlgl"]
 
 [sub_resource type="Resource" id="Resource_0d7nt"]
 script = ExtResource("6_jka5t")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dldwkuqwfxyqu"]
 
-[ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://Cases/A_Completely_Normal_Day/Minigames/scences/Logik_Gatter_level_introduction.tscn" id="1_2iq3a"]
-[ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/minigame_introduction.gd" id="1_ooyhf"]
-[ext_resource type="Texture2D" uid="uid://cjiyhrh0la7up" path="res://Cases/A_Completely_Normal_Day/Minigames/assets/orange1.png" id="2_ew0qh"]
-[ext_resource type="Script" uid="uid://dtfuudcwk12nn" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/helpsys.gd" id="4_u40lt"]
+[ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://Cases/A_Completely_Normal_Day/Scenes/Logik_Gatter_level_introduction.tscn" id="1_2iq3a"]
+[ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/minigame_introduction.gd" id="1_ooyhf"]
+[ext_resource type="Texture2D" uid="uid://mlwoagb6be07" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/orange1.png" id="2_ew0qh"]
+[ext_resource type="Script" uid="uid://dtfuudcwk12nn" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/helpsys.gd" id="4_u40lt"]
 
 [node name="MinigameIntroduction" type="Control"]
 layout_mode = 3

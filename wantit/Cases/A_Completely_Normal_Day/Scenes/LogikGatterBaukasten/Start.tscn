@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwlgbeyj8pysr"]
 
-[ext_resource type="Script" uid="uid://hx02h8udc1ey" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/start.gd" id="1_sl5sk"]
+[ext_resource type="Script" uid="uid://hx02h8udc1ey" path="res://Cases/A_Completely_Normal_Day/Scripts/LogikGatterBaukasten/start.gd" id="1_sl5sk"]
 
 [node name="Start" type="CheckButton"]
 text = "Quelle Aus"

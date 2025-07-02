@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://uxhep3vdtv0g"]
 
-[ext_resource type="Script" uid="uid://bcajrwswjhlsw" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/connection.gd" id="1_ss0rd"]
+[ext_resource type="Script" uid="uid://bcajrwswjhlsw" path="res://Cases/A_Completely_Normal_Day/Scripts/LogikGatterBaukasten/connection.gd" id="1_ss0rd"]
 
 [node name="Connection" type="Line2D"]
 points = PackedVector2Array(0, 1, 105, 1)
