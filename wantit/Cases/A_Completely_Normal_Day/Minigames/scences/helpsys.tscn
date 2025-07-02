@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://dinkb6rvbmkhj"]
+
+[ext_resource type="Script" uid="uid://dtfuudcwk12nn" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/helpsys.gd" id="1_l7wxm"]
+
+[node name="Helpsys" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l7wxm")
+
+[node name="Questionmark" type="Button" parent="."]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 30
+text = "?"
+
+[node name="ColorRect" type="ColorRect" parent="Questionmark"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.915667, 1, 0.54, 1)
+
+[node name="Hints" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -602.0
+offset_bottom = 363.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Space_above_hints" type="Label" parent="Hints/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hints/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Space_left_of_hints" type="Label" parent="Hints/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "     "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hints/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Hint_1" type="Label" parent="Hints/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "First Hinthhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+autowrap_mode = 3
+
+[node name="Hint_2" type="Label" parent="Hints/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Second Hint"
+autowrap_mode = 3
+
+[node name="Hint_3" type="Label" parent="Hints/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Third Hint"
+autowrap_mode = 3
+
+[node name="Space_right_of_hints" type="Label" parent="Hints/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "     "
+
+[node name="Space_under_hints" type="Label" parent="Hints/VBoxContainer"]
+layout_mode = 2
+
+[node name="Close" type="Button" parent="Hints"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 83.0
+grow_vertical = 0
+text = "schließen"
+
+[node name="ColorRect" type="ColorRect" parent="Hints/Close"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.915667, 1, 0.54, 1)
+
+[node name="Timer_Hint_2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer_Hint_3" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[connection signal="pressed" from="Questionmark" to="." method="_on_questionmark_pressed"]
+[connection signal="pressed" from="Hints/Close" to="." method="_on_close_pressed"]
+[connection signal="timeout" from="Timer_Hint_2" to="." method="_on_timer_hint_2_timeout"]
+[connection signal="timeout" from="Timer_Hint_3" to="." method="_on_timer_hint_3_timeout"]
