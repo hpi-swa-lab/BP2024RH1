@@ -20,8 +20,8 @@ Klaas: Konntest du etwas nützliches herausfinden?
 	Klaas: Hmm…mit der alten Verschiebung kommt nur Blödsinn raus. Auch andere Verschiebungen funktionieren nicht.
 	Klaas: Vielleicht handelt es sich um Caesar-Verschlüsselung mit Schlüsselwort. Kennst du diese Verschlüsselung bereits?
 	- Ja 
-		- Bob Maler könnte der Brandstifter sein.
-			Klaas: Bob Maler…
+		Bob Maler könnte der Brandstifter sein.
+		Klaas: Bob Maler…
 		Klaas: Ich werde schauen, ob ich etwas über ihn herausfinden kann.
 		Klaas: Dann überlasse ich dir mal die Entschlüsselung. Sag Bescheid, wenn du es gelöst hast! 
 		do _on_location_switch_requested("Minigame2")

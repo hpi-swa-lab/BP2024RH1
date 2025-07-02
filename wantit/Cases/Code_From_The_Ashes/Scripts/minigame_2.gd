@@ -49,9 +49,10 @@ func apply_solution() -> bool:
 			elif letter == " " or letter == "-":
 				new_text += letter
 	%DecryptedMessage.text = new_text
-	%ColorRect.size = %DecryptedMessage.size
-	%ColorRect.position = %DecryptedMessage.position
 	await get_tree().process_frame
+	await get_tree().process_frame
+	
+	%ColorRect.size = %DecryptedMessage.size
 	
 	return new_text == solution_text
 
@@ -67,7 +68,7 @@ func reset():
 		child.text = ""
 
 func _on_text_changed(field_num: int):
-	if field_num + 1 <= text_fields.size() and text_fields[field_num].text != "":
+	if field_num + 1 <= text_fields.size() - 1 and text_fields[field_num].text != "":
 		text_fields[field_num + 1].grab_focus()
 
 func start_dialogue(dialogue_start: String):
