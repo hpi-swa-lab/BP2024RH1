@@ -9,7 +9,7 @@ Klaas: Wenn du den Text jetzt entschlüsseln willst, drehst du die innere Scheib
 Klaas: Hast du das soweit verstanden?
 - Könntest du die Erklärung nochmal wiederholen? => default
 - Ja, ich denke schon.
-	Klaas: Super! Dann probier das doch gleich mal aus. Der Schlüssel ist 6. => END
+	Klaas: Super! Dann probier das doch gleich mal aus. Der Schlüssel ist 3. => END
 	
 ~ minigame_completed
 Klaas: Dann würde ich das Entschlüsseln der Nachricht jetzt dir überlassen. Viel Erfolg!
