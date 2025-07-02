@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://g71wtqpfs1cp"]
+
+[ext_resource type="Script" uid="uid://cxwag6b7b3td2" path="res://Cases/Binary_Trap/Scripts/slot.gd" id="1_s5m1m"]
+
+[node name="Slot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s5m1m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1, 0.99692)
+alignment = 1
+
+[node name="Button Up" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button Down" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "-"
+
+[connection signal="pressed" from="VBoxContainer/Button Up" to="." method="_on_button_up_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button Down" to="." method="_on_button_down_pressed"]
