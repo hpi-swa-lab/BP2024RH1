@@ -35,12 +35,6 @@ func add_text():
 	label_settings.font_color = Color("#d3c308")
 	%ExampleWord.label_settings = label_settings
 	
-	DialogueManager.get_current_scene = func():
-		var current_scene: Node = Engine.get_main_loop().current_scene
-		if current_scene == null:
-			current_scene = Engine.get_main_loop().root.get_child(Engine.get_main_loop().root.get_child_count() - 1)
-		return current_scene
-	
 func reset_tutorial():
 	%Explanation1.hide()
 	%Explanation2.hide()
@@ -58,3 +52,10 @@ func reset_tutorial():
 	
 	%Alphabet.hide()
 	%Alphabet.position = Vector2(125, 257)
+
+func reset_dialogue_manager():
+	DialogueManager.get_current_scene = func():
+		var current_scene: Node = Engine.get_main_loop().current_scene
+		if current_scene == null:
+			current_scene = Engine.get_main_loop().root.get_child(Engine.get_main_loop().root.get_child_count() - 1)
+		return current_scene

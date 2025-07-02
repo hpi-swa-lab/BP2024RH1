@@ -1,19 +1,69 @@
-[gd_scene load_steps=23 format=3 uid="uid://ccytljyn6i5ir"]
+[gd_scene load_steps=33 format=3 uid="uid://ccytljyn6i5ir"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_4fosp"]
-[ext_resource type="Texture2D" uid="uid://bxx3djwnwws0i" path="res://Cases/Code_From_The_Ashes/Assets/Backgrounds/kitchen.png" id="2_g1w3k"]
-[ext_resource type="Texture2D" uid="uid://dkvl4s472pgmy" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/window_and_footprints.png" id="3_rcbp2"]
+[ext_resource type="Texture2D" uid="uid://cdws1eqqe0a45" path="res://Cases/Code_From_The_Ashes/Assets/Backgrounds/kitchen.png" id="2_g1w3k"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_rcgj5"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_dlh4p"]
+[ext_resource type="Texture2D" uid="uid://cqlqegw3101vn" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/window_and_footprints.png" id="3_rcbp2"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_ticb1"]
-[ext_resource type="Texture2D" uid="uid://738v30oxelkl" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/note.png" id="5_2hrpd"]
-[ext_resource type="Resource" uid="uid://dksxvdv45esrn" path="res://Cases/Code_From_The_Ashes/Dialogue/window_and_footprints.dialogue" id="5_ticb1"]
+[ext_resource type="Texture2D" uid="uid://5mrma7kb5uu5" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/note.png" id="5_2hrpd"]
+[ext_resource type="Resource" uid="uid://f5272sfd47jf" path="res://Cases/Code_From_The_Ashes/Dialogue/window_and_footprints.dialogue" id="5_ticb1"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="6_2hrpd"]
-[ext_resource type="Texture2D" uid="uid://cgt5j207dqw15" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/bin.png" id="6_4fphp"]
+[ext_resource type="Texture2D" uid="uid://bhii5g8d3oefs" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/bin.png" id="6_4fphp"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_4fphp"]
-[ext_resource type="Texture2D" uid="uid://71fmhme7t5wt" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/microwave.png" id="7_qchn1"]
+[ext_resource type="Texture2D" uid="uid://dcvxu4pu8xo0h" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/microwave.png" id="7_qchn1"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="8_jrfsk"]
-[ext_resource type="Resource" uid="uid://10sn8e1su25m" path="res://Cases/Code_From_The_Ashes/Dialogue/note.dialogue" id="9_2hrpd"]
-[ext_resource type="Resource" uid="uid://dl5yfxhu0dj2r" path="res://Cases/Code_From_The_Ashes/Dialogue/bin.dialogue" id="11_4fphp"]
-[ext_resource type="Resource" uid="uid://do2uhksb4hon2" path="res://Cases/Code_From_The_Ashes/Dialogue/microwave.dialogue" id="13_qchn1"]
+[ext_resource type="Resource" uid="uid://bgrptgxyl16sj" path="res://Cases/Code_From_The_Ashes/Dialogue/note.dialogue" id="9_2hrpd"]
+[ext_resource type="Resource" uid="uid://s2obaqw5v0wl" path="res://Cases/Code_From_The_Ashes/Dialogue/bin.dialogue" id="11_4fphp"]
+[ext_resource type="Resource" uid="uid://bpuy3g20bbtwl" path="res://Cases/Code_From_The_Ashes/Dialogue/microwave.dialogue" id="13_qchn1"]
+
+[sub_resource type="Resource" id="Resource_fp1h6"]
+script = ExtResource("3_dlh4p")
+mode = 2
+required_items = Array[String](["Bin"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_o61lm"]
+script = ExtResource("2_rcgj5")
+hint_text = "Der Papierkorb sieht ganz schön verbrannt aus."
+hint_condition = SubResource("Resource_fp1h6")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_6c5yn"]
+script = ExtResource("3_dlh4p")
+mode = 2
+required_items = Array[String](["Window and Footprints"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_na3n8"]
+script = ExtResource("2_rcgj5")
+hint_text = "Vielleicht gibt es noch Spuren am Fenster."
+hint_condition = SubResource("Resource_6c5yn")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_tmpe8"]
+script = ExtResource("3_dlh4p")
+mode = 2
+required_items = Array[String](["Note"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_lqamw"]
+script = ExtResource("2_rcgj5")
+hint_text = "Der Zettel auf dem Tisch ist etwas seltsam."
+hint_condition = SubResource("Resource_tmpe8")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_phkek"]
+script = ExtResource("3_dlh4p")
+mode = 0
+required_items = Array[String](["Note", "Window and Footprints", "Bin"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_n0i8r"]
+script = ExtResource("2_rcgj5")
+hint_text = "In der Küche gibt es keine weiteren Spuren."
+hint_condition = SubResource("Resource_phkek")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_qchn1"]
 script = ExtResource("6_2hrpd")
@@ -75,6 +125,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_4fosp")
 location_name = "Kitchen"
 items = [NodePath("Window and Footprints"), NodePath("Note"), NodePath("Paper Bin"), NodePath("Microwave")]
+hints = Array[ExtResource("2_rcgj5")]([SubResource("Resource_o61lm"), SubResource("Resource_na3n8"), SubResource("Resource_lqamw"), SubResource("Resource_n0i8r")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

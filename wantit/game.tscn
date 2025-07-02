@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ebi58jm4ckop" path="res://Cases/Introduction_Case/Scenes/minigame_1.tscn" id="11_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://bfhmvi5qb81eb" path="res://Scenes/inventory.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://bw7q816wdvvla" path="res://Cases/Introduction_Case/Scenes/minigame_2.tscn" id="12_215e1"]
-[ext_resource type="Script" path="res://Scripts/event.gd" id="14_215e1"]
+[ext_resource type="Script" uid="uid://duxdni5nv4je5" path="res://Scripts/event.gd" id="14_215e1"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="18_rvswv"]
 [ext_resource type="PackedScene" uid="uid://bfpnjqdy1k8iy" path="res://Cases/Fake_News_Fiasko/Scenes/office.tscn" id="18_xa8c5"]
 [ext_resource type="PackedScene" uid="uid://dka3ysce41yd0" path="res://Cases/Fake_News_Fiasko/Scenes/map.tscn" id="19_5b14r"]

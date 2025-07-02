@@ -24,6 +24,7 @@ Klaas: Hast du das soweit verstanden?
 - Ja, ich denke schon. => minigame_completed
 
 ~ minigame_completed
+do reset_dialogue_manager()
 Bob Maler könnte der Brandstifter sein.
 Klaas: Bob Maler…
 Klaas: Ich werde schauen, ob ich etwas über ihn herausfinden kann.
