@@ -1,8 +1,8 @@
-~ frage1
+~ default
 Robo: 0 heißt Licht aus. Welche Farbe ist das dann?
 - weiß
 	Robo: Nein, überleg noch einmal.
-	=> frage1
+	=> default
 - schwarz
 	Robo: Genau!
 => frage2

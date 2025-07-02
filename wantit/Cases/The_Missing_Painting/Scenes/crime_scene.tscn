@@ -1,13 +1,75 @@
-[gd_scene load_steps=9 format=3 uid="uid://t54jjw3ubnea"]
+[gd_scene load_steps=18 format=3 uid="uid://t54jjw3ubnea"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_0hrjt"]
 [ext_resource type="Texture2D" uid="uid://ch2bm700phma6" path="res://Cases/The_Missing_Painting/Assets/Backgrounds/living_room.png" id="2_wiovm"]
 [ext_resource type="Texture2D" uid="uid://b6t6n3wxdojxb" path="res://Cases/The_Missing_Painting/Assets/Scene_Switcher/shelf.png" id="3_emee1"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_3hqj3"]
 [ext_resource type="Texture2D" uid="uid://cjje2npqkl52j" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/missing_picture.png" id="6_khtxx"]
+[ext_resource type="Resource" uid="uid://cqsdvd8ts7lco" path="res://Cases/The_Missing_Painting/Dialogue/paper.dialogue" id="7_khtxx"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="7_mxtko"]
 [ext_resource type="Texture2D" uid="uid://dd6uvbu7gxbm5" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/background_qrcode_piece.png" id="7_wiovm"]
 [ext_resource type="Texture2D" uid="uid://b88qm4yy2hu27" path="res://Cases/The_Missing_Painting/Assets/pillow.png" id="8_emee1"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="9_khtxx"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="10_mxtko"]
+[ext_resource type="Resource" uid="uid://dt8vn1ar5u54g" path="res://Cases/The_Missing_Painting/Dialogue/picture.dialogue" id="11_khtxx"]
+
+[sub_resource type="GDScript" id="GDScript_khtxx"]
+script/source = "func _on_cushion_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		if not Global.Paper_collected:
+			paper.visible = true
+			%SolutionGrid.columns = columns
+			add_solution_Grid(%SolutionGrid)
+			DialogueManager.show_dialogue_balloon(load (\"res://dialogue/main.dialogue\"), \"paper\")
+
+func add_solution_Grid(Grid: GridContainer):
+	for i in range(columns * columns):
+		var rect = ColorRect.new()
+		rect.custom_minimum_size = Vector2(Grid.size.x / columns, Grid.size.y / columns)
+		if solution[i] == \"1\":
+			rect.color = Color(224,224,224)
+		elif solution[i] == \"0\":
+			rect.color = Color(0, 0, 0)
+		Grid.add_child(rect)
+
+func _on_paper_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		paper.visible = false
+		
+func _process(delta):
+	if Global.Card_collected == true and Global.Paper_collected == true:
+		back.visible = true
+	if Global.Paper_collected == true:
+		paper.visible = false
+"
+
+[sub_resource type="Resource" id="Resource_khtxx"]
+script = ExtResource("9_khtxx")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_ril5w"]
+script = ExtResource("10_mxtko")
+dialogue_resource = ExtResource("7_khtxx")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_khtxx")]([SubResource("Resource_khtxx")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_mxtko"]
+script = ExtResource("9_khtxx")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_v5c4t"]
+script = ExtResource("10_mxtko")
+dialogue_resource = ExtResource("11_khtxx")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_khtxx")]([SubResource("Resource_mxtko")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Location" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_0hrjt")
@@ -42,6 +104,8 @@ texture_normal = ExtResource("7_wiovm")
 script = ExtResource("7_mxtko")
 item_name = "Paper"
 is_collectable = true
+action_script = SubResource("GDScript_khtxx")
+item_dialogue = SubResource("Resource_ril5w")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Picture" type="TextureButton" parent="."]
@@ -52,6 +116,7 @@ scale = Vector2(0.299743, 0.30007)
 texture_normal = ExtResource("6_khtxx")
 script = ExtResource("7_mxtko")
 item_name = "Picture"
+item_dialogue = SubResource("Resource_v5c4t")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Pillow" type="TextureRect" parent="."]
