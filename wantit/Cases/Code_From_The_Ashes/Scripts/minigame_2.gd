@@ -19,7 +19,7 @@ func initialize_alphabet():
 		%HBoxContainer.add_child(field)
 		field.theme = custom_theme
 		field.alignment = 1
-		field.text_changed.connect(func(int): _on_text_changed(i+1))
+		field.text_changed.connect(func(int): _on_text_changed(i))
 		
 		var spacer = Control.new()
 		spacer.custom_minimum_size = Vector2(4.5, 0)
@@ -51,15 +51,15 @@ func apply_solution() -> bool:
 	%DecryptedMessage.text = new_text
 	%ColorRect.size = %DecryptedMessage.size
 	%ColorRect.position = %DecryptedMessage.position
+	await get_tree().process_frame
 	
 	return new_text == solution_text
 
 func _on_button_pressed() -> void:
-	if apply_solution():
+	if await apply_solution():
 		start_dialogue("correct_solution")
 	else:
 		start_dialogue("wrong_solution")
-		#reset()
 
 func reset():
 	%DecryptedMessage.text = ""
@@ -67,8 +67,8 @@ func reset():
 		child.text = ""
 
 func _on_text_changed(field_num: int):
-	if field_num <= text_fields.size()-1:
-		text_fields[field_num].grab_focus()
+	if field_num + 1 <= text_fields.size() and text_fields[field_num].text != "":
+		text_fields[field_num + 1].grab_focus()
 
 func start_dialogue(dialogue_start: String):
 	DialogueManager.show_dialogue_balloon_scene(

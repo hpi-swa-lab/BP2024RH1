@@ -7,7 +7,7 @@ class_name Case
 @export var case_topic: String
 @export var case_location_scenes: Array[PackedScene]
 var case_locations: Array[Location]
-@export var inventory_scene: PackedScene
+var inventory_scene: PackedScene = load("res://Scenes/inventory.tscn")
 var inventory: Inventory
 var interactions: Array
 var is_completed: bool = false

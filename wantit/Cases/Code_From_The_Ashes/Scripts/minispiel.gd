@@ -13,7 +13,6 @@ func _ready():
 	initialize_disk()
 	set_lineEdits()
 	set_encrypted_text()
-	
 
 func initialize_disk():
 	var rot_angle = deg_to_rad(13.84)
@@ -74,10 +73,10 @@ func _on_letter_clicked(_viewport, event, _shape_idx, letter):
 		if text_fields[textfield_index] is LineEdit:
 			text_fields[textfield_index].text = letter
 			text_fields[textfield_index].release_focus()
-			if (textfield_index + 1 ) < original_text.length():
+			if (textfield_index + 1 ) < original_text.length() and text_fields[textfield_index +1] is LineEdit:
 				text_fields[textfield_index + 1].grab_focus()
-		else:
-			text_fields[textfield_index + 1].grab_focus()
+			elif (textfield_index + 2 ) < original_text.length() and text_fields[textfield_index +2] is LineEdit:
+				text_fields[textfield_index + 2].grab_focus()
 
 func _on_links_pressed() -> void:
 	%Drehen.rotation -= deg_to_rad(13.84)

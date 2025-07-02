@@ -19,6 +19,8 @@ func _ready():
 			extended_item.item_dialogue.baloon_type,
 			extended_item.item_dialogue.dialogue_resource,
 			"minigame2")
+			await DialogueManager.dialogue_ended
+			check_and_apply_caesar()
 
 func check_and_apply_caesar():
 	if extended_item.item_name == "Caesar" and location.location_name == "Minigame1":
