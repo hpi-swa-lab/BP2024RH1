@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://cb0u1ejhyocev"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_ly61v"]
+[ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="2_qe5lk"]
+[ext_resource type="Texture2D" uid="uid://b5rpc8qen503n" path="res://Assets/office/clue_board_max.png" id="7_qv4m4"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="8_fwrwg"]
+[ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="9_o7laa"]
+[ext_resource type="Texture2D" uid="uid://dhsfehg0vmn2l" path="res://Assets/office/map.png" id="10_5pdpa"]
+[ext_resource type="Texture2D" uid="uid://f6f3bng1frf1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="11_mlcep"]
+[ext_resource type="Texture2D" uid="uid://dm8tc7i2f2evk" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/office_door.png" id="13_iljt4"]
+
+[node name="office_light_is_back" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_ly61v")
+location_name = "office_light_is_back"
+items = [NodePath(""), NodePath("")]
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Office" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.301736, 0.301736)
+texture = ExtResource("2_qe5lk")
+
+[node name="clue_board" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_left = 427.0
+offset_top = 262.0
+offset_right = 2634.0
+offset_bottom = 1357.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("7_qv4m4")
+script = ExtResource("8_fwrwg")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_o7laa")
+script = ExtResource("8_fwrwg")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="map" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+action_mode = 0
+texture_normal = ExtResource("10_5pdpa")
+script = ExtResource("8_fwrwg")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="Documents_on_table" type="TextureRect" parent="."]
+offset_left = 487.0
+offset_top = 315.0
+offset_right = 1126.0
+offset_bottom = 837.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_mlcep")
+
+[node name="Door" type="TextureButton" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("13_iljt4")
+script = ExtResource("8_fwrwg")
+requested_location_name = "secound_office_light_is_back"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

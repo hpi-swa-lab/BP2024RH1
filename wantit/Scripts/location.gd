@@ -81,3 +81,7 @@ func set_item_dialogues() -> void:
 	for item in items:
 		if item.item_dialogue:
 			item.add_dialogue_player(item.item_dialogue, case, [])
+
+
+func _on_documents_on_table_item_found(item: Item) -> void:
+	pass # Replace with function body.
