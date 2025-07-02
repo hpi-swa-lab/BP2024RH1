@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbk0oi1e5svcq"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_lpm2t"]
+
+[node name="minigame_1" type="Node"]
+script = ExtResource("1_lpm2t")
+location_name = "minigame_1"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
