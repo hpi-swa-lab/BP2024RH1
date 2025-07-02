@@ -1,48 +1,33 @@
 [
   {
-	"question": "Wann werden Daten zu Informationen?",
-	"answers": ["Wenn sie in einem Zusammenhang interpretiert werden", "Wenn sie gespeichert werden.", "Nie.", ""],
+	"question": "Was ist ein Pixel?",
+	"answers": ["", "", "", ""],
+	"isWrite": 0, 
+	"correct": 0,
+	"richtig": "Ein viereckiger Teil des Bildschirms"
+  },
+  {
+	"question": "Wo findet man Pixel?",
+	"answers": ["", "", "", ""],
+	"isWrite": 0, 
+	"correct": 0,
+	"richtig": "Am Pixelbaum"
+  },
+  {
+	"question": "Was passiert bei der Caesar-Verschlüsselung mit den Buchstaben eines Textes?",
+	"answers": ["Sie werden rückwärts geschrieben.", "Sie werden durch Zahlen ersetzt.", "Sie werden im Alphabet um eine feste Anzahl verschoben.", "Sie werden gelöscht"],
+	"correct": 2
+  },
+  {
+	"question": "Wie nennt man den ursprünglichen, noch unverschlüsselten Text?",
+	"answers": ["Klartext", "Schlüssel", "Codewort", "Nachricht"],
 	"correct": 0
   },
   {
-	"question": "Was ist der Hauptunterschied zwischen Daten und Informationen?",
-	"answers": ["Informationen sind Rohwerte, Daten haben Bedeutung", "Daten sind Rohwerte, Informationen haben Bedeutung", "Daten und Informationen sind dasselbe", ""],
-	"correct": 1
-  },
-  {
-	"question": "Welches Medium kann Daten enthalten?",
-	"answers": ["Ein Textdokument", "Ein Bild", "Ein Lied", ""],
-	"correct": 1
-  },
-  {
-	"question": "Eine Information kann verschiedene Repräsentationen haben.",
-	"answers": ["richtig", "falsch", "", ""],
-	"correct": 1
-  },
-  {
-	"question": "Beschrifte die Spalten.",
-	"answers": ["Links: Informationen, Rechts: Daten", "Links: Daten, Rechts: Informationen", "", ""],
+	"question": "Entschlüssle das Wort: KDOOR (Schlüssel: 3)",
+	"answers": ["", "", "", ""],
+	"isWrite": 0, 
 	"correct": 0,
-	"image": "intro_Q5.png"
-  },
-  {
-	"question": "32% Gewinn ist ein Beispiel für:",
-	"answers": ["Informationen", "Daten", "Beides", ""],
-	"correct": 0,
-  },
-  {
-	"question": "123 ist ein Beispiel für:",
-	"answers": ["Informationen", "Daten", "Beides", ""],
-	"correct": 1
-  },
-  {
-	"question": "Die Farbe Blau ist ein Beispiel für:",
-	"answers": ["Informationen", "Daten", "Beides", ""],
-	"correct": 1
-  },
-  {
-	"question": "Der Spielstand: 3 : 4 ist ein Beispiel für:",
-	"answers": ["Informationen", "Daten", "Beides", ""],
-	"correct": 0
+	"richtig": "HALLO"
   }
 ]

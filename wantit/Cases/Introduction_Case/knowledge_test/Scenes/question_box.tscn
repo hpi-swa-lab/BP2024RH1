@@ -35,7 +35,7 @@ wrap_mode = 1
 [node name="ASubmit" parent="." instance=ExtResource("2_o7t1u")]
 visible = false
 layout_mode = 2
-text = "A"
+text = "Weiter"
 script = null
 
 [node name="A1" parent="." instance=ExtResource("2_o7t1u")]

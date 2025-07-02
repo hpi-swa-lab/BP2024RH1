@@ -1,8 +1,8 @@
 # main.gd
 extends Node2D
 
-const ASSET_PATH := "res://Cases/Introduction_Case/knowledge_test/Assets/"
-const CASE := "INTRO"
+const ASSET_PATH := "res://Cases/Code_From_The_Ashes/knowledge_test/Assets/"
+const CASE := "CAESR"
 
 @onready var question_box = $QuestionWrap/QuestionBox
 
