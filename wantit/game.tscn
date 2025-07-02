@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=73 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -33,6 +33,18 @@
 [ext_resource type="PackedScene" uid="uid://de08xwxsx122u" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/case_2_minigame_2.tscn" id="30_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://ovgubqjktpfk" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/minigame_3.tscn" id="31_7knny"]
 [ext_resource type="PackedScene" uid="uid://caun4d48wfmce" path="res://Cases/Fake_News_Fiasko/Scenes/time_skip.tscn" id="32_dhpj7"]
+[ext_resource type="PackedScene" uid="uid://brb5udqhuuouj" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_beginn.tscn" id="34_eu6ph"]
+[ext_resource type="PackedScene" uid="uid://diekxq2rx0a8e" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_power_failure.tscn" id="35_edr7y"]
+[ext_resource type="PackedScene" uid="uid://cb0u1ejhyocev" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_light_is_back.tscn" id="36_kq12w"]
+[ext_resource type="PackedScene" uid="uid://8tykys80rcmx" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/secound_office_power_failure.tscn" id="37_t46w6"]
+[ext_resource type="PackedScene" uid="uid://c1ulmcexuq1x4" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/secound_office_light_is_back.tscn" id="38_m28ev"]
+[ext_resource type="PackedScene" uid="uid://dxpdv3si2n5eh" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/technic_room_power_failure.tscn" id="39_lwlx3"]
+[ext_resource type="PackedScene" uid="uid://07bq8xkvyxc2" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/technic_room_light_is_back.tscn" id="40_0de7l"]
+[ext_resource type="PackedScene" uid="uid://bu62r6drd73dl" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/corridor_power_failure.tscn" id="41_87ddb"]
+[ext_resource type="PackedScene" uid="uid://c1xoqrkvm0u5l" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/corridor_light_is_back.tscn" id="42_mljfx"]
+[ext_resource type="PackedScene" uid="uid://0i05nmbifo6h" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_1.tscn" id="43_t46w6"]
+[ext_resource type="PackedScene" uid="uid://bpijelj7eiefa" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_2.tscn" id="44_m28ev"]
+[ext_resource type="PackedScene" uid="uid://dcbc5risftiqs" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_Logik_Gatter.tscn" id="45_lwlx3"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -173,8 +185,8 @@ metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_edr7y"]
 script = ExtResource("14_215e1")
-event_name = "minigame_1_start"
-location_name = "minigame_1"
+event_name = "tutorial_Logik_Gatter_start"
+location_name = "tutorial_Logik_Gatter"
 start_condition = SubResource("Resource_kq12w")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
@@ -191,12 +203,31 @@ location_name = "corridor_light_is_back"
 start_condition = SubResource("Resource_m28ev")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
+[sub_resource type="Resource" id="Resource_0de7l"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["tower_quelle_light_is_back"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_87ddb"]
+script = ExtResource("14_215e1")
+event_name = "minigame_2_start"
+location_name = "minigame_2"
+start_condition = SubResource("Resource_0de7l")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_mljfx"]
+script = ExtResource("14_215e1")
+event_name = "minigame_1_start"
+location_name = "minigame_1"
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
 [sub_resource type="Resource" id="Resource_t46w6"]
 script = ExtResource("2_e2o6t")
 case_slug = "Logik Gatter"
 case_title = "Ein ganz normaler Tag"
-case_location_scenes = Array[PackedScene]([null])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_edr7y"), SubResource("Resource_lwlx3")])
+case_location_scenes = Array[PackedScene]([ExtResource("34_eu6ph"), ExtResource("35_edr7y"), ExtResource("36_kq12w"), ExtResource("37_t46w6"), ExtResource("38_m28ev"), ExtResource("39_lwlx3"), ExtResource("40_0de7l"), ExtResource("41_87ddb"), ExtResource("42_mljfx"), ExtResource("43_t46w6"), ExtResource("44_m28ev"), ExtResource("45_lwlx3")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_edr7y"), SubResource("Resource_lwlx3"), SubResource("Resource_87ddb"), SubResource("Resource_mljfx")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]
