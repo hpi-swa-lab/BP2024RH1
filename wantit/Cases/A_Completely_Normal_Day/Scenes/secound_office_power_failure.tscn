@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://8tykys80rcmx"]
+[gd_scene load_steps=24 format=3 uid="uid://8tykys80rcmx"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_02av5"]
 [ext_resource type="Texture2D" uid="uid://cp42k8rjventg" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/Blackout/big_office_dark.png" id="2_wlsng"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://c775drfju2sy8" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop5_dark.png" id="11_nvcjy"]
 [ext_resource type="Texture2D" uid="uid://cfbbvo3htr0iq" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/computer1_dark.png" id="14_vmna6"]
 [ext_resource type="Resource" uid="uid://b8synbond6ikw" path="res://Cases/A_Completely_Normal_Day/dialogue/tower.dialogue" id="15_h60kb"]
+[ext_resource type="Texture2D" uid="uid://m8c3posu3ut7" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/computer2_dark.png" id="16_3mwn6"]
+[ext_resource type="Texture2D" uid="uid://cilpej0sgqsaq" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/computer3_dark.png" id="17_lyq4h"]
 
 [sub_resource type="Resource" id="Resource_vmna6"]
 script = ExtResource("6_rk7vc")
@@ -141,7 +143,7 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 [node name="tower_2" type="TextureButton" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-texture_normal = ExtResource("14_vmna6")
+texture_normal = ExtResource("16_3mwn6")
 script = ExtResource("4_sblj2")
 item_name = "tower_2_power_failure"
 item_dialogue = SubResource("Resource_lyq4h")
@@ -150,7 +152,7 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 [node name="tower_3" type="TextureButton" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-texture_normal = ExtResource("14_vmna6")
+texture_normal = ExtResource("17_lyq4h")
 script = ExtResource("4_sblj2")
 item_name = "tower_3_power_failure"
 item_dialogue = SubResource("Resource_lyq4h")

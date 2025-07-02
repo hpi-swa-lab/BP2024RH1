@@ -1,22 +1,26 @@
-[gd_scene load_steps=18 format=3 uid="uid://c1ulmcexuq1x4"]
+[gd_scene load_steps=24 format=3 uid="uid://c1ulmcexuq1x4"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_1157y"]
 [ext_resource type="Texture2D" uid="uid://b5cj44i08n730" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/big_office.png" id="2_1157y"]
-[ext_resource type="Texture2D" uid="uid://b7rptub0guvd2" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/router_big_office_dark.png" id="3_344c6"]
+[ext_resource type="Texture2D" uid="uid://ds6cnjde88gs7" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/router_big_office.png" id="3_edpt3"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_dtd0x"]
 [ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="5_edpt3"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="6_2cnp6"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_rc8m8"]
-[ext_resource type="Texture2D" uid="uid://dvtntml54vdid" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop1_dark.png" id="8_i1e8m"]
+[ext_resource type="Texture2D" uid="uid://bf6xas1fhnvdx" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop1.png" id="8_2cnp6"]
 [ext_resource type="Resource" uid="uid://dulikdvcbntlc" path="res://Cases/A_Completely_Normal_Day/dialogue/computer.dialogue" id="9_6b326"]
-[ext_resource type="Texture2D" uid="uid://cbfx0vuyvvj4o" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop2_dark.png" id="10_xig8o"]
-[ext_resource type="Texture2D" uid="uid://dfhpc7ewn82bv" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop3_dark.png" id="11_ablj6"]
-[ext_resource type="Texture2D" uid="uid://cejjnqlym8ayo" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop4_dark.png" id="12_10en0"]
-[ext_resource type="Texture2D" uid="uid://c775drfju2sy8" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop5_dark.png" id="13_3pncj"]
+[ext_resource type="Texture2D" uid="uid://de4bdlorqqx2p" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop2.png" id="10_rc8m8"]
+[ext_resource type="Texture2D" uid="uid://clwvngjx6el8o" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop3.png" id="11_i1e8m"]
+[ext_resource type="Texture2D" uid="uid://ddkc3n6g44rt8" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop4.png" id="12_6b326"]
+[ext_resource type="Texture2D" uid="uid://dncftbfya8q7t" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop5.png" id="13_xig8o"]
+[ext_resource type="Texture2D" uid="uid://cg154aae1v3as" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer1.png" id="14_ablj6"]
+[ext_resource type="Resource" uid="uid://b8synbond6ikw" path="res://Cases/A_Completely_Normal_Day/dialogue/tower.dialogue" id="15_2cnp6"]
+[ext_resource type="Texture2D" uid="uid://ur0v3br2pepx" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer2.png" id="16_10en0"]
+[ext_resource type="Texture2D" uid="uid://dkefpd0ojaem4" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer3.png" id="17_3pncj"]
 
 [sub_resource type="Resource" id="Resource_vmna6"]
 script = ExtResource("6_2cnp6")
-start_marker = "Search_szene_0"
+start_marker = "Search_szene_1"
 required_items = Array[String]([])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
@@ -30,7 +34,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [sub_resource type="Resource" id="Resource_y8qsx"]
 script = ExtResource("6_2cnp6")
-start_marker = "Search_szene_0"
+start_marker = "Search_szene_1"
 required_items = Array[String]([])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
@@ -42,9 +46,23 @@ dialogue_triggers = Array[ExtResource("6_2cnp6")]([SubResource("Resource_y8qsx")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="secound_office_power_failure" type="Node"]
+[sub_resource type="Resource" id="Resource_edpt3"]
+script = ExtResource("6_2cnp6")
+start_marker = "Search_scene_1"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_6b326"]
+script = ExtResource("7_rc8m8")
+dialogue_resource = ExtResource("15_2cnp6")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_2cnp6")]([SubResource("Resource_edpt3")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="secound_office_light_is_back" type="Node"]
 script = ExtResource("1_1157y")
-location_name = "secound_office_power_failure"
+location_name = "secound_office_light_is_back"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -57,9 +75,9 @@ texture = ExtResource("2_1157y")
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("3_344c6")
+texture_normal = ExtResource("3_edpt3")
 script = ExtResource("4_dtd0x")
-item_name = "router_secound_office_power_failure"
+item_name = "router_secound_office_light_is_back"
 item_dialogue = SubResource("Resource_h60kb")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
@@ -67,9 +85,9 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("8_i1e8m")
+texture_normal = ExtResource("8_2cnp6")
 script = ExtResource("4_dtd0x")
-item_name = "desktop_1_power_failure"
+item_name = "desktop_1_light_is_back"
 item_dialogue = SubResource("Resource_nvcjy")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
@@ -77,9 +95,9 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("10_xig8o")
+texture_normal = ExtResource("10_rc8m8")
 script = ExtResource("4_dtd0x")
-item_name = "desktop_2_quelle_power_failure"
+item_name = "desktop_2_quelle_light_is_back"
 item_dialogue = SubResource("Resource_nvcjy")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
@@ -87,9 +105,9 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("11_ablj6")
+texture_normal = ExtResource("11_i1e8m")
 script = ExtResource("4_dtd0x")
-item_name = "desktop_3_power_failure"
+item_name = "desktop_3_light_is_back"
 item_dialogue = SubResource("Resource_nvcjy")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
@@ -97,9 +115,9 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("12_10en0")
+texture_normal = ExtResource("12_6b326")
 script = ExtResource("4_dtd0x")
-item_name = "desktop_4_power_failure"
+item_name = "desktop_4_light_is_back"
 item_dialogue = SubResource("Resource_nvcjy")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
@@ -107,14 +125,35 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("13_3pncj")
+texture_normal = ExtResource("13_xig8o")
 script = ExtResource("4_dtd0x")
-item_name = "desktop_5_power_failure"
+item_name = "desktop_5_light_is_back"
 item_dialogue = SubResource("Resource_nvcjy")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
-[node name="Item" type="TextureButton" parent="."]
+[node name="tower_1" type="TextureButton" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+texture_normal = ExtResource("14_ablj6")
 script = ExtResource("4_dtd0x")
+item_name = "tower_1_light_is_back"
+item_dialogue = SubResource("Resource_6b326")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="tower_2" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("16_10en0")
+script = ExtResource("4_dtd0x")
+item_name = "tower_2_light_is_back"
+item_dialogue = SubResource("Resource_6b326")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="tower_3" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("17_3pncj")
+script = ExtResource("4_dtd0x")
+item_name = "tower_3_light_is_back"
+item_dialogue = SubResource("Resource_6b326")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
