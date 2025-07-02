@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dka3ysce41yd0"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_j85ip"]
+[ext_resource type="Texture2D" uid="uid://kjeyrrdms4sv" path="res://Assets/map/map.png" id="2_6oxaj"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="3_n8erp"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_n8erp"]
+[ext_resource type="Texture2D" uid="uid://c461n4y1bsk42" path="res://Assets/map/restaurant_map.png" id="5_dt513"]
+
+[node name="Map" type="Node"]
+script = ExtResource("1_j85ip")
+location_name = "Map"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Map" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(587, 321)
+scale = Vector2(0.305738, 0.322603)
+texture = ExtResource("2_6oxaj")
+
+[node name="BackButton" parent="." instance=ExtResource("3_n8erp")]
+offset_left = 1068.0
+offset_top = 21.0
+offset_right = 1580.0
+offset_bottom = 533.0
+scale = Vector2(0.1, 0.1)
+requested_location_name = "Office"
+
+[node name="ToRestaurant" type="TextureButton" parent="."]
+offset_left = -1.0
+offset_top = -28.0
+offset_right = 5354.0
+offset_bottom = 3142.0
+scale = Vector2(0.306, 0.323)
+texture_normal = ExtResource("5_dt513")
+script = ExtResource("4_n8erp")
+requested_location_name = "Restaurant Dining Hall Pre"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]

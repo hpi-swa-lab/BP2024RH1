@@ -6,7 +6,7 @@ class_name Case
 @export var case_title: String
 @export var case_location_scenes: Array[PackedScene]
 var case_locations: Array[Location]
-@export var inventory_scene: PackedScene
+var inventory_scene: PackedScene = load("res://Scenes/inventory.tscn")
 var inventory: Inventory
 var interactions: Array
 var is_completed: bool = false
@@ -72,6 +72,7 @@ func check_matching_event():
 	var player_items = get_player_items()
 	for trigger in events:
 		if trigger.is_valid(player_items):
+			trigger.has_started = true
 			return trigger.location_name
 	return null
 

@@ -6,7 +6,9 @@ Bürgermeister Honigwald: Was verschafft mir denn die Ehre?
 	Bürgermeister Honigwald: Wenn überhaupt, dann ist es Maria selbst, die dem Ruf ihres Restaurants schädigt.
 	- Was meinen Sie damit?
 		Bürgermeister Honigwald: Die Hygienestandards sind ein Desaster. Das Geschirr ist immer dreckig.
-		Bürgermeister Honigwald: Außerdem zahlt Maria ihre Rechnungen zu spät und das Essen ist auch nicht gut. => further
+		Bürgermeister Honigwald: Außerdem zahlt Maria ihre Rechnungen zu spät und das Essen ist auch nicht gut.
+		- Ihr Auto ist beim Einbruch letzte Woche auf den Überwachunsgkameras von Bitza zu sehen.
+		Bürgermeister Honigwald: Das war ich nicht! Mein Auto wurde vor einiger Zeit geklaut. => further
 	- Ihr Auto ist beim Einbruch letzte Woche auf den Überwachunsgkameras von Bitza zu sehen.
 		Bürgermeister Honigwald: Das war ich nicht! Mein Auto wurde vor einiger Zeit geklaut. 
 		- Inwiefern schadet Maria selbst dem Ruf von “Bitza”?
@@ -15,4 +17,5 @@ Bürgermeister Honigwald: Was verschafft mir denn die Ehre?
 
 ~ further
 Klaas: Nur, weil Honigwald der Bürgermeister ist, heißt das nicht, dass er die Wahrheit sagt. Wir sollten nochmal zurück ins Büro und die Aussagen überprüfen.
+do _on_location_switch_requested("Minigame2")
 => END
