@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c46r1xqgd45xm"]
 
-[ext_resource type="Script" uid="uid://qtohmmfcprtr" path="res://logik_gatter/scripts/Baukasten/Gatter/or_gatter.gd" id="1_rgeqk"]
+[ext_resource type="Script" uid="uid://b31v48t2qc7t2" path="res://Cases/A_Completely_Normal_Day/Scripts/LogikGatterBaukasten/or_gatter.gd" id="1_rgeqk"]
 
 [node name="Or_Gatter" type="Button"]
 text = "ODER"

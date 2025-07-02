@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5sch15aup7u2"]
 
-[ext_resource type="Script" uid="uid://ds78qfgd8byjx" path="res://logik_gatter/scripts/Baukasten/Gatter/and_gatter.gd" id="1_btvnn"]
+[ext_resource type="Script" uid="uid://dijmd4vimokgs" path="res://Cases/A_Completely_Normal_Day/Scripts/LogikGatterBaukasten/and_gatter.gd" id="1_btvnn"]
 
 [node name="AndGatter" type="Button"]
 text = "UND"
