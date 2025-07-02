@@ -1,0 +1,148 @@
+[gd_scene load_steps=12 format=3 uid="uid://c7p06tvojqkq0"]
+
+[ext_resource type="Script" uid="uid://bvnp3honp7k4q" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/logik_gatter_level_introduction.gd" id="1_0s15r"]
+[ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://Cases/A_Completely_Normal_Day/Minigames/scences/Start.tscn" id="1_7gbyl"]
+[ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://Cases/A_Completely_Normal_Day/Minigames/scences/gatter/And_Gatter.tscn" id="2_0s15r"]
+[ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://Cases/A_Completely_Normal_Day/Minigames/scences/gatter/Or_Gatter.tscn" id="3_1v12f"]
+[ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://Cases/A_Completely_Normal_Day/Minigames/scences/Ziel.tscn" id="4_q8npu"]
+[ext_resource type="Script" uid="uid://dijmd4vimokgs" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/gatter/and_gatter.gd" id="4_us68c"]
+[ext_resource type="Script" uid="uid://b31v48t2qc7t2" path="res://Cases/A_Completely_Normal_Day/Minigames/scripts/gatter/or_gatter.gd" id="6_5g15w"]
+[ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://Cases/A_Completely_Normal_Day/Minigames/scences/connection.tscn" id="7_4cnik"]
+[ext_resource type="Texture2D" uid="uid://rnwu6tkjtpri" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_on.png" id="8_i4r03"]
+[ext_resource type="Texture2D" uid="uid://d2plli36j5iln" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_off.png" id="9_cc7ng"]
+[ext_resource type="Texture2D" uid="uid://bqme8kvd0qoy1" path="res://Cases/A_Completely_Normal_Day/Minigames/assets/triangle.png" id="12_m6xd1"]
+
+[node name="LogikGatterLevelIntroduction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0s15r")
+
+[node name="Start_AndLeft_1" parent="." instance=ExtResource("1_7gbyl")]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 111.0
+offset_right = 256.0
+offset_bottom = 142.0
+script = null
+
+[node name="Start_AndLeft_2" parent="." instance=ExtResource("1_7gbyl")]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 432.0
+offset_right = 258.0
+offset_bottom = 463.0
+script = null
+
+[node name="Start_Or_1" parent="." instance=ExtResource("1_7gbyl")]
+layout_mode = 0
+offset_left = 873.0
+offset_top = 90.0
+offset_right = 1004.0
+offset_bottom = 121.0
+script = null
+
+[node name="Start_Or_2" parent="." instance=ExtResource("1_7gbyl")]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 433.0
+offset_right = 1003.0
+offset_bottom = 464.0
+script = null
+
+[node name="AndLeft" parent="." instance=ExtResource("2_0s15r")]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 264.0
+offset_right = 219.0
+offset_bottom = 295.0
+script = ExtResource("4_us68c")
+
+[node name="Or" parent="." instance=ExtResource("3_1v12f")]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 264.0
+offset_right = 999.0
+offset_bottom = 295.0
+script = ExtResource("6_5g15w")
+
+[node name="AndMid" parent="." instance=ExtResource("2_0s15r")]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 264.0
+offset_right = 603.0
+offset_bottom = 295.0
+script = ExtResource("4_us68c")
+
+[node name="Ziel" parent="." node_paths=PackedStringArray("input_connection") instance=ExtResource("4_q8npu")]
+position = Vector2(574, 482)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_i4r03")
+input_connection = NodePath("../Btw_AndMid_Ziel")
+lv_complete_picture = ExtResource("8_i4r03")
+lv_not_complete_picture = ExtResource("9_cc7ng")
+
+[node name="Input_AndLeft_1" parent="." instance=ExtResource("7_4cnik")]
+position = Vector2(144, 195)
+points = PackedVector2Array(48, -54, 48, 69)
+
+[node name="Input_AndLeft_2" parent="." instance=ExtResource("7_4cnik")]
+position = Vector2(134, 361)
+points = PackedVector2Array(58, -65, 58, 71)
+
+[node name="Btw_AndLeft_AndMid" parent="." instance=ExtResource("7_4cnik")]
+position = Vector2(354, 290)
+points = PackedVector2Array(-138, -10, 190, -10)
+
+[node name="Btw_AndMid_Ziel" parent="." instance=ExtResource("7_4cnik")]
+position = Vector2(521, 366)
+points = PackedVector2Array(55, -70, 55, 34)
+
+[node name="Input_Or_2" parent="." instance=ExtResource("7_4cnik")]
+position = Vector2(897, 373)
+points = PackedVector2Array(39, 59, 39, -77)
+
+[node name="Input_Or_1" parent="." instance=ExtResource("7_4cnik")]
+position = Vector2(891, 187)
+points = PackedVector2Array(45, -67, 45, 77)
+
+[node name="Btw_Or_AndMid" parent="." instance=ExtResource("7_4cnik")]
+position = Vector2(714, 280)
+points = PackedVector2Array(-114, 0, 150, 0)
+
+[node name="Arrows" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrows"]
+position = Vector2(264, 280)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_m6xd1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrows"]
+position = Vector2(490, 280)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_m6xd1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Arrows"]
+position = Vector2(826, 280)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_m6xd1")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Arrows"]
+position = Vector2(664, 280)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_m6xd1")
+
+[connection signal="pressed" from="Start_AndLeft_1" to="." method="_on_start_and_left_1_pressed"]
+[connection signal="pressed" from="Start_AndLeft_2" to="." method="_on_start_and_left_2_pressed"]
+[connection signal="ziel_input_false" from="Ziel" to="." method="_on_ziel_ziel_input_false"]
+[connection signal="ziel_input_true" from="Ziel" to="." method="_on_ziel_ziel_input_true"]

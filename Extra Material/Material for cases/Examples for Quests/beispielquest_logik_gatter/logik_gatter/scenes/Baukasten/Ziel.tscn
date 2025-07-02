@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxn8odjc705k5"]
 
-[ext_resource type="Script" uid="uid://brsv11lspicj4" path="res://scripts/Baukasten/ziel.gd" id="1_tl6va"]
+[ext_resource type="Script" uid="uid://brsv11lspicj4" path="res://logik_gatter/scripts/Baukasten/ziel.gd" id="1_tl6va"]
 
 [node name="Ziel" type="Sprite2D"]
 script = ExtResource("1_tl6va")

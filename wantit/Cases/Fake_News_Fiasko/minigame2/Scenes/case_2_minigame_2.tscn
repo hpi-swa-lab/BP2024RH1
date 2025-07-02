@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cmrfxgfrjufyv" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/plate_footage.png" id="8_1ij1e"]
 [ext_resource type="Texture2D" uid="uid://e5k332u53tfr" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/bill_cutout.png" id="9_3mcq3"]
 [ext_resource type="PackedScene" uid="uid://b1ceb32i5th4a" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/statement_game2.tscn" id="10_wd6p0"]
-[ext_resource type="Texture2D" uid="uid://c08h44cgeoror" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="14_3mcq3"]
+[ext_resource type="Texture2D" uid="uid://bu0ipulfrryqh" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="14_3mcq3"]
 
 [sub_resource type="Resource" id="Resource_1ij1e"]
 script = ExtResource("2_1ij1e")
