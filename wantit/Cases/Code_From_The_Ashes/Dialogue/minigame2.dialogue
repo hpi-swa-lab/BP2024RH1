@@ -2,15 +2,19 @@
 Was könnte das Schlüsselwort sein? Gibt es noch einen Gegenstand vom Tatort, der mir weiterhelfen kann?
 => END
 
-# evtl sollten diese Texte für die Items zu den Items?
-~ punch_card
-Ich glaube nicht, dass der Name des Restaurants das Schlüsselwort ist.
+~ not_whole_alphabet
+Ich muss das ganze Alphabet angeben.
 => END
 
-~ caesar_statue
-Die Verschiebung hilft mir nicht weiter.
+~ double_letter
+Ich kann jeden Buchstaben nur einmal benutzen
 => END
 
-~ dog_picture
-Die Verschiebung hilft mir nicht weiter.
+~ correct_solution
+Bob Maler schien Alice Wunder davon überzeugen zu wollen etwas zuzugeben. Der Fall ist komplexer als gedacht.
+do interaction_happened("Minigame2_completed")
+=> END
+
+~ wrong_solution
+Die Nachricht ergibt keinen Sinn, vermutlich habe ich das falsche Geheimalphabet
 => END

@@ -1,6 +1,6 @@
 ~ default
 do reset_tutorial()
-Klaas: Nehmen wir mal an, das Schlüsselwort ist [b]Teller[\b].
+Klaas: Nehmen wir mal an, das Schlüsselwort ist [b]Teller[/b].
 Klaas: Zunächst werden alle doppelten Buchstaben entfernt.
 
 Klaas: Aus TELLER wird dann also TELR.

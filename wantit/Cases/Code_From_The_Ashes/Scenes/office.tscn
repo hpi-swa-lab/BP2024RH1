@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8pqlahohcjv0"]
+[gd_scene load_steps=15 format=3 uid="uid://b8pqlahohcjv0"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_tkowq"]
 [ext_resource type="Resource" uid="uid://cq5p4ejmlh8la" path="res://Cases/Code_From_The_Ashes/Dialogue/office.dialogue" id="2_tkowq"]
@@ -28,11 +28,17 @@ start_marker = "after_restaurant"
 required_items = Array[String](["Minigame1_completed"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
+[sub_resource type="Resource" id="Resource_xx26k"]
+script = ExtResource("3_dc3v2")
+start_marker = "after_minigame2"
+required_items = Array[String](["Minigame2_completed"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
 [sub_resource type="Resource" id="Resource_x08ri"]
 script = ExtResource("4_x08ri")
 dialogue_resource = ExtResource("2_tkowq")
 is_dialogue = true
-dialogue_triggers = Array[ExtResource("3_dc3v2")]([SubResource("Resource_srv60"), SubResource("Resource_dc3v2"), SubResource("Resource_tkowq")])
+dialogue_triggers = Array[ExtResource("3_dc3v2")]([SubResource("Resource_srv60"), SubResource("Resource_dc3v2"), SubResource("Resource_tkowq"), SubResource("Resource_xx26k")])
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 

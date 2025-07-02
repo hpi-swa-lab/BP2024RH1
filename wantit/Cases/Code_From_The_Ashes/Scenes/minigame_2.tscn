@@ -1,8 +1,135 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8bpblw4o4xej"]
+[gd_scene load_steps=11 format=3 uid="uid://b8bpblw4o4xej"]
 
-[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_0tf0y"]
+[ext_resource type="Script" uid="uid://bxumstkw7fi0j" path="res://Cases/Code_From_The_Ashes/Scripts/minigame_2.gd" id="1_0tf0y"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_ib0ks"]
+[ext_resource type="Resource" uid="uid://biyctorcjmbpn" path="res://Cases/Code_From_The_Ashes/Dialogue/minigame2.dialogue" id="2_tt15t"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_35boq"]
+[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="3_hwubi"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_ib0ks"]
+
+[sub_resource type="Resource" id="Resource_2x1th"]
+script = ExtResource("3_35boq")
+mode = 2
+required_items = Array[String](["picture_found"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_pp6ap"]
+script = ExtResource("2_ib0ks")
+hint_text = "Vielleicht hilft das Bild mit dem Hund weiter"
+hint_condition = SubResource("Resource_2x1th")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_35boq"]
+script = ExtResource("3_hwubi")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_74ll0"]
+script = ExtResource("4_ib0ks")
+dialogue_resource = ExtResource("2_tt15t")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_hwubi")]([SubResource("Resource_35boq")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Minigame2" type="Node"]
 script = ExtResource("1_0tf0y")
 location_name = "Minigame2"
+hints = Array[ExtResource("2_ib0ks")]([SubResource("Resource_pp6ap")])
+has_inventory = true
+location_dialogue = SubResource("Resource_74ll0")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.843137, 0.831373, 0.823529, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+offset_left = 418.0
+offset_top = 310.0
+offset_right = 743.0
+offset_bottom = 375.0
+
+[node name="EncryptedMessage" type="Label" parent="Control"]
+offset_left = 418.0
+offset_top = 300.0
+offset_right = 734.0
+offset_bottom = 383.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "BEI SR ZU -I"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 100.0
+offset_right = 40.0
+offset_bottom = 140.0
+
+[node name="ColorRect" type="ColorRect" parent="Control2"]
+unique_name_in_owner = true
+offset_left = 418.0
+offset_top = 310.0
+offset_right = 743.0
+offset_bottom = 375.0
+
+[node name="DecryptedMessage" type="Label" parent="Control2"]
+unique_name_in_owner = true
+offset_left = 418.0
+offset_top = 300.0
+offset_right = 734.0
+offset_bottom = 383.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+
+[node name="Label" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 948.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 962.0
+offset_top = 58.0
+offset_right = 1123.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Klartext-Alphabet"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 962.0
+offset_top = 115.0
+offset_right = 1123.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Geheimalphabet"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 48.0
+offset_top = 109.0
+offset_right = 952.0
+offset_bottom = 149.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 481.5
+offset_top = 191.0
+offset_right = 670.5
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 35
+text = "Anwenden"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

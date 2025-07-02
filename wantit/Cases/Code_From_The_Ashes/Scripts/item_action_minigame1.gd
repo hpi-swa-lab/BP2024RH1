@@ -13,6 +13,14 @@ func _ready():
 			"minigame1")
 			await DialogueManager.dialogue_ended
 			check_and_apply_caesar()
+		elif child.name == "Minigame2":
+			location = child
+			DialogueManager.show_dialogue_balloon_scene(
+			extended_item.item_dialogue.baloon_type,
+			extended_item.item_dialogue.dialogue_resource,
+			"minigame2")
+			await DialogueManager.dialogue_ended
+			check_and_apply_caesar()
 
 func check_and_apply_caesar():
 	if extended_item.item_name == "Caesar":

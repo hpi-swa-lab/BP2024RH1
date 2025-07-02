@@ -95,7 +95,7 @@ func _on_check_solution_pressed() -> void:
 	if input_text == original_text.to_upper():
 		if dialogue_resource:
 			DialogueManager.show_dialogue_balloon_scene(
-				"res://dialogue_balloons/monologue/balloon_monologue.tscn",
+				"res://dialogue_balloons/balloon.tscn",
 				dialogue_resource,
 				"minigame_completed")
 			await DialogueManager.dialogue_ended
