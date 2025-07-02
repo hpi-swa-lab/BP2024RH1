@@ -169,7 +169,7 @@ metadata/_custom_type_script = "uid://ni774rbce31d"
 [sub_resource type="Resource" id="Resource_kq12w"]
 script = ExtResource("18_rvswv")
 mode = 0
-required_items = Array[String](["electrical_box"])
+required_items = Array[String](["electrical_box_power_failure"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_edr7y"]

@@ -34,7 +34,7 @@ script = ExtResource("6_wm3eh")
 dialogue_resource = ExtResource("4_o34xk")
 is_dialogue = false
 dialogue_triggers = Array[ExtResource("5_mkncw")]([SubResource("Resource_c6d25")])
-start_automatically = false
+start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="office_beginn" type="Node" node_paths=PackedStringArray("items")]
