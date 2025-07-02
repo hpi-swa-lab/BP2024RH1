@@ -61,7 +61,6 @@ func handle_item_found(_item: Item, _location: Location = null) -> void:
 		inventory.add_item(_item)
 	else:
 		interactions.append(_item.item_name)
-		print(_item.item_name)
 	item_found.emit(_item)
 	try_start_event()
 	
@@ -132,6 +131,11 @@ func clear_case_data() -> void:
 	for location in case_locations:
 		if location.dialogue_player:
 			location.dialogue_player.reset_played_dialogues()
+		for item in location.items:
+			if item.dialogue_player:
+				item.dialogue_player.reset_played_dialogues()
+	for event in events:
+		event.has_started = false
 	print("Cleared current case data.")
 
 func get_restored_location_data(location: Location):

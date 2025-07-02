@@ -56,10 +56,11 @@ func get_active_case():
 	return get_case_by_slug(active_case_slug)
 
 func setup_case_connections(case: Case):
-	case.connect("location_switch_requested_from_event", _on_location_switch_requested)
-	case.connect("location_switch_requested", _on_location_switch_requested)
-	case.connect("case_overview_opened", _on_case_overview_opened)
-	case.connect("case_selected", _on_start_case)
+	if not case.is_completed:
+		case.connect("location_switch_requested_from_event", _on_location_switch_requested)
+		case.connect("location_switch_requested", _on_location_switch_requested)
+		case.connect("case_overview_opened", _on_case_overview_opened)
+		case.connect("case_selected", _on_start_case)
 
 func complete_case() -> void:
 	mark_case_completed()
@@ -69,7 +70,7 @@ func complete_case() -> void:
 
 func mark_case_completed() -> void:
 	var current_case = get_case_by_slug(active_case_slug)
-	#current_case.is_completed = true
+	current_case.is_completed = true
 	current_case.clear_case_data()
 
 func reset_to_default_case() -> void:
