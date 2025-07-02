@@ -1,12 +1,10 @@
 extends Location
 
-func _on_default_minigame_minigame_completed() -> void:
-	DialogueManager.show_dialogue_balloon_scene(
-			location_dialogue.baloon_type,
-			location_dialogue.dialogue_resource,
-			"caesar_decrypted")
-	await DialogueManager.dialogue_ended
-			
+func _ready() -> void:
+	super._ready()
+	
 	var interaction_item = Item.new()
-	interaction_item.item_name = "Minigame1 completed"
+	interaction_item.item_name = "minigame_started"
+	interaction_item.is_collectable = false
 	item_found.emit(interaction_item)
+	print("starting")

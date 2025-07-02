@@ -15,16 +15,13 @@ func _ready():
 			check_and_apply_caesar()
 
 func check_and_apply_caesar():
-	print("applying")
 	if extended_item.item_name == "Caesar":
-		print("thats me")
 		var label = Label.new()
 		label.add_theme_font_size_override("font_size", 30)
 		label.add_theme_color_override("font_color", Color.BLACK)
 		label.text = "CAESAR = GEIWEV"
 		label.position = Vector2(600, 150)
 		location.add_child(label)
-		print(label.position)
 		location.item_found.emit(extended_item, location)
 	else:
 		location.item_found.emit(extended_item, location)

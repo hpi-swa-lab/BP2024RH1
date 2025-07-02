@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxfl6mwk6eufh"]
+
+[ext_resource type="Script" uid="uid://qsnmdxkpvcei" path="res://Cases/Code_From_The_Ashes/Scripts/Tutorial2.gd" id="1_jab8j"]
+[ext_resource type="Resource" uid="uid://i26gbhjcifrq" path="res://Cases/Code_From_The_Ashes/Dialogue/tutorial_2.dialogue" id="2_2v3h4"]
+[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="3_amr46"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_50prr"]
+
+[sub_resource type="Resource" id="Resource_2v3h4"]
+script = ExtResource("3_amr46")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_amr46"]
+script = ExtResource("4_50prr")
+dialogue_resource = ExtResource("2_2v3h4")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_amr46")]([SubResource("Resource_2v3h4")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Tutorial2" type="Node"]
+script = ExtResource("1_jab8j")
+location_name = "Tutorial2"
+location_dialogue = SubResource("Resource_amr46")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.843137, 0.831373, 0.823529, 1)
+
+[node name="Alphabet" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 125.0
+offset_top = 257.0
+offset_right = 1031.0
+offset_bottom = 299.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z "
+
+[node name="EncryptedAlphabet" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 125.0
+offset_top = 349.0
+offset_right = 1023.0
+offset_bottom = 391.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "T  E  L  R  A  B  C  D  F  G  H  I  J  K  M  N  O  P  Q  S  U  V  W  X  Y  Z"
+
+[node name="ExampleWord" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 400.0
+offset_top = 240.0
+offset_right = 707.0
+offset_bottom = 364.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+text = "TELLER"
+
+[node name="Explanation1" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 955.0
+offset_top = 268.0
+offset_right = 1126.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Klartext-Alphabet"
+
+[node name="Explanation2" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 955.0
+offset_top = 360.0
+offset_right = 1126.0
+offset_bottom = 388.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Geheimalphabet"
+
+[node name="Explanation3" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 50.0
+offset_top = 398.0
+offset_right = 184.0
+offset_bottom = 426.0
+theme_override_colors/font_color = Color(0.82722, 0.765036, 0.0302565, 1)
+theme_override_font_sizes/font_size = 20
+text = "Schlüsselwort"

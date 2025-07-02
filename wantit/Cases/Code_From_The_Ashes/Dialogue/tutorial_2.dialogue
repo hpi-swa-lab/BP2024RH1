@@ -1,18 +1,32 @@
 ~ default
+do reset_tutorial()
 Klaas: Nehmen wir mal an, das Schlüsselwort ist [b]Teller[\b].
 Klaas: Zunächst werden alle doppelten Buchstaben entfernt.
 
 Klaas: Aus TELLER wird dann also TELR.
+do change_example()
 
 Klaas: Betrachten wir nun das Alphabet.
+do show_alphabet()
 
 Klaas: Das modifizierte Schlüsselwort wird an den Anfang des Alphabets geschrieben.
+do move_example_word()
 
 Klaas: Anschließend schreiben wir das restliche Alphabet dahinter.
 Klaas: Buchstaben, die bereits im Schlüsselwort enthalten sind, lassen wir dabei aus.
+do show_encrypted_alphabet()
 
 Klaas: Schlussendlich besteht unser Geheimalphabet aus dem Schlüsselwort am Anfang und den verbleibenden Buchstaben in ihrer bekannten Reihenfolge danach.
+do add_text()
 
 Klaas: Hast du das soweit verstanden?
 - Könntest du die Erklärung nochmal wiederholen? => default
-- Ja, ich denke schon. => END
+- Ja, ich denke schon. => minigame_completed
+
+~ minigame_completed
+Bob Maler könnte der Brandstifter sein.
+Klaas: Bob Maler…
+Klaas: Ich werde schauen, ob ich etwas über ihn herausfinden kann.
+Klaas: Dann überlasse ich dir mal die Entschlüsselung. Sag Bescheid, wenn du es gelöst hast!
+do _on_location_switch_requested("Minigame2")
+=> END

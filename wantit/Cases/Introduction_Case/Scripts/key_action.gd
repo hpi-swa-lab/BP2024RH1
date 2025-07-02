@@ -51,12 +51,10 @@ func check_down():
 	
 func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
 	for child in get_parent().get_children():
-		print(child.name)
 		if child.name == "Door CloseUp":
 			return child.find_child("Key Hole")
 	return null
 
 func _on_dialogue_ended() -> void:
-	print("test")
 	clue.item_name = "Door"
 	clue.emit_signal("item_found", clue)	

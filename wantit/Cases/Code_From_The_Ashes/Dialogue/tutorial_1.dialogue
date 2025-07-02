@@ -13,5 +13,5 @@ Klaas: Hast du das soweit verstanden?
 	
 ~ minigame_completed
 Klaas: Dann würde ich das Entschlüsseln der Nachricht jetzt dir überlassen. Viel Erfolg!
-do _on_location_switch_requested("Minigame1")
+#do _on_location_switch_requested("Minigame1")
 => END

@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8pqlahohcjv0"]
+[gd_scene load_steps=14 format=3 uid="uid://b8pqlahohcjv0"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_tkowq"]
 [ext_resource type="Resource" uid="uid://cq5p4ejmlh8la" path="res://Cases/Code_From_The_Ashes/Dialogue/office.dialogue" id="2_tkowq"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_dc3v2"]
+[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="3_dc3v2"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_x08ri"]
 [ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="5_xx26k"]
 [ext_resource type="Texture2D" uid="uid://b5rpc8qen503n" path="res://Assets/office/clue_board_max.png" id="6_0h4ce"]
@@ -24,21 +24,15 @@ metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_tkowq"]
 script = ExtResource("3_dc3v2")
-start_marker = "after_tutorial"
-required_items = Array[String](["Tutorial1 completed"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_xx26k"]
-script = ExtResource("3_dc3v2")
 start_marker = "after_restaurant"
-required_items = Array[String](["Minigame1 completed"])
+required_items = Array[String](["Minigame1_completed"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_x08ri"]
 script = ExtResource("4_x08ri")
 dialogue_resource = ExtResource("2_tkowq")
 is_dialogue = true
-dialogue_triggers = Array[ExtResource("3_dc3v2")]([SubResource("Resource_srv60"), SubResource("Resource_dc3v2"), SubResource("Resource_tkowq"), SubResource("Resource_xx26k")])
+dialogue_triggers = Array[ExtResource("3_dc3v2")]([SubResource("Resource_srv60"), SubResource("Resource_dc3v2"), SubResource("Resource_tkowq")])
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
@@ -67,7 +61,7 @@ texture_normal = ExtResource("6_0h4ce")
 script = ExtResource("7_u3pht")
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
-[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+[node name="computer" type="TextureButton" parent="."]
 unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0

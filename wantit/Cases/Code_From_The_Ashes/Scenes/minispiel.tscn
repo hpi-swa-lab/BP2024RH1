@@ -37,7 +37,7 @@ texture = ExtResource("2_drk55")
 [node name="Drehen" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-300, 0)
-rotation = 0.00523599
+rotation = -1.68773
 
 [node name="DiskInside" type="Sprite2D" parent="Drehen"]
 scale = Vector2(0.25, 0.25)

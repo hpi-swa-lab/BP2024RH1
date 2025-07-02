@@ -1,4 +1,4 @@
-extends Location
+extends Control
 
 const alphabet = "TUVWXYZABCDEFGHIJKLMNOPQRS"
 var textfield_index = 0
@@ -7,6 +7,7 @@ var text_fields
 @export var interaction_name: String
 @export var original_text: String
 @export var shown_text: String
+@export var dialogue_resource: DialogueResource
 
 func _ready():
 	initialize_disk()
@@ -75,7 +76,6 @@ func _on_letter_clicked(_viewport, event, _shape_idx, letter):
 			text_fields[textfield_index].release_focus()
 			if (textfield_index + 1 ) < original_text.length():
 				text_fields[textfield_index + 1].grab_focus()
-			print(letter)
 		else:
 			text_fields[textfield_index + 1].grab_focus()
 
@@ -93,16 +93,9 @@ func _on_check_solution_pressed() -> void:
 		else:
 			input_text += " "
 	if input_text == original_text.to_upper():
-		print("checking")
-		if location_dialogue:
+		if dialogue_resource:
 			DialogueManager.show_dialogue_balloon_scene(
-				location_dialogue.baloon_type,
-				location_dialogue.dialogue_resource,
+				"res://dialogue_balloons/monologue/balloon_monologue.tscn",
+				dialogue_resource,
 				"minigame_completed")
 			await DialogueManager.dialogue_ended
-				
-		var interaction_item = Item.new()
-		interaction_item.item_name = interaction_name
-		interaction_item.is_collectable = false
-		item_found.emit(interaction_item)
-		print("emitting: " +  interaction_name)

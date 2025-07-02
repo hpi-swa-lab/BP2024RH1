@@ -1,38 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://w3jwwhr2jth1"]
+[gd_scene load_steps=4 format=3 uid="uid://w3jwwhr2jth1"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_o3mho"]
 [ext_resource type="Resource" uid="uid://km8s6goaw60g" path="res://Cases/Code_From_The_Ashes/Dialogue/minigame_1.dialogue" id="2_du42c"]
 [ext_resource type="PackedScene" uid="uid://cq2kn0806dpmu" path="res://Cases/Code_From_The_Ashes/Scenes/minispiel.tscn" id="2_lvfr3"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_174v3"]
-[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_i57kq"]
-
-[sub_resource type="Resource" id="Resource_l2drj"]
-script = ExtResource("3_174v3")
-start_marker = "default"
-required_items = Array[String]([])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_wx53j"]
-script = ExtResource("4_i57kq")
-dialogue_resource = ExtResource("2_du42c")
-is_dialogue = false
-dialogue_triggers = Array[ExtResource("3_174v3")]([SubResource("Resource_l2drj")])
-start_automatically = true
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
-
-[sub_resource type="Resource" id="Resource_du42c"]
-script = ExtResource("4_i57kq")
-dialogue_resource = ExtResource("2_du42c")
-is_dialogue = false
-dialogue_triggers = Array[ExtResource("3_174v3")]([])
-start_automatically = true
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Minigame1" type="Node"]
 script = ExtResource("1_o3mho")
 location_name = "Minigame1"
 has_inventory = true
-location_dialogue = SubResource("Resource_wx53j")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="DefaultMinigame" parent="." instance=ExtResource("2_lvfr3")]
@@ -40,5 +15,4 @@ mouse_filter = 1
 interaction_name = "Minigame1Caesar completed"
 original_text = "Bitza zehn Uhr"
 shown_text = "FMXDE DILR YLV"
-location_name = "Still Default Minigame"
-location_dialogue = SubResource("Resource_du42c")
+dialogue_resource = ExtResource("2_du42c")

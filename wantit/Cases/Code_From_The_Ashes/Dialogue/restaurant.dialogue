@@ -28,4 +28,5 @@ Bedienung: Allerdings habe ich sie seit letztem Mittwoch nicht mehr gesehen. Ihr
 
 ~ after_interview
 Es scheint eine hitzige Diskussion zwischen Alice Wunder und diesem Bob Maler gegeben zu haben. Ich sollte mir den Zettel auf jeden Fall einmal genauer anschauen.
+do _on_location_switch_requested("Office")
 => END

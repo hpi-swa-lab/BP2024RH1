@@ -43,17 +43,13 @@ Repräsentieren hingegen bedeutet, eine Darstellung durch eine andere Darstellun
 ~ minigame1_test3
 Die gewonnene Information konnte wiederum durch die Zettelchen...
 - interpretiert werden => minigame1_test3_wrong
-- repräsentiert werden => add_interaction
+- repräsentiert werden => return_from_minigame
 
 ~ minigame1_test3_wrong
 Die Notizzettel helfen, die Information darzustellen.
 Interpretieren bedeutet, etwas so zu verstehen, dass man den Sinn oder die Absicht dahinter erkennt.
 Repräsentieren hingegen bedeutet, eine Darstellung durch eine andere Darstellung so abzubilden, dass sie stellvertretend für das Original stehen.
 => minigame1_test3
-
-~ add_interaction
-do interaction_happened("Minigame1 completed") 
-=> return_from_minigame
 
 ~ return_from_minigame
 Klaas: Ich werde noch Fingerabdrücke von allen Angestellten nehmen. Danach können wir zurück ins Präsidium.
