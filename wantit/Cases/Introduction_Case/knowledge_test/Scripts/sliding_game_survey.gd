@@ -2,6 +2,8 @@
 extends Node2D
 
 @onready var slider_box = $QuestionWrap/SliderBox
+const ASSET_PATH := "res://Cases/Introduction_Case/knowledge_test/Assets/"
+const CASE := "INTRO"
 #@onready var score_label = $ScoreLabel
 #@onready var timer = $Timer
 
@@ -16,12 +18,12 @@ func _ready():
 
 
 func load_questions():
-	var file = FileAccess.open("res://Cases/Introduction_Case/knowledge_test/Assets/survey_questions.json", FileAccess.READ)
+	var file = FileAccess.open(ASSET_PATH+"survey_questions.json", FileAccess.READ)
 	questions = JSON.parse_string(file.get_as_text())
 
 func show_next_question():
 	if current_question >= questions.size():
-		print("IC Survey done! They chose: ", score)
+		print(CASE+" Survey done! They chose: ", score)
 		return
 	slider_box.show_question(questions[current_question])
 

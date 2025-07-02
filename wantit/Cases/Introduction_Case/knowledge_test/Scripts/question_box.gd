@@ -5,23 +5,24 @@ extends VBoxContainer
 @onready var answer_box: TextEdit = $ABox
 @onready var answer_submit: Button = $ASubmit
 @onready var question_image: TextureRect = $QuestionImage
+@export var ASSET_PATH: String
 
 
 signal answer_chosen(correct: bool)
 signal text_answer_submitted(text: String)
 
 func _ready():
+	answer_submit.pressed.connect(_on_submit_pressed)
 	for i in range(4):
 		var btn = answer_buttons[i]
 		btn.connect("answer_selected", Callable(self, "_on_answer_selected"))
-		answer_submit.pressed.connect(_on_submit_pressed)
 
 func show_question(q: Dictionary):
 	question_label.text = q["question"]
 
 	# Show or hide image
 	if q.has("image") and q["image"] != "":
-		var image_path = "res://Cases/Introduction_Case/knowledge_test/Assets/"+q["image"]  # e.g., "res://images/question1.png"
+		var image_path = ASSET_PATH+q["image"]
 		var texture = load(image_path)
 		if texture:
 			question_image.texture = texture

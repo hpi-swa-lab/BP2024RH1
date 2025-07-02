@@ -1,9 +1,8 @@
 [
   {
 	"question": "Wann werden Daten zu Informationen?",
-	"answers": ["Wenn sie in einem Zusammenhang interpretiert werden", "Wenn sie gespeichert werden.", "Nie.", "Übermorgen."],
-	"correct": 0,
-	"image": "Spielumfrage.png"  
+	"answers": ["Wenn sie in einem Zusammenhang interpretiert werden", "Wenn sie gespeichert werden.", "Nie.", ""],
+	"correct": 0
   },
   {
 	"question": "Was ist der Hauptunterschied zwischen Daten und Informationen?",
@@ -13,19 +12,37 @@
   {
 	"question": "Welches Medium kann Daten enthalten?",
 	"answers": ["Ein Textdokument", "Ein Bild", "Ein Lied", ""],
-	"isWrite": [],
 	"correct": 1
   },
   {
 	"question": "Eine Information kann verschiedene Repräsentationen haben.",
 	"answers": ["richtig", "falsch", "", ""],
-	"correct": 1,
-	"image": "Spielumfrage.png"  
+	"correct": 1
   },
   {
 	"question": "Beschrifte die Spalten.",
-	"answers": ["Informationen, Daten", "Daten, Informationen", "", ""],
+	"answers": ["Links: Informationen, Rechts: Daten", "Links: Daten, Rechts: Informationen", "", ""],
+	"correct": 0,
+	"image": "intro_Q5.png"
+  },
+  {
+	"question": "32% Gewinn ist ein Beispiel für:",
+	"answers": ["Informationen", "Daten", "Beides", ""],
+	"correct": 0,
+  },
+  {
+	"question": "123 ist ein Beispiel für:",
+	"answers": ["Informationen", "Daten", "Beides", ""],
+	"correct": 1
+  },
+  {
+	"question": "Die Farbe Blau ist ein Beispiel für:",
+	"answers": ["Informationen", "Daten", "Beides", ""],
+	"correct": 1
+  },
+  {
+	"question": "Der Spielstand: 3 : 4 ist ein Beispiel für:",
+	"answers": ["Informationen", "Daten", "Beides", ""],
 	"correct": 0
   }
-
 ]
