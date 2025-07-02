@@ -50,7 +50,7 @@ func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
 	for child in get_parent().get_children():
 		print(child.name)
 		if child.name == "Minigame":
-			return child.find_child("GamePaper")
+			return child.find_child("GameArt")
 	return null
 
 	

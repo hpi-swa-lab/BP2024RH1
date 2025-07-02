@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bcqn6wdr4ydt2"]
+[gd_scene load_steps=21 format=3 uid="uid://bcqn6wdr4ydt2"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_jdea1"]
 [ext_resource type="Texture2D" uid="uid://cvs6wy7668yhx" path="res://Cases/The_Missing_Painting/Assets/Backgrounds/contacts_closeUp.png" id="2_jvnlj"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_4hbc2"]
 [ext_resource type="Resource" uid="uid://ds5e4m13u33hu" path="res://Cases/The_Missing_Painting/Dialogue/florist.dialogue" id="9_qatv3"]
 [ext_resource type="Resource" uid="uid://bya16say52yyh" path="res://Cases/The_Missing_Painting/Dialogue/art.dialogue" id="11_fvboi"]
+[ext_resource type="Script" uid="uid://di3q3kumh7308" path="res://Cases/The_Missing_Painting/Scripts/art_drag.gd" id="11_somj2"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="12_s34no"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="13_somj2"]
 
@@ -97,6 +98,7 @@ texture_normal = ExtResource("6_qatv3")
 script = ExtResource("4_mo3rg")
 item_name = "Art"
 is_collectable = true
+action_script = ExtResource("11_somj2")
 item_dialogue = SubResource("Resource_4hbc2")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
