@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7hhus8oa5gnt"]
+
+[ext_resource type="Script" uid="uid://cuut68600lh08" path="res://Cases/The_Missing_Painting/Scripts/minigame.gd" id="1_vxk47"]
+[ext_resource type="Texture2D" uid="uid://jh714mdkpuvl" path="res://Cases/The_Missing_Painting/Assets/Minigame/setup.png" id="2_ip1kq"]
+[ext_resource type="Texture2D" uid="uid://cdk4uvnmivlai" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/background_qrcode_piece.png" id="3_vxk47"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_4mfwh"]
+[ext_resource type="Texture2D" uid="uid://b21m2ftfr64k8" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/qr_code_with_cut.png" id="5_4mfwh"]
+
+[node name="Minigame" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_vxk47")
+location_name = "Minigame"
+items = [NodePath("GamePaper")]
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.2126, 16.5342)
+color = Color(0.52549, 0.745098, 1, 0.635294)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 323.0
+offset_top = 23.0
+offset_right = 393.0
+offset_bottom = 62.0
+scale = Vector2(11.598, 13.2913)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300084, 0.300084)
+texture = ExtResource("2_ip1kq")
+
+[node name="GamePaper" type="TextureButton" parent="."]
+visible = false
+modulate = Color(0.907942, 0.907942, 0.907942, 1)
+offset_left = -33.0
+offset_top = 65.0
+offset_right = 991.0
+offset_bottom = 1089.0
+scale = Vector2(0.384653, 0.428032)
+texture_normal = ExtResource("3_vxk47")
+script = ExtResource("4_4mfwh")
+item_name = "Paper"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="GridContainer" type="GridContainer" parent="GamePaper"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameArt" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -232.0
+offset_right = 1249.0
+offset_bottom = 607.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.510013, 0.510013)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_4mfwh")
+script = ExtResource("4_4mfwh")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[connection signal="visibility_changed" from="GamePaper" to="." method="_on_paper_visibility_changed"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://bn384alyhc0fv"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_h1old"]
-[ext_resource type="Texture2D" uid="uid://dqojkh1f7dejq" path="res://Cases/The_Missing_Painting/Assets/Backgrounds/shelf_closeUp.png" id="2_pruj5"]
-[ext_resource type="Texture2D" uid="uid://b35dsa3oa6b2b" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/safe.png" id="3_n5x4m"]
+[ext_resource type="Texture2D" uid="uid://bptvi4v3sbv1b" path="res://Cases/The_Missing_Painting/Assets/Backgrounds/shelf_closeUp.png" id="2_pruj5"]
+[ext_resource type="Texture2D" uid="uid://bepwa1qhuw4fa" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/safe.png" id="3_n5x4m"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_q2okc"]
-[ext_resource type="Texture2D" uid="uid://d4aj3y0u40icq" path="res://Cases/The_Missing_Painting/Assets/Scene_Switcher/contacts.png" id="5_ltrm5"]
-[ext_resource type="Resource" uid="uid://bsg73y3t7qn6h" path="res://Cases/The_Missing_Painting/Dialogue/safe.dialogue" id="5_q2okc"]
+[ext_resource type="Texture2D" uid="uid://be7mwajwyblsc" path="res://Cases/The_Missing_Painting/Assets/Scene_Switcher/contacts.png" id="5_ltrm5"]
+[ext_resource type="Resource" uid="uid://bl86heusjwlqx" path="res://Cases/The_Missing_Painting/Dialogue/safe.dialogue" id="5_q2okc"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="6_ltrm5"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="6_wfp4e"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_wfp4e"]
@@ -29,6 +29,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_h1old")
 location_name = "ShelfCloseup"
 items = [NodePath("Safe")]
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

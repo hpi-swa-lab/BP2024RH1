@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0s0ew05hljss"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_og6sq"]
+[ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="2_70h7e"]
+[ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="3_414yj"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_el6gn"]
+
+[node name="Office2" type="Node"]
+script = ExtResource("1_og6sq")
+location_name = "Office2"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Office" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.301736, 0.301736)
+texture = ExtResource("2_70h7e")
+
+[node name="Computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_414yj")
+script = ExtResource("4_el6gn")
+requested_location_name = "Minigame"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
