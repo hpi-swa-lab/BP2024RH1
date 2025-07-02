@@ -4,3 +4,11 @@ Klaas: Ich war auf den anderen Etagen und bei den nachbar Gebäuden.
 Klaas: Anscheinend betrifft das Problem nur unser Polizeirevier.
 Klaas: Das Licht funktioniert wieder, offensichtlich. Wir sollten die anderen elektronischen Geräte überprüfen.
 => END
+
+~ Lan_Wirr_War
+Klaas: Irgendwie sieht die Verkabelung mit dem LAN wirr aus. Das war bestimmt der Praktikant. 
+Klaas: Damit die IT-Experten den Standort des Täters finden können müssen wir erstmal dieses Chaos beseitigen. 
+Klaas: Aber wir müssen aufpassen. Ich glaube, wir hatten letzte Woche Überlastungs Probleme. 
+- LAN Chaos beseitigen. 
+#minispiel 2
+=> END

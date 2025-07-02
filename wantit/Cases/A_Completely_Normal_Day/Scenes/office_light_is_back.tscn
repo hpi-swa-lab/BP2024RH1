@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cb0u1ejhyocev"]
+[gd_scene load_steps=14 format=3 uid="uid://cb0u1ejhyocev"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_ly61v"]
 [ext_resource type="Texture2D" uid="uid://cxg5pbosxbvcq" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="2_lg37r"]
 [ext_resource type="Resource" uid="uid://dulikdvcbntlc" path="res://Cases/A_Completely_Normal_Day/dialogue/computer.dialogue" id="5_deehe"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="5_x25jn"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="6_06qbg"]
+[ext_resource type="Resource" uid="uid://cjskqfjynrwte" path="res://Cases/A_Completely_Normal_Day/Scenes/computer_other_light_is_back.tres" id="7_5bvpg"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="8_fwrwg"]
 [ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="9_o7laa"]
 [ext_resource type="Texture2D" uid="uid://f6f3bng1frf1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="11_mlcep"]
@@ -21,7 +22,7 @@ metadata/_custom_type_script = "uid://bnkm50q3eocad"
 script = ExtResource("6_06qbg")
 dialogue_resource = ExtResource("5_deehe")
 is_dialogue = false
-dialogue_triggers = Array[ExtResource("5_x25jn")]([SubResource("Resource_5bvpg")])
+dialogue_triggers = Array[ExtResource("5_x25jn")]([SubResource("Resource_5bvpg"), ExtResource("7_5bvpg")])
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
@@ -46,7 +47,7 @@ offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("9_o7laa")
 script = ExtResource("12_x2o2t")
-item_name = "computer_office_light_is_back"
+item_name = "desktop_light_is_back"
 item_dialogue = SubResource("Resource_0f2kv")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 

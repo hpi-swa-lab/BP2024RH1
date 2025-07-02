@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=59 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -179,12 +179,25 @@ location_name = "minigame_1"
 start_condition = SubResource("Resource_kq12w")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
+[sub_resource type="Resource" id="Resource_m28ev"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["desktop_light_is_back", "router_light_is_back"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_lwlx3"]
+script = ExtResource("14_215e1")
+event_name = "Search_szene_1_ende"
+location_name = "corridor_light_is_back"
+start_condition = SubResource("Resource_m28ev")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
 [sub_resource type="Resource" id="Resource_t46w6"]
 script = ExtResource("2_e2o6t")
 case_slug = "Logik Gatter"
 case_title = "Ein ganz normaler Tag"
 case_location_scenes = Array[PackedScene]([ExtResource("34_082n1"), null])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_edr7y")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_edr7y"), SubResource("Resource_lwlx3")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]
