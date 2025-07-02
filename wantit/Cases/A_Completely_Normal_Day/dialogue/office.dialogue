@@ -1,0 +1,25 @@
+~ Paperwork
+Klaas: Nach dem letzten Fall müssen wir noch den Papierkram machen. Also alles wichtige Dokumentieren. Kannst du das diesmal übernehmen?
+- Ja 
+	Klaas: Danke
+- Nein 
+	Klaas: - schaut dich mit hunde augen an -  Bitte?
+	- Ja kann ich machen
+	- Na gut, ich mach das
+Klaas: Alles was du brauchst liegt schon auf deinem Schreibtisch, wenn du Hilfe brauchst frag mich.
+=> END
+
+~ Power_failure
+Oh, der Strom ist ausgefallen.
+…
+YEAH. Jetzt muss ich erstmal keinen Papierkram mehr machen.
+…
+- - RUMPS - - 
+Klaas: Wo haben wir nochmal die Taschenlampen? …
+Klaas: Ah, hier …
+Klaas: Hier die Taschenlampe ist für dich. 
+Klaas: Ich geh mal gucken, ob nur unser Gebäude betroffen ist oder auch andere. Kannst du im Technikraum gucken wie es beim Sicherungskasten aussieht? 
+- Ja, bin schon auf dem Weg
+#searchszene 0
+=> END
+
