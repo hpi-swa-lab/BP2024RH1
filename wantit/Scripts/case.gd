@@ -6,14 +6,13 @@ class_name Case
 @export var case_title: String
 @export var case_location_scenes: Array[PackedScene]
 var case_locations: Array[Location]
-@export var inventory_scene: PackedScene
+var inventory_scene: PackedScene = load("res://Scenes/inventory.tscn")
 var inventory: Inventory
 var interactions: Array
 var is_completed: bool = false
 var restored_inventory_items: Array
 @export var events: Array[Event]
 var played_location_dialogues: Dictionary
-#var event_tracker: CaseEventTracker -> CaseEvent
 
 signal location_switch_requested(location_name: String)
 signal location_switch_requested_from_event(location_name: String)
