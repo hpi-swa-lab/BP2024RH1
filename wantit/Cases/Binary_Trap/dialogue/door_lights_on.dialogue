@@ -1,0 +1,7 @@
+~ door_key_not_found
+Ich muss einen Weg finden, die Tür zu öffnen.
+=> END
+
+~ door_key_found
+Ich muss ausprobieren, ob der Schlüssel passt.
+=> END

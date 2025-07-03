@@ -1,0 +1,23 @@
+~ default
+Huch, wer ruft denn da an? Unterdrückte Nummer…
+=> call
+
+~ call
+???: Ich brauche deine Hilfe!!!!
+???: Ich glaube, sie sind mir gefolgt…
+- Hallo, wer ist denn da?
+	???: Keine Zeit. Bitte. Komm. Schnell.
+	- Wohin soll ich kommen?
+		???: Lagerhalle. Hafen. Blaue Tür. Bitte.
+	- Was ist denn passiert?
+		???: Nicht übers Telefon. Schnell. Bitte.
+???: Komm allein. Niemandem kann getraut werden. Sie stecken da alle mit drin.
+???: …
+- Hallo? Sind Sie noch dran?
+	???: Leise. Ich glaube, hier ist jemand…
+	???: **Tut tut tut**
+=> after_call
+
+~ after_call
+Ich muss sofort zum Hafen.
+=> END
