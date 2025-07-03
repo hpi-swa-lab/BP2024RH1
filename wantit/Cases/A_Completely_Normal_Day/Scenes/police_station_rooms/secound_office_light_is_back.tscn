@@ -83,7 +83,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [node name="secound_office_light_is_back" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_1157y")
 location_name = "secound_office_light_is_back"
-items = [NodePath("router_secound_office"), NodePath("desktop_1"), null, null, NodePath("desktop_4"), NodePath("desktop_5"), NodePath("tower_1_quelle"), NodePath("tower_2_quelle"), NodePath("tower_3_quelle")]
+items = [NodePath("router_secound_office"), NodePath("desktop_1"), NodePath("desktop_3"), NodePath("desktop_2"), NodePath("desktop_4"), NodePath("desktop_5"), NodePath("tower_1_quelle"), NodePath("tower_2_quelle"), NodePath("tower_3_quelle")]
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

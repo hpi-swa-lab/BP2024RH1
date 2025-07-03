@@ -37,10 +37,9 @@ dialogue_triggers = Array[ExtResource("5_mkncw")]([SubResource("Resource_c6d25")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="office_beginn" type="Node" node_paths=PackedStringArray("items")]
+[node name="office_beginn" type="Node"]
 script = ExtResource("1_jadis")
 location_name = "office_beginn"
-items = [null]
 hints = Array[ExtResource("2_2rhc4")]([SubResource("Resource_psvkd")])
 location_dialogue = SubResource("Resource_evvr1")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
