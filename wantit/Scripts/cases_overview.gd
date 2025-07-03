@@ -8,9 +8,9 @@ func _ready() -> void:
 	case_overview_opened.emit(self)
 
 func add_cases(cases_states: Dictionary) -> void:
-  add_header()
+	add_header()
 	for _case in cases_states.keys():
-		add_case(_case, cases_states[_case])
+		add_case(_case, cases_states[_case][0], cases_states[_case][1])
 
 func add_case(case_title, is_completed, case_topic) -> void:
 	var row = HBoxContainer.new()
@@ -23,11 +23,11 @@ func add_case(case_title, is_completed, case_topic) -> void:
 	new_title.text = case_title
 	new_title.custom_minimum_size.y = 40
 	var style = StyleBoxFlat.new()
-  if is_completed:
-    style.bg_color = Color("#3F7D58")
-	  #B2D9C4   #A8DCAB #69B369 #3F7D58 #06923E
+	if is_completed:
+		style.bg_color = Color("#3F7D58")
+		#B2D9C4   #A8DCAB #69B369 #3F7D58 #06923E
 	else:
-    style.bg_color = Color.WHITE
+		style.bg_color = Color.WHITE
 	style.border_color = Color(0.7, 0.7, 0.7)
 	style.border_width_left = 1
 	style.border_width_right = 1

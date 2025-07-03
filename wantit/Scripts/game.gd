@@ -151,7 +151,7 @@ func _on_case_overview_opened(location: Location) -> void:
 func get_cases_states() -> Dictionary:
 	var cases_states = {}
 	for case in cases.slice(1):
-		cases_states[case.case_title] = case.is_completed
+		cases_states[case.case_title] = [case.is_completed, case.case_topic]
 	return cases_states
 
 func _on_start_case(_case_title: String):
