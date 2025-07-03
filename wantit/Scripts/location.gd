@@ -20,6 +20,9 @@ func _ready():
 		dialogue_player.activate()
 	
 	if not hints.is_empty():
+		var scene = load("res://Cases/Introduction_Case/Scenes/helpsystem.tscn")
+		helpsystem = scene.instantiate()
+		await add_child(helpsystem)
 		helpsystem = get_node_or_null("Helpsystem")
 		if helpsystem:
 			helpsystem.inventory_provider = case

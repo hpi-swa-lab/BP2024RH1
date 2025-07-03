@@ -4,6 +4,7 @@ class_name Case
 ## may not be changed after save files where slug exists, case_slug = case_id
 @export var case_slug: String
 @export var case_title: String
+@export var case_topic: String
 @export var case_location_scenes: Array[PackedScene]
 var case_locations: Array[Location]
 var inventory_scene: PackedScene = load("res://Scenes/inventory.tscn")
@@ -129,6 +130,11 @@ func clear_case_data() -> void:
 	for location in case_locations:
 		if location.dialogue_player:
 			location.dialogue_player.reset_played_dialogues()
+		for item in location.items:
+			if item.dialogue_player:
+				item.dialogue_player.reset_played_dialogues()
+	for event in events:
+		event.has_started = false
 	print("Cleared current case data.")
 
 func get_restored_location_data(location: Location):

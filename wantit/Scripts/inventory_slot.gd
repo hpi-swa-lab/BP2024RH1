@@ -20,11 +20,10 @@ func add_item(new_item: Item) -> void:
 
 func remove_item():
 	if action_script != null and action_script is Node:
+		if "extended_item" in action_script:
+			action_script.extended_item = stored_item
 		if not action_script.is_inside_tree():
 			get_tree().root.get_child(2).add_child(action_script)	#root.get_child(2) is game
-		await get_tree().process_frame
-		if action_script.has_method("do_smt"):
-			action_script.do_smt(stored_item)
 	#
 	#var parent = get_parent()
 	#parent.inventory_items.erase(stored_item.name)
