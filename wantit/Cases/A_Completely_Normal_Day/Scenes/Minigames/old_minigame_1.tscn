@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://creatjejquykv"]
+
+[ext_resource type="Script" uid="uid://coscvc1h5bxok" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/minigame_1.gd" id="1_3iif4"]
+[ext_resource type="PackedScene" uid="uid://bjqw4udnawvm8" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/Level_1.tscn" id="1_fqtu4"]
+
+[node name="Minigame1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3iif4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.389058, 0.421474, 0.446514, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level1" parent="." instance=ExtResource("1_fqtu4")]
+layout_mode = 1
+
+[node name="Check_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 922.0
+offset_top = 546.0
+offset_right = 1070.0
+offset_bottom = 577.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+text = "Strom überprüfen"
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="Check_Button"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.915667, 1, 0.54, 1)
+
+[connection signal="ziel_input_false" from="Level1" to="." method="_on_level_1_ziel_input_false"]
+[connection signal="ziel_input_true" from="Level1" to="." method="_on_level_1_ziel_input_true"]
+[connection signal="pressed" from="Check_Button" to="." method="_on_check_button_pressed"]

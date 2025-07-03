@@ -1,0 +1,176 @@
+[gd_scene load_steps=26 format=3 uid="uid://8tykys80rcmx"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_02av5"]
+[ext_resource type="Texture2D" uid="uid://cp42k8rjventg" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/Blackout/big_office_dark.png" id="2_wlsng"]
+[ext_resource type="Texture2D" uid="uid://dvtntml54vdid" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop1_dark.png" id="3_088ex"]
+[ext_resource type="Texture2D" uid="uid://b7rptub0guvd2" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/router_big_office_dark.png" id="3_y8qsx"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_sblj2"]
+[ext_resource type="Resource" uid="uid://dulikdvcbntlc" path="res://Cases/A_Completely_Normal_Day/dialogue/computer.dialogue" id="5_7ects"]
+[ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="5_nvcjy"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="6_rk7vc"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_ttibi"]
+[ext_resource type="Texture2D" uid="uid://cbfx0vuyvvj4o" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop2_dark.png" id="8_rk7vc"]
+[ext_resource type="Texture2D" uid="uid://dfhpc7ewn82bv" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop3_dark.png" id="9_ttibi"]
+[ext_resource type="Texture2D" uid="uid://cejjnqlym8ayo" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop4_dark.png" id="10_y8qsx"]
+[ext_resource type="Texture2D" uid="uid://c775drfju2sy8" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop5_dark.png" id="11_nvcjy"]
+[ext_resource type="Texture2D" uid="uid://cfbbvo3htr0iq" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/computer1_dark.png" id="14_vmna6"]
+[ext_resource type="Resource" uid="uid://b8synbond6ikw" path="res://Cases/A_Completely_Normal_Day/dialogue/tower.dialogue" id="15_h60kb"]
+[ext_resource type="Texture2D" uid="uid://m8c3posu3ut7" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/computer2_dark.png" id="16_3mwn6"]
+[ext_resource type="Texture2D" uid="uid://cilpej0sgqsaq" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/computer3_dark.png" id="17_lyq4h"]
+[ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="18_htw1x"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="19_n7cbs"]
+
+[sub_resource type="Resource" id="Resource_vmna6"]
+script = ExtResource("6_rk7vc")
+start_marker = "Search_szene_0"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_h60kb"]
+script = ExtResource("7_ttibi")
+dialogue_resource = ExtResource("5_nvcjy")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_rk7vc")]([SubResource("Resource_vmna6")])
+start_automatically = false
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_y8qsx"]
+script = ExtResource("6_rk7vc")
+start_marker = "Search_szene_0"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_nvcjy"]
+script = ExtResource("7_ttibi")
+dialogue_resource = ExtResource("5_7ects")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_rk7vc")]([SubResource("Resource_y8qsx")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_3mwn6"]
+script = ExtResource("6_rk7vc")
+start_marker = "Search_szene_0"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_lyq4h"]
+script = ExtResource("7_ttibi")
+dialogue_resource = ExtResource("15_h60kb")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_rk7vc")]([SubResource("Resource_3mwn6")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="secound_office_power_failure" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_02av5")
+location_name = "secound_office_power_failure"
+items = [NodePath("router_secound_office"), NodePath("desktop_1"), NodePath("desktop_2"), NodePath("desktop_3"), NodePath("desktop_4"), NodePath("desktop_5"), NodePath("tower_1"), NodePath("tower_2"), NodePath("tower_3")]
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_wlsng")
+
+[node name="router_secound_office" type="TextureButton" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_y8qsx")
+script = ExtResource("4_sblj2")
+item_name = "router_secound_office_power_failure"
+item_dialogue = SubResource("Resource_h60kb")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="desktop_1" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_088ex")
+script = ExtResource("4_sblj2")
+item_name = "desktop_1_power_failure"
+item_dialogue = SubResource("Resource_nvcjy")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="desktop_2" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_rk7vc")
+script = ExtResource("4_sblj2")
+item_name = "desktop_2_power_failure"
+item_dialogue = SubResource("Resource_nvcjy")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="desktop_3" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_ttibi")
+script = ExtResource("4_sblj2")
+item_name = "desktop_3_power_failure"
+item_dialogue = SubResource("Resource_nvcjy")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="desktop_4" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("10_y8qsx")
+script = ExtResource("4_sblj2")
+item_name = "desktop_4_power_failure"
+item_dialogue = SubResource("Resource_nvcjy")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="desktop_5" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("11_nvcjy")
+script = ExtResource("4_sblj2")
+item_name = "desktop_5_power_failure"
+item_dialogue = SubResource("Resource_nvcjy")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="tower_1" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("14_vmna6")
+script = ExtResource("4_sblj2")
+item_name = "tower_1_power_failure"
+item_dialogue = SubResource("Resource_lyq4h")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="tower_2" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("16_3mwn6")
+script = ExtResource("4_sblj2")
+item_name = "tower_2_power_failure"
+item_dialogue = SubResource("Resource_lyq4h")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="tower_3" type="TextureButton" parent="."]
+offset_left = -35.0
+offset_top = -132.0
+offset_right = 3805.0
+offset_bottom = 2028.0
+texture_normal = ExtResource("17_lyq4h")
+script = ExtResource("4_sblj2")
+item_name = "tower_3_power_failure"
+item_dialogue = SubResource("Resource_lyq4h")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="back_button" type="TextureButton" parent="."]
+offset_left = 1134.0
+offset_top = 632.0
+offset_right = 1646.0
+offset_bottom = 1144.0
+rotation = 3.14159
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("18_htw1x")
+script = ExtResource("19_n7cbs")
+requested_location_name = "corridor_power_failure"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

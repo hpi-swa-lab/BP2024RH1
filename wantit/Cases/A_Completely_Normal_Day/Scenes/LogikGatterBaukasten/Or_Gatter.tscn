@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c46r1xqgd45xm"]
+
+[ext_resource type="Script" uid="uid://b31v48t2qc7t2" path="res://Cases/A_Completely_Normal_Day/Scripts/LogikGatterBaukasten/or_gatter.gd" id="1_rgeqk"]
+
+[node name="Or_Gatter" type="Button"]
+text = "ODER"
+script = ExtResource("1_rgeqk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.965553, 0.769242, 0.615483, 1)
