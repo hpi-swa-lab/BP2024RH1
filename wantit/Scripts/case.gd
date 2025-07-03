@@ -14,7 +14,6 @@ var is_completed: bool = false
 var restored_inventory_items: Array
 @export var events: Array[Event]
 var played_location_dialogues: Dictionary
-#var event_tracker: CaseEventTracker -> CaseEvent
 
 signal location_switch_requested(location_name: String)
 signal location_switch_requested_from_event(location_name: String)

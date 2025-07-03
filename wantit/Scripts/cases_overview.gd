@@ -7,16 +7,12 @@ func _ready() -> void:
 	super._ready()
 	case_overview_opened.emit(self)
 
-func add_cases(cases_list: Array) -> void:
-	add_header()
-	for case in cases_list:
-		add_case(case.case_title, case.case_topic)
-	add_case("Ein ganz normaler Tag", "Logikgatter")
-	add_case("Die Binärfalle", "Binär-Codierung")	
-	add_case("Das verschwundene Gemälde", "Pixelgrafiken")
-	
+func add_cases(cases_states: Dictionary) -> void:
+  add_header()
+	for _case in cases_states.keys():
+		add_case(_case, cases_states[_case])
 
-func add_case(case_title, case_topic) -> void:
+func add_case(case_title, is_completed, case_topic) -> void:
 	var row = HBoxContainer.new()
 	row.custom_minimum_size.y = 40
 	row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -27,7 +23,11 @@ func add_case(case_title, case_topic) -> void:
 	new_title.text = case_title
 	new_title.custom_minimum_size.y = 40
 	var style = StyleBoxFlat.new()
-	style.bg_color = Color.WHITE
+  if is_completed:
+    style.bg_color = Color("#3F7D58")
+	  #B2D9C4   #A8DCAB #69B369 #3F7D58 #06923E
+	else:
+    style.bg_color = Color.WHITE
 	style.border_color = Color(0.7, 0.7, 0.7)
 	style.border_width_left = 1
 	style.border_width_right = 1
