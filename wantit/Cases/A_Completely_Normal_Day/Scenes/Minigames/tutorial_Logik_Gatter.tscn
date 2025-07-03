@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcbc5risftiqs"]
-
-[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_di7mo"]
-
-[node name="tutorial_Logik_Gatter" type="Node"]
-script = ExtResource("1_di7mo")
-location_name = "tutorial_Logik_Gatter"
-metadata/_custom_type_script = "uid://cmjrdjr725xxf"

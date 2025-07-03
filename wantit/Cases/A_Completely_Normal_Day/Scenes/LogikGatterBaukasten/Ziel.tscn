@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxn8odjc705k5"]
-
-[ext_resource type="Script" uid="uid://d16g1fxx0cnw4" path="res://Cases/A_Completely_Normal_Day/Scripts/LogikGatterBaukasten/ziel.gd" id="1_q7fob"]
-
-[node name="Ziel" type="Sprite2D"]
-script = ExtResource("1_q7fob")
