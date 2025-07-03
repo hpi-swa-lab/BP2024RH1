@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=72 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -176,7 +176,7 @@ metadata/_custom_type_script = "uid://ni774rbce31d"
 [sub_resource type="Resource" id="Resource_kq12w"]
 script = ExtResource("18_rvswv")
 mode = 0
-required_items = Array[String](["electrical_box_power_failure"])
+required_items = Array[String](["electric_box_power_failure"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_edr7y"]
@@ -223,7 +223,6 @@ script = ExtResource("2_e2o6t")
 case_slug = "Logik Gatter"
 case_title = "Ein ganz normaler Tag"
 case_location_scenes = Array[PackedScene]([ExtResource("34_eu6ph"), ExtResource("35_edr7y"), ExtResource("36_kq12w"), ExtResource("37_t46w6"), ExtResource("38_m28ev"), ExtResource("39_lwlx3"), ExtResource("40_0de7l"), ExtResource("41_87ddb"), ExtResource("42_mljfx"), ExtResource("43_t46w6"), ExtResource("44_m28ev"), ExtResource("45_lwlx3")])
-inventory_scene = ExtResource("11_mfdv2")
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_edr7y"), SubResource("Resource_lwlx3"), SubResource("Resource_87ddb"), SubResource("Resource_mljfx")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 

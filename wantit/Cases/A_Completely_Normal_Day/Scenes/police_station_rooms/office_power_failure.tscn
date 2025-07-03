@@ -80,5 +80,5 @@ offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("9_qcsf0")
 script = ExtResource("9_awodn")
-requested_location_name = "secound_office_power_failure"
+requested_location_name = "corridor_power_failure"
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
