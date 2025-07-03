@@ -8,6 +8,7 @@ var current_location_name: String = ""
 var gamesaver = GameSaver.new()
 var saved_game_data
 var saved_case_data: Dictionary
+var completed_cases: Array
 
 
 func _ready():
@@ -37,7 +38,8 @@ func start_case(_case: Case, _case_data: Dictionary = {}):
 func switch_to_restored_or_default_location(case: Case):
 	var location_index := 0
 	if current_location_name != "":
-		location_index = case.get_location_index_by_name(current_location_name)
+		if case.get_location_index_by_name(current_location_name) != null:
+			location_index = case.get_location_index_by_name(current_location_name)
 	switch_location(case.case_locations[location_index])
 
 func _notification(what: int) -> void:
@@ -60,6 +62,7 @@ func setup_case_connections(case: Case):
 	case.connect("location_switch_requested", _on_location_switch_requested)
 	case.connect("case_overview_opened", _on_case_overview_opened)
 	case.connect("case_selected", _on_start_case)
+	case.connect("item_found", save_current_progress)
 
 func complete_case() -> void:
 	mark_case_completed()
@@ -69,7 +72,8 @@ func complete_case() -> void:
 
 func mark_case_completed() -> void:
 	var current_case = get_case_by_slug(active_case_slug)
-	#current_case.is_completed = true
+	current_case.is_completed = true
+	completed_cases.append(current_case.case_slug)
 	current_case.clear_case_data()
 
 func reset_to_default_case() -> void:
@@ -85,13 +89,6 @@ func start_new_case() -> void:
 func save_current_progress() -> void:
 	gamesaver.save_game(self)
 
-func get_completed_cases() -> Array:
-	var completed_cases = []
-	for case in cases:
-		if case.is_completed:
-			completed_cases.append(case.case_slug)
-	return completed_cases
-		
 func switch_location(location: Location):
 	if current_location:
 		current_location.get_parent().remove_child(current_location)
@@ -110,6 +107,7 @@ func switch_location(location: Location):
 		var _location = case.case_locations[index]
 		switch_location(_location))
 	add_child(current_location)
+	save_current_progress()
 
 func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)
@@ -127,6 +125,10 @@ func get_case_interactions() -> Array:
 func load_game_data():
 	active_case_slug = saved_game_data.get("active_case_slug", "")
 	current_location_name = saved_game_data.get("current_location_name")
+	completed_cases = saved_game_data.get("completed_cases", [])
+	for case in cases:
+		if case.case_slug in completed_cases:
+			case.is_completed = true
 	
 	saved_case_data["inventory_items_names"] = saved_game_data.get("inventory_items", [])
 	saved_case_data["interactions_history"] = saved_game_data.get("interactions", [])
@@ -143,14 +145,14 @@ func interaction_happened(interaction_name: String) -> void:
 func _on_case_overview_opened(location: Location) -> void:
 	var active_case = get_active_case()
 	var location_index = active_case.get_location_index_by_name(location.location_name)
-	var cases_titles = get_cases_titles()
-	active_case.case_locations[location_index].add_cases(cases_titles)
+	var cases_states = get_cases_states()
+	active_case.case_locations[location_index].add_cases(cases_states)
 
-func get_cases_titles() -> Array:
-	var case_titles = []
+func get_cases_states() -> Dictionary:
+	var cases_states = {}
 	for case in cases.slice(1):
-		case_titles.append(case.case_title)
-	return case_titles
+		cases_states[case.case_title] = case.is_completed
+	return cases_states
 
 func _on_start_case(_case_title: String):
 	var case_slug = get_case_slug_by_title(_case_title)
@@ -180,4 +182,5 @@ func get_save_data() -> Dictionary:
 	save_data["inventory_items"] = get_case_inventory()
 	save_data["interactions"] = get_case_interactions()
 	save_data["location_dialogues"] = get_played_location_dialogues()
+	save_data["completed_cases"] = completed_cases
 	return save_data
