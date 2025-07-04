@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://0i05nmbifo6h"]
+[gd_scene load_steps=4 format=3 uid="uid://0i05nmbifo6h"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_xgu56"]
+[ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="2_beu01"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="3_k8che"]
 
 [node name="minigame_1" type="Node"]
 script = ExtResource("1_xgu56")
 location_name = "minigame_1"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="vorrübergehend_weiter_button" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_beu01")
+script = ExtResource("3_k8che")
+requested_location_name = "technic_room_light_is_back"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

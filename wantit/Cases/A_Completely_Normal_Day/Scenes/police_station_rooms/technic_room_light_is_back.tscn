@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://07bq8xkvyxc2"]
+[gd_scene load_steps=20 format=3 uid="uid://07bq8xkvyxc2"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_psbdl"]
 [ext_resource type="Texture2D" uid="uid://c46t8oqsmf11j" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/technical_room.png" id="2_psbdl"]
+[ext_resource type="Resource" uid="uid://cuwtwld7vu4oh" path="res://Cases/A_Completely_Normal_Day/dialogue/techinc_room.dialogue" id="2_rdjf6"]
 [ext_resource type="Texture2D" uid="uid://bsc7d4f32x1i2" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/electricity_box.png" id="3_i07af"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_4qphq"]
 [ext_resource type="Resource" uid="uid://b88yntviftn1b" path="res://Cases/A_Completely_Normal_Day/dialogue/electric_box.dialogue" id="5_5wlgl"]
@@ -11,6 +12,21 @@
 [ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="8_nf4nj"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="10_4qphq"]
 [ext_resource type="Resource" uid="uid://cd7qe1fe44due" path="res://Cases/A_Completely_Normal_Day/dialogue_trigger/technic_room_light_is_back.tres" id="10_5wlgl"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="13_fc1sr"]
+
+[sub_resource type="Resource" id="Resource_fc1sr"]
+script = ExtResource("6_jka5t")
+start_marker = "Light_is_back"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_cfga3"]
+script = ExtResource("7_pevjp")
+dialogue_resource = ExtResource("2_rdjf6")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_jka5t")]([SubResource("Resource_fc1sr")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [sub_resource type="Resource" id="Resource_0d7nt"]
 script = ExtResource("6_jka5t")
@@ -43,7 +59,8 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [node name="technic_room_light_is_back" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_psbdl")
 location_name = "technic_room_light_is_back"
-items = [NodePath("electric_box"), NodePath("router_technic"), NodePath("back_button")]
+items = [NodePath("electric_box"), NodePath("router_technic")]
+location_dialogue = SubResource("Resource_cfga3")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -72,12 +89,13 @@ item_dialogue = SubResource("Resource_oduce")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="back_button" type="TextureButton" parent="."]
-offset_left = 1011.0
-offset_top = 525.0
-offset_right = 1523.0
-offset_bottom = 1037.0
+offset_left = 1127.0
+offset_top = 630.0
+offset_right = 1639.0
+offset_bottom = 1142.0
+rotation = 3.14159
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("10_4qphq")
-script = ExtResource("4_4qphq")
-item_name = "back_button_technic_room"
-metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+script = ExtResource("13_fc1sr")
+requested_location_name = "corridor_light_is_back"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

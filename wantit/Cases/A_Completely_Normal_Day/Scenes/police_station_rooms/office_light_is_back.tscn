@@ -47,7 +47,7 @@ offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("9_o7laa")
 script = ExtResource("12_x2o2t")
-item_name = "desktop_light_is_back"
+item_name = "computer_light_is_back"
 item_dialogue = SubResource("Resource_0f2kv")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
