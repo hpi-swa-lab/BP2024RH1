@@ -6,6 +6,7 @@ class_name Item
 @export var action_script: Script
 @export var item_dialogue: Dialogue
 var dialogue_player: DialoguePlayer
+var is_found: bool = false
 
 signal item_found(item: Item)
 
@@ -26,4 +27,8 @@ func _pressed():
 	if dialogue_player:
 		dialogue_player.start_dialogue()
 		await DialogueManager.dialogue_ended
+	mark_found()
 	item_found.emit(self)
+
+func mark_found() -> void:
+	is_found = true

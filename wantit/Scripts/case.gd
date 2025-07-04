@@ -56,11 +56,12 @@ func _on_item_found(_item: Item, _location: Location = null) -> void:
 	handle_item_found(_item, _location)
 	
 func handle_item_found(_item: Item, _location: Location = null) -> void:
-	if _item.is_collectable:
-		inventory.add_item(_item)
-	else:
-		interactions.append(_item.item_name)
-	item_found.emit(_item)
+	if not inventory.has(_item):
+		if _item.is_collectable:
+			inventory.add_item(_item)
+		else:
+			interactions.append(_item.item_name)
+		item_found.emit(_item)
 	try_start_event()
 	
 func try_start_event() -> void:

@@ -14,24 +14,28 @@
 script = ExtResource("3_dc3v2")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_dc3v2"]
 script = ExtResource("3_dc3v2")
 start_marker = "after_inspection"
 required_items = Array[String](["Note"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_tkowq"]
 script = ExtResource("3_dc3v2")
 start_marker = "after_restaurant"
 required_items = Array[String](["Minigame1_completed"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_xx26k"]
 script = ExtResource("3_dc3v2")
 start_marker = "after_minigame2"
 required_items = Array[String](["Minigame2_completed"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_x08ri"]
