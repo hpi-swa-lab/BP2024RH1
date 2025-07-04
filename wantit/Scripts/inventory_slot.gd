@@ -24,11 +24,9 @@ func remove_item():
 			action_script.extended_item = stored_item
 		if not action_script.is_inside_tree():
 			get_tree().root.get_child(2).add_child(action_script)	#root.get_child(2) is game
-	#
-	#var parent = get_parent()
-	#parent.inventory_items.erase(stored_item.name)
-	#action_script = null
+		
 	stored_item = null
+	action_script = null
 	%DisplayedItem.hide()
 
 func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale Icon Size

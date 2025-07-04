@@ -62,12 +62,12 @@ func setup_case_connections(case: Case):
 	case.connect("location_switch_requested", _on_location_switch_requested)
 	case.connect("case_overview_opened", _on_case_overview_opened)
 	case.connect("case_selected", _on_start_case)
-	case.connect("item_found", save_current_progress)
+	case.item_found.connect(save_current_progress)
 
 func complete_case() -> void:
 	mark_case_completed()
-	save_current_progress()
-	reset_to_default_case()	
+	save_current_progress(null)
+	reset_to_default_case()
 	start_new_case()
 
 func mark_case_completed() -> void:
@@ -86,7 +86,7 @@ func start_new_case() -> void:
 	var default_case = get_case_by_slug(active_case_slug)
 	start_case(default_case)
 
-func save_current_progress() -> void:
+func save_current_progress(_item: Item) -> void:
 	gamesaver.save_game(self)
 
 func switch_location(location: Location):
@@ -107,7 +107,7 @@ func switch_location(location: Location):
 		var _location = case.case_locations[index]
 		switch_location(_location))
 	add_child(current_location)
-	save_current_progress()
+	save_current_progress(null)
 
 func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)

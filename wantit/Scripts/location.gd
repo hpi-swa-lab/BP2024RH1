@@ -65,7 +65,6 @@ func _on_location_switch_requested(requested_location_name: String):
 func update_items_visibility():
 	for item in items:
 		if case.inventory.has(item) or case.interactions.has(item):
-			item.mark_found()
 			disable_item(item)
 
 func disable_item(item):
