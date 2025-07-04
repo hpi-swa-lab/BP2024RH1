@@ -65,6 +65,7 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 [node name="router_technic" type="TextureButton" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("8_e4838")
 script = ExtResource("4_053me")
 item_name = "router_technic_room_power_failure"
