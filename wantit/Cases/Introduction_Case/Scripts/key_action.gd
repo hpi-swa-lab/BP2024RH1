@@ -1,4 +1,3 @@
-#extends Node
 extends Item
 
 var dragging: bool
@@ -22,6 +21,7 @@ func _ready() -> void:
 	
 	newItem = button
 	
+	# if not found?
 	get_tree().root.add_child(newItem)
 	
 	dragging = true

@@ -24,10 +24,6 @@ func set_baloon_type():
 func choose_dialogue_trigger_by_requierements(player_items: Array):
 	var best_match = null
 	for condition in dialogue_triggers:
-		#if is_subset(condition.required_items, player_items) and not condition.was_played:
-			#if best_match == null or best_match.required_items.size() < condition.required_items.size():
-				#best_match = condition
-				#condition.was_played = true
 		if is_subset(condition.required_items, player_items) and (not condition.is_started or condition.is_repeatable):
 			if best_match == null or best_match.required_items.size() < condition.required_items.size():
 				best_match = condition
