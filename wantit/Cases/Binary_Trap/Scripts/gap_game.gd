@@ -1,7 +1,9 @@
 extends Control
 
 @onready var gaps: Array = [$HBoxContainer/Gap1, $HBoxContainer/Gap2, $HBoxContainer/Gap3, $HBoxContainer/Gap4]
-@onready var result_label: Label = $"HBoxContainer/Result Label"
+@onready var result_label: Label = $"Result Label"
+
+signal updated(result: int)
 
 func _ready() -> void:
 	var weights: Array = [8, 4, 2, 1]
@@ -22,3 +24,8 @@ func update_result() -> void:
 	for gap in gaps:
 		result += gap.get_value()
 	result_label.text = str(result)
+	
+	updated.emit(result)
+	
+func set_result_color(color: Color) -> void:
+	result_label.add_theme_color_override("font_color", color)

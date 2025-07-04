@@ -12,11 +12,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o3drf")
 
+[node name="Result Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 440.0
+offset_top = 7.0
+offset_right = 467.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 24
+text = "13"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/separation = 100
+theme_override_constants/separation = 110
 
 [node name="Gap1" parent="HBoxContainer" instance=ExtResource("2_sii17")]
 layout_mode = 2
@@ -28,7 +39,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Gap4" parent="HBoxContainer" instance=ExtResource("2_sii17")]
-layout_mode = 2
-
-[node name="Result Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2

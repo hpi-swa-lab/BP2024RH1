@@ -12,7 +12,7 @@ func _ready() -> void:
 	option_button.add_item("0", 0)
 	option_button.add_item("1", 1)
 
-func _on_option_button_item_selected(index: int) -> void:
+func _on_option_button_item_selected(_index: int) -> void:
 	value_changed.emit()
 	
 func get_value() -> int:

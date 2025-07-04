@@ -15,6 +15,8 @@ var current_input: Array
 var slot_values: Array
 var slot_start_index: int
 
+signal succeeded
+
 
 func _ready() -> void:
 	if not is_correct_code_valid():
@@ -49,9 +51,7 @@ func _on_slot_changed(index: int) -> void:
 func check_code() -> void:
 	var input: String = array_to_string(current_input)
 	if input == correct_code:
-		print("Code korrekt")
-	else:
-		print("Falscher Code")
+		succeeded.emit()
 
 func array_to_string(array: Array) -> String:
 	var string: String = ""
