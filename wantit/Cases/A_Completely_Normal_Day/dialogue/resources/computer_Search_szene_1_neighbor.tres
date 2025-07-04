@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=6 format=3 uid="uid://bp31jmq0deyaj"]
+
+[ext_resource type="Resource" uid="uid://dulikdvcbntlc" path="res://Cases/A_Completely_Normal_Day/dialogue/computer.dialogue" id="1_xx00l"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="2_5jfrk"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="3_41iud"]
+
+[sub_resource type="Resource" id="Resource_nyubp"]
+script = ExtResource("2_5jfrk")
+start_marker = "Search_szene_1"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_6tp4f"]
+script = ExtResource("2_5jfrk")
+start_marker = "Search_szene_2_neighbor_quelle"
+required_items = Array[String](["computer_light_is_back", "router_light_is_back"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[resource]
+script = ExtResource("3_41iud")
+dialogue_resource = ExtResource("1_xx00l")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("2_5jfrk")]([SubResource("Resource_nyubp"), SubResource("Resource_6tp4f")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"

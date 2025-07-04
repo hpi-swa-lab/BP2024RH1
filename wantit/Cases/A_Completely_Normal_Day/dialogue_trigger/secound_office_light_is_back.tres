@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_qbk4e")
 start_marker = "Search_szene_2_secound_office"
-required_items = Array[String](["desktop_light_is_back", "Router_light_is_back"])
+required_items = Array[String](["computer_light_is_back", "router_light_is_back"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
