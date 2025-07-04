@@ -19,6 +19,7 @@ func _ready():
 
 func show_question(q: Dictionary):
 	question_label.text = q["question"]
+	answer_box.clear()
 
 	# Show or hide image
 	if q.has("image") and q["image"] != "":
