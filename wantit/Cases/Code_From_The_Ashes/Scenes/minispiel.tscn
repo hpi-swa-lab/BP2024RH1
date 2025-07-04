@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://cq2kn0806dpmu"]
+
+[ext_resource type="Script" uid="uid://dh0qdgikb7h2y" path="res://Cases/Code_From_The_Ashes/Scripts/minispiel.gd" id="1_k10lx"]
+[ext_resource type="Texture2D" uid="uid://dor21yrlvwsoj" path="res://Cases/Code_From_The_Ashes/Assets/Minigame1/Caesar_außen.png" id="2_drk55"]
+[ext_resource type="Texture2D" uid="uid://blg5snnvh1535" path="res://Cases/Code_From_The_Ashes/Assets/Minigame1/Cäsar_innen.png" id="3_16kq3"]
+[ext_resource type="Texture2D" uid="uid://dmojlj3a46u3e" path="res://Cases/Code_From_The_Ashes/Assets/Minigame1/arrow_left.png" id="4_16kq3"]
+[ext_resource type="Texture2D" uid="uid://c7wrf3ckwg06o" path="res://Cases/Code_From_The_Ashes/Assets/Minigame1/arrow_right.png" id="5_w2e1w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wj1sw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehie6"]
+
+[node name="DefaultMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
+script = ExtResource("1_k10lx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+mouse_filter = 2
+color = Color(0.843137, 0.831373, 0.823529, 1)
+
+[node name="DiskOutside" type="Sprite2D" parent="."]
+position = Vector2(-300, -1.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_drk55")
+
+[node name="Drehen" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-300, 0)
+rotation = -1.68773
+
+[node name="DiskInside" type="Sprite2D" parent="Drehen"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_16kq3")
+
+[node name="Area2D" type="Area2D" parent="Drehen"]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drehen/Area2D"]
+unique_name_in_owner = true
+position = Vector2(0, 1)
+polygon = PackedVector2Array(-16.67, -128.914, -13, -106, -1, -107, 12, -106, 15.3296, -129.082, -0.675446, -129.998)
+
+[node name="links" type="Button" parent="."]
+layout_mode = 0
+offset_left = -496.0
+offset_top = 140.0
+offset_right = -176.0
+offset_bottom = 456.0
+scale = Vector2(0.191489, 0.191489)
+text = "
+"
+icon = ExtResource("4_16kq3")
+flat = true
+
+[node name="rechts" type="Button" parent="."]
+layout_mode = 0
+offset_left = -160.0
+offset_top = 134.0
+offset_right = 156.0
+offset_bottom = 450.0
+scale = Vector2(0.194077, 0.194077)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wj1sw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ehie6")
+icon = ExtResource("5_w2e1w")
+flat = true
+
+[node name="CheckSolution" type="Button" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 99.0
+offset_right = 299.0
+offset_bottom = 153.0
+text = "Überprüfen"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -41.0
+offset_right = 11.0
+offset_bottom = -1.0
+
+[node name="EncryptedText" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="links" to="." method="_on_links_pressed"]
+[connection signal="pressed" from="rechts" to="." method="_on_rechts_pressed"]
+[connection signal="pressed" from="CheckSolution" to="." method="_on_check_solution_pressed"]

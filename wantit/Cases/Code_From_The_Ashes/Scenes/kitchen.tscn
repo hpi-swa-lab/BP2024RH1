@@ -1,0 +1,191 @@
+[gd_scene load_steps=33 format=3 uid="uid://ccytljyn6i5ir"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_4fosp"]
+[ext_resource type="Texture2D" uid="uid://cdws1eqqe0a45" path="res://Cases/Code_From_The_Ashes/Assets/Backgrounds/kitchen.png" id="2_g1w3k"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_rcgj5"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_dlh4p"]
+[ext_resource type="Texture2D" uid="uid://cqlqegw3101vn" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/window_and_footprints.png" id="3_rcbp2"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_ticb1"]
+[ext_resource type="Texture2D" uid="uid://5mrma7kb5uu5" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/note.png" id="5_2hrpd"]
+[ext_resource type="Resource" uid="uid://f5272sfd47jf" path="res://Cases/Code_From_The_Ashes/Dialogue/window_and_footprints.dialogue" id="5_ticb1"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="6_2hrpd"]
+[ext_resource type="Texture2D" uid="uid://bhii5g8d3oefs" path="res://Cases/Code_From_The_Ashes/Assets/Collectible_Items/bin.png" id="6_4fphp"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_4fphp"]
+[ext_resource type="Texture2D" uid="uid://dcvxu4pu8xo0h" path="res://Cases/Code_From_The_Ashes/Assets/Interactable_Items/microwave.png" id="7_qchn1"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="8_jrfsk"]
+[ext_resource type="Resource" uid="uid://bgrptgxyl16sj" path="res://Cases/Code_From_The_Ashes/Dialogue/note.dialogue" id="9_2hrpd"]
+[ext_resource type="Resource" uid="uid://s2obaqw5v0wl" path="res://Cases/Code_From_The_Ashes/Dialogue/bin.dialogue" id="11_4fphp"]
+[ext_resource type="Resource" uid="uid://bpuy3g20bbtwl" path="res://Cases/Code_From_The_Ashes/Dialogue/microwave.dialogue" id="13_qchn1"]
+
+[sub_resource type="Resource" id="Resource_fp1h6"]
+script = ExtResource("3_dlh4p")
+mode = 2
+required_items = Array[String](["Bin"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_o61lm"]
+script = ExtResource("2_rcgj5")
+hint_text = "Der Papierkorb sieht ganz schön verbrannt aus."
+hint_condition = SubResource("Resource_fp1h6")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_6c5yn"]
+script = ExtResource("3_dlh4p")
+mode = 2
+required_items = Array[String](["Window and Footprints"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_na3n8"]
+script = ExtResource("2_rcgj5")
+hint_text = "Vielleicht gibt es noch Spuren am Fenster."
+hint_condition = SubResource("Resource_6c5yn")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_tmpe8"]
+script = ExtResource("3_dlh4p")
+mode = 2
+required_items = Array[String](["Note"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_lqamw"]
+script = ExtResource("2_rcgj5")
+hint_text = "Der Zettel auf dem Tisch ist etwas seltsam."
+hint_condition = SubResource("Resource_tmpe8")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_phkek"]
+script = ExtResource("3_dlh4p")
+mode = 0
+required_items = Array[String](["Note", "Window and Footprints", "Bin"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_n0i8r"]
+script = ExtResource("2_rcgj5")
+hint_text = "In der Küche gibt es keine weiteren Spuren."
+hint_condition = SubResource("Resource_phkek")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_qchn1"]
+script = ExtResource("6_2hrpd")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_jrfsk"]
+script = ExtResource("7_4fphp")
+dialogue_resource = ExtResource("5_ticb1")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_2hrpd")]([SubResource("Resource_qchn1")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_4fphp"]
+script = ExtResource("6_2hrpd")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_ticb1"]
+script = ExtResource("7_4fphp")
+dialogue_resource = ExtResource("9_2hrpd")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_2hrpd")]([SubResource("Resource_4fphp")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_rcgj5"]
+script = ExtResource("6_2hrpd")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_dlh4p"]
+script = ExtResource("7_4fphp")
+dialogue_resource = ExtResource("11_4fphp")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_2hrpd")]([SubResource("Resource_rcgj5")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_rvjue"]
+script = ExtResource("6_2hrpd")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_dmb2c"]
+script = ExtResource("7_4fphp")
+dialogue_resource = ExtResource("13_qchn1")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_2hrpd")]([SubResource("Resource_rvjue")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Kitchen" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_4fosp")
+location_name = "Kitchen"
+items = [NodePath("Window and Footprints"), NodePath("Note"), NodePath("Paper Bin"), NodePath("Microwave")]
+hints = Array[ExtResource("2_rcgj5")]([SubResource("Resource_o61lm"), SubResource("Resource_na3n8"), SubResource("Resource_lqamw"), SubResource("Resource_n0i8r")])
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299994, 0.299994)
+texture = ExtResource("2_g1w3k")
+
+[node name="Window and Footprints" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299994, 0.299994)
+texture_normal = ExtResource("3_rcbp2")
+script = ExtResource("4_ticb1")
+item_name = "Window and Footprints"
+item_dialogue = SubResource("Resource_jrfsk")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Note" type="TextureButton" parent="."]
+offset_left = -38.0
+offset_top = 398.0
+offset_right = 2085.0
+offset_bottom = 521.0
+rotation = -0.0091792
+scale = Vector2(0.157192, 0.157192)
+texture_normal = ExtResource("5_2hrpd")
+script = ExtResource("4_ticb1")
+item_name = "Note"
+is_collectable = true
+item_dialogue = SubResource("Resource_ticb1")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Paper Bin" type="TextureButton" parent="."]
+offset_left = 1005.0
+offset_top = 482.0
+offset_right = 2277.0
+offset_bottom = 1924.0
+scale = Vector2(0.134456, 0.134456)
+texture_normal = ExtResource("6_4fphp")
+script = ExtResource("4_ticb1")
+item_name = "Bin"
+is_collectable = true
+item_dialogue = SubResource("Resource_dlh4p")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Microwave" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300097, 0.300097)
+texture_normal = ExtResource("7_qchn1")
+script = ExtResource("4_ticb1")
+item_name = "Microwave"
+item_dialogue = SubResource("Resource_dmb2c")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="BackButton" parent="." instance=ExtResource("8_jrfsk")]
+offset_left = 1137.0
+offset_top = 106.0
+offset_right = 1649.0
+offset_bottom = 618.0
+rotation = 3.13692
+scale = Vector2(0.189916, 0.189916)
+requested_location_name = "Living Room"

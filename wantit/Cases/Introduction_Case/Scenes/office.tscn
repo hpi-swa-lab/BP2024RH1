@@ -14,18 +14,21 @@
 script = ExtResource("3_fayb1")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_xas0k"]
 script = ExtResource("3_fayb1")
 start_marker = "evaluate_traces"
-required_items = Array[String](["Minigame1 completed"])
+required_items = Array[String](["Door"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_fayb1"]
 script = ExtResource("3_fayb1")
 start_marker = "finish"
-required_items = Array[String](["Minigame1 completed", "Minigame2 completed"])
+required_items = Array[String](["Minigame2 completed"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_ufx7h"]
@@ -50,7 +53,7 @@ offset_bottom = 2158.0
 scale = Vector2(0.301736, 0.301736)
 texture = ExtResource("1_a0wae")
 
-[node name="clue_board" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+[node name="clue_board" type="TextureButton" parent="."]
 unique_name_in_owner = true
 offset_left = 427.0
 offset_top = 262.0
@@ -61,11 +64,12 @@ texture_normal = ExtResource("3_7xo7e")
 script = ExtResource("5_eqlnk")
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
-[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+[node name="computer" type="TextureButton" parent="."]
 unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
+disabled = true
 texture_normal = ExtResource("3_2jlrf")
 script = ExtResource("5_eqlnk")
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"

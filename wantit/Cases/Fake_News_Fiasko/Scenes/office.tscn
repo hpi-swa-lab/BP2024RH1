@@ -50,7 +50,7 @@ offset_bottom = 2158.0
 scale = Vector2(0.301736, 0.301736)
 texture = ExtResource("2_efu73")
 
-[node name="clue_board" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+[node name="clue_board" type="TextureButton" parent="."]
 unique_name_in_owner = true
 offset_left = 427.0
 offset_top = 262.0
@@ -61,11 +61,12 @@ texture_normal = ExtResource("3_5ajrk")
 script = ExtResource("4_3tr3j")
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
-[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+[node name="computer" type="TextureButton" parent="."]
 unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
+disabled = true
 texture_normal = ExtResource("5_dfypo")
 script = ExtResource("4_3tr3j")
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"

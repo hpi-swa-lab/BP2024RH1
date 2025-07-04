@@ -1,0 +1,41 @@
+~ default
+Klaas: In der Wohnung in der Kryptoallee 42 hat es vor kurzem gebrannt. Die Besitzerin Alice Wunder vermutet Brandstiftung und hat uns beauftragt das näher zu untersuchen.
+=> END
+
+~ after_inspection
+Klaas: Nun zu der Nachricht. Kennst du die Caesar-Verschlüsselung bereits?
+- Ja => after_tutorial
+- Nein
+	do _on_location_switch_requested("Tutorial")
+	=> END
+
+~ after_tutorial
+Klaas: Dann würde ich das Entschlüsseln der Nachricht jetzt dir überlassen. Viel Erfolg!
+do _on_location_switch_requested("Minigame1")
+=> END
+
+~ after_restaurant
+Klaas: Konntest du etwas nützliches herausfinden?
+- Ich habe eine weitere verschlüsselte Nachricht gefunden.
+	Klaas: Hmm…mit der alten Verschiebung kommt nur Blödsinn raus. Auch andere Verschiebungen funktionieren nicht.
+	Klaas: Vielleicht handelt es sich um Caesar-Verschlüsselung mit Schlüsselwort. Kennst du diese Verschlüsselung bereits?
+	- Ja 
+		Bob Maler könnte der Brandstifter sein.
+		Klaas: Bob Maler…
+		Klaas: Ich werde schauen, ob ich etwas über ihn herausfinden kann.
+		Klaas: Dann überlasse ich dir mal die Entschlüsselung. Sag Bescheid, wenn du es gelöst hast! 
+		do _on_location_switch_requested("Minigame2")
+		=> END
+	- Nein
+		do _on_location_switch_requested("Tutorial2")
+		=> END
+
+~ after_minigame2
+Klaas: Ich habe einmal zu Bob Maler recherchiert. Er und Alice Wunder haben vor einigen Jahren an einem gemeinsamen Kunstprojekt gearbeitet. Seltsamerweise wurde die Arbeit aber nur unter Alice Namen veröffentlicht.
+Klaas: Ich habe mit den beiden gesprochen und folgendes rausbekommen:
+Klaas: Alice Wunder hat das gemeinsame Projekt unter ihrem Namen veröffentlicht und dafür sogar Bob Malers Signatur auf den Bildern übermalt.
+Klaas: Bob Maler wollte sie jetzt nach einiger Zeit davon überzeugen, die Fälschung öffentlich zuzugeben, damit er als rechtmäßiger Künstler anerkannt wird.
+Klaas: Doch Alice Wunder wollte die Tat nicht zugeben, um ihr Image zu wahren. Bob Maler wollte ihr daraufhin einen Denkzettel verpassen und den Papierkorb in ihrer Wohnung anzünden. Das Feuer hat sich jedoch rasend schnell ausgebreitet.
+Klaas: Und den Rest der Geschichte kennst du bereits.
+do complete_case()
+=> END

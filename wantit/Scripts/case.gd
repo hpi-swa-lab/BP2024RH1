@@ -4,6 +4,7 @@ class_name Case
 ## may not be changed after save files where slug exists, case_slug = case_id
 @export var case_slug: String
 @export var case_title: String
+@export var case_topic: String
 @export var case_location_scenes: Array[PackedScene]
 var case_locations: Array[Location]
 var inventory_scene: PackedScene = load("res://Scenes/inventory.tscn")
@@ -13,7 +14,6 @@ var is_completed: bool = false
 var restored_inventory_items: Array
 @export var events: Array[Event]
 var played_location_dialogues: Dictionary
-#var event_tracker: CaseEventTracker -> CaseEvent
 
 signal location_switch_requested(location_name: String)
 signal location_switch_requested_from_event(location_name: String)
@@ -56,11 +56,12 @@ func _on_item_found(_item: Item, _location: Location = null) -> void:
 	handle_item_found(_item, _location)
 	
 func handle_item_found(_item: Item, _location: Location = null) -> void:
-	if _item.is_collectable:
-		inventory.add_item(_item)
-	else:
-		interactions.append(_item.item_name)
-	item_found.emit(_item)
+	if not inventory.has(_item):
+		if _item.is_collectable:
+			inventory.add_item(_item)
+		else:
+			interactions.append(_item.item_name)
+		item_found.emit(_item)
 	try_start_event()
 	
 func try_start_event() -> void:
@@ -130,6 +131,11 @@ func clear_case_data() -> void:
 	for location in case_locations:
 		if location.dialogue_player:
 			location.dialogue_player.reset_played_dialogues()
+		for item in location.items:
+			if item.dialogue_player:
+				item.dialogue_player.reset_played_dialogues()
+	for event in events:
+		event.has_started = false
 	print("Cleared current case data.")
 
 func get_restored_location_data(location: Location):

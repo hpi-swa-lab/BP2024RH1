@@ -1,6 +1,7 @@
 ~ default
 Klaas: Die Inhaberin des Restaurants "Bitza", Maria, hat eben angerufen. Sie braucht deine Hilfe.
 Klaas: Sie meinte, dass du einfach zum Restaurant kommen sollst, wenn du Zeit hast.
+Klaas: Über die Stadtkarte an der rechten Wand findest du den Weg dorthin.
 => END
 
 ~ after_inspection
@@ -9,18 +10,23 @@ do _on_location_switch_requested("Minigame3")
 => END
 
 ~ after_minigame3
+Klaas: Nachdem wir jetzt alles untersucht haben, müssen wir jetzt nochmal eine der beiden Personen genauer befragen.
 Klaas: Und? Wen sollen wir noch einmal genauer befragen?
 - Maria
 	Klaas: Was soll ich sagen…zuerst die gute oder die schlechte Nachricht?
 	- Die gute Nachricht zuerst
 		Klaas: Alle Gäste haben sich von dem Vorfall erholt.
 		Klaas: Allerdings konnten wir Maria nichts nachweisen. Nach dem Spektakel möchte sie Bitza aber auch nicht weiterführen. Sie meint, es werden ja sowieso keine Gäste mehr kommen.
-		do complete_case()
+		=> end
 	- Die schlechte Nachricht zuerst
 		Klaas: Wir konnten Maria nichts nachweisen. Nach dem Spektakel möchte sie Bitza aber auch nicht weiterführen. Sie meint, es werden ja sowieso keine Gäste mehr kommen.
 		Klaas: Jetzt die gute Nachricht. Alle Gäste haben sich von dem Vorfall erholt.
-		do complete_case()
+		=> end
 - Honigwald
-	Klaas: Honigwald hat es tatsächlich zugegeben. “Bitza” läuft jetzt auch wieder, nachdem klar ist, dass Maria ihre Gäste nicht vergiften wollte. Jetzt brauchen wir wohl nur einen neuen Bürgermeister.
-	do complete_case()
+	Klaas: Honigwald hat es tatsächlich zugegeben. “Bitza” läuft jetzt auch wieder, nachdem klar ist, dass Maria ihre Gäste nicht vergiften wollte. Jetzt brauchen wir wohl nur einen neuen Bürgermeister. => end
+=> END
+
+~ end
+Klaas: Vielen Dank für deine Hilfe und bis zum nächsten Fall!
+do complete_case()
 => END
