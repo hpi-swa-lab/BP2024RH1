@@ -5,6 +5,17 @@ Klaas: Anscheinend betrifft das Problem nur unser Polizeirevier.
 Klaas: Das Licht funktioniert wieder, offensichtlich. Wir sollten die anderen elektronischen Geräte überprüfen.
 => END
 
+~ WLAN_broken
+Klaas: Die Router haben also Strom, aber die Computer keine WLan Verbindung. Mmh?
+…
+Klaas: Ich hole kurz ein paar Geräte, mit denen wir die Router und Computer besser analysieren können.
+…
+Klaas: Lass uns den ersten Computer zusammen untersuchen.
+Klaas: Aha, es scheint sich jemand in unser System gehackt zu haben.
+Klaas: Lass uns die anderen Computer und Router untersuchen, vielleicht finden wir die Quelle von dem Angriff.
+#suchszene 2
+=> END
+
 ~ Lan_Wirr_War
 Klaas: Irgendwie sieht die Verkabelung mit dem LAN wirr aus. Das war bestimmt der Praktikant. 
 Klaas: Damit die IT-Experten den Standort des Täters finden können müssen wir erstmal dieses Chaos beseitigen. 

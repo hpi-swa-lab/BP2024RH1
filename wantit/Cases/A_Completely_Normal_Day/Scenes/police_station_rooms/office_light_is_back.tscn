@@ -1,30 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cb0u1ejhyocev"]
+[gd_scene load_steps=9 format=3 uid="uid://cb0u1ejhyocev"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_ly61v"]
 [ext_resource type="Texture2D" uid="uid://cxg5pbosxbvcq" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="2_lg37r"]
-[ext_resource type="Resource" uid="uid://dulikdvcbntlc" path="res://Cases/A_Completely_Normal_Day/dialogue/computer.dialogue" id="5_deehe"]
-[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="5_x25jn"]
-[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="6_06qbg"]
-[ext_resource type="Resource" uid="uid://d2vovmpetx8w4" path="res://Cases/A_Completely_Normal_Day/dialogue_trigger/computer_neighbor_of_source_light_is_back.tres" id="7_5bvpg"]
+[ext_resource type="Resource" uid="uid://bs1c21kgcmqfw" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_Search_szene_1_default.tres" id="5_qydly"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="8_fwrwg"]
 [ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="9_o7laa"]
 [ext_resource type="Texture2D" uid="uid://f6f3bng1frf1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="11_mlcep"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="12_x2o2t"]
 [ext_resource type="Texture2D" uid="uid://dm8tc7i2f2evk" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/office_door.png" id="13_iljt4"]
-
-[sub_resource type="Resource" id="Resource_5bvpg"]
-script = ExtResource("5_x25jn")
-start_marker = "Search_szene_1"
-required_items = Array[String]([])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_0f2kv"]
-script = ExtResource("6_06qbg")
-dialogue_resource = ExtResource("5_deehe")
-is_dialogue = false
-dialogue_triggers = Array[ExtResource("5_x25jn")]([SubResource("Resource_5bvpg"), ExtResource("7_5bvpg")])
-start_automatically = true
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="office_light_is_back" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_ly61v")
@@ -40,17 +23,6 @@ offset_bottom = 2158.0
 scale = Vector2(0.301736, 0.301736)
 texture = ExtResource("2_lg37r")
 
-[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
-unique_name_in_owner = true
-offset_right = 3840.0
-offset_bottom = 2160.0
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("9_o7laa")
-script = ExtResource("12_x2o2t")
-item_name = "computer_light_is_back"
-item_dialogue = SubResource("Resource_0f2kv")
-metadata/_custom_type_script = "uid://cwfk6xbelioo8"
-
 [node name="Documents_on_table" type="TextureRect" parent="."]
 offset_left = 487.0
 offset_top = 315.0
@@ -65,5 +37,16 @@ offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("13_iljt4")
 script = ExtResource("8_fwrwg")
-requested_location_name = "secound_office_light_is_back"
+requested_location_name = "corridor_light_is_back"
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_o7laa")
+script = ExtResource("12_x2o2t")
+item_name = "computer_light_is_back"
+item_dialogue = ExtResource("5_qydly")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"

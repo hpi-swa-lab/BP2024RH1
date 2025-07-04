@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://07bq8xkvyxc2"]
+[gd_scene load_steps=17 format=3 uid="uid://07bq8xkvyxc2"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_psbdl"]
 [ext_resource type="Texture2D" uid="uid://c46t8oqsmf11j" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/technical_room.png" id="2_psbdl"]
@@ -9,9 +9,8 @@
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="6_jka5t"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_pevjp"]
 [ext_resource type="Texture2D" uid="uid://do4smil4jhtb1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/router_technical_room.png" id="8_i8qce"]
-[ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="8_nf4nj"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="10_4qphq"]
-[ext_resource type="Resource" uid="uid://cd7qe1fe44due" path="res://Cases/A_Completely_Normal_Day/dialogue_trigger/technic_room_light_is_back.tres" id="10_5wlgl"]
+[ext_resource type="Resource" uid="uid://chnuna6smwo7f" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/router_technic_room_light_is_back.tres" id="10_rdjf6"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="13_fc1sr"]
 
 [sub_resource type="Resource" id="Resource_fc1sr"]
@@ -31,7 +30,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [sub_resource type="Resource" id="Resource_0d7nt"]
 script = ExtResource("6_jka5t")
 start_marker = "default"
-required_items = Array[String](["back_button_technic_room"])
+required_items = Array[String]([])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_1xnwv"]
@@ -39,20 +38,6 @@ script = ExtResource("7_pevjp")
 dialogue_resource = ExtResource("5_5wlgl")
 is_dialogue = false
 dialogue_triggers = Array[ExtResource("6_jka5t")]([SubResource("Resource_0d7nt")])
-start_automatically = true
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
-
-[sub_resource type="Resource" id="Resource_e4838"]
-script = ExtResource("6_jka5t")
-start_marker = "Search_szene_1"
-required_items = Array[String](["back_button_technic_room"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_oduce"]
-script = ExtResource("7_pevjp")
-dialogue_resource = ExtResource("8_nf4nj")
-is_dialogue = false
-dialogue_triggers = Array[ExtResource("6_jka5t")]([SubResource("Resource_e4838"), ExtResource("10_5wlgl")])
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
@@ -85,7 +70,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("8_i8qce")
 script = ExtResource("4_4qphq")
 item_name = "router_light_is_back"
-item_dialogue = SubResource("Resource_oduce")
+item_dialogue = ExtResource("10_rdjf6")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="back_button" type="TextureButton" parent="."]

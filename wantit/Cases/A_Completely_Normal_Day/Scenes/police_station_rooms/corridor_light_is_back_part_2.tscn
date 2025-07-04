@@ -12,7 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_ge3so"]
 script = ExtResource("3_qhsh2")
-start_marker = "Lan_Wirr_War"
+start_marker = "WLAN_broken"
 required_items = Array[String]([])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
@@ -42,7 +42,7 @@ offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("6_uq1e0")
 script = ExtResource("7_fxhdx")
-requested_location_name = "office_light_is_back"
+requested_location_name = "office_light_is_back_part_2"
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
 [node name="Door_secound_office" type="TextureButton" parent="."]
@@ -51,7 +51,7 @@ offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("8_di5h4")
 script = ExtResource("7_fxhdx")
-requested_location_name = "secound_office_light_is_back"
+requested_location_name = "secound_office_light_is_back_part_2"
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
 [node name="Door_technic_room" type="TextureButton" parent="."]
@@ -60,5 +60,5 @@ offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("9_ljai8")
 script = ExtResource("7_fxhdx")
-requested_location_name = "technic_room_light_is_back"
+requested_location_name = "technic_room_light_is_back_part_2"
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"

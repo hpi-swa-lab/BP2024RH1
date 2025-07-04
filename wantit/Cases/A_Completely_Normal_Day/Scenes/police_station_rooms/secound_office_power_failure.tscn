@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dfhpc7ewn82bv" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop3_dark.png" id="9_ttibi"]
 [ext_resource type="Texture2D" uid="uid://cejjnqlym8ayo" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop4_dark.png" id="10_y8qsx"]
 [ext_resource type="Texture2D" uid="uid://c775drfju2sy8" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop5_dark.png" id="11_nvcjy"]
-[ext_resource type="Texture2D" uid="uid://cryjb07ceurvn" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/router_technical_room_dark.png" id="13_6m8hv"]
+[ext_resource type="Texture2D" uid="uid://b7rptub0guvd2" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/router_big_office_dark.png" id="13_6m8hv"]
 [ext_resource type="Texture2D" uid="uid://cfbbvo3htr0iq" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/computer1_dark.png" id="14_vmna6"]
 [ext_resource type="Resource" uid="uid://b8synbond6ikw" path="res://Cases/A_Completely_Normal_Day/dialogue/tower.dialogue" id="15_h60kb"]
 [ext_resource type="Texture2D" uid="uid://m8c3posu3ut7" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/computer2_dark.png" id="16_3mwn6"]

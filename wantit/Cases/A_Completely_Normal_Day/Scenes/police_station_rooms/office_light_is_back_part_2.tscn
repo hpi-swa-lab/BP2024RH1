@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://co7b7llwyqb54"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_orrme"]
+[ext_resource type="Texture2D" uid="uid://cxg5pbosxbvcq" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="2_va2al"]
+[ext_resource type="Texture2D" uid="uid://f6f3bng1frf1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="3_y3gsu"]
+[ext_resource type="Texture2D" uid="uid://dm8tc7i2f2evk" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/office_door.png" id="4_4kwad"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="5_n7y3c"]
+[ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="6_t11kh"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="7_tdeu2"]
+[ext_resource type="Resource" uid="uid://c4juws676tgr" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_light_is_back_part_2_other.tres" id="8_orrme"]
+
+[node name="office_light_is_back" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_orrme")
+location_name = "office_light_is_back"
+items = [NodePath("computer")]
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Office" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.301736, 0.301736)
+texture = ExtResource("2_va2al")
+
+[node name="Documents_on_table" type="TextureRect" parent="."]
+offset_left = 487.0
+offset_top = 315.0
+offset_right = 1126.0
+offset_bottom = 837.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_y3gsu")
+
+[node name="Door" type="TextureButton" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_4kwad")
+script = ExtResource("5_n7y3c")
+requested_location_name = "corridor_light_is_back_part_2"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("6_t11kh")
+script = ExtResource("7_tdeu2")
+item_name = "computer_light_is_back"
+item_dialogue = ExtResource("8_orrme")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
