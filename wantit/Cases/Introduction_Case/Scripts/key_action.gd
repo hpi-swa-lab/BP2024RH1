@@ -9,14 +9,13 @@ var location: Location
 
 func _ready() -> void:
 	initialize_new_item()
-	get_tree().root.add_child(newItem)
+	add_child(newItem)
 	
 	dragging = true
 	set_process_input(true)
 
 func item_up():
 	await check_down()
-	newItem.queue_free()
 	queue_free()
 
 func _input(event: InputEvent) -> void:
