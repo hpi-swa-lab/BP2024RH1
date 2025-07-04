@@ -1,0 +1,7 @@
+~ switch_pressed
+# Soll nur beim ersten Aufrufen des Minispiels angezeigt werden
+Die Zahl auf dem Display ändert sich, wenn ich den Schalter drücke.
+Ist der Schalter an, wird eine 1 abgebildet.
+Ist er aus, wird eine 0 abgebildet.
+Wie bei Computern. Sie bestehen aus vielen kleinen Schaltern, sodass sie nur mit 0en (Schalter aus) und 1en (Schalter an) rechnen können. 
+=> END
