@@ -6,6 +6,7 @@
 
 [node name="Minigame 3" type="Node"]
 script = ExtResource("1_nekdu")
+location_name = "Minigame 3"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Minigame" type="Control" parent="."]

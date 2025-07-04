@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3u6qnv0gbg8f"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_77jqc"]
+[ext_resource type="Script" uid="uid://goewncgvvsra" path="res://Cases/Binary_Trap/Scripts/minigame56.gd" id="2_24toe"]
+[ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigames/lock.tscn" id="2_jh3ao"]
+
+[node name="Minigame 6a" type="Node"]
+script = ExtResource("1_77jqc")
+location_name = "Minigame 6a"
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Minigame" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_24toe")
+
+[node name="Lock" parent="Minigame" instance=ExtResource("2_jh3ao")]
+layout_mode = 1
+slot_count = 3
+correct_code = "101"
+
+[connection signal="succeeded" from="Minigame/Lock" to="Minigame" method="_on_lock_succeeded"]
