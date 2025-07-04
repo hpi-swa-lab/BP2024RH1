@@ -66,6 +66,7 @@ unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
+disabled = true
 texture_normal = ExtResource("5_dfypo")
 script = ExtResource("4_3tr3j")
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
