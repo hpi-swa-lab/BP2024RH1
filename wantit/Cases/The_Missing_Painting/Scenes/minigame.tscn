@@ -26,6 +26,7 @@ offset_top = 23.0
 offset_right = 393.0
 offset_bottom = 62.0
 scale = Vector2(11.598, 13.2913)
+color = Color(0.821789, 0.821789, 0.821789, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 3840.0
@@ -86,15 +87,6 @@ offset_bottom = 714.0
 scale = Vector2(4, 4)
 text = "QR-Code unvollständig"
 
-[node name="Button" type="Button" parent="."]
-unique_name_in_owner = true
-visible = false
-offset_left = 621.0
-offset_top = 439.0
-offset_right = 770.0
-offset_bottom = 482.0
-scale = Vector2(1.5, 1.5)
-
 [node name="LeftGrid" type="GridContainer" parent="."]
 unique_name_in_owner = true
 offset_left = 350.0
@@ -112,9 +104,18 @@ offset_bottom = 400.0
 [node name="Display" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 visible = false
-position = Vector2(576.316, 324.49)
-scale = Vector2(0.299546, 0.299546)
+position = Vector2(604, 272)
+scale = Vector2(0.255006, 0.246528)
 texture = ExtResource("6_2fkol")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 621.0
+offset_top = 446.0
+offset_right = 770.0
+offset_bottom = 489.0
+scale = Vector2(1.5, 1.5)
 
 [connection signal="visibility_changed" from="GamePaper" to="." method="_on_paper_visibility_changed"]
 [connection signal="visibility_changed" from="GameArt" to="." method="_on_game_art_visibility_changed"]

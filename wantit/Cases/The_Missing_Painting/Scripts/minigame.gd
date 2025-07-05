@@ -18,43 +18,42 @@ func _on_paper_visibility_changed() -> void:
 	add_solution_Grid(%SolutionGrid)
 
 func _on_game_art_visibility_changed() -> void:
-	if %GameArt.visible == false:
-		%Button.visible = false
-	else:
+	if %Button.text == "":
 		%Button.visible = true
 		%Button.text = "Pixeleditor öffnen"
 		
 func _on_button_gui_input(event: InputEvent) -> void:
-	correct_solution = true
-	if %Button.text == "Pixeleditor öffnen":
-		%GameArt.visible = false
-		%RightGrid.columns = columns
-		%LeftGrid.columns = columns
-		%LeftGrid.visible = true
-		%RightGrid.visible = true
-		add_clickable_buttons(%LeftGrid)
-		add_buttons(%RightGrid)
-		%Button.text = "Webseite suchen"
-	if %Button.text == "Webseite suchen":
-		var grid_button: Button
-		for i in range(%LeftGrid.get_child_count()):
-			grid_button = %LeftGrid.get_child(i)
-			if grid_button.text != solution[i]:
-				correct_solution = false
-				%Button.text = "Pixel ändern"
-				%LeftGrid.visible = false
-				%RightGrid.visible = false
-				display_solution()
-				return
-		%LeftGrid.visible = false
-		%RightGrid.visible = false
-		display_solution()
-		return
-	elif %Button.text == "Pixel ändern":
-		edit_pixels()
-		return
-	
-	
+	if event is InputEventMouseButton and event.is_pressed():
+		correct_solution = true
+		if %Button.text == "Pixeleditor öffnen":
+			%GameArt.visible = false
+			%RightGrid.columns = columns
+			%LeftGrid.columns = columns
+			%LeftGrid.visible = true
+			%RightGrid.visible = true
+			add_clickable_buttons(%LeftGrid)
+			add_buttons(%RightGrid)
+			%Button.text = "Webseite suchen"
+			DialogueManager.show_dialogue_balloon(load ("res://Cases/The_Missing_Painting/Dialogue/minigame.dialogue"), "default")
+		elif %Button.text == "Webseite suchen":
+			var grid_button: Button
+			for i in range(%LeftGrid.get_child_count()):
+				grid_button = %LeftGrid.get_child(i)
+				if grid_button.text != solution[i]:
+					correct_solution = false
+					%Button.text = "Pixel ändern"
+					%LeftGrid.visible = false
+					%RightGrid.visible = false
+					display_solution()
+					return
+			%LeftGrid.visible = false
+			%RightGrid.visible = false
+			display_solution()
+			return
+		elif %Button.text == "Pixel ändern":
+			%Button.text = "Webseite suchen"
+			edit_pixels()
+			return
 	
 func add_buttons(Grid: GridContainer):
 	for i in range(columns * columns):
@@ -84,6 +83,7 @@ func _button_pressed(ButtonPos: int):
 		
 			
 func display_solution():
+	%Display.visible = true
 	if not correct_solution:
 		var cinema = load("res://Cases/The_Missing_Painting/Assets/Minigame/website_cinema.png")
 		var plants = load("res://Cases/The_Missing_Painting/Assets/Minigame/website_plants.png")
@@ -101,7 +101,6 @@ func _on_pixel_editor_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		edit_pixels()
 		%Button.visible = true
-		GlobalTimer.start_timer("Game")
 		DialogueManager.show_dialogue_balloon(load ("res://dialogue/main.dialogue"), "pixeleditor")
 		
 func edit_pixels():
@@ -110,6 +109,6 @@ func edit_pixels():
 	#pixel_editor.visible = false
 	%LeftGrid.visible = true
 	%RightGrid.visible = true
-	if %Button.text == "Webseite suchen":
-		add_buttons(%RightGrid)
-		add_clickable_buttons(%LeftGrid)
+	#if %Button.text == "Webseite suchen":
+	#	add_buttons(%RightGrid)
+	#	add_clickable_buttons(%LeftGrid)

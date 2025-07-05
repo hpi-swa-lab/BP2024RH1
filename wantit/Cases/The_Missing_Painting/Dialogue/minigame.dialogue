@@ -1,8 +1,13 @@
 ~ default
+Robo: Dann müssen wir die fehlenden Pixel wohl manuell hinzufügen.
+Robo: In Bildschirmen werden Pixel mit Nullen und Einsen codiert.
+=> frage1
+
+~ frage1
 Robo: 0 heißt Licht aus. Welche Farbe ist das dann?
 - weiß
 	Robo: Nein, überleg noch einmal.
-	=> default
+	=> frage1
 - schwarz
 	Robo: Genau!
 => frage2
@@ -25,4 +30,5 @@ Robo: Wahrscheinlich war das der falsche QR-Code.
 Robo: Perfekt! Das ist die Webseite des Kunsthändlers.
 Robo: Hier finde ich bestimmt seine Kontaktdaten, um ihn zu überführen!
 Robo: Ich werde es sofort dem Inspektor berichten!
+do get_tree().change_scene_to_file("res://Cases/The_Missing_Painting/Scenes/office.tscn")
 => END
