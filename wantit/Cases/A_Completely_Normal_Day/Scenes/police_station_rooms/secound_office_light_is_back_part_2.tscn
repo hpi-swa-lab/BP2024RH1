@@ -1,8 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://l3fwmj4w4gyw"]
+[gd_scene load_steps=26 format=3 uid="uid://l3fwmj4w4gyw"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_r4tt7"]
 [ext_resource type="Texture2D" uid="uid://b5cj44i08n730" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/big_office.png" id="2_af8fq"]
-[ext_resource type="Resource" uid="uid://bgeirqi3ln8c8" path="res://Cases/A_Completely_Normal_Day/dialogue/secound_office.dialogue" id="2_wwg2q"]
 [ext_resource type="Texture2D" uid="uid://de4bdlorqqx2p" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop2.png" id="3_wwg2q"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_ofuj7"]
 [ext_resource type="Texture2D" uid="uid://clwvngjx6el8o" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop3.png" id="6_0abrf"]
@@ -25,20 +24,6 @@
 [ext_resource type="Resource" uid="uid://cj0d0hw70476e" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/tower_light_is_back_part_2.tres" id="23_wwg2q"]
 [ext_resource type="Resource" uid="uid://dabvty4hemegx" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_1_light_is_back_part_2_other.tres" id="24_0abrf"]
 
-[sub_resource type="Resource" id="Resource_ofuj7"]
-script = ExtResource("16_vcuve")
-start_marker = "Schluss"
-required_items = Array[String](["tower_light_is_back_part_2"])
-metadata/_custom_type_script = "uid://bnkm50q3eocad"
-
-[sub_resource type="Resource" id="Resource_u11tp"]
-script = ExtResource("18_11uxd")
-dialogue_resource = ExtResource("2_wwg2q")
-is_dialogue = false
-dialogue_triggers = Array[ExtResource("16_vcuve")]([SubResource("Resource_ofuj7")])
-start_automatically = true
-metadata/_custom_type_script = "uid://dqrq03qgm1a07"
-
 [sub_resource type="Resource" id="Resource_wwg2q"]
 script = ExtResource("16_vcuve")
 start_marker = "Search_szene_2_neighbor_quelle"
@@ -57,7 +42,6 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_r4tt7")
 location_name = "secound_office_light_is_back_part_2"
 items = [NodePath("computer_1"), NodePath("computer_2"), NodePath("computer_3"), NodePath("computer_4"), NodePath("computer_5"), NodePath("tower_1"), NodePath("tower_2"), NodePath("tower_3"), NodePath("router")]
-location_dialogue = SubResource("Resource_u11tp")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

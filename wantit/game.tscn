@@ -199,8 +199,8 @@ metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_edr7y"]
 script = ExtResource("14_215e1")
-event_name = "tutorial_Logik_Gatter_start"
-location_name = "tutorial_Logik_Gatter"
+event_name = "tutorial_minigame_start"
+location_name = "tutorial_minigame"
 start_condition = SubResource("Resource_kq12w")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 

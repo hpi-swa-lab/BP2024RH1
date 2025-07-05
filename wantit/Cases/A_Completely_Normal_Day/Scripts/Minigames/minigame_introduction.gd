@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 var ziel_input: bool = false
 
