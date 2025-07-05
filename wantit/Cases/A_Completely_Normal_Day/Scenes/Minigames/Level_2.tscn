@@ -1,17 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2bi0h58ogcem"]
+[gd_scene load_steps=11 format=3 uid="uid://c2bi0h58ogcem"]
 
 [ext_resource type="Script" uid="uid://cc5hsdbevkmaw" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/level_2.gd" id="1_elwrv"]
 [ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Ziel.tscn" id="2_12rdr"]
-[ext_resource type="Texture2D" uid="uid://3f1tp457c8rc" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/router2.png" id="5_6umpd"]
-[ext_resource type="Texture2D" uid="uid://cmtmikjyfuotf" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/no-wifi.png" id="5_rvh3s"]
+[ext_resource type="Texture2D" uid="uid://cbisqnpn8c3l3" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_off.png" id="4_lwrin"]
+[ext_resource type="Texture2D" uid="uid://c6jlii58fljds" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_on.png" id="5_nbjep"]
 [ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/And_Gatter.tscn" id="6_1gmlg"]
-[ext_resource type="Texture2D" uid="uid://o52wejd2qvb1" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/wifi.png" id="6_mchw0"]
 [ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Or_Gatter.tscn" id="7_elwrv"]
 [ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Start.tscn" id="8_ku0cy"]
 [ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/connection.tscn" id="9_snf2q"]
 [ext_resource type="PackedScene" uid="uid://dobh0dh6l2t8n" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Start_for_two.tscn" id="10_1gmlg"]
-[ext_resource type="Script" uid="uid://dijmd4vimokgs" path="res://Cases/A_Completely_Normal_Day/Scripts/LogikGatterBaukasten/and_gatter.gd" id="11_35pjg"]
-[ext_resource type="Script" uid="uid://b31v48t2qc7t2" path="res://Cases/A_Completely_Normal_Day/Scripts/LogikGatterBaukasten/or_gatter.gd" id="13_3rbiy"]
 [ext_resource type="Texture2D" uid="uid://yv0vdj3rcy4f" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/triangle.png" id="14_1cjex"]
 
 [node name="Level2" type="Control"]
@@ -90,19 +87,12 @@ position = Vector2(976, -267)
 points = PackedVector2Array(-128, 112, 0, 112)
 
 [node name="Ziel" parent="." node_paths=PackedStringArray("input_connection") instance=ExtResource("2_12rdr")]
-position = Vector2(96, 456)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("5_rvh3s")
+position = Vector2(97, 516)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lwrin")
 input_connection = NodePath("../Connections/Connection_AndChef_ZIel")
-lv_complete_picture = ExtResource("6_mchw0")
-lv_not_complete_picture = ExtResource("5_rvh3s")
-
-[node name="TextureRect2" type="TextureRect" parent="Ziel"]
-offset_left = -266.667
-offset_top = 160.0
-offset_right = 245.333
-offset_bottom = 672.0
-texture = ExtResource("5_6umpd")
+lv_complete_picture = ExtResource("5_nbjep")
+lv_not_complete_picture = ExtResource("4_lwrin")
 
 [node name="Starts" type="Control" parent="."]
 anchors_preset = 0
@@ -165,7 +155,6 @@ offset_left = 160.0
 offset_top = -296.0
 offset_right = 219.0
 offset_bottom = -265.0
-script = ExtResource("11_35pjg")
 input_connection_1 = NodePath("../../Connections/Connection_Input_AndLeft")
 input_connection_2 = NodePath("../../Connections/Connection_OrLeft_AndLeft")
 output_connection = NodePath("../../Connections/Connection_AndLeft_AndChef")
@@ -176,7 +165,6 @@ offset_left = 400.0
 offset_top = -296.0
 offset_right = 535.0
 offset_bottom = -265.0
-script = ExtResource("13_3rbiy")
 input_connection_1 = NodePath("../../Connections/Connection_Input_OrLeft_1")
 input_connection_2 = NodePath("../../Connections/Connection_Input_OrLeft_2")
 output_connection = NodePath("../../Connections/Connection_OrLeft_AndLeft")
@@ -187,7 +175,6 @@ offset_left = 703.0
 offset_top = -296.0
 offset_right = 762.0
 offset_bottom = -265.0
-script = ExtResource("11_35pjg")
 input_connection_1 = NodePath("../../Connections/Connection_Input_AndRight")
 input_connection_2 = NodePath("../../Connections/Connection_OrRight_AndRight")
 output_connection = NodePath("../../Connections/Connection_AndRight_AndKitchen")
@@ -198,7 +185,6 @@ offset_left = 864.0
 offset_top = -296.0
 offset_right = 999.0
 offset_bottom = -265.0
-script = ExtResource("13_3rbiy")
 input_connection_1 = NodePath("../../Connections/Connection_Input_OrRight_1")
 input_connection_2 = NodePath("../../Connections/Connection_Input_OrRight_2")
 output_connection = NodePath("../../Connections/Connection_OrRight_AndRight")
@@ -209,7 +195,6 @@ offset_left = 688.0
 offset_top = 40.0
 offset_right = 747.0
 offset_bottom = 71.0
-script = ExtResource("11_35pjg")
 input_connection_1 = NodePath("../../Connections/Connection_AndRight_AndKitchen")
 input_connection_2 = NodePath("../../Connections/Connection_Input_AndKitchen")
 output_connection = NodePath("../../Connections/Connection_AndKitchen_AndChef")
@@ -220,7 +205,6 @@ offset_left = 144.0
 offset_top = 42.0
 offset_right = 203.0
 offset_bottom = 73.0
-script = ExtResource("11_35pjg")
 input_connection_1 = NodePath("../../Connections/Connection_AndLeft_AndChef")
 input_connection_2 = NodePath("../../Connections/Connection_AndKitchen_AndChef")
 output_connection = NodePath("../../Connections/Connection_AndChef_ZIel")
@@ -278,6 +262,13 @@ rotation = 3.14159
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("14_1cjex")
 
+[node name="check" type="Button" parent="."]
+offset_left = 949.0
+offset_top = 549.0
+offset_right = 1062.0
+offset_bottom = 580.0
+text = "Überprüfen"
+
 [connection signal="ziel_input_false" from="Ziel" to="." method="_on_ziel_ziel_input_false"]
 [connection signal="ziel_input_true" from="Ziel" to="." method="_on_ziel_ziel_input_true"]
 [connection signal="toggled" from="Starts/Start_OrRight" to="." method="_on_start_or_right_toggled"]
@@ -285,3 +276,4 @@ texture = ExtResource("14_1cjex")
 [connection signal="toggled" from="Starts/Start_AndLeft" to="." method="_on_start_and_left_toggled"]
 [connection signal="toggled" from="Starts/StartForTwo_OrLeft_AndRight" to="." method="_on_start_for_two_or_left_and_right_toggled"]
 [connection signal="toggled" from="Starts/StartForTwo_AndKitchen_OrRight" to="." method="_on_start_for_two_and_kitchen_or_right_toggled"]
+[connection signal="pressed" from="check" to="." method="_on_check_pressed"]

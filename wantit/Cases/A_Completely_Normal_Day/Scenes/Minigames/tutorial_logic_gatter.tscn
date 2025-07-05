@@ -1,30 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dldwkuqwfxyqu"]
 
-[ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://Cases/A_Completely_Normal_Day/Scenes/Logik_Gatter_level_introduction.tscn" id="1_2iq3a"]
-[ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/minigame_introduction.gd" id="1_ooyhf"]
-[ext_resource type="Texture2D" uid="uid://mlwoagb6be07" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/orange1.png" id="2_ew0qh"]
+[ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/minigame_introduction.gd" id="1_cxipq"]
+[ext_resource type="Texture2D" uid="uid://mlwoagb6be07" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/orange1.png" id="2_few14"]
+[ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_level.tscn" id="3_h0igv"]
 
-[node name="MinigameIntroduction" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_ooyhf")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0.389058, 0.421474, 0.446514, 1)
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="tutorial_logic_gatter" type="Node"]
+script = ExtResource("1_cxipq")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="explanation_start" type="Label" parent="."]
-layout_mode = 0
 offset_left = 289.0
 offset_top = 51.0
 offset_right = 448.0
@@ -38,7 +22,7 @@ offset_left = -168.0
 offset_top = 56.0
 offset_right = -26.0
 offset_bottom = 96.0
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="highlight_label" type="TextureRect" parent="explanation_start"]
@@ -48,15 +32,13 @@ offset_left = -8.0
 offset_top = -4.0
 offset_right = 185.0
 offset_bottom = 36.0
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
-[node name="LogikGatterLevelIntroduction" parent="." instance=ExtResource("1_2iq3a")]
-layout_mode = 1
+[node name="LogikGatterLevelIntroduction" parent="." instance=ExtResource("3_h0igv")]
 
 [node name="explanation_connection" type="Label" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 289.0
 offset_top = 51.0
 offset_right = 555.0
@@ -70,7 +52,7 @@ offset_left = -120.0
 offset_top = 86.0
 offset_right = -74.0
 offset_bottom = 213.0
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="highlight_label" type="TextureRect" parent="explanation_connection"]
@@ -80,12 +62,11 @@ offset_left = -8.0
 offset_top = -4.0
 offset_right = 113.0
 offset_bottom = 36.0
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="explanation_try_start" type="Label" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 289.0
 offset_top = 51.0
 offset_right = 448.0
@@ -103,7 +84,6 @@ flip_h = true
 
 [node name="explanation_try_start2" type="Label" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 289.0
 offset_top = 51.0
 offset_right = 448.0
@@ -121,7 +101,6 @@ flip_h = true
 
 [node name="explanation_Gatter" type="Label" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 278.0
 offset_top = 161.0
 offset_right = 544.0
@@ -135,7 +114,7 @@ offset_left = -123.0
 offset_top = 98.0
 offset_right = -57.0
 offset_bottom = 145.0
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="highlight_label" type="TextureRect" parent="explanation_Gatter"]
@@ -145,12 +124,11 @@ offset_left = -7.0
 offset_top = -6.0
 offset_right = 247.0
 offset_bottom = 31.0
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="explanation_Ziel" type="Label" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 268.0
 offset_top = 460.0
 offset_right = 427.0
@@ -164,7 +142,7 @@ offset_left = 180.0
 offset_top = -79.0
 offset_right = 438.0
 offset_bottom = 138.0
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="highlight_label" type="TextureRect" parent="explanation_Ziel"]
@@ -174,12 +152,11 @@ offset_left = -1.0
 offset_top = -4.0
 offset_right = 120.0
 offset_bottom = 36.0
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="explanation_end" type="Label" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 326.0
 offset_top = 78.0
 offset_right = 802.0
@@ -193,11 +170,10 @@ offset_left = -7.0
 offset_top = -6.0
 offset_right = 474.0
 offset_bottom = 34.0
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="next_button" type="Button" parent="."]
-layout_mode = 0
 offset_left = 951.0
 offset_top = 519.0
 offset_right = 1098.0
@@ -217,7 +193,6 @@ mouse_filter = 2
 color = Color(0.915667, 1, 0.54, 1)
 
 [node name="back_button" type="Button" parent="."]
-layout_mode = 0
 offset_left = 74.0
 offset_top = 515.0
 offset_right = 221.0
@@ -238,7 +213,6 @@ color = Color(0.915667, 1, 0.54, 1)
 
 [node name="end_button" type="Button" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 741.0
 offset_top = 527.0
 offset_right = 876.0
@@ -259,7 +233,6 @@ color = Color(0.915667, 1, 0.54, 1)
 
 [node name="Good_job" type="TextureRect" parent="."]
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -269,7 +242,7 @@ offset_right = -268.0
 offset_bottom = -176.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ew0qh")
+texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="Good_Job_text" type="Label" parent="Good_job"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3nnk4fsl0bvt"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_6caa5"]
+[ext_resource type="PackedScene" uid="uid://dldwkuqwfxyqu" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_logic_gatter.tscn" id="2_xdce3"]
+
+[node name="tutorial_minigame" type="Node"]
+script = ExtResource("1_6caa5")
+location_name = "tutorial_minigame"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="tutorial_logic_gatter" parent="." instance=ExtResource("2_xdce3")]

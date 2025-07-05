@@ -94,4 +94,4 @@ func _on_logik_gatter_level_introduction_ziel_input_true() -> void:
 
 func _on_start_minigame_1_pressed() -> void:
 	GlobalTimer.end_timer("Logik Gatter Mini Games")
-	get_tree().change_scene_to_file("res://scenes/Minigames/Minigame_1.tscn")
+	get_tree().change_scene_to_file("res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_1.tscn")

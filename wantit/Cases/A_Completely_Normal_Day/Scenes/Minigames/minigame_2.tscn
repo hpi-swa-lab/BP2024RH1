@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpijelj7eiefa"]
+[gd_scene load_steps=3 format=3 uid="uid://bpijelj7eiefa"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_hui4m"]
+[ext_resource type="PackedScene" uid="uid://c2bi0h58ogcem" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/Level_2.tscn" id="2_ciq5l"]
 
 [node name="minigame_2" type="Node"]
 script = ExtResource("1_hui4m")
 location_name = "minigame_2"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Level2" parent="." instance=ExtResource("2_ciq5l")]

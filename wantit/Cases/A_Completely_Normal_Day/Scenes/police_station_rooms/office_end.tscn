@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b37iws3eonpm5"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_788g0"]
+
+[node name="office_end" type="Node"]
+script = ExtResource("1_788g0")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
