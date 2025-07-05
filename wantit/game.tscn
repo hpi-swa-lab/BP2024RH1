@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=77 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://diekxq2rx0a8e" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_power_failure.tscn" id="35_edr7y"]
 [ext_resource type="PackedScene" uid="uid://co7b7llwyqb54" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_light_is_back_part_2.tscn" id="36_0de7l"]
 [ext_resource type="PackedScene" uid="uid://cb0u1ejhyocev" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_light_is_back.tscn" id="36_kq12w"]
+[ext_resource type="PackedScene" uid="uid://b37iws3eonpm5" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_end.tscn" id="37_87ddb"]
 [ext_resource type="PackedScene" uid="uid://8tykys80rcmx" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/secound_office_power_failure.tscn" id="37_t46w6"]
 [ext_resource type="PackedScene" uid="uid://c1ulmcexuq1x4" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/secound_office_light_is_back.tscn" id="38_m28ev"]
 [ext_resource type="PackedScene" uid="uid://l3fwmj4w4gyw" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/secound_office_light_is_back_part_2.tscn" id="39_87ddb"]
@@ -46,8 +47,8 @@
 [ext_resource type="PackedScene" uid="uid://twslfcssbtxr" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/technic_room_light_is_back_part_2.tscn" id="42_qpefm"]
 [ext_resource type="PackedScene" uid="uid://0i05nmbifo6h" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_1.tscn" id="43_t46w6"]
 [ext_resource type="PackedScene" uid="uid://bpijelj7eiefa" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_2.tscn" id="44_m28ev"]
-[ext_resource type="PackedScene" uid="uid://dcbc5risftiqs" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_Logik_Gatter.tscn" id="45_lwlx3"]
 [ext_resource type="PackedScene" uid="uid://dl2l13xobbrcq" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/corridor_light_is_back_part_2.tscn" id="45_tb2lt"]
+[ext_resource type="PackedScene" uid="uid://c3nnk4fsl0bvt" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_minigame.tscn" id="49_mljfx"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -226,7 +227,7 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 script = ExtResource("2_e2o6t")
 case_slug = "Logik Gatter"
 case_title = "Ein ganz normaler Tag"
-case_location_scenes = Array[PackedScene]([ExtResource("34_eu6ph"), ExtResource("35_edr7y"), ExtResource("36_kq12w"), ExtResource("36_0de7l"), ExtResource("37_t46w6"), ExtResource("38_m28ev"), ExtResource("39_87ddb"), ExtResource("39_lwlx3"), ExtResource("40_0de7l"), ExtResource("42_qpefm"), ExtResource("41_87ddb"), ExtResource("42_mljfx"), ExtResource("45_tb2lt"), ExtResource("43_t46w6"), ExtResource("44_m28ev"), ExtResource("45_lwlx3")])
+case_location_scenes = Array[PackedScene]([ExtResource("34_eu6ph"), ExtResource("35_edr7y"), ExtResource("36_kq12w"), ExtResource("36_0de7l"), ExtResource("37_87ddb"), ExtResource("37_t46w6"), ExtResource("38_m28ev"), ExtResource("39_87ddb"), ExtResource("39_lwlx3"), ExtResource("40_0de7l"), ExtResource("42_qpefm"), ExtResource("41_87ddb"), ExtResource("42_mljfx"), ExtResource("45_tb2lt"), ExtResource("43_t46w6"), ExtResource("44_m28ev"), ExtResource("49_mljfx")])
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_lwlx3"), SubResource("Resource_edr7y"), SubResource("Resource_mljfx"), SubResource("Resource_87ddb")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
