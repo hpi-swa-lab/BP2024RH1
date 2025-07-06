@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb018sy8d7u2l"]
+[gd_scene load_steps=5 format=3 uid="uid://bb018sy8d7u2l"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_nekdu"]
 [ext_resource type="Script" uid="uid://dc7bogap67ovg" path="res://Cases/Binary_Trap/Scripts/minigame3.gd" id="2_dwhro"]
+[ext_resource type="FontFile" uid="uid://crpwo0n6tuq0a" path="res://Assets/Fonts/ReenieBeanie-Regular.ttf" id="3_apiyb"]
 [ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigames/gap_game.tscn" id="3_rd8j1"]
 
 [node name="Minigame 3" type="Node"]
 script = ExtResource("1_nekdu")
+location_name = "Minigame 3"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Minigame" type="Control" parent="."]
@@ -17,18 +19,36 @@ script = ExtResource("2_dwhro")
 
 [node name="Input Label" type="Label" parent="Minigame"]
 layout_mode = 0
-offset_left = 189.0
-offset_top = 186.0
-offset_right = 244.0
-offset_bottom = 220.0
-theme_override_font_sizes/font_size = 24
+offset_left = 136.0
+offset_top = 160.0
+offset_right = 258.0
+offset_bottom = 260.0
+rotation = -0.0502526
+scale = Vector2(1.25747, 1.25747)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_apiyb")
+theme_override_font_sizes/font_size = 100
 text = "1011"
 
 [node name="Gap Game" parent="Minigame" instance=ExtResource("3_rd8j1")]
 layout_mode = 1
-offset_left = 208.0
-offset_top = 256.0
-offset_right = 208.0
-offset_bottom = 256.0
+offset_left = 200.0
+offset_top = 304.0
+offset_right = 200.0
+offset_bottom = 304.0
+scale = Vector2(1.62501, 1.62501)
+
+[node name="Task Label" type="Label" parent="Minigame"]
+layout_mode = 1
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 1027.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_apiyb")
+theme_override_font_sizes/font_size = 36
+text = "Fülle die Lücken so, dass die gebene Binärzahl korrekt umgerechnet wird."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="updated" from="Minigame/Gap Game" to="Minigame" method="_on_gap_game_updated"]

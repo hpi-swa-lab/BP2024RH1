@@ -1,44 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://q1ccreh7wbh"]
+[gd_scene load_steps=6 format=3 uid="uid://q1ccreh7wbh"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_at2jk"]
 [ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigames/gap_game.tscn" id="2_0mkrf"]
 [ext_resource type="Script" uid="uid://c07pihq51n61q" path="res://Cases/Binary_Trap/Scripts/minigame4.gd" id="2_ht2uf"]
+[ext_resource type="FontFile" uid="uid://7j4njv1wjhhj" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="3_5xu1i"]
+[ext_resource type="FontFile" uid="uid://qeff5a6mplbw" path="res://Assets/Fonts/CabinSketch-Regular.ttf" id="5_triia"]
 
 [node name="Minigame 4" type="Node"]
 script = ExtResource("1_at2jk")
+location_name = "Minigame 4"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Minigame" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 48.0
+offset_top = -32.0
+offset_right = 88.0
+offset_bottom = 8.0
 script = ExtResource("2_ht2uf")
 
 [node name="Input Label" type="Label" parent="Minigame"]
 layout_mode = 0
-offset_left = 222.0
-offset_top = 166.0
-offset_right = 263.0
-offset_bottom = 216.0
-theme_override_font_sizes/font_size = 36
+offset_left = 150.0
+offset_top = 124.0
+offset_right = 237.0
+offset_bottom = 242.0
+rotation = -0.154704
+theme_override_fonts/font = ExtResource("3_5xu1i")
+theme_override_font_sizes/font_size = 100
 text = "12"
 
 [node name="Gap Game" parent="Minigame" instance=ExtResource("2_0mkrf")]
 layout_mode = 1
-offset_left = 259.0
-offset_top = 243.0
-offset_right = 259.0
-offset_bottom = 243.0
+offset_left = 219.0
+offset_top = 300.0
+offset_right = 219.0
+offset_bottom = 300.0
+scale = Vector2(1.63488, 1.63488)
 
 [node name="Binary Label" type="Label" parent="Minigame"]
 layout_mode = 0
-offset_left = 381.0
-offset_top = 295.0
-offset_right = 545.0
-offset_bottom = 394.0
-theme_override_font_sizes/font_size = 36
+offset_left = 166.0
+offset_top = 454.0
+offset_right = 335.0
+offset_bottom = 553.0
+theme_override_fonts/font = ExtResource("3_5xu1i")
+theme_override_font_sizes/font_size = 80
+text = "1111"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Minigame"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 226.0
+offset_right = 296.0
+offset_bottom = 255.0
+theme_override_fonts/font = ExtResource("5_triia")
+theme_override_font_sizes/font_size = 24
+text = "Dezimalzahl"
+
+[node name="Label2" type="Label" parent="Minigame"]
+visible = false
+layout_mode = 0
+offset_left = 166.0
+offset_top = 425.0
+offset_right = 325.0
+offset_bottom = 454.0
+theme_override_fonts/font = ExtResource("5_triia")
+theme_override_font_sizes/font_size = 24
+text = "Binärcodierung"
 
 [connection signal="updated" from="Minigame/Gap Game" to="Minigame" method="_on_gap_game_updated"]

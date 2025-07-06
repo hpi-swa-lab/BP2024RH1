@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://hqfrgdphxdrl"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_hr3m3"]
+[ext_resource type="Script" uid="uid://cl6f77kjtwyhy" path="res://Cases/Binary_Trap/Scripts/minigame2.gd" id="2_hex8g"]
+[ext_resource type="PackedScene" uid="uid://dofebqelw66y3" path="res://Cases/Binary_Trap/Scenes/Minigames/lamp_and_switch.tscn" id="2_ydl5m"]
+
+[node name="Minigame 2" type="Node"]
+script = ExtResource("1_hr3m3")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Minigame" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = -134.0
+offset_right = 42.0
+offset_bottom = -94.0
+script = ExtResource("2_hex8g")
+
+[node name="Input Label" type="Label" parent="Minigame"]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 212.0
+offset_right = 322.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Minigame"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 264.0
+offset_right = 646.0
+offset_bottom = 304.0
+theme_override_constants/separation = 110
+
+[node name="Lamp and Switch" parent="Minigame/HBoxContainer" instance=ExtResource("2_ydl5m")]
+layout_mode = 2
+
+[node name="Lamp and Switch2" parent="Minigame/HBoxContainer" instance=ExtResource("2_ydl5m")]
+layout_mode = 2
+
+[node name="Lamp and Switch3" parent="Minigame/HBoxContainer" instance=ExtResource("2_ydl5m")]
+layout_mode = 2
+
+[node name="Lamp and Switch4" parent="Minigame/HBoxContainer" instance=ExtResource("2_ydl5m")]
+layout_mode = 2
+
+[node name="Result Label" type="Label" parent="Minigame"]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 264.0
+offset_right = 836.0
+offset_bottom = 287.0
