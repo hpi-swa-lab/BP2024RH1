@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_u6oeb"]
 [ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigames/lock.tscn" id="2_5gn70"]
-[ext_resource type="Script" uid="uid://goewncgvvsra" path="res://Cases/Binary_Trap/Scripts/minigame56.gd" id="2_ply4s"]
+[ext_resource type="Script" uid="uid://goewncgvvsra" path="res://Cases/Binary_Trap/Scripts/minigame56a.gd" id="2_ply4s"]
 
 [node name="Minigame 5" type="Node"]
 script = ExtResource("1_u6oeb")

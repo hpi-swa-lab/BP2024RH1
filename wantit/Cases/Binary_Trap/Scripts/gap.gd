@@ -3,6 +3,7 @@ extends Control
 @onready var option_button: OptionButton = $VBoxContainer/OptionButton
 @onready var operation_label: Label = $"VBoxContainer/Operation Label"
 @onready var weight_label: Label = $"VBoxContainer/Weight Label"
+@onready var star: Label = $"VBoxContainer/*"
 
 signal value_changed
 var weight: int
@@ -20,3 +21,8 @@ func get_value() -> int:
 	
 func set_weight() -> void:
 	weight_label.text = str(weight)
+	
+func set_font_color(color: Color) -> void:
+	weight_label.add_theme_color_override("font_color", color)
+	operation_label.add_theme_color_override("font_color", color)
+	star.add_theme_color_override("font_color", color)

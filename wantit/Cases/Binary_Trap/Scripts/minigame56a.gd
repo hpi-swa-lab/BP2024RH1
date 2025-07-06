@@ -1,6 +1,10 @@
 extends Control
 
 @export var item_name: String
+@onready var lock: Control = $Lock
+
+func _ready() -> void:
+	lock.set_font_color(Color.BLACK)
 
 func _on_lock_succeeded() -> void:
 	var interaction_item = Item.new()

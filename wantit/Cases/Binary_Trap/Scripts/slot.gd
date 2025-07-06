@@ -34,3 +34,6 @@ func _on_button_down_pressed() -> void:
 	
 func get_value() -> String:
 	return values[current_index]
+	
+func set_font_color(color: Color) -> void:
+	label.add_theme_color_override("font_color", color)

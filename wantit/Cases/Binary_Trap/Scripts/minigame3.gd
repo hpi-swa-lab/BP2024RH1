@@ -7,6 +7,7 @@ const gap_number: int = 4
 var input: String
 
 func _ready() -> void:
+	gap_game.set_font_color(Color.BLACK)
 	randomize()
 	input = generate_binary_string(gap_number)		
 	input_label.text = input

@@ -29,3 +29,8 @@ func update_result() -> void:
 	
 func set_result_color(color: Color) -> void:
 	result_label.add_theme_color_override("font_color", color)
+	
+func set_font_color(color: Color) -> void:
+	result_label.add_theme_color_override("font_color", color)
+	for gap in gaps:
+		gap.set_font_color(color)

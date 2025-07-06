@@ -11,8 +11,10 @@ metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 [node name="Minigame" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 2.0
+offset_top = -134.0
+offset_right = 42.0
+offset_bottom = -94.0
 script = ExtResource("2_hex8g")
 
 [node name="Input Label" type="Label" parent="Minigame"]

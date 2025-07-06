@@ -14,6 +14,7 @@ enum Value_Type {
 var current_input: Array
 var slot_values: Array
 var slot_start_index: int
+var slots: Array
 
 signal succeeded
 
@@ -38,6 +39,7 @@ func build_lock() -> void:
 			
 	for i in range(slot_count):
 		var slot = load("res://Cases/Binary_Trap/Scenes/Minigames/slot.tscn").instantiate()
+		slots.append(slot)
 		slot.values = slot_values
 		slot.start_index = slot_start_index
 		slot.value_changed.connect(_on_slot_changed.bind(i))
@@ -79,4 +81,8 @@ func is_correct_code_valid() -> bool:
 func clear() -> void:
 	for child in h_box_container.get_children():
 		child.queue_free()
+		
+func set_font_color(color: Color) -> void:
+	for slot in slots:
+		slot.set_font_color(color)
 	
