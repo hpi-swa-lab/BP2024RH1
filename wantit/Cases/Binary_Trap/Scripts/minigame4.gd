@@ -4,6 +4,7 @@ extends Control
 @onready var gap_game: Control = $"Gap Game"
 @onready var binary_label: Label = $"Binary Label"
 @onready var label_2: Label = $Label2
+@onready var texture_rect_2: TextureRect = $TextureRect2
 
 const gap_number: int = 4
 var input: int
@@ -12,6 +13,8 @@ func _ready() -> void:
 	randomize()
 	
 	label_2.hide()
+	texture_rect_2.hide()
+	
 	binary_label.text = ""
 	
 	input = generate_integer()		
@@ -24,11 +27,13 @@ func check_output(result: int) -> void:
 	if gap_game:
 		binary_label.text = ""
 		label_2.hide()
+		texture_rect_2.hide()
 	
 	if result == input:
 		if gap_game:
 			gap_game.set_result_color(Color.LIME_GREEN)
 			label_2.show()
+			texture_rect_2.show()
 			binary_label.text = pad_with_zeros(convert_decimal_to_binary(input))
 	else:
 		if gap_game:

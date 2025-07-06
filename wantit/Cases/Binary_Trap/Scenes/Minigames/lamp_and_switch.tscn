@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dofebqelw66y3"]
+[gd_scene load_steps=5 format=3 uid="uid://dofebqelw66y3"]
 
 [ext_resource type="Texture2D" uid="uid://bjst5h0xgcfy1" path="res://Cases/Binary_Trap/Assets/Minigame2/lamp_off.png" id="1_asetr"]
 [ext_resource type="Script" uid="uid://diqchaljeev6v" path="res://Cases/Binary_Trap/Scripts/lamp_and_switch.gd" id="1_xr4xt"]
+[ext_resource type="Texture2D" uid="uid://cwn8f84wd4lsq" path="res://Cases/Binary_Trap/Assets/Minigame2/switch_off.png" id="3_axnlc"]
+[ext_resource type="Texture2D" uid="uid://rpma75cb78w1" path="res://Cases/Binary_Trap/Assets/Minigame2/switch_on.png" id="4_wqhlu"]
 
 [node name="Lamp and Switch" type="Control"]
 layout_mode = 3
@@ -46,9 +48,12 @@ text = "8"
 layout_mode = 2
 texture = ExtResource("1_asetr")
 
-[node name="Switch" type="CheckButton" parent="VBoxContainer"]
+[node name="Switch" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("3_axnlc")
+texture_pressed = ExtResource("4_wqhlu")
 
 [connection signal="toggled" from="VBoxContainer/Switch" to="." method="_on_switch_toggled"]

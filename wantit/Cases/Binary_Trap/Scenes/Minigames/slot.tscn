@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://g71wtqpfs1cp"]
+[gd_scene load_steps=4 format=3 uid="uid://g71wtqpfs1cp"]
 
 [ext_resource type="Script" uid="uid://cxwag6b7b3td2" path="res://Cases/Binary_Trap/Scripts/slot.gd" id="1_s5m1m"]
+[ext_resource type="Texture2D" uid="uid://df1fb4oobonqi" path="res://Cases/Binary_Trap/Assets/Minigame5_6/button_up.png" id="2_4ewtg"]
+[ext_resource type="Texture2D" uid="uid://cxd443se4c7tw" path="res://Cases/Binary_Trap/Assets/Minigame5_6/button_down.png" id="3_pucvg"]
 
 [node name="Slot" type="Control"]
 layout_mode = 3
@@ -16,21 +18,22 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(1, 0.99692)
+theme_override_constants/separation = -49
 alignment = 1
 
-[node name="Button Up" type="Button" parent="VBoxContainer"]
+[node name="Button Up" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "+"
+texture_normal = ExtResource("2_4ewtg")
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 100
 text = "0"
 horizontal_alignment = 1
 
-[node name="Button Down" type="Button" parent="VBoxContainer"]
+[node name="Button Down" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "-"
+texture_normal = ExtResource("3_pucvg")
 
 [connection signal="pressed" from="VBoxContainer/Button Up" to="." method="_on_button_up_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button Down" to="." method="_on_button_down_pressed"]
