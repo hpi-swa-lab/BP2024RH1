@@ -40,9 +40,9 @@ text = "1001"
 [node name="HBoxContainer" type="HBoxContainer" parent="Minigame"]
 layout_mode = 0
 offset_left = 316.0
-offset_top = 264.0
+offset_top = 263.247
 offset_right = 646.0
-offset_bottom = 304.0
+offset_bottom = 303.247
 theme_override_constants/separation = 110
 
 [node name="Lamp and Switch" parent="Minigame/HBoxContainer" instance=ExtResource("2_ydl5m")]
@@ -59,10 +59,10 @@ layout_mode = 2
 
 [node name="Result Label" type="Label" parent="Minigame"]
 layout_mode = 0
-offset_left = 796.0
-offset_top = 264.0
-offset_right = 836.0
-offset_bottom = 287.0
+offset_left = 807.301
+offset_top = 263.247
+offset_right = 847.301
+offset_bottom = 297.247
 theme_override_font_sizes/font_size = 24
 
 [node name="BackButton" parent="." instance=ExtResource("5_06qji")]
