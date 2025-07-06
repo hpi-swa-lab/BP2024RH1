@@ -1,7 +1,7 @@
 extends Control
 
 @onready var lamp: TextureRect = $VBoxContainer/Lamp
-@onready var switch: TextureButton = $VBoxContainer/Switch
+@onready var switch: TextureButton = $Switch
 @onready var binary_label: Label = $"VBoxContainer/HBoxContainer/Binary Label"
 @onready var weight_label: Label = $"VBoxContainer/HBoxContainer/Weight Label"
 @onready var operation_label: Label = $"Operation Label"

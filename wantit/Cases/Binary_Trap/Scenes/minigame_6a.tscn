@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3u6qnv0gbg8f"]
+[gd_scene load_steps=6 format=3 uid="uid://c3u6qnv0gbg8f"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_77jqc"]
 [ext_resource type="Script" uid="uid://goewncgvvsra" path="res://Cases/Binary_Trap/Scripts/minigame56a.gd" id="2_24toe"]
-[ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigames/lock.tscn" id="2_jh3ao"]
+[ext_resource type="Texture2D" uid="uid://c4l8rm1errsqu" path="res://Cases/Binary_Trap/Assets/Minigame5_6/minigame6a_closeUp.png" id="2_fhpi3"]
+[ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigame Parts/lock.tscn" id="2_jh3ao"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_po4i8"]
 
 [node name="Minigame 6a" type="Node"]
 script = ExtResource("1_77jqc")
@@ -10,14 +12,33 @@ location_name = "Minigame 6a"
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300015, 0.300015)
+texture = ExtResource("2_fhpi3")
+
 [node name="Minigame" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 41.0
+offset_top = 165.0
+offset_right = 81.0
+offset_bottom = 205.0
+rotation = -0.155383
+scale = Vector2(0.328679, 0.328679)
 script = ExtResource("2_24toe")
+item_name = "Minigame6a completed"
 
 [node name="Lock" parent="Minigame" instance=ExtResource("2_jh3ao")]
 layout_mode = 1
+
+[node name="BackButton" parent="." instance=ExtResource("5_po4i8")]
+offset_left = -10.0
+offset_top = 538.0
+offset_right = 502.0
+offset_bottom = 1050.0
+rotation = -0.482242
+scale = Vector2(0.266106, 0.266106)
 
 [connection signal="succeeded" from="Minigame/Lock" to="Minigame" method="_on_lock_succeeded"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://c26cvjsswppqd"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_cbky2"]
+[ext_resource type="Texture2D" uid="uid://bhirv71dfw8pu" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_closeUp.png" id="2_i0exb"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_nky2q"]
+[ext_resource type="Texture2D" uid="uid://dv3a2476s1xqc" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/chalkboard.png" id="4_8yyyl"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="5_5vlyj"]
+[ext_resource type="Texture2D" uid="uid://ch5wfse2583vp" path="res://Cases/Binary_Trap/Assets/Collectible_Items/vase.png" id="5_nky2q"]
+[ext_resource type="Texture2D" uid="uid://b1b2gt6d41dbv" path="res://Cases/Binary_Trap/Assets/Interactible_Items/notches.png" id="7_8yyyl"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="8_5vlyj"]
+
+[node name="Cupboard CloseUp" type="Node"]
+script = ExtResource("1_cbky2")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300029, 0.300029)
+texture = ExtResource("2_i0exb")
+
+[node name="Chalkboard" parent="." instance=ExtResource("3_nky2q")]
+scale = Vector2(0.300082, 0.300082)
+texture_normal = ExtResource("4_8yyyl")
+
+[node name="Vase" type="TextureButton" parent="."]
+offset_left = 289.0
+offset_top = 109.0
+offset_right = 589.0
+offset_bottom = 409.0
+scale = Vector2(0.571204, 0.571204)
+texture_normal = ExtResource("5_nky2q")
+script = ExtResource("5_5vlyj")
+item_name = "Vase"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Notches" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299985, 0.299985)
+texture_normal = ExtResource("7_8yyyl")
+script = ExtResource("5_5vlyj")
+item_name = "Notches"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="BackButton" parent="." instance=ExtResource("8_5vlyj")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)

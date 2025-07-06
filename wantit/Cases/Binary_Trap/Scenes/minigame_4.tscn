@@ -1,25 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://q1ccreh7wbh"]
+[gd_scene load_steps=9 format=3 uid="uid://q1ccreh7wbh"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_at2jk"]
-[ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigames/gap_game.tscn" id="2_0mkrf"]
+[ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigame Parts/gap_game.tscn" id="2_0mkrf"]
+[ext_resource type="Texture2D" uid="uid://cg6umxqo34mep" path="res://Cases/Binary_Trap/Assets/Minigame4/minigame4_closeUp.png" id="2_asgrs"]
 [ext_resource type="Script" uid="uid://c07pihq51n61q" path="res://Cases/Binary_Trap/Scripts/minigame4.gd" id="2_ht2uf"]
 [ext_resource type="FontFile" uid="uid://7j4njv1wjhhj" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="3_5xu1i"]
 [ext_resource type="FontFile" uid="uid://qeff5a6mplbw" path="res://Assets/Fonts/CabinSketch-Regular.ttf" id="5_triia"]
 [ext_resource type="Texture2D" uid="uid://b4xqfpttd0lv3" path="res://Cases/Binary_Trap/Assets/Minigame4/chalk_arrow.png" id="6_triia"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="8_xw2al"]
 
 [node name="Minigame 4" type="Node"]
 script = ExtResource("1_at2jk")
 location_name = "Minigame 4"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300011, 0.300011)
+texture = ExtResource("2_asgrs")
+
 [node name="Label3" type="Label" parent="."]
-offset_left = 100.0
-offset_top = 20.0
-offset_right = 1029.0
-offset_bottom = 49.0
+offset_left = 155.0
+offset_top = 65.0
+offset_right = 1084.0
+offset_bottom = 94.0
+scale = Vector2(0.943903, 0.943903)
 theme_override_fonts/font = ExtResource("5_triia")
 theme_override_font_sizes/font_size = 24
 text = "Fülle die Lücken so, dass die gebene Dezimalzahl korrekt in ihre Bestandteile zerlegt wird."
+horizontal_alignment = 1
 
 [node name="Minigame" type="Control" parent="."]
 layout_mode = 3
@@ -44,18 +54,18 @@ text = "12"
 
 [node name="Gap Game" parent="Minigame" instance=ExtResource("2_0mkrf")]
 layout_mode = 1
-offset_left = 219.0
-offset_top = 300.0
-offset_right = 219.0
-offset_bottom = 300.0
-scale = Vector2(1.63488, 1.63488)
+offset_left = 144.809
+offset_top = 287.441
+offset_right = 144.809
+offset_bottom = 287.441
+scale = Vector2(1.80703, 1.80703)
 
 [node name="Binary Label" type="Label" parent="Minigame"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 498.0
-offset_right = 359.0
-offset_bottom = 597.0
+offset_left = 275.464
+offset_top = 496.489
+offset_right = 444.464
+offset_bottom = 595.489
 theme_override_fonts/font = ExtResource("3_5xu1i")
 theme_override_font_sizes/font_size = 80
 text = "1111"
@@ -74,30 +84,39 @@ text = "Dezimalzahl"
 
 [node name="TextureRect" type="TextureRect" parent="Minigame"]
 layout_mode = 0
-offset_left = 297.0
-offset_top = 100.0
-offset_right = 597.0
-offset_bottom = 400.0
+offset_left = 287.441
+offset_top = 101.258
+offset_right = 587.441
+offset_bottom = 401.258
 rotation = 0.523598
 scale = Vector2(0.272225, 0.272225)
 texture = ExtResource("6_triia")
 
 [node name="TextureRect2" type="TextureRect" parent="Minigame"]
-offset_left = 108.0
-offset_top = 537.0
-offset_right = 408.0
-offset_bottom = 837.0
+layout_mode = 0
+offset_left = 191.627
+offset_top = 553.106
+offset_right = 491.627
+offset_bottom = 853.106
 rotation = 4.64773
 scale = Vector2(0.243011, 0.273377)
 texture = ExtResource("6_triia")
 
 [node name="Label2" type="Label" parent="Minigame"]
-offset_left = 65.0
-offset_top = 433.0
-offset_right = 224.0
-offset_bottom = 462.0
+layout_mode = 0
+offset_left = 136.099
+offset_top = 444.227
+offset_right = 295.099
+offset_bottom = 473.227
 theme_override_fonts/font = ExtResource("5_triia")
 theme_override_font_sizes/font_size = 24
 text = "Binärcodierung"
+
+[node name="BackButton" parent="." instance=ExtResource("8_xw2al")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)
 
 [connection signal="updated" from="Minigame/Gap Game" to="Minigame" method="_on_gap_game_updated"]

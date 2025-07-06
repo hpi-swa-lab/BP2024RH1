@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpl55rtgw33ae"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_4p06j"]
+[ext_resource type="Texture2D" uid="uid://2ipphhymy150" path="res://Cases/Binary_Trap/Assets/Backgrounds/warehouse.png" id="2_ei05e"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_hka6i"]
+[ext_resource type="Texture2D" uid="uid://cmtuhg60n10e6" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/door_to_warehouse.png" id="4_v7kog"]
+
+[node name="Warehouse Pre" type="Node"]
+script = ExtResource("1_4p06j")
+location_name = "Warehouse Pre"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300036, 0.300036)
+texture = ExtResource("2_ei05e")
+
+[node name="Door" parent="." instance=ExtResource("3_hka6i")]
+scale = Vector2(0.300174, 0.300174)
+texture_normal = ExtResource("4_v7kog")

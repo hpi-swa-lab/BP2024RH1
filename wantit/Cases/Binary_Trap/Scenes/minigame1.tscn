@@ -1,47 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxkpxeer0f5qj"]
+[gd_scene load_steps=6 format=3 uid="uid://bxkpxeer0f5qj"]
 
 [ext_resource type="Script" uid="uid://tke5tcs0a2fn" path="res://Cases/Binary_Trap/Scripts/minigame_1.gd" id="1_uomor"]
 [ext_resource type="Texture2D" uid="uid://3exdyi0kqjrg" path="res://Cases/Binary_Trap/Assets/Minigame1/switch_on.png" id="2_1aei7"]
+[ext_resource type="Texture2D" uid="uid://b8005egek8rgm" path="res://Cases/Binary_Trap/Assets/Minigame1/minigame1_closeUp_lightOff.png" id="2_mfxfp"]
 [ext_resource type="Texture2D" uid="uid://dlt2dd5k0x27q" path="res://Cases/Binary_Trap/Assets/Minigame1/switch_off.png" id="3_mfxfp"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_uomor"]
-font_size = 50
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_pk8ua"]
 
 [node name="Minigame1" type="Node"]
 script = ExtResource("1_uomor")
+location_name = "Minigame 1"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299987, 0.299987)
+texture = ExtResource("2_mfxfp")
+
 [node name="switch" type="TextureButton" parent="."]
-offset_left = 381.0
-offset_top = 265.0
-offset_right = 481.0
-offset_bottom = 365.0
+offset_left = 280.0
+offset_top = 224.0
+offset_right = 536.0
+offset_bottom = 480.0
+scale = Vector2(0.806991, 0.806991)
 toggle_mode = true
 texture_normal = ExtResource("3_mfxfp")
 texture_pressed = ExtResource("2_1aei7")
 
 [node name="on_or_off label" type="Label" parent="."]
-offset_left = 708.0
-offset_top = 200.0
-offset_right = 797.0
-offset_bottom = 269.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 696.0
+offset_top = 88.0
+offset_right = 785.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "Aus"
-label_settings = SubResource("LabelSettings_uomor")
 horizontal_alignment = 1
 
 [node name="digit label" type="Label" parent="."]
-offset_left = 710.0
-offset_top = 270.0
-offset_right = 796.0
-offset_bottom = 475.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 150
+offset_left = 624.0
+offset_top = 64.0
+offset_right = 852.0
+offset_bottom = 610.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 370
 text = "0"
 horizontal_alignment = 1
+
+[node name="BackButton" parent="." instance=ExtResource("5_pk8ua")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)
 
 [connection signal="toggled" from="switch" to="." method="_on_switch_toggled"]

@@ -20,13 +20,26 @@ layout_mode = 2
 offset_left = 124.444
 offset_right = 274.444
 offset_bottom = 23.0
+theme_override_font_sizes/font_size = 24
 text = "+"
+
+[node name="Switch" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 300.378
+offset_right = 125.0
+offset_bottom = 400.378
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("3_axnlc")
+texture_pressed = ExtResource("4_wqhlu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/separation = 100
+theme_override_constants/separation = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -34,26 +47,21 @@ size_flags_horizontal = 4
 
 [node name="Binary Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "0"
 
 [node name="*" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "*"
 
 [node name="Weight Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "8"
 
 [node name="Lamp" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_asetr")
 
-[node name="Switch" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-toggle_mode = true
-texture_normal = ExtResource("3_axnlc")
-texture_pressed = ExtResource("4_wqhlu")
-
-[connection signal="toggled" from="VBoxContainer/Switch" to="." method="_on_switch_toggled"]
+[connection signal="toggled" from="Switch" to="." method="_on_switch_toggled"]

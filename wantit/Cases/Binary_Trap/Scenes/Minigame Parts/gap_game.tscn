@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bimpgyv2w5ouk"]
 
 [ext_resource type="Script" uid="uid://q3yt7x61p32x" path="res://Cases/Binary_Trap/Scripts/gap_game.gd" id="1_o3drf"]
-[ext_resource type="PackedScene" uid="uid://b10xds6ce20ej" path="res://Cases/Binary_Trap/Scenes/Minigames/gap.tscn" id="2_sii17"]
+[ext_resource type="PackedScene" uid="uid://b10xds6ce20ej" path="res://Cases/Binary_Trap/Scenes/Minigame Parts/gap.tscn" id="2_sii17"]
 
 [node name="Gap Game" type="Control"]
 layout_mode = 3

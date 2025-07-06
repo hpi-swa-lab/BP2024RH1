@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://q3586nx75har"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_0m6dx"]
+[ext_resource type="Texture2D" uid="uid://l8nffo6bpqp7" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_o4t0x"]
+[ext_resource type="Texture2D" uid="uid://bx85orbtwsk8m" path="res://Cases/Binary_Trap/Assets/Interactible_Items/door_lightOn.png" id="3_0m6dx"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_6bcer"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="5_16cll"]
+[ext_resource type="Texture2D" uid="uid://bdtebhe53f82a" path="res://Cases/Binary_Trap/Assets/Collectible_Items/postcard.png" id="7_0m6dx"]
+[ext_resource type="Texture2D" uid="uid://li4a345ophi1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/documents.png" id="7_42btk"]
+
+[node name="Room LightsOn" type="Node"]
+script = ExtResource("1_0m6dx")
+location_name = "Room LightsOn"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299933, 0.299933)
+texture = ExtResource("2_o4t0x")
+
+[node name="Door" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300027, 0.300027)
+texture_normal = ExtResource("3_0m6dx")
+script = ExtResource("4_6bcer")
+item_name = "Door"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Postcard" type="TextureButton" parent="."]
+offset_left = 581.0
+offset_top = 582.0
+offset_right = 1630.0
+offset_bottom = 906.0
+scale = Vector2(0.0970258, 0.0970258)
+texture_normal = ExtResource("7_0m6dx")
+script = ExtResource("4_6bcer")
+item_name = "Postcard"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Beanbag" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_6bcer")
+item_name = "Beanbag"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Documents" parent="." instance=ExtResource("5_16cll")]
+scale = Vector2(0.299949, 0.299949)
+texture_normal = ExtResource("7_42btk")
