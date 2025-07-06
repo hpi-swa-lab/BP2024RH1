@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://5fy4txcsa28u"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_ljr67"]
+[ext_resource type="Texture2D" uid="uid://2gok0ym5bvl7" path="res://Cases/Binary_Trap/Assets/Backgrounds/door_closeUp.png" id="2_fou86"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="3_kgry1"]
+[ext_resource type="Texture2D" uid="uid://d1ssutvx4wdi4" path="res://Cases/Binary_Trap/Assets/Interactible_Items/keyhole.png" id="3_oi3hg"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_5olm1"]
+
+[node name="Door CloseUp" type="Node"]
+script = ExtResource("1_ljr67")
+location_name = "Door CloseUp"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299994, 0.299994)
+texture = ExtResource("2_fou86")
+
+[node name="Keyhole" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300011, 0.300011)
+texture_normal = ExtResource("3_oi3hg")
+script = ExtResource("3_kgry1")
+item_name = "Keyhole"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="BackButton" parent="." instance=ExtResource("5_5olm1")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)
