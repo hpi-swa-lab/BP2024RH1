@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=68 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -32,6 +32,21 @@
 [ext_resource type="PackedScene" uid="uid://de08xwxsx122u" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/case_2_minigame_2.tscn" id="30_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://ovgubqjktpfk" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/minigame_3.tscn" id="31_7knny"]
 [ext_resource type="PackedScene" uid="uid://caun4d48wfmce" path="res://Cases/Fake_News_Fiasko/Scenes/time_skip.tscn" id="32_dhpj7"]
+[ext_resource type="PackedScene" uid="uid://cpl55rtgw33ae" path="res://Cases/Binary_Trap/Scenes/warehouse_pre.tscn" id="33_t46w6"]
+[ext_resource type="PackedScene" uid="uid://b1t841ugd4yhg" path="res://Cases/Binary_Trap/Scenes/room_lights_off.tscn" id="34_m28ev"]
+[ext_resource type="PackedScene" uid="uid://q3586nx75har" path="res://Cases/Binary_Trap/Scenes/room_lights_on.tscn" id="35_lwlx3"]
+[ext_resource type="PackedScene" uid="uid://bxkpxeer0f5qj" path="res://Cases/Binary_Trap/Scenes/minigame1.tscn" id="36_0de7l"]
+[ext_resource type="PackedScene" uid="uid://c26cvjsswppqd" path="res://Cases/Binary_Trap/Scenes/cupboard_close_up.tscn" id="37_87ddb"]
+[ext_resource type="PackedScene" uid="uid://hqfrgdphxdrl" path="res://Cases/Binary_Trap/Scenes/minigame_2.tscn" id="38_mljfx"]
+[ext_resource type="PackedScene" uid="uid://bb018sy8d7u2l" path="res://Cases/Binary_Trap/Scenes/minigame_3.tscn" id="39_qpefm"]
+[ext_resource type="PackedScene" uid="uid://q1ccreh7wbh" path="res://Cases/Binary_Trap/Scenes/minigame_4.tscn" id="40_tb2lt"]
+[ext_resource type="PackedScene" uid="uid://cp1lynaxx63sq" path="res://Cases/Binary_Trap/Scenes/minigame_5.tscn" id="41_cfc7e"]
+[ext_resource type="PackedScene" uid="uid://c3u6qnv0gbg8f" path="res://Cases/Binary_Trap/Scenes/minigame_6a.tscn" id="42_gh0px"]
+[ext_resource type="PackedScene" uid="uid://dec4b603485ch" path="res://Cases/Binary_Trap/Scenes/minigame_6b.tscn" id="43_v33yl"]
+[ext_resource type="PackedScene" uid="uid://5fy4txcsa28u" path="res://Cases/Binary_Trap/Scenes/door_close_up.tscn" id="44_2tki7"]
+[ext_resource type="PackedScene" uid="uid://brbnsck4344wg" path="res://Cases/Binary_Trap/Scenes/warehouse_post.tscn" id="45_ib7ph"]
+[ext_resource type="PackedScene" uid="uid://cp2jpkt8stu8k" path="res://Cases/Binary_Trap/Scenes/office.tscn" id="46_lwlx3"]
+[ext_resource type="PackedScene" uid="uid://bj3fuuql3owoj" path="res://Cases/Binary_Trap/Scenes/map.tscn" id="47_0de7l"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -161,7 +176,15 @@ case_location_scenes = Array[PackedScene]([ExtResource("18_xa8c5"), ExtResource(
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_082n1"), SubResource("Resource_aa0lp"), SubResource("Resource_4v2jo"), SubResource("Resource_r62pu"), SubResource("Resource_eu6ph")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="Resource" id="Resource_dhpj7"]
+script = ExtResource("2_e2o6t")
+case_slug = "binary"
+case_title = "Die Binärfalle"
+case_location_scenes = Array[PackedScene]([ExtResource("46_lwlx3"), ExtResource("33_t46w6"), ExtResource("34_m28ev"), ExtResource("35_lwlx3"), ExtResource("36_0de7l"), ExtResource("37_87ddb"), ExtResource("38_mljfx"), ExtResource("39_qpefm"), ExtResource("40_tb2lt"), ExtResource("41_cfc7e"), ExtResource("42_gh0px"), ExtResource("43_v33yl"), ExtResource("44_2tki7"), ExtResource("45_ib7ph"), ExtResource("47_0de7l")])
+events = Array[ExtResource("14_215e1")]([])
+metadata/_custom_type_script = "uid://ni774rbce31d"
+
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv"), SubResource("Resource_dhpj7")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"

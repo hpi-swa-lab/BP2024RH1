@@ -53,5 +53,6 @@ offset_top = 8.0
 offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Room LightsOff"
 
 [connection signal="toggled" from="switch" to="." method="_on_switch_toggled"]

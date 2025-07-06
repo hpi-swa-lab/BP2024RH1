@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c26cvjsswppqd"]
+[gd_scene load_steps=14 format=3 uid="uid://c26cvjsswppqd"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_cbky2"]
 [ext_resource type="Texture2D" uid="uid://bhirv71dfw8pu" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_closeUp.png" id="2_i0exb"]
@@ -8,9 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://ch5wfse2583vp" path="res://Cases/Binary_Trap/Assets/Collectible_Items/vase.png" id="5_nky2q"]
 [ext_resource type="Texture2D" uid="uid://b1b2gt6d41dbv" path="res://Cases/Binary_Trap/Assets/Interactible_Items/notches.png" id="7_8yyyl"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="8_5vlyj"]
+[ext_resource type="Texture2D" uid="uid://y4n8wv2bv3t" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/safe_closed.png" id="9_2flel"]
+[ext_resource type="Texture2D" uid="uid://dyxoorpsgit31" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/woodpiece_closed.png" id="9_moqof"]
+[ext_resource type="Texture2D" uid="uid://3ticuixw37q7" path="res://Cases/Binary_Trap/Assets/Backgrounds/safe_open.png" id="10_ifst1"]
+[ext_resource type="Texture2D" uid="uid://cj1f3wq6fyg7h" path="res://Cases/Binary_Trap/Assets/Backgrounds/woodpiece_open.png" id="11_ypw2k"]
+[ext_resource type="Texture2D" uid="uid://fm14sx53dfdv" path="res://Cases/Binary_Trap/Assets/Collectible_Items/key.png" id="13_ntkhv"]
 
 [node name="Cupboard CloseUp" type="Node"]
 script = ExtResource("1_cbky2")
+location_name = "Cupboard CloseUp"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -22,6 +28,7 @@ texture = ExtResource("2_i0exb")
 [node name="Chalkboard" parent="." instance=ExtResource("3_nky2q")]
 scale = Vector2(0.300082, 0.300082)
 texture_normal = ExtResource("4_8yyyl")
+requested_location_name = "Minigame 4"
 
 [node name="Vase" type="TextureButton" parent="."]
 offset_left = 289.0
@@ -50,3 +57,41 @@ offset_top = 8.0
 offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Room LightsOn"
+
+[node name="Safe (closed)" parent="." instance=ExtResource("3_nky2q")]
+scale = Vector2(0.300027, 0.300027)
+texture_normal = ExtResource("9_2flel")
+
+[node name="Safe (open)" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299986, 0.299986)
+texture = ExtResource("10_ifst1")
+
+[node name="Woodpiece (closed)" parent="." instance=ExtResource("3_nky2q")]
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_moqof")
+requested_location_name = "Minigame 6a"
+
+[node name="Woodpiece (open)" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300024, 0.300024)
+texture = ExtResource("11_ypw2k")
+
+[node name="Item" type="TextureButton" parent="."]
+visible = false
+offset_left = 348.0
+offset_top = 455.0
+offset_right = 648.0
+offset_bottom = 755.0
+rotation = 0.902018
+scale = Vector2(0.186912, 0.186912)
+texture_normal = ExtResource("13_ntkhv")
+script = ExtResource("5_5vlyj")
+item_name = "Key"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"

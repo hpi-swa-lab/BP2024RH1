@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://q1ccreh7wbh"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_at2jk"]
-[ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigame Parts/gap_game.tscn" id="2_0mkrf"]
+[ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigames/gap_game.tscn" id="2_0mkrf"]
 [ext_resource type="Texture2D" uid="uid://cg6umxqo34mep" path="res://Cases/Binary_Trap/Assets/Minigame4/minigame4_closeUp.png" id="2_asgrs"]
 [ext_resource type="Script" uid="uid://c07pihq51n61q" path="res://Cases/Binary_Trap/Scripts/minigame4.gd" id="2_ht2uf"]
 [ext_resource type="FontFile" uid="uid://7j4njv1wjhhj" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="3_5xu1i"]
@@ -118,5 +118,6 @@ offset_top = 8.0
 offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Cupboard CloseUp"
 
 [connection signal="updated" from="Minigame/Gap Game" to="Minigame" method="_on_gap_game_updated"]

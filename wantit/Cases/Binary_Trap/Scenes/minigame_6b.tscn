@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_qc7ds"]
 [ext_resource type="Texture2D" uid="uid://bku1dkivylyrl" path="res://Cases/Binary_Trap/Assets/Minigame5_6/minigame6b_closeUp.png" id="2_a1bsg"]
 [ext_resource type="Script" uid="uid://223bfndy8p11" path="res://Cases/Binary_Trap/Scripts/minigame6b.gd" id="2_qc7ds"]
-[ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigame Parts/lock.tscn" id="3_qr25s"]
+[ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigames/lock.tscn" id="3_qr25s"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_qr25s"]
 
 [node name="Minigame 6b" type="Node"]
@@ -41,5 +41,6 @@ offset_right = 502.0
 offset_bottom = 1050.0
 rotation = -0.482242
 scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Cupboard CloseUp"
 
 [connection signal="succeeded" from="Minigame/Lock" to="Minigame" method="_on_lock_succeeded"]

@@ -19,3 +19,4 @@ texture = ExtResource("2_ei05e")
 [node name="Door" parent="." instance=ExtResource("3_hka6i")]
 scale = Vector2(0.300174, 0.300174)
 texture_normal = ExtResource("4_v7kog")
+requested_location_name = "Room LightsOff"

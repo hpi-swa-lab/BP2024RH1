@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7wr0rcfdl07s" path="res://Cases/Binary_Trap/Assets/Minigame3/minigame3_closeUp.png" id="2_apiyb"]
 [ext_resource type="Script" uid="uid://dc7bogap67ovg" path="res://Cases/Binary_Trap/Scripts/minigame3.gd" id="2_dwhro"]
 [ext_resource type="FontFile" uid="uid://crpwo0n6tuq0a" path="res://Assets/Fonts/ReenieBeanie-Regular.ttf" id="3_apiyb"]
-[ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigame Parts/gap_game.tscn" id="3_rd8j1"]
+[ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigames/gap_game.tscn" id="3_rd8j1"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="6_nkxmu"]
 
 [node name="Minigame 3" type="Node"]
@@ -69,5 +69,6 @@ offset_top = 8.0
 offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Room LightsOn"
 
 [connection signal="updated" from="Minigame/Gap Game" to="Minigame" method="_on_gap_game_updated"]

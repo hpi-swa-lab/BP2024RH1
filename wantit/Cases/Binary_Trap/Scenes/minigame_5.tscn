@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp1lynaxx63sq"]
+[gd_scene load_steps=5 format=3 uid="uid://cp1lynaxx63sq"]
 
-[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_u6oeb"]
-[ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigame Parts/lock.tscn" id="2_5gn70"]
+[ext_resource type="Script" uid="uid://xncovxk1ul3s" path="res://Cases/Binary_Trap/Scripts/minigame5_6a.gd" id="1_ply4s"]
+[ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigames/lock.tscn" id="2_5gn70"]
 [ext_resource type="Texture2D" uid="uid://bwf11f4reuf1v" path="res://Cases/Binary_Trap/Assets/Minigame5_6/minigame5_closeUp.png" id="2_gj382"]
-[ext_resource type="Script" uid="uid://goewncgvvsra" path="res://Cases/Binary_Trap/Scripts/minigame56a.gd" id="2_ply4s"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_gj382"]
 
 [node name="Minigame 5" type="Node"]
-script = ExtResource("1_u6oeb")
+script = ExtResource("1_ply4s")
+item_name = "Minigame5 competed"
 location_name = "Minigame 5"
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
@@ -18,20 +18,13 @@ offset_bottom = 40.0
 scale = Vector2(0.300146, 0.300146)
 texture = ExtResource("2_gj382")
 
-[node name="Minigame" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 569.0
+[node name="Lock" parent="." instance=ExtResource("2_5gn70")]
+offset_left = 570.0
 offset_top = 344.0
-offset_right = 609.0
-offset_bottom = 384.0
-rotation = -0.21115
-scale = Vector2(0.531518, 0.531518)
-script = ExtResource("2_ply4s")
-item_name = "Minigame5 completed"
-
-[node name="Lock" parent="Minigame" instance=ExtResource("2_5gn70")]
-layout_mode = 1
+offset_right = 570.0
+offset_bottom = 344.0
+rotation = -0.210996
+scale = Vector2(0.523632, 0.523632)
 slot_count = 2
 value_type = 1
 correct_code = "15"
@@ -42,3 +35,4 @@ offset_top = 8.0
 offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Room LightsOn"

@@ -31,6 +31,7 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 [node name="Glowing Display" parent="." instance=ExtResource("5_0nemb")]
 scale = Vector2(0.299826, 0.299826)
 texture_normal = ExtResource("6_67b5c")
+requested_location_name = "Minigame 1"
 
 [node name="Postcard" type="TextureRect" parent="."]
 offset_left = 581.0
