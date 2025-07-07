@@ -9,6 +9,7 @@
 script = ExtResource("1_fhpi3")
 item_name = "Minigame6a completed"
 location_name = "Minigame 6a"
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

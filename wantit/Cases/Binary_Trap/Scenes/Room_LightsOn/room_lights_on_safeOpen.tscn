@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm02bqect42ay"]
+[gd_scene load_steps=13 format=3 uid="uid://dm02bqect42ay"]
 
 [ext_resource type="Script" uid="uid://denw33pxanib" path="res://Cases/Binary_Trap/Scripts/room_lights_on.gd" id="1_x0vuf"]
 [ext_resource type="Texture2D" uid="uid://l8nffo6bpqp7" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_gclfu"]
@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://dox456jvnvw1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/drawer_open.png" id="9_b1nuy"]
 [ext_resource type="Texture2D" uid="uid://cgr8dc0ydms0n" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/cupboard_safe_open_key.png" id="10_avrm3"]
 [ext_resource type="Texture2D" uid="uid://d4hoyqpeikh8c" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_doors_open.png" id="11_rjort"]
-[ext_resource type="Script" uid="uid://bmk42x4jl3bmy" path="res://Cases/Binary_Trap/Scripts/cupboard_doors_(open).gd" id="12_7ndoo"]
 [ext_resource type="Texture2D" uid="uid://li4a345ophi1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/documents.png" id="13_336p8"]
 
 [node name="Room LightsOn" type="Node"]
 script = ExtResource("1_x0vuf")
 location_name = "Room LightsOn SafeOpen"
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -24,11 +24,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.299933, 0.299933)
 texture = ExtResource("2_gclfu")
-
-[node name="Door" parent="." instance=ExtResource("3_22xq8")]
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("4_iv7ld")
-requested_location_name = "Door CloseUp"
 
 [node name="Postcard" type="TextureButton" parent="."]
 offset_left = 581.0
@@ -54,6 +49,7 @@ unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.300015, 0.300015)
+mouse_filter = 2
 texture = ExtResource("7_yefpb")
 
 [node name="Drawer halfopen" type="TextureButton" parent="."]
@@ -82,14 +78,13 @@ scale = Vector2(0.300001, 0.300001)
 texture_normal = ExtResource("10_avrm3")
 requested_location_name = "Cupboard CloseUp SafeOpen"
 
-[node name="Cupboard Doors (open)" type="TextureButton" parent="."]
+[node name="Cupboard Doors (open)" type="TextureRect" parent="."]
 unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.299993, 0.299993)
-disabled = true
-texture_normal = ExtResource("11_rjort")
-script = ExtResource("12_7ndoo")
+mouse_filter = 2
+texture = ExtResource("11_rjort")
 
 [node name="Documents" parent="." instance=ExtResource("3_22xq8")]
 offset_right = 3840.0
@@ -97,5 +92,12 @@ offset_bottom = 2160.0
 scale = Vector2(0.299949, 0.299949)
 texture_normal = ExtResource("13_336p8")
 requested_location_name = "Minigame 3"
+
+[node name="Door" parent="." instance=ExtResource("3_22xq8")]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_iv7ld")
+requested_location_name = "Door CloseUp"
 
 [connection signal="pressed" from="Drawer halfopen" to="." method="_on_drawer_halfopen_pressed"]

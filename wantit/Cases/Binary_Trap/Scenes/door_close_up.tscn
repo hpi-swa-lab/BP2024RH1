@@ -9,6 +9,7 @@
 [node name="Door CloseUp" type="Node"]
 script = ExtResource("1_ljr67")
 location_name = "Door CloseUp"
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -32,3 +33,4 @@ offset_top = 8.0
 offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Room LightsOn SafeOpen"

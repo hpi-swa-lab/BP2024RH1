@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://wfqpu727a88p"]
+[gd_scene load_steps=13 format=3 uid="uid://wfqpu727a88p"]
 
 [ext_resource type="Script" uid="uid://denw33pxanib" path="res://Cases/Binary_Trap/Scripts/room_lights_on.gd" id="1_k5n4y"]
 [ext_resource type="Texture2D" uid="uid://l8nffo6bpqp7" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_t3ojv"]
@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://dox456jvnvw1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/drawer_open.png" id="9_f5qbi"]
 [ext_resource type="Texture2D" uid="uid://cnv3pbfwfmvfl" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/cupboard_safe_closed.png" id="10_iolt8"]
 [ext_resource type="Texture2D" uid="uid://d4hoyqpeikh8c" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_doors_open.png" id="11_w45gr"]
-[ext_resource type="Script" uid="uid://bmk42x4jl3bmy" path="res://Cases/Binary_Trap/Scripts/cupboard_doors_(open).gd" id="12_8cmw7"]
 [ext_resource type="Texture2D" uid="uid://li4a345ophi1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/documents.png" id="13_1nx52"]
 
 [node name="Room LightsOn" type="Node"]
 script = ExtResource("1_k5n4y")
 location_name = "Room LightsOn WoodpieceOpen"
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -59,6 +59,7 @@ unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.300015, 0.300015)
+mouse_filter = 2
 texture = ExtResource("7_8s65j")
 
 [node name="Drawer halfopen" type="TextureButton" parent="."]
@@ -87,14 +88,13 @@ scale = Vector2(0.300001, 0.300001)
 texture_normal = ExtResource("10_iolt8")
 requested_location_name = "Cupboard CloseUp SafeClosed"
 
-[node name="Cupboard Doors (open)" type="TextureButton" parent="."]
+[node name="Cupboard Doors (open)" type="TextureRect" parent="."]
 unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.299993, 0.299993)
-disabled = true
-texture_normal = ExtResource("11_w45gr")
-script = ExtResource("12_8cmw7")
+mouse_filter = 2
+texture = ExtResource("11_w45gr")
 
 [node name="Documents" parent="." instance=ExtResource("3_7yr47")]
 offset_right = 3840.0

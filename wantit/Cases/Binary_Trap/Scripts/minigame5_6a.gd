@@ -8,6 +8,7 @@ func _ready() -> void:
 	lock.set_font_color(Color.BLACK)
 
 func _on_lock_succeeded() -> void:
+	await get_tree().create_timer(0.5).timeout
 	var interaction_item = Item.new()
 	interaction_item.item_name = item_name
 	interaction_item.is_collectable = false

@@ -15,6 +15,7 @@
 [node name="Room LightsOn" type="Node"]
 script = ExtResource("1_6bcer")
 location_name = "Room LightsOn"
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -57,6 +58,7 @@ unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.300015, 0.300015)
+mouse_filter = 2
 texture = ExtResource("11_1tb6d")
 
 [node name="Drawer halfopen" type="TextureButton" parent="."]
