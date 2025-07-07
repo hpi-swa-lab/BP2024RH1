@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://bnkm50q3eocad"
 [sub_resource type="Resource" id="Resource_v4w51"]
 script = ExtResource("4_kx0r7")
 dialogue_resource = ExtResource("2_pcmbh")
-is_dialogue = false
+is_dialogue = true
 dialogue_triggers = Array[ExtResource("3_kdt1h")]([SubResource("Resource_ge3so")])
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"

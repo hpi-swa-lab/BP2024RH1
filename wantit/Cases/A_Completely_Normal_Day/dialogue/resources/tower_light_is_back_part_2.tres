@@ -13,7 +13,7 @@ metadata/_custom_type_script = "uid://bnkm50q3eocad"
 [resource]
 script = ExtResource("3_yvs3v")
 dialogue_resource = ExtResource("1_qndup")
-is_dialogue = false
+is_dialogue = true
 dialogue_triggers = Array[ExtResource("2_0nruv")]([SubResource("Resource_gjqpm")])
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"

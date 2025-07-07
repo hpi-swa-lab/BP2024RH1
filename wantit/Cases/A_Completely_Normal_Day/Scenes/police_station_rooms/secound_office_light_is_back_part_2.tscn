@@ -46,7 +46,6 @@ script = ExtResource("1_r4tt7")
 location_name = "secound_office_light_is_back_part_2"
 items = [NodePath("computer_1"), NodePath("computer_2"), NodePath("computer_3"), NodePath("computer_4"), NodePath("computer_5"), NodePath("tower_1"), NodePath("tower_2"), NodePath("tower_3"), NodePath("router")]
 hints = Array[ExtResource("2_u11tp")]([ExtResource("3_0abrf"), ExtResource("4_wd0o7")])
-has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
