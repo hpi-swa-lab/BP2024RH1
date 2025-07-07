@@ -194,7 +194,7 @@ location_name = "Office"
 start_condition = SubResource("Resource_m28ev")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
-[sub_resource type="Resource" id="Resource_edr7y"]
+[sub_resource type="Resource" id="Resource_edr8y"]
 script = ExtResource("2_e2o6t")
 case_slug = "Pixel"
 case_title = "Das verschwundene Gemälde"
@@ -204,5 +204,5 @@ metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv"), null, SubResource("Resource_edr7y")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv"), null, SubResource("Resource_edr8y")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"
