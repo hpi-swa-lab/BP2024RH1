@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=73 format=3 uid="uid://dyj7yo7t4iqhf"]
+
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -42,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://w3jwwhr2jth1" path="res://Cases/Code_From_The_Ashes/Scenes/minigame1.tscn" id="41_klri6"]
 [ext_resource type="PackedScene" uid="uid://dxfl6mwk6eufh" path="res://Cases/Code_From_The_Ashes/Scenes/tutorial2.tscn" id="42_eu6ph"]
 [ext_resource type="PackedScene" uid="uid://b8bpblw4o4xej" path="res://Cases/Code_From_The_Ashes/Scenes/minigame_2.tscn" id="43_edr7y"]
+
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
