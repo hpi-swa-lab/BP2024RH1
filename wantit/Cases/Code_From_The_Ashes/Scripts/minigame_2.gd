@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 
 var original_text = "BEI SR ZU -I"
 var solution_text = "GIB ES ZU -B"
