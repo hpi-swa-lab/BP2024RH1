@@ -4,7 +4,6 @@
 
 [node name="Start" type="CheckButton"]
 text = "Quelle Aus"
-flat = true
 script = ExtResource("1_sl5sk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -16,6 +15,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.36, 0.20934, 0.0684, 0.435294)
+color = Color(0.0235294, 0.00784314, 0, 1)
 
 [connection signal="toggled" from="." to="." method="_on_toggled"]

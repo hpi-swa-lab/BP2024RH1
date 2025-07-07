@@ -1,11 +1,10 @@
-extends Control
+extends Location
 
 var ziel_input: bool  = false
 var current_active_starts: int = 0
 
 
-@onready var level_2: Control = $Level2
-	#DialogueManager.show_dialogue_balloon(load("res://dialogue/logik_gatter.dialogue"), "act2PuzzleInfo1"
+#DialogueManager.show_dialogue_balloon(load("res://dialogue/logik_gatter.dialogue"), "act2PuzzleInfo1"
 
 
 func _ready() -> void:
@@ -48,16 +47,14 @@ func update_current_active_starts(toggled_on: bool) -> void:
 	
 
 func _on_check_pressed() -> void:
-	if level_2.current_active_starts <= 3:
-		print(level_2.current_active_starts)
+	if current_active_starts <= 3:
+		print(current_active_starts)
 		if ziel_input:
 			print("wlan funktioniert") 
 			#GlobalTimer.end_timer("Logik Gatter Mini Games")
-			get_tree().change_scene_to_file("res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_end.tscn")
-			# Hier muss noch der Dialog eingefügt werden.
-			#DialogueManager.show_dialogue_balloon(load("res://dialogue/logik_gatter.dialogue"), "act2PuzzleFinished")
-
-		#übergang zu akt 2 plus dialog start das es geschafft wurde
+			var interaction_item_log_minigame_2_complete = Item.new()
+			interaction_item_log_minigame_2_complete.item_name = "log_minigame_2_complete"
+			item_found.emit(interaction_item_log_minigame_2_complete)
 	else:
 		pass
 		# Hier muss noch Dialog hinzugefügt werden

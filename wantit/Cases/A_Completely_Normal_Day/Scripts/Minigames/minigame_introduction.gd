@@ -1,4 +1,4 @@
-extends Node
+extends Location
 
 var ziel_input: bool = false
 
@@ -93,5 +93,8 @@ func _on_logik_gatter_level_introduction_ziel_input_true() -> void:
 	ziel_input = true
 
 func _on_start_minigame_1_pressed() -> void:
-	GlobalTimer.end_timer("Logik Gatter Mini Games")
-	get_tree().change_scene_to_file("res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_1.tscn")
+	#GlobalTimer.end_timer("Logik Gatter Mini Games")
+	var interaction_item_log_tutorial_complete = Item.new()
+	interaction_item_log_tutorial_complete.item_name = "log_tutorial_complete"
+	item_found.emit(interaction_item_log_tutorial_complete)
+	print("log_tutorial_complete_akwjgerfesuhkjfh")

@@ -1,4 +1,4 @@
-extends Control
+extends Location
 
 var ziel_input: bool = false
 
@@ -15,6 +15,7 @@ func _ready() -> void:
 func _on_check_pressed() -> void:
 	if ziel_input == true:
 		#GlobalTimer.end_timer("Logik Gatter Mini Games")
-		get_tree().change_scene_to_file("res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/technic_room_light_is_back.tscn")
-
-	
+		var interaction_item_log_minigame_1_complete = Item.new()
+		interaction_item_log_minigame_1_complete.item_name = "log_minigame_1_complete"
+		item_found.emit(interaction_item_log_minigame_1_complete)
+		print("log_minigame_1_complete_akwjgerfesuhkjfh")

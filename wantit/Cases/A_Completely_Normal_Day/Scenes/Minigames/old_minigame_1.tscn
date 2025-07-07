@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://creatjejquykv"]
 
-[ext_resource type="Script" uid="uid://coscvc1h5bxok" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/minigame_1.gd" id="1_3iif4"]
-[ext_resource type="PackedScene" uid="uid://bjqw4udnawvm8" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/Level_1.tscn" id="1_fqtu4"]
+[ext_resource type="Script" uid="uid://coscvc1h5bxok" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/old_minigame_1.gd" id="1_3iif4"]
+[ext_resource type="PackedScene" uid="uid://bjqw4udnawvm8" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_1.tscn" id="1_fqtu4"]
 
 [node name="Minigame1" type="Control"]
 layout_mode = 3
