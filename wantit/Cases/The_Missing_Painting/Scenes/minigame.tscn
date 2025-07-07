@@ -1,16 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7hhus8oa5gnt"]
+[gd_scene load_steps=13 format=3 uid="uid://b7hhus8oa5gnt"]
 
 [ext_resource type="Script" uid="uid://cuut68600lh08" path="res://Cases/The_Missing_Painting/Scripts/minigame.gd" id="1_vxk47"]
 [ext_resource type="Texture2D" uid="uid://jh714mdkpuvl" path="res://Cases/The_Missing_Painting/Assets/Minigame/setup.png" id="2_ip1kq"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_mfb4k"]
 [ext_resource type="Texture2D" uid="uid://cdk4uvnmivlai" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/background_qrcode_piece.png" id="3_vxk47"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_yb0so"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_4mfwh"]
 [ext_resource type="Texture2D" uid="uid://b21m2ftfr64k8" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/qr_code_with_cut.png" id="5_4mfwh"]
 [ext_resource type="Texture2D" uid="uid://cuknu6jm2imq6" path="res://Cases/The_Missing_Painting/Assets/Minigame/website_galery.png" id="6_2fkol"]
+
+[sub_resource type="Resource" id="Resource_qv3qu"]
+script = ExtResource("3_yb0so")
+mode = 0
+required_items = Array[String](["got_items"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_yb0so"]
+script = ExtResource("2_mfb4k")
+hint_text = "0 bedeutet aus, also erscehint das Pixel schwarz. \\n 1 bedeutet an, also erscheint das Pixel weiß. "
+hint_condition = SubResource("Resource_qv3qu")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_xx2t6"]
+script = ExtResource("3_yb0so")
+mode = 2
+required_items = Array[String](["got_items"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_dcyaa"]
+script = ExtResource("2_mfb4k")
+hint_text = "Die gesammelten Hinweise liegen noch im Inventar. "
+hint_condition = SubResource("Resource_xx2t6")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [node name="Minigame" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_vxk47")
 location_name = "Minigame"
 items = [NodePath("GamePaper")]
+hints = Array[ExtResource("2_mfb4k")]([SubResource("Resource_yb0so"), SubResource("Resource_dcyaa")])
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 

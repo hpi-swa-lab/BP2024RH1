@@ -26,6 +26,9 @@ func _on_button_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		correct_solution = true
 		if %Button.text == "Pixeleditor öffnen":
+			var item = Item.new()
+			item.item_name = "got_items"
+			item_found.emit(item)
 			%GameArt.visible = false
 			%RightGrid.columns = columns
 			%LeftGrid.columns = columns

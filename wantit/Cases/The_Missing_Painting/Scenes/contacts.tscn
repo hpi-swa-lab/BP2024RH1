@@ -1,8 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcqn6wdr4ydt2"]
+[gd_scene load_steps=25 format=3 uid="uid://bcqn6wdr4ydt2"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_jdea1"]
 [ext_resource type="Texture2D" uid="uid://cvs6wy7668yhx" path="res://Cases/The_Missing_Painting/Assets/Backgrounds/contacts_closeUp.png" id="2_jvnlj"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_k6ofx"]
 [ext_resource type="Texture2D" uid="uid://bs54xyi13g46y" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/contact_electronics.png" id="3_bue6e"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_iuhtk"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_mo3rg"]
 [ext_resource type="Texture2D" uid="uid://de5860nfjgs0c" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/contact_floristics.png" id="5_1vff7"]
 [ext_resource type="Resource" uid="uid://cqjrnspxfss4n" path="res://Cases/The_Missing_Painting/Dialogue/electric.dialogue" id="5_qatv3"]
@@ -14,6 +16,18 @@
 [ext_resource type="Script" uid="uid://di3q3kumh7308" path="res://Cases/The_Missing_Painting/Scripts/art_drag.gd" id="11_somj2"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="12_s34no"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="13_somj2"]
+
+[sub_resource type="Resource" id="Resource_tg43u"]
+script = ExtResource("3_iuhtk")
+mode = 2
+required_items = Array[String](["Art"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_bnfrt"]
+script = ExtResource("2_k6ofx")
+hint_text = "Eine der Visitenkarten sieht komisch aus."
+hint_condition = SubResource("Resource_tg43u")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_somj2"]
 script = ExtResource("6_fvboi")
@@ -61,6 +75,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_jdea1")
 location_name = "Contacts"
 items = [NodePath("Electric"), NodePath("Florist"), NodePath("Art")]
+hints = Array[ExtResource("2_k6ofx")]([SubResource("Resource_bnfrt")])
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 

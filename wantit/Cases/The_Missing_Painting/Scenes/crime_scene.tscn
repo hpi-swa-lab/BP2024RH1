@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://t54jjw3ubnea"]
+[gd_scene load_steps=24 format=3 uid="uid://t54jjw3ubnea"]
 
 [ext_resource type="Script" uid="uid://c3a8oyl3ss72p" path="res://Cases/The_Missing_Painting/Scripts/crime_scene.gd" id="1_khtxx"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_ril5w"]
 [ext_resource type="Texture2D" uid="uid://1c8me7c8bu1a" path="res://Cases/The_Missing_Painting/Assets/Backgrounds/living_room.png" id="2_wiovm"]
 [ext_resource type="Texture2D" uid="uid://c154i62cqxa1s" path="res://Cases/The_Missing_Painting/Assets/Scene_Switcher/shelf.png" id="3_emee1"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_kq5fo"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_3hqj3"]
 [ext_resource type="Texture2D" uid="uid://drk3ejqnnjbgs" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/missing_picture.png" id="6_khtxx"]
 [ext_resource type="Resource" uid="uid://yuxxjux0857y" path="res://Cases/The_Missing_Painting/Dialogue/paper.dialogue" id="7_khtxx"]
@@ -13,6 +15,30 @@
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="9_khtxx"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="10_mxtko"]
 [ext_resource type="Resource" uid="uid://bavjt3mfrjqep" path="res://Cases/The_Missing_Painting/Dialogue/picture.dialogue" id="11_khtxx"]
+
+[sub_resource type="Resource" id="Resource_q8re4"]
+script = ExtResource("3_kq5fo")
+mode = 2
+required_items = Array[String](["Art"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_w6bro"]
+script = ExtResource("2_ril5w")
+hint_text = "Klaas meinte, dass nur seine Kontakte von dem wertvollen Gemälde wussten."
+hint_condition = SubResource("Resource_q8re4")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_vkuyi"]
+script = ExtResource("3_kq5fo")
+mode = 0
+required_items = Array[String](["Art"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_a547l"]
+script = ExtResource("2_ril5w")
+hint_text = "Vielleicht liegt der fehlende Schnipsel von der Visitenkarte hier noch irgendwo."
+hint_condition = SubResource("Resource_vkuyi")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_khtxx"]
 script = ExtResource("9_khtxx")
@@ -46,6 +72,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_khtxx")
 location_name = "CrimeScene"
 items = [NodePath("Picture"), NodePath("Paper")]
+hints = Array[ExtResource("2_ril5w")]([SubResource("Resource_w6bro"), SubResource("Resource_a547l")])
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
