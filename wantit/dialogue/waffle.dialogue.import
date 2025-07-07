@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cd6d0naefqhjx"
+path="res://.godot/imported/waffle.dialogue-7357fde04a19004b75032363b331492c.tres"
+
+[deps]
+
+source_file="res://dialogue/waffle.dialogue"
+dest_files=["res://.godot/imported/waffle.dialogue-7357fde04a19004b75032363b331492c.tres"]
+
+[params]
+
+defaults=true

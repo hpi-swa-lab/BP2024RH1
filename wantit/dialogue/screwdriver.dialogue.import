@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://4m5x25k6hyo0"
+path="res://.godot/imported/screwdriver.dialogue-475988e8ae4ef5e8cd4908692d753d19.tres"
+
+[deps]
+
+source_file="res://dialogue/screwdriver.dialogue"
+dest_files=["res://.godot/imported/screwdriver.dialogue-475988e8ae4ef5e8cd4908692d753d19.tres"]
+
+[params]
+
+defaults=true

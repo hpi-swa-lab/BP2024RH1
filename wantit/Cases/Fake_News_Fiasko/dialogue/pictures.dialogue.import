@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://hn51hp2r6e4v"
+path="res://.godot/imported/pictures.dialogue-0cf64a58edaf106a70c0a0743f1c6da6.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/pictures.dialogue"
+dest_files=["res://.godot/imported/pictures.dialogue-0cf64a58edaf106a70c0a0743f1c6da6.tres"]
+
+[params]
+
+defaults=true

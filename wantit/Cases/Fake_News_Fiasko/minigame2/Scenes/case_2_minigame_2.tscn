@@ -1,0 +1,303 @@
+[gd_scene load_steps=19 format=3 uid="uid://de08xwxsx122u"]
+
+[ext_resource type="Script" uid="uid://egb6p06xlqm8" path="res://Cases/Fake_News_Fiasko/minigame2/Scripts/case_2_minigame_2.gd" id="1_k8new"]
+[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="2_1ij1e"]
+[ext_resource type="Texture2D" uid="uid://b5rpc8qen503n" path="res://Assets/office/clue_board_max.png" id="2_84nej"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_tuieo"]
+[ext_resource type="Resource" uid="uid://lxco063wq1a2" path="res://Cases/Fake_News_Fiasko/dialogue/minigame2.dialogue" id="3_3mcq3"]
+[ext_resource type="PackedScene" uid="uid://t5u3fgl8w0o4" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/evidence.tscn" id="3_84nej"]
+[ext_resource type="Texture2D" uid="uid://dbtkdr6hbhuqj" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/theft_report.png" id="4_qluxu"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_tuieo"]
+[ext_resource type="Texture2D" uid="uid://cr0k0a80xqcoo" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/securityFootage_breakIn.png" id="5_wd6p0"]
+[ext_resource type="Texture2D" uid="uid://clb0vduncwkpr" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/menus.png" id="6_wd6p0"]
+[ext_resource type="Texture2D" uid="uid://dp0x3plck30hd" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/tomatos_footage.png" id="7_a5yil"]
+[ext_resource type="Texture2D" uid="uid://cmrfxgfrjufyv" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/plate_footage.png" id="8_1ij1e"]
+[ext_resource type="Texture2D" uid="uid://e5k332u53tfr" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/bill_cutout.png" id="9_3mcq3"]
+[ext_resource type="PackedScene" uid="uid://b1ceb32i5th4a" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/statement_game2.tscn" id="10_wd6p0"]
+[ext_resource type="Texture2D" uid="uid://c08h44cgeoror" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="14_3mcq3"]
+
+[sub_resource type="Resource" id="Resource_prt7d"]
+script = ExtResource("2_tuieo")
+hint_text = "Untersuche, ob Honwigwalds Aussagen wahr sind, verallgemeinern, übertreiben oder zu falschen Schlussfolgerungen führen. Die Hinweise rechts unterstützen dich dabei."
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_1ij1e"]
+script = ExtResource("2_1ij1e")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_3mcq3"]
+script = ExtResource("4_tuieo")
+dialogue_resource = ExtResource("3_3mcq3")
+is_dialogue = true
+dialogue_triggers = Array[ExtResource("2_1ij1e")]([SubResource("Resource_1ij1e")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Case2_minigame2" type="Node"]
+script = ExtResource("1_k8new")
+location_name = "Minigame2"
+hints = Array[ExtResource("2_tuieo")]([SubResource("Resource_prt7d")])
+location_dialogue = SubResource("Resource_3mcq3")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_84nej")
+expand_mode = 1
+
+[node name="Evidence" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Evidence" parent="Evidence" instance=ExtResource("3_84nej")]
+offset_left = 588.0
+offset_top = 49.0
+offset_right = 838.0
+offset_bottom = 224.0
+Texture1 = ExtResource("4_qluxu")
+Texture2 = ExtResource("5_wd6p0")
+
+[node name="Evidence2" parent="Evidence" instance=ExtResource("3_84nej")]
+offset_left = 847.0
+offset_top = 181.0
+offset_right = 1097.0
+offset_bottom = 356.0
+Texture1 = ExtResource("6_wd6p0")
+
+[node name="Evidence3" parent="Evidence" instance=ExtResource("3_84nej")]
+offset_left = 824.0
+offset_top = 394.0
+offset_right = 1074.0
+offset_bottom = 569.0
+Texture1 = ExtResource("7_a5yil")
+
+[node name="Evidence4" parent="Evidence" instance=ExtResource("3_84nej")]
+offset_left = 515.0
+offset_top = 250.0
+offset_right = 765.0
+offset_bottom = 425.0
+Texture1 = ExtResource("8_1ij1e")
+
+[node name="Evidence5" parent="Evidence" instance=ExtResource("3_84nej")]
+offset_left = 525.0
+offset_top = 422.0
+offset_right = 775.0
+offset_bottom = 597.0
+Texture1 = ExtResource("9_3mcq3")
+
+[node name="Statements" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 75.0
+offset_top = 75.0
+offset_right = 475.0
+offset_bottom = 515.0
+
+[node name="Statement" parent="Statements" instance=ExtResource("10_wd6p0")]
+layout_mode = 2
+statement_text = "Das Geschirr ist immer dreckig"
+category = 2
+
+[node name="Statement2" parent="Statements" instance=ExtResource("10_wd6p0")]
+layout_mode = 2
+statement_text = "Das Essen ist doppelt so teuer wie bei der Konkurrenz und schmeckt nicht einmal"
+category = 3
+
+[node name="Statement3" parent="Statements" instance=ExtResource("10_wd6p0")]
+layout_mode = 2
+statement_text = "Mein Auto wurde geklaut, der Dieb muss der Einbrecher gewesen sein."
+category = 1
+
+[node name="Statement4" parent="Statements" instance=ExtResource("10_wd6p0")]
+layout_mode = 2
+statement_text = "Ich habe die Ware nur beschlagnahmt, da alle Tomaten verschimmelt waren."
+category = 2
+
+[node name="Statement5" parent="Statements" instance=ExtResource("10_wd6p0")]
+layout_mode = 2
+statement_text = "Die Speisekarte von Bitza enthält aktuell keine Allergenkennzeichnung."
+category = 0
+
+[node name="Statement6" parent="Statements" instance=ExtResource("10_wd6p0")]
+layout_mode = 2
+statement_text = "Es kam in der Vergangenheit zu einer Auseinandersetzung mit einem Lieferanten wegen einer verspäteten Zahlung."
+category = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+offset_left = 75.0
+offset_top = 520.0
+offset_right = 475.0
+offset_bottom = 586.0
+
+[node name="True" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Wahr"
+
+[node name="Wrong_conclusion" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+text = "Falsche Schlussvolgerung"
+autowrap_mode = 2
+
+[node name="Generalization" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Verallgemeinerung"
+autowrap_mode = 3
+
+[node name="Exageration" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 13
+text = "Übertreibung"
+
+[node name="Pins" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Pin1" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1002.0
+offset_top = 186.0
+offset_right = 1022.0
+offset_bottom = 206.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin2" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 912.0
+offset_top = 408.0
+offset_right = 932.0
+offset_bottom = 428.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin3" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 896.0
+offset_top = 185.0
+offset_right = 916.0
+offset_bottom = 205.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin4" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 617.0
+offset_top = 445.0
+offset_right = 637.0
+offset_bottom = 465.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin5" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 613.0
+offset_top = 260.0
+offset_right = 633.0
+offset_bottom = 280.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin6" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 751.0
+offset_top = 98.0
+offset_right = 771.0
+offset_bottom = 118.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin7" type="TextureRect" parent="Pins"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 628.0
+offset_top = 73.0
+offset_right = 648.0
+offset_bottom = 93.0
+grow_horizontal = 2
+texture = ExtResource("14_3mcq3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 1052.0
+offset_bottom = 548.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer2/True" to="." method="_on_true_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Wrong_conclusion" to="." method="_on_wrong_conclusion_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Generalization" to="." method="_on_generalization_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Exageration" to="." method="_on_exageration_pressed"]
+[connection signal="gui_input" from="HBoxContainer" to="." method="_on_h_box_container_gui_input"]

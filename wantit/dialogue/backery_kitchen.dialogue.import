@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://5h6ml2l8cdb1"
+path="res://.godot/imported/backery_kitchen.dialogue-70dcad3917dbace37f86378409e55970.tres"
+
+[deps]
+
+source_file="res://dialogue/backery_kitchen.dialogue"
+dest_files=["res://.godot/imported/backery_kitchen.dialogue-70dcad3917dbace37f86378409e55970.tres"]
+
+[params]
+
+defaults=true

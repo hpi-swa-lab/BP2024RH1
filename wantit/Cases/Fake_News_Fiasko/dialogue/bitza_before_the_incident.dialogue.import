@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bcscqbuobpwxi"
+path="res://.godot/imported/bitza_before_the_incident.dialogue-95c990732599508ff4c4a237ae508b2f.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/bitza_before_the_incident.dialogue"
+dest_files=["res://.godot/imported/bitza_before_the_incident.dialogue-95c990732599508ff4c4a237ae508b2f.tres"]
+
+[params]
+
+defaults=true

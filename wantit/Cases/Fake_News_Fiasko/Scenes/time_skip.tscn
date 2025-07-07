@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://caun4d48wfmce"]
+
+[ext_resource type="Script" uid="uid://ctgd25ga5g4mv" path="res://Cases/Fake_News_Fiasko/Scripts/time_skip.gd" id="1_hs1av"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8131, 16.2393)
+color = Color(0.729412, 0.780392, 0.647059, 1)
+script = ExtResource("1_hs1av")
+location_name = "Time Skip"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.05417
+offset_top = 14.3479
+offset_right = 695.054
+offset_bottom = 110.348
+scale = Vector2(0.05, 0.107)
+theme_override_font_sizes/font_size = 70
+text = "Eine Stunde später..."

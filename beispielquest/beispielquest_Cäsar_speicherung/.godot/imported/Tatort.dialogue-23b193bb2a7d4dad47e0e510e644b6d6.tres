@@ -1,0 +1,441 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_ljeog"]
+
+[resource]
+script = ExtResource("1_ljeog")
+using_states = PackedStringArray()
+titles = {
+"Bild": "19",
+"Buch": "30",
+"Businesskarte": "23",
+"Caesar": "15",
+"Zeitung": "34",
+"fertig": "38",
+"start": "1",
+"zurueck": "7"
+}
+character_names = PackedStringArray("Detective Turing")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Detective Turing",
+&"id": "1",
+&"next_id": "2",
+&"text": "Ugh, das riecht ja schrecklich, ich hatte gehofft der Geruch wäre schon verzogen.",
+&"type": "dialogue"
+},
+"10": {
+&"id": "10",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"i": 11,
+&"type": &"variable",
+&"value": "office_szene"
+}, {
+&"i": 24,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 26,
+&"type": &"number",
+&"value": 1
+}]),
+&"is_blocking": true
+},
+&"next_id": "11",
+&"type": "mutation"
+},
+"11": {
+&"id": "11",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"function": "go_back",
+&"i": 3,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 11,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "12",
+&"type": "mutation"
+},
+"12": {
+&"id": "12",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"13": {
+&"id": "13",
+&"next_id": "14",
+&"type": ""
+},
+"14": {
+&"id": "14",
+&"next_id": "15",
+&"type": "title"
+},
+"15": {
+&"character": "Detective Turing",
+&"id": "15",
+&"next_id": "16",
+&"text": "Er ist wohl ein Fan der Römer. Ich nehme die Statue mal mit, vielleicht steckt da noch mehr dahinter.",
+&"type": "dialogue"
+},
+"16": {
+&"id": "16",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"17": {
+&"id": "17",
+&"next_id": "18",
+&"type": ""
+},
+"18": {
+&"id": "18",
+&"next_id": "19",
+&"type": "title"
+},
+"19": {
+&"character": "Detective Turing",
+&"id": "19",
+&"next_id": "20",
+&"text": "Ein Bild von einem Hund … scheint ihm wichtig zu sein.",
+&"type": "dialogue"
+},
+"2": {
+&"character": "Detective Turing",
+&"id": "2",
+&"next_id": "3",
+&"text": "Zum Glück hat das Feuer nicht alles zerstört.",
+&"type": "dialogue"
+},
+"20": {
+&"id": "20",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"21": {
+&"id": "21",
+&"next_id": "22",
+&"type": ""
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": "title"
+},
+"23": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "case"
+}, {
+&"i": 14,
+&"type": &"dot"
+}, {
+&"i": 15,
+&"type": &"dictionary_reference",
+&"value": Array[Dictionary]([{
+&"i": 40,
+&"type": &"string",
+&"value": "küche"
+}, {
+&"i": 47,
+&"type": &"bracket_close"
+}]),
+&"variable": "scene_collectables_found"
+}, {
+&"i": 48,
+&"type": &"dot"
+}, {
+&"function": "get",
+&"i": 49,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 53,
+&"type": &"string",
+&"value": "Nachricht"
+}]), Array[Dictionary]([{
+&"i": 66,
+&"type": &"variable",
+&"value": "false"
+}, {
+&"i": 71,
+&"type": &"parens_close"
+}])])
+}])
+},
+&"id": "23",
+&"next_id": "24",
+&"next_id_after": "27",
+&"next_sibling_id": "25",
+&"type": "condition"
+},
+"24": {
+&"character": "Detective Turing",
+&"id": "24",
+&"next_id": "27",
+&"text": "Das Restaurant kenne ich. Hat die Nachricht vielleicht damit etwas zu tun?",
+&"type": "dialogue"
+},
+"25": {
+&"condition": {},
+&"id": "25",
+&"next_id": "26",
+&"next_id_after": "27",
+&"type": "condition"
+},
+"26": {
+&"character": "Detective Turing",
+&"id": "26",
+&"next_id": "27",
+&"text": "Die Businesskarte eines Restaurants. Der Name kommt mir bekannt vor.",
+&"type": "dialogue"
+},
+"27": {
+&"id": "27",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"28": {
+&"id": "28",
+&"next_id": "29",
+&"type": ""
+},
+"29": {
+&"id": "29",
+&"next_id": "30",
+&"type": "title"
+},
+"3": {
+&"id": "3",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"i": 11,
+&"type": &"variable",
+&"value": "CrimeScene_visited"
+}, {
+&"i": 30,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 32,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "4",
+&"type": "mutation"
+},
+"30": {
+&"character": "Detective Turing",
+&"id": "30",
+&"next_id": "31",
+&"text": "Harry Potter Teil 9???",
+&"type": "dialogue"
+},
+"31": {
+&"id": "31",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"32": {
+&"id": "32",
+&"next_id": "33",
+&"type": ""
+},
+"33": {
+&"id": "33",
+&"next_id": "34",
+&"type": "title"
+},
+"34": {
+&"character": "Detective Turing",
+&"id": "34",
+&"next_id": "35",
+&"text": "Die ist von gestern.",
+&"type": "dialogue"
+},
+"35": {
+&"id": "35",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"36": {
+&"id": "36",
+&"next_id": "37",
+&"type": ""
+},
+"37": {
+&"id": "37",
+&"next_id": "38",
+&"type": "title"
+},
+"38": {
+&"character": "Detective Turing",
+&"id": "38",
+&"next_id": "39",
+&"text": "Ich glaube, mehr gibt es hier nicht zu entdecken. Ich sollte zurück ins Büro.",
+&"type": "dialogue"
+},
+"39": {
+&"id": "39",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"4": {
+&"id": "4",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"40": {
+&"id": "40",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"5": {
+&"id": "5",
+&"next_id": "6",
+&"type": ""
+},
+"6": {
+&"id": "6",
+&"next_id": "7",
+&"type": "title"
+},
+"7": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 9,
+&"type": &"dot"
+}, {
+&"i": 10,
+&"type": &"variable",
+&"value": "items_found"
+}, {
+&"i": 22,
+&"type": &"comparison",
+&"value": "<"
+}, {
+&"i": 24,
+&"type": &"number",
+&"value": 6
+}])
+},
+&"id": "7",
+&"next_id": "8",
+&"next_id_after": "12",
+&"next_sibling_id": "9",
+&"type": "condition"
+},
+"8": {
+&"character": "Detective Turing",
+&"id": "8",
+&"next_id": "12",
+&"text": "Ich glaube, ich habe noch nicht alles gefunden. Ich sollte nochmal genauer suchen.",
+&"type": "dialogue"
+},
+"9": {
+&"condition": {},
+&"id": "9",
+&"next_id": "10",
+&"next_id_after": "12",
+&"type": "condition"
+}
+}
+raw_text = "~ start
+Detective Turing: Ugh, das riecht ja schrecklich, ich hatte gehofft der Geruch wäre schon verzogen.
+Detective Turing: Zum Glück hat das Feuer nicht alles zerstört.
+set Global.CrimeScene_visited = true
+=> END
+
+~ zurueck
+if Global.items_found < 6:
+	Detective Turing: Ich glaube, ich habe noch nicht alles gefunden. Ich sollte nochmal genauer suchen.
+else:
+	set Global.office_szene = 1
+	do go_back()
+=> END
+
+~ Caesar
+Detective Turing: Er ist wohl ein Fan der Römer. Ich nehme die Statue mal mit, vielleicht steckt da noch mehr dahinter.
+=> END
+
+~ Bild
+Detective Turing: Ein Bild von einem Hund … scheint ihm wichtig zu sein.
+=> END
+
+~ Businesskarte
+if Global.case.scene_collectables_found[\"küche\"].get(\"Nachricht\", false):
+	Detective Turing: Das Restaurant kenne ich. Hat die Nachricht vielleicht damit etwas zu tun?
+else:
+	Detective Turing: Die Businesskarte eines Restaurants. Der Name kommt mir bekannt vor.
+=> END
+
+~ Buch
+Detective Turing: Harry Potter Teil 9???
+=> END
+
+~ Zeitung
+Detective Turing: Die ist von gestern.
+=> END
+
+~ fertig
+Detective Turing: Ich glaube, mehr gibt es hier nicht zu entdecken. Ich sollte zurück ins Büro.
+=> END"
+metadata/dialogue_manager_version = "3.5.1"

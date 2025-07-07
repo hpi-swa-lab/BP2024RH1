@@ -1,0 +1,361 @@
+[gd_scene load_steps=23 format=3 uid="uid://ovgubqjktpfk"]
+
+[ext_resource type="Script" uid="uid://duybxgj0n5kmn" path="res://Cases/Fake_News_Fiasko/minigame3/Scripts/minigame_3.gd" id="1_ihkhm"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_2cb3y"]
+[ext_resource type="PackedScene" uid="uid://buwmp7be70u3o" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/scrollable_post.tscn" id="2_we0jk"]
+[ext_resource type="PackedScene" uid="uid://jdtbuh11axxx" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/post_close_up.tscn" id="3_6sdpr"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_fipg2"]
+[ext_resource type="Texture2D" uid="uid://cbg320vongeqq" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_bitza.png" id="3_lr4ld"]
+[ext_resource type="Resource" uid="uid://gpamh6uyoh8s" path="res://Cases/Fake_News_Fiasko/dialogue/minigame3.dialogue" id="4_0qow0"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="4_6sanc"]
+[ext_resource type="Texture2D" uid="uid://bkbjqsorkv1fh" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_hospital.png" id="4_mu65p"]
+[ext_resource type="Texture2D" uid="uid://ox3itie2kkk3" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_selfie.png" id="4_rpf30"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="5_0qow0"]
+[ext_resource type="PackedScene" uid="uid://74gdn8d0jlwu" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/scrollable_text.tscn" id="5_5plo5"]
+[ext_resource type="PackedScene" uid="uid://drxlix3lrp182" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/statement.tscn" id="5_6sdpr"]
+[ext_resource type="Texture2D" uid="uid://jv0fbq1is7cq" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_cook.png" id="5_s0j2t"]
+[ext_resource type="Texture2D" uid="uid://d08vt8vvvj70s" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_interieur.png" id="6_5plo5"]
+[ext_resource type="Texture2D" uid="uid://dff1w7f6uebut" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_maria.png" id="7_1kvof"]
+[ext_resource type="PackedScene" uid="uid://dkki7sgsyy57a" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/text_close_up.tscn" id="11_5plo5"]
+
+[sub_resource type="Resource" id="Resource_6nc63"]
+script = ExtResource("3_fipg2")
+mode = 2
+required_items = Array[String](["minigame first part completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_0qow0"]
+script = ExtResource("2_2cb3y")
+hint_text = "Links siehst du Internet-Posts. Prüfe, ob sie relevant oder irrelevant sind."
+hint_condition = SubResource("Resource_6nc63")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_ym31t"]
+script = ExtResource("3_fipg2")
+mode = 0
+required_items = Array[String](["minigame first part completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_m8l0e"]
+script = ExtResource("2_2cb3y")
+hint_text = "Links siehst du Internet-Posts. Prüfe, ob sie unglaubwürdig oder unglaubwürdig sind."
+hint_condition = SubResource("Resource_ym31t")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_rsikw"]
+script = ExtResource("5_0qow0")
+dialogue_resource = ExtResource("4_0qow0")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("4_6sanc")]([])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Minigame 3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ihkhm")
+location_name = "Minigame3"
+hints = Array[ExtResource("2_2cb3y")]([SubResource("Resource_0qow0"), SubResource("Resource_m8l0e")])
+location_dialogue = SubResource("Resource_rsikw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.831373, 1, 1, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 45.0
+offset_right = 304.0
+offset_bottom = 603.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SPost1" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("2_we0jk")]
+layout_mode = 2
+Post_picture = ExtResource("3_lr4ld")
+Profile_name = "_bitza"
+Connected_post = NodePath("../../../Connected_posts/Post1")
+is_relevant = true
+is_convincing = true
+
+[node name="SPost2" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("2_we0jk")]
+layout_mode = 2
+Post_picture = ExtResource("4_rpf30")
+Profile_name = "selfieProfi3"
+Connected_post = NodePath("../../../Connected_posts/Post2")
+is_relevant = true
+is_convincing = true
+
+[node name="SPost3" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("5_5plo5")]
+layout_mode = 2
+Post_text = "Wurde von Bitza um 5-Sterne-Bewertung gegen eine kostenlose Nachspeise gebeten"
+Profile_name = "markusMagMandarinenSchmandTorte"
+Connected_post = NodePath("../../../Connected_posts/Post3")
+is_relevant = true
+is_convincing = true
+
+[node name="SPost4" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("2_we0jk")]
+layout_mode = 2
+Post_picture = ExtResource("4_mu65p")
+Profile_name = "sophieSilber"
+Connected_post = NodePath("../../../Connected_posts/Post4")
+is_relevant = true
+is_convincing = true
+
+[node name="SPost5" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("2_we0jk")]
+layout_mode = 2
+Post_picture = ExtResource("5_s0j2t")
+Profile_name = "Lauscher007"
+Connected_post = NodePath("../../../Connected_posts/Post5")
+is_relevant = true
+is_convincing = true
+
+[node name="SPost6" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("2_we0jk")]
+layout_mode = 2
+Post_picture = ExtResource("6_5plo5")
+Profile_name = "Interieur_maus42"
+Connected_post = NodePath("../../../Connected_posts/Post6")
+is_convincing = true
+
+[node name="SPost7" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("5_5plo5")]
+layout_mode = 2
+Post_text = "Neuer Cayman S jetzt für nur 1€. Komm in die Gruppe!"
+Profile_name = "derGruppenLeiter"
+Connected_post = NodePath("../../../Connected_posts/Post7")
+
+[node name="SPost8" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("5_5plo5")]
+layout_mode = 2
+Post_text = "Mein Onkel kennt jemanden bei der Polizei – die haben schon lange Verdacht gegen Bitza!"
+Profile_name = "verschwörungsViola"
+Connected_post = NodePath("../../../Connected_posts/Post8")
+is_relevant = true
+
+[node name="SPost9" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("2_we0jk")]
+layout_mode = 2
+Post_picture = ExtResource("7_1kvof")
+Profile_name = "DerFeinschmecker"
+Connected_post = NodePath("../../../Connected_posts/Post9")
+is_relevant = true
+is_convincing = true
+
+[node name="SPost10" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("5_5plo5")]
+layout_mode = 2
+Post_text = "Boa das Essen war richtig gut. Die Lebensmittelvergiftung kam mir auch komplett gelegen. Sowieso keine Lust zu arbeiten"
+Profile_name = "markusMagSeinenChefNicht"
+Connected_post = NodePath("../../../Connected_posts/Post10")
+is_convincing = true
+
+[node name="SPost11" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Connected_post") instance=ExtResource("5_5plo5")]
+layout_mode = 2
+Post_text = "Mein Cousin arbeitet beim Lieferdienst und sagt, die Restaurantbesitzer mischen da manchmal selber was ins Essen, um Stammkunden loszuwerden, die schlecht zahlen."
+Profile_name = "Paul527"
+Connected_post = NodePath("../../../Connected_posts/Post11")
+is_relevant = true
+
+[node name="Connected_posts" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 350.0
+offset_top = 45.0
+offset_right = 750.0
+offset_bottom = 603.0
+
+[node name="Post1" parent="Connected_posts" instance=ExtResource("3_6sdpr")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+Post_picture = ExtResource("3_lr4ld")
+Profile_name = "_bitza"
+Description = "Neue Zutatenlieferung - frischer Start in die Woche. Das Event rückt immer näher. Aber wir stemmen den Zeitdruck gut"
+
+[node name="Post2" parent="Connected_posts" instance=ExtResource("3_6sdpr")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+Post_picture = ExtResource("4_rpf30")
+Profile_name = "selfieProfi3"
+Description = "Nices Restaurant, dieses Bitza. Aber wer ist dieser Typ im Hintergrund?"
+
+[node name="Post3" parent="Connected_posts" instance=ExtResource("11_5plo5")]
+visible = false
+layout_mode = 1
+offset_right = -400.0
+offset_bottom = -558.0
+Profile_name = "markusMagMandarinenSchmandTorte"
+Description = "Wurde von Bitza um 5-Sterne-Bewertung gegen eine kostenlose Nachspeise gebeten"
+
+[node name="Post4" parent="Connected_posts" instance=ExtResource("3_6sdpr")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+Post_picture = ExtResource("4_mu65p")
+Profile_name = "sophieSilber"
+Description = "Maria kam wirklich vorbei, mit Blumen und Entschuldigung. Hat Eindruck gemacht. Sah ehrlich betroffen aus."
+
+[node name="Post5" parent="Connected_posts" instance=ExtResource("3_6sdpr")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+Post_picture = ExtResource("5_s0j2t")
+Profile_name = "Lauscher007"
+Description = "Der neue Koch war nervös, hat viel telefoniert in der Pause. Ich glaub, der war nicht ganz bei der Sache…"
+
+[node name="Post6" parent="Connected_posts" instance=ExtResource("3_6sdpr")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+Post_picture = ExtResource("6_5plo5")
+Profile_name = "Interieur_maus42"
+Description = "Schaut euch mal das Interieur von Bitza an - Richtig schick! Die neue Tapete harmoniert total mit dem Mobiliar."
+
+[node name="Post7" parent="Connected_posts" instance=ExtResource("11_5plo5")]
+visible = false
+layout_mode = 1
+offset_right = -400.0
+offset_bottom = -558.0
+Profile_name = "derGruppenLeiter"
+Description = "Neuer Cayman S jetzt für nur 1€. Komm in die Gruppe!"
+
+[node name="Post8" parent="Connected_posts" instance=ExtResource("11_5plo5")]
+visible = false
+layout_mode = 1
+offset_right = -400.0
+offset_bottom = -558.0
+Profile_name = "verschwörungsViola"
+Description = "Mein Onkel kennt jemanden bei der Polizei – die haben schon lange Verdacht gegen Bitza!"
+
+[node name="Post9" parent="Connected_posts" instance=ExtResource("3_6sdpr")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+Post_picture = ExtResource("7_1kvof")
+Profile_name = "DerFeinschmecker"
+Description = "War bei Bitza. Maria war fast den ganzen Abend an unserem Tisch. Echt bemüht. Nur einmal kurz weg."
+
+[node name="Post10" parent="Connected_posts" instance=ExtResource("11_5plo5")]
+visible = false
+layout_mode = 1
+offset_right = -400.0
+offset_bottom = -558.0
+Profile_name = "markusMagSeinenChefNicht"
+Description = "Boa das Essen war richtig gut. Die Lebensmittelvergiftung kam mir auch komplett gelegen. Sowieso keine Lust zu arbeiten"
+
+[node name="Post11" parent="Connected_posts" instance=ExtResource("11_5plo5")]
+visible = false
+layout_mode = 1
+offset_right = -400.0
+offset_bottom = -558.0
+Profile_name = "Paul257"
+Description = "Mein Cousin arbeitet beim Lieferdienst und sagt, die Restaurantbesitzer mischen da manchmal selber was ins Essen, um Stammkunden loszuwerden, die schlecht zahlen."
+
+[node name="Texts" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 0
+offset_left = 800.0
+offset_top = 50.0
+offset_right = 1100.0
+offset_bottom = 398.0
+
+[node name="StatementsMaria" parent="Texts" instance=ExtResource("5_6sdpr")]
+unique_name_in_owner = true
+layout_mode = 2
+Speaker = 0
+
+[node name="StatementHonigwald" parent="Texts" instance=ExtResource("5_6sdpr")]
+unique_name_in_owner = true
+layout_mode = 2
+Speaker = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Texts"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Texts/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Vorherige Aussage"
+
+[node name="Button2" type="Button" parent="Texts/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Nächste Aussage"
+
+[node name="Option1" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 800.0
+offset_top = 418.0
+offset_right = 1100.0
+offset_bottom = 463.0
+
+[node name="Option2" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 800.0
+offset_top = 473.0
+offset_right = 1100.0
+offset_bottom = 518.0
+
+[node name="check_solution" type="Button" parent="."]
+layout_mode = 0
+offset_left = 890.0
+offset_top = 558.0
+offset_right = 1010.0
+offset_bottom = 603.0
+text = "Überprüfen"
+
+[connection signal="pressed" from="Texts/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Texts/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="check_solution" to="." method="_on_check_solution_pressed"]

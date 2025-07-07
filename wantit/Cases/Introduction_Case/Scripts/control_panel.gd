@@ -1,46 +1,45 @@
 extends Control
 
+@export var ItemsNum: int
+
+var addedPairs: int = 0
 var addedClues = {}
 
+func _ready() -> void:
+	%VBoxContainer.custom_minimum_size = self.size
+	for i in ItemsNum -1:
+		%HBoxContainer.custom_minimum_size.y = (%VBoxContainer.size.y / ItemsNum) - 3 #-3 for padding
+		%VBoxContainer.add_child(%HBoxContainer.duplicate())
+
 func add_items(Clue: Button, draggable: Button):
-	var newClue = Button.new()
-	newClue.icon = update_item_size(Clue.icon)
-	var Style = StyleBoxEmpty.new()
+	var pair = %VBoxContainer.get_child(addedPairs)
 	
-	var newDraggable = Button.new()
+	var newClue = pair.get_child(0)
+	newClue.texture = Clue.icon
+	
+	var newDraggable = pair.get_child(1)
 	newDraggable.text = draggable.text
-	newDraggable.custom_minimum_size = Vector2((self.size.x / 2) -10, (self.size.y / 5)-10)
 	
-	newClue.add_theme_stylebox_override("hover", Style)
-	newClue.add_theme_stylebox_override("normal", Style)
-	newClue.add_theme_stylebox_override("pressed", Style)
-	
-	newDraggable.pressed.connect(func(): remove_item(newClue, newDraggable, Clue, draggable))
-	newClue.pressed.connect(func(): remove_item(newClue, newDraggable, Clue, draggable))
+	newDraggable.pressed.connect(func(): remove_item(pair, Clue, draggable))
 	
 	addedClues[Clue] = (Clue == draggable.correctClue)
-	
-	%GridContainer.add_child(newClue)
-	%GridContainer.add_child(newDraggable)
+	pair.show()
+	addedPairs += 1
 
 func remove_children():
-	for child in %GridContainer.get_children():
-		%GridContainer.remove_child(child)
-	
-func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale Icon Size
-	var img = Icon.get_image()
-	img.resize((self.size.x / 2) -10, (self.size.y / 5) - 10, Image.INTERPOLATE_LANCZOS)
-	var newIcon = ImageTexture.create_from_image(img)
-	return newIcon
+	addedPairs = 0
+	addedClues.clear()
+	for child in %VBoxContainer.get_children():
+		child.hide()
 
-func remove_item(newClue: Button, newDraggable: Button, Clue: Button, draggable: Button):
-	%GridContainer.remove_child(newClue)
-	%GridContainer.remove_child(newDraggable)
+func remove_item(pair: HBoxContainer, Clue: Button, draggable: Button):
 	addedClues.erase(Clue)
+	pair.hide()
 	Clue.show()
 	draggable.show()
+	addedPairs -= 1
 
-func check_clues() -> bool:
+func check_minigame_clues() -> bool:
 	var cluesCorrect = true
 	for Clue in addedClues:
 		if addedClues[Clue] == false:

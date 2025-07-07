@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://djq60qrlweq7i"
+path="res://.godot/imported/business_card.dialogue-0d2b6df6a420ad576f26c0ea33a74a30.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/business_card.dialogue"
+dest_files=["res://.godot/imported/business_card.dialogue-0d2b6df6a420ad576f26c0ea33a74a30.tres"]
+
+[params]
+
+defaults=true

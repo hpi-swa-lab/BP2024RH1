@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b0n3b6jwuou8d"
+path="res://.godot/imported/backery_office.dialogue-da58a48f2e894fad36293a1b6d5faf60.tres"
+
+[deps]
+
+source_file="res://dialogue/backery_office.dialogue"
+dest_files=["res://.godot/imported/backery_office.dialogue-da58a48f2e894fad36293a1b6d5faf60.tres"]
+
+[params]
+
+defaults=true

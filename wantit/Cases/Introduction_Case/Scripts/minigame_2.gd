@@ -1,4 +1,4 @@
-extends Control
+extends Location
 
 var LabelText: Dictionary = {}
 var Buttons: Dictionary = {}
@@ -13,8 +13,7 @@ var errors: Array[bool] = []
 var iteration_completed: bool = false
 
 func _ready() -> void:
-	GlobalTimer.start_timer("minigame 2")
-	CaseManager.CaseGlobals.current_scene = "minigame_2"
+	super._ready()
 	
 	LabelText[0] = "Fingerabdruck eines Angestellten."
 	LabelText[1] = "Es wurden mehrere Fingerabrücke am Safe gesichert."
@@ -75,7 +74,7 @@ func check_Answers():
 		%FinishButton.show()
 	else:
 		%ExplanationLabel.text = "Klicke auf die Fehlermeldung, um mehr zu erfahren!"
-		initialize_messages()
+		initialize_messages()	
 
 func has_no_errors() -> bool:
 	for error in errors:
@@ -118,9 +117,9 @@ func initialize_buttons():
 	add_button(1, "Ich bin 5 Abdrücke", load("res://Cases/Introduction_Case/assets/minigame2/photo_fingerprints.png"), "")
 	add_button(1, "'Fingerabdruck'", null, "[WARNING] Wert 'Fingerabdruck' nicht präzise genug.")
 	
-	add_button(2, "2056", null, "")
-	add_button(2, "6382", null, "[ERROR] Keine Tür mit der Nummer '6382' gefunden")
-	add_button(2, "Ich bin ein Schlüssel", load("res://Cases/Introduction_Case/assets/minigame2/key.png"), "[ERROR] Nummer erwartet - Bild erhalten")
+	add_button(2, "", load("res://Cases/Introduction_Case/assets/minigame2/key2056.png"), "")
+	add_button(2, "2056", null, "[ERROR] Nummer erhalten - Bild erwartet")
+	add_button(2, "", load("res://Cases/Introduction_Case/assets/minigame2/key.png"), "[ERROR] Keine Tür ohne Nummer gefunden")
 	
 	add_button(3, "09.04", null, "")
 	add_button(3, "9.4", null, "[ERROR] Datumsformat nicht gültig - TT.MM. erwartet")
@@ -180,8 +179,7 @@ func create_label(labelText: String) -> Label:
 	return label
 
 func _on_finish_button_pressed() -> void:
-	Globals.OfficeDialogue = "res://dialogue/dialogue.dialogue"
-	Globals.OfficeDialogueStart = "finish"
-	Globals.OfficeDialogueDone = false
-	GlobalTimer.end_timer("minigame 2")
-	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+	var interaction_item = Item.new()
+	interaction_item.item_name = "Minigame2 completed"
+	interaction_item.is_collectable = false
+	item_found.emit(interaction_item, self)

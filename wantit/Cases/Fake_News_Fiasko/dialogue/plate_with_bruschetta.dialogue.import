@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://c50ttg2in6ont"
+path="res://.godot/imported/plate_with_bruschetta.dialogue-11ace9c5af650a76e38e21ee1c138bec.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/plate_with_bruschetta.dialogue"
+dest_files=["res://.godot/imported/plate_with_bruschetta.dialogue-11ace9c5af650a76e38e21ee1c138bec.tres"]
+
+[params]
+
+defaults=true

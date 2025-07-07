@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://u3d6wp8ra4je"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_h61qb"]
+[ext_resource type="Texture2D" uid="uid://bkbjapdraryjo" path="res://Assets/map/map.png" id="2_alty5"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="3_4uscg"]
+
+[node name="EmptyMap" type="Node"]
+script = ExtResource("1_h61qb")
+location_name = "EmptyMap"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Map" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(587, 321)
+scale = Vector2(0.305738, 0.322603)
+texture = ExtResource("2_alty5")
+
+[node name="BackButton" parent="." instance=ExtResource("3_4uscg")]
+offset_left = 1068.0
+offset_top = 21.0
+offset_right = 1580.0
+offset_bottom = 533.0
+scale = Vector2(0.1, 0.1)
+requested_location_name = "DefaultOffice"
+
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]

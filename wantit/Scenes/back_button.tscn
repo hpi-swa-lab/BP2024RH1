@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ml5btby7kwxh"]
+
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="1_50vcm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_50vcm"]
+load_path = "res://.godot/imported/back-button.png-377f20c6a01d996cce717af66a9dd380.ctex"
+
+[node name="BackButton" type="TextureButton"]
+texture_normal = SubResource("CompressedTexture2D_50vcm")
+script = ExtResource("1_50vcm")
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

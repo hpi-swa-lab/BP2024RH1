@@ -1,0 +1,327 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_a4l8k"]
+
+[resource]
+script = ExtResource("1_a4l8k")
+using_states = PackedStringArray()
+titles = {
+"Option1": "20",
+"Option2": "28",
+"start": "1"
+}
+character_names = PackedStringArray("Detective Turing", "Bewohner", "Kai Netzer")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Detective Turing",
+&"id": "1",
+&"next_id": "2",
+&"text": "Dann lass uns mal die Klingel drücken.",
+&"type": "dialogue"
+},
+"10": {
+&"character": "Detective Turing",
+&"id": "10",
+&"next_id": "11",
+&"text": "Er hat Ihnen Daten gestohlen?",
+&"type": "dialogue"
+},
+"11": {
+&"character": "Kai Netzer",
+&"id": "11",
+&"next_id": "12",
+&"text": "Ja und er hat mir gedroht, dass er diese veröffentlicht, wenn ich ihm nicht 10 Bitcoins zahle.",
+&"type": "dialogue"
+},
+"12": {
+&"character": "Kai Netzer",
+&"id": "12",
+&"next_id": "13",
+&"text": "Ich wollte ein kleines Feuer im Papierkorb legen um ihn einzuschüchtern, ich wusste ja nicht, dass die ganze Wohnung abfackelt.",
+&"type": "dialogue"
+},
+"13": {
+&"character": "Detective Turing",
+&"id": "13",
+&"next_id": "14",
+&"text": "Haben Sie irgendwelche Beweise dafür?",
+&"type": "dialogue"
+},
+"14": {
+&"character": "Kai Netzer",
+&"id": "14",
+&"next_id": "15",
+&"text": "Nachdem wir uns gestern gestritten haben hat er gesagt, er schickt die Daten morgen weiter. Vielleicht liegen die noch bei ihm Zuhause.",
+&"type": "dialogue"
+},
+"15": {
+&"id": "15",
+&"next_id": "28",
+&"responses": PackedStringArray("15", "16"),
+&"text": "Ich glaube Ihnen nicht.",
+&"type": "response"
+},
+"16": {
+&"id": "16",
+&"next_id": "20",
+&"text": "Mal schauen.",
+&"type": "response"
+},
+"17": {
+&"id": "17",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"18": {
+&"id": "18",
+&"next_id": "19",
+&"type": ""
+},
+"19": {
+&"id": "19",
+&"next_id": "20",
+&"type": "title"
+},
+"2": {
+&"character": "Detective Turing",
+&"id": "2",
+&"next_id": "3",
+&"text": "[wave amp=25 freq=5]Ding Dong[/wave]",
+&"type": "dialogue"
+},
+"20": {
+&"character": "Detective Turing",
+&"id": "20",
+&"next_id": "22",
+&"text": "Ich schaue mal was ich finde. Sie müssen aber trotzdem mitkommen.",
+&"type": "dialogue"
+},
+"21": {
+&"id": "21",
+&"next_id": "22",
+&"type": ""
+},
+"22": {
+&"id": "22",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"i": 11,
+&"type": &"variable",
+&"value": "culprit_found"
+}, {
+&"i": 25,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 27,
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "23",
+&"type": "mutation"
+},
+"23": {
+&"id": "23",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"i": 4,
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"i": 10,
+&"type": &"dot"
+}, {
+&"i": 11,
+&"type": &"variable",
+&"value": "office_szene"
+}, {
+&"i": 24,
+&"type": &"assignment",
+&"value": "="
+}, {
+&"i": 26,
+&"type": &"number",
+&"value": 4
+}]),
+&"is_blocking": true
+},
+&"next_id": "24",
+&"type": "mutation"
+},
+"24": {
+&"id": "24",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"function": "go_back",
+&"i": 3,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 11,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "25",
+&"type": "mutation"
+},
+"25": {
+&"id": "25",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"26": {
+&"id": "26",
+&"next_id": "27",
+&"type": ""
+},
+"27": {
+&"id": "27",
+&"next_id": "28",
+&"type": "title"
+},
+"28": {
+&"character": "Detective Turing",
+&"id": "28",
+&"next_id": "30",
+&"text": "Das ist mir egal. Mitkommen!",
+&"type": "dialogue"
+},
+"29": {
+&"id": "29",
+&"next_id": "30",
+&"type": ""
+},
+"3": {
+&"character": "Bewohner",
+&"id": "3",
+&"next_id": "4",
+&"text": "Hallo, kann ich Ihnen helfen?",
+&"type": "dialogue"
+},
+"30": {
+&"id": "30",
+&"mutation": {
+&"expression": Array[Dictionary]([{
+&"function": "end_it",
+&"i": 3,
+&"type": &"function",
+&"value": Array[Array]([Array[Dictionary]([{
+&"i": 10,
+&"type": &"parens_close"
+}])])
+}]),
+&"is_blocking": true
+},
+&"next_id": "31",
+&"type": "mutation"
+},
+"31": {
+&"id": "31",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"32": {
+&"id": "32",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"4": {
+&"character": "Detective Turing",
+&"id": "4",
+&"next_id": "5",
+&"text": "Ich suche Kai Netzer, sind Sie das?",
+&"type": "dialogue"
+},
+"5": {
+&"character": "Kai Netzer",
+&"id": "5",
+&"next_id": "6",
+&"text": "Ja, wieso?",
+&"type": "dialogue"
+},
+"6": {
+&"character": "Detective Turing",
+&"id": "6",
+&"next_id": "7",
+&"text": "Sie werden verdächtigt einen Brand in der Wohnung in der Kryptoallee ausgelöst zu haben.",
+&"type": "dialogue"
+},
+"7": {
+&"character": "Kai Netzer",
+&"id": "7",
+&"next_id": "8",
+&"text": "Wie ... Wie kommen sie darauf? Das können sie nicht beweisen.",
+&"type": "dialogue"
+},
+"8": {
+&"character": "Detective Turing",
+&"id": "8",
+&"next_id": "9",
+&"text": "Sie wurden beobachtet wie Sie John Byte gedroht haben und ich bin sicher, wenn wir die Fußabdrücke am Tatort mit Ihren abgleichen stimmen die überein.",
+&"type": "dialogue"
+},
+"9": {
+&"character": "Kai Netzer",
+&"id": "9",
+&"next_id": "10",
+&"text": "Das war ... Ich wollte doch nichts schlimmes tun, ich wollte ihn doch nur erschrecken damit er mit meine Daten wiedergibt, die er mir geklaut hat.",
+&"type": "dialogue"
+}
+}
+raw_text = "~ start
+Detective Turing: Dann lass uns mal die Klingel drücken.
+Detective Turing: [wave amp=25 freq=5]Ding Dong[/wave]
+Bewohner: Hallo, kann ich Ihnen helfen?
+Detective Turing: Ich suche Kai Netzer, sind Sie das?
+Kai Netzer: Ja, wieso?
+Detective Turing: Sie werden verdächtigt einen Brand in der Wohnung in der Kryptoallee ausgelöst zu haben.
+Kai Netzer: Wie ... Wie kommen sie darauf? Das können sie nicht beweisen.
+Detective Turing: Sie wurden beobachtet wie Sie John Byte gedroht haben und ich bin sicher, wenn wir die Fußabdrücke am Tatort mit Ihren abgleichen stimmen die überein.
+Kai Netzer: Das war ... Ich wollte doch nichts schlimmes tun, ich wollte ihn doch nur erschrecken damit er mit meine Daten wiedergibt, die er mir geklaut hat.
+Detective Turing: Er hat Ihnen Daten gestohlen?
+Kai Netzer: Ja und er hat mir gedroht, dass er diese veröffentlicht, wenn ich ihm nicht 10 Bitcoins zahle. 
+Kai Netzer: Ich wollte ein kleines Feuer im Papierkorb legen um ihn einzuschüchtern, ich wusste ja nicht, dass die ganze Wohnung abfackelt.
+Detective Turing: Haben Sie irgendwelche Beweise dafür?
+Kai Netzer: Nachdem wir uns gestern gestritten haben hat er gesagt, er schickt die Daten morgen weiter. Vielleicht liegen die noch bei ihm Zuhause.
+- Ich glaube Ihnen nicht. => Option2
+- Mal schauen. => Option1
+=> END
+
+~ Option1
+Detective Turing: Ich schaue mal was ich finde. Sie müssen aber trotzdem mitkommen.
+# Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Kai Netzer rennt weg)
+set Global.culprit_found = true
+set Global.office_szene = 4
+do go_back()
+=> END
+
+~ Option2
+Detective Turing: Das ist mir egal. Mitkommen!
+# Hier Könnte ihr Minispiel stehen z.B. Jump n Run (Kai Netzer rennt weg)
+do end_it()
+=> END"
+metadata/dialogue_manager_version = "3.5.1"

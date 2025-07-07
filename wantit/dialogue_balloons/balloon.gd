@@ -102,21 +102,21 @@ func apply_dialogue_line() -> void:
 	is_waiting_for_input = false
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
-
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	#if dialogue_line.character == "Detective Turing":
 	#	portrait.texture = Globals.portrait
-	#else:
-	#	portrait.texture = Globals.npc_icon
 	
 	var portrait_path_format: String = "res://Assets/characters/%s.png"
 	var portrait_path: String = portrait_path_format % dialogue_line.character.replace("ä", "ae").replace("ö", "oe").replace("ü", "ue")
 	
+	if dialogue_line.character.is_empty():
+		portrait_path = "res://Assets/characters/transparent.png"
+	
 	if ResourceLoader.exists(portrait_path):
 		portrait.texture = load(portrait_path)
 	else:
-		portrait.texture = null
+		portrait.texture = load("res://Assets/characters/Default.png")
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

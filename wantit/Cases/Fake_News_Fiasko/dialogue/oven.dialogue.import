@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dhwmqoaq4f76j"
+path="res://.godot/imported/oven.dialogue-b77b231e3b52fa7d4cad79c9fcd87b69.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/oven.dialogue"
+dest_files=["res://.godot/imported/oven.dialogue-b77b231e3b52fa7d4cad79c9fcd87b69.tres"]
+
+[params]
+
+defaults=true

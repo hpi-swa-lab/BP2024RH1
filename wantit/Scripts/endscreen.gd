@@ -16,5 +16,5 @@ func resize_image(Img: Texture2D):
 	return newTex
 
 
-func _on_button_pressed() -> void:
-	SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+#func _on_button_pressed() -> void:
+	#SceneSwitcher.switch_scene("res://Scenes/office.tscn")

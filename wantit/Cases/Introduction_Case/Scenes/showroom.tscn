@@ -1,34 +1,82 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8iypejva5d7t"]
+[gd_scene load_steps=20 format=3 uid="uid://c8iypejva5d7t"]
 
 [ext_resource type="Texture2D" uid="uid://demx2h26soyul" path="res://Cases/Introduction_Case/assets/backgrounds/showroom.png" id="1_57uge"]
-[ext_resource type="Script" uid="uid://d1cahwbx6fs0v" path="res://Cases/Introduction_Case/Scripts/showroom.gd" id="1_itl10"]
-[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/scene_switcher_button_texture.tscn" id="2_5yvxj"]
+[ext_resource type="Script" uid="uid://drlmf7p4e2t08" path="res://Cases/Introduction_Case/Scripts/showroom.gd" id="1_m7tbu"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_5yvxj"]
+[ext_resource type="Resource" uid="uid://4pvtwiok5hs2" path="res://dialogue/showroom.dialogue" id="2_7t8ii"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_peh6g"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_0lku5"]
 [ext_resource type="Texture2D" uid="uid://38rkcka7kf73" path="res://Cases/Introduction_Case/assets/interactable_items/plate.png" id="3_l0fl4"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_peh6g"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_0lku5"]
 [ext_resource type="Texture2D" uid="uid://b7h7dgrh34vm3" path="res://Cases/Introduction_Case/assets/interactable_items/door_showroom.png" id="4_l0fl4"]
 [ext_resource type="Texture2D" uid="uid://cy4aq3utqrcgg" path="res://Cases/Introduction_Case/assets/interactable_items/door_kitchen.png" id="5_mb8qo"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="7_mposb"]
 
-[node name="Showroom" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_itl10")
+[sub_resource type="Resource" id="Resource_5tb1h"]
+script = ExtResource("3_0lku5")
+mode = 2
+required_items = Array[String](["Waffle"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_rh8hs"]
+script = ExtResource("2_peh6g")
+hint_text = "Was liegt denn da auf der Theke?"
+hint_condition = SubResource("Resource_5tb1h")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_l5esg"]
+script = ExtResource("3_0lku5")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_n4ptc"]
+script = ExtResource("2_peh6g")
+hint_text = "Ich sollte mir die Ladentür noch einmal ansehen."
+hint_condition = SubResource("Resource_l5esg")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_7t8ii"]
+script = ExtResource("3_0lku5")
+mode = 0
+required_items = Array[String](["Waffle", "Key"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_hfnmm"]
+script = ExtResource("2_peh6g")
+hint_text = "Ziehe den Schlüssel auf die Ladentür."
+hint_condition = SubResource("Resource_7t8ii")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_uixrf"]
+script = ExtResource("3_peh6g")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_m4eo4"]
+script = ExtResource("4_0lku5")
+dialogue_resource = ExtResource("2_7t8ii")
+is_dialogue = true
+dialogue_triggers = Array[ExtResource("3_peh6g")]([SubResource("Resource_uixrf")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Showroom" type="Node"]
+script = ExtResource("1_m7tbu")
+location_name = "Showroom"
+hints = Array[ExtResource("2_peh6g")]([SubResource("Resource_rh8hs"), SubResource("Resource_n4ptc"), SubResource("Resource_hfnmm")])
+has_inventory = true
+location_dialogue = SubResource("Resource_m4eo4")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.300037, 0.300037)
 texture = ExtResource("1_57uge")
 
-[node name="Helpsystem" parent="." instance=ExtResource("7_mposb")]
-layout_mode = 1
-
 [node name="Plate" parent="." instance=ExtResource("2_5yvxj")]
-layout_mode = 0
 offset_left = 740.0
 offset_top = 254.0
 offset_right = 1048.0
@@ -36,17 +84,16 @@ offset_bottom = 562.0
 scale = Vector2(0.330073, 0.330073)
 texture_normal = ExtResource("3_l0fl4")
 stretch_mode = 4
-NextSceneString = "counter_close_up"
+requested_location_name = "Counter Close Up"
+metadata/is_found = false
 
 [node name="Door" parent="." instance=ExtResource("2_5yvxj")]
-layout_mode = 0
 scale = Vector2(0.299982, 0.299982)
 texture_normal = ExtResource("4_l0fl4")
 stretch_mode = 0
-NextSceneString = "door_close_up"
+requested_location_name = "Door CloseUp"
 
 [node name="Kitchen Door" parent="." instance=ExtResource("2_5yvxj")]
-layout_mode = 0
 scale = Vector2(0.299905, 0.299905)
 texture_normal = ExtResource("5_mb8qo")
-NextSceneString = "bakery_kitchen"
+requested_location_name = "Backery Kitchen"

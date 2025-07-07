@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dwlj6ek8qt82f"
+path="res://.godot/imported/bill.dialogue-ffb0d9370224bbcfdda4d447ccaae3be.tres"
+
+[deps]
+
+source_file="res://Cases/Fake_News_Fiasko/dialogue/bill.dialogue"
+dest_files=["res://.godot/imported/bill.dialogue-ffb0d9370224bbcfdda4d447ccaae3be.tres"]
+
+[params]
+
+defaults=true

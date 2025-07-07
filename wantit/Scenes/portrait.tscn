@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://sabcryroa0cu"]
-
-[ext_resource type="Script" uid="uid://2je8posrkrbl" path="res://Scripts/portrait.gd" id="1_i3nxn"]
-
-[node name="Portrait" type="Button"]
-custom_minimum_size = Vector2(150, 150)
-offset_right = 8.0
-offset_bottom = 8.0
-script = ExtResource("1_i3nxn")

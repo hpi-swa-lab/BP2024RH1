@@ -1,0 +1,48 @@
+~ default
+Maria: Schön, dass du es einrichten konntest. Ich brauche wirklich deine Hilfe. Ansonsten werde ich noch wahnsinnig.
+- Das klingt ja gar nicht gut. Ist etwas vorgefallen?
+	Maria: Es ist Honigwald. Ich glaube, er stellt mir nach und versucht die Neueröffnung von “Bitza” zu ruinieren.
+	- Bürgermeister Honigwald? => first_chosen
+	- Er verfolgt dich? => second_chosen
+
+~ first_chosen
+Maria: Ja genau. Jedes Mal, wenn ich frische Zutaten kaufen möchte, sind sie angeblich bereits für jemand anderen reserviert.
+Maria: Letzte Woche habe ich ihn dann gesehen, wie er mit der Standverkäuferin geredet hat.
+- Er verfolgt dich? 
+=> chase
+
+~ second_chosen
+Maria: Gestern lief mir auf dem Weg zum Restaurant die ganze Zeit eine Gestalt hinterher. Ich habe richtig Angst bekommen.
+- Bürgermeister Honigwald versucht die Neueröffnung von "Bitza" zu runinieren?
+=> Honigwald
+
+~ chase
+Maria: Gestern lief mir auf dem Weg zum Restaurant die ganze Zeit eine Gestalt hinterher. Ich habe richtig Angst bekommen.
+=> further
+
+~ Honigwald
+Maria: Ja genau. Jedes Mal, wenn ich frische Zutaten kaufen möchte, sind sie angeblich bereits für jemand anderen reserviert.
+Maria: Letzte Woche habe ich ihn dann gesehen, wie er mit der Standverkäuferin geredet hat.
+=> further
+
+~ further
+Maria: Letzte Woche gab es sogar einen versuchten Einbruch hier.
+- Das klingt wirklich ernst. Ich übernehme den Fall.
+Maria: Danke, endlich hört mir mal jemand zu!
+- Darf ich mich hier denn noch etwas umsehen?
+Maria: Aber klar doch.
+=> END
+
+~ all_found
+Ich denke, ich habe alles. Ich muss mir die Spuren einmal im Büro in Ruhe anschauen.
+do _on_location_switch_requested("Minigame1")
+=> END
+
+~ evening
+**Undurchdringliches Stimmengewirr**
+Maria: Da bist du ja! Ich freue mich, dass du kommen konntest. Der Tisch hier vorne ist für dich!
+Maria: Wir fangen gleich mit der Vorspeise an. Es gibt klassische Bruschetta.
+- Ich vertrage Olivenöl leider nicht so gut.
+	Maria: Kein Problem. Dafür finden wir sicherlich eine Lösung.
+do _on_location_switch_requested("Time Skip")
+=> END

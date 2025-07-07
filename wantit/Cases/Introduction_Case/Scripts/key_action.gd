@@ -1,35 +1,21 @@
-extends Node
+extends Item
 
 var dragging: bool
 var newItem: Button
-var oldItem: TextureButton
-var DialogueStart: String
+var extended_item: Item
 
-func do_smt(Item: TextureButton):
-	oldItem = Item
-	var Style = StyleBoxEmpty.new()
-	
-	var button = Button.new()
-	button.icon= Item.texture_normal
-	button.scale = Item.scale
-	
-	button.button_up.connect(item_up)
-	button.global_position = get_viewport().get_mouse_position() - button.icon.get_size() / 2 * button.scale
-	
-	button.add_theme_stylebox_override("hover", Style)
-	button.add_theme_stylebox_override("normal", Style)
-	button.add_theme_stylebox_override("pressed", Style)
-	
-	newItem = button
-	
-	get_tree().root.add_child(newItem)
+var item: Item = null
+var location: Location
+
+func _ready() -> void:
+	initialize_new_item()
+	add_child(newItem)
 	
 	dragging = true
 	set_process_input(true)
 
 func item_up():
-	check_down()
-	newItem.queue_free()
+	await check_down()
 	queue_free()
 
 func _input(event: InputEvent) -> void:
@@ -39,27 +25,42 @@ func _input(event: InputEvent) -> void:
 
 func check_down():
 	var KeyRect = Rect2(newItem.position, newItem.size)
-	var node: Node = null
-	if not node:
-		node = find_node()
-	if node:
-		var Rect1 = Rect2(node.position, node.size)
+	if not item:
+		item = find_node()
+	if item:
+		var Rect1 = Rect2(item.position, item.size)
 		if Rect1.intersects(KeyRect):
-			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/monologue.dialogue"), DialogueStart)
-			if DialogueStart == "key_on_door":
-				node.texture_normal = load("res://Cases/Introduction_Case/assets/interactable_items/keyhole_with_key.png")
+			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/door.dialogue"), "key_used")
 			await DialogueManager.dialogue_ended
-			return
-	GlobalInventory.add_item(oldItem)
+			_on_dialogue_ended()
+	else:
+		location.item_found.emit(extended_item, location)
 	
-func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
-	for child in get_tree().root.get_children():
+func find_node() -> Node:
+	for child in get_parent().get_children():
 		if child.name == "Door CloseUp":
-			DialogueStart = "key_on_door"
+			location = child
 			return child.find_child("Key Hole")
-		elif child.name == "Bakery Office":
-			DialogueStart = "key_on_safe"
-			GlobalInventory.add_item(oldItem)
-			return child.find_child("Safe")
+		if child is Location:
+			location = child
 	return null
+
+func _on_dialogue_ended() -> void:
+	item.item_name = "Door"
+	item.emit_signal("item_found", item)	
+
+func initialize_new_item():
+	var Style = StyleBoxEmpty.new()
+	var button = Button.new()
 	
+	button.icon= extended_item.texture_normal
+	button.scale = extended_item.scale
+	
+	button.button_up.connect(item_up)
+	button.global_position = get_viewport().get_mouse_position() - button.icon.get_size() / 2 * button.scale
+	
+	button.add_theme_stylebox_override("hover", Style)
+	button.add_theme_stylebox_override("normal", Style)
+	button.add_theme_stylebox_override("pressed", Style)
+	
+	newItem = button

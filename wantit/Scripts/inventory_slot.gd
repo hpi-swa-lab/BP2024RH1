@@ -1,49 +1,50 @@
 extends Panel
+class_name InventorySlot
 
-var StoredItem: TextureButton = null
-var ActionScript: Node
+var stored_item: Item = null
+var action_script: Node
 
 func _ready() -> void:
 	%Sprite2D.scale = self.custom_minimum_size / %Sprite2D.texture.get_size()
 
-func add_item(Item: TextureButton):
+func add_item(new_item: Item) -> void:
 	%CenterContainer.size = self.size
-	StoredItem = Item
-	if Item.ActionScript != null:
-		ActionScript = Item.ActionScript.new()
-	%DisplayedItem.icon = update_item_size(Item.texture_normal)
+	
+	stored_item = new_item
+	#print("Item just added to inventory: " + str(stored_item.item_name))
+	
+	if new_item.action_script != null:
+		action_script = new_item.action_script.new()
+	%DisplayedItem.icon = update_item_size(new_item.texture_normal)
 	%DisplayedItem.show()
 
 func remove_item():
-	if ActionScript != null and ActionScript is Node:
-		if not ActionScript.is_inside_tree():
-			get_tree().root.add_child(ActionScript)
-		await get_tree().process_frame
-		if ActionScript.has_method("do_smt"):
-			ActionScript.do_smt(StoredItem)
-	
-	GlobalInventory.Items.erase(StoredItem.name)
-	ActionScript = null
-	StoredItem = null
+	if action_script != null and action_script is Node:
+		if "extended_item" in action_script:
+			action_script.extended_item = stored_item
+		if not action_script.is_inside_tree():
+			get_tree().root.get_child(2).add_child(action_script)	#root.get_child(2) is game
+		
+	stored_item = null
+	action_script = null
 	%DisplayedItem.hide()
 
 func update_item_size(Icon: CompressedTexture2D) -> ImageTexture:	#Used to scale Icon Size
+	var ItemSize = self.size * 0.8
+	var img = Icon.get_image()
 	
-	if GlobalInventory.TextureCache.has(StoredItem.name):
-		return GlobalInventory.TextureCache[StoredItem.name]
-	else:
-		var ItemSize = self.size * 0.8
-		var img = Icon.get_image()
-		
-		img.resize(ItemSize.x, ItemSize.y, Image.INTERPOLATE_LANCZOS)
-		var newIcon = ImageTexture.create_from_image(img)
-		
-		GlobalInventory.TextureCache[StoredItem.name] = newIcon
-		return newIcon
+	img.resize(ItemSize.x, ItemSize.y, Image.INTERPOLATE_LANCZOS)
+	var newIcon = ImageTexture.create_from_image(img)
+	return newIcon
 
 func _on_displayed_item_button_down() -> void:
 	%DisplayedItem.pivot_offset = %DisplayedItem.size / 2
-	if ActionScript != null:
+	if action_script != null:
 		remove_item()
 	else:
 		%AnimationPlayer.play("remove_item")
+
+func is_empty() -> bool:
+	if stored_item == null:
+		return true
+	return false
