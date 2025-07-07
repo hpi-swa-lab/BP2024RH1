@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Hint" load_steps=2 format=3 uid="uid://bdaboq25yeu3e"]
+
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="1_rmwgq"]
+
+[resource]
+script = ExtResource("1_rmwgq")
+hint_text = "Das SIgnal muss beim Ziel (Glühbirne) ankommen. Verbindungen die Rot sind transportieren das Signal weiter. Weiße Verbindungen tun dies nicht."
+metadata/_custom_type_script = "uid://c5qtuytooefmh"

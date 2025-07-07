@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ur0v3br2pepx" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer2.png" id="16_10en0"]
 [ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="16_ftykq"]
 [ext_resource type="Texture2D" uid="uid://dkefpd0ojaem4" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer3.png" id="17_3pncj"]
-[ext_resource type="Resource" uid="uid://btvc1gy2lre7m" path="res://Cases/A_Completely_Normal_Day/dialogue_trigger/secound_office_light_is_back.tres" id="18_4qis3"]
+[ext_resource type="Resource" uid="uid://btvc1gy2lre7m" path="res://Cases/A_Completely_Normal_Day/resources/dialogue_trigger/secound_office_light_is_back.tres" id="18_4qis3"]
 [ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="18_rc8m8"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="19_i1e8m"]
 

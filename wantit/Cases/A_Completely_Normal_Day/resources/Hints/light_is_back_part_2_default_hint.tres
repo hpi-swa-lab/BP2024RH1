@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Hint" load_steps=2 format=3 uid="uid://tq54r8njwoom"]
+
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="1_f4dvu"]
+
+[resource]
+script = ExtResource("1_f4dvu")
+hint_text = "Eines der elektrischen Geräte muss die Hauptquelle für den Hackingangriff sein."
+metadata/_custom_type_script = "uid://c5qtuytooefmh"

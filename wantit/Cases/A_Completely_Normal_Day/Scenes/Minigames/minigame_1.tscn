@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjqw4udnawvm8"]
+[gd_scene load_steps=12 format=3 uid="uid://bjqw4udnawvm8"]
 
 [ext_resource type="Script" uid="uid://ch3hunh08n8eo" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/level_1.gd" id="1_ck1kf"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_1ptpr"]
 [ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Ziel.tscn" id="2_oy0tk"]
 [ext_resource type="Texture2D" uid="uid://cbisqnpn8c3l3" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_off.png" id="3_1ptpr"]
+[ext_resource type="Resource" uid="uid://bdaboq25yeu3e" path="res://Cases/A_Completely_Normal_Day/resources/Hints/minigames_default_hint.tres" id="3_qko48"]
 [ext_resource type="Texture2D" uid="uid://c6jlii58fljds" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_on.png" id="4_qko48"]
 [ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Start.tscn" id="5_xkcl6"]
 [ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/connection.tscn" id="6_a7f4e"]
@@ -19,6 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ck1kf")
 location_name = "minigame_1"
+hints = Array[ExtResource("2_1ptpr")]([ExtResource("3_qko48")])
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0

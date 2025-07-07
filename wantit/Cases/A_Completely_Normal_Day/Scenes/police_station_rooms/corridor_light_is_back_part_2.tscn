@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dl2l13xobbrcq"]
+[gd_scene load_steps=15 format=3 uid="uid://dl2l13xobbrcq"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_2qg17"]
 [ext_resource type="Resource" uid="uid://haky5xmm70jn" path="res://Cases/A_Completely_Normal_Day/dialogue/corridor.dialogue" id="2_2hpkt"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_atkwd"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_qhsh2"]
+[ext_resource type="Resource" uid="uid://tq54r8njwoom" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_part_2_default_hint.tres" id="3_vlypl"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_gp2bb"]
+[ext_resource type="Resource" uid="uid://j05pdcong6u4" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_part_2_tower_not_found_hint.tres" id="4_t065d"]
 [ext_resource type="Texture2D" uid="uid://5rsinncwffxn" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/corridor.png" id="5_swk6o"]
 [ext_resource type="Texture2D" uid="uid://cm487sfbr7wd2" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/door_to_office.png" id="6_uq1e0"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="7_fxhdx"]
@@ -27,6 +30,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [node name="corridor_light_is_back" type="Node"]
 script = ExtResource("1_2qg17")
 location_name = "corridor_light_is_back_part_2"
+hints = Array[ExtResource("2_atkwd")]([ExtResource("3_vlypl"), ExtResource("4_t065d")])
 location_dialogue = SubResource("Resource_v4w51")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2bi0h58ogcem"]
+[gd_scene load_steps=18 format=3 uid="uid://c2bi0h58ogcem"]
 
 [ext_resource type="Script" uid="uid://cc5hsdbevkmaw" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/level_2.gd" id="1_elwrv"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_1hbks"]
 [ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Ziel.tscn" id="2_12rdr"]
 [ext_resource type="Resource" uid="uid://ch00pafntvhtf" path="res://Cases/A_Completely_Normal_Day/dialogue/minigame_2.dialogue" id="2_uo4om"]
+[ext_resource type="Resource" uid="uid://bdaboq25yeu3e" path="res://Cases/A_Completely_Normal_Day/resources/Hints/minigames_default_hint.tres" id="3_7dgib"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_x54yk"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_1hbks"]
 [ext_resource type="Texture2D" uid="uid://cbisqnpn8c3l3" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_off.png" id="4_lwrin"]
@@ -37,6 +39,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_elwrv")
 location_name = "minigame_2"
+hints = Array[ExtResource("2_1hbks")]([ExtResource("3_7dgib")])
 location_dialogue = SubResource("Resource_0sp0m")
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://l3fwmj4w4gyw"]
+[gd_scene load_steps=29 format=3 uid="uid://l3fwmj4w4gyw"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_r4tt7"]
 [ext_resource type="Texture2D" uid="uid://b5cj44i08n730" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/big_office.png" id="2_af8fq"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_u11tp"]
+[ext_resource type="Resource" uid="uid://tq54r8njwoom" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_part_2_default_hint.tres" id="3_0abrf"]
 [ext_resource type="Texture2D" uid="uid://de4bdlorqqx2p" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop2.png" id="3_wwg2q"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_ofuj7"]
+[ext_resource type="Resource" uid="uid://j05pdcong6u4" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_part_2_tower_not_found_hint.tres" id="4_wd0o7"]
 [ext_resource type="Texture2D" uid="uid://clwvngjx6el8o" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop3.png" id="6_0abrf"]
 [ext_resource type="Texture2D" uid="uid://ddkc3n6g44rt8" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop4.png" id="8_quj21"]
 [ext_resource type="Resource" uid="uid://dinw0sei5vh84" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_light_is_back_part_2_neighbor.tres" id="8_r4tt7"]
@@ -42,6 +45,8 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_r4tt7")
 location_name = "secound_office_light_is_back_part_2"
 items = [NodePath("computer_1"), NodePath("computer_2"), NodePath("computer_3"), NodePath("computer_4"), NodePath("computer_5"), NodePath("tower_1"), NodePath("tower_2"), NodePath("tower_3"), NodePath("router")]
+hints = Array[ExtResource("2_u11tp")]([ExtResource("3_0abrf"), ExtResource("4_wd0o7")])
+has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
