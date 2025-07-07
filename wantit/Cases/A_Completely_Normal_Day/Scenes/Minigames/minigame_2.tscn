@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://c2bi0h58ogcem"]
+[gd_scene load_steps=20 format=3 uid="uid://c2bi0h58ogcem"]
 
 [ext_resource type="Script" uid="uid://cc5hsdbevkmaw" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/level_2.gd" id="1_elwrv"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_1hbks"]
 [ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Ziel.tscn" id="2_12rdr"]
 [ext_resource type="Resource" uid="uid://ch00pafntvhtf" path="res://Cases/A_Completely_Normal_Day/dialogue/minigame_2.dialogue" id="2_uo4om"]
-[ext_resource type="Resource" uid="uid://bdaboq25yeu3e" path="res://Cases/A_Completely_Normal_Day/resources/Hints/minigames_default_hint.tres" id="3_7dgib"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_1hbks"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_x54yk"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_1hbks"]
 [ext_resource type="Texture2D" uid="uid://cbisqnpn8c3l3" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_off.png" id="4_lwrin"]
@@ -16,10 +16,23 @@
 [ext_resource type="PackedScene" uid="uid://dobh0dh6l2t8n" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Start_for_two.tscn" id="10_1gmlg"]
 [ext_resource type="Texture2D" uid="uid://k417db6o8d3m" path="res://Cases/A_Completely_Normal_Day/Assets/arrow.png" id="13_uo4om"]
 
+[sub_resource type="Resource" id="Resource_li4jy"]
+script = ExtResource("3_1hbks")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_qvm5w"]
+script = ExtResource("2_1hbks")
+hint_text = "Das Signal muss beim Ziel (Glühbirne) ankommen. Verbindungen die Rot sind transportieren das Signal weiter. Weiße Verbindungen tun dies nicht."
+hint_condition = SubResource("Resource_li4jy")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
 [sub_resource type="Resource" id="Resource_7dgib"]
 script = ExtResource("3_x54yk")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_0sp0m"]
@@ -30,27 +43,21 @@ dialogue_triggers = Array[ExtResource("3_x54yk")]([SubResource("Resource_7dgib")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="minigame_2" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="minigame_2" type="Node"]
 script = ExtResource("1_elwrv")
 location_name = "minigame_2"
-hints = Array[ExtResource("2_1hbks")]([ExtResource("3_7dgib")])
+hints = Array[ExtResource("2_1hbks")]([SubResource("Resource_qvm5w")])
 location_dialogue = SubResource("Resource_0sp0m")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
+z_index = -10
 offset_right = 1152.0
 offset_bottom = 647.0
 color = Color(0.933333, 0.537255, 0.917647, 0.686275)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
-layout_mode = 0
 offset_left = -8.0
 offset_top = 667.0
 offset_right = 753.0
@@ -59,6 +66,7 @@ rotation = -1.5708
 expand_mode = 1
 
 [node name="Connections" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_left = -8.0
 offset_top = 667.0
@@ -123,6 +131,7 @@ lv_complete_picture = ExtResource("5_nbjep")
 lv_not_complete_picture = ExtResource("4_lwrin")
 
 [node name="Starts" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -238,6 +247,7 @@ input_connection_2 = NodePath("../../Connections/Connection_AndKitchen_AndChef")
 output_connection = NodePath("../../Connections/Connection_AndChef_ZIel")
 
 [node name="Arrows" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -291,7 +301,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("13_uo4om")
 
 [node name="check" type="Button" parent="."]
-layout_mode = 0
 offset_left = 949.0
 offset_top = 549.0
 offset_right = 1062.0

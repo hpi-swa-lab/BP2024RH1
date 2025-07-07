@@ -1,19 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://dldwkuqwfxyqu"]
+[gd_scene load_steps=9 format=3 uid="uid://dldwkuqwfxyqu"]
 
 [ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/minigame_introduction.gd" id="1_cxipq"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_dx632"]
 [ext_resource type="Texture2D" uid="uid://mlwoagb6be07" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/orange1.png" id="2_few14"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_dx632"]
 [ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_level.tscn" id="3_h0igv"]
-[ext_resource type="Resource" uid="uid://bdaboq25yeu3e" path="res://Cases/A_Completely_Normal_Day/resources/Hints/minigames_default_hint.tres" id="3_iu7pw"]
 [ext_resource type="Texture2D" uid="uid://q70frbhidy47" path="res://Cases/A_Completely_Normal_Day/Assets/pointing_arrow.png" id="4_vsda3"]
+
+[sub_resource type="Resource" id="Resource_iu7pw"]
+script = ExtResource("3_dx632")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_dixn4"]
+script = ExtResource("2_dx632")
+hint_text = "Das Signal muss beim Ziel (Glühbirne) ankommen. Verbindungen die Rot sind transportieren das Signal weiter. Weiße Verbindungen tun dies nicht."
+hint_condition = SubResource("Resource_iu7pw")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [node name="tutorial_minigame" type="Node"]
 script = ExtResource("1_cxipq")
 location_name = "tutorial_minigame"
-hints = Array[ExtResource("2_dx632")]([ExtResource("3_iu7pw")])
+hints = Array[ExtResource("2_dx632")]([SubResource("Resource_dixn4")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
 offset_right = 1152.0
 offset_bottom = 647.0
 color = Color(0.933333, 0.537255, 0.917647, 0.686275)

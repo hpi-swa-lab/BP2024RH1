@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjqw4udnawvm8"]
+[gd_scene load_steps=14 format=3 uid="uid://bjqw4udnawvm8"]
 
 [ext_resource type="Script" uid="uid://ch3hunh08n8eo" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/level_1.gd" id="1_ck1kf"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_1ptpr"]
 [ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Ziel.tscn" id="2_oy0tk"]
 [ext_resource type="Texture2D" uid="uid://cbisqnpn8c3l3" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_off.png" id="3_1ptpr"]
-[ext_resource type="Resource" uid="uid://bdaboq25yeu3e" path="res://Cases/A_Completely_Normal_Day/resources/Hints/minigames_default_hint.tres" id="3_qko48"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_qko48"]
 [ext_resource type="Texture2D" uid="uid://c6jlii58fljds" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_on.png" id="4_qko48"]
 [ext_resource type="PackedScene" uid="uid://dwlgbeyj8pysr" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Start.tscn" id="5_xkcl6"]
 [ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/connection.tscn" id="6_a7f4e"]
@@ -12,18 +12,26 @@
 [ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Or_Gatter.tscn" id="8_3k407"]
 [ext_resource type="Texture2D" uid="uid://k417db6o8d3m" path="res://Cases/A_Completely_Normal_Day/Assets/arrow.png" id="9_ck1kf"]
 
-[node name="minigame_1" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="Resource" id="Resource_xkcl6"]
+script = ExtResource("3_qko48")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_a7f4e"]
+script = ExtResource("2_1ptpr")
+hint_text = "Das Signal muss beim Ziel (Glühbirne) ankommen. Verbindungen die Rot sind transportieren das Signal weiter. Weiße Verbindungen tun dies nicht."
+hint_condition = SubResource("Resource_xkcl6")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[node name="minigame_1" type="Node"]
 script = ExtResource("1_ck1kf")
 location_name = "minigame_1"
-hints = Array[ExtResource("2_1ptpr")]([ExtResource("3_qko48")])
+hints = Array[ExtResource("2_1ptpr")]([SubResource("Resource_a7f4e")])
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
 offset_right = 1152.0
 offset_bottom = 647.0
 color = Color(0.933333, 0.537255, 0.917647, 0.686275)
@@ -37,6 +45,7 @@ lv_complete_picture = ExtResource("4_qko48")
 lv_not_complete_picture = ExtResource("3_1ptpr")
 
 [node name="Starts" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -90,6 +99,7 @@ offset_bottom = 87.0
 output_connection = NodePath("../../connections/Connection_Input_AndLeft_1")
 
 [node name="connections" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -139,6 +149,7 @@ position = Vector2(616, 480)
 points = PackedVector2Array(72, -64, 72, 72)
 
 [node name="Gatter" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -194,6 +205,7 @@ input_connection_2 = NodePath("../../connections/Connection_AndRight_AndMid")
 output_connection = NodePath("../../connections/Connection_AndMid_Ziel")
 
 [node name="Arrow" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -246,7 +258,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_ck1kf")
 
 [node name="check" type="Button" parent="."]
-layout_mode = 0
 offset_left = 949.0
 offset_top = 549.0
 offset_right = 1062.0

@@ -26,6 +26,7 @@
 script = ExtResource("6_rk7vc")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_wmpgh"]
@@ -40,6 +41,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_rk7vc")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_t64fq"]
@@ -54,6 +56,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_rk7vc")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_e87xv"]
@@ -68,6 +71,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_rk7vc")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_h7ev1"]
@@ -82,6 +86,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_rk7vc")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_6m8hv"]
@@ -96,6 +101,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_rk7vc")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_ckim7"]
@@ -110,6 +116,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_rk7vc")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_k00px"]
@@ -124,6 +131,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_rk7vc")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_i6ejt"]
@@ -138,6 +146,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_rk7vc")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_s47w8"]

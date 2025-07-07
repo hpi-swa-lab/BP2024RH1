@@ -1,8 +1,16 @@
-[gd_resource type="Resource" script_class="Hint" load_steps=2 format=3 uid="uid://bdaboq25yeu3e"]
+[gd_resource type="Resource" script_class="Hint" load_steps=4 format=3 uid="uid://bdaboq25yeu3e"]
 
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="1_j42mf"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="1_rmwgq"]
+
+[sub_resource type="Resource" id="Resource_3pix4"]
+script = ExtResource("1_j42mf")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [resource]
 script = ExtResource("1_rmwgq")
-hint_text = "Das SIgnal muss beim Ziel (Glühbirne) ankommen. Verbindungen die Rot sind transportieren das Signal weiter. Weiße Verbindungen tun dies nicht."
+hint_text = "Das Signal muss beim Ziel (Glühbirne) ankommen. Verbindungen die Rot sind transportieren das Signal weiter. Weiße Verbindungen tun dies nicht."
+hint_condition = SubResource("Resource_3pix4")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
