@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c56icebaulvkr"]
+[gd_scene load_steps=32 format=3 uid="uid://c56icebaulvkr"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_nkg13"]
 [ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_dlka3"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cxk6i4v561glk" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_table.png" id="10_kl1bo"]
 [ext_resource type="Resource" uid="uid://4eus2ra4mm37" path="res://Cases/Fake_News_Fiasko/dialogue/newspaper.dialogue" id="12_8dvih"]
 [ext_resource type="Resource" uid="uid://ch8xnx8eiv6rm" path="res://Cases/Fake_News_Fiasko/dialogue/menu.dialogue" id="14_kkpox"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="18_harlk"]
 
 [sub_resource type="Resource" id="Resource_5w6rp"]
 script = ExtResource("3_harlk")
@@ -43,10 +42,22 @@ hint_text = "Wenn wir wissen, was es heute zu Essen gab, hilft uns das bestimmt 
 hint_condition = SubResource("Resource_2s8rp")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
+[sub_resource type="Resource" id="Resource_pdq73"]
+script = ExtResource("3_harlk")
+mode = 2
+required_items = Array[String](["Business Card"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_08l6p"]
+script = ExtResource("2_f0fo3")
+hint_text = "Auf einem der Tische könnte noch was wichtiges liegen."
+hint_condition = SubResource("Resource_pdq73")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
 [sub_resource type="Resource" id="Resource_1lv1u"]
 script = ExtResource("3_harlk")
 mode = 0
-required_items = Array[String](["Newspaper", "Menu"])
+required_items = Array[String](["Newspaper", "Menu", "Business Card"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_128i1"]
@@ -113,7 +124,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_nkg13")
 location_name = "Restaurant Dining Hall Pre"
 items = [NodePath("Newspaper"), NodePath("Menu")]
-hints = Array[ExtResource("2_f0fo3")]([SubResource("Resource_n3c5l"), SubResource("Resource_3hes8"), SubResource("Resource_128i1")])
+hints = Array[ExtResource("2_f0fo3")]([SubResource("Resource_n3c5l"), SubResource("Resource_3hes8"), SubResource("Resource_08l6p"), SubResource("Resource_128i1")])
 has_inventory = true
 location_dialogue = SubResource("Resource_harlk")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
@@ -171,22 +182,3 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 scale = Vector2(0.300115, 0.300115)
 texture_normal = ExtResource("10_kl1bo")
 requested_location_name = "Table CloseUp"
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(28.8131, 16.2393)
-color = Color(0.729412, 0.780392, 0.647059, 1)
-
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 3.05417
-offset_top = 14.3479
-offset_right = 695.054
-offset_bottom = 110.348
-scale = Vector2(0.05, 0.107)
-theme_override_font_sizes/font_size = 70
-text = "Eine Stunde später..."
-
-[node name="Helpsystem" parent="." instance=ExtResource("18_harlk")]

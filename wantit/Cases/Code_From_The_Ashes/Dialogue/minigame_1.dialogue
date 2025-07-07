@@ -1,0 +1,8 @@
+~ default
+Was könnte die Verschiebung sein? Vielleicht sollte ich mir die Gegenstände vom Tatort noch einmal genauer anschauen.
+=> END
+
+~ minigame_completed
+Scheinbar gab es ein Treffen im "Bitza". Ich sollte mich dort einmal umsehen.
+do interaction_happened("Minigame1_completed")
+=> END

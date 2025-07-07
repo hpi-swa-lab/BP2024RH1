@@ -20,6 +20,9 @@ func _ready():
 		dialogue_player.activate()
 	
 	if not hints.is_empty():
+		var scene = load("res://Cases/Introduction_Case/Scenes/helpsystem.tscn")
+		helpsystem = scene.instantiate()
+		await add_child(helpsystem)
 		helpsystem = get_node_or_null("Helpsystem")
 		if helpsystem:
 			helpsystem.inventory_provider = case
@@ -61,7 +64,7 @@ func _on_location_switch_requested(requested_location_name: String):
 
 func update_items_visibility():
 	for item in items:
-		if case.inventory.has(item) or case.interactions.has(item):
+		if case.inventory.has(item):# or case.interactions.has(item):
 			item.mark_found()
 			disable_item(item)
 

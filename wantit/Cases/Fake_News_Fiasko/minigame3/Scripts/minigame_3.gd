@@ -75,6 +75,14 @@ func set_level():
 		%Option1.text = "Relevant"
 		%Option2.text = "Irrelevant"
 	elif level == 1:
+		DialogueManager.show_dialogue_balloon_scene(
+			location_dialogue.baloon_type,
+			location_dialogue.dialogue_resource,
+			"minigame_first_part_completed")
+		await DialogueManager.dialogue_ended
+		var interaction_item = Item.new()
+		interaction_item.item_name = "minigame first part completed"
+		item_found.emit(interaction_item)
 		%Option1.text = "Glaubwürdig"
 		%Option2.text = "Unglaubwürdig"
 		for element in %VBoxContainer.get_children():
