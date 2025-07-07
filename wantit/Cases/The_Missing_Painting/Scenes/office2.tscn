@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0s0ew05hljss"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_og6sq"]
+[ext_resource type="Resource" uid="uid://cbqj2g2sok4l6" path="res://Cases/The_Missing_Painting/Dialogue/office2.dialogue" id="2_02uhn"]
+[ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="2_70h7e"]
+[ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="3_414yj"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_cjisp"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_el6gn"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_xr26j"]
+
+[sub_resource type="Resource" id="Resource_ssxhc"]
+script = ExtResource("3_cjisp")
+start_marker = "hints_found"
+required_items = Array[String](["Art", "Paper"])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_mmf3e"]
+script = ExtResource("4_xr26j")
+dialogue_resource = ExtResource("2_02uhn")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_cjisp")]([SubResource("Resource_ssxhc")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Office2" type="Node"]
+script = ExtResource("1_og6sq")
+location_name = "Office2"
+location_dialogue = SubResource("Resource_mmf3e")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Office" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.301736, 0.301736)
+texture = ExtResource("2_70h7e")
+
+[node name="Computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_414yj")
+script = ExtResource("4_el6gn")
+requested_location_name = "Minigame"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

@@ -1,0 +1,34 @@
+~ default
+Dann müssen wir die fehlenden Pixel wohl manuell hinzufügen.
+In Bildschirmen werden Pixel mit Nullen und Einsen codiert.
+=> frage1
+
+~ frage1
+0 heißt Licht aus. Welche Farbe ist das dann?
+- weiß
+	Nein, überleg noch einmal.
+	=> frage1
+- schwarz
+	Genau!
+=> frage2
+
+~ frage2
+1 heißt Licht an. Welche Farbe ist das dann?
+- weiß
+	Genau!
+- schwarz
+	Nein, überleg noch einmal.
+	=> frage2
+=> END
+
+~ false_solution
+Das scheint nicht die Webseite des Kunsthändlers zu sein.
+Wahrscheinlich war das der falsche QR-Code.
+=> END
+
+~ correct_solution
+Perfekt! Das ist die Webseite des Kunsthändlers.
+Hier finde ich bestimmt seine Kontaktdaten, um ihn zu überführen!
+Ich werde es sofort dem Inspektor berichten!
+do interaction_happened("minigame_done")
+=> END

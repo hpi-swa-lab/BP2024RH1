@@ -1,0 +1,69 @@
+[gd_scene load_steps=15 format=3 uid="uid://dl2l13xobbrcq"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_2qg17"]
+[ext_resource type="Resource" uid="uid://haky5xmm70jn" path="res://Cases/A_Completely_Normal_Day/dialogue/corridor.dialogue" id="2_2hpkt"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_atkwd"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_qhsh2"]
+[ext_resource type="Resource" uid="uid://tq54r8njwoom" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_part_2_default_hint.tres" id="3_vlypl"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_gp2bb"]
+[ext_resource type="Resource" uid="uid://j05pdcong6u4" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_part_2_tower_not_found_hint.tres" id="4_t065d"]
+[ext_resource type="Texture2D" uid="uid://5rsinncwffxn" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/corridor.png" id="5_swk6o"]
+[ext_resource type="Texture2D" uid="uid://cm487sfbr7wd2" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/door_to_office.png" id="6_uq1e0"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="7_fxhdx"]
+[ext_resource type="Texture2D" uid="uid://bg1tpwfoptcei" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/door_to_big_office.png" id="8_di5h4"]
+[ext_resource type="Texture2D" uid="uid://dpwxu2ml3mu60" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/door_to_technical_room.png" id="9_ljai8"]
+
+[sub_resource type="Resource" id="Resource_ge3so"]
+script = ExtResource("3_qhsh2")
+start_marker = "WLAN_broken"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_v4w51"]
+script = ExtResource("4_gp2bb")
+dialogue_resource = ExtResource("2_2hpkt")
+is_dialogue = true
+dialogue_triggers = Array[ExtResource("3_qhsh2")]([SubResource("Resource_ge3so")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="corridor_light_is_back" type="Node"]
+script = ExtResource("1_2qg17")
+location_name = "corridor_light_is_back_part_2"
+hints = Array[ExtResource("2_atkwd")]([ExtResource("3_vlypl"), ExtResource("4_t065d")])
+location_dialogue = SubResource("Resource_v4w51")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_swk6o")
+
+[node name="Door_office" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("6_uq1e0")
+script = ExtResource("7_fxhdx")
+requested_location_name = "office_light_is_back_part_2"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="Door_secound_office" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_di5h4")
+script = ExtResource("7_fxhdx")
+requested_location_name = "secound_office_light_is_back_part_2"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="Door_technic_room" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_ljai8")
+script = ExtResource("7_fxhdx")
+requested_location_name = "technic_room_light_is_back_part_2"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

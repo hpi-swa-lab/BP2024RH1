@@ -1,0 +1,148 @@
+[gd_scene load_steps=24 format=3 uid="uid://t54jjw3ubnea"]
+
+[ext_resource type="Script" uid="uid://c3a8oyl3ss72p" path="res://Cases/The_Missing_Painting/Scripts/crime_scene.gd" id="1_khtxx"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_ril5w"]
+[ext_resource type="Texture2D" uid="uid://1c8me7c8bu1a" path="res://Cases/The_Missing_Painting/Assets/Backgrounds/living_room.png" id="2_wiovm"]
+[ext_resource type="Texture2D" uid="uid://c154i62cqxa1s" path="res://Cases/The_Missing_Painting/Assets/Scene_Switcher/shelf.png" id="3_emee1"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_kq5fo"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_3hqj3"]
+[ext_resource type="Texture2D" uid="uid://drk3ejqnnjbgs" path="res://Cases/The_Missing_Painting/Assets/Interactible_Items/missing_picture.png" id="6_khtxx"]
+[ext_resource type="Resource" uid="uid://yuxxjux0857y" path="res://Cases/The_Missing_Painting/Dialogue/paper.dialogue" id="7_khtxx"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="7_mxtko"]
+[ext_resource type="Script" uid="uid://chdwdpgf5loae" path="res://Cases/The_Missing_Painting/Scripts/paper_drag.gd" id="7_v5c4t"]
+[ext_resource type="Texture2D" uid="uid://cdk4uvnmivlai" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/background_qrcode_piece.png" id="7_wiovm"]
+[ext_resource type="Texture2D" uid="uid://b4jhts1qs6bo5" path="res://Cases/The_Missing_Painting/Assets/pillow.png" id="8_emee1"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="9_khtxx"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="10_mxtko"]
+[ext_resource type="Resource" uid="uid://bavjt3mfrjqep" path="res://Cases/The_Missing_Painting/Dialogue/picture.dialogue" id="11_khtxx"]
+
+[sub_resource type="Resource" id="Resource_q8re4"]
+script = ExtResource("3_kq5fo")
+mode = 2
+required_items = Array[String](["Art"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_w6bro"]
+script = ExtResource("2_ril5w")
+hint_text = "Klaas meinte, dass nur seine Kontakte von dem wertvollen Gemälde wussten."
+hint_condition = SubResource("Resource_q8re4")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_vkuyi"]
+script = ExtResource("3_kq5fo")
+mode = 0
+required_items = Array[String](["Art"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_a547l"]
+script = ExtResource("2_ril5w")
+hint_text = "Vielleicht liegt der fehlende Schnipsel von der Visitenkarte hier noch irgendwo."
+hint_condition = SubResource("Resource_vkuyi")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_khtxx"]
+script = ExtResource("9_khtxx")
+start_marker = "default"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_ril5w"]
+script = ExtResource("10_mxtko")
+dialogue_resource = ExtResource("7_khtxx")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_khtxx")]([SubResource("Resource_khtxx")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_mxtko"]
+script = ExtResource("9_khtxx")
+start_marker = "default"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_v5c4t"]
+script = ExtResource("10_mxtko")
+dialogue_resource = ExtResource("11_khtxx")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_khtxx")]([SubResource("Resource_mxtko")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Location" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_khtxx")
+location_name = "CrimeScene"
+items = [NodePath("Picture"), NodePath("Paper")]
+hints = Array[ExtResource("2_ril5w")]([SubResource("Resource_w6bro"), SubResource("Resource_a547l")])
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="LivingRoom" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_wiovm")
+expand_mode = 1
+
+[node name="ToShelf" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299916, 0.299916)
+texture_normal = ExtResource("3_emee1")
+script = ExtResource("4_3hqj3")
+requested_location_name = "ShelfCloseup"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="Paper" type="TextureButton" parent="."]
+modulate = Color(0.984314, 0.968627, 0.866667, 1)
+offset_left = 923.0
+offset_top = 482.0
+offset_right = 1947.0
+offset_bottom = 1506.0
+rotation = -1.72613
+scale = Vector2(0.108083, 0.10759)
+texture_normal = ExtResource("7_wiovm")
+script = ExtResource("7_mxtko")
+item_name = "Paper"
+is_collectable = true
+action_script = ExtResource("7_v5c4t")
+item_dialogue = SubResource("Resource_ril5w")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Picture" type="TextureButton" parent="."]
+offset_top = 2.0
+offset_right = 3840.0
+offset_bottom = 2162.0
+scale = Vector2(0.299743, 0.30007)
+texture_normal = ExtResource("6_khtxx")
+script = ExtResource("7_mxtko")
+item_name = "Picture"
+item_dialogue = SubResource("Resource_v5c4t")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Pillow" type="TextureRect" parent="."]
+modulate = Color(0.984314, 1, 1, 1)
+offset_left = 0.999938
+offset_top = 3.05176e-05
+offset_right = 3841.0
+offset_bottom = 2160.0
+scale = Vector2(0.299775, 0.299775)
+mouse_filter = 2
+texture = ExtResource("8_emee1")
+
+[node name="BigPaper" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.984108, 0.969926, 0.866447, 1)
+position = Vector2(575, 296)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_wiovm")
+
+[node name="SolutionGrid" type="GridContainer" parent="BigPaper"]
+unique_name_in_owner = true
+offset_left = -216.0
+offset_top = -264.0
+offset_right = 192.0
+offset_bottom = 144.0
+
+[connection signal="pressed" from="Paper" to="." method="_on_paper_pressed"]
+[connection signal="visibility_changed" from="Paper" to="." method="_on_paper_visibility_changed"]

@@ -1,0 +1,20 @@
+~ Search_szene_0
+Dieser Rechner scheint keinen Strom zu haben.
+=> END
+
+~ Search_szene_1
+Der Rechner hat Strom.
+=> END
+
+~ Search_szene_2
+Hier haben wir den Übeltäter.
+#dialog lan wirr war
+=> Lan_Wirr_War
+
+~ Lan_Wirr_War
+Klaas: Irgendwie sieht die Verkabelung mit dem LAN wirr aus. Das war bestimmt der Praktikant. 
+Klaas: Damit die IT-Experten den Standort des Täters finden können müssen wir erstmal dieses Chaos beseitigen. 
+Klaas: Aber wir müssen aufpassen. Ich glaube, wir hatten letzte Woche Überlastungs Probleme. 
+- LAN Chaos beseitigen. 
+#minispiel 2
+=> END

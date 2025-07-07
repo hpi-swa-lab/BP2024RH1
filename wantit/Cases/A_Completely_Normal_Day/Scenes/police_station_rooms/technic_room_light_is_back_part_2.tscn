@@ -1,0 +1,89 @@
+[gd_scene load_steps=19 format=3 uid="uid://twslfcssbtxr"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_fqmg8"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_t3atf"]
+[ext_resource type="Resource" uid="uid://tq54r8njwoom" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_part_2_default_hint.tres" id="3_sokyd"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_t3atf"]
+[ext_resource type="Resource" uid="uid://j05pdcong6u4" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_part_2_tower_not_found_hint.tres" id="4_4t37y"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_sokyd"]
+[ext_resource type="Texture2D" uid="uid://c46t8oqsmf11j" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/technical_room.png" id="5_4t37y"]
+[ext_resource type="Texture2D" uid="uid://bsc7d4f32x1i2" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/electricity_box.png" id="6_grk4h"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="7_efddf"]
+[ext_resource type="Resource" uid="uid://b88yntviftn1b" path="res://Cases/A_Completely_Normal_Day/dialogue/electric_box.dialogue" id="8_w0pq7"]
+[ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="9_0wfud"]
+[ext_resource type="Texture2D" uid="uid://do4smil4jhtb1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/router_technical_room.png" id="9_th3x2"]
+[ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="11_7xb7t"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="12_oef80"]
+
+[sub_resource type="Resource" id="Resource_0d7nt"]
+script = ExtResource("3_t3atf")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_1xnwv"]
+script = ExtResource("4_sokyd")
+dialogue_resource = ExtResource("8_w0pq7")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_t3atf")]([SubResource("Resource_0d7nt")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_fqmg8"]
+script = ExtResource("3_t3atf")
+start_marker = "Search_szene_2_technic_room"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_pyc6k"]
+script = ExtResource("4_sokyd")
+dialogue_resource = ExtResource("9_0wfud")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_t3atf")]([SubResource("Resource_fqmg8")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="technic_room_light_is_back" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_fqmg8")
+location_name = "technic_room_light_is_back_part_2"
+items = [NodePath("electric_box"), NodePath("router_technic")]
+hints = Array[ExtResource("2_t3atf")]([ExtResource("3_sokyd"), ExtResource("4_4t37y")])
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_4t37y")
+
+[node name="electric_box" type="TextureButton" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("6_grk4h")
+script = ExtResource("7_efddf")
+item_name = "electric_box_light_is_back"
+item_dialogue = SubResource("Resource_1xnwv")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="router_technic" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_th3x2")
+script = ExtResource("7_efddf")
+item_name = "router_technic_room_light_is_back"
+item_dialogue = SubResource("Resource_pyc6k")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="back_button" type="TextureButton" parent="."]
+offset_left = 1127.0
+offset_top = 630.0
+offset_right = 1639.0
+offset_bottom = 1142.0
+rotation = 3.14159
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("11_7xb7t")
+script = ExtResource("12_oef80")
+requested_location_name = "corridor_light_is_back_part_2"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

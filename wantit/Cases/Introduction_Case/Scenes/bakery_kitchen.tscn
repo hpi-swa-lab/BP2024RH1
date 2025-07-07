@@ -177,5 +177,7 @@ item_name = "ShoeprintsKitchen"
 item_dialogue = SubResource("Resource_nnyh4")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
+
 [connection signal="pressed" from="Flour Sack" to="Flour Sack" method="_on_flour_sack_pressed"]
+
 [connection signal="pressed" from="Key" to="." method="_on_key_pressed"]
