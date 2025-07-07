@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=73 format=3 uid="uid://dyj7yo7t4iqhf"]
-
+[gd_scene load_steps=86 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -43,8 +41,14 @@
 [ext_resource type="PackedScene" uid="uid://b2hq3xd6omjt1" path="res://Cases/Code_From_The_Ashes/Scenes/Bitza.tscn" id="40_r62pu"]
 [ext_resource type="PackedScene" uid="uid://w3jwwhr2jth1" path="res://Cases/Code_From_The_Ashes/Scenes/minigame1.tscn" id="41_klri6"]
 [ext_resource type="PackedScene" uid="uid://dxfl6mwk6eufh" path="res://Cases/Code_From_The_Ashes/Scenes/tutorial2.tscn" id="42_eu6ph"]
+[ext_resource type="PackedScene" uid="uid://dk5yd0nfgmxtt" path="res://Cases/The_Missing_Painting/Scenes/office.tscn" id="43_87ddb"]
 [ext_resource type="PackedScene" uid="uid://b8bpblw4o4xej" path="res://Cases/Code_From_The_Ashes/Scenes/minigame_2.tscn" id="43_edr7y"]
-
+[ext_resource type="PackedScene" uid="uid://t54jjw3ubnea" path="res://Cases/The_Missing_Painting/Scenes/crime_scene.tscn" id="44_mljfx"]
+[ext_resource type="PackedScene" uid="uid://bcqn6wdr4ydt2" path="res://Cases/The_Missing_Painting/Scenes/contacts.tscn" id="45_qpefm"]
+[ext_resource type="PackedScene" uid="uid://bm23u6l4roygm" path="res://Cases/The_Missing_Painting/Scenes/map.tscn" id="46_tb2lt"]
+[ext_resource type="PackedScene" uid="uid://b7hhus8oa5gnt" path="res://Cases/The_Missing_Painting/Scenes/minigame.tscn" id="47_cfc7e"]
+[ext_resource type="PackedScene" uid="uid://c0s0ew05hljss" path="res://Cases/The_Missing_Painting/Scenes/office2.tscn" id="48_gh0px"]
+[ext_resource type="PackedScene" uid="uid://bn384alyhc0fv" path="res://Cases/The_Missing_Painting/Scenes/shelf_closeup.tscn" id="49_v33yl"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -251,7 +255,51 @@ case_location_scenes = Array[PackedScene]([ExtResource("38_l1i01"), ExtResource(
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_t46w6"), SubResource("Resource_87ddb"), SubResource("Resource_lwlx3"), SubResource("Resource_tb2lt"), SubResource("Resource_gh0px")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="Resource" id="Resource_2tki7"]
+script = ExtResource("2_e2o6t")
+case_slug = ""
+case_title = ""
+case_topic = ""
+case_location_scenes = Array[PackedScene]([])
+events = Array[ExtResource("14_215e1")]([])
+metadata/_custom_type_script = "uid://ni774rbce31d"
+
+[sub_resource type="Resource" id="Resource_ib7ph"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Paper", "Art"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_vuohh"]
+script = ExtResource("14_215e1")
+event_name = "all_found"
+location_name = "Office2"
+start_condition = SubResource("Resource_ib7ph")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_3gvs5"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["minigame_done"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_mc3al"]
+script = ExtResource("14_215e1")
+event_name = "minigame_done"
+location_name = "Office"
+start_condition = SubResource("Resource_3gvs5")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_bqa6y"]
+script = ExtResource("2_e2o6t")
+case_slug = "Pixel"
+case_title = "Das verschwundene Gemälde"
+case_topic = "Pixelgrafiken"
+case_location_scenes = Array[PackedScene]([ExtResource("43_87ddb"), ExtResource("44_mljfx"), ExtResource("45_qpefm"), ExtResource("46_tb2lt"), ExtResource("47_cfc7e"), ExtResource("48_gh0px"), ExtResource("49_v33yl")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_vuohh"), SubResource("Resource_mc3al")])
+metadata/_custom_type_script = "uid://ni774rbce31d"
+
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_boyg6"), SubResource("Resource_edr7y")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_boyg6"), SubResource("Resource_edr7y"), SubResource("Resource_2tki7"), SubResource("Resource_bqa6y")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"

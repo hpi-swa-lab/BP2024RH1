@@ -12,6 +12,7 @@
 script = ExtResource("3_cjisp")
 start_marker = "hints_found"
 required_items = Array[String](["Art", "Paper"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_mmf3e"]

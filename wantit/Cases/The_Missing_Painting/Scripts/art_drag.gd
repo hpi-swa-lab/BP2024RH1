@@ -2,11 +2,11 @@ extends Item
 
 var dragging: bool
 var newItem: Button
-var oldItem: TextureButton
 var clue: Item = null
+var extended_item: Item
 
 func do_smt(item: TextureButton):
-	oldItem = item
+	extended_item = item
 	var Style = StyleBoxEmpty.new()
 	
 	var button = Button.new()
