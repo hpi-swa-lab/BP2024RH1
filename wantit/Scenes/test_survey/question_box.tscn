@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://yoqrryb7blgb"]
 
-[ext_resource type="Script" uid="uid://p6p1ctceiw23" path="res://Cases/Introduction_Case/knowledge_test/Scripts/question_box.gd" id="1_gk70f"]
-[ext_resource type="PackedScene" uid="uid://c0vmlrauu0it7" path="res://Cases/Introduction_Case/knowledge_test/Scenes/answer_button.tscn" id="2_o7t1u"]
-[ext_resource type="Texture2D" uid="uid://cumoh81eouu02" path="res://Cases/Introduction_Case/knowledge_test/Assets/Wissenstest.png" id="2_wjd10"]
+[ext_resource type="Script" uid="uid://p6p1ctceiw23" path="res://Scripts/test_survey/question_box.gd" id="1_gk70f"]
+[ext_resource type="PackedScene" uid="uid://c0vmlrauu0it7" path="res://Scenes/test_survey/answer_button.tscn" id="2_o7t1u"]
+[ext_resource type="Texture2D" uid="uid://d08ssl40oxl3r" path="res://Assets/knowledge_tests/Wissenstest.png" id="2_wjd10"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gk70f"]
 font_size = 25

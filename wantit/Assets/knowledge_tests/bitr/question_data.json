@@ -1,0 +1,75 @@
+[
+  {
+	"question": "Weswegen werden in Computern 0 und 1 verwendet?",
+	"answers": [
+	  "Weil das Informatiker so wollten.",
+	  "Weil Computer mit Schaltern arbeiten, die nur an oder aus sein können.",
+	  "Weil alle anderen Zahlen zu kompliziert sind.",
+	  ""
+	],
+	"correct": 1
+  },
+  {
+	"question": "Was bedeutet in einem Computer eine „0“?",
+	"answers": [
+	  "Der Schalter ist aus.",
+	  "Der Schalter ist an.",
+	  "Es wird eine zufällige Zahl gewählt.",
+	  ""
+	],
+	"correct": 0
+  },
+  {
+	"question": "In einer Binärzahl ist jede Stelle doppelt so viel wert wie die Stelle rechts daneben.",
+	"answers": [
+	  "Richtig",
+	  "Falsch",
+	  "",
+	  ""
+	],
+	"correct": 0
+  },
+  {
+	"question": "Welche Werte haben die ersten vier Stellen einer Binärzahl (von links nach rechts)?",
+	"answers": [
+	  "1, 2, 3, 4",
+	  "1, 10, 100, 1000",
+	  "8, 4, 2, 1",
+	  ""
+	],
+	"correct": 2
+  },
+  {
+	"question": "Welche Aussage stimmt?",
+	"answers": [
+	  "Binärzahlen brauchen mehr Stellen als Dezimalzahlen, um dieselbe Zahl darzustellen.",
+	  "Binärzahlen brauchen weniger Stellen als Dezimalzahlen.",
+	  "Binär- und Dezimalzahlen brauchen immer gleich viele Stellen.",
+	  ""
+	],
+	"correct": 0
+  },
+  {
+	"question": "Welche Binärzahl entspricht der Dezimalzahl 1?",
+	"answers": ["","","",""],
+	"isWrite": 1,
+	"correct": 0
+  },
+  {
+	"question": "Welche Dezimalzahl entspricht der Binärzahl 1000?",
+	"answers": ["","","",""],
+	"isWrite":1,
+	"correct": 0
+  },
+  {	"question": "Welche Binärzahl entspricht der Dezimalzahl 15?",
+	"answers": ["","","",""],
+	"isWrite": 1,
+	"correct": 0
+  },
+  {
+	"question": "Welche Dezimalzahl entspricht der Binärzahl 0111?",
+	"answers": ["","","",""],
+	"isWrite": 1,
+	"correct": 0
+  }
+]

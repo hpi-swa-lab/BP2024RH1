@@ -2,8 +2,8 @@
 extends Location
 
 
-const ASSET_PATH := "res://Cases/Introduction_Case/knowledge_test/Assets/"
-const CASE := "CAESR"
+var ASSET_PATH := "res://Assets/knowledge_tests/"
+var CASE := "CAESR"
 @onready var question_box = $QuestionWrap/QuestionBox
 @onready var skip_button = $QuestionWrap/QuestionBox/SkipButton
 
@@ -13,7 +13,7 @@ var questions = []
 
 func _ready():
 	super._ready()
-	
+	_choose_case()
 	load_questions()
 	show_next_question()
 	question_box.ASSET_PATH=ASSET_PATH
@@ -27,12 +27,11 @@ func load_questions():
 
 func show_next_question():
 	if current_question >= questions.size():
-		print(_choose_case()+" Quiz Finished! Final score: ", results)
+		print(CASE+" Quiz Finished! Final score: ", results)
 		var item = Item.new()
 		item.item_name = "KnowledgeTest completed"
 		item.is_collectable = false
 		item_found.emit(item, self)
-		#return
 	else:
 		question_box.show_question(questions[current_question])
 
@@ -46,10 +45,6 @@ func _on_answer_chosen(correct: bool):
 	current_question += 1
 	show_next_question()
 
-func _on_Timer_timeout():
-	current_question += 1
-	show_next_question()
-
 func _on_text_answer_submitted(answer: String):
 	# print("Spieler hat geschrieben:", answer)
 	results.append(answer)
@@ -57,5 +52,8 @@ func _on_text_answer_submitted(answer: String):
 	show_next_question()
 	
 func _choose_case():
-	var current_case = case.case_title
-	return current_case
+	if case!=null:
+		CASE = case.case_slug
+	else:
+		CASE = "pixel"
+	ASSET_PATH += (CASE+'/')

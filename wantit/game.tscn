@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=110 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -206,7 +206,7 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
 [sub_resource type="Resource" id="Resource_boyg6"]
 script = ExtResource("2_e2o6t")
-case_slug = "fake_news"
+case_slug = "fnf"
 case_title = "Fake News Fiasko"
 case_topic = "Fake News"
 case_location_scenes = Array[PackedScene]([ExtResource("18_xa8c5"), ExtResource("19_5b14r"), ExtResource("20_bnpwn"), ExtResource("21_36jdj"), ExtResource("22_xfvwf"), ExtResource("23_dhpj7"), ExtResource("24_7knny"), ExtResource("25_082n1"), ExtResource("26_xex6t"), ExtResource("27_aa0lp"), ExtResource("28_5b14r"), ExtResource("29_xfvwf"), ExtResource("30_dhpj7"), ExtResource("31_7knny"), ExtResource("32_dhpj7")])
@@ -280,7 +280,7 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
 [sub_resource type="Resource" id="Resource_edr7y"]
 script = ExtResource("2_e2o6t")
-case_slug = "Caesar"
+case_slug = "caesr"
 case_title = "Nachricht aus der Asche"
 case_topic = "Caesar Verschlüsselung"
 case_location_scenes = Array[PackedScene]([ExtResource("38_l1i01"), ExtResource("35_4v2jo"), ExtResource("36_l1i01"), ExtResource("37_r62pu"), ExtResource("39_r62pu"), ExtResource("34_iu0sx"), ExtResource("41_klri6"), ExtResource("40_r62pu"), ExtResource("42_eu6ph"), ExtResource("43_edr7y")])
@@ -367,7 +367,7 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
 [sub_resource type="Resource" id="Resource_2tki7"]
 script = ExtResource("2_e2o6t")
-case_slug = "Logik_Gatter"
+case_slug = "log"
 case_title = "Ein ganz normaler Tag"
 case_topic = "Logik Gatter"
 case_location_scenes = Array[PackedScene]([ExtResource("43_avmo2"), ExtResource("44_vyqle"), ExtResource("45_xoeau"), ExtResource("46_6qn5j"), ExtResource("47_wj41c"), ExtResource("48_baljx"), ExtResource("49_t2ssd"), ExtResource("50_7noa1"), ExtResource("51_3xib3"), ExtResource("52_5628o"), ExtResource("53_fuuk6"), ExtResource("54_cwgap"), ExtResource("55_svdf4"), ExtResource("56_lh772"), ExtResource("57_66xay"), ExtResource("58_0s2o4"), ExtResource("59_4mai8"), ExtResource("60_w37fy")])
@@ -402,7 +402,7 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
 [sub_resource type="Resource" id="Resource_bqa6y"]
 script = ExtResource("2_e2o6t")
-case_slug = "Pixel"
+case_slug = "pixel"
 case_title = "Das verschwundene Gemälde"
 case_topic = "Pixelgrafiken"
 case_location_scenes = Array[PackedScene]([ExtResource("43_87ddb"), ExtResource("44_mljfx"), ExtResource("45_qpefm"), ExtResource("46_tb2lt"), ExtResource("47_cfc7e"), ExtResource("48_gh0px"), ExtResource("49_v33yl")])

@@ -1,0 +1,55 @@
+[
+  {
+	"question": "Beschrifte die Grafik mit den Begriffen Gatter und Quelle.",
+	"answers": ["a) Gatter, b) Quelle", "a) Quelle, b) Gatter", "", ""],
+	"correct": 1,
+	"image": "log_Q1.png"
+	},
+  {
+	"question": "Leuchtet die Lampe?",
+	"answers": ["Ja", "Nein", "", ""],
+	"correct": 0,
+	"image": "log_Q2.png"
+  },
+  {
+	"question": "Leuchtet die Lampe?",
+	"answers": ["Ja", "Nein", "", ""],
+	"correct": 1,
+	"image": "log_Q3.png"
+  },
+  {
+	"question": "Leuchtet die Lampe?",
+	"answers": ["Ja", "Nein", "", ""],
+	"correct": 1,
+	"image": "log_Q4.png"
+  },
+  {
+	"question": "Leuchtet die Lampe?",
+	"answers": ["Ja", "Nein", "", ""],
+	"correct": 0,
+	"image": "log_Q5.png"
+  },
+  {
+	"question": "Leuchtet die Lampe?",
+	"answers": ["Ja", "Nein", "", ""],
+	"correct": 0,
+	"image": "log_Q6.png"
+  },
+  {
+	"question": "Leuchtet die Lampe?",
+	"answers": ["Ja", "Nein", "", ""],
+	"correct": 1,
+	"image": "log_Q7.png"
+  },
+  {
+	"question": "Du hast zwei Schalter und möchtest, dass die Lampe nur dann leuchtet, \n wenn mindestens einer der Schalter eingeschaltet ist. \n Welches Gatter würdest du verwenden?",
+	"answers": ["UND-Gatter", "ODER-Gatter", "", ""],
+	"correct": 1
+  },
+  {
+	"question": "Was ist der Unterschied zwischen einem AND-Gatter und einem OR-Gatter?",
+	"answers": ["","","",""],
+	"isWrite": 1,
+	"correct": 0
+  }
+]

@@ -1,17 +1,8 @@
 [
   {
-	"question": "Was ist ein Pixel?",
-	"answers": ["", "", "", ""],
-	"isWrite": 0, 
-	"correct": 0,
-	"richtig": "Ein viereckiger Teil des Bildschirms"
-  },
-  {
-	"question": "Wo findet man Pixel?",
-	"answers": ["", "", "", ""],
-	"isWrite": 0, 
-	"correct": 0,
-	"richtig": "Am Pixelbaum"
+	"question": "Wie nennt man die Anzahl, um die ein Buchstabe bei der \n Caesar-Verschlüsselung verschoben wird?",
+	"answers": ["Taste", "Schlüssel", "Klartext", "Passwort"],
+	"correct": 1
   },
   {
 	"question": "Was passiert bei der Caesar-Verschlüsselung mit den Buchstaben eines Textes?",
