@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dldwkuqwfxyqu"]
+[gd_scene load_steps=5 format=3 uid="uid://dldwkuqwfxyqu"]
 
 [ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/minigame_introduction.gd" id="1_cxipq"]
 [ext_resource type="Texture2D" uid="uid://mlwoagb6be07" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/orange1.png" id="2_few14"]
 [ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_level.tscn" id="3_h0igv"]
+[ext_resource type="Texture2D" uid="uid://q70frbhidy47" path="res://Cases/A_Completely_Normal_Day/Assets/pointing_arrow.png" id="4_vsda3"]
 
 [node name="tutorial_minigame" type="Node"]
 script = ExtResource("1_cxipq")
@@ -72,7 +73,6 @@ texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="explanation_try_start" type="Label" parent="."]
-visible = false
 offset_left = 289.0
 offset_top = 51.0
 offset_right = 448.0
@@ -81,28 +81,30 @@ offset_bottom = 74.0
 [node name="arrow" type="TextureRect" parent="explanation_try_start"]
 z_index = -1
 layout_mode = 0
-offset_left = -25.0
-offset_top = 42.0
-offset_right = 110.0
-offset_bottom = 109.0
-expand_mode = 1
+offset_left = -5.0
+offset_top = 72.0
+offset_right = 581.0
+offset_bottom = 658.0
+rotation = -0.698132
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_vsda3")
 flip_h = true
 
 [node name="explanation_try_start2" type="Label" parent="."]
-visible = false
 offset_left = 289.0
 offset_top = 51.0
 offset_right = 448.0
 offset_bottom = 74.0
 
-[node name="arrow" type="TextureRect" parent="explanation_try_start2"]
+[node name="arrow2" type="TextureRect" parent="explanation_try_start2"]
 z_index = -1
-layout_mode = 0
-offset_left = -34.0
-offset_top = 358.0
-offset_right = 101.0
-offset_bottom = 425.0
-expand_mode = 1
+offset_left = -22.0
+offset_top = 382.0
+offset_right = 564.0
+offset_bottom = 968.0
+rotation = -0.698132
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_vsda3")
 flip_h = true
 
 [node name="explanation_Gatter" type="Label" parent="."]

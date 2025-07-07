@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/connection.tscn" id="6_a7f4e"]
 [ext_resource type="PackedScene" uid="uid://b5sch15aup7u2" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/And_Gatter.tscn" id="7_30f5m"]
 [ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Or_Gatter.tscn" id="8_3k407"]
-[ext_resource type="Texture2D" uid="uid://yv0vdj3rcy4f" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/triangle.png" id="9_d3flh"]
+[ext_resource type="Texture2D" uid="uid://k417db6o8d3m" path="res://Cases/A_Completely_Normal_Day/Assets/arrow.png" id="9_ck1kf"]
 
 [node name="minigame_1" type="Control"]
 layout_mode = 3
@@ -198,49 +198,49 @@ offset_bottom = 40.0
 [node name="Sprite2D" type="Sprite2D" parent="Arrow"]
 position = Vector2(304, 400)
 rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_d3flh")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_ck1kf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Arrow"]
 position = Vector2(608, 400)
 rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_d3flh")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_ck1kf")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Arrow"]
 position = Vector2(304, 240)
 rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_d3flh")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_ck1kf")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Arrow"]
 position = Vector2(768, 400)
 rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_d3flh")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_ck1kf")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Arrow"]
 position = Vector2(752, 240)
 rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_d3flh")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_ck1kf")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Arrow"]
 position = Vector2(520, 240)
 rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_d3flh")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_ck1kf")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Arrow"]
 position = Vector2(896, 390)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_d3flh")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_ck1kf")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Arrow"]
 position = Vector2(896, 283)
 rotation = 3.14159
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_d3flh")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_ck1kf")
 
 [node name="check" type="Button" parent="."]
 layout_mode = 0

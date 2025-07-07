@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/connection.tscn" id="7_4cnik"]
 [ext_resource type="Texture2D" uid="uid://c6jlii58fljds" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_on.png" id="8_i4r03"]
 [ext_resource type="Texture2D" uid="uid://cbisqnpn8c3l3" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_off.png" id="9_cc7ng"]
-[ext_resource type="Texture2D" uid="uid://yv0vdj3rcy4f" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/triangle.png" id="12_m6xd1"]
+[ext_resource type="Texture2D" uid="uid://k417db6o8d3m" path="res://Cases/A_Completely_Normal_Day/Assets/arrow.png" id="9_isar4"]
 
 [node name="LogikGatterLevelIntroduction" type="Control"]
 layout_mode = 3
@@ -125,26 +125,26 @@ offset_bottom = 40.0
 [node name="Sprite2D" type="Sprite2D" parent="Arrows"]
 position = Vector2(264, 280)
 rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("12_m6xd1")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_isar4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Arrows"]
 position = Vector2(490, 280)
 rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("12_m6xd1")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_isar4")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Arrows"]
 position = Vector2(826, 280)
 rotation = -1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("12_m6xd1")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_isar4")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Arrows"]
 position = Vector2(664, 280)
 rotation = -1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("12_m6xd1")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_isar4")
 
 [connection signal="pressed" from="Start_AndLeft_1" to="." method="_on_start_and_left_1_pressed"]
 [connection signal="pressed" from="Start_AndLeft_2" to="." method="_on_start_and_left_2_pressed"]

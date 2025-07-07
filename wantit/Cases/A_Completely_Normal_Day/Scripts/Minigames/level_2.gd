@@ -58,5 +58,5 @@ func _on_check_pressed() -> void:
 	else:
 		pass
 		# Hier muss noch Dialog hinzugefügt werden
-		#DialogueManager.show_dialogue_balloon(load("res://dialogue/logik_gatter.dialogue"), "act2PuzzleInfo2")
+		DialogueManager.show_dialogue_balloon(load("res://Cases/A_Completely_Normal_Day/dialogue/minigame_2.dialogue"), "Hint")
 		#dialog das system bei mehr als drei satrts an überlasstet --> kurzversion von anfang bevor minigame startet

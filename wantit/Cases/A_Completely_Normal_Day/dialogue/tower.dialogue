@@ -9,5 +9,12 @@ Der Rechner hat Strom.
 ~ Search_szene_2
 Hier haben wir den Übeltäter.
 #dialog lan wirr war
-=> END
+=> Lan_Wirr_War
 
+~ Lan_Wirr_War
+Klaas: Irgendwie sieht die Verkabelung mit dem LAN wirr aus. Das war bestimmt der Praktikant. 
+Klaas: Damit die IT-Experten den Standort des Täters finden können müssen wir erstmal dieses Chaos beseitigen. 
+Klaas: Aber wir müssen aufpassen. Ich glaube, wir hatten letzte Woche Überlastungs Probleme. 
+- LAN Chaos beseitigen. 
+#minispiel 2
+=> END
