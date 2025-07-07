@@ -94,7 +94,6 @@ func display_solution():
 		DialogueManager.show_dialogue_balloon(load ("res://Cases/The_Missing_Painting/Dialogue/minigame.dialogue"), "false_solution")
 	if correct_solution:
 		%Display.texture = load("res://Cases/The_Missing_Painting/Assets/Minigame/website_galery.png")
-		
 		DialogueManager.show_dialogue_balloon(load ("res://Cases/The_Missing_Painting/Dialogue/minigame.dialogue"), "correct_solution")
 		
 
