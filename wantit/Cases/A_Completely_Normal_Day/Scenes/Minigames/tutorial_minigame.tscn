@@ -73,6 +73,7 @@ texture = ExtResource("2_few14")
 expand_mode = 1
 
 [node name="explanation_try_start" type="Label" parent="."]
+visible = false
 offset_left = 289.0
 offset_top = 51.0
 offset_right = 448.0
@@ -91,6 +92,7 @@ texture = ExtResource("4_vsda3")
 flip_h = true
 
 [node name="explanation_try_start2" type="Label" parent="."]
+visible = false
 offset_left = 289.0
 offset_top = 51.0
 offset_right = 448.0
@@ -98,6 +100,7 @@ offset_bottom = 74.0
 
 [node name="arrow2" type="TextureRect" parent="explanation_try_start2"]
 z_index = -1
+layout_mode = 0
 offset_left = -22.0
 offset_top = 382.0
 offset_right = 564.0

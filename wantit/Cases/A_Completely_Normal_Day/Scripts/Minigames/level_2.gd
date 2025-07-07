@@ -4,7 +4,7 @@ var ziel_input: bool  = false
 var current_active_starts: int = 0
 
 
-#DialogueManager.show_dialogue_balloon(load("res://dialogue/logik_gatter.dialogue"), "act2PuzzleInfo1"
+#DialogueManager.show_dialogue_balloon(load("res://dialogue/logik_gatter.dialogue"), "act2PuzzleInfo1")
 
 
 func _ready() -> void:
@@ -60,3 +60,5 @@ func _on_check_pressed() -> void:
 		# Hier muss noch Dialog hinzugefügt werden
 		DialogueManager.show_dialogue_balloon(load("res://Cases/A_Completely_Normal_Day/dialogue/minigame_2.dialogue"), "Hint")
 		#dialog das system bei mehr als drei satrts an überlasstet --> kurzversion von anfang bevor minigame startet
+	if ziel_input == false:
+		DialogueManager.show_dialogue_balloon(load("res://Cases/A_Completely_Normal_Day/dialogue/minigame_2.dialogue"), "Ziel_input_false")

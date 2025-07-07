@@ -19,3 +19,5 @@ func _on_check_pressed() -> void:
 		interaction_item_log_minigame_1_complete.item_name = "log_minigame_1_complete"
 		item_found.emit(interaction_item_log_minigame_1_complete)
 		print("log_minigame_1_complete_akwjgerfesuhkjfh")
+	else:
+		DialogueManager.show_dialogue_balloon(load("res://Cases/A_Completely_Normal_Day/dialogue/minigame_2.dialogue"), "Ziel_input_false")
