@@ -18,6 +18,8 @@ func _ready():
 		btn.connect("answer_selected", Callable(self, "_on_answer_selected"))
 
 func show_question(q: Dictionary):
+	answer_submit.visible = false
+	answer_box.visible = false
 	question_label.text = q["question"]
 	answer_box.clear()
 
@@ -55,7 +57,5 @@ func _on_answer_selected(correct: bool):
 func _on_submit_pressed():
 	var answer = answer_box.text
 	if answer != "":
-		answer_submit.visible = false
-		answer_box.visible = false
 		text_answer_submitted.emit(answer)
 	

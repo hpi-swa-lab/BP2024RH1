@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=117 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://u3d6wp8ra4je" path="res://Scenes/empty_map.tscn" id="5_e8heu"]
 [ext_resource type="PackedScene" uid="uid://bto1uem2cnbyr" path="res://Cases/Introduction_Case/Scenes/bakery_kitchen.tscn" id="5_eow3j"]
 [ext_resource type="PackedScene" uid="uid://dsaho1fwwino3" path="res://Cases/Introduction_Case/Scenes/bakery_office.tscn" id="6_j5wjh"]
-[ext_resource type="PackedScene" uid="uid://gvdy162iksbj" path="res://Cases/Introduction_Case/knowledge_test/Scenes/knowledge_test.tscn" id="7_edr7y"]
+[ext_resource type="PackedScene" uid="uid://gvdy162iksbj" path="res://Scenes/test_survey/pre_test.tscn" id="7_edr7y"]
 [ext_resource type="PackedScene" uid="uid://bhbqihv27a5x8" path="res://Cases/Introduction_Case/Scenes/safe_close_up.tscn" id="7_vef74"]
 [ext_resource type="PackedScene" uid="uid://bj2wmkkh47ywg" path="res://Cases/Introduction_Case/Scenes/counter_close_up.tscn" id="8_hve3p"]
 [ext_resource type="PackedScene" uid="uid://csoa2rt7yia0i" path="res://Cases/Introduction_Case/Scenes/map.tscn" id="9_vef74"]
@@ -33,7 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://de08xwxsx122u" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/case_2_minigame_2.tscn" id="30_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://ovgubqjktpfk" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/minigame_3.tscn" id="31_7knny"]
 [ext_resource type="PackedScene" uid="uid://caun4d48wfmce" path="res://Cases/Fake_News_Fiasko/Scenes/time_skip.tscn" id="32_dhpj7"]
+[ext_resource type="PackedScene" uid="uid://csk21o36cfaod" path="res://Scenes/test_survey/post_test.tscn" id="33_6qn5j"]
 [ext_resource type="PackedScene" uid="uid://ccytljyn6i5ir" path="res://Cases/Code_From_The_Ashes/Scenes/kitchen.tscn" id="34_iu0sx"]
+[ext_resource type="PackedScene" uid="uid://c1fale7ot2rmf" path="res://Scenes/test_survey/sliding_game_survey.tscn" id="34_wj41c"]
 [ext_resource type="PackedScene" uid="uid://dq7i6tek3v1ks" path="res://Cases/Code_From_The_Ashes/Scenes/living_room.tscn" id="35_4v2jo"]
 [ext_resource type="PackedScene" uid="uid://dn2vv1lnadisr" path="res://Cases/Code_From_The_Ashes/Scenes/tutorial.tscn" id="36_l1i01"]
 [ext_resource type="PackedScene" uid="uid://cq2kn0806dpmu" path="res://Cases/Code_From_The_Ashes/Scenes/minispiel.tscn" id="37_r62pu"]
@@ -78,65 +80,13 @@ case_location_scenes = Array[PackedScene]([ExtResource("3_7sc4i"), ExtResource("
 events = Array[ExtResource("14_215e1")]([])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
-[sub_resource type="Resource" id="Resource_v33yl"]
-script = ExtResource("18_rvswv")
-mode = 1
-required_items = Array[String](["KnowledgeTest completed"])
-metadata/_custom_type_script = "uid://bfe303xauflwy"
-
-[sub_resource type="Resource" id="Resource_2tki7"]
-script = ExtResource("14_215e1")
-event_name = ""
-location_name = "Office"
-start_condition = SubResource("Resource_v33yl")
-metadata/_custom_type_script = "uid://duxdni5nv4je5"
-
-[sub_resource type="Resource" id="Resource_mljfx"]
-script = ExtResource("18_rvswv")
-mode = 0
-required_items = Array[String](["Waffle", "ShoeprintsKitchen", "ShoeprintsOffice", "Pliers", "Screwdriver", "Fingerprints", "Door"])
-metadata/_custom_type_script = "uid://bfe303xauflwy"
-
-[sub_resource type="Resource" id="Resource_215e1"]
-script = ExtResource("14_215e1")
-event_name = "On all clues found"
-location_name = "Backery Kitchen"
-start_condition = SubResource("Resource_mljfx")
-metadata/_custom_type_script = "uid://btva00lvfk41s"
-
-[sub_resource type="Resource" id="Resource_e36ub"]
-script = ExtResource("18_rvswv")
-mode = 0
-required_items = Array[String](["Minigame1 completed"])
-metadata/_custom_type_script = "uid://bfe303xauflwy"
-
-[sub_resource type="Resource" id="Resource_7sc4i"]
-script = ExtResource("14_215e1")
-event_name = "On minigame 1 completed"
-location_name = "Office"
-start_condition = SubResource("Resource_e36ub")
-metadata/_custom_type_script = "uid://btva00lvfk41s"
-
-[sub_resource type="Resource" id="Resource_hb5m1"]
-script = ExtResource("18_rvswv")
-mode = 0
-required_items = Array[String](["Minigame2 completed"])
-metadata/_custom_type_script = "uid://bfe303xauflwy"
-
-[sub_resource type="Resource" id="Resource_80cx4"]
-script = ExtResource("14_215e1")
-event_name = "On minigame2 completed"
-location_name = "Office"
-start_condition = SubResource("Resource_hb5m1")
-metadata/_custom_type_script = "uid://btva00lvfk41s"
-
 [sub_resource type="Resource" id="Resource_feb5d"]
 script = ExtResource("2_e2o6t")
-case_slug = "intro_case"
+case_slug = "intro"
 case_title = "Einführungsfall"
 case_topic = "Informationen und Daten"
-case_location_scenes = Array[PackedScene]([ExtResource("7_edr7y"), ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p"), ExtResource("10_hve3p"), ExtResource("11_lc2xo"), ExtResource("12_215e1")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_2tki7"), SubResource("Resource_215e1"), SubResource("Resource_7sc4i"), SubResource("Resource_80cx4")])
+case_location_scenes = Array[PackedScene]([ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p"), ExtResource("10_hve3p"), ExtResource("11_lc2xo"), ExtResource("12_215e1")])
+events = Array[ExtResource("14_215e1")]([])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_7knny"]
@@ -204,13 +154,39 @@ location_name = "Office"
 start_condition = SubResource("Resource_klri6")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
+[sub_resource type="Resource" id="Resource_vyqle"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["PreTest completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_xoeau"]
+script = ExtResource("14_215e1")
+event_name = "on PreTest completed"
+location_name = "Office"
+start_condition = SubResource("Resource_vyqle")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_baljx"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["PostTest completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_t2ssd"]
+script = ExtResource("14_215e1")
+event_name = "on PostTest completed"
+location_name = "GameSurvey"
+start_condition = SubResource("Resource_baljx")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
 [sub_resource type="Resource" id="Resource_boyg6"]
 script = ExtResource("2_e2o6t")
 case_slug = "fnf"
 case_title = "Fake News Fiasko"
 case_topic = "Fake News"
-case_location_scenes = Array[PackedScene]([ExtResource("18_xa8c5"), ExtResource("19_5b14r"), ExtResource("20_bnpwn"), ExtResource("21_36jdj"), ExtResource("22_xfvwf"), ExtResource("23_dhpj7"), ExtResource("24_7knny"), ExtResource("25_082n1"), ExtResource("26_xex6t"), ExtResource("27_aa0lp"), ExtResource("28_5b14r"), ExtResource("29_xfvwf"), ExtResource("30_dhpj7"), ExtResource("31_7knny"), ExtResource("32_dhpj7")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_082n1"), SubResource("Resource_aa0lp"), SubResource("Resource_4v2jo"), SubResource("Resource_r62pu"), SubResource("Resource_eu6ph")])
+case_location_scenes = Array[PackedScene]([ExtResource("7_edr7y"), ExtResource("18_xa8c5"), ExtResource("19_5b14r"), ExtResource("20_bnpwn"), ExtResource("21_36jdj"), ExtResource("22_xfvwf"), ExtResource("23_dhpj7"), ExtResource("24_7knny"), ExtResource("25_082n1"), ExtResource("26_xex6t"), ExtResource("27_aa0lp"), ExtResource("28_5b14r"), ExtResource("29_xfvwf"), ExtResource("30_dhpj7"), ExtResource("31_7knny"), ExtResource("32_dhpj7"), ExtResource("33_6qn5j"), ExtResource("34_wj41c")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_082n1"), SubResource("Resource_aa0lp"), SubResource("Resource_4v2jo"), SubResource("Resource_r62pu"), SubResource("Resource_eu6ph"), SubResource("Resource_xoeau"), SubResource("Resource_t2ssd")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_kq12w"]

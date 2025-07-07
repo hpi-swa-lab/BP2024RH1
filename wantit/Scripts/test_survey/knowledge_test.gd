@@ -3,13 +3,15 @@ extends Location
 
 
 var ASSET_PATH := "res://Assets/knowledge_tests/"
-var CASE := "CAESR"
+var CASE := "caesr"
 @onready var question_box = $QuestionWrap/QuestionBox
 @onready var skip_button = $QuestionWrap/QuestionBox/SkipButton
 
 var results = []
 var current_question = 0
 var questions = []
+var startTime : int
+var durationAnswers : Array[int]
 
 func _ready():
 	super._ready()
@@ -27,12 +29,19 @@ func load_questions():
 
 func show_next_question():
 	if current_question >= questions.size():
-		print(CASE+" Quiz Finished! Final score: ", results)
+		durationAnswers.append((Time.get_ticks_msec() / 1000.0) - startTime)
+		print(CASE+" "+ self.location_name+" Quiz Finished! Final score: ", results)
+		Analytics.add_knowledge_test_analytics(self.location_name, results, durationAnswers)
 		var item = Item.new()
-		item.item_name = "KnowledgeTest completed"
+		item.item_name = self.location_name + " completed"
 		item.is_collectable = false
 		item_found.emit(item, self)
 	else:
+		if !startTime: Time.get_ticks_msec() / 1000.0
+		else: 
+			var t := Time.get_ticks_msec() / 1000.0
+			durationAnswers.append(t-startTime)
+			startTime = t
 		question_box.show_question(questions[current_question])
 
 func _on_skip_pressed():

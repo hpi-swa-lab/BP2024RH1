@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jdtbuh11axxx" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/post_close_up.tscn" id="3_6sdpr"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_fipg2"]
 [ext_resource type="Texture2D" uid="uid://cbg320vongeqq" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_bitza.png" id="3_lr4ld"]
-[ext_resource type="Resource" uid="uid://gpamh6uyoh8s" path="res://Cases/Fake_News_Fiasko/dialogue/minigame3.dialogue" id="4_0qow0"]
+[ext_resource type="Resource" uid="uid://dm6lo5gl77gvx" path="res://Cases/Fake_News_Fiasko/dialogue/minigame3.dialogue" id="4_0qow0"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="4_6sanc"]
 [ext_resource type="Texture2D" uid="uid://bkbjqsorkv1fh" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_hospital.png" id="4_mu65p"]
 [ext_resource type="Texture2D" uid="uid://ox3itie2kkk3" path="res://Cases/Fake_News_Fiasko/Assets/minigame3/upload_selfie.png" id="4_rpf30"]

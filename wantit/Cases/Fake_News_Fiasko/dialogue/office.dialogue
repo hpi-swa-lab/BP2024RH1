@@ -28,5 +28,6 @@ Klaas: Und? Wen sollen wir noch einmal genauer befragen?
 
 ~ end
 Klaas: Vielen Dank für deine Hilfe und bis zum nächsten Fall!
+do _on_location_switch_requested("PostTest")
 do complete_case()
 => END
