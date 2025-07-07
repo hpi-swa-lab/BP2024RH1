@@ -1,0 +1,12 @@
+~ default
+Klaas: Wenn wir mehr als 3 Quellen an schalten wird das System überlasten.
+=> END
+
+~ Hint
+Klaas: Es sind mehr als 3 Quellen an. Wenn wir jetzt starten wird das System wieder überlasten
+=> END
+
+~ Ziel_input_false
+Klaas: Das Signal ist noch nicht beim Ziel angekommen.
+=> END
+

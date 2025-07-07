@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=103 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -52,21 +52,13 @@
 [ext_resource type="PackedScene" uid="uid://bu62r6drd73dl" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/corridor_power_failure.tscn" id="41_87ddb"]
 [ext_resource type="PackedScene" uid="uid://w3jwwhr2jth1" path="res://Cases/Code_From_The_Ashes/Scenes/minigame1.tscn" id="41_klri6"]
 [ext_resource type="PackedScene" uid="uid://dxfl6mwk6eufh" path="res://Cases/Code_From_The_Ashes/Scenes/tutorial2.tscn" id="42_eu6ph"]
-[ext_resource type="PackedScene" uid="uid://dk5yd0nfgmxtt" path="res://Cases/The_Missing_Painting/Scenes/office.tscn" id="43_87ddb"]
-[ext_resource type="PackedScene" uid="uid://b8bpblw4o4xej" path="res://Cases/Code_From_The_Ashes/Scenes/minigame_2.tscn" id="43_edr7y"]
-[ext_resource type="PackedScene" uid="uid://t54jjw3ubnea" path="res://Cases/The_Missing_Painting/Scenes/crime_scene.tscn" id="44_mljfx"]
-[ext_resource type="PackedScene" uid="uid://bcqn6wdr4ydt2" path="res://Cases/The_Missing_Painting/Scenes/contacts.tscn" id="45_qpefm"]
-[ext_resource type="PackedScene" uid="uid://bm23u6l4roygm" path="res://Cases/The_Missing_Painting/Scenes/map.tscn" id="46_tb2lt"]
-[ext_resource type="PackedScene" uid="uid://b7hhus8oa5gnt" path="res://Cases/The_Missing_Painting/Scenes/minigame.tscn" id="47_cfc7e"]
-[ext_resource type="PackedScene" uid="uid://c0s0ew05hljss" path="res://Cases/The_Missing_Painting/Scenes/office2.tscn" id="48_gh0px"]
-[ext_resource type="PackedScene" uid="uid://bn384alyhc0fv" path="res://Cases/The_Missing_Painting/Scenes/shelf_closeup.tscn" id="49_v33yl"]
 [ext_resource type="PackedScene" uid="uid://c1xoqrkvm0u5l" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/corridor_light_is_back.tscn" id="42_mljfx"]
 [ext_resource type="PackedScene" uid="uid://twslfcssbtxr" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/technic_room_light_is_back_part_2.tscn" id="42_qpefm"]
+[ext_resource type="PackedScene" uid="uid://b8bpblw4o4xej" path="res://Cases/Code_From_The_Ashes/Scenes/minigame_2.tscn" id="43_edr7y"]
 [ext_resource type="PackedScene" uid="uid://bjqw4udnawvm8" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_1.tscn" id="43_t46w6"]
 [ext_resource type="PackedScene" uid="uid://c2bi0h58ogcem" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_2.tscn" id="44_m28ev"]
 [ext_resource type="PackedScene" uid="uid://dl2l13xobbrcq" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/corridor_light_is_back_part_2.tscn" id="45_tb2lt"]
 [ext_resource type="PackedScene" uid="uid://dldwkuqwfxyqu" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_minigame.tscn" id="49_87ddb"]
-[ext_resource type="PackedScene" uid="uid://carj57qx8oiee" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/technic_room_light_is_back_2.tscn" id="60_mc3al"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -273,51 +265,94 @@ case_location_scenes = Array[PackedScene]([ExtResource("38_l1i01"), ExtResource(
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_t46w6"), SubResource("Resource_87ddb"), SubResource("Resource_lwlx3"), SubResource("Resource_tb2lt"), SubResource("Resource_gh0px")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
-[sub_resource type="Resource" id="Resource_2tki7"]
-script = ExtResource("2_e2o6t")
-case_slug = ""
-case_title = ""
-case_topic = ""
-case_location_scenes = Array[PackedScene]([])
-events = Array[ExtResource("14_215e1")]([])
-metadata/_custom_type_script = "uid://ni774rbce31d"
-
-[sub_resource type="Resource" id="Resource_ib7ph"]
-script = ExtResource("18_rvswv")
-mode = 0
-required_items = Array[String](["Paper", "Art"])
-metadata/_custom_type_script = "uid://bfe303xauflwy"
-
-[sub_resource type="Resource" id="Resource_vuohh"]
-script = ExtResource("14_215e1")
-event_name = "all_found"
-location_name = "Office2"
-start_condition = SubResource("Resource_ib7ph")
-metadata/_custom_type_script = "uid://duxdni5nv4je5"
-
 [sub_resource type="Resource" id="Resource_3gvs5"]
 script = ExtResource("18_rvswv")
 mode = 0
-required_items = Array[String](["minigame_done"])
+required_items = Array[String](["electric_box_power_failure"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_mc3al"]
 script = ExtResource("14_215e1")
-event_name = "minigame_done"
-location_name = "Office"
+event_name = "start_tutorial"
+location_name = "tutorial_minigame"
 start_condition = SubResource("Resource_3gvs5")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
 [sub_resource type="Resource" id="Resource_bqa6y"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["log_tutorial_complete"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_du4n2"]
+script = ExtResource("14_215e1")
+event_name = "start_minigame_1"
+location_name = "minigame_1"
+start_condition = SubResource("Resource_bqa6y")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_ra4rb"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["log_minigame_1_complete"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_ple6s"]
+script = ExtResource("14_215e1")
+event_name = "minigam_1_finished"
+location_name = "technic_room_light_is_back"
+start_condition = SubResource("Resource_ra4rb")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_jo4nb"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["computer_light_is_back", "router_light_is_back"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_56gn1"]
+script = ExtResource("14_215e1")
+event_name = "start_search_szene_2"
+location_name = "corridor_light_is_back_part_2"
+start_condition = SubResource("Resource_jo4nb")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_avmo2"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["tower_light_is_back_part_2"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_vyqle"]
+script = ExtResource("14_215e1")
+event_name = "start_minigame_2"
+location_name = "minigame_2"
+start_condition = SubResource("Resource_avmo2")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_xoeau"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["log_minigame_2_complete"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_6qn5j"]
+script = ExtResource("14_215e1")
+event_name = "start_end_szene"
+location_name = "office_end"
+start_condition = SubResource("Resource_xoeau")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_wj41c"]
 script = ExtResource("2_e2o6t")
-case_slug = "Pixel"
-case_title = "Das verschwundene Gemälde"
-case_topic = "Pixelgrafiken"
-case_location_scenes = Array[PackedScene]([ExtResource("43_87ddb"), ExtResource("44_mljfx"), ExtResource("45_qpefm"), ExtResource("46_tb2lt"), ExtResource("47_cfc7e"), ExtResource("48_gh0px"), ExtResource("49_v33yl")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_vuohh"), SubResource("Resource_mc3al")])
+case_slug = "LogikGatter"
+case_title = "Ein ganz normaler Tag"
+case_topic = "Logik Gatter"
+case_location_scenes = Array[PackedScene]([ExtResource("42_mljfx"), ExtResource("45_tb2lt"), ExtResource("41_87ddb"), ExtResource("34_eu6ph"), ExtResource("37_87ddb"), ExtResource("36_kq12w"), ExtResource("36_0de7l"), ExtResource("35_edr7y"), ExtResource("38_m28ev"), ExtResource("39_87ddb"), ExtResource("37_t46w6"), ExtResource("40_0de7l"), ExtResource("42_qpefm"), ExtResource("39_lwlx3"), ExtResource("43_t46w6"), ExtResource("44_m28ev"), ExtResource("49_87ddb")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_mc3al"), SubResource("Resource_du4n2"), SubResource("Resource_ple6s"), SubResource("Resource_56gn1"), SubResource("Resource_vyqle"), SubResource("Resource_6qn5j")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_boyg6"), SubResource("Resource_edr7y"), SubResource("Resource_2tki7"), SubResource("Resource_7noa1")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_boyg6"), SubResource("Resource_edr7y"), SubResource("Resource_wj41c")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"

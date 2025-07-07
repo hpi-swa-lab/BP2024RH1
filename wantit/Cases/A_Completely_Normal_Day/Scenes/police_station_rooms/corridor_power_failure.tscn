@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://bu62r6drd73dl"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_287h4"]
+[ext_resource type="Texture2D" uid="uid://chr314b2wau7d" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/Blackout/corridor_dark.png" id="2_7e82i"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="2_mu0s1"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_wv2ob"]
+[ext_resource type="Texture2D" uid="uid://h64y0be1awis" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/blackout/door_to_office_dark.png" id="3_5iik2"]
+[ext_resource type="Resource" uid="uid://1ibsvjq067bm" path="res://Cases/A_Completely_Normal_Day/resources/Hints/power_failure_default_hint.tres" id="3_8mbt7"]
+[ext_resource type="Texture2D" uid="uid://cda7jjuy73q67" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/blackout/door_to_big_office_dark.png" id="5_ui18n"]
+[ext_resource type="Texture2D" uid="uid://dly1gaijxq1pb" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/blackout/door_to_technical_room_dark.png" id="6_onhk6"]
+
+[node name="corridor_power_failure" type="Node"]
+script = ExtResource("1_287h4")
+location_name = "corridor_power_failure"
+hints = Array[ExtResource("2_wv2ob")]([ExtResource("3_8mbt7")])
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_7e82i")
+
+[node name="Door_office" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_5iik2")
+script = ExtResource("2_mu0s1")
+requested_location_name = "office_power_failure"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="Door_secound_office" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_ui18n")
+script = ExtResource("2_mu0s1")
+requested_location_name = "secound_office_power_failure"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="Door_technic_room" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("6_onhk6")
+script = ExtResource("2_mu0s1")
+requested_location_name = "technic_room_power_failure"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

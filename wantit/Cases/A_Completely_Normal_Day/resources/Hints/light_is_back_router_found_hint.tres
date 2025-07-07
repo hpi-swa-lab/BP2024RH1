@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Hint" load_steps=4 format=3 uid="uid://cmual83u7hdm4"]
+
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="1_j0s88"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_pahuk"]
+
+[sub_resource type="Resource" id="Resource_7d00f"]
+script = ExtResource("1_j0s88")
+mode = 0
+required_items = Array[String](["router_light_is_back"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[resource]
+script = ExtResource("2_pahuk")
+hint_text = "Schau nach, ob das WLAN Signal bei den Computern ankommt."
+hint_condition = SubResource("Resource_7d00f")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"

@@ -1,0 +1,75 @@
+[gd_scene load_steps=16 format=3 uid="uid://brb5udqhuuouj"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_jadis"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_2rhc4"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_mv2i3"]
+[ext_resource type="Resource" uid="uid://dj5o46s4j8ioe" path="res://Cases/A_Completely_Normal_Day/dialogue/office.dialogue" id="4_o34xk"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="5_mkncw"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="6_wm3eh"]
+[ext_resource type="Texture2D" uid="uid://cxg5pbosxbvcq" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="7_t0p2k"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="9_1yf5l"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="9_sxxjt"]
+[ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="10_japbu"]
+[ext_resource type="Texture2D" uid="uid://f6f3bng1frf1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="12_ufk7y"]
+
+[sub_resource type="Resource" id="Resource_573ma"]
+script = ExtResource("3_mv2i3")
+mode = 2
+required_items = Array[String](["Documents_on_table"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_psvkd"]
+script = ExtResource("2_2rhc4")
+hint_text = "Der Papierkram muss erledigt werden. Die Dokumente Liegen schon auf meinem Tisch"
+hint_condition = SubResource("Resource_573ma")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_c6d25"]
+script = ExtResource("5_mkncw")
+start_marker = "Paperwork"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_evvr1"]
+script = ExtResource("6_wm3eh")
+dialogue_resource = ExtResource("4_o34xk")
+is_dialogue = true
+dialogue_triggers = Array[ExtResource("5_mkncw")]([SubResource("Resource_c6d25")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="office_beginn" type="Node"]
+script = ExtResource("1_jadis")
+location_name = "office_beginn"
+hints = Array[ExtResource("2_2rhc4")]([SubResource("Resource_psvkd")])
+location_dialogue = SubResource("Resource_evvr1")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Office" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3838.0
+offset_bottom = 2158.0
+scale = Vector2(0.301736, 0.301736)
+texture = ExtResource("7_t0p2k")
+
+[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("10_japbu")
+script = ExtResource("9_sxxjt")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Documents_on_table" type="TextureButton" parent="."]
+offset_left = 487.0
+offset_top = 315.0
+offset_right = 1126.0
+offset_bottom = 837.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("12_ufk7y")
+script = ExtResource("9_1yf5l")
+requested_location_name = "office_power_failure"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"

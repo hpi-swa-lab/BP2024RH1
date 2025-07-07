@@ -1,0 +1,157 @@
+[gd_scene load_steps=28 format=3 uid="uid://c1ulmcexuq1x4"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_1157y"]
+[ext_resource type="Texture2D" uid="uid://b5cj44i08n730" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/big_office.png" id="2_1157y"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_c5222"]
+[ext_resource type="Texture2D" uid="uid://ds6cnjde88gs7" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/router_big_office.png" id="3_edpt3"]
+[ext_resource type="Resource" uid="uid://dwounsgde851p" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_default_hint.tres" id="3_w0b5p"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_dtd0x"]
+[ext_resource type="Resource" uid="uid://cmual83u7hdm4" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_router_found_hint.tres" id="4_nbkrl"]
+[ext_resource type="Resource" uid="uid://b584dehdw07ha" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_computer_found_hint.tres" id="5_hf4s7"]
+[ext_resource type="Resource" uid="uid://bs1c21kgcmqfw" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_Search_szene_1_default.tres" id="5_nj25h"]
+[ext_resource type="Resource" uid="uid://bp31jmq0deyaj" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_Search_szene_1_neighbor.tres" id="7_mh1g0"]
+[ext_resource type="Texture2D" uid="uid://bf6xas1fhnvdx" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop1.png" id="8_2cnp6"]
+[ext_resource type="Texture2D" uid="uid://de4bdlorqqx2p" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop2.png" id="10_rc8m8"]
+[ext_resource type="Texture2D" uid="uid://clwvngjx6el8o" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop3.png" id="11_i1e8m"]
+[ext_resource type="Texture2D" uid="uid://ddkc3n6g44rt8" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop4.png" id="12_6b326"]
+[ext_resource type="Resource" uid="uid://bh3tedpg1athe" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/tower_light_is_back.tres" id="12_jnd2s"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="13_jnd2s"]
+[ext_resource type="Texture2D" uid="uid://dncftbfya8q7t" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop5.png" id="13_xig8o"]
+[ext_resource type="Texture2D" uid="uid://cg154aae1v3as" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer1.png" id="14_ablj6"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="14_ftykq"]
+[ext_resource type="Texture2D" uid="uid://ur0v3br2pepx" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer2.png" id="16_10en0"]
+[ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="16_ftykq"]
+[ext_resource type="Texture2D" uid="uid://dkefpd0ojaem4" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/computer3.png" id="17_3pncj"]
+[ext_resource type="Resource" uid="uid://btvc1gy2lre7m" path="res://Cases/A_Completely_Normal_Day/resources/dialogue_trigger/secound_office_light_is_back.tres" id="18_4qis3"]
+[ext_resource type="Texture2D" uid="uid://dd5py4khrd8bt" path="res://Assets/back-button.png" id="18_rc8m8"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="19_i1e8m"]
+
+[sub_resource type="Resource" id="Resource_chyjw"]
+script = ExtResource("13_jnd2s")
+start_marker = "Search_szene_1"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_c5222"]
+script = ExtResource("14_ftykq")
+dialogue_resource = ExtResource("16_ftykq")
+is_dialogue = true
+dialogue_triggers = Array[ExtResource("13_jnd2s")]([SubResource("Resource_chyjw"), ExtResource("18_4qis3")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="secound_office_light_is_back" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_1157y")
+location_name = "secound_office_light_is_back"
+items = [NodePath("computer_1"), NodePath("computer_2"), NodePath("computer_3"), NodePath("computer_4"), NodePath("computer_5"), NodePath("tower_1"), NodePath("tower_2"), NodePath("tower_3"), NodePath("router")]
+hints = Array[ExtResource("2_c5222")]([ExtResource("3_w0b5p"), ExtResource("4_nbkrl"), ExtResource("5_hf4s7")])
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_1157y")
+
+[node name="computer_2" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("10_rc8m8")
+script = ExtResource("4_dtd0x")
+item_name = "computer_light_is_back"
+item_dialogue = ExtResource("7_mh1g0")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="computer_3" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("11_i1e8m")
+script = ExtResource("4_dtd0x")
+item_name = "computer_light_is_back"
+item_dialogue = ExtResource("5_nj25h")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="computer_4" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("12_6b326")
+script = ExtResource("4_dtd0x")
+item_name = "computer_light_is_back"
+item_dialogue = ExtResource("5_nj25h")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="computer_5" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("13_xig8o")
+script = ExtResource("4_dtd0x")
+item_name = "computer_light_is_back"
+item_dialogue = ExtResource("7_mh1g0")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="tower_1" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("14_ablj6")
+script = ExtResource("4_dtd0x")
+item_name = "tower_light_is_back"
+item_dialogue = ExtResource("12_jnd2s")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="tower_2" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("16_10en0")
+script = ExtResource("4_dtd0x")
+item_name = "tower_light_is_back"
+item_dialogue = ExtResource("12_jnd2s")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="tower_3" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("17_3pncj")
+script = ExtResource("4_dtd0x")
+item_name = "tower_light_is_back"
+item_dialogue = ExtResource("12_jnd2s")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="router" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_edpt3")
+script = ExtResource("4_dtd0x")
+item_name = "router_light_is_back"
+item_dialogue = SubResource("Resource_c5222")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="LocationSwitchButton" type="TextureButton" parent="."]
+offset_left = 1145.0
+offset_top = 637.0
+offset_right = 1657.0
+offset_bottom = 1149.0
+rotation = 3.14159
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("18_rc8m8")
+script = ExtResource("19_i1e8m")
+requested_location_name = "corridor_light_is_back"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="computer_1" type="TextureButton" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_2cnp6")
+script = ExtResource("4_dtd0x")
+item_name = "computer_light_is_back"
+item_dialogue = ExtResource("5_nj25h")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
