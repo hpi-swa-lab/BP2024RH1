@@ -4,9 +4,6 @@ const supabase_url = ""
 const api_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzUwMTExMjAwLCJleHAiOjE5MDc4Nzc2MDB9.mHBPurwI373b8JR1G5WLmEScvaPWoYPcXchITo7TXUg"
 var hex = "0123456789abcdef"
 
-var json_data = {}
-var session_id: String
-
 var session_data = {
 		"session_id": "",
 		"story_id": "",
