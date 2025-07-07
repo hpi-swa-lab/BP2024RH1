@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://hqfrgdphxdrl"]
+[gd_scene load_steps=8 format=3 uid="uid://hqfrgdphxdrl"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_hr3m3"]
 [ext_resource type="Texture2D" uid="uid://bve61rxddrnsp" path="res://Cases/Binary_Trap/Assets/Minigame2/minigame2_closeUp.png" id="2_gt2d2"]
 [ext_resource type="Script" uid="uid://cl6f77kjtwyhy" path="res://Cases/Binary_Trap/Scripts/minigame2.gd" id="2_hex8g"]
 [ext_resource type="PackedScene" uid="uid://dofebqelw66y3" path="res://Cases/Binary_Trap/Scenes/Minigames/lamp_and_switch.tscn" id="2_ydl5m"]
+[ext_resource type="Texture2D" uid="uid://chl46a1yawt36" path="res://Cases/Binary_Trap/Assets/Minigame2/tape.png" id="3_dtrl5"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_06qji"]
+[ext_resource type="FontFile" uid="uid://crpwo0n6tuq0a" path="res://Assets/Fonts/ReenieBeanie-Regular.ttf" id="6_pssty"]
 
 [node name="Minigame 2" type="Node"]
 script = ExtResource("1_hr3m3")
+location_name = "Minigame 2"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -15,6 +18,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.299939, 0.299939)
 texture = ExtResource("2_gt2d2")
+
+[node name="Tape" type="TextureRect" parent="."]
+offset_left = 315.0
+offset_top = 226.0
+offset_right = 465.0
+offset_bottom = 376.0
+rotation = 0.940105
+texture = ExtResource("3_dtrl5")
 
 [node name="Minigame" type="Control" parent="."]
 layout_mode = 3
@@ -27,12 +38,11 @@ scale = Vector2(1.32736, 1.32736)
 script = ExtResource("2_hex8g")
 
 [node name="Input Label" type="Label" parent="Minigame"]
-layout_mode = 0
-offset_left = 697.627
-offset_top = 450.519
-offset_right = 779.627
-offset_bottom = 500.519
-rotation = -0.0864248
+offset_left = 339.772
+offset_top = 442.985
+offset_right = 421.772
+offset_bottom = 492.985
+rotation = 0.0854013
 theme_override_colors/font_color = Color(0.485703, 0.485704, 0.485703, 1)
 theme_override_font_sizes/font_size = 36
 text = "1001"
@@ -65,6 +75,32 @@ offset_right = 847.301
 offset_bottom = 297.247
 theme_override_font_sizes/font_size = 24
 
+[node name="Tape" type="TextureRect" parent="Minigame"]
+layout_mode = 0
+offset_left = 750.362
+offset_top = 410.589
+offset_right = 900.362
+offset_bottom = 560.589
+rotation = 0.723539
+scale = Vector2(0.651945, 0.651945)
+texture = ExtResource("3_dtrl5")
+
+[node name="Restart Button" type="Button" parent="Minigame"]
+visible = false
+layout_mode = 0
+offset_left = 709.679
+offset_top = 438.464
+offset_right = 867.679
+offset_bottom = 596.464
+rotation = -0.037043
+scale = Vector2(0.551295, 0.551295)
+theme_override_colors/font_hover_color = Color(0.678944, 0.678944, 0.678944, 1)
+theme_override_colors/font_color = Color(0.336608, 0.336608, 0.336608, 1)
+theme_override_fonts/font = ExtResource("6_pssty")
+theme_override_font_sizes/font_size = 36
+text = "Nochmal"
+flat = true
+
 [node name="BackButton" parent="." instance=ExtResource("5_06qji")]
 offset_left = 8.0
 offset_top = 8.0
@@ -72,3 +108,5 @@ offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.266106, 0.266106)
 requested_location_name = "Room LightsOn"
+
+[connection signal="pressed" from="Minigame/Restart Button" to="Minigame" method="_on_restart_button_pressed"]

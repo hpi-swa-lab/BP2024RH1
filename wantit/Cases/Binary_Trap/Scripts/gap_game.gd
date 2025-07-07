@@ -34,3 +34,10 @@ func set_font_color(color: Color) -> void:
 	result_label.add_theme_color_override("font_color", color)
 	for gap in gaps:
 		gap.set_font_color(color)
+		
+func refresh() -> void:
+	result_label.text = "0"
+	result_label.remove_theme_color_override("font_color")
+	
+	for gap in gaps:
+		gap.refresh()

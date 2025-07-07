@@ -1,15 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dec4b603485ch"]
+[gd_scene load_steps=5 format=3 uid="uid://dec4b603485ch"]
 
-[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_qc7ds"]
+[ext_resource type="Script" uid="uid://co6wh8qnavb8n" path="res://Cases/Binary_Trap/Scripts/minigame_6b.gd" id="1_qr25s"]
 [ext_resource type="Texture2D" uid="uid://bku1dkivylyrl" path="res://Cases/Binary_Trap/Assets/Minigame5_6/minigame6b_closeUp.png" id="2_a1bsg"]
-[ext_resource type="Script" uid="uid://223bfndy8p11" path="res://Cases/Binary_Trap/Scripts/minigame6b.gd" id="2_qc7ds"]
 [ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigames/lock.tscn" id="3_qr25s"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_qr25s"]
 
 [node name="Minigame 6b" type="Node"]
-script = ExtResource("1_qc7ds")
+script = ExtResource("1_qr25s")
+item_name = "Minigame6b completed"
 location_name = "Minigame 6b"
-has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -18,19 +17,12 @@ offset_bottom = 40.0
 scale = Vector2(0.300002, 0.300002)
 texture = ExtResource("2_a1bsg")
 
-[node name="Minigame" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="Lock" parent="." instance=ExtResource("3_qr25s")]
 offset_left = 591.0
 offset_top = 181.0
-offset_right = 631.0
-offset_bottom = 221.0
-scale = Vector2(0.528057, 0.528057)
-script = ExtResource("2_qc7ds")
-item_name = "Minigame6b completed"
-
-[node name="Lock" parent="Minigame" instance=ExtResource("3_qr25s")]
-layout_mode = 1
+offset_right = 591.0
+offset_bottom = 181.0
+scale = Vector2(0.529858, 0.529858)
 slot_count = 4
 correct_code = "1101"
 
@@ -41,6 +33,6 @@ offset_right = 502.0
 offset_bottom = 1050.0
 rotation = -0.482242
 scale = Vector2(0.266106, 0.266106)
-requested_location_name = "Cupboard CloseUp"
+requested_location_name = "Cupboard CloseUp SafeClosed"
 
-[connection signal="succeeded" from="Minigame/Lock" to="Minigame" method="_on_lock_succeeded"]
+[connection signal="succeeded" from="Lock" to="." method="_on_lock_succeeded"]

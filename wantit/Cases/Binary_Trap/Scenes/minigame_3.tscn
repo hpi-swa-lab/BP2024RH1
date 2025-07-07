@@ -63,6 +63,20 @@ text = "Fülle die Lücken so, dass die gebene Binärzahl korrekt umgerechnet wi
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Restart Button" type="Button" parent="Minigame"]
+visible = false
+layout_mode = 0
+offset_left = 893.639
+offset_top = 517.063
+offset_right = 999.639
+offset_bottom = 561.063
+theme_override_colors/font_hover_color = Color(0.533037, 0.533037, 0.533037, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_apiyb")
+theme_override_font_sizes/font_size = 36
+text = "Nochmal"
+flat = true
+
 [node name="BackButton" parent="." instance=ExtResource("6_nkxmu")]
 offset_left = 8.0
 offset_top = 8.0
@@ -72,3 +86,4 @@ scale = Vector2(0.266106, 0.266106)
 requested_location_name = "Room LightsOn"
 
 [connection signal="updated" from="Minigame/Gap Game" to="Minigame" method="_on_gap_game_updated"]
+[connection signal="pressed" from="Minigame/Restart Button" to="Minigame" method="_on_restart_button_pressed"]

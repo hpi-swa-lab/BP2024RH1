@@ -12,6 +12,7 @@ var requested_location_lightsOn: String
 var requested_location_lightsOff: String
 
 func _ready() -> void:
+	super._ready()
 	on_or_off_label.text = "Aus"
 	digit_label.text = "0"
 	

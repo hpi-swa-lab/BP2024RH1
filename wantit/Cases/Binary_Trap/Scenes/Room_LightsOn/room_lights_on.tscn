@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://q3586nx75har"]
+[gd_scene load_steps=12 format=3 uid="uid://q3586nx75har"]
 
 [ext_resource type="Script" uid="uid://denw33pxanib" path="res://Cases/Binary_Trap/Scripts/room_lights_on.gd" id="1_6bcer"]
 [ext_resource type="Texture2D" uid="uid://l8nffo6bpqp7" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_o4t0x"]
@@ -8,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bdtebhe53f82a" path="res://Cases/Binary_Trap/Assets/Collectible_Items/postcard.png" id="7_0m6dx"]
 [ext_resource type="Texture2D" uid="uid://li4a345ophi1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/documents.png" id="7_42btk"]
 [ext_resource type="Texture2D" uid="uid://bmcby1ehama28" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/cupboard_doors_closed.png" id="8_42btk"]
-[ext_resource type="Texture2D" uid="uid://u7qvxpmiwbln" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/cupboard_woodpiece_closed.png" id="8_lyv0r"]
-[ext_resource type="Texture2D" uid="uid://d4hoyqpeikh8c" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_doors_open.png" id="10_6bcer"]
 [ext_resource type="Texture2D" uid="uid://oqqgwiq6apjc" path="res://Cases/Binary_Trap/Assets/lamps.png" id="11_1tb6d"]
 [ext_resource type="Texture2D" uid="uid://doc7phh0upnsb" path="res://Cases/Binary_Trap/Assets/Interactible_Items/drawer_halfopen.png" id="11_16cll"]
 [ext_resource type="Texture2D" uid="uid://dox456jvnvw1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/drawer_open.png" id="12_5ygkm"]
@@ -24,9 +22,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.299933, 0.299933)
 texture = ExtResource("2_o4t0x")
-
-[node name="Door Location Switcher" parent="." instance=ExtResource("5_16cll")]
-requested_location_name = "Door CloseUp"
 
 [node name="Door Interactible" type="TextureButton" parent="."]
 unique_name_in_owner = true
@@ -57,30 +52,6 @@ script = ExtResource("4_6bcer")
 item_name = "Beanbag"
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
-[node name="Documents" parent="." instance=ExtResource("5_16cll")]
-scale = Vector2(0.299949, 0.299949)
-texture_normal = ExtResource("7_42btk")
-requested_location_name = "Minigame 3"
-
-[node name="Cupboard" parent="." instance=ExtResource("5_16cll")]
-offset_right = 3840.0
-offset_bottom = 2160.0
-scale = Vector2(0.300001, 0.300001)
-texture_normal = ExtResource("8_lyv0r")
-requested_location_name = "Cupboard CloseUp"
-
-[node name="Cupboard Doors (closed)ed)" parent="." instance=ExtResource("5_16cll")]
-scale = Vector2(0.299934, 0.299934)
-texture_normal = ExtResource("8_42btk")
-requested_location_name = "Minigame 5"
-
-[node name="Cupboard Doors (open)" type="TextureRect" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.299993, 0.299993)
-texture = ExtResource("10_6bcer")
-
 [node name="Lamps" type="TextureRect" parent="."]
 unique_name_in_owner = true
 offset_right = 3840.0
@@ -90,8 +61,8 @@ texture = ExtResource("11_1tb6d")
 
 [node name="Drawer halfopen" type="TextureButton" parent="."]
 unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 3840.0
+offset_bottom = 2160.0
 scale = Vector2(0.300017, 0.300017)
 texture_normal = ExtResource("11_16cll")
 script = ExtResource("4_6bcer")
@@ -101,8 +72,25 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 [node name="Drawer open" parent="." instance=ExtResource("5_16cll")]
 unique_name_in_owner = true
 visible = false
+offset_right = 3840.0
+offset_bottom = 2160.0
 scale = Vector2(0.299976, 0.299976)
 texture_normal = ExtResource("12_5ygkm")
 requested_location_name = "Minigame 2"
+
+[node name="Cupboard Doors (closed)" parent="." instance=ExtResource("5_16cll")]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.299934, 0.299934)
+texture_normal = ExtResource("8_42btk")
+requested_location_name = "Minigame 5"
+
+[node name="Documents" parent="." instance=ExtResource("5_16cll")]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.299949, 0.299949)
+texture_normal = ExtResource("7_42btk")
+requested_location_name = "Minigame 3"
 
 [connection signal="pressed" from="Drawer halfopen" to="." method="_on_drawer_halfopen_pressed"]

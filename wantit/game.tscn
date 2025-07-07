@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=79 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -34,9 +34,9 @@
 [ext_resource type="PackedScene" uid="uid://caun4d48wfmce" path="res://Cases/Fake_News_Fiasko/Scenes/time_skip.tscn" id="32_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://cpl55rtgw33ae" path="res://Cases/Binary_Trap/Scenes/warehouse_pre.tscn" id="33_t46w6"]
 [ext_resource type="PackedScene" uid="uid://b1t841ugd4yhg" path="res://Cases/Binary_Trap/Scenes/room_lights_off.tscn" id="34_m28ev"]
-[ext_resource type="PackedScene" uid="uid://q3586nx75har" path="res://Cases/Binary_Trap/Scenes/room_lights_on.tscn" id="35_lwlx3"]
+[ext_resource type="PackedScene" uid="uid://q3586nx75har" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on.tscn" id="35_lwlx3"]
 [ext_resource type="PackedScene" uid="uid://bxkpxeer0f5qj" path="res://Cases/Binary_Trap/Scenes/minigame1.tscn" id="36_0de7l"]
-[ext_resource type="PackedScene" uid="uid://c26cvjsswppqd" path="res://Cases/Binary_Trap/Scenes/cupboard_close_up.tscn" id="37_87ddb"]
+[ext_resource type="PackedScene" uid="uid://c26cvjsswppqd" path="res://Cases/Binary_Trap/Scenes/Cupboard_CloseUp/cupboard_close_up.tscn" id="37_87ddb"]
 [ext_resource type="PackedScene" uid="uid://hqfrgdphxdrl" path="res://Cases/Binary_Trap/Scenes/minigame_2.tscn" id="38_mljfx"]
 [ext_resource type="PackedScene" uid="uid://bb018sy8d7u2l" path="res://Cases/Binary_Trap/Scenes/minigame_3.tscn" id="39_qpefm"]
 [ext_resource type="PackedScene" uid="uid://q1ccreh7wbh" path="res://Cases/Binary_Trap/Scenes/minigame_4.tscn" id="40_tb2lt"]
@@ -47,6 +47,11 @@
 [ext_resource type="PackedScene" uid="uid://brbnsck4344wg" path="res://Cases/Binary_Trap/Scenes/warehouse_post.tscn" id="45_ib7ph"]
 [ext_resource type="PackedScene" uid="uid://cp2jpkt8stu8k" path="res://Cases/Binary_Trap/Scenes/office.tscn" id="46_lwlx3"]
 [ext_resource type="PackedScene" uid="uid://bj3fuuql3owoj" path="res://Cases/Binary_Trap/Scenes/map.tscn" id="47_0de7l"]
+[ext_resource type="PackedScene" uid="uid://bu8p4b14u8ryj" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on_cupboardOpen.tscn" id="48_v33yl"]
+[ext_resource type="PackedScene" uid="uid://dm02bqect42ay" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on_safeOpen.tscn" id="51_vuohh"]
+[ext_resource type="PackedScene" uid="uid://wfqpu727a88p" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on_woodpieceOpen.tscn" id="52_3gvs5"]
+[ext_resource type="PackedScene" uid="uid://yi7fykv7f8u" path="res://Cases/Binary_Trap/Scenes/Cupboard_CloseUp/cupboard_close_up_safeClosed.tscn" id="54_bqa6y"]
+[ext_resource type="PackedScene" uid="uid://wft6yuejp0ko" path="res://Cases/Binary_Trap/Scenes/Cupboard_CloseUp/cupboard_close_up_safeOpen.tscn" id="55_du4n2"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -176,12 +181,51 @@ case_location_scenes = Array[PackedScene]([ExtResource("18_xa8c5"), ExtResource(
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_082n1"), SubResource("Resource_aa0lp"), SubResource("Resource_4v2jo"), SubResource("Resource_r62pu"), SubResource("Resource_eu6ph")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="Resource" id="Resource_cfc7e"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame5 completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_tb2lt"]
+script = ExtResource("14_215e1")
+event_name = "Minigame 5 completed"
+location_name = "Cupboard CloseUp"
+start_condition = SubResource("Resource_cfc7e")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_v33yl"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame6a completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_gh0px"]
+script = ExtResource("14_215e1")
+event_name = "Minigame 6a completed"
+location_name = "Cupboard CloseUp SafeClosed"
+start_condition = SubResource("Resource_v33yl")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_ib7ph"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame6b completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_2tki7"]
+script = ExtResource("14_215e1")
+event_name = "Minigame 6b completed"
+location_name = "Cupboard CloseUp SafeOpen"
+start_condition = SubResource("Resource_ib7ph")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
 [sub_resource type="Resource" id="Resource_dhpj7"]
 script = ExtResource("2_e2o6t")
 case_slug = "binary"
 case_title = "Die Binärfalle"
-case_location_scenes = Array[PackedScene]([ExtResource("46_lwlx3"), ExtResource("33_t46w6"), ExtResource("34_m28ev"), ExtResource("35_lwlx3"), ExtResource("36_0de7l"), ExtResource("37_87ddb"), ExtResource("38_mljfx"), ExtResource("39_qpefm"), ExtResource("40_tb2lt"), ExtResource("41_cfc7e"), ExtResource("42_gh0px"), ExtResource("43_v33yl"), ExtResource("44_2tki7"), ExtResource("45_ib7ph"), ExtResource("47_0de7l")])
-events = Array[ExtResource("14_215e1")]([])
+case_location_scenes = Array[PackedScene]([ExtResource("46_lwlx3"), ExtResource("33_t46w6"), ExtResource("34_m28ev"), ExtResource("35_lwlx3"), ExtResource("36_0de7l"), ExtResource("37_87ddb"), ExtResource("38_mljfx"), ExtResource("39_qpefm"), ExtResource("40_tb2lt"), ExtResource("41_cfc7e"), ExtResource("42_gh0px"), ExtResource("43_v33yl"), ExtResource("44_2tki7"), ExtResource("45_ib7ph"), ExtResource("47_0de7l"), ExtResource("48_v33yl"), ExtResource("51_vuohh"), ExtResource("52_3gvs5"), ExtResource("54_bqa6y"), ExtResource("55_du4n2")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_tb2lt"), SubResource("Resource_gh0px"), SubResource("Resource_2tki7")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]

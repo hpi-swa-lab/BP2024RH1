@@ -26,3 +26,6 @@ func set_font_color(color: Color) -> void:
 	weight_label.add_theme_color_override("font_color", color)
 	operation_label.add_theme_color_override("font_color", color)
 	star.add_theme_color_override("font_color", color)
+	
+func refresh() -> void:
+	option_button.select(0)

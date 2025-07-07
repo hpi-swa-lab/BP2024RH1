@@ -4,6 +4,7 @@ extends Location
 @onready var lock: Control = $Lock
 
 func _ready() -> void:
+	super._ready()
 	lock.set_font_color(Color.BLACK)
 
 func _on_lock_succeeded() -> void:

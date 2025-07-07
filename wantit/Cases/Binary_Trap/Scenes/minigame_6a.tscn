@@ -9,7 +9,6 @@
 script = ExtResource("1_fhpi3")
 item_name = "Minigame6a completed"
 location_name = "Minigame 6a"
-has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -19,10 +18,12 @@ scale = Vector2(0.300015, 0.300015)
 texture = ExtResource("2_fhpi3")
 
 [node name="Lock" parent="." instance=ExtResource("2_jh3ao")]
-offset_left = 41.0
-offset_top = 165.0
-offset_right = 41.0
-offset_bottom = 165.0
+offset_left = 42.0
+offset_top = 164.0
+offset_right = 42.0
+offset_bottom = 164.0
+rotation = -0.137691
+scale = Vector2(0.325939, 0.325939)
 
 [node name="BackButton" parent="." instance=ExtResource("5_po4i8")]
 offset_left = -10.0
@@ -32,3 +33,5 @@ offset_bottom = 1050.0
 rotation = -0.482242
 scale = Vector2(0.266106, 0.266106)
 requested_location_name = "Cupboard CloseUp"
+
+[connection signal="succeeded" from="Lock" to="." method="_on_lock_succeeded"]

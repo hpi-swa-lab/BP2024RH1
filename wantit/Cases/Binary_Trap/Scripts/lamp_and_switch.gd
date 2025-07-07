@@ -12,15 +12,13 @@ var lamp_off_texture: Texture
 var switch_on_texture: Texture
 var switch_off_texture: Texture
 
-var weight: int = 8
+var weight: int
 
 signal updated
 
 func _ready() -> void:
 	lamp_on_texture = load("res://Cases/Binary_Trap/Assets/Minigame2/lamp_on.png")
 	lamp_off_texture = load("res://Cases/Binary_Trap/Assets/Minigame2/lamp_off.png")
-	
-	weight_label.text = str(weight)
 
 func update_lamp() -> void:
 	lamp.texture = lamp_on_texture if switch.button_pressed else lamp_off_texture
@@ -38,3 +36,10 @@ func get_value() -> int:
 		return weight
 	else:
 		return 0
+		
+func set_weight(number: int) -> void:
+	weight = number
+	weight_label.text = str(weight)
+		
+func refresh() -> void:
+	switch.button_pressed = false

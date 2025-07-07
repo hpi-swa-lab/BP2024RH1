@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://wft6yuejp0ko"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_jqkny"]
+[ext_resource type="Texture2D" uid="uid://bhirv71dfw8pu" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_closeUp.png" id="2_la6dx"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_q7r4w"]
+[ext_resource type="Texture2D" uid="uid://dv3a2476s1xqc" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/chalkboard.png" id="4_vx83w"]
+[ext_resource type="Texture2D" uid="uid://ch5wfse2583vp" path="res://Cases/Binary_Trap/Assets/Collectible_Items/vase.png" id="5_edum7"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_y1tlm"]
+[ext_resource type="Texture2D" uid="uid://b1b2gt6d41dbv" path="res://Cases/Binary_Trap/Assets/Interactible_Items/notches.png" id="7_x4dfh"]
+[ext_resource type="Texture2D" uid="uid://3ticuixw37q7" path="res://Cases/Binary_Trap/Assets/Backgrounds/safe_open.png" id="9_qxod4"]
+[ext_resource type="Texture2D" uid="uid://cj1f3wq6fyg7h" path="res://Cases/Binary_Trap/Assets/Backgrounds/woodpiece_open.png" id="11_cfupa"]
+[ext_resource type="Texture2D" uid="uid://fm14sx53dfdv" path="res://Cases/Binary_Trap/Assets/Collectible_Items/key.png" id="12_55m5s"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="13_i7rjc"]
+
+[node name="Cupboard CloseUp" type="Node"]
+script = ExtResource("1_jqkny")
+location_name = "Cupboard CloseUp SafeOpen"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300029, 0.300029)
+texture = ExtResource("2_la6dx")
+
+[node name="Chalkboard" parent="." instance=ExtResource("3_q7r4w")]
+scale = Vector2(0.300082, 0.300082)
+texture_normal = ExtResource("4_vx83w")
+requested_location_name = "Minigame 4"
+
+[node name="Vase" type="TextureButton" parent="."]
+offset_left = 312.0
+offset_top = 99.0
+offset_right = 1218.0
+offset_bottom = 1732.0
+scale = Vector2(0.11205, 0.11205)
+texture_normal = ExtResource("5_edum7")
+script = ExtResource("6_y1tlm")
+item_name = "Vase"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Notches" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299985, 0.299985)
+texture_normal = ExtResource("7_x4dfh")
+script = ExtResource("6_y1tlm")
+item_name = "Notches"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Safe (open)" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299986, 0.299986)
+mouse_filter = 2
+texture = ExtResource("9_qxod4")
+
+[node name="Woodpiece (open)" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300024, 0.300024)
+mouse_filter = 2
+texture = ExtResource("11_cfupa")
+
+[node name="Key" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 348.0
+offset_top = 455.0
+offset_right = 648.0
+offset_bottom = 755.0
+rotation = 0.902018
+scale = Vector2(0.186912, 0.186912)
+texture_normal = ExtResource("12_55m5s")
+script = ExtResource("6_y1tlm")
+item_name = "Key"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="BackButton" parent="." instance=ExtResource("13_i7rjc")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Room LightsOn SafeOpen"

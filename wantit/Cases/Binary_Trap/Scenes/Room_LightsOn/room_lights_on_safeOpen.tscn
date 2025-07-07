@@ -1,0 +1,101 @@
+[gd_scene load_steps=14 format=3 uid="uid://dm02bqect42ay"]
+
+[ext_resource type="Script" uid="uid://denw33pxanib" path="res://Cases/Binary_Trap/Scripts/room_lights_on.gd" id="1_x0vuf"]
+[ext_resource type="Texture2D" uid="uid://l8nffo6bpqp7" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_gclfu"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_22xq8"]
+[ext_resource type="Texture2D" uid="uid://bx85orbtwsk8m" path="res://Cases/Binary_Trap/Assets/Interactible_Items/door_lightOn.png" id="4_iv7ld"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="5_aoqib"]
+[ext_resource type="Texture2D" uid="uid://bdtebhe53f82a" path="res://Cases/Binary_Trap/Assets/Collectible_Items/postcard.png" id="6_t3wne"]
+[ext_resource type="Texture2D" uid="uid://oqqgwiq6apjc" path="res://Cases/Binary_Trap/Assets/lamps.png" id="7_yefpb"]
+[ext_resource type="Texture2D" uid="uid://doc7phh0upnsb" path="res://Cases/Binary_Trap/Assets/Interactible_Items/drawer_halfopen.png" id="8_h7kfk"]
+[ext_resource type="Texture2D" uid="uid://dox456jvnvw1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/drawer_open.png" id="9_b1nuy"]
+[ext_resource type="Texture2D" uid="uid://cgr8dc0ydms0n" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/cupboard_safe_open_key.png" id="10_avrm3"]
+[ext_resource type="Texture2D" uid="uid://d4hoyqpeikh8c" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_doors_open.png" id="11_rjort"]
+[ext_resource type="Script" uid="uid://bmk42x4jl3bmy" path="res://Cases/Binary_Trap/Scripts/cupboard_doors_(open).gd" id="12_7ndoo"]
+[ext_resource type="Texture2D" uid="uid://li4a345ophi1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/documents.png" id="13_336p8"]
+
+[node name="Room LightsOn" type="Node"]
+script = ExtResource("1_x0vuf")
+location_name = "Room LightsOn SafeOpen"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299933, 0.299933)
+texture = ExtResource("2_gclfu")
+
+[node name="Door" parent="." instance=ExtResource("3_22xq8")]
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_iv7ld")
+requested_location_name = "Door CloseUp"
+
+[node name="Postcard" type="TextureButton" parent="."]
+offset_left = 581.0
+offset_top = 582.0
+offset_right = 1630.0
+offset_bottom = 906.0
+scale = Vector2(0.0970258, 0.0970258)
+texture_normal = ExtResource("6_t3wne")
+script = ExtResource("5_aoqib")
+item_name = "Postcard"
+is_collectable = true
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Beanbag" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_aoqib")
+item_name = "Beanbag"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Lamps" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300015, 0.300015)
+texture = ExtResource("7_yefpb")
+
+[node name="Drawer halfopen" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300017, 0.300017)
+texture_normal = ExtResource("8_h7kfk")
+script = ExtResource("5_aoqib")
+item_name = "Drawer Halfopen"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Drawer open" parent="." instance=ExtResource("3_22xq8")]
+unique_name_in_owner = true
+visible = false
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.299976, 0.299976)
+texture_normal = ExtResource("9_b1nuy")
+requested_location_name = "Minigame 2"
+
+[node name="Cupboard" parent="." instance=ExtResource("3_22xq8")]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300001, 0.300001)
+texture_normal = ExtResource("10_avrm3")
+requested_location_name = "Cupboard CloseUp SafeOpen"
+
+[node name="Cupboard Doors (open)" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.299993, 0.299993)
+disabled = true
+texture_normal = ExtResource("11_rjort")
+script = ExtResource("12_7ndoo")
+
+[node name="Documents" parent="." instance=ExtResource("3_22xq8")]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.299949, 0.299949)
+texture_normal = ExtResource("13_336p8")
+requested_location_name = "Minigame 3"
+
+[connection signal="pressed" from="Drawer halfopen" to="." method="_on_drawer_halfopen_pressed"]

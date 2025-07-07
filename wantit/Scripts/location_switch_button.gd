@@ -18,3 +18,6 @@ func _ready() -> void:
 func _pressed() -> void:
 	emit_signal("location_switch_requested", self.requested_location_name)
 	print("Switch to : %s requested." % requested_location_name)
+
+func change_requested_location(new_target_location) -> void:
+	requested_location_name = new_target_location

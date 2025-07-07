@@ -112,6 +112,20 @@ theme_override_fonts/font = ExtResource("5_triia")
 theme_override_font_sizes/font_size = 24
 text = "Binärcodierung"
 
+[node name="Restart Button" type="Button" parent="Minigame"]
+visible = false
+layout_mode = 0
+offset_left = 820.948
+offset_top = 557.461
+offset_right = 1008.95
+offset_bottom = 608.461
+rotation = -0.104688
+theme_override_colors/font_hover_color = Color(0.332881, 0.332881, 0.332881, 1)
+theme_override_fonts/font = ExtResource("5_triia")
+theme_override_font_sizes/font_size = 36
+text = ">> Nochmal"
+flat = true
+
 [node name="BackButton" parent="." instance=ExtResource("8_xw2al")]
 offset_left = 8.0
 offset_top = 8.0
@@ -121,3 +135,4 @@ scale = Vector2(0.266106, 0.266106)
 requested_location_name = "Cupboard CloseUp"
 
 [connection signal="updated" from="Minigame/Gap Game" to="Minigame" method="_on_gap_game_updated"]
+[connection signal="pressed" from="Minigame/Restart Button" to="Minigame" method="_on_restart_button_pressed"]

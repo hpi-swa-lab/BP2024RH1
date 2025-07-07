@@ -7,9 +7,8 @@
 
 [node name="Minigame 5" type="Node"]
 script = ExtResource("1_ply4s")
-item_name = "Minigame5 competed"
+item_name = "Minigame5 completed"
 location_name = "Minigame 5"
-has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -36,3 +35,5 @@ offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.266106, 0.266106)
 requested_location_name = "Room LightsOn"
+
+[connection signal="succeeded" from="Lock" to="." method="_on_lock_succeeded"]
