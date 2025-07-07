@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=108 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -353,7 +353,31 @@ case_location_scenes = Array[PackedScene]([ExtResource("34_eu6ph"), ExtResource(
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_mc3al"), SubResource("Resource_du4n2"), SubResource("Resource_ple6s"), SubResource("Resource_56gn1"), SubResource("Resource_vyqle"), SubResource("Resource_6qn5j")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="PackedScene" id="PackedScene_mc3al"]
+
+[sub_resource type="Resource" id="Resource_baljx"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["blablabla"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_t2ssd"]
+script = ExtResource("14_215e1")
+event_name = "blablabla"
+location_name = "blablabla"
+start_condition = SubResource("Resource_baljx")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_7noa1"]
+script = ExtResource("2_e2o6t")
+case_slug = "blablabla"
+case_title = "blablabla"
+case_topic = "blablabla"
+case_location_scenes = Array[PackedScene]([SubResource("PackedScene_mc3al")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_t2ssd")])
+metadata/_custom_type_script = "uid://ni774rbce31d"
+
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_boyg6"), SubResource("Resource_edr7y"), SubResource("Resource_wj41c")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_boyg6"), SubResource("Resource_edr7y"), SubResource("Resource_wj41c"), SubResource("Resource_7noa1")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"
