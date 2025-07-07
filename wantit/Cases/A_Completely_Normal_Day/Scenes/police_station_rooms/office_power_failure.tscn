@@ -1,6 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://diekxq2rx0a8e"]
+[gd_scene load_steps=18 format=3 uid="uid://diekxq2rx0a8e"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_duhha"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_ka2xb"]
+[ext_resource type="Resource" uid="uid://1ibsvjq067bm" path="res://Cases/A_Completely_Normal_Day/resources/Hints/power_failure_default_hint.tres" id="3_kdalq"]
 [ext_resource type="Resource" uid="uid://dj5o46s4j8ioe" path="res://Cases/A_Completely_Normal_Day/dialogue/office.dialogue" id="4_sbc8d"]
 [ext_resource type="Texture2D" uid="uid://bhq000cdqjq37" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/blackout/office_dark.png" id="5_vltdj"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="5_y6sxr"]
@@ -44,6 +46,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_duhha")
 location_name = "office_power_failure"
 items = [NodePath("computer")]
+hints = Array[ExtResource("2_ka2xb")]([ExtResource("3_kdalq")])
 location_dialogue = SubResource("Resource_evvr1")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 

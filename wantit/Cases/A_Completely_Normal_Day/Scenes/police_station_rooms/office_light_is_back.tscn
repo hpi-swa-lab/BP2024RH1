@@ -1,7 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cb0u1ejhyocev"]
+[gd_scene load_steps=13 format=3 uid="uid://cb0u1ejhyocev"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_ly61v"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_8c2n8"]
 [ext_resource type="Texture2D" uid="uid://cxg5pbosxbvcq" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="2_lg37r"]
+[ext_resource type="Resource" uid="uid://dwounsgde851p" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_default_hint.tres" id="3_1up4n"]
+[ext_resource type="Resource" uid="uid://cmual83u7hdm4" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_router_found_hint.tres" id="4_bkae0"]
+[ext_resource type="Resource" uid="uid://b584dehdw07ha" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_computer_found_hint.tres" id="5_0800v"]
 [ext_resource type="Resource" uid="uid://bs1c21kgcmqfw" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_Search_szene_1_default.tres" id="5_qydly"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="8_fwrwg"]
 [ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="9_o7laa"]
@@ -13,6 +17,7 @@
 script = ExtResource("1_ly61v")
 location_name = "office_light_is_back"
 items = [NodePath("computer")]
+hints = Array[ExtResource("2_8c2n8")]([ExtResource("3_1up4n"), ExtResource("4_bkae0"), ExtResource("5_0800v")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Office" type="TextureRect" parent="."]

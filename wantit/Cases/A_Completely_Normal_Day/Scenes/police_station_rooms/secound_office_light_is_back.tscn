@@ -1,9 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://c1ulmcexuq1x4"]
+[gd_scene load_steps=28 format=3 uid="uid://c1ulmcexuq1x4"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_1157y"]
 [ext_resource type="Texture2D" uid="uid://b5cj44i08n730" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/big_office.png" id="2_1157y"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_c5222"]
 [ext_resource type="Texture2D" uid="uid://ds6cnjde88gs7" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/router_big_office.png" id="3_edpt3"]
+[ext_resource type="Resource" uid="uid://dwounsgde851p" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_default_hint.tres" id="3_w0b5p"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_dtd0x"]
+[ext_resource type="Resource" uid="uid://cmual83u7hdm4" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_router_found_hint.tres" id="4_nbkrl"]
+[ext_resource type="Resource" uid="uid://b584dehdw07ha" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_computer_found_hint.tres" id="5_hf4s7"]
 [ext_resource type="Resource" uid="uid://bs1c21kgcmqfw" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_Search_szene_1_default.tres" id="5_nj25h"]
 [ext_resource type="Resource" uid="uid://bp31jmq0deyaj" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_Search_szene_1_neighbor.tres" id="7_mh1g0"]
 [ext_resource type="Texture2D" uid="uid://bf6xas1fhnvdx" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/desktop1.png" id="8_2cnp6"]
@@ -40,6 +44,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_1157y")
 location_name = "secound_office_light_is_back"
 items = [NodePath("computer_1"), NodePath("computer_2"), NodePath("computer_3"), NodePath("computer_4"), NodePath("computer_5"), NodePath("tower_1"), NodePath("tower_2"), NodePath("tower_3"), NodePath("router")]
+hints = Array[ExtResource("2_c5222")]([ExtResource("3_w0b5p"), ExtResource("4_nbkrl"), ExtResource("5_hf4s7")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

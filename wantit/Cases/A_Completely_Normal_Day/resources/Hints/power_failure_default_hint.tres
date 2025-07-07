@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Hint" load_steps=2 format=3 uid="uid://1ibsvjq067bm"]
+
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="1_bgtqf"]
+
+[resource]
+script = ExtResource("1_bgtqf")
+hint_text = "Finde den Sicherungskasten im Technik Raum."
+metadata/_custom_type_script = "uid://c5qtuytooefmh"

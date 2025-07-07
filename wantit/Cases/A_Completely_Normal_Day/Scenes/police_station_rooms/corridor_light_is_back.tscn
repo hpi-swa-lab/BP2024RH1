@@ -1,9 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1xoqrkvm0u5l"]
+[gd_scene load_steps=16 format=3 uid="uid://c1xoqrkvm0u5l"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_tm3tq"]
 [ext_resource type="Resource" uid="uid://haky5xmm70jn" path="res://Cases/A_Completely_Normal_Day/dialogue/corridor.dialogue" id="2_pcmbh"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_xvsdi"]
+[ext_resource type="Resource" uid="uid://dwounsgde851p" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_default_hint.tres" id="3_302wc"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_kdt1h"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_kx0r7"]
+[ext_resource type="Resource" uid="uid://cmual83u7hdm4" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_router_found_hint.tres" id="4_wnxli"]
+[ext_resource type="Resource" uid="uid://b584dehdw07ha" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_computer_found_hint.tres" id="5_u4tg5"]
 [ext_resource type="Texture2D" uid="uid://5rsinncwffxn" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/corridor.png" id="5_xvsdi"]
 [ext_resource type="Texture2D" uid="uid://cm487sfbr7wd2" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/door_to_office.png" id="6_302wc"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="7_wnxli"]
@@ -27,6 +31,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 [node name="corridor_light_is_back" type="Node"]
 script = ExtResource("1_tm3tq")
 location_name = "corridor_light_is_back"
+hints = Array[ExtResource("2_xvsdi")]([ExtResource("3_302wc"), ExtResource("4_wnxli"), ExtResource("5_u4tg5")])
 location_dialogue = SubResource("Resource_v4w51")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 

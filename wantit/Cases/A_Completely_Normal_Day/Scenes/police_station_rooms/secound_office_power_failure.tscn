@@ -1,8 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://8tykys80rcmx"]
+[gd_scene load_steps=40 format=3 uid="uid://8tykys80rcmx"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_02av5"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_ckim7"]
 [ext_resource type="Texture2D" uid="uid://cp42k8rjventg" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/Blackout/big_office_dark.png" id="2_wlsng"]
 [ext_resource type="Texture2D" uid="uid://dvtntml54vdid" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/Blackout/desktop1_dark.png" id="3_088ex"]
+[ext_resource type="Resource" uid="uid://1ibsvjq067bm" path="res://Cases/A_Completely_Normal_Day/resources/Hints/power_failure_default_hint.tres" id="3_koe10"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_sblj2"]
 [ext_resource type="Resource" uid="uid://dulikdvcbntlc" path="res://Cases/A_Completely_Normal_Day/dialogue/computer.dialogue" id="5_7ects"]
 [ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="5_nvcjy"]
@@ -150,6 +152,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_02av5")
 location_name = "secound_office_power_failure"
 items = [NodePath("computer_1"), NodePath("computer_2"), NodePath("computer_3"), NodePath("computer_4"), NodePath("computer_5"), NodePath("router"), NodePath("tower_1"), NodePath("tower_2"), NodePath("tower_3")]
+hints = Array[ExtResource("2_ckim7")]([ExtResource("3_koe10")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

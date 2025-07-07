@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxpdv3si2n5eh"]
+[gd_scene load_steps=18 format=3 uid="uid://dxpdv3si2n5eh"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_70qwi"]
 [ext_resource type="Texture2D" uid="uid://c6106kcti7tcp" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/Blackout/technical_room_dark.png" id="2_053me"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_ychmo"]
 [ext_resource type="Texture2D" uid="uid://law8dst75i32" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/blackout/electricity_box_dark.png" id="3_dbn55"]
+[ext_resource type="Resource" uid="uid://1ibsvjq067bm" path="res://Cases/A_Completely_Normal_Day/resources/Hints/power_failure_default_hint.tres" id="3_w4aoe"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_7hs3h"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_053me"]
 [ext_resource type="Resource" uid="uid://b88yntviftn1b" path="res://Cases/A_Completely_Normal_Day/dialogue/electric_box.dialogue" id="5_11eml"]
@@ -44,6 +46,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_70qwi")
 location_name = "technic_room_power_failure"
 items = [NodePath("electric_box"), NodePath("router_technic")]
+hints = Array[ExtResource("2_ychmo")]([ExtResource("3_w4aoe")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
