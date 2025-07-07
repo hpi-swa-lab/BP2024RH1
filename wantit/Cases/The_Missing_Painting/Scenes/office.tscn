@@ -53,14 +53,12 @@ offset_bottom = 1357.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("3_3v0ma")
 
-[node name="Computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+[node name="Computer" type="TextureButton" parent="."]
 unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("4_rd3pn")
-script = ExtResource("5_sqaug")
-metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
 [node name="Map" type="TextureButton" parent="." groups=["location_switch_buttons"]]
 unique_name_in_owner = true

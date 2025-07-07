@@ -30,9 +30,10 @@ func _on_button_gui_input(event: InputEvent) -> void:
 			%RightGrid.columns = columns
 			%LeftGrid.columns = columns
 			%LeftGrid.visible = true
-			%RightGrid.visible = true
+			#%RightGrid.visible = true
 			add_clickable_buttons(%LeftGrid)
-			add_buttons(%RightGrid)
+			#add_buttons(%RightGrid)
+			%Button.position = Vector2(891, 246)
 			%Button.text = "Webseite suchen"
 			DialogueManager.show_dialogue_balloon(load ("res://Cases/The_Missing_Painting/Dialogue/minigame.dialogue"), "default")
 		elif %Button.text == "Webseite suchen":
@@ -42,6 +43,7 @@ func _on_button_gui_input(event: InputEvent) -> void:
 				if grid_button.text != solution[i]:
 					correct_solution = false
 					%Button.text = "Pixel ändern"
+					%Button.position = Vector2(621, 446)
 					%LeftGrid.visible = false
 					%RightGrid.visible = false
 					display_solution()
@@ -51,6 +53,7 @@ func _on_button_gui_input(event: InputEvent) -> void:
 			display_solution()
 			return
 		elif %Button.text == "Pixel ändern":
+			%Button.position = Vector2(891, 246)
 			%Button.text = "Webseite suchen"
 			edit_pixels()
 			return
@@ -75,10 +78,10 @@ func _button_pressed(ButtonPos: int):
 	var button = %LeftGrid.get_child(ButtonPos)
 	var rect = %RightGrid.get_child(ButtonPos)
 	if button.text == "1":
-		rect.color = Color(0, 0, 0)
+		#rect.color = Color(0, 0, 0)
 		button.text = "0"
 	elif button.text == "0":
-		rect.color = Color(1, 1, 1)
+		#rect.color = Color(1, 1, 1)
 		button.text = "1"
 		
 			
@@ -108,7 +111,7 @@ func edit_pixels():
 	%Display.visible = false
 	#pixel_editor.visible = false
 	%LeftGrid.visible = true
-	%RightGrid.visible = true
+	#%RightGrid.visible = true
 	#if %Button.text == "Webseite suchen":
 	#	add_buttons(%RightGrid)
 	#	add_clickable_buttons(%LeftGrid)

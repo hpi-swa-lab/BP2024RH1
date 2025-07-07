@@ -3,6 +3,7 @@ Klaas: Hallo Robo! Ich habe einen neuen Fall für dich.
 - Was ist passiert?
 Klaas: Es wurde eingebrochen!
 - Ich werde mir sofort den Tatort angucken gehen.
+	=> END
 - Was ist über den Einbruch bekannt?
 	Klaas: Es wurde ein sehr wertvolles Gemälde geklaut.
 	Klaas: Aber sonst komischerweise nichts.
