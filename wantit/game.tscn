@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=65 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -168,6 +168,14 @@ case_location_scenes = Array[PackedScene]([ExtResource("18_xa8c5"), ExtResource(
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_082n1"), SubResource("Resource_aa0lp"), SubResource("Resource_4v2jo"), SubResource("Resource_r62pu"), SubResource("Resource_eu6ph")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="Resource" id="Resource_0de7l"]
+script = ExtResource("2_e2o6t")
+case_slug = ""
+case_title = ""
+case_location_scenes = Array[PackedScene]([])
+events = Array[ExtResource("14_215e1")]([])
+metadata/_custom_type_script = "uid://ni774rbce31d"
+
 [sub_resource type="Resource" id="Resource_kq12w"]
 script = ExtResource("18_rvswv")
 mode = 0
@@ -194,7 +202,7 @@ location_name = "Office"
 start_condition = SubResource("Resource_m28ev")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
-[sub_resource type="Resource" id="Resource_edr8y"]
+[sub_resource type="Resource" id="Resource_edr7y"]
 script = ExtResource("2_e2o6t")
 case_slug = "Pixel"
 case_title = "Das verschwundene Gemälde"
@@ -204,5 +212,5 @@ metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv"), null, SubResource("Resource_edr8y")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_rvswv"), SubResource("Resource_0de7l"), SubResource("Resource_edr7y")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"
