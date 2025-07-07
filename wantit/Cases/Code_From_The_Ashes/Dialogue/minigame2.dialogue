@@ -1,0 +1,20 @@
+~ default
+Was könnte das Schlüsselwort sein? Gibt es noch einen Gegenstand vom Tatort, der mir weiterhelfen kann?
+=> END
+
+~ not_whole_alphabet
+Ich muss das ganze Alphabet angeben.
+=> END
+
+~ double_letter
+Ich kann jeden Buchstaben nur einmal benutzen
+=> END
+
+~ correct_solution
+Bob Maler schien Alice Wunder davon überzeugen zu wollen etwas zuzugeben. Der Fall ist komplexer als gedacht.
+do interaction_happened("Minigame2_completed")
+=> END
+
+~ wrong_solution
+Die Nachricht ergibt keinen Sinn, vermutlich habe ich das falsche Geheimalphabet
+=> END

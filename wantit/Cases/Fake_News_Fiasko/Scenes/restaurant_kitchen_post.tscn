@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ymhk1mswieql"]
+[gd_scene load_steps=28 format=3 uid="uid://ymhk1mswieql"]
 
 [ext_resource type="Script" uid="uid://be6xv7tkfnm7k" path="res://Cases/Fake_News_Fiasko/Scripts/restaurant_kitchen_pre.gd" id="1_1hnin"]
 [ext_resource type="Texture2D" uid="uid://bkkhrgyx3xaor" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_kitchen.png" id="2_2wem3"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://bnbgg0jt8015i" path="res://Cases/Fake_News_Fiasko/Assets/collectible_items/gloves.png" id="10_8a1a2"]
 [ext_resource type="Resource" uid="uid://c50ttg2in6ont" path="res://Cases/Fake_News_Fiasko/dialogue/plate_with_bruschetta.dialogue" id="13_wi0h8"]
 [ext_resource type="Resource" uid="uid://66uwkdkwad5u" path="res://Cases/Fake_News_Fiasko/dialogue/gloves.dialogue" id="15_rv6bg"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="18_ykjt6"]
 
 [sub_resource type="Resource" id="Resource_wi0h8"]
 script = ExtResource("3_ykjt6")
@@ -164,8 +163,6 @@ item_name = "Gloves"
 is_collectable = true
 item_dialogue = SubResource("Resource_pl671")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
-
-[node name="Helpsystem" parent="." instance=ExtResource("18_ykjt6")]
 
 [connection signal="pressed" from="Cupboard halfOpen" to="." method="_on_cupboard_half_open_pressed"]
 [connection signal="pressed" from="Cupboard open" to="." method="_on_cupboard_open_pressed"]

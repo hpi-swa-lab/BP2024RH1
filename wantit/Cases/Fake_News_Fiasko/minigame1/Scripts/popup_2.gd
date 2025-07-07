@@ -12,14 +12,11 @@ var cur_index = 0
 @onready var back_btn = $Zurück
 @onready var next_btn = $Weiter
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
 	cur_pic.texture = pictures[0]
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if cur_pic.texture == pictures[0]:
 		back_btn.visible = false
 	else:

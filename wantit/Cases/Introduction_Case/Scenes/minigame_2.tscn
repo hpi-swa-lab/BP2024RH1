@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw7q816wdvvla"]
+[gd_scene load_steps=7 format=3 uid="uid://bw7q816wdvvla"]
 
 [ext_resource type="Script" uid="uid://dnixrguyhb71s" path="res://Cases/Introduction_Case/Scripts/minigame_2.gd" id="1_vdqgs"]
 [ext_resource type="Texture2D" uid="uid://66lbp6w0oqer" path="res://Cases/Introduction_Case/assets/minigame2/monitor_and_notepad.png" id="2_0day8"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_v5uee"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_nbqiy"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="3_wxs41"]
 
 [sub_resource type="Resource" id="Resource_fo310"]
 script = ExtResource("3_nbqiy")
@@ -42,9 +41,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.299766, 0.299766)
 texture = ExtResource("2_0day8")
-
-[node name="Helpsystem" parent="." instance=ExtResource("3_wxs41")]
-layout_mode = 1
 
 [node name="DataSelectionContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true

@@ -14,6 +14,7 @@ var baloon_type: String
 var monologue_baloon_path: String = "res://dialogue_balloons/monologue/balloon_monologue.tscn"
 var dialogue_baloon_path: String = "res://dialogue_balloons/balloon.tscn"
 
+
 func set_baloon_type():
 	if is_dialogue:
 		baloon_type = dialogue_baloon_path
@@ -23,10 +24,9 @@ func set_baloon_type():
 func choose_dialogue_trigger_by_requierements(player_items: Array):
 	var best_match = null
 	for condition in dialogue_triggers:
-		if is_subset(condition.required_items, player_items) and not condition.was_played:
+		if is_subset(condition.required_items, player_items) and (not condition.is_started or condition.is_repeatable):
 			if best_match == null or best_match.required_items.size() < condition.required_items.size():
 				best_match = condition
-				condition.was_played = true
 	
 	if best_match != null:#and best_match.required_items.size() > 0:
 		return best_match
