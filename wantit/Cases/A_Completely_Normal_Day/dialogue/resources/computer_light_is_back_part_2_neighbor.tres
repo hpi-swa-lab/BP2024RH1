@@ -8,6 +8,7 @@
 script = ExtResource("2_8pxay")
 start_marker = "Search_szene_2_neighbor_quelle"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [resource]

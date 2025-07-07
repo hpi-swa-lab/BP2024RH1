@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=103 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -59,7 +59,6 @@
 [ext_resource type="PackedScene" uid="uid://c2bi0h58ogcem" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_2.tscn" id="44_m28ev"]
 [ext_resource type="PackedScene" uid="uid://dl2l13xobbrcq" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/corridor_light_is_back_part_2.tscn" id="45_tb2lt"]
 [ext_resource type="PackedScene" uid="uid://dldwkuqwfxyqu" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_minigame.tscn" id="49_87ddb"]
-[ext_resource type="PackedScene" uid="uid://carj57qx8oiee" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/technic_room_light_is_back_2.tscn" id="60_mc3al"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -349,7 +348,7 @@ script = ExtResource("2_e2o6t")
 case_slug = "LogikGatter"
 case_title = "Ein ganz normaler Tag"
 case_topic = "Logik Gatter"
-case_location_scenes = Array[PackedScene]([ExtResource("34_eu6ph"), ExtResource("35_edr7y"), ExtResource("42_mljfx"), ExtResource("45_tb2lt"), ExtResource("41_87ddb"), ExtResource("37_87ddb"), ExtResource("36_kq12w"), ExtResource("36_0de7l"), ExtResource("38_m28ev"), ExtResource("39_87ddb"), ExtResource("37_t46w6"), ExtResource("40_0de7l"), ExtResource("42_qpefm"), ExtResource("39_lwlx3"), ExtResource("43_t46w6"), ExtResource("44_m28ev"), ExtResource("49_87ddb"), ExtResource("60_mc3al")])
+case_location_scenes = Array[PackedScene]([ExtResource("42_mljfx"), ExtResource("45_tb2lt"), ExtResource("41_87ddb"), ExtResource("34_eu6ph"), ExtResource("37_87ddb"), ExtResource("36_kq12w"), ExtResource("36_0de7l"), ExtResource("35_edr7y"), ExtResource("38_m28ev"), ExtResource("39_87ddb"), ExtResource("37_t46w6"), ExtResource("40_0de7l"), ExtResource("42_qpefm"), ExtResource("39_lwlx3"), ExtResource("43_t46w6"), ExtResource("44_m28ev"), ExtResource("49_87ddb")])
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_mc3al"), SubResource("Resource_du4n2"), SubResource("Resource_ple6s"), SubResource("Resource_56gn1"), SubResource("Resource_vyqle"), SubResource("Resource_6qn5j")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 

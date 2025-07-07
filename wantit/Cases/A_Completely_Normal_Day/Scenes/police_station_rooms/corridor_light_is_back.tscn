@@ -18,6 +18,7 @@
 script = ExtResource("3_kdt1h")
 start_marker = "Light_is_back"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_v4w51"]
@@ -65,5 +66,5 @@ offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("9_hmjm3")
 script = ExtResource("7_wnxli")
-requested_location_name = "technic_room_light_is_back"
+requested_location_name = "technic_room_light_is_back_2"
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"

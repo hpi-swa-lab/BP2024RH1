@@ -18,6 +18,7 @@
 script = ExtResource("5_y6sxr")
 start_marker = "Power_failure"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_evvr1"]
@@ -32,6 +33,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("5_y6sxr")
 start_marker = "Search_szene_0"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_duhha"]

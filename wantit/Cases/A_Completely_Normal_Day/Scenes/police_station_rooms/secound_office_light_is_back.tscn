@@ -30,6 +30,7 @@
 script = ExtResource("13_jnd2s")
 start_marker = "Search_szene_1"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_c5222"]
