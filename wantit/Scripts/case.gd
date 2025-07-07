@@ -34,6 +34,8 @@ func instantiate(_saved_case_data: Dictionary):
 	var case_collectible_items = get_case_collectible_items()
 	inventory = inventory_scene.instantiate() as Inventory
 	inventory.restore_inventory_items(case_collectible_items, restored_inventory_items)
+	
+	GlobalTimer.start_timer(case_slug)
 
 func _setup_location(location_instance: Location):
 	var location := location_instance as Location

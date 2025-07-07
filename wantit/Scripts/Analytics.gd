@@ -101,6 +101,7 @@ func add_scene_analytics(location_name: String, location_type: String, location_
 		"total_duration_seconds": location_time
 	}
 	session_data["scene_times"].append(scene_data)
+	print("adding scene analytics", session_data, "\n")
 
 func add_minigame_analytics(minigame_name: String, duration: int, attempts: Array):
 	var minigame_data = {
@@ -109,6 +110,7 @@ func add_minigame_analytics(minigame_name: String, duration: int, attempts: Arra
 		"attempts": attempts
 	}
 	session_data["minigames"].append(minigame_data)
+	print("adding minigame analytics", session_data, "\n")
 
 func add_knowledge_test_analytics(phase: String, answers: Array, duration: int):
 	var knowledge_data = {

@@ -32,6 +32,7 @@ func _ready():
 	
 	call_deferred("_setup_connections")
 	update_items_visibility()
+	GlobalTimer.start_timer(location_name)
 	
 func setup_dialogue_player(_location_dialogue: Dialogue, _inventory_provider: Resource, _data: Array) -> void:
 	dialogue_player = DialoguePlayer.new(_location_dialogue, _inventory_provider, _data)
@@ -61,6 +62,8 @@ func _on_item_found(item: Item) -> void:
 
 func _on_location_switch_requested(requested_location_name: String):
 	location_switch_requested.emit(requested_location_name)
+	GlobalTimer.end_timer(location_name)
+	export_location_analytics()
 
 func update_items_visibility():
 	for item in items:
@@ -84,3 +87,6 @@ func set_item_dialogues() -> void:
 	for item in items:
 		if item.item_dialogue:
 			item.add_dialogue_player(item.item_dialogue, case, [])
+
+func export_location_analytics():
+	Analytics.add_scene_analytics(location_name, "Location", GlobalTimer.get_time(location_name))

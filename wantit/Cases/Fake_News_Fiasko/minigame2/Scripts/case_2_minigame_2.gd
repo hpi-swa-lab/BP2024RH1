@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 
 var selected_statement: Control
 var correct_selection: bool = true
@@ -56,11 +56,16 @@ func add_statement_to_array(category_value: int):
 	check_statement_count()
 
 func check_solution() -> bool:
+	var correct_selections = 0
 	for statement in statements:
 		if categorized_statements[statement] != statement.category:
 			correct_selection = false
 			wrong_categorized_statement.append(statement)
 			categorized_statements.erase(statement)
+		else:
+			correct_selections += 1
+	if not correct_selection:
+		add_attempt(correct_selections, categorized_statements.size()-correct_selections)
 	return correct_selection
 
 func retry_level():

@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 
 var selected_post: Control
 var selected_scrollable_post: post
@@ -111,6 +111,7 @@ func _on_option_2_pressed() -> void:
 
 func check_elements(var_name: String) -> bool:
 	var answers_correct = true
+	var correct_selections = 0
 	for element in %VBoxContainer.get_children():
 		if element.get(var_name) and element not in relevant_posts:
 			wrong_posts.append(element)
@@ -118,4 +119,8 @@ func check_elements(var_name: String) -> bool:
 		elif not element.get(var_name) and element in relevant_posts:
 			wrong_posts.append(element)
 			answers_correct = false
+		else:
+			correct_selections += 1
+	if not answers_correct:
+		add_attempt(correct_selections, wrong_posts.size())
 	return answers_correct

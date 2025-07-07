@@ -75,6 +75,9 @@ func mark_case_completed() -> void:
 	current_case.is_completed = true
 	completed_cases.append(current_case.case_slug)
 	current_case.clear_case_data()
+	
+	GlobalTimer.end_timer(current_case.case_slug)
+	Analytics.export_analytics(current_case.case_slug, GlobalTimer.get_time(current_case.case_slug))
 
 func reset_to_default_case() -> void:
 	active_case_slug = "default"

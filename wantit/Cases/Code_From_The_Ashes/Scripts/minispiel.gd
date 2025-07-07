@@ -98,3 +98,16 @@ func _on_check_solution_pressed() -> void:
 				dialogue_resource,
 				"minigame_completed")
 			await DialogueManager.dialogue_ended
+	else:
+		var correct_selections = 0
+		for i in input_text.length():
+			if input_text[i] == original_text[i]:
+				correct_selections += 1
+		get_parent().add_attempt(correct_selections, original_text.length()-correct_selections)
+		reset_game()
+
+func reset_game():
+	for field in text_fields:
+		if field is LineEdit:
+			field.text = ""
+	text_fields[0].grab_focus()
