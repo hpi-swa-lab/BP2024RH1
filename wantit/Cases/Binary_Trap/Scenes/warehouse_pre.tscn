@@ -1,13 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpl55rtgw33ae"]
+[gd_scene load_steps=10 format=3 uid="uid://cpl55rtgw33ae"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_4p06j"]
 [ext_resource type="Texture2D" uid="uid://2ipphhymy150" path="res://Cases/Binary_Trap/Assets/Backgrounds/warehouse.png" id="2_ei05e"]
+[ext_resource type="Resource" uid="uid://bop054788heoh" path="res://Cases/Binary_Trap/dialogue/warehouse.dialogue" id="2_stpns"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_hka6i"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_hyvd0"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_dv1pc"]
 [ext_resource type="Texture2D" uid="uid://cmtuhg60n10e6" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/door_to_warehouse.png" id="4_v7kog"]
+
+[sub_resource type="Resource" id="Resource_stpns"]
+script = ExtResource("3_hyvd0")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_yke6w"]
+script = ExtResource("4_dv1pc")
+dialogue_resource = ExtResource("2_stpns")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_hyvd0")]([SubResource("Resource_stpns")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Warehouse Pre" type="Node"]
 script = ExtResource("1_4p06j")
 location_name = "Warehouse Pre"
+location_dialogue = SubResource("Resource_yke6w")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

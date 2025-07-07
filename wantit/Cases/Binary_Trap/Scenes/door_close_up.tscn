@@ -1,15 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://5fy4txcsa28u"]
+[gd_scene load_steps=11 format=3 uid="uid://5fy4txcsa28u"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_ljr67"]
+[ext_resource type="Resource" uid="uid://csymjrgoox65o" path="res://Cases/Binary_Trap/dialogue/door_closeUp.dialogue" id="2_2t47c"]
 [ext_resource type="Texture2D" uid="uid://2gok0ym5bvl7" path="res://Cases/Binary_Trap/Assets/Backgrounds/door_closeUp.png" id="2_fou86"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="3_kgry1"]
 [ext_resource type="Texture2D" uid="uid://d1ssutvx4wdi4" path="res://Cases/Binary_Trap/Assets/Interactible_Items/keyhole.png" id="3_oi3hg"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_y0dvj"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_kxfvx"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_5olm1"]
+
+[sub_resource type="Resource" id="Resource_2t47c"]
+script = ExtResource("3_y0dvj")
+start_marker = "door_key_found"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_7mhcv"]
+script = ExtResource("4_kxfvx")
+dialogue_resource = ExtResource("2_2t47c")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_y0dvj")]([SubResource("Resource_2t47c")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Door CloseUp" type="Node"]
 script = ExtResource("1_ljr67")
 location_name = "Door CloseUp"
 has_inventory = true
+location_dialogue = SubResource("Resource_7mhcv")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

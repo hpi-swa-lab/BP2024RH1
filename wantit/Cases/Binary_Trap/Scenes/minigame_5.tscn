@@ -1,15 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp1lynaxx63sq"]
+[gd_scene load_steps=11 format=3 uid="uid://cp1lynaxx63sq"]
 
 [ext_resource type="Script" uid="uid://xncovxk1ul3s" path="res://Cases/Binary_Trap/Scripts/minigame5_6a.gd" id="1_ply4s"]
 [ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigames/lock.tscn" id="2_5gn70"]
 [ext_resource type="Texture2D" uid="uid://bwf11f4reuf1v" path="res://Cases/Binary_Trap/Assets/Minigame5_6/minigame5_closeUp.png" id="2_gj382"]
+[ext_resource type="Resource" uid="uid://dh58auubyeq3j" path="res://Cases/Binary_Trap/dialogue/minigame5.dialogue" id="2_gp885"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_if3mk"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_dqjbi"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_gj382"]
+
+[sub_resource type="Resource" id="Resource_a1nr4"]
+script = ExtResource("3_if3mk")
+start_marker = "postcard_not_found"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_gp885"]
+script = ExtResource("3_if3mk")
+start_marker = "postcard_found"
+required_items = Array[String](["Postcard"])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_md1kb"]
+script = ExtResource("4_dqjbi")
+dialogue_resource = ExtResource("2_gp885")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_if3mk")]([SubResource("Resource_a1nr4"), SubResource("Resource_gp885")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Minigame 5" type="Node"]
 script = ExtResource("1_ply4s")
 item_name = "Minigame5 completed"
 location_name = "Minigame 5"
 has_inventory = true
+location_dialogue = SubResource("Resource_md1kb")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

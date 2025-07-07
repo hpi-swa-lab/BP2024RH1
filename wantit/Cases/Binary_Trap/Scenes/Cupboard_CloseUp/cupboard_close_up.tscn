@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c26cvjsswppqd"]
+[gd_scene load_steps=18 format=3 uid="uid://c26cvjsswppqd"]
 
 [ext_resource type="Script" uid="uid://y3om711kkl1y" path="res://Cases/Binary_Trap/Scripts/cupboard_close_up.gd" id="1_oa73l"]
 [ext_resource type="Texture2D" uid="uid://bhirv71dfw8pu" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_closeUp.png" id="2_i0exb"]
@@ -7,8 +7,40 @@
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="5_5vlyj"]
 [ext_resource type="Texture2D" uid="uid://ch5wfse2583vp" path="res://Cases/Binary_Trap/Assets/Collectible_Items/vase.png" id="5_nky2q"]
 [ext_resource type="Texture2D" uid="uid://b1b2gt6d41dbv" path="res://Cases/Binary_Trap/Assets/Interactible_Items/notches.png" id="7_8yyyl"]
+[ext_resource type="Resource" uid="uid://cjxnc2qjk42xm" path="res://Cases/Binary_Trap/dialogue/vase.dialogue" id="7_trxr6"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="8_5vlyj"]
+[ext_resource type="Resource" uid="uid://cufe2ajmvh2v0" path="res://Cases/Binary_Trap/dialogue/notches.dialogue" id="8_6vcu3"]
 [ext_resource type="Texture2D" uid="uid://dyxoorpsgit31" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/woodpiece_closed.png" id="9_moqof"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="9_trxr6"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="10_cym85"]
+
+[sub_resource type="Resource" id="Resource_cym85"]
+script = ExtResource("9_trxr6")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_0bnl7"]
+script = ExtResource("10_cym85")
+dialogue_resource = ExtResource("7_trxr6")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_trxr6")]([SubResource("Resource_cym85")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_t6tpd"]
+script = ExtResource("9_trxr6")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_wq21h"]
+script = ExtResource("10_cym85")
+dialogue_resource = ExtResource("8_6vcu3")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_trxr6")]([SubResource("Resource_t6tpd")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Cupboard CloseUp" type="Node"]
 script = ExtResource("1_oa73l")
@@ -37,6 +69,7 @@ texture_normal = ExtResource("5_nky2q")
 script = ExtResource("5_5vlyj")
 item_name = "Vase"
 is_collectable = true
+item_dialogue = SubResource("Resource_0bnl7")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Notches" type="TextureButton" parent="."]
@@ -46,6 +79,7 @@ scale = Vector2(0.299985, 0.299985)
 texture_normal = ExtResource("7_8yyyl")
 script = ExtResource("5_5vlyj")
 item_name = "Notches"
+item_dialogue = SubResource("Resource_wq21h")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Woodpiece (closed)" parent="." instance=ExtResource("3_nky2q")]

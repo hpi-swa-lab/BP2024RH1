@@ -1,16 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1t841ugd4yhg"]
+[gd_scene load_steps=16 format=3 uid="uid://b1t841ugd4yhg"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_7yrck"]
 [ext_resource type="Texture2D" uid="uid://cu8dcd74vhf7r" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOff.png" id="2_k4jv4"]
+[ext_resource type="Resource" uid="uid://kagfmwjlj4ye" path="res://Cases/Binary_Trap/dialogue/interior_lights_off.dialogue" id="2_kutan"]
 [ext_resource type="Texture2D" uid="uid://w87ogmf0nbth" path="res://Cases/Binary_Trap/Assets/Interactible_Items/door_lightOff.png" id="3_d1st4"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_gods1"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="3_tr3ad"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_d4nv5"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="5_0nemb"]
 [ext_resource type="Texture2D" uid="uid://cicdmhu44uilw" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/display_glowing.png" id="6_67b5c"]
 [ext_resource type="Texture2D" uid="uid://bb2nokld4j3yo" path="res://Cases/Binary_Trap/Assets/postcard_lightsOff.png" id="7_67b5c"]
+[ext_resource type="Resource" uid="uid://ctmvrulrxbpq0" path="res://Cases/Binary_Trap/dialogue/door_lights_off.dialogue" id="8_gods1"]
+
+[sub_resource type="Resource" id="Resource_gods1"]
+script = ExtResource("3_gods1")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_chfhj"]
+script = ExtResource("4_d4nv5")
+dialogue_resource = ExtResource("2_kutan")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_gods1")]([SubResource("Resource_gods1")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_k3q03"]
+script = ExtResource("3_gods1")
+start_marker = "default"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_d4nv5"]
+script = ExtResource("4_d4nv5")
+dialogue_resource = ExtResource("8_gods1")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_gods1")]([SubResource("Resource_k3q03")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
 [node name="Room LightsOff" type="Node"]
 script = ExtResource("1_7yrck")
 location_name = "Room LightsOff"
+location_dialogue = SubResource("Resource_chfhj")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -26,6 +59,7 @@ scale = Vector2(0.300027, 0.300027)
 texture_normal = ExtResource("3_d1st4")
 script = ExtResource("3_tr3ad")
 item_name = "Door"
+item_dialogue = SubResource("Resource_d4nv5")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Glowing Display" parent="." instance=ExtResource("5_0nemb")]
