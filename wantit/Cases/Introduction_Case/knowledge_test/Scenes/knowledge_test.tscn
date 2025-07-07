@@ -8,6 +8,7 @@
 
 [node name="KnowledgeTest" type="Node2D"]
 script = ExtResource("1_w25js")
+location_name = "Pre Test"
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -40,11 +41,6 @@ size_flags_horizontal = 6
 size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="SkipButton" type="Button" parent="."]
-offset_left = 977.0
-offset_top = 113.0
-offset_right = 1077.0
-offset_bottom = 183.0
-theme_override_colors/font_color = Color(0.72549, 0.333333, 0.333333, 1)
-theme_override_font_sizes/font_size = 35
-text = "SKIP"
+[node name="SkipButton" type="Button" parent="QuestionWrap/QuestionBox"]
+layout_mode = 2
+text = "Weiß ich nicht"
