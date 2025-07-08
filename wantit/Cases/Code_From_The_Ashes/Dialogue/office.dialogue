@@ -41,5 +41,5 @@ do _on_location_switch_requested("PostTest")
 => END
 
 ~ complete
-do complete_case()
+do interaction_happened("to_endscreen")
 => END

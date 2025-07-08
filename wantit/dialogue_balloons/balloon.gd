@@ -112,6 +112,9 @@ func apply_dialogue_line() -> void:
 	
 	if dialogue_line.character.is_empty():
 		portrait_path = "res://Assets/characters/transparent.png"
+		
+	if dialogue_line.character == "???":
+		portrait_path = "res://Assets/characters/Handy.png"
 	
 	if ResourceLoader.exists(portrait_path):
 		portrait.texture = load(portrait_path)

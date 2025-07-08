@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj3fuuql3owoj"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_kti07"]
+[ext_resource type="Texture2D" uid="uid://kjeyrrdms4sv" path="res://Assets/map/map.png" id="2_u7j60"]
+[ext_resource type="Texture2D" uid="uid://d1aavb4h5sht7" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/warehouse_map_icon.png" id="3_kti07"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="3_m854r"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="5_2jmgn"]
+
+[node name="Map" type="Node"]
+script = ExtResource("1_kti07")
+location_name = "Map"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Map" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(587, 321)
+scale = Vector2(0.305738, 0.322603)
+texture = ExtResource("2_u7j60")
+
+[node name="ToWarehouse" type="TextureButton" parent="."]
+offset_left = -1.0
+offset_top = -28.0
+offset_right = 5354.0
+offset_bottom = 3142.0
+scale = Vector2(0.306, 0.323)
+texture_normal = ExtResource("3_kti07")
+script = ExtResource("5_2jmgn")
+requested_location_name = "Warehouse Pre"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[node name="BackButton" parent="." instance=ExtResource("3_m854r")]
+offset_left = 1008.0
+offset_top = 8.0
+offset_right = 1520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Office"

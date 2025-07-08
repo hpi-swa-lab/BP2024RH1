@@ -14,6 +14,8 @@ var is_completed: bool = false
 var restored_inventory_items: Array
 @export var events: Array[Event]
 var played_location_dialogues: Dictionary
+var from_location: String
+#var event_tracker: CaseEventTracker -> CaseEvent
 
 signal location_switch_requested(location_name: String)
 signal location_switch_requested_from_event(location_name: String)
@@ -88,8 +90,9 @@ func is_subset(subset: Array, superset: Array) -> bool:
 func start_event(location_name: String):
 	location_switch_requested_from_event.emit(location_name)
 	
-func _on_location_switch_requested(location_name: String):
-	location_switch_requested.emit(location_name)
+func _on_location_switch_requested(_target_location_name: String, _source_location_name: String):
+	location_switch_requested.emit(_target_location_name)
+	from_location = _source_location_name
 
 func get_location_by_name(location_name: String):
 	for location in case_locations:

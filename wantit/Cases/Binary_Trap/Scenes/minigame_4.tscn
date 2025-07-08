@@ -1,0 +1,165 @@
+[gd_scene load_steps=15 format=3 uid="uid://q1ccreh7wbh"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_at2jk"]
+[ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigames/gap_game.tscn" id="2_0mkrf"]
+[ext_resource type="Texture2D" uid="uid://cg6umxqo34mep" path="res://Cases/Binary_Trap/Assets/Minigame4/minigame4_closeUp.png" id="2_asgrs"]
+[ext_resource type="Script" uid="uid://c07pihq51n61q" path="res://Cases/Binary_Trap/Scripts/minigame4.gd" id="2_ht2uf"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_keevc"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_1ft0n"]
+[ext_resource type="FontFile" uid="uid://7j4njv1wjhhj" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="3_5xu1i"]
+[ext_resource type="FontFile" uid="uid://qeff5a6mplbw" path="res://Assets/Fonts/CabinSketch-Regular.ttf" id="5_triia"]
+[ext_resource type="Texture2D" uid="uid://b4xqfpttd0lv3" path="res://Cases/Binary_Trap/Assets/Minigame4/chalk_arrow.png" id="6_triia"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="8_xw2al"]
+
+[sub_resource type="Resource" id="Resource_iluou"]
+script = ExtResource("3_1ft0n")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_1ft0n"]
+script = ExtResource("2_keevc")
+hint_text = "Die Dezimalzahl muss als Binärzahl umgewandelt werden. Trage dazu in die Kästchen eine 0 oder 1 so ein, dass die Werte aufaddiert die Dezimalzahl ergibt."
+hint_condition = SubResource("Resource_iluou")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_g0bwb"]
+script = ExtResource("3_1ft0n")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_7oy3o"]
+script = ExtResource("2_keevc")
+hint_text = "Um eine Dezimalzahl in eine Binärzahl umzuwandeln, suchst du zuerst den größten Binärwert, der noch kleiner oder gleich der Dezimalzahl ist – diese Stelle bekommt eine 1. Dann ziehst du diesen Wert von der Dezimalzahl ab und machst mit dem Rest genauso weiter. Wenn kein Rest mehr übrig ist, bist du fertig."
+hint_condition = SubResource("Resource_g0bwb")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[node name="Minigame 4" type="Node"]
+script = ExtResource("1_at2jk")
+location_name = "Minigame 4"
+hints = Array[ExtResource("2_keevc")]([SubResource("Resource_1ft0n"), SubResource("Resource_7oy3o")])
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300011, 0.300011)
+texture = ExtResource("2_asgrs")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 65.0
+offset_right = 1084.0
+offset_bottom = 94.0
+scale = Vector2(0.943903, 0.943903)
+theme_override_fonts/font = ExtResource("5_triia")
+theme_override_font_sizes/font_size = 24
+text = "Fülle die Lücken so, dass die gebene Dezimalzahl korrekt in ihre Bestandteile zerlegt wird."
+horizontal_alignment = 1
+
+[node name="Minigame" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 59.0
+offset_top = 24.0
+offset_right = 99.0
+offset_bottom = 64.0
+scale = Vector2(0.91845, 0.91845)
+script = ExtResource("2_ht2uf")
+
+[node name="Input Label" type="Label" parent="Minigame"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 124.0
+offset_right = 237.0
+offset_bottom = 242.0
+rotation = -0.154704
+theme_override_fonts/font = ExtResource("3_5xu1i")
+theme_override_font_sizes/font_size = 100
+text = "12"
+
+[node name="Gap Game" parent="Minigame" instance=ExtResource("2_0mkrf")]
+layout_mode = 1
+offset_left = 144.809
+offset_top = 287.441
+offset_right = 144.809
+offset_bottom = 287.441
+scale = Vector2(1.80703, 1.80703)
+
+[node name="Binary Label" type="Label" parent="Minigame"]
+layout_mode = 0
+offset_left = 275.464
+offset_top = 496.489
+offset_right = 444.464
+offset_bottom = 595.489
+theme_override_fonts/font = ExtResource("3_5xu1i")
+theme_override_font_sizes/font_size = 80
+text = "1111"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Minigame"]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 137.0
+offset_right = 497.0
+offset_bottom = 166.0
+theme_override_fonts/font = ExtResource("5_triia")
+theme_override_font_sizes/font_size = 24
+text = "Dezimalzahl"
+
+[node name="TextureRect" type="TextureRect" parent="Minigame"]
+layout_mode = 0
+offset_left = 287.441
+offset_top = 101.258
+offset_right = 587.441
+offset_bottom = 401.258
+rotation = 0.523598
+scale = Vector2(0.272225, 0.272225)
+texture = ExtResource("6_triia")
+
+[node name="TextureRect2" type="TextureRect" parent="Minigame"]
+layout_mode = 0
+offset_left = 191.627
+offset_top = 553.106
+offset_right = 491.627
+offset_bottom = 853.106
+rotation = 4.64773
+scale = Vector2(0.243011, 0.273377)
+texture = ExtResource("6_triia")
+
+[node name="Label2" type="Label" parent="Minigame"]
+layout_mode = 0
+offset_left = 136.099
+offset_top = 444.227
+offset_right = 295.099
+offset_bottom = 473.227
+theme_override_fonts/font = ExtResource("5_triia")
+theme_override_font_sizes/font_size = 24
+text = "Binärcodierung"
+
+[node name="Restart Button" type="Button" parent="Minigame"]
+visible = false
+layout_mode = 0
+offset_left = 820.948
+offset_top = 557.461
+offset_right = 1008.95
+offset_bottom = 608.461
+rotation = -0.104688
+theme_override_colors/font_hover_color = Color(0.332881, 0.332881, 0.332881, 1)
+theme_override_fonts/font = ExtResource("5_triia")
+theme_override_font_sizes/font_size = 36
+text = ">> Nochmal"
+flat = true
+
+[node name="BackButton" parent="." instance=ExtResource("8_xw2al")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Cupboard CloseUp"
+
+[connection signal="updated" from="Minigame/Gap Game" to="Minigame" method="_on_gap_game_updated"]
+[connection signal="pressed" from="Minigame/Restart Button" to="Minigame" method="_on_restart_button_pressed"]

@@ -12,7 +12,7 @@ var dialogue_player: DialoguePlayer
 var helpsystem: Helpsystem
 
 signal item_found(item: Item, location: Location)
-signal location_switch_requested(location_name: String)
+signal location_switch_requested(target_location_name: String, source_location_name: String)
 
 func _ready():
 	set_item_dialogues()
@@ -61,7 +61,8 @@ func _on_item_found(item: Item) -> void:
 	item_found.emit(item, self)
 
 func _on_location_switch_requested(requested_location_name: String):
-	location_switch_requested.emit(requested_location_name)
+	location_switch_requested.emit(requested_location_name, self.location_name)
+	#location_switch_requested.emit(requested_location_name)
 	GlobalTimer.end_timer(location_name)
 	export_location_analytics()
 

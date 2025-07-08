@@ -34,5 +34,5 @@ do interaction_happened("start_posttest")
 => END
 
 ~ CloseCase
-do complete_case()
+do interaction_happened("to_endscreen")
 => END
