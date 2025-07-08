@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7hhus8oa5gnt"]
+[gd_scene load_steps=17 format=3 uid="uid://b7hhus8oa5gnt"]
 
 [ext_resource type="Script" uid="uid://cuut68600lh08" path="res://Cases/The_Missing_Painting/Scripts/minigame.gd" id="1_vxk47"]
 [ext_resource type="Texture2D" uid="uid://jh714mdkpuvl" path="res://Cases/The_Missing_Painting/Assets/Minigame/setup.png" id="2_ip1kq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b21m2ftfr64k8" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/qr_code_with_cut.png" id="5_4mfwh"]
 [ext_resource type="Texture2D" uid="uid://cuknu6jm2imq6" path="res://Cases/The_Missing_Painting/Assets/Minigame/website_galery.png" id="6_2fkol"]
 [ext_resource type="FontFile" uid="uid://c84fslbk0xuue" path="res://Cases/The_Missing_Painting/Assets/Minigame/IBMPlexMono-SemiBold.ttf" id="8_qv3qu"]
+[ext_resource type="FontFile" uid="uid://d1titn22brq6y" path="res://Assets/bold.ttf" id="10_xx2t6"]
 
 [sub_resource type="Resource" id="Resource_qv3qu"]
 script = ExtResource("3_yb0so")
@@ -38,6 +39,10 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 default_base_scale = 0.5
 default_font = ExtResource("8_qv3qu")
 default_font_size = 131
+
+[sub_resource type="Theme" id="Theme_dcyaa"]
+default_font = ExtResource("10_xx2t6")
+default_font_size = 53
 
 [node name="Minigame" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_vxk47")
@@ -146,11 +151,12 @@ texture = ExtResource("6_2fkol")
 [node name="Button" type="Button" parent="."]
 unique_name_in_owner = true
 visible = false
-offset_left = 621.0
-offset_top = 446.0
-offset_right = 770.0
-offset_bottom = 489.0
-scale = Vector2(1.5, 1.5)
+offset_left = 626.0
+offset_top = 453.0
+offset_right = 775.0
+offset_bottom = 496.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_dcyaa")
 
 [connection signal="visibility_changed" from="GamePaper" to="." method="_on_paper_visibility_changed"]
 [connection signal="visibility_changed" from="GameArt" to="." method="_on_game_art_visibility_changed"]
