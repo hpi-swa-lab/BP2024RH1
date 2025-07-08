@@ -13,6 +13,8 @@ var questions = []
 var startTime : int
 
 func _ready():
+	super._ready()
+	
 	startTime = Time.get_ticks_msec() / 1000.0
 	load_questions()
 	show_next_question()
@@ -27,7 +29,7 @@ func load_questions():
 func show_next_question():
 	if current_question >= questions.size():
 		print(CASE+" Survey done! They chose: ", score)
-		Analytics.add_game_survey_analytics(score, (Time.get_ticks_msec() / 1000.0) - startTime)
+		#Analytics.add_game_survey_analytics(score, (Time.get_ticks_msec() / 1000.0) - startTime)
 		var item = Item.new()
 		item.item_name = self.location_name + " completed"
 		item.is_collectable = false
