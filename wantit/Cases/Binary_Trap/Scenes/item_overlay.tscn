@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://wpvere4uihx4"]
+[gd_scene load_steps=2 format=3 uid="uid://wpvere4uihx4"]
 
 [ext_resource type="Script" uid="uid://b1h7u53yf8wm5" path="res://Cases/Binary_Trap/Scripts/item_overlay.gd" id="1_s6vxw"]
-[ext_resource type="Texture2D" uid="uid://dm7736nxt4ibm" path="res://Cases/Binary_Trap/Assets/Backgrounds/postcard_closeUp.png" id="2_udmrt"]
 
 [node name="Item Overlay" type="CanvasLayer"]
 script = ExtResource("1_s6vxw")
-item_texture = ExtResource("2_udmrt")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 40.0
@@ -14,9 +12,12 @@ scale = Vector2(30.2085, 16.9999)
 color = Color(0.439216, 0.439216, 0.439216, 0.352941)
 
 [node name="Item" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.300044, 0.300044)
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 1152.0
+offset_bottom = 648.0
+scale = Vector2(0.999905, 0.999905)
+size_flags_horizontal = 0
+expand_mode = 1
 
 [node name="Close Button" type="Button" parent="."]
 offset_left = 16.0

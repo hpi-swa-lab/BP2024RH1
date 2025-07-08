@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://yi7fykv7f8u"]
+[gd_scene load_steps=24 format=3 uid="uid://yi7fykv7f8u"]
 
 [ext_resource type="Script" uid="uid://y3om711kkl1y" path="res://Cases/Binary_Trap/Scripts/cupboard_close_up.gd" id="1_7vkgt"]
 [ext_resource type="Resource" uid="uid://ba8ssk868dnst" path="res://Cases/Binary_Trap/dialogue/safe_found.dialogue" id="2_0v0oc"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://bixgx7yeqi1tl" path="res://Cases/Binary_Trap/Scripts/vase_postcard_action.gd" id="10_jhpnb"]
 [ext_resource type="Resource" uid="uid://cjxnc2qjk42xm" path="res://Cases/Binary_Trap/dialogue/vase.dialogue" id="10_knnwi"]
 [ext_resource type="Texture2D" uid="uid://cj1f3wq6fyg7h" path="res://Cases/Binary_Trap/Assets/Backgrounds/woodpiece_open.png" id="11_78jf3"]
+[ext_resource type="Texture2D" uid="uid://bhvewnusytuu2" path="res://Cases/Binary_Trap/Assets/Backgrounds/vase_closeUp.png" id="12_jhpnb"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="13_t7k8t"]
 
 [sub_resource type="Resource" id="Resource_1dkgp"]
@@ -94,6 +95,7 @@ item_name = "Vase"
 is_collectable = true
 action_script = ExtResource("10_jhpnb")
 item_dialogue = SubResource("Resource_wruoe")
+closeup_texture = ExtResource("12_jhpnb")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Notches" type="TextureButton" parent="."]

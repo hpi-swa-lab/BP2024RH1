@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://q3586nx75har"]
+[gd_scene load_steps=26 format=3 uid="uid://q3586nx75har"]
 
 [ext_resource type="Script" uid="uid://denw33pxanib" path="res://Cases/Binary_Trap/Scripts/room_lights_on.gd" id="1_6bcer"]
 [ext_resource type="Texture2D" uid="uid://l8nffo6bpqp7" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_o4t0x"]
@@ -17,12 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://cyoyblxn73d02" path="res://Cases/Binary_Trap/Assets/Interactible_Items/beanbag.png" id="10_jm0ui"]
 [ext_resource type="Texture2D" uid="uid://oqqgwiq6apjc" path="res://Cases/Binary_Trap/Assets/lamps.png" id="11_1tb6d"]
 [ext_resource type="Texture2D" uid="uid://doc7phh0upnsb" path="res://Cases/Binary_Trap/Assets/Interactible_Items/drawer_halfopen.png" id="11_16cll"]
+[ext_resource type="Texture2D" uid="uid://dm7736nxt4ibm" path="res://Cases/Binary_Trap/Assets/Backgrounds/postcard_closeUp.png" id="11_i6u5o"]
 [ext_resource type="Texture2D" uid="uid://dox456jvnvw1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/drawer_open.png" id="12_5ygkm"]
 
 [sub_resource type="Resource" id="Resource_i6u5o"]
 script = ExtResource("6_25equ")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_jm0ui"]
@@ -37,6 +39,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_25equ")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_jtf2u"]
@@ -51,6 +54,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("6_25equ")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_gfgk0"]
@@ -97,6 +101,7 @@ item_name = "Postcard"
 is_collectable = true
 action_script = ExtResource("9_jtf2u")
 item_dialogue = SubResource("Resource_jtf2u")
+closeup_texture = ExtResource("11_i6u5o")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Beanbag" type="TextureButton" parent="."]
