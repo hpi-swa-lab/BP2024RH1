@@ -47,7 +47,7 @@
 	"correct": 1
   },
   {
-	"question": "Was ist der Unterschied zwischen einem AND-Gatter und einem OR-Gatter?",
+	"question": "Was ist der Unterschied zwischen einem UND-Gatter und einem ODER-Gatter?",
 	"answers": ["","","",""],
 	"isWrite": 1,
 	"correct": 0
