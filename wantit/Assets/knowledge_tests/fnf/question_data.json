@@ -25,7 +25,7 @@
 		"wahr",
 		"verallgemeinernd",
 		"übertrieben",
-		"falsch"
+		"falsche Schlussfolgerung"
 	  ],
 	  "correct": 1
 	},
@@ -35,7 +35,7 @@
 		"wahr",
 		"verallgemeinernd",
 		"übertrieben",
-		"falsch"
+		"falsche Schlussfolgerung"
 	  ],
 	  "correct": 2
 	},
@@ -45,7 +45,7 @@
 		"wahr",
 		"verallgemeinernd",
 		"übertrieben",
-		"falsch"
+		"falsche Schlussfolgerung"
 	  ],
 	  "correct": 3
 	},
@@ -55,7 +55,7 @@
 		"wahr",
 		"verallgemeinernd",
 		"übertrieben",
-		"falsch"
+		"falsche Schlussfolgerung"
 	  ],
 	  "correct": 0
 	},
