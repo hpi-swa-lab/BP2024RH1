@@ -19,7 +19,6 @@ func _ready():
 	_choose_case()
 	load_questions()
 	show_next_question()
-	question_box.ASSET_PATH=ASSET_PATH
 	question_box.connect("answer_chosen", Callable(self, "_on_answer_chosen"))
 	question_box.text_answer_submitted.connect(_on_text_answer_submitted)
 	skip_button.connect("pressed", Callable(self, "_on_skip_pressed"))
@@ -67,3 +66,4 @@ func _choose_case():
 	else:
 		CASE = "pixel"
 	ASSET_PATH += (CASE+'/')
+	question_box.ASSET_PATH=ASSET_PATH

@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_jadis"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_2rhc4"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_mv2i3"]
-[ext_resource type="Resource" uid="uid://dj5o46s4j8ioe" path="res://Cases/A_Completely_Normal_Day/dialogue/office.dialogue" id="4_o34xk"]
+[ext_resource type="Resource" uid="uid://bnf1oxlxnilcc" path="res://Cases/A_Completely_Normal_Day/dialogue/office.dialogue" id="4_o34xk"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="5_mkncw"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="6_wm3eh"]
-[ext_resource type="Texture2D" uid="uid://cxg5pbosxbvcq" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="7_t0p2k"]
+[ext_resource type="Texture2D" uid="uid://djqem8qin66nr" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="7_t0p2k"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="9_1yf5l"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="9_sxxjt"]
 [ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="10_japbu"]
-[ext_resource type="Texture2D" uid="uid://f6f3bng1frf1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="12_ufk7y"]
+[ext_resource type="Texture2D" uid="uid://c2hv5wqh7dg3g" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="12_ufk7y"]
 
 [sub_resource type="Resource" id="Resource_573ma"]
 script = ExtResource("3_mv2i3")
@@ -39,9 +39,9 @@ dialogue_triggers = Array[ExtResource("5_mkncw")]([SubResource("Resource_c6d25")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="office_beginn" type="Node"]
+[node name="office_begin" type="Node"]
 script = ExtResource("1_jadis")
-location_name = "office_beginn"
+location_name = "office_begin"
 hints = Array[ExtResource("2_2rhc4")]([SubResource("Resource_psvkd")])
 location_dialogue = SubResource("Resource_evvr1")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
