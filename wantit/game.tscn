@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=133 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -45,7 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://w3jwwhr2jth1" path="res://Cases/Code_From_The_Ashes/Scenes/minigame1.tscn" id="41_klri6"]
 [ext_resource type="PackedScene" uid="uid://dxfl6mwk6eufh" path="res://Cases/Code_From_The_Ashes/Scenes/tutorial2.tscn" id="42_eu6ph"]
 [ext_resource type="PackedScene" uid="uid://dk5yd0nfgmxtt" path="res://Cases/The_Missing_Painting/Scenes/office.tscn" id="43_87ddb"]
-[ext_resource type="PackedScene" uid="uid://brb5udqhuuouj" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_begin.tscn" id="43_avmo2"]
+[ext_resource type="PackedScene" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_begin.tscn" id="43_avmo2"]
 [ext_resource type="PackedScene" uid="uid://b8bpblw4o4xej" path="res://Cases/Code_From_The_Ashes/Scenes/minigame_2.tscn" id="43_edr7y"]
 [ext_resource type="PackedScene" uid="uid://t54jjw3ubnea" path="res://Cases/The_Missing_Painting/Scenes/crime_scene.tscn" id="44_mljfx"]
 [ext_resource type="PackedScene" uid="uid://b37iws3eonpm5" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_end.tscn" id="44_vyqle"]
@@ -70,7 +70,7 @@
 [ext_resource type="PackedScene" uid="uid://bjqw4udnawvm8" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_1.tscn" id="58_0s2o4"]
 [ext_resource type="PackedScene" uid="uid://c2bi0h58ogcem" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_2.tscn" id="59_4mai8"]
 [ext_resource type="PackedScene" uid="uid://dldwkuqwfxyqu" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_minigame.tscn" id="60_w37fy"]
-[ext_resource type="PackedScene" uid="uid://b8rsnb2si7rd5" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_end_close_case.tscn" id="64_wj41c"]
+[ext_resource type="PackedScene" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_end_close_case.tscn" id="64_wj41c"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -81,13 +81,104 @@ case_location_scenes = Array[PackedScene]([ExtResource("3_7sc4i"), ExtResource("
 events = Array[ExtResource("14_215e1")]([])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="Resource" id="Resource_7noa1"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Waffle", "ShoeprintsKitchen", "ShoeprintsOffice", "Pliers", "Screwdriver", "Fingerprints", "Door"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_3xib3"]
+script = ExtResource("14_215e1")
+event_name = "all found"
+location_name = "Backery Kitchen"
+start_condition = SubResource("Resource_7noa1")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_5628o"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame1 completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_fuuk6"]
+script = ExtResource("14_215e1")
+event_name = "minigame 1 completed"
+location_name = "Office"
+start_condition = SubResource("Resource_5628o")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_cwgap"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame2 completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_svdf4"]
+script = ExtResource("14_215e1")
+event_name = "minigame 2 completed"
+location_name = "Office"
+start_condition = SubResource("Resource_cwgap")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_lh772"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["switch minigame 1"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_66xay"]
+script = ExtResource("14_215e1")
+event_name = "switch to minigame 1"
+location_name = "Minigame1"
+start_condition = SubResource("Resource_lh772")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_0s2o4"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["PreTest completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_4mai8"]
+script = ExtResource("14_215e1")
+event_name = "on PreTest completed"
+location_name = "Office"
+start_condition = SubResource("Resource_0s2o4")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_w37fy"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["PostTest completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_71bxy"]
+script = ExtResource("14_215e1")
+event_name = "on PostTest completed"
+location_name = "GameSurvey"
+start_condition = SubResource("Resource_w37fy")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_8jd3k"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["PostTest completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_tssr6"]
+script = ExtResource("14_215e1")
+event_name = "Knowledge Test completed"
+location_name = "Office"
+start_condition = SubResource("Resource_8jd3k")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
 [sub_resource type="Resource" id="Resource_feb5d"]
 script = ExtResource("2_e2o6t")
 case_slug = "intro"
 case_title = "Einführungsfall"
 case_topic = "Informationen und Daten"
-case_location_scenes = Array[PackedScene]([ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p"), ExtResource("10_hve3p"), ExtResource("11_lc2xo"), ExtResource("12_215e1")])
-events = Array[ExtResource("14_215e1")]([])
+case_location_scenes = Array[PackedScene]([ExtResource("7_edr7y"), ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p"), ExtResource("10_hve3p"), ExtResource("11_lc2xo"), ExtResource("12_215e1"), ExtResource("33_6qn5j"), ExtResource("34_wj41c")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_3xib3"), SubResource("Resource_fuuk6"), SubResource("Resource_svdf4"), SubResource("Resource_66xay"), SubResource("Resource_4mai8"), SubResource("Resource_71bxy"), SubResource("Resource_tssr6")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_7knny"]
@@ -189,8 +280,8 @@ metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_wj41c"]
 script = ExtResource("14_215e1")
-event_name = "pre_test finished"
-location_name = "office_begin"
+event_name = "Knowledge Test completed"
+location_name = "Office"
 start_condition = SubResource("Resource_6qn5j")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 

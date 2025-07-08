@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://byc5whva4dkys"]
+[gd_scene load_steps=15 format=3 uid="uid://byc5whva4dkys"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_2jlrf"]
 [ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="1_a0wae"]
@@ -31,11 +31,18 @@ required_items = Array[String](["Minigame2 completed"])
 is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
+[sub_resource type="Resource" id="Resource_alyqe"]
+script = ExtResource("3_fayb1")
+start_marker = "complete"
+required_items = Array[String](["GameSurvey completed"])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
 [sub_resource type="Resource" id="Resource_ufx7h"]
 script = ExtResource("4_alyqe")
 dialogue_resource = ExtResource("2_xas0k")
 is_dialogue = true
-dialogue_triggers = Array[ExtResource("3_fayb1")]([SubResource("Resource_j5oil"), SubResource("Resource_xas0k"), SubResource("Resource_fayb1")])
+dialogue_triggers = Array[ExtResource("3_fayb1")]([SubResource("Resource_j5oil"), SubResource("Resource_xas0k"), SubResource("Resource_fayb1"), SubResource("Resource_alyqe")])
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
