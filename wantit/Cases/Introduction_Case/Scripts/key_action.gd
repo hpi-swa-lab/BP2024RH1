@@ -48,7 +48,7 @@ func find_node() -> Node:
 	return null
 
 func _on_dialogue_ended() -> void:
-	item.item_name = "Key Hole"
+	item.item_name = "Door"
 	item.emit_signal("item_found", item)	
 
 func initialize_new_item():
