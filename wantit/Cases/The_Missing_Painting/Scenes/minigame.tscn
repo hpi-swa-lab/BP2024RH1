@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7hhus8oa5gnt"]
+[gd_scene load_steps=15 format=3 uid="uid://b7hhus8oa5gnt"]
 
 [ext_resource type="Script" uid="uid://cuut68600lh08" path="res://Cases/The_Missing_Painting/Scripts/minigame.gd" id="1_vxk47"]
 [ext_resource type="Texture2D" uid="uid://jh714mdkpuvl" path="res://Cases/The_Missing_Painting/Assets/Minigame/setup.png" id="2_ip1kq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_4mfwh"]
 [ext_resource type="Texture2D" uid="uid://b21m2ftfr64k8" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/qr_code_with_cut.png" id="5_4mfwh"]
 [ext_resource type="Texture2D" uid="uid://cuknu6jm2imq6" path="res://Cases/The_Missing_Painting/Assets/Minigame/website_galery.png" id="6_2fkol"]
+[ext_resource type="FontFile" uid="uid://c84fslbk0xuue" path="res://Cases/The_Missing_Painting/Assets/Minigame/IBMPlexMono-SemiBold.ttf" id="8_qv3qu"]
 
 [sub_resource type="Resource" id="Resource_qv3qu"]
 script = ExtResource("3_yb0so")
@@ -32,6 +33,11 @@ script = ExtResource("2_mfb4k")
 hint_text = "Die gesammelten Hinweise liegen noch im Inventar. "
 hint_condition = SubResource("Resource_xx2t6")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Theme" id="Theme_xx2t6"]
+default_base_scale = 0.5
+default_font = ExtResource("8_qv3qu")
+default_font_size = 131
 
 [node name="Minigame" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_vxk47")
@@ -84,7 +90,6 @@ offset_bottom = 652.982
 
 [node name="GameArt" type="TextureButton" parent="."]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -107,11 +112,12 @@ metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 unique_name_in_owner = true
 modulate = Color(1, 0, 0, 1)
 layout_mode = 0
-offset_left = 263.176
-offset_top = 659.0
-offset_right = 447.176
-offset_bottom = 714.0
-scale = Vector2(4, 4)
+offset_left = 196.511
+offset_top = 631.55
+offset_right = 1846.51
+offset_bottom = 803.55
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_xx2t6")
 text = "QR-Code unvollständig"
 
 [node name="LeftGrid" type="GridContainer" parent="."]

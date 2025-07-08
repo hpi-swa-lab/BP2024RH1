@@ -2,16 +2,55 @@ extends Item
 
 var dragging: bool
 var newItem: Button
-var oldItem: TextureButton
-var clue: Item = null
+var extended_item: Item
 
-func do_smt(item: TextureButton):
-	oldItem = item
-	var Style = StyleBoxEmpty.new()
+var item: Item = null
+var location: Location
+
+func _ready() -> void:
+	initialize_new_item()
+	add_child(newItem)
 	
+	dragging = true
+	set_process_input(true)
+
+func item_up():
+	await check_down()
+	queue_free()
+
+func _input(event: InputEvent) -> void:
+	if dragging:
+		if event is InputEventMouseMotion:
+			newItem.position = event.position - newItem.size / 2 * newItem.scale
+
+func check_down():
+	var ArtRect = Rect2(newItem.position, newItem.size)
+	if not item:
+		item = find_node()
+		item.visible = true
+	if item:
+		var Rect1 = Rect2(item.position, item.size)
+		if Rect1.intersects(ArtRect):
+			item.item_name = "GamePaper"
+			item.emit_signal("item_found", item)
+	else:
+		location.item_found.emit(extended_item, location)
+	
+func find_node() -> Node:
+	for child in get_parent().get_children():
+		if child.name == "Minigame":
+			location = child
+			return child.find_child("GamePaper")
+		if child is Location:
+			location = child
+	return null
+
+func initialize_new_item():
+	var Style = StyleBoxEmpty.new()
 	var button = Button.new()
-	button.icon = item.texture_normal
-	button.scale = item.scale
+	
+	button.icon= extended_item.texture_normal
+	button.scale = extended_item.scale
 	
 	button.button_up.connect(item_up)
 	button.global_position = get_viewport().get_mouse_position() - button.icon.get_size() / 2 * button.scale
@@ -21,36 +60,3 @@ func do_smt(item: TextureButton):
 	button.add_theme_stylebox_override("pressed", Style)
 	
 	newItem = button
-	
-	get_tree().root.add_child(newItem)
-	
-	dragging = true
-	set_process_input(true)
-
-func item_up():
-	await check_down()
-	newItem.queue_free()
-	queue_free()
-
-func _input(event: InputEvent) -> void:
-	if dragging:
-		if event is InputEventMouseMotion:
-			newItem.position = event.position - newItem.size / 2 * newItem.scale
-
-func check_down():
-	var KeyRect = Rect2(newItem.position, newItem.size)
-	if not clue:
-		clue = find_node()
-	if clue:
-		var Rect1 = Rect2(clue.position, clue.size)
-		if Rect1.intersects(KeyRect):
-			clue.visible = true
-	
-func find_node() -> Node:		# HArdcoded Scene Names cause its easieer here
-	for child in get_parent().get_children():
-		print(child.name)
-		if child.name == "Minigame":
-			return child.find_child("GamePaper")
-	return null
-
-	
