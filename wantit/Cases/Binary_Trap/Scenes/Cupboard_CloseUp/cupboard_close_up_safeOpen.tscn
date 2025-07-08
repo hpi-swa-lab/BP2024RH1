@@ -1,21 +1,22 @@
-[gd_scene load_steps=21 format=3 uid="uid://wft6yuejp0ko"]
+[gd_scene load_steps=22 format=3 uid="uid://wft6yuejp0ko"]
 
 [ext_resource type="Script" uid="uid://y3om711kkl1y" path="res://Cases/Binary_Trap/Scripts/cupboard_close_up.gd" id="1_eb05o"]
-[ext_resource type="Texture2D" uid="uid://bhirv71dfw8pu" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_closeUp.png" id="2_la6dx"]
+[ext_resource type="Texture2D" uid="uid://c2fbmossa1ugv" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_closeUp.png" id="2_la6dx"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_q7r4w"]
-[ext_resource type="Texture2D" uid="uid://dv3a2476s1xqc" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/chalkboard.png" id="4_vx83w"]
-[ext_resource type="Texture2D" uid="uid://ch5wfse2583vp" path="res://Cases/Binary_Trap/Assets/Collectible_Items/vase.png" id="5_edum7"]
+[ext_resource type="Texture2D" uid="uid://beh683sbob8u0" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/chalkboard.png" id="4_vx83w"]
+[ext_resource type="Texture2D" uid="uid://ddinrm35f035m" path="res://Cases/Binary_Trap/Assets/Collectible_Items/vase.png" id="5_edum7"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_y1tlm"]
-[ext_resource type="Resource" uid="uid://cjxnc2qjk42xm" path="res://Cases/Binary_Trap/dialogue/vase.dialogue" id="7_bubw7"]
+[ext_resource type="Resource" uid="uid://c1662bc3ckvur" path="res://Cases/Binary_Trap/dialogue/vase.dialogue" id="7_bubw7"]
 [ext_resource type="Script" uid="uid://bixgx7yeqi1tl" path="res://Cases/Binary_Trap/Scripts/vase_postcard_action.gd" id="7_uhwug"]
-[ext_resource type="Texture2D" uid="uid://3ticuixw37q7" path="res://Cases/Binary_Trap/Assets/Backgrounds/safe_open.png" id="9_qxod4"]
-[ext_resource type="Texture2D" uid="uid://bhvewnusytuu2" path="res://Cases/Binary_Trap/Assets/Backgrounds/vase_closeUp.png" id="11_8nhb1"]
-[ext_resource type="Resource" uid="uid://cnhflk1vhvs4" path="res://Cases/Binary_Trap/dialogue/key.dialogue" id="11_bubw7"]
-[ext_resource type="Texture2D" uid="uid://cj1f3wq6fyg7h" path="res://Cases/Binary_Trap/Assets/Backgrounds/woodpiece_open.png" id="11_cfupa"]
-[ext_resource type="Texture2D" uid="uid://fm14sx53dfdv" path="res://Cases/Binary_Trap/Assets/Collectible_Items/key.png" id="12_55m5s"]
+[ext_resource type="Texture2D" uid="uid://cjo03wrjihr0y" path="res://Cases/Binary_Trap/Assets/Backgrounds/safe_open.png" id="9_qxod4"]
+[ext_resource type="Texture2D" uid="uid://bqlaj4p58tj8e" path="res://Cases/Binary_Trap/Assets/Backgrounds/vase_closeUp.png" id="11_8nhb1"]
+[ext_resource type="Resource" uid="uid://djpyl0n0oo6js" path="res://Cases/Binary_Trap/dialogue/key.dialogue" id="11_bubw7"]
+[ext_resource type="Texture2D" uid="uid://dk2fkk22cptb8" path="res://Cases/Binary_Trap/Assets/Backgrounds/woodpiece_open.png" id="11_cfupa"]
+[ext_resource type="Texture2D" uid="uid://hx5io2ejpsnj" path="res://Cases/Binary_Trap/Assets/Collectible_Items/key.png" id="12_55m5s"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="12_uhwug"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="13_8nhb1"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="13_i7rjc"]
+[ext_resource type="Script" uid="uid://dj0a2idmhjkrv" path="res://Cases/Binary_Trap/Scripts/key_drag.gd" id="15_q2o1l"]
 
 [sub_resource type="Resource" id="Resource_uhwug"]
 script = ExtResource("12_uhwug")
@@ -109,6 +110,7 @@ texture_normal = ExtResource("12_55m5s")
 script = ExtResource("6_y1tlm")
 item_name = "Key"
 is_collectable = true
+action_script = ExtResource("15_q2o1l")
 item_dialogue = SubResource("Resource_mqxp5")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 

@@ -1,18 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://5fy4txcsa28u"]
+[gd_scene load_steps=12 format=3 uid="uid://5fy4txcsa28u"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_ljr67"]
-[ext_resource type="Resource" uid="uid://csymjrgoox65o" path="res://Cases/Binary_Trap/dialogue/door_closeUp.dialogue" id="2_2t47c"]
-[ext_resource type="Texture2D" uid="uid://2gok0ym5bvl7" path="res://Cases/Binary_Trap/Assets/Backgrounds/door_closeUp.png" id="2_fou86"]
+[ext_resource type="Resource" uid="uid://cbsfpr8r6mlwf" path="res://Cases/Binary_Trap/dialogue/door_closeUp.dialogue" id="2_2t47c"]
+[ext_resource type="Texture2D" uid="uid://cl1a5tw3s3a6a" path="res://Cases/Binary_Trap/Assets/Backgrounds/door_closeUp.png" id="2_fou86"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="3_kgry1"]
-[ext_resource type="Texture2D" uid="uid://d1ssutvx4wdi4" path="res://Cases/Binary_Trap/Assets/Interactible_Items/keyhole.png" id="3_oi3hg"]
+[ext_resource type="Texture2D" uid="uid://8fojhodxrs7b" path="res://Cases/Binary_Trap/Assets/Interactible_Items/keyhole.png" id="3_oi3hg"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_y0dvj"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_kxfvx"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_5olm1"]
+[ext_resource type="Texture2D" uid="uid://be32211nxhmol" path="res://Cases/Binary_Trap/Assets/Interactible_Items/keyhole_key.png" id="9_y0dvj"]
 
 [sub_resource type="Resource" id="Resource_2t47c"]
 script = ExtResource("3_y0dvj")
 start_marker = "default"
 required_items = Array[String](["Key"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_7mhcv"]
@@ -52,3 +54,13 @@ offset_right = 520.0
 offset_bottom = 520.0
 scale = Vector2(0.266106, 0.266106)
 requested_location_name = "Room LightsOn SafeOpen"
+
+[node name="KeyInKeyhole" type="TextureButton" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300062, 0.300062)
+texture_normal = ExtResource("9_y0dvj")
+script = ExtResource("3_kgry1")
+item_name = "KeyInKeyhole"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"

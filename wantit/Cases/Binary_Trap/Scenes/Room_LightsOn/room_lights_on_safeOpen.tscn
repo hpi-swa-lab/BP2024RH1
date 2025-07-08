@@ -1,25 +1,26 @@
 [gd_scene load_steps=18 format=3 uid="uid://dm02bqect42ay"]
 
 [ext_resource type="Script" uid="uid://denw33pxanib" path="res://Cases/Binary_Trap/Scripts/room_lights_on.gd" id="1_x0vuf"]
-[ext_resource type="Texture2D" uid="uid://l8nffo6bpqp7" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_gclfu"]
+[ext_resource type="Texture2D" uid="uid://cfigsifd4nrs8" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_gclfu"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_22xq8"]
-[ext_resource type="Texture2D" uid="uid://cyoyblxn73d02" path="res://Cases/Binary_Trap/Assets/Interactible_Items/beanbag.png" id="3_hn7yc"]
-[ext_resource type="Texture2D" uid="uid://bx85orbtwsk8m" path="res://Cases/Binary_Trap/Assets/Interactible_Items/door_lightOn.png" id="4_iv7ld"]
+[ext_resource type="Texture2D" uid="uid://b84ieqtoke1h6" path="res://Cases/Binary_Trap/Assets/Interactible_Items/beanbag.png" id="3_hn7yc"]
+[ext_resource type="Texture2D" uid="uid://ij4qgdpdmjp" path="res://Cases/Binary_Trap/Assets/Interactible_Items/door_lightOn.png" id="4_iv7ld"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="5_aoqib"]
-[ext_resource type="Resource" uid="uid://buk66ohc8ajnr" path="res://Cases/Binary_Trap/dialogue/beanbag.dialogue" id="5_hn7yc"]
+[ext_resource type="Resource" uid="uid://ca3w2w7c8he31" path="res://Cases/Binary_Trap/dialogue/beanbag.dialogue" id="5_hn7yc"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="6_yhkpc"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_68r0m"]
-[ext_resource type="Texture2D" uid="uid://oqqgwiq6apjc" path="res://Cases/Binary_Trap/Assets/lamps.png" id="7_yefpb"]
-[ext_resource type="Texture2D" uid="uid://doc7phh0upnsb" path="res://Cases/Binary_Trap/Assets/Interactible_Items/drawer_halfopen.png" id="8_h7kfk"]
-[ext_resource type="Texture2D" uid="uid://dox456jvnvw1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/drawer_open.png" id="9_b1nuy"]
-[ext_resource type="Texture2D" uid="uid://cgr8dc0ydms0n" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/cupboard_safe_open_key.png" id="10_avrm3"]
-[ext_resource type="Texture2D" uid="uid://d4hoyqpeikh8c" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_doors_open.png" id="11_rjort"]
-[ext_resource type="Texture2D" uid="uid://li4a345ophi1" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/documents.png" id="13_336p8"]
+[ext_resource type="Texture2D" uid="uid://codk46nnj7tmb" path="res://Cases/Binary_Trap/Assets/lamps.png" id="7_yefpb"]
+[ext_resource type="Texture2D" uid="uid://co4ul83iee8oj" path="res://Cases/Binary_Trap/Assets/Interactible_Items/drawer_halfopen.png" id="8_h7kfk"]
+[ext_resource type="Texture2D" uid="uid://vcr6lqfqi26e" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/drawer_open.png" id="9_b1nuy"]
+[ext_resource type="Texture2D" uid="uid://nyps8u78wbuw" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/cupboard_safe_open_key.png" id="10_avrm3"]
+[ext_resource type="Texture2D" uid="uid://3jaedga02cmx" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_doors_open.png" id="11_rjort"]
+[ext_resource type="Texture2D" uid="uid://ceo1cylkxblwg" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/documents.png" id="13_336p8"]
 
 [sub_resource type="Resource" id="Resource_h60js"]
 script = ExtResource("6_yhkpc")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_57qbv"]
