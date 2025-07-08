@@ -31,7 +31,7 @@ func show_next_question():
 	if current_question >= questions.size():
 		durationAnswers.append((Time.get_ticks_msec() / 1000.0) - startTime)
 		print(CASE+" "+ self.location_name+" Quiz Finished! Final score: ", results)
-		Analytics.add_knowledge_test_analytics(self.location_name, results, durationAnswers)
+		#Analytics.add_knowledge_test_analytics(self.location_name, results, durationAnswers)
 		var item = Item.new()
 		item.item_name = self.location_name + " completed"
 		item.is_collectable = false

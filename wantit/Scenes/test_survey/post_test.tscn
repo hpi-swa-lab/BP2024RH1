@@ -3,14 +3,12 @@
 [ext_resource type="Script" uid="uid://bmro870jbwt81" path="res://Scripts/test_survey/knowledge_test.gd" id="1_dd7tm"]
 [ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="2_k7at8"]
 [ext_resource type="Texture2D" uid="uid://cinsrfgtkmeal" path="res://Assets/clue_board_max.png" id="3_2r3bi"]
-[ext_resource type="Texture2D" uid="uid://d08ssl40oxl3r" path="res://Assets/knowledge_tests/Wissenstest.png" id="4_wtqxd"]
+[ext_resource type="Texture2D" uid="uid://onrt2t2g6725" path="res://Assets/knowledge_tests/Wissenstest.png" id="4_wtqxd"]
 [ext_resource type="PackedScene" uid="uid://yoqrryb7blgb" path="res://Scenes/test_survey/question_box.tscn" id="5_gyb53"]
 
 [node name="PostTest" type="Node2D"]
 script = ExtResource("1_dd7tm")
 location_name = "PostTest"
-hints = null
-has_inventory = null
 
 [node name="TextureRect" type="Sprite2D" parent="."]
 position = Vector2(576, 324)

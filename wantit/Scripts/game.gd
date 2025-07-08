@@ -112,6 +112,8 @@ func switch_location(location: Location):
 func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)
 	var location = current_case.get_location_by_name(location_name)
+	print(active_case_slug)
+	print(location_name)
 	switch_location(location)
 
 func get_case_inventory() -> Array[String]:
