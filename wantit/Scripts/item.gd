@@ -7,6 +7,7 @@ class_name Item
 @export var item_dialogue: Dialogue
 var dialogue_player: DialoguePlayer
 var is_found: bool = false
+@export var closeup_texture: Texture
 
 signal item_found(item: Item)
 
