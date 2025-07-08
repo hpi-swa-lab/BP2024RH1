@@ -11,8 +11,8 @@
   },
   {
 	"question": "Welches Medium kann Daten enthalten?",
-	"answers": ["Ein Textdokument", "Ein Bild", "Ein Lied", ""],
-	"correct": 1
+	"answers": ["Eine Pflanze", "Ein Stift", "Ein Lied", ""],
+	"correct": 2
   },
   {
 	"question": "Eine Information kann verschiedene Repräsentationen haben.",
