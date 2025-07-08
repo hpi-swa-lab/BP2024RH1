@@ -3,31 +3,22 @@
 [ext_resource type="Script" uid="uid://b1h7u53yf8wm5" path="res://Cases/Binary_Trap/Scripts/item_overlay.gd" id="1_s6vxw"]
 [ext_resource type="Texture2D" uid="uid://dm7736nxt4ibm" path="res://Cases/Binary_Trap/Assets/Backgrounds/postcard_closeUp.png" id="2_udmrt"]
 
-[node name="Item Overlay" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Item Overlay" type="CanvasLayer"]
 script = ExtResource("1_s6vxw")
 item_texture = ExtResource("2_udmrt")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(30.2085, 16.9999)
 color = Color(0.439216, 0.439216, 0.439216, 0.352941)
 
 [node name="Item" type="TextureRect" parent="."]
-layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.300044, 0.300044)
 
 [node name="Close Button" type="Button" parent="."]
-layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 34.0

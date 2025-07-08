@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://q3586nx75har"]
+[gd_scene load_steps=25 format=3 uid="uid://q3586nx75har"]
 
 [ext_resource type="Script" uid="uid://denw33pxanib" path="res://Cases/Binary_Trap/Scripts/room_lights_on.gd" id="1_6bcer"]
 [ext_resource type="Texture2D" uid="uid://l8nffo6bpqp7" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_o4t0x"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bmcby1ehama28" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/cupboard_doors_closed.png" id="8_42btk"]
 [ext_resource type="Resource" uid="uid://buk66ohc8ajnr" path="res://Cases/Binary_Trap/dialogue/beanbag.dialogue" id="9_25equ"]
 [ext_resource type="Resource" uid="uid://me23u6ispqbs" path="res://Cases/Binary_Trap/dialogue/postcard.dialogue" id="9_gfgk0"]
+[ext_resource type="Script" uid="uid://bixgx7yeqi1tl" path="res://Cases/Binary_Trap/Scripts/vase_postcard_action.gd" id="9_jtf2u"]
 [ext_resource type="Texture2D" uid="uid://cyoyblxn73d02" path="res://Cases/Binary_Trap/Assets/Interactible_Items/beanbag.png" id="10_jm0ui"]
 [ext_resource type="Texture2D" uid="uid://oqqgwiq6apjc" path="res://Cases/Binary_Trap/Assets/lamps.png" id="11_1tb6d"]
 [ext_resource type="Texture2D" uid="uid://doc7phh0upnsb" path="res://Cases/Binary_Trap/Assets/Interactible_Items/drawer_halfopen.png" id="11_16cll"]
@@ -94,6 +95,7 @@ texture_normal = ExtResource("7_0m6dx")
 script = ExtResource("4_6bcer")
 item_name = "Postcard"
 is_collectable = true
+action_script = ExtResource("9_jtf2u")
 item_dialogue = SubResource("Resource_jtf2u")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
