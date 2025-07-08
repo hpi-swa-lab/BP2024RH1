@@ -79,6 +79,7 @@ texture_normal = ExtResource("4_otcxr")
 requested_location_name = "Minigame 4"
 
 [node name="Vase" type="TextureButton" parent="."]
+unique_name_in_owner = true
 offset_left = 312.0
 offset_top = 99.0
 offset_right = 1218.0

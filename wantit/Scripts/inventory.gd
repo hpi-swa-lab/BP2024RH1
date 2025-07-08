@@ -78,6 +78,8 @@ func restore_inventory_items(_case_items: Dictionary, _restored_items: Array) ->
 
 func has(item: Item) -> bool:
 	for slot in inventory_slots:
-		if slot.stored_item == item:
-			return true
+		if not slot.is_empty():
+			if slot.stored_item == item or slot.stored_item.item_name == item.item_name:
+				return true
+		
 	return false
