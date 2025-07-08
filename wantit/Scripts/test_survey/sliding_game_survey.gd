@@ -13,6 +13,8 @@ var questions = []
 var startTime : int
 
 func _ready():
+	super._ready()
+	
 	startTime = Time.get_ticks_msec() / 1000.0
 	load_questions()
 	show_next_question()

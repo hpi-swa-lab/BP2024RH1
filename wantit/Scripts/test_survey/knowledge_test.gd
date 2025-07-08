@@ -15,6 +15,7 @@ var durationAnswers : Array[int]
 
 func _ready():
 	super._ready()
+	
 	_choose_case()
 	load_questions()
 	show_next_question()
