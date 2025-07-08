@@ -23,7 +23,7 @@ func remove_item():
 		if "extended_item" in action_script:
 			action_script.extended_item = stored_item
 		if not action_script.is_inside_tree():
-			get_tree().root.get_child(2).add_child(action_script)	#root.get_child(2) is game
+			get_tree().root.get_child(3).add_child(action_script)	#root.get_child(3) is game
 		
 	stored_item = null
 	action_script = null
