@@ -36,7 +36,7 @@ func get_available_hints(player_items: Array) -> String:
 	for hint in hints:
 		if hint.is_valid(player_items):
 			result = hint.hint_text
-			Analytics.add_hint_analytics(get_parent().name + str(hint_num))
+			Analytics.add_hint_analytics(get_parent().location_name + str(hint_num))
 			hint_num += 1
 			break
 	return result

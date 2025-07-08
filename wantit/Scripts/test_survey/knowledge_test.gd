@@ -30,16 +30,19 @@ func load_questions():
 func show_next_question():
 	if current_question >= questions.size():
 		durationAnswers.append((Time.get_ticks_msec() / 1000.0) - startTime)
-		print(CASE+" "+ self.location_name+" Quiz Finished! Final score: ", results)
-		#Analytics.add_knowledge_test_analytics(self.location_name, results, durationAnswers)
+		print(CASE+" "+ self.location_name+" Quiz Finished! Final score: ", durationAnswers)
+		var phase = "pre"
+		if self.location_name == "PostTest": phase = "post"
+		Analytics.add_knowledge_test_analytics(phase, results, durationAnswers)
 		var item = Item.new()
 		item.item_name = self.location_name + " completed"
 		item.is_collectable = false
 		item_found.emit(item, self)
 	else:
-		if !startTime: Time.get_ticks_msec() / 1000.0
+		if !startTime: 
+			startTime=Time.get_ticks_msec() / 1000.0
 		else: 
-			var t := Time.get_ticks_msec() / 1000.0
+			var t : int = Time.get_ticks_msec() / 1000.0
 			durationAnswers.append(t-startTime)
 			startTime = t
 		question_box.show_question(questions[current_question])

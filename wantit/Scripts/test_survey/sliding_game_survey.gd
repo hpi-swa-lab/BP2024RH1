@@ -7,7 +7,7 @@ var CASE := "caesr"
 #@onready var score_label = $ScoreLabel
 #@onready var timer = $Timer
 
-var score = []
+var score: Array[int] = []
 var current_question = 0
 var questions = []
 var startTime : int
@@ -29,7 +29,7 @@ func load_questions():
 func show_next_question():
 	if current_question >= questions.size():
 		print(CASE+" Survey done! They chose: ", score)
-		#Analytics.add_game_survey_analytics(score, (Time.get_ticks_msec() / 1000.0) - startTime)
+		Analytics.add_game_survey_analytics(score, (Time.get_ticks_msec() / 1000.0) - startTime)
 		var item = Item.new()
 		item.item_name = self.location_name + " completed"
 		item.is_collectable = false
@@ -37,7 +37,8 @@ func show_next_question():
 	else: slider_box.show_question(questions[current_question])
 
 func _on_answer_chosen(value):
-	score.append(value) 
+	print(value, "hey")
+	score.append(int(value)) 
 	current_question += 1
 	show_next_question()
 	
