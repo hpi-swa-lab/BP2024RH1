@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://budlkleuy3ayr" path="res://Scripts/test_survey/sliding_game_survey.gd" id="1_n1ass"]
 [ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="2_hfnyn"]
 [ext_resource type="Texture2D" uid="uid://cinsrfgtkmeal" path="res://Assets/clue_board_max.png" id="3_anckv"]
-[ext_resource type="Texture2D" uid="uid://ce6yq4x3e3l3k" path="res://Assets/knowledge_tests/Spielumfrage.png" id="4_haodq"]
+[ext_resource type="Texture2D" uid="uid://da106utka7lef" path="res://Assets/knowledge_tests/Spielumfrage.png" id="4_haodq"]
 [ext_resource type="PackedScene" uid="uid://cctrjm1m78knp" path="res://Scenes/test_survey/slider_box.tscn" id="5_n1ass"]
 
 [node name="GameSurvey" type="Node2D"]
