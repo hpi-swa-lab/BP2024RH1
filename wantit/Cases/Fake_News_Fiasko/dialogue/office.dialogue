@@ -28,5 +28,5 @@ Klaas: Und? Wen sollen wir noch einmal genauer befragen?
 
 ~ end
 Klaas: Vielen Dank für deine Hilfe und bis zum nächsten Fall!
-do complete_case()
+do interaction_happened("to_endscreen")
 => END
