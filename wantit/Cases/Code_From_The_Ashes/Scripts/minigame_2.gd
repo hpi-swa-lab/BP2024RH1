@@ -1,8 +1,9 @@
-extends Location
+extends Minigame
 
 var original_text = "BEI SR ZU -I"
 var solution_text = "GIB ES ZU -B"
 var text_fields: Array
+var new_text: String = ""
 
 func _ready() -> void:
 	super._ready()
@@ -31,14 +32,13 @@ func initialize_alphabet():
 
 func apply_solution() -> bool:
 	const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	var new_text: String = ""
 	var encrypted_alphabet: String = ""
 	
 	for child in text_fields:
 		if child.text.to_upper() not in encrypted_alphabet:
 			encrypted_alphabet += child.text.to_upper()
 		else:
-			start_dialogue("double_letters")
+			start_dialogue("double_letter")
 	if encrypted_alphabet.length() != alphabet.length():
 		start_dialogue("not_whole_alphabet")
 	else:
@@ -60,6 +60,12 @@ func _on_button_pressed() -> void:
 	if await apply_solution():
 		start_dialogue("correct_solution")
 	else:
+		var correct_solutions: int = 0
+		for i in new_text.length():
+			if new_text[i] == original_text[i]:
+				correct_solutions += 1
+		add_attempt(correct_solutions, original_text.length()-correct_solutions)
+		new_text = ""
 		start_dialogue("wrong_solution")
 
 func reset():

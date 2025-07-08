@@ -103,6 +103,9 @@ func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_
 	# If our dialogue is nothing then we hit the end
 	if not _is_valid(dialogue):
 		dialogue_ended.emit.call_deferred(resource)
+		GlobalTimer.end_timer(resource.resource_path.get_file().get_basename())
+		Analytics.add_dialogue_analytics(resource.resource_path.get_file().get_basename(), GlobalTimer.get_time(resource.resource_path.get_file().get_basename()))
+		print("dialogue_ended")
 		return null
 
 	# Run the mutation if it is one
@@ -436,6 +439,8 @@ func show_dialogue_balloon_scene(balloon_scene, resource: DialogueResource, titl
 
 	var balloon: Node = balloon_scene
 	_start_balloon.call_deferred(balloon, resource, title, extra_game_states)
+	GlobalTimer.start_timer(str(resource.resource_path.get_file().get_basename()))
+	print(resource.resource_path.get_file().get_basename())
 	return balloon
 
 

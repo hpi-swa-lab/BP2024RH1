@@ -1,6 +1,6 @@
 ~ Paperwork
-Klaas: Nach dem letzten Fall müssen wir noch den Papierkram machen. Also alles wichtige dokumentieren. Kannst du das diesmal übernehmen?
-- Ja 
+Klaas: Nach dem letzten Fall müssen wir noch den Papierkram machen, also alles Wichtige dokumentieren. Kannst du das diesmal übernehmen?
+- Ja. 
 	Klaas: Danke.
 - Nein 
 	Klaas:**schaut dich mit Hundeaugen an**  Bitte?
@@ -17,9 +17,9 @@ YEAH. Jetzt muss ich erstmal keinen Papierkram mehr machen.
 **RUMMS!** 
 Klaas: Wo haben wir nochmal die Taschenlampen? …
 Klaas: Ah, hier …
-Klaas: Hier die Taschenlampe ist für dich. 
+Klaas: Hier, die Taschenlampe ist für dich. 
 Klaas: Ich geh mal gucken, ob nur unser Gebäude betroffen ist oder auch andere. Kannst du im Technikraum gucken wie es beim Sicherungskasten aussieht? 
-- Ja, bin schon auf dem Weg
+- Ja, ich bin schon auf dem Weg.
 #searchszene 0
 => END
 
@@ -27,7 +27,7 @@ Klaas: Ich geh mal gucken, ob nur unser Gebäude betroffen ist oder auch andere.
 ~ Schluss
 Klaas: Anscheinend hat der Hackingangriff das System überlastet und in Kombination mit diesem wirren LAN-Kabel-System hat es auch den Sicherungskasten erwischt.
 Klaas: Das ist schon sehr komisch. Dieses Chaos vom Praktikanten muss unbedingt später in Ordnung gebracht werden.
-Klaas: Wir können erstmal nichts mehr machen.
+Klaas: Wir können erst einmal nichts mehr machen.
 Klaas: Den Rest sollten wir unseren IT-Experten für Cybersecurity überlassen.
 ...
 do interaction_happened("start_posttest")

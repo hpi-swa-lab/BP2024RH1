@@ -22,3 +22,4 @@ Klaas: Der Kunsthändler hatte das Gemälde gestohlen.
 
 ~ gamesurvey_finished
 do complete_case()
+=> END

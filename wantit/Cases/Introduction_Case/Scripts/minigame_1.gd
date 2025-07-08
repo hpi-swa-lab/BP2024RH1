@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 
 @onready var draggables = %Draggables.get_children()
 @onready var minigame_clues = %Control.get_children()

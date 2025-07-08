@@ -20,7 +20,6 @@ var explanation: Array[Label]
 
 func _ready() -> void:
 	super._ready()
-	GlobalTimer.add_log_entry("entered scene: minigame_introduction")
 	explanation = [
 		explanation_start,
 		explanation_connection,

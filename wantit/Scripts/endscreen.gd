@@ -15,6 +15,5 @@ func resize_image(Img: Texture2D):
 	var newTex = ImageTexture.create_from_image(tex)
 	return newTex
 
-
-#func _on_button_pressed() -> void:
-	#SceneSwitcher.switch_scene("res://Scenes/office.tscn")
+func _on_button_pressed() -> void:
+	DialogueManager.show_dialogue_balloon(load ("res://Cases/The_Missing_Painting/Dialogue/complete.dialogue"), "complete_case")

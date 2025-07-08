@@ -1,6 +1,7 @@
 extends Control
 class_name Helpsystem
 
+var hint_num = 0
 var hints: Array[Hint] = []
 var inventory_provider
 @onready var helpscreen_closed = $Question_mark
@@ -28,11 +29,14 @@ func set_opened_state() -> void:
 func update_hint_text() -> void:
 	var player_items = inventory_provider.get_player_items()
 	var hint_text = get_available_hints(player_items)
-	helpscreen.set_hint_text("\n".join(hint_text))
+	helpscreen.set_hint_text(hint_text)
 
-func get_available_hints(player_items: Array) -> Array[String]:
-	var results: Array[String] = []
+func get_available_hints(player_items: Array) -> String:
+	var result: String
 	for hint in hints:
 		if hint.is_valid(player_items):
-			results.append(hint.hint_text)
-	return results
+			result = hint.hint_text
+			Analytics.add_hint_analytics(get_parent().name + str(hint_num))
+			hint_num += 1
+			break
+	return result
