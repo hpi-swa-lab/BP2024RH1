@@ -8,13 +8,10 @@ func _on_ziel_ziel_input_false() -> void:
 func _on_ziel_ziel_input_true() -> void:
 	ziel_input = true
 
-func _ready() -> void:
-	#GlobalTimer.add_log_entry("entered scene: minigame_1")
-	pass
+
 
 func _on_check_pressed() -> void:
 	if ziel_input == true:
-		#GlobalTimer.end_timer("Logik Gatter Mini Games")
 		var interaction_item_log_minigame_1_complete = Item.new()
 		interaction_item_log_minigame_1_complete.item_name = "log_minigame_1_complete"
 		item_found.emit(interaction_item_log_minigame_1_complete)

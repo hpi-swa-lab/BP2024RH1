@@ -8,8 +8,8 @@ var current_active_starts: int = 0
 
 
 func _ready() -> void:
+	super._ready()
 	current_active_starts = 0
-	#GlobalTimer.add_log_entry("entered scene: minigame_2")
 
 func _on_ziel_ziel_input_false() -> void:
 	ziel_input = false	
@@ -51,14 +51,11 @@ func _on_check_pressed() -> void:
 		print(current_active_starts)
 		if ziel_input:
 			print("wlan funktioniert") 
-			#GlobalTimer.end_timer("Logik Gatter Mini Games")
 			var interaction_item_log_minigame_2_complete = Item.new()
 			interaction_item_log_minigame_2_complete.item_name = "log_minigame_2_complete"
 			item_found.emit(interaction_item_log_minigame_2_complete)
 	else:
 		pass
-		# Hier muss noch Dialog hinzugefügt werden
 		DialogueManager.show_dialogue_balloon(load("res://Cases/A_Completely_Normal_Day/dialogue/minigame_2.dialogue"), "Hint")
-		#dialog das system bei mehr als drei satrts an überlasstet --> kurzversion von anfang bevor minigame startet
 	if ziel_input == false:
 		DialogueManager.show_dialogue_balloon(load("res://Cases/A_Completely_Normal_Day/dialogue/minigame_2.dialogue"), "Ziel_input_false")
