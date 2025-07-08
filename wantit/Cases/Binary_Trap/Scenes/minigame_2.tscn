@@ -1,16 +1,43 @@
-[gd_scene load_steps=8 format=3 uid="uid://hqfrgdphxdrl"]
+[gd_scene load_steps=14 format=3 uid="uid://hqfrgdphxdrl"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_hr3m3"]
 [ext_resource type="Texture2D" uid="uid://bve61rxddrnsp" path="res://Cases/Binary_Trap/Assets/Minigame2/minigame2_closeUp.png" id="2_gt2d2"]
 [ext_resource type="Script" uid="uid://cl6f77kjtwyhy" path="res://Cases/Binary_Trap/Scripts/minigame2.gd" id="2_hex8g"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_pxh7d"]
 [ext_resource type="PackedScene" uid="uid://dofebqelw66y3" path="res://Cases/Binary_Trap/Scenes/Minigames/lamp_and_switch.tscn" id="2_ydl5m"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_22po7"]
 [ext_resource type="Texture2D" uid="uid://chl46a1yawt36" path="res://Cases/Binary_Trap/Assets/Minigame2/tape.png" id="3_dtrl5"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_06qji"]
 [ext_resource type="FontFile" uid="uid://crpwo0n6tuq0a" path="res://Assets/Fonts/ReenieBeanie-Regular.ttf" id="6_pssty"]
 
+[sub_resource type="Resource" id="Resource_nince"]
+script = ExtResource("3_22po7")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_22po7"]
+script = ExtResource("2_pxh7d")
+hint_text = "Die Glühbirnen zeigen dir an, ob der Wert der Stelle mit 0 (Lampe aus) oder 1 (Lampe an) multipliziert wird.2."
+hint_condition = SubResource("Resource_nince")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_8s6ww"]
+script = ExtResource("3_22po7")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_pxh7d"]
+script = ExtResource("2_pxh7d")
+hint_text = "Die vier Glühbirnen stehen für vier Stellen einer Binärzahl. Die rechte Lampe hat den Wert 1, die nächste 2, dann 4 und die linke 8. Leuchtet eine Lampe, bedeutet das, es steht eine 1 an dieser Stelle – ihr Wert wird also mitgezählt. Sind mehrere Lampen an, werden ihre Werte addiert. So ergibt sich die Dezimalzahl."
+hint_condition = SubResource("Resource_8s6ww")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
 [node name="Minigame 2" type="Node"]
 script = ExtResource("1_hr3m3")
 location_name = "Minigame 2"
+hints = Array[ExtResource("2_pxh7d")]([SubResource("Resource_22po7"), SubResource("Resource_pxh7d")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -38,6 +65,7 @@ scale = Vector2(1.32736, 1.32736)
 script = ExtResource("2_hex8g")
 
 [node name="Input Label" type="Label" parent="Minigame"]
+layout_mode = 0
 offset_left = 339.772
 offset_top = 442.985
 offset_right = 421.772

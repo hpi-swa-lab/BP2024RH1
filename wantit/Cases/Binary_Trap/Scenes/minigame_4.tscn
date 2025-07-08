@@ -1,17 +1,44 @@
-[gd_scene load_steps=9 format=3 uid="uid://q1ccreh7wbh"]
+[gd_scene load_steps=15 format=3 uid="uid://q1ccreh7wbh"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_at2jk"]
 [ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigames/gap_game.tscn" id="2_0mkrf"]
 [ext_resource type="Texture2D" uid="uid://cg6umxqo34mep" path="res://Cases/Binary_Trap/Assets/Minigame4/minigame4_closeUp.png" id="2_asgrs"]
 [ext_resource type="Script" uid="uid://c07pihq51n61q" path="res://Cases/Binary_Trap/Scripts/minigame4.gd" id="2_ht2uf"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_keevc"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_1ft0n"]
 [ext_resource type="FontFile" uid="uid://7j4njv1wjhhj" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="3_5xu1i"]
 [ext_resource type="FontFile" uid="uid://qeff5a6mplbw" path="res://Assets/Fonts/CabinSketch-Regular.ttf" id="5_triia"]
 [ext_resource type="Texture2D" uid="uid://b4xqfpttd0lv3" path="res://Cases/Binary_Trap/Assets/Minigame4/chalk_arrow.png" id="6_triia"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="8_xw2al"]
 
+[sub_resource type="Resource" id="Resource_iluou"]
+script = ExtResource("3_1ft0n")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_1ft0n"]
+script = ExtResource("2_keevc")
+hint_text = "Die Dezimalzahl muss als Binärzahl umgewandelt werden. Trage dazu in die Kästchen eine 0 oder 1 so ein, dass die Werte aufaddiert die Dezimalzahl ergibt."
+hint_condition = SubResource("Resource_iluou")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_g0bwb"]
+script = ExtResource("3_1ft0n")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_7oy3o"]
+script = ExtResource("2_keevc")
+hint_text = "Um eine Dezimalzahl in eine Binärzahl umzuwandeln, suchst du zuerst den größten Binärwert, der noch kleiner oder gleich der Dezimalzahl ist – diese Stelle bekommt eine 1. Dann ziehst du diesen Wert von der Dezimalzahl ab und machst mit dem Rest genauso weiter. Wenn kein Rest mehr übrig ist, bist du fertig."
+hint_condition = SubResource("Resource_g0bwb")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
 [node name="Minigame 4" type="Node"]
 script = ExtResource("1_at2jk")
 location_name = "Minigame 4"
+hints = Array[ExtResource("2_keevc")]([SubResource("Resource_1ft0n"), SubResource("Resource_7oy3o")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

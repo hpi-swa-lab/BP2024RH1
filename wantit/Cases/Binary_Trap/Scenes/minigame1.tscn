@@ -1,14 +1,28 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxkpxeer0f5qj"]
+[gd_scene load_steps=16 format=3 uid="uid://bxkpxeer0f5qj"]
 
 [ext_resource type="Script" uid="uid://tke5tcs0a2fn" path="res://Cases/Binary_Trap/Scripts/minigame_1.gd" id="1_uomor"]
 [ext_resource type="Texture2D" uid="uid://3exdyi0kqjrg" path="res://Cases/Binary_Trap/Assets/Minigame1/switch_on.png" id="2_1aei7"]
 [ext_resource type="Resource" uid="uid://c6ymimu8gvw11" path="res://Cases/Binary_Trap/dialogue/minigame1.dialogue" id="2_fpwkw"]
 [ext_resource type="Texture2D" uid="uid://b8005egek8rgm" path="res://Cases/Binary_Trap/Assets/Minigame1/minigame1_closeUp_lightOff.png" id="2_mfxfp"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_uvn7q"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_gtr7k"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_mbcpt"]
 [ext_resource type="Texture2D" uid="uid://dlt2dd5k0x27q" path="res://Cases/Binary_Trap/Assets/Minigame1/switch_off.png" id="3_mfxfp"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_uvn7q"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_pk8ua"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="8_mbcpt"]
+
+[sub_resource type="Resource" id="Resource_eqidc"]
+script = ExtResource("3_mbcpt")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_2d06j"]
+script = ExtResource("2_uvn7q")
+hint_text = "Betätige den Schalter und schau, was passiert."
+hint_condition = SubResource("Resource_eqidc")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_gtr7k"]
 script = ExtResource("3_gtr7k")
@@ -28,6 +42,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("1_uomor")
 location_name = "Minigame 1"
 items = [NodePath("switch")]
+hints = Array[ExtResource("2_uvn7q")]([SubResource("Resource_2d06j")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

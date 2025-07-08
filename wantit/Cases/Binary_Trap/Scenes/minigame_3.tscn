@@ -1,15 +1,42 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb018sy8d7u2l"]
+[gd_scene load_steps=13 format=3 uid="uid://bb018sy8d7u2l"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_nekdu"]
 [ext_resource type="Texture2D" uid="uid://c7wr0rcfdl07s" path="res://Cases/Binary_Trap/Assets/Minigame3/minigame3_closeUp.png" id="2_apiyb"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_drqrr"]
 [ext_resource type="Script" uid="uid://dc7bogap67ovg" path="res://Cases/Binary_Trap/Scripts/minigame3.gd" id="2_dwhro"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_6gcw6"]
 [ext_resource type="FontFile" uid="uid://crpwo0n6tuq0a" path="res://Assets/Fonts/ReenieBeanie-Regular.ttf" id="3_apiyb"]
 [ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigames/gap_game.tscn" id="3_rd8j1"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="6_nkxmu"]
 
+[sub_resource type="Resource" id="Resource_qnssy"]
+script = ExtResource("3_6gcw6")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_6gcw6"]
+script = ExtResource("2_drqrr")
+hint_text = "Übertrage jede Stelle der gegebenen Binärzahl in die jeweils passende Lücke."
+hint_condition = SubResource("Resource_qnssy")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_ag45m"]
+script = ExtResource("3_6gcw6")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_drqrr"]
+script = ExtResource("2_drqrr")
+hint_text = "Übertrage die Binärzahl so, dass die Stelle von der Binärzahl ganz links ins linke Kästchen eingetragen wird, die nächste Stelle ein Kästchen weiter rechts usw."
+hint_condition = SubResource("Resource_ag45m")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
 [node name="Minigame 3" type="Node"]
 script = ExtResource("1_nekdu")
 location_name = "Minigame 3"
+hints = Array[ExtResource("2_drqrr")]([SubResource("Resource_6gcw6"), SubResource("Resource_drqrr")])
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]
