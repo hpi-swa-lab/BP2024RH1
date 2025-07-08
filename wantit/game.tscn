@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=123 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -183,12 +183,12 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 [sub_resource type="Resource" id="Resource_6qn5j"]
 script = ExtResource("18_rvswv")
 mode = 0
-required_items = Array[String](["GameSurvey completed"])
+required_items = Array[String](["PreTest completed"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_wj41c"]
 script = ExtResource("14_215e1")
-event_name = "on GameSurvey completed"
+event_name = "on PreTest completed"
 location_name = "Office"
 start_condition = SubResource("Resource_6qn5j")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
@@ -389,17 +389,30 @@ location_name = "Office"
 start_condition = SubResource("Resource_3gvs5")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
-[sub_resource type="Resource" id="Resource_6qn5j"]
+[sub_resource type="Resource" id="Resource_3xib3"]
 script = ExtResource("18_rvswv")
 mode = 0
-required_items = Array[String](["PreTest completed"])
+required_items = Array[String](["PreTest completed", "minigame_done", "PostTest completed"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
-[sub_resource type="Resource" id="Resource_wj41c"]
+[sub_resource type="Resource" id="Resource_7noa1"]
 script = ExtResource("14_215e1")
-event_name = "Knowledge Test completed"
+event_name = "on PostTest completed"
+location_name = "GameSurvey"
+start_condition = SubResource("Resource_3xib3")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_5628o"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["GameSurvey completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_fuuk6"]
+script = ExtResource("14_215e1")
+event_name = "on survey completed"
 location_name = "Office"
-start_condition = SubResource("Resource_6qn5j")
+start_condition = SubResource("Resource_5628o")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
 [sub_resource type="Resource" id="Resource_bqa6y"]
@@ -408,7 +421,7 @@ case_slug = "pixel"
 case_title = "Das verschwundene Gemälde"
 case_topic = "Pixelgrafiken"
 case_location_scenes = Array[PackedScene]([ExtResource("7_edr7y"), ExtResource("43_87ddb"), ExtResource("44_mljfx"), ExtResource("45_qpefm"), ExtResource("46_tb2lt"), ExtResource("47_cfc7e"), ExtResource("48_gh0px"), ExtResource("49_v33yl"), ExtResource("33_6qn5j"), ExtResource("34_wj41c")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_vuohh"), SubResource("Resource_mc3al"), SubResource("Resource_wj41c")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_vuohh"), SubResource("Resource_mc3al"), SubResource("Resource_wj41c"), SubResource("Resource_7noa1"), SubResource("Resource_fuuk6")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]

@@ -17,5 +17,8 @@ Klaas: Der Kunsthändler hatte das Gemälde gestohlen.
 - Konnte es wiedergefunden werden?
 	Klaas: Zum Glück ja.
 	Klaas: Du warst eine große Hilfe!
-	do complete_case()
+	do _on_location_switch_requested("PostTest") 
 	=> END
+
+~ gamesurvey_finished
+do complete_case()
