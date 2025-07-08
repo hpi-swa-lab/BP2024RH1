@@ -30,7 +30,7 @@ Klaas: Das ist schon sehr komisch. Dieses Chaos vom Praktikanten muss unbedingt 
 Klaas: Wir können erstmal nichts mehr machen.
 Klaas: Den Rest sollten wir unseren IT-Experten für Cybersecurity überlassen.
 ...
-do interaction_happened(start_posttest)
+do interaction_happened("start_posttest")
 => END
 
 ~ CloseCase
