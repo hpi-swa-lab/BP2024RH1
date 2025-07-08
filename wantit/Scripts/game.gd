@@ -103,9 +103,12 @@ func switch_location(location: Location):
 		location.dialogue_player.start_dialogue()
 	
 	current_location = location
-	current_location.location_switch_requested.connect(func(name):
-		var index = case.case_locations.find_custom( func (_location):
-			return _location.location_name == name)
+	current_location.location_switch_requested.connect(func(target_name, _source_name):
+		var index = case.case_locations.find_custom(func (_location):
+			return _location.location_name == target_name)
+	#current_location.location_switch_requested.connect(func(name):
+		#var index = case.case_locations.find_custom( func (_location):
+			#return _location.location_name == name)
 		assert(index >= 0)
 		var _location = case.case_locations[index]
 		switch_location(_location))
