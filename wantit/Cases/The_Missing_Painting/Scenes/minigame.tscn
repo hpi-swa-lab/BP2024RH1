@@ -90,6 +90,7 @@ offset_bottom = 652.982
 
 [node name="GameArt" type="TextureButton" parent="."]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
