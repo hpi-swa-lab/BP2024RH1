@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cush3h35by3nt"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_0caxv"]
+[ext_resource type="PackedScene" uid="uid://cmfk48xxv0ha4" path="res://Scenes/endscreen.tscn" id="2_n34gr"]
+[ext_resource type="Texture2D" uid="uid://b5hgykjov2yrn" path="res://Cases/Fake_News_Fiasko/Assets/fake1.png" id="3_qr34m"]
+[ext_resource type="Texture2D" uid="uid://8ewmetf6cplf" path="res://Cases/Fake_News_Fiasko/Assets/fake2.png" id="4_cj4tl"]
+
+[node name="IntroEndscreen" type="Node"]
+script = ExtResource("1_0caxv")
+location_name = "Endscreen"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Endscreen" parent="." instance=ExtResource("2_n34gr")]
+Subject = "Fake-News"
+FirstGamePicture = ExtResource("3_qr34m")
+SecondGamePicture = ExtResource("4_cj4tl")

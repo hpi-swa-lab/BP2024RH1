@@ -1,9 +1,9 @@
 ~ Search_szene_0
-Dieser Computer scheint keinen Strom zu haben.
+Dieser Computer scheint, keinen Strom zu haben.
 => END
 
 ~ Search_szene_1
-Klaas schau mal, der Computer hat keine Internet verbindung. 
+Klaas schau mal, der Computer hat keine Internetverbindung. 
 Klaas: Ob das an den Routern liegt?
 => END
 
@@ -12,5 +12,5 @@ Hier scheint es ein paar Probleme zu geben. Vielleicht sind wir der Quelle sehr 
 => END
 
 ~ Search_szene_2_other
-Dieser Computer hat zwar Strom, aber kein Internet
+Dieser Computer hat zwar Strom, aber kein Internet.
 => END

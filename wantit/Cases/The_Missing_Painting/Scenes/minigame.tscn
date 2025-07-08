@@ -11,18 +11,6 @@
 [ext_resource type="FontFile" uid="uid://c84fslbk0xuue" path="res://Cases/The_Missing_Painting/Assets/Minigame/IBMPlexMono-SemiBold.ttf" id="8_qv3qu"]
 [ext_resource type="FontFile" uid="uid://d1titn22brq6y" path="res://Assets/bold.ttf" id="10_xx2t6"]
 
-[sub_resource type="Resource" id="Resource_qv3qu"]
-script = ExtResource("3_yb0so")
-mode = 0
-required_items = Array[String](["got_items"])
-metadata/_custom_type_script = "uid://bfe303xauflwy"
-
-[sub_resource type="Resource" id="Resource_yb0so"]
-script = ExtResource("2_mfb4k")
-hint_text = "0 bedeutet aus, also erscehint das Pixel schwarz. \\n 1 bedeutet an, also erscheint das Pixel weiß. "
-hint_condition = SubResource("Resource_qv3qu")
-metadata/_custom_type_script = "uid://c5qtuytooefmh"
-
 [sub_resource type="Resource" id="Resource_xx2t6"]
 script = ExtResource("3_yb0so")
 mode = 2
@@ -33,6 +21,18 @@ metadata/_custom_type_script = "uid://bfe303xauflwy"
 script = ExtResource("2_mfb4k")
 hint_text = "Die gesammelten Hinweise liegen noch im Inventar. "
 hint_condition = SubResource("Resource_xx2t6")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_qv3qu"]
+script = ExtResource("3_yb0so")
+mode = 0
+required_items = Array[String](["got_items"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_yb0so"]
+script = ExtResource("2_mfb4k")
+hint_text = "0 bedeutet aus, also erscheint das Pixel schwarz. 1 bedeutet an, also erscheint das Pixel weiß. "
+hint_condition = SubResource("Resource_qv3qu")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Theme" id="Theme_xx2t6"]
@@ -48,7 +48,7 @@ default_font_size = 53
 script = ExtResource("1_vxk47")
 location_name = "Minigame"
 items = [NodePath("GamePaper")]
-hints = Array[ExtResource("2_mfb4k")]([SubResource("Resource_yb0so"), SubResource("Resource_dcyaa")])
+hints = Array[ExtResource("2_mfb4k")]([SubResource("Resource_dcyaa"), SubResource("Resource_yb0so")])
 has_inventory = true
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 

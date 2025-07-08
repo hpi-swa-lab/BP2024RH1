@@ -7,8 +7,8 @@ extends OptionButton
 
 var child: Node = null
 
-const AND_GATTER = preload("res://logik_gatter/scenes/Baukasten/Gatter/And_Gatter.tscn")
-const OR_GATTER = preload("res://logik_gatter/scenes/Baukasten/Gatter/Or_Gatter.tscn")
+const AND_GATTER = preload("res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/And_Gatter.tscn")
+const OR_GATTER = preload("res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Or_Gatter.tscn")
 
 func _on_item_selected(index: int) -> void:
 	if child != null:

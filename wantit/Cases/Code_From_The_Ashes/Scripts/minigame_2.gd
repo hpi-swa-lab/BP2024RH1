@@ -38,7 +38,7 @@ func apply_solution() -> bool:
 		if child.text.to_upper() not in encrypted_alphabet:
 			encrypted_alphabet += child.text.to_upper()
 		else:
-			start_dialogue("double_letters")
+			start_dialogue("double_letter")
 	if encrypted_alphabet.length() != alphabet.length():
 		start_dialogue("not_whole_alphabet")
 	else:
