@@ -27,12 +27,14 @@ func check_down():
 	var KeyRect = Rect2(newItem.position, newItem.size)
 	if not item:
 		item = find_node()
+		item.visible = true
 	if item:
 		var Rect1 = Rect2(item.position, item.size)
 		if Rect1.intersects(KeyRect):
-			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/door.dialogue"), "key_used")
-			await DialogueManager.dialogue_ended
 			_on_dialogue_ended()
+			DialogueManager.show_dialogue_balloon_scene("res://dialogue_balloons/monologue/balloon_monologue.tscn", load("res://dialogue/door.dialogue"), "key_used")
+			#await DialogueManager.dialogue_ended
+			
 	else:
 		location.item_found.emit(extended_item, location)
 	
@@ -40,13 +42,13 @@ func find_node() -> Node:
 	for child in get_parent().get_children():
 		if child.name == "Door CloseUp":
 			location = child
-			return child.find_child("Key Hole")
+			return child.find_child("KeyholeWithKey")
 		if child is Location:
 			location = child
 	return null
 
 func _on_dialogue_ended() -> void:
-	item.item_name = "Door"
+	item.item_name = "Key Hole"
 	item.emit_signal("item_found", item)	
 
 func initialize_new_item():
