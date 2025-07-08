@@ -1,0 +1,131 @@
+[gd_scene load_steps=24 format=3 uid="uid://yi7fykv7f8u"]
+
+[ext_resource type="Script" uid="uid://y3om711kkl1y" path="res://Cases/Binary_Trap/Scripts/cupboard_close_up.gd" id="1_7vkgt"]
+[ext_resource type="Resource" uid="uid://ba8ssk868dnst" path="res://Cases/Binary_Trap/dialogue/safe_found.dialogue" id="2_0v0oc"]
+[ext_resource type="Texture2D" uid="uid://bhirv71dfw8pu" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_closeUp.png" id="2_ypu1c"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_be1ca"]
+[ext_resource type="Texture2D" uid="uid://dv3a2476s1xqc" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/chalkboard.png" id="4_otcxr"]
+[ext_resource type="Texture2D" uid="uid://ch5wfse2583vp" path="res://Cases/Binary_Trap/Assets/Collectible_Items/vase.png" id="5_3u768"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_usf5m"]
+[ext_resource type="Texture2D" uid="uid://b1b2gt6d41dbv" path="res://Cases/Binary_Trap/Assets/Interactible_Items/notches.png" id="7_twyxu"]
+[ext_resource type="Resource" uid="uid://cufe2ajmvh2v0" path="res://Cases/Binary_Trap/dialogue/notches.dialogue" id="8_3ml8y"]
+[ext_resource type="Texture2D" uid="uid://y4n8wv2bv3t" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/safe_closed.png" id="8_wwibd"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="9_0v0oc"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="10_1dkgp"]
+[ext_resource type="Script" uid="uid://bixgx7yeqi1tl" path="res://Cases/Binary_Trap/Scripts/vase_postcard_action.gd" id="10_jhpnb"]
+[ext_resource type="Resource" uid="uid://cjxnc2qjk42xm" path="res://Cases/Binary_Trap/dialogue/vase.dialogue" id="10_knnwi"]
+[ext_resource type="Texture2D" uid="uid://cj1f3wq6fyg7h" path="res://Cases/Binary_Trap/Assets/Backgrounds/woodpiece_open.png" id="11_78jf3"]
+[ext_resource type="Texture2D" uid="uid://bhvewnusytuu2" path="res://Cases/Binary_Trap/Assets/Backgrounds/vase_closeUp.png" id="12_jhpnb"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="13_t7k8t"]
+
+[sub_resource type="Resource" id="Resource_1dkgp"]
+script = ExtResource("9_0v0oc")
+start_marker = "default"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_nkx06"]
+script = ExtResource("10_1dkgp")
+dialogue_resource = ExtResource("2_0v0oc")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_0v0oc")]([SubResource("Resource_1dkgp")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_w51lx"]
+script = ExtResource("9_0v0oc")
+start_marker = "default"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_wruoe"]
+script = ExtResource("10_1dkgp")
+dialogue_resource = ExtResource("10_knnwi")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_0v0oc")]([SubResource("Resource_w51lx")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_knnwi"]
+script = ExtResource("9_0v0oc")
+start_marker = "default"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_jhpnb"]
+script = ExtResource("10_1dkgp")
+dialogue_resource = ExtResource("8_3ml8y")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("9_0v0oc")]([SubResource("Resource_knnwi")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Cupboard CloseUp" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_7vkgt")
+location_name = "Cupboard CloseUp SafeClosed"
+items = [NodePath("Vase"), NodePath("Notches")]
+has_inventory = true
+location_dialogue = SubResource("Resource_nkx06")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300029, 0.300029)
+texture = ExtResource("2_ypu1c")
+
+[node name="Chalkboard" parent="." instance=ExtResource("3_be1ca")]
+scale = Vector2(0.300082, 0.300082)
+texture_normal = ExtResource("4_otcxr")
+requested_location_name = "Minigame 4"
+
+[node name="Vase" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 312.0
+offset_top = 99.0
+offset_right = 1218.0
+offset_bottom = 1732.0
+scale = Vector2(0.11205, 0.11205)
+texture_normal = ExtResource("5_3u768")
+script = ExtResource("6_usf5m")
+item_name = "Vase"
+is_collectable = true
+action_script = ExtResource("10_jhpnb")
+item_dialogue = SubResource("Resource_wruoe")
+closeup_texture = ExtResource("12_jhpnb")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Notches" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299985, 0.299985)
+texture_normal = ExtResource("7_twyxu")
+script = ExtResource("6_usf5m")
+item_name = "Notches"
+item_dialogue = SubResource("Resource_jhpnb")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Woodpiece (open)" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300024, 0.300024)
+mouse_filter = 2
+texture = ExtResource("11_78jf3")
+
+[node name="Safe (closed)" parent="." instance=ExtResource("3_be1ca")]
+unique_name_in_owner = true
+scale = Vector2(0.300027, 0.300027)
+texture_normal = ExtResource("8_wwibd")
+requested_location_name = "Minigame 6b"
+
+[node name="BackButton" parent="." instance=ExtResource("13_t7k8t")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Room LightsOn WoodpieceOpen"

@@ -1,0 +1,95 @@
+[gd_scene load_steps=16 format=3 uid="uid://bxkpxeer0f5qj"]
+
+[ext_resource type="Script" uid="uid://tke5tcs0a2fn" path="res://Cases/Binary_Trap/Scripts/minigame_1.gd" id="1_uomor"]
+[ext_resource type="Texture2D" uid="uid://3exdyi0kqjrg" path="res://Cases/Binary_Trap/Assets/Minigame1/switch_on.png" id="2_1aei7"]
+[ext_resource type="Resource" uid="uid://c6ymimu8gvw11" path="res://Cases/Binary_Trap/dialogue/minigame1.dialogue" id="2_fpwkw"]
+[ext_resource type="Texture2D" uid="uid://b8005egek8rgm" path="res://Cases/Binary_Trap/Assets/Minigame1/minigame1_closeUp_lightOff.png" id="2_mfxfp"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_uvn7q"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_gtr7k"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_mbcpt"]
+[ext_resource type="Texture2D" uid="uid://dlt2dd5k0x27q" path="res://Cases/Binary_Trap/Assets/Minigame1/switch_off.png" id="3_mfxfp"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_uvn7q"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_pk8ua"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="8_mbcpt"]
+
+[sub_resource type="Resource" id="Resource_eqidc"]
+script = ExtResource("3_mbcpt")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_2d06j"]
+script = ExtResource("2_uvn7q")
+hint_text = "Betätige den Schalter und schau, was passiert."
+hint_condition = SubResource("Resource_eqidc")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_gtr7k"]
+script = ExtResource("3_gtr7k")
+start_marker = "switch_pressed"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_fpwkw"]
+script = ExtResource("4_uvn7q")
+dialogue_resource = ExtResource("2_fpwkw")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_gtr7k")]([SubResource("Resource_gtr7k")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Minigame1" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_uomor")
+location_name = "Minigame 1"
+items = [NodePath("switch")]
+hints = Array[ExtResource("2_uvn7q")]([SubResource("Resource_2d06j")])
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299987, 0.299987)
+texture = ExtResource("2_mfxfp")
+
+[node name="switch" type="TextureButton" parent="."]
+offset_left = 280.0
+offset_top = 224.0
+offset_right = 536.0
+offset_bottom = 480.0
+scale = Vector2(0.806991, 0.806991)
+toggle_mode = true
+texture_normal = ExtResource("3_mfxfp")
+texture_pressed = ExtResource("2_1aei7")
+script = ExtResource("8_mbcpt")
+item_name = "Light Switch"
+item_dialogue = SubResource("Resource_fpwkw")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="on_or_off label" type="Label" parent="."]
+offset_left = 696.0
+offset_top = 88.0
+offset_right = 785.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "Aus"
+horizontal_alignment = 1
+
+[node name="digit label" type="Label" parent="."]
+offset_left = 624.0
+offset_top = 64.0
+offset_right = 852.0
+offset_bottom = 610.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 370
+text = "0"
+horizontal_alignment = 1
+
+[node name="BackButton" parent="." instance=ExtResource("5_pk8ua")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)
+
+[connection signal="toggled" from="switch" to="." method="_on_switch_toggled"]

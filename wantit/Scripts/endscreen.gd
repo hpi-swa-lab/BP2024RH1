@@ -16,4 +16,4 @@ func resize_image(Img: Texture2D):
 	return newTex
 
 func _on_button_pressed() -> void:
-	DialogueManager.show_dialogue_balloon(load ("res://Cases/The_Missing_Painting/Dialogue/complete.dialogue"), "complete_case")
+	DialogueManager.show_dialogue_balloon(load ("res://dialogue_balloons/complete_case.dialogue"), "complete_case")

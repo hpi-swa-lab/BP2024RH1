@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=3 uid="uid://bb018sy8d7u2l"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_nekdu"]
+[ext_resource type="Texture2D" uid="uid://c7wr0rcfdl07s" path="res://Cases/Binary_Trap/Assets/Minigame3/minigame3_closeUp.png" id="2_apiyb"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_drqrr"]
+[ext_resource type="Script" uid="uid://dc7bogap67ovg" path="res://Cases/Binary_Trap/Scripts/minigame3.gd" id="2_dwhro"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_6gcw6"]
+[ext_resource type="FontFile" uid="uid://crpwo0n6tuq0a" path="res://Assets/Fonts/ReenieBeanie-Regular.ttf" id="3_apiyb"]
+[ext_resource type="PackedScene" uid="uid://bimpgyv2w5ouk" path="res://Cases/Binary_Trap/Scenes/Minigames/gap_game.tscn" id="3_rd8j1"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="6_nkxmu"]
+
+[sub_resource type="Resource" id="Resource_qnssy"]
+script = ExtResource("3_6gcw6")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_6gcw6"]
+script = ExtResource("2_drqrr")
+hint_text = "Übertrage jede Stelle der gegebenen Binärzahl in die jeweils passende Lücke."
+hint_condition = SubResource("Resource_qnssy")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_ag45m"]
+script = ExtResource("3_6gcw6")
+mode = 0
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_drqrr"]
+script = ExtResource("2_drqrr")
+hint_text = "Übertrage die Binärzahl so, dass die Stelle von der Binärzahl ganz links ins linke Kästchen eingetragen wird, die nächste Stelle ein Kästchen weiter rechts usw."
+hint_condition = SubResource("Resource_ag45m")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[node name="Minigame 3" type="Node"]
+script = ExtResource("1_nekdu")
+location_name = "Minigame 3"
+hints = Array[ExtResource("2_drqrr")]([SubResource("Resource_6gcw6"), SubResource("Resource_drqrr")])
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299976, 0.299976)
+texture = ExtResource("2_apiyb")
+
+[node name="Minigame" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -16.0
+offset_top = 168.0
+offset_right = 24.0
+offset_bottom = 208.0
+rotation = -0.0869075
+scale = Vector2(0.932474, 0.932474)
+script = ExtResource("2_dwhro")
+
+[node name="Input Label" type="Label" parent="Minigame"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 160.0
+offset_right = 258.0
+offset_bottom = 260.0
+rotation = -0.0502526
+scale = Vector2(1.25747, 1.25747)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_apiyb")
+theme_override_font_sizes/font_size = 100
+text = "1011"
+
+[node name="Gap Game" parent="Minigame" instance=ExtResource("3_rd8j1")]
+layout_mode = 1
+offset_left = 200.0
+offset_top = 304.0
+offset_right = 200.0
+offset_bottom = 304.0
+scale = Vector2(1.62501, 1.62501)
+
+[node name="Task Label" type="Label" parent="Minigame"]
+layout_mode = 1
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 1027.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_apiyb")
+theme_override_font_sizes/font_size = 36
+text = "Fülle die Lücken so, dass die gebene Binärzahl korrekt umgerechnet wird."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart Button" type="Button" parent="Minigame"]
+visible = false
+layout_mode = 0
+offset_left = 893.639
+offset_top = 517.063
+offset_right = 999.639
+offset_bottom = 561.063
+theme_override_colors/font_hover_color = Color(0.533037, 0.533037, 0.533037, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_apiyb")
+theme_override_font_sizes/font_size = 36
+text = "Nochmal"
+flat = true
+
+[node name="BackButton" parent="." instance=ExtResource("6_nkxmu")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 520.0
+scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Room LightsOn"
+
+[connection signal="updated" from="Minigame/Gap Game" to="Minigame" method="_on_gap_game_updated"]
+[connection signal="pressed" from="Minigame/Restart Button" to="Minigame" method="_on_restart_button_pressed"]

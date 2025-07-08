@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://e4utohs73dan"]
+
+[ext_resource type="PackedScene" uid="uid://cmfk48xxv0ha4" path="res://Scenes/endscreen.tscn" id="1_e20qy"]
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_flw5r"]
+[ext_resource type="Texture2D" uid="uid://udu28fs670rp" path="res://Cases/Binary_Trap/Assets/binary1.png" id="2_0ywhq"]
+[ext_resource type="Texture2D" uid="uid://d1ss66ub273sw" path="res://Cases/Binary_Trap/Assets/binary2.png" id="3_flw5r"]
+
+[node name="IntroEndscreen" type="Node"]
+script = ExtResource("1_flw5r")
+location_name = "Endscreen"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Endscreen" parent="." instance=ExtResource("1_e20qy")]
+Subject = "Binärcodierung"
+FirstGamePicture = ExtResource("2_0ywhq")
+SecondGamePicture = ExtResource("3_flw5r")

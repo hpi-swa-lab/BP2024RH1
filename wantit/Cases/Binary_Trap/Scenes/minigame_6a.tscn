@@ -1,0 +1,146 @@
+[gd_scene load_steps=26 format=3 uid="uid://c3u6qnv0gbg8f"]
+
+[ext_resource type="Script" uid="uid://xncovxk1ul3s" path="res://Cases/Binary_Trap/Scripts/minigame5_6a.gd" id="1_fhpi3"]
+[ext_resource type="Texture2D" uid="uid://c4l8rm1errsqu" path="res://Cases/Binary_Trap/Assets/Minigame5_6/minigame6a_closeUp.png" id="2_fhpi3"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_jd1g3"]
+[ext_resource type="PackedScene" uid="uid://dwx5j21bd33rc" path="res://Cases/Binary_Trap/Scenes/Minigames/lock.tscn" id="2_jh3ao"]
+[ext_resource type="Resource" uid="uid://cgff2vtrb0m2v" path="res://Cases/Binary_Trap/dialogue/minigame6a.dialogue" id="2_nw1wm"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_aau3x"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_hifs2"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_7oy13"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_po4i8"]
+[ext_resource type="Texture2D" uid="uid://b1b2gt6d41dbv" path="res://Cases/Binary_Trap/Assets/Interactible_Items/notches.png" id="7_xspfe"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="8_jd1g3"]
+[ext_resource type="Resource" uid="uid://cufe2ajmvh2v0" path="res://Cases/Binary_Trap/dialogue/notches.dialogue" id="9_aau3x"]
+
+[sub_resource type="Resource" id="Resource_3jcnw"]
+script = ExtResource("3_aau3x")
+mode = 2
+required_items = Array[String](["Notches"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_aau3x"]
+script = ExtResource("2_jd1g3")
+hint_text = "Gibt es in dem Raum noch irgendwas, was eine Zahl darstellen könnte?"
+hint_condition = SubResource("Resource_3jcnw")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_2kja2"]
+script = ExtResource("3_aau3x")
+mode = 0
+required_items = Array[String](["Einkerbungen"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_qhxm1"]
+script = ExtResource("2_jd1g3")
+hint_text = "Die Einkerbungen könnten eine Zahl darstellen, aber welche? Und in welchem Zahlensystem?"
+hint_condition = SubResource("Resource_2kja2")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_67d8y"]
+script = ExtResource("3_aau3x")
+mode = 0
+required_items = Array[String](["Notches"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_gmouq"]
+script = ExtResource("2_jd1g3")
+hint_text = "Die Einkerbungen stellen die Zahl 5 im Dezimalsystem dar. Also könnte die Zahl 5 der Code für das Zahlenschloss sein."
+hint_condition = SubResource("Resource_67d8y")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_jwxnl"]
+script = ExtResource("3_aau3x")
+mode = 0
+required_items = Array[String](["Notches"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_ahq56"]
+script = ExtResource("2_jd1g3")
+hint_text = "Um den richtigen Code einzugeben, muss die Zahl 5 im Dezimalsystem in das Binärsystem umgewandelt werden. "
+hint_condition = SubResource("Resource_jwxnl")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_xspfe"]
+script = ExtResource("3_hifs2")
+start_marker = "notches_not_inspected"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_nw1wm"]
+script = ExtResource("3_hifs2")
+start_marker = "notches_inspected"
+required_items = Array[String](["Notches"])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_jd1g3"]
+script = ExtResource("4_7oy13")
+dialogue_resource = ExtResource("2_nw1wm")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_hifs2")]([SubResource("Resource_xspfe"), SubResource("Resource_nw1wm")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[sub_resource type="Resource" id="Resource_t6tpd"]
+script = ExtResource("3_hifs2")
+start_marker = "default"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_n7x2q"]
+script = ExtResource("4_7oy13")
+dialogue_resource = ExtResource("9_aau3x")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("3_hifs2")]([SubResource("Resource_t6tpd")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Minigame 6a" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_fhpi3")
+item_name = "Minigame6a completed"
+location_name = "Minigame 6a"
+items = [NodePath("Notches")]
+hints = Array[ExtResource("2_jd1g3")]([SubResource("Resource_aau3x"), SubResource("Resource_qhxm1"), SubResource("Resource_gmouq"), SubResource("Resource_ahq56")])
+has_inventory = true
+location_dialogue = SubResource("Resource_jd1g3")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.300015, 0.300015)
+texture = ExtResource("2_fhpi3")
+
+[node name="Lock" parent="." instance=ExtResource("2_jh3ao")]
+offset_left = 42.0
+offset_top = 164.0
+offset_right = 42.0
+offset_bottom = 164.0
+rotation = -0.137691
+scale = Vector2(0.325939, 0.325939)
+
+[node name="Notches" type="TextureButton" parent="."]
+offset_left = -949.0
+offset_top = -922.0
+offset_right = 2891.0
+offset_bottom = 1238.0
+scale = Vector2(0.931513, 0.931513)
+texture_normal = ExtResource("7_xspfe")
+script = ExtResource("8_jd1g3")
+item_name = "Notches"
+item_dialogue = SubResource("Resource_n7x2q")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="BackButton" parent="." instance=ExtResource("5_po4i8")]
+offset_left = -10.0
+offset_top = 538.0
+offset_right = 502.0
+offset_bottom = 1050.0
+rotation = -0.482242
+scale = Vector2(0.266106, 0.266106)
+requested_location_name = "Cupboard CloseUp"
+
+[connection signal="succeeded" from="Lock" to="." method="_on_lock_succeeded"]

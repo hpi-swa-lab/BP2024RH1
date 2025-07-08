@@ -27,7 +27,7 @@ func check_down():
 	var KeyRect = Rect2(newItem.position, newItem.size)
 	if not item:
 		item = find_node()
-		item.visible = true
+		#item.visible = true
 	if item:
 		var Rect1 = Rect2(item.position, item.size)
 		if Rect1.intersects(KeyRect):

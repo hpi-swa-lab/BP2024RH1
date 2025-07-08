@@ -27,8 +27,8 @@ func check_down():
 	var ArtRect = Rect2(newItem.position, newItem.size)
 	if not item:
 		item = find_node()
-		item.visible = true
 	if item:
+		item.visible = true
 		var Rect1 = Rect2(item.position, item.size)
 		if Rect1.intersects(ArtRect):
 			item.item_name = "GameArt"

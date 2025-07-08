@@ -1,0 +1,113 @@
+[gd_scene load_steps=18 format=3 uid="uid://dm02bqect42ay"]
+
+[ext_resource type="Script" uid="uid://denw33pxanib" path="res://Cases/Binary_Trap/Scripts/room_lights_on.gd" id="1_x0vuf"]
+[ext_resource type="Texture2D" uid="uid://cfigsifd4nrs8" path="res://Cases/Binary_Trap/Assets/Backgrounds/room_lightOn.png" id="2_gclfu"]
+[ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_22xq8"]
+[ext_resource type="Texture2D" uid="uid://b84ieqtoke1h6" path="res://Cases/Binary_Trap/Assets/Interactible_Items/beanbag.png" id="3_hn7yc"]
+[ext_resource type="Texture2D" uid="uid://ij4qgdpdmjp" path="res://Cases/Binary_Trap/Assets/Interactible_Items/door_lightOn.png" id="4_iv7ld"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="5_aoqib"]
+[ext_resource type="Resource" uid="uid://ca3w2w7c8he31" path="res://Cases/Binary_Trap/dialogue/beanbag.dialogue" id="5_hn7yc"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="6_yhkpc"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="7_68r0m"]
+[ext_resource type="Texture2D" uid="uid://codk46nnj7tmb" path="res://Cases/Binary_Trap/Assets/lamps.png" id="7_yefpb"]
+[ext_resource type="Texture2D" uid="uid://co4ul83iee8oj" path="res://Cases/Binary_Trap/Assets/Interactible_Items/drawer_halfopen.png" id="8_h7kfk"]
+[ext_resource type="Texture2D" uid="uid://vcr6lqfqi26e" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/drawer_open.png" id="9_b1nuy"]
+[ext_resource type="Texture2D" uid="uid://nyps8u78wbuw" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/cupboard_safe_open_key.png" id="10_avrm3"]
+[ext_resource type="Texture2D" uid="uid://3jaedga02cmx" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_doors_open.png" id="11_rjort"]
+[ext_resource type="Texture2D" uid="uid://ceo1cylkxblwg" path="res://Cases/Binary_Trap/Assets/Scene_Switcher/documents.png" id="13_336p8"]
+
+[sub_resource type="Resource" id="Resource_h60js"]
+script = ExtResource("6_yhkpc")
+start_marker = "default"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_57qbv"]
+script = ExtResource("7_68r0m")
+dialogue_resource = ExtResource("5_hn7yc")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("6_yhkpc")]([SubResource("Resource_h60js")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="Room LightsOn" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_x0vuf")
+location_name = "Room LightsOn SafeOpen"
+items = [NodePath("Beanbag")]
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299933, 0.299933)
+texture = ExtResource("2_gclfu")
+
+[node name="Beanbag" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.29993, 0.29993)
+texture_normal = ExtResource("3_hn7yc")
+script = ExtResource("5_aoqib")
+item_name = "Beanbag"
+item_dialogue = SubResource("Resource_57qbv")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Lamps" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300015, 0.300015)
+mouse_filter = 2
+texture = ExtResource("7_yefpb")
+
+[node name="Drawer halfopen" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300017, 0.300017)
+texture_normal = ExtResource("8_h7kfk")
+script = ExtResource("5_aoqib")
+item_name = "Drawer Halfopen"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Drawer open" parent="." instance=ExtResource("3_22xq8")]
+unique_name_in_owner = true
+visible = false
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.299976, 0.299976)
+texture_normal = ExtResource("9_b1nuy")
+requested_location_name = "Minigame 2"
+
+[node name="Cupboard" parent="." instance=ExtResource("3_22xq8")]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300001, 0.300001)
+texture_normal = ExtResource("10_avrm3")
+requested_location_name = "Cupboard CloseUp SafeOpen"
+
+[node name="Cupboard Doors (open)" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.299993, 0.299993)
+mouse_filter = 2
+texture = ExtResource("11_rjort")
+
+[node name="Documents" parent="." instance=ExtResource("3_22xq8")]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.299949, 0.299949)
+texture_normal = ExtResource("13_336p8")
+requested_location_name = "Minigame 3"
+
+[node name="Door" parent="." instance=ExtResource("3_22xq8")]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_iv7ld")
+requested_location_name = "Door CloseUp"
+
+[connection signal="pressed" from="Drawer halfopen" to="." method="_on_drawer_halfopen_pressed"]
