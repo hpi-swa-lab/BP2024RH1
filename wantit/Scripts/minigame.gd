@@ -6,7 +6,7 @@ var attempt_num = 0
 
 func add_attempt(correct_answers: int, wrong_answers: int):
 	var new_attempt = {
-		"attemp_number": attempt_num,
+		"attempt_number": attempt_num,
 		"correct_answers": correct_answers,
 		"wrong_answers": wrong_answers
 	}

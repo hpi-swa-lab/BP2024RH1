@@ -37,7 +37,6 @@ func show_next_question():
 	else: slider_box.show_question(questions[current_question])
 
 func _on_answer_chosen(value):
-	print(value, "hey")
 	score.append(int(value)) 
 	current_question += 1
 	show_next_question()

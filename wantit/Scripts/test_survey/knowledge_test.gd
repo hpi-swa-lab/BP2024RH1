@@ -10,7 +10,7 @@ var CASE := "caesr"
 var results = []
 var current_question = 0
 var questions = []
-var startTime : int
+var startTime : int = 0
 var durationAnswers : Array[int]
 
 func _ready():
@@ -28,9 +28,14 @@ func load_questions():
 	questions = JSON.parse_string(file.get_as_text())
 
 func show_next_question():
+	var t : int = Time.get_ticks_msec() / 1000.0
+	
+	if current_question > 0: # only record duration after the first question
+		durationAnswers.append(t - startTime)
+	startTime = t
 	if current_question >= questions.size():
 		durationAnswers.append((Time.get_ticks_msec() / 1000.0) - startTime)
-		print(CASE+" "+ self.location_name+" Quiz Finished! Final score: ", durationAnswers)
+		print(CASE+" "+ self.location_name+" Quiz Finished! Final score: ", durationAnswers, results)
 		var phase = "pre"
 		if self.location_name == "PostTest": phase = "post"
 		Analytics.add_knowledge_test_analytics(phase, results, durationAnswers)
@@ -39,12 +44,6 @@ func show_next_question():
 		item.is_collectable = false
 		item_found.emit(item, self)
 	else:
-		if !startTime: 
-			startTime=Time.get_ticks_msec() / 1000.0
-		else: 
-			var t : int = Time.get_ticks_msec() / 1000.0
-			durationAnswers.append(t-startTime)
-			startTime = t
 		question_box.show_question(questions[current_question])
 
 func _on_skip_pressed():

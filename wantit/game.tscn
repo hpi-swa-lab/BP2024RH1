@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=163 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=175 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -10,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://u3d6wp8ra4je" path="res://Scenes/empty_map.tscn" id="5_e8heu"]
 [ext_resource type="PackedScene" uid="uid://bto1uem2cnbyr" path="res://Cases/Introduction_Case/Scenes/bakery_kitchen.tscn" id="5_eow3j"]
 [ext_resource type="PackedScene" uid="uid://dsaho1fwwino3" path="res://Cases/Introduction_Case/Scenes/bakery_office.tscn" id="6_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://gvdy162iksbj" path="res://Scenes/test_survey/pre_test.tscn" id="7_i3uta"]
 [ext_resource type="PackedScene" uid="uid://bhbqihv27a5x8" path="res://Cases/Introduction_Case/Scenes/safe_close_up.tscn" id="7_vef74"]
 [ext_resource type="PackedScene" uid="uid://bj2wmkkh47ywg" path="res://Cases/Introduction_Case/Scenes/counter_close_up.tscn" id="8_hve3p"]
 [ext_resource type="PackedScene" uid="uid://csoa2rt7yia0i" path="res://Cases/Introduction_Case/Scenes/map.tscn" id="9_vef74"]
@@ -26,10 +26,15 @@
 [ext_resource type="PackedScene" uid="uid://c56icebaulvkr" path="res://Cases/Fake_News_Fiasko/Scenes/restaurant_dining_hall_pre.tscn" id="22_xfvwf"]
 [ext_resource type="PackedScene" uid="uid://ymhk1mswieql" path="res://Cases/Fake_News_Fiasko/Scenes/restaurant_kitchen_post.tscn" id="23_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://h5osa7tfgokv" path="res://Cases/Fake_News_Fiasko/Scenes/staff_room_post.tscn" id="24_7knny"]
+[ext_resource type="PackedScene" uid="uid://csk21o36cfaod" path="res://Scenes/test_survey/post_test.tscn" id="24_hl454"]
 [ext_resource type="PackedScene" uid="uid://yqylabdsb17c" path="res://Cases/Fake_News_Fiasko/Scenes/staff_room_pre.tscn" id="25_082n1"]
+[ext_resource type="PackedScene" uid="uid://c1fale7ot2rmf" path="res://Scenes/test_survey/sliding_game_survey.tscn" id="25_vf1qt"]
 [ext_resource type="PackedScene" uid="uid://dxecgnfn3r2iq" path="res://Cases/Fake_News_Fiasko/Scenes/table_close_up.tscn" id="26_xex6t"]
 [ext_resource type="PackedScene" uid="uid://bldto10pnrgj1" path="res://Cases/Fake_News_Fiasko/Scenes/townhall_office.tscn" id="27_aa0lp"]
+[ext_resource type="Resource" uid="uid://00tkbu2dwgwi" path="res://Scenes/test_survey/on_PreTest_completed.tres" id="27_j4tta"]
 [ext_resource type="PackedScene" uid="uid://j51e1b0fsl7f" path="res://Cases/Fake_News_Fiasko/Scenes/restaurant_kitchen_pre.tscn" id="28_5b14r"]
+[ext_resource type="Resource" uid="uid://cvnmrt48ovpjm" path="res://Scenes/test_survey/on_PostTest_completed.tres" id="28_ell1s"]
+[ext_resource type="Resource" uid="uid://7lhw0er21ns1" path="res://Scenes/test_survey/bitr_on_GameSurvey_completed.tres" id="29_hsv4y"]
 [ext_resource type="PackedScene" uid="uid://bdunf63688abk" path="res://Cases/Fake_News_Fiasko/minigame1/Scences/case_2_minigame_1.tscn" id="29_xfvwf"]
 [ext_resource type="PackedScene" uid="uid://de08xwxsx122u" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/case_2_minigame_2.tscn" id="30_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://ovgubqjktpfk" path="res://Cases/Fake_News_Fiasko/minigame3/Scenes/minigame_3.tscn" id="31_7knny"]
@@ -45,7 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://w3jwwhr2jth1" path="res://Cases/Code_From_The_Ashes/Scenes/minigame1.tscn" id="41_klri6"]
 [ext_resource type="PackedScene" uid="uid://dxfl6mwk6eufh" path="res://Cases/Code_From_The_Ashes/Scenes/tutorial2.tscn" id="42_eu6ph"]
 [ext_resource type="PackedScene" uid="uid://dk5yd0nfgmxtt" path="res://Cases/The_Missing_Painting/Scenes/office.tscn" id="43_87ddb"]
-[ext_resource type="PackedScene" uid="uid://brb5udqhuuouj" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_beginn.tscn" id="43_avmo2"]
+[ext_resource type="PackedScene" uid="uid://brb5udqhuuouj" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_begin.tscn" id="43_avmo2"]
 [ext_resource type="PackedScene" uid="uid://b8bpblw4o4xej" path="res://Cases/Code_From_The_Ashes/Scenes/minigame_2.tscn" id="43_edr7y"]
 [ext_resource type="PackedScene" uid="uid://t54jjw3ubnea" path="res://Cases/The_Missing_Painting/Scenes/crime_scene.tscn" id="44_mljfx"]
 [ext_resource type="PackedScene" uid="uid://b37iws3eonpm5" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_end.tscn" id="44_vyqle"]
@@ -70,6 +75,7 @@
 [ext_resource type="PackedScene" uid="uid://dxpdv3si2n5eh" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/technic_room_power_failure.tscn" id="57_66xay"]
 [ext_resource type="PackedScene" uid="uid://bjqw4udnawvm8" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_1.tscn" id="58_0s2o4"]
 [ext_resource type="PackedScene" uid="uid://c2bi0h58ogcem" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_2.tscn" id="59_4mai8"]
+[ext_resource type="Resource" uid="uid://shdvhk62qdfj" path="res://Scenes/test_survey/on_GameSurvey_completed.tres" id="59_hl454"]
 [ext_resource type="PackedScene" uid="uid://dldwkuqwfxyqu" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_minigame.tscn" id="60_w37fy"]
 [ext_resource type="PackedScene" uid="uid://2ijdmaonoknc" path="res://Cases/A_Completely_Normal_Day/Scenes/endscreen.tscn" id="61_lon8v"]
 [ext_resource type="PackedScene" uid="uid://cp2jpkt8stu8k" path="res://Cases/Binary_Trap/Scenes/office.tscn" id="68_o46vb"]
@@ -85,6 +91,7 @@
 [ext_resource type="PackedScene" uid="uid://c3u6qnv0gbg8f" path="res://Cases/Binary_Trap/Scenes/minigame_6a.tscn" id="77_71bxy"]
 [ext_resource type="PackedScene" uid="uid://dec4b603485ch" path="res://Cases/Binary_Trap/Scenes/minigame_6b.tscn" id="78_8jd3k"]
 [ext_resource type="PackedScene" uid="uid://q3586nx75har" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on.tscn" id="79_tssr6"]
+[ext_resource type="PackedScene" uid="uid://b8rsnb2si7rd5" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_end_close_case.tscn" id="79_vf1qt"]
 [ext_resource type="PackedScene" uid="uid://bu8p4b14u8ryj" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on_cupboardOpen.tscn" id="80_i3uta"]
 [ext_resource type="PackedScene" uid="uid://dm02bqect42ay" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on_safeOpen.tscn" id="81_hl454"]
 [ext_resource type="PackedScene" uid="uid://wfqpu727a88p" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on_woodpieceOpen.tscn" id="82_vf1qt"]
@@ -184,11 +191,11 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
 [sub_resource type="Resource" id="Resource_boyg6"]
 script = ExtResource("2_e2o6t")
-case_slug = "fake_news"
+case_slug = "fnf"
 case_title = "Fake News Fiasko"
 case_topic = "Fake News"
-case_location_scenes = Array[PackedScene]([ExtResource("18_xa8c5"), ExtResource("19_5b14r"), ExtResource("20_bnpwn"), ExtResource("21_36jdj"), ExtResource("22_xfvwf"), ExtResource("23_dhpj7"), ExtResource("24_7knny"), ExtResource("25_082n1"), ExtResource("26_xex6t"), ExtResource("27_aa0lp"), ExtResource("28_5b14r"), ExtResource("29_xfvwf"), ExtResource("30_dhpj7"), ExtResource("31_7knny"), ExtResource("32_dhpj7"), ExtResource("34_sueei")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_082n1"), SubResource("Resource_aa0lp"), SubResource("Resource_4v2jo"), SubResource("Resource_r62pu"), SubResource("Resource_eu6ph"), SubResource("Resource_epi3u")])
+case_location_scenes = Array[PackedScene]([ExtResource("7_i3uta"), ExtResource("18_xa8c5"), ExtResource("19_5b14r"), ExtResource("20_bnpwn"), ExtResource("21_36jdj"), ExtResource("22_xfvwf"), ExtResource("23_dhpj7"), ExtResource("24_7knny"), ExtResource("25_082n1"), ExtResource("26_xex6t"), ExtResource("27_aa0lp"), ExtResource("28_5b14r"), ExtResource("29_xfvwf"), ExtResource("30_dhpj7"), ExtResource("31_7knny"), ExtResource("32_dhpj7"), ExtResource("34_sueei"), ExtResource("24_hl454"), ExtResource("25_vf1qt")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_082n1"), SubResource("Resource_aa0lp"), SubResource("Resource_4v2jo"), SubResource("Resource_r62pu"), SubResource("Resource_eu6ph"), SubResource("Resource_epi3u"), ExtResource("27_j4tta"), ExtResource("28_ell1s"), ExtResource("29_hsv4y")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_8jd3k"]
@@ -246,13 +253,13 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 [sub_resource type="Resource" id="Resource_hsv4y"]
 script = ExtResource("18_rvswv")
 mode = 0
-required_items = Array[String](["to_endscreen"])
+required_items = Array[String](["to_PostTest"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_lrvy0"]
 script = ExtResource("14_215e1")
-event_name = "to_endscreen"
-location_name = "Endscreen"
+event_name = "to_PostTest"
+location_name = "PostTest"
 start_condition = SubResource("Resource_hsv4y")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
@@ -261,8 +268,8 @@ script = ExtResource("2_e2o6t")
 case_slug = "bitr"
 case_title = "Die Binärfalle"
 case_topic = "Binärcodierung"
-case_location_scenes = Array[PackedScene]([ExtResource("68_o46vb"), ExtResource("69_vqo61"), ExtResource("70_pwsyv"), ExtResource("71_lon8v"), ExtResource("72_r3ggl"), ExtResource("73_sueei"), ExtResource("74_qhxlk"), ExtResource("75_qw2kp"), ExtResource("76_ftkif"), ExtResource("77_71bxy"), ExtResource("78_8jd3k"), ExtResource("79_tssr6"), ExtResource("80_i3uta"), ExtResource("81_hl454"), ExtResource("82_vf1qt"), ExtResource("83_j4tta"), ExtResource("84_ell1s"), ExtResource("85_hsv4y"), ExtResource("86_lrvy0"), ExtResource("87_lea4x"), ExtResource("88_vqo61")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_71bxy"), SubResource("Resource_tssr6"), SubResource("Resource_hl454"), SubResource("Resource_ell1s"), SubResource("Resource_lrvy0")])
+case_location_scenes = Array[PackedScene]([ExtResource("7_i3uta"), ExtResource("68_o46vb"), ExtResource("69_vqo61"), ExtResource("70_pwsyv"), ExtResource("71_lon8v"), ExtResource("72_r3ggl"), ExtResource("73_sueei"), ExtResource("74_qhxlk"), ExtResource("75_qw2kp"), ExtResource("76_ftkif"), ExtResource("77_71bxy"), ExtResource("78_8jd3k"), ExtResource("79_tssr6"), ExtResource("80_i3uta"), ExtResource("81_hl454"), ExtResource("82_vf1qt"), ExtResource("83_j4tta"), ExtResource("84_ell1s"), ExtResource("85_hsv4y"), ExtResource("86_lrvy0"), ExtResource("87_lea4x"), ExtResource("88_vqo61"), ExtResource("24_hl454"), ExtResource("25_vf1qt")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_71bxy"), SubResource("Resource_tssr6"), SubResource("Resource_hl454"), SubResource("Resource_ell1s"), SubResource("Resource_lrvy0"), ExtResource("27_j4tta"), ExtResource("28_ell1s"), ExtResource("29_hsv4y")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_ib7ph"]
@@ -306,11 +313,11 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
 [sub_resource type="Resource" id="Resource_bqa6y"]
 script = ExtResource("2_e2o6t")
-case_slug = "Pixel"
+case_slug = "pixel"
 case_title = "Das verschwundene Gemälde"
 case_topic = "Pixelgrafiken"
-case_location_scenes = Array[PackedScene]([ExtResource("43_87ddb"), ExtResource("44_mljfx"), ExtResource("45_qpefm"), ExtResource("46_tb2lt"), ExtResource("47_cfc7e"), ExtResource("48_gh0px"), ExtResource("49_v33yl"), ExtResource("68_vyqle")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_vuohh"), SubResource("Resource_mc3al"), SubResource("Resource_y7j3j")])
+case_location_scenes = Array[PackedScene]([ExtResource("7_i3uta"), ExtResource("43_87ddb"), ExtResource("44_mljfx"), ExtResource("45_qpefm"), ExtResource("46_tb2lt"), ExtResource("47_cfc7e"), ExtResource("48_gh0px"), ExtResource("49_v33yl"), ExtResource("68_vyqle"), ExtResource("25_vf1qt"), ExtResource("24_hl454")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_vuohh"), SubResource("Resource_mc3al"), SubResource("Resource_y7j3j"), ExtResource("28_ell1s"), ExtResource("27_j4tta"), ExtResource("59_hl454")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_7x3ck"]
@@ -404,13 +411,26 @@ location_name = "Endscreen"
 start_condition = SubResource("Resource_lea4x")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
+[sub_resource type="Resource" id="Resource_wys8s"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["start_posttest"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_qw5ky"]
+script = ExtResource("14_215e1")
+event_name = "start Post_test"
+location_name = "PostTest"
+start_condition = SubResource("Resource_wys8s")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
 [sub_resource type="Resource" id="Resource_2tki7"]
 script = ExtResource("2_e2o6t")
-case_slug = "Logik_Gatter"
+case_slug = "log"
 case_title = "Ein ganz normaler Tag"
 case_topic = "Logik Gatter"
-case_location_scenes = Array[PackedScene]([ExtResource("43_avmo2"), ExtResource("44_vyqle"), ExtResource("45_xoeau"), ExtResource("46_6qn5j"), ExtResource("47_wj41c"), ExtResource("48_baljx"), ExtResource("49_t2ssd"), ExtResource("50_7noa1"), ExtResource("51_3xib3"), ExtResource("52_5628o"), ExtResource("53_fuuk6"), ExtResource("54_cwgap"), ExtResource("55_svdf4"), ExtResource("56_lh772"), ExtResource("57_66xay"), ExtResource("58_0s2o4"), ExtResource("59_4mai8"), ExtResource("60_w37fy"), ExtResource("61_lon8v")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_vvpk2"), SubResource("Resource_vqo61"), SubResource("Resource_lon8v"), SubResource("Resource_sueei"), SubResource("Resource_qw2kp"), SubResource("Resource_ftkif"), SubResource("Resource_oykgp")])
+case_location_scenes = Array[PackedScene]([ExtResource("7_i3uta"), ExtResource("43_avmo2"), ExtResource("44_vyqle"), ExtResource("45_xoeau"), ExtResource("46_6qn5j"), ExtResource("47_wj41c"), ExtResource("48_baljx"), ExtResource("49_t2ssd"), ExtResource("50_7noa1"), ExtResource("51_3xib3"), ExtResource("52_5628o"), ExtResource("53_fuuk6"), ExtResource("54_cwgap"), ExtResource("55_svdf4"), ExtResource("56_lh772"), ExtResource("57_66xay"), ExtResource("58_0s2o4"), ExtResource("59_4mai8"), ExtResource("60_w37fy"), ExtResource("61_lon8v"), ExtResource("44_vyqle"), ExtResource("79_vf1qt"), ExtResource("24_hl454"), ExtResource("25_vf1qt")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_vvpk2"), SubResource("Resource_vqo61"), SubResource("Resource_lon8v"), SubResource("Resource_sueei"), SubResource("Resource_qw2kp"), SubResource("Resource_ftkif"), SubResource("Resource_oykgp"), ExtResource("27_j4tta"), SubResource("Resource_qw5ky"), ExtResource("28_ell1s"), ExtResource("29_hsv4y")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_mljfx"]
@@ -465,13 +485,26 @@ location_name = "Endscreen"
 start_condition = SubResource("Resource_nliq0")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
+[sub_resource type="Resource" id="Resource_qqhb5"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["switch minigame 1"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_s2n2m"]
+script = ExtResource("14_215e1")
+event_name = "switch Minigame 1"
+location_name = "Minigame1"
+start_condition = SubResource("Resource_qqhb5")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
 [sub_resource type="Resource" id="Resource_feb5d"]
 script = ExtResource("2_e2o6t")
-case_slug = "intro_case"
+case_slug = "intro"
 case_title = "Süßes Verbrechen"
 case_topic = "Informationen und Daten"
-case_location_scenes = Array[PackedScene]([ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p"), ExtResource("10_hve3p"), ExtResource("11_lc2xo"), ExtResource("12_215e1"), ExtResource("17_r3ggl")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_215e1"), SubResource("Resource_7sc4i"), SubResource("Resource_80cx4"), SubResource("Resource_5ru8x")])
+case_location_scenes = Array[PackedScene]([ExtResource("7_i3uta"), ExtResource("3_7jktm"), ExtResource("9_vef74"), ExtResource("4_ryrav"), ExtResource("5_eow3j"), ExtResource("6_j5wjh"), ExtResource("7_vef74"), ExtResource("8_hve3p"), ExtResource("10_hve3p"), ExtResource("11_lc2xo"), ExtResource("12_215e1"), ExtResource("17_r3ggl"), ExtResource("24_hl454"), ExtResource("25_vf1qt")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_215e1"), SubResource("Resource_7sc4i"), SubResource("Resource_80cx4"), SubResource("Resource_5ru8x"), ExtResource("27_j4tta"), ExtResource("28_ell1s"), ExtResource("59_hl454"), SubResource("Resource_s2n2m")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_kq12w"]
@@ -554,11 +587,11 @@ metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
 [sub_resource type="Resource" id="Resource_edr7y"]
 script = ExtResource("2_e2o6t")
-case_slug = "Caesar"
+case_slug = "caesr"
 case_title = "Nachricht aus der Asche"
 case_topic = "Caesar Verschlüsselung"
-case_location_scenes = Array[PackedScene]([ExtResource("38_l1i01"), ExtResource("35_4v2jo"), ExtResource("36_l1i01"), ExtResource("37_r62pu"), ExtResource("39_r62pu"), ExtResource("34_iu0sx"), ExtResource("41_klri6"), ExtResource("40_r62pu"), ExtResource("42_eu6ph"), ExtResource("43_edr7y"), ExtResource("45_qhxlk")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_t46w6"), SubResource("Resource_87ddb"), SubResource("Resource_lwlx3"), SubResource("Resource_tb2lt"), SubResource("Resource_gh0px"), SubResource("Resource_n2sb7")])
+case_location_scenes = Array[PackedScene]([ExtResource("7_i3uta"), ExtResource("38_l1i01"), ExtResource("35_4v2jo"), ExtResource("36_l1i01"), ExtResource("37_r62pu"), ExtResource("39_r62pu"), ExtResource("34_iu0sx"), ExtResource("41_klri6"), ExtResource("40_r62pu"), ExtResource("42_eu6ph"), ExtResource("43_edr7y"), ExtResource("45_qhxlk"), ExtResource("25_vf1qt"), ExtResource("24_hl454")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_t46w6"), SubResource("Resource_87ddb"), SubResource("Resource_lwlx3"), SubResource("Resource_tb2lt"), SubResource("Resource_gh0px"), SubResource("Resource_n2sb7"), ExtResource("27_j4tta"), ExtResource("28_ell1s"), ExtResource("59_hl454")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [node name="Game" type="Node"]

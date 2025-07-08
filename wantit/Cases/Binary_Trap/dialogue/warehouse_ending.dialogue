@@ -3,5 +3,5 @@ Puh…
 Endlich wieder frische Luft. Mein Kopf schwirrt noch von den ganzen Nullen und Einsen…
 Irgendwie kommt es mir so vor als wäre das alles hier geplant gewesen. Aber wer könnte dahinterstecken?
 Ich sollte erstmal zurück ins Büro und Klaas von diesem Abenteuer erzählen.
-do interaction_happened("to_endscreen")
+do interaction_happened("to_PostTest")
 => END
