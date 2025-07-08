@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=5 format=3 uid="uid://b5en7box1g31y"]
+
+[ext_resource type="Resource" uid="uid://isadfljnyeh7" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="1_tuxvk"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="2_rmdud"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="3_sdren"]
+
+[sub_resource type="Resource" id="Resource_gjqpm"]
+script = ExtResource("2_rmdud")
+start_marker = "Search_szene_2_technic_room"
+required_items = Array[String]([])
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[resource]
+script = ExtResource("3_sdren")
+dialogue_resource = ExtResource("1_tuxvk")
+is_dialogue = false
+dialogue_triggers = Array[ExtResource("2_rmdud")]([SubResource("Resource_gjqpm")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"

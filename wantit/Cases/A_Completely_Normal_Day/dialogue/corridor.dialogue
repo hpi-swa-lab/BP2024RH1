@@ -1,0 +1,19 @@
+~ Light_is_back
+Klaas: Zum Glück hast du das Licht wieder an bekommen.
+Klaas: Ich war auf den anderen Etagen und bei den nachbar Gebäuden.
+Klaas: Anscheinend betrifft das Problem nur unser Polizeirevier.
+Klaas: Das Licht funktioniert wieder, offensichtlich. Wir sollten die anderen elektronischen Geräte überprüfen.
+=> END
+
+~ WLAN_broken
+Klaas: Die Router haben also Strom, aber die Computer keine WLAN-Verbindung. Mmh?
+…
+Klaas: Ich hole kurz ein paar Geräte, mit denen wir die Router und Computer besser analysieren können.
+…
+Klaas: Lass uns den ersten Computer zusammen untersuchen.
+Klaas: Aha, es scheint sich jemand in unser System gehackt zu haben.
+Klaas: Lass uns die anderen Computer und Router untersuchen, vielleicht finden wir die Quelle von dem Angriff.
+#suchszene 2
+=> END
+
+

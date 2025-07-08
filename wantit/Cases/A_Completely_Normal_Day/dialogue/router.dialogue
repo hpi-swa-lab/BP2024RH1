@@ -1,0 +1,17 @@
+~ Search_szene_0
+Dieser Router scheint keinen Strom zu haben.
+=> END
+
+~ Search_szene_1
+Der Router scheint Strom zu haben.
+Klaas: Dann sollten wir gucken, ob das Signal bei den Computern an kommt.
+=> END
+
+~ Search_szene_2_secound_office
+Dieser Router hat nur Probleme mit der Lan-Verbindung.
+=> END
+
+~ Search_szene_2_technic_room
+Mit diesem Router ist alles in Ordnung.
+=> END
+

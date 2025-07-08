@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 
 var LabelText: Dictionary = {}
 var Buttons: Dictionary = {}
@@ -74,13 +74,13 @@ func check_Answers():
 		%FinishButton.show()
 	else:
 		%ExplanationLabel.text = "Klicke auf die Fehlermeldung, um mehr zu erfahren!"
-		initialize_messages()	
+		initialize_messages()
+		add_attempt(Answers.size()-errors.size(), errors.size())
 
 func has_no_errors() -> bool:
 	for error in errors:
 		if error:
 			return false
-	
 	return true
 		
 func add_button(LevelNum: int, ButtonText: String, ButtonTex: CompressedTexture2D, Answer: String) -> void:
@@ -182,4 +182,4 @@ func _on_finish_button_pressed() -> void:
 	var interaction_item = Item.new()
 	interaction_item.item_name = "Minigame2 completed"
 	interaction_item.is_collectable = false
-	item_found.emit(interaction_item)
+	item_found.emit(interaction_item, self)

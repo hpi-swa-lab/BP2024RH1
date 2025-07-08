@@ -1,9 +1,9 @@
-extends Location
+extends Minigame
 
 var selected_statement: Control
-var statement_count: int = 6
 var correct_selection: bool = true
 var statements: Array
+var checking: bool = false
 
 var categorized_statements = {}
 var wrong_categorized_statement = []
@@ -49,18 +49,23 @@ func _on_exageration_pressed() -> void:
 	add_statement_to_array(3)
 
 func add_statement_to_array(category_value: int):
-	check_statement_count()
 	if selected_statement != null:
 		categorized_statements[selected_statement] = category_value
 		selected_statement.hide()
 		selected_statement = null
-		statement_count -= 1
+	check_statement_count()
 
 func check_solution() -> bool:
+	var correct_selections = 0
 	for statement in statements:
 		if categorized_statements[statement] != statement.category:
 			correct_selection = false
 			wrong_categorized_statement.append(statement)
+			categorized_statements.erase(statement)
+		else:
+			correct_selections += 1
+	if not correct_selection:
+		add_attempt(correct_selections, categorized_statements.size()-correct_selections)
 	return correct_selection
 
 func retry_level():
@@ -68,30 +73,26 @@ func retry_level():
 	%Generalization.show()
 	%Exageration.show()
 	%True.text = "Wahr"
-	statement_count = 0
 	correct_selection = true
 	selected_statement = null
 	for statement in wrong_categorized_statement:
 		statement.show()
-		statement_count += 1
 	wrong_categorized_statement = []
+	checking = false
 
 func check_statement_count():
-	if statement_count == 1:
-		%Wrong_conclusion.hide()
-		%Generalization.hide()
-		%Exageration.hide()
-		%True.text = "Überprüfen"
-	elif statement_count == 0:
+	if checking:
 		if check_solution():
 			DialogueManager.show_dialogue_balloon_scene(
 			location_dialogue.baloon_type,
 			location_dialogue.dialogue_resource,
 			"minigame_completed")
-			await DialogueManager.dialogue_ended
-			
-			var interaction_item = Item.new()
-			interaction_item.item_name = "Minigame2 completed"
-			item_found.emit(interaction_item)
 		else:
 			retry_level()
+	
+	if statements.size() == (categorized_statements.size()):
+		%Wrong_conclusion.hide()
+		%Generalization.hide()
+		%Exageration.hide()
+		%True.text = "Überprüfen"
+		checking = true

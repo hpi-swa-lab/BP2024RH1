@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 
 var selected_post: Control
 var selected_scrollable_post: post
@@ -75,6 +75,14 @@ func set_level():
 		%Option1.text = "Relevant"
 		%Option2.text = "Irrelevant"
 	elif level == 1:
+		DialogueManager.show_dialogue_balloon_scene(
+			location_dialogue.baloon_type,
+			location_dialogue.dialogue_resource,
+			"minigame_first_part_completed")
+		await DialogueManager.dialogue_ended
+		var interaction_item = Item.new()
+		interaction_item.item_name = "minigame first part completed"
+		item_found.emit(interaction_item)
 		%Option1.text = "Glaubwürdig"
 		%Option2.text = "Unglaubwürdig"
 		for element in %VBoxContainer.get_children():
@@ -103,6 +111,7 @@ func _on_option_2_pressed() -> void:
 
 func check_elements(var_name: String) -> bool:
 	var answers_correct = true
+	var correct_selections = 0
 	for element in %VBoxContainer.get_children():
 		if element.get(var_name) and element not in relevant_posts:
 			wrong_posts.append(element)
@@ -110,4 +119,8 @@ func check_elements(var_name: String) -> bool:
 		elif not element.get(var_name) and element in relevant_posts:
 			wrong_posts.append(element)
 			answers_correct = false
+		else:
+			correct_selections += 1
+	if not answers_correct:
+		add_attempt(correct_selections, wrong_posts.size())
 	return answers_correct

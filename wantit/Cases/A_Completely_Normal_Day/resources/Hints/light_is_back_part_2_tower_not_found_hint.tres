@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Hint" load_steps=4 format=3 uid="uid://j05pdcong6u4"]
+
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="1_bi1yi"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_xwl33"]
+
+[sub_resource type="Resource" id="Resource_quj21"]
+script = ExtResource("1_bi1yi")
+mode = 0
+required_items = Array[String](["computer_2_light_is_back_part_2", "computer_1_light_is_back_part_2", "computer_3_light_is_back_part_2", "computer_4_light_is_back_part_2", "computer_5_light_is_back_part_2", "router_secound_officelight_is_back_part_2"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[resource]
+script = ExtResource("2_xwl33")
+hint_text = "Hast du schon die Rechner (Quaderförmig und schwarz) untersucht?"
+hint_condition = SubResource("Resource_quj21")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"

@@ -32,7 +32,10 @@ func update_hint_text() -> void:
 
 func get_available_hints(player_items: Array) -> Array[String]:
 	var results: Array[String] = []
+	var hint_num = 0
 	for hint in hints:
 		if hint.is_valid(player_items):
 			results.append(hint.hint_text)
+			Analytics.add_hint_analytics(get_parent().name + str(hint_num))
+			hint_num += 1
 	return results

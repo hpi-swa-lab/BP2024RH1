@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm23u6l4roygm"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_4cg6y"]
+[ext_resource type="Texture2D" uid="uid://kjeyrrdms4sv" path="res://Assets/map/map.png" id="2_e0oux"]
+[ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="3_nhgp5"]
+[ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="4_crbkv"]
+[ext_resource type="Texture2D" uid="uid://diyckryrdtb47" path="res://Assets/map/house_map.png" id="5_4cg6y"]
+
+[node name="Map" type="Node"]
+script = ExtResource("1_4cg6y")
+location_name = "Map"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Map" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(587, 321)
+scale = Vector2(0.305738, 0.322603)
+texture = ExtResource("2_e0oux")
+
+[node name="BackButton" parent="." instance=ExtResource("3_nhgp5")]
+offset_left = 1068.0
+offset_top = 21.0
+offset_right = 1580.0
+offset_bottom = 533.0
+scale = Vector2(0.1, 0.1)
+requested_location_name = "Office"
+
+[node name="ToBackery" type="TextureButton" parent="."]
+offset_left = 54.0
+offset_top = -481.0
+offset_right = 3894.0
+offset_bottom = 1679.0
+scale = Vector2(0.292662, 0.292662)
+texture_normal = ExtResource("5_4cg6y")
+script = ExtResource("4_crbkv")
+requested_location_name = "CrimeScene"
+metadata/_custom_type_script = "uid://d00ce8jbtutbc"
+
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]

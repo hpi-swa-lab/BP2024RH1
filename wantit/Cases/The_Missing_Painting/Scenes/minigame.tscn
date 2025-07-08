@@ -1,0 +1,163 @@
+[gd_scene load_steps=17 format=3 uid="uid://b7hhus8oa5gnt"]
+
+[ext_resource type="Script" uid="uid://cuut68600lh08" path="res://Cases/The_Missing_Painting/Scripts/minigame.gd" id="1_vxk47"]
+[ext_resource type="Texture2D" uid="uid://jh714mdkpuvl" path="res://Cases/The_Missing_Painting/Assets/Minigame/setup.png" id="2_ip1kq"]
+[ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_mfb4k"]
+[ext_resource type="Texture2D" uid="uid://cdk4uvnmivlai" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/background_qrcode_piece.png" id="3_vxk47"]
+[ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_yb0so"]
+[ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_4mfwh"]
+[ext_resource type="Texture2D" uid="uid://b21m2ftfr64k8" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/qr_code_with_cut.png" id="5_4mfwh"]
+[ext_resource type="Texture2D" uid="uid://cuknu6jm2imq6" path="res://Cases/The_Missing_Painting/Assets/Minigame/website_galery.png" id="6_2fkol"]
+[ext_resource type="FontFile" uid="uid://c84fslbk0xuue" path="res://Cases/The_Missing_Painting/Assets/Minigame/IBMPlexMono-SemiBold.ttf" id="8_qv3qu"]
+[ext_resource type="FontFile" uid="uid://d1titn22brq6y" path="res://Assets/bold.ttf" id="10_xx2t6"]
+
+[sub_resource type="Resource" id="Resource_qv3qu"]
+script = ExtResource("3_yb0so")
+mode = 0
+required_items = Array[String](["got_items"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_yb0so"]
+script = ExtResource("2_mfb4k")
+hint_text = "0 bedeutet aus, also erscehint das Pixel schwarz. \\n 1 bedeutet an, also erscheint das Pixel weiß. "
+hint_condition = SubResource("Resource_qv3qu")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Resource" id="Resource_xx2t6"]
+script = ExtResource("3_yb0so")
+mode = 2
+required_items = Array[String](["got_items"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_dcyaa"]
+script = ExtResource("2_mfb4k")
+hint_text = "Die gesammelten Hinweise liegen noch im Inventar. "
+hint_condition = SubResource("Resource_xx2t6")
+metadata/_custom_type_script = "uid://c5qtuytooefmh"
+
+[sub_resource type="Theme" id="Theme_xx2t6"]
+default_base_scale = 0.5
+default_font = ExtResource("8_qv3qu")
+default_font_size = 131
+
+[sub_resource type="Theme" id="Theme_dcyaa"]
+default_font = ExtResource("10_xx2t6")
+default_font_size = 53
+
+[node name="Minigame" type="Node" node_paths=PackedStringArray("items")]
+script = ExtResource("1_vxk47")
+location_name = "Minigame"
+items = [NodePath("GamePaper")]
+hints = Array[ExtResource("2_mfb4k")]([SubResource("Resource_yb0so"), SubResource("Resource_dcyaa")])
+has_inventory = true
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.2126, 16.5342)
+color = Color(0.52549, 0.745098, 1, 0.635294)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 323.0
+offset_top = 23.0
+offset_right = 393.0
+offset_bottom = 62.0
+scale = Vector2(11.598, 13.2913)
+color = Color(0.821789, 0.821789, 0.821789, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.300084, 0.300084)
+texture = ExtResource("2_ip1kq")
+
+[node name="GamePaper" type="TextureButton" parent="."]
+visible = false
+modulate = Color(0.907942, 0.907942, 0.907942, 1)
+offset_left = -33.0
+offset_top = 65.0
+offset_right = 991.0
+offset_bottom = 1089.0
+scale = Vector2(0.384653, 0.428032)
+texture_normal = ExtResource("3_vxk47")
+script = ExtResource("4_4mfwh")
+item_name = "Paper"
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="SolutionGrid" type="GridContainer" parent="GamePaper"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 270.0
+offset_top = 202.982
+offset_right = 720.0
+offset_bottom = 652.982
+
+[node name="GameArt" type="TextureButton" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -295.0
+offset_right = 1236.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.510013, 0.510013)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_4mfwh")
+script = ExtResource("4_4mfwh")
+metadata/_custom_type_script = "uid://cwfk6xbelioo8"
+
+[node name="Label" type="Label" parent="GameArt"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 196.511
+offset_top = 631.55
+offset_right = 1846.51
+offset_bottom = 803.55
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_xx2t6")
+text = "QR-Code unvollständig"
+
+[node name="LeftGrid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 390.0
+offset_top = 37.0
+offset_right = 840.0
+offset_bottom = 487.0
+
+[node name="RightGrid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 742.0
+offset_top = 50.0
+offset_right = 1092.0
+offset_bottom = 400.0
+
+[node name="Display" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(604, 272)
+scale = Vector2(0.255006, 0.246528)
+texture = ExtResource("6_2fkol")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 626.0
+offset_top = 453.0
+offset_right = 775.0
+offset_bottom = 496.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_dcyaa")
+
+[connection signal="visibility_changed" from="GamePaper" to="." method="_on_paper_visibility_changed"]
+[connection signal="visibility_changed" from="GameArt" to="." method="_on_game_art_visibility_changed"]
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]

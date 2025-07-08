@@ -1,11 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://dsaho1fwwino3"]
+[gd_scene load_steps=24 format=3 uid="uid://dsaho1fwwino3"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_12w5n"]
 [ext_resource type="Texture2D" uid="uid://bsmthr6tenpuw" path="res://Cases/Introduction_Case/assets/backgrounds/bakery_office.png" id="1_vt4a7"]
 [ext_resource type="Resource" uid="uid://b0n3b6jwuou8d" path="res://dialogue/backery_office.dialogue" id="2_guxia"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_xnrjk"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="2_y86e6"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="3_12w5n"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_4361v"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_ggvds"]
 [ext_resource type="Texture2D" uid="uid://c7hwvidnp7hi4" path="res://Cases/Introduction_Case/assets/interactable_items/safe.png" id="3_jkgmc"]
@@ -18,7 +17,7 @@
 [sub_resource type="Resource" id="Resource_jm4om"]
 script = ExtResource("3_4361v")
 mode = 2
-required_items = Array[String](["ShoeprintOffice"])
+required_items = Array[String](["ShoeprintsOffice"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_88f4i"]
@@ -29,8 +28,8 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
 [sub_resource type="Resource" id="Resource_b5wox"]
 script = ExtResource("3_4361v")
-mode = 0
-required_items = Array[String](["ShoeprintsOffice"])
+mode = 2
+required_items = Array[String](["Pliers", "Screwdriver", "Fingerprints"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_kiky4"]
@@ -55,6 +54,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 script = ExtResource("3_ggvds")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_4361v"]
@@ -69,6 +69,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("3_ggvds")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = true
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_xnrjk"]
@@ -93,8 +94,6 @@ offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.299882, 0.299882)
 texture = ExtResource("1_vt4a7")
-
-[node name="Helpsystem" parent="." instance=ExtResource("3_12w5n")]
 
 [node name="Safe" parent="." instance=ExtResource("2_y86e6")]
 scale = Vector2(0.300293, 0.300293)

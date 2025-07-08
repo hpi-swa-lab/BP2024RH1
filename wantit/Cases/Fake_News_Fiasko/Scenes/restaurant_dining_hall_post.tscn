@@ -1,11 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://b63bftslmjany"]
+[gd_scene load_steps=25 format=3 uid="uid://b63bftslmjany"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_q2nd0"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_awnt1"]
 [ext_resource type="Texture2D" uid="uid://cn7vefst6ylnp" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_diningHall.png" id="2_ypx6j"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_2ot87"]
 [ext_resource type="PackedScene" uid="uid://1voxlq8dhiqa" path="res://Scenes/location_switch_button.tscn" id="3_7jjxw"]
-[ext_resource type="Resource" uid="uid://1drlvxv8h0f" path="res://Cases/Fake_News_Fiasko/dialogue/bitza_after_the_incident.dialogue" id="3_36tf7"]
+[ext_resource type="Resource" uid="uid://badnodq6hfr8w" path="res://Cases/Fake_News_Fiasko/dialogue/bitza_after_the_incident.dialogue" id="3_36tf7"]
 [ext_resource type="Texture2D" uid="uid://cwy0eoxlbb6q1" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_door.png" id="4_36tf7"]
 [ext_resource type="Texture2D" uid="uid://bls8b146qm6wj" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_corridor.png" id="5_u0ljl"]
 [ext_resource type="Texture2D" uid="uid://bbo48asfsrktd" path="res://Cases/Fake_News_Fiasko/Assets/scene_switcher_items/restaurant_diningHall_kitchenDoor.png" id="6_awnt1"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="9_ypx6j"]
 [ext_resource type="Resource" uid="uid://c56qadgnnokp0" path="res://Cases/Fake_News_Fiasko/dialogue/empty_glass.dialogue" id="10_7jjxw"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="11_36tf7"]
-[ext_resource type="PackedScene" uid="uid://dcpaey4nm176x" path="res://Cases/Introduction_Case/Scenes/helpsystem.tscn" id="16_2ot87"]
 
 [sub_resource type="Resource" id="Resource_1v8y4"]
 script = ExtResource("3_2ot87")
@@ -122,5 +121,3 @@ script = ExtResource("8_wabrf")
 item_name = "Glass"
 item_dialogue = SubResource("Resource_u0ljl")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
-
-[node name="Helpsystem" parent="." instance=ExtResource("16_2ot87")]

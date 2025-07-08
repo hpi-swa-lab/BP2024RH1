@@ -17,14 +17,14 @@ func activate():
 
 func start_dialogue():
 	var dialogue_trigger = get_dialogue_start()
-	if dialogue_trigger and not dialogue_trigger.is_started:
-		#await DialogueManager.show_dialogue_balloon_scene(
+	if dialogue_trigger and (not dialogue_trigger.is_started or dialogue_trigger.is_repeatable):
 		DialogueManager.show_dialogue_balloon_scene(
 			dialogue.baloon_type,
 			dialogue.dialogue_resource,
 			dialogue_trigger.start_marker
 		)
-		dialogue_trigger.is_started = true
+		if not dialogue_trigger.is_repeatable:
+			dialogue_trigger.is_started = true
 
 func get_dialogue_start():
 	if not dialogue or not inventory_provider:
@@ -49,3 +49,4 @@ func restore_dialogues(data: Array) -> void:
 func reset_played_dialogues() -> void:
 	for trigger in dialogue.dialogue_triggers:
 		trigger.is_started = false
+		#trigger.was_played = false

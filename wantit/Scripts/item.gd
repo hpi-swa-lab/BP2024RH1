@@ -3,10 +3,10 @@ class_name Item
 
 @export var item_name: String
 @export var is_collectable: bool
-var is_found: bool
 @export var action_script: Script
 @export var item_dialogue: Dialogue
 var dialogue_player: DialoguePlayer
+var is_found: bool = false
 
 signal item_found(item: Item)
 
@@ -24,14 +24,11 @@ func add_dialogue_player(_dialogue: Dialogue, _inventory_provider: Resource, _da
 		dialogue_player = DialoguePlayer.new(_dialogue, _inventory_provider, _data)
 
 func _pressed():
-	#print("%s clicked" %[item_name])
-	#if is_found:
-		#return
 	if dialogue_player:
 		dialogue_player.start_dialogue()
 		await DialogueManager.dialogue_ended
 	mark_found()
 	item_found.emit(self)
 
-func mark_found():
+func mark_found() -> void:
 	is_found = true
