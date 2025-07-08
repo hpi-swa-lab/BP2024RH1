@@ -58,9 +58,10 @@ dialogue_triggers = Array[ExtResource("9_0v0oc")]([SubResource("Resource_knnwi")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="Cupboard CloseUp" type="Node"]
+[node name="Cupboard CloseUp" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_7vkgt")
 location_name = "Cupboard CloseUp SafeClosed"
+items = [NodePath("Vase"), NodePath("Notches")]
 has_inventory = true
 location_dialogue = SubResource("Resource_nkx06")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"

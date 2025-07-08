@@ -11,8 +11,8 @@
 
 [sub_resource type="Resource" id="Resource_2t47c"]
 script = ExtResource("3_y0dvj")
-start_marker = "door_key_found"
-required_items = Array[String]([])
+start_marker = "default"
+required_items = Array[String](["Key"])
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_7mhcv"]

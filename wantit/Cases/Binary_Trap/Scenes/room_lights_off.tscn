@@ -40,9 +40,10 @@ dialogue_triggers = Array[ExtResource("3_gods1")]([SubResource("Resource_k3q03")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="Room LightsOff" type="Node"]
+[node name="Room LightsOff" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_7yrck")
 location_name = "Room LightsOff"
+items = [NodePath("Door")]
 location_dialogue = SubResource("Resource_chfhj")
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 

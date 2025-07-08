@@ -24,9 +24,10 @@ dialogue_triggers = Array[ExtResource("3_gtr7k")]([SubResource("Resource_gtr7k")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="Minigame1" type="Node"]
+[node name="Minigame1" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_uomor")
 location_name = "Minigame 1"
+items = [NodePath("switch")]
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Background" type="TextureRect" parent="."]

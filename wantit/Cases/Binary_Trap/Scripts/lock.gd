@@ -46,13 +46,14 @@ func build_lock() -> void:
 		current_input.append(slot.get_value())
 		h_box_container.add_child(slot)
 	
-func _on_slot_changed(index: int) -> void:
+func _on_slot_changed(index: int) -> void:	
 	current_input[index] = h_box_container.get_child(index).get_value()
 	check_code()
 	
 func check_code() -> void:
 	var input: String = array_to_string(current_input)
 	if input == correct_code:
+		disable()
 		succeeded.emit()
 
 func array_to_string(array: Array) -> String:
@@ -85,4 +86,7 @@ func clear() -> void:
 func set_font_color(color: Color) -> void:
 	for slot in slots:
 		slot.set_font_color(color)
-	
+
+func disable() -> void:
+	for slot in slots:
+		slot.disable()

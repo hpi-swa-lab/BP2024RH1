@@ -4,7 +4,8 @@ extends Control
 
 @export var values: Array
 @export var start_index: int = 0 #Use 0 as default index
-
+@onready var button_up: TextureButton = $"VBoxContainer/Button Up"
+@onready var button_down: TextureButton = $"VBoxContainer/Button Down"
 
 var current_index: int = 0:
 	set(value):
@@ -37,3 +38,7 @@ func get_value() -> String:
 	
 func set_font_color(color: Color) -> void:
 	label.add_theme_color_override("font_color", color)
+	
+func disable() -> void:
+	button_up.disabled = true
+	button_down.disabled = true
