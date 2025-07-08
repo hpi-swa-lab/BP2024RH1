@@ -20,6 +20,7 @@
 script = ExtResource("12_uhwug")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_8nhb1"]
@@ -34,6 +35,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("12_uhwug")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_mqxp5"]

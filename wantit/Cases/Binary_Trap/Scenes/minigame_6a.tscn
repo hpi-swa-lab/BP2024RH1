@@ -40,7 +40,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 [sub_resource type="Resource" id="Resource_67d8y"]
 script = ExtResource("3_aau3x")
 mode = 0
-required_items = Array[String]([])
+required_items = Array[String](["Notches"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_gmouq"]
@@ -52,7 +52,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 [sub_resource type="Resource" id="Resource_jwxnl"]
 script = ExtResource("3_aau3x")
 mode = 0
-required_items = Array[String]([])
+required_items = Array[String](["Notches"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_ahq56"]
@@ -65,12 +65,14 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 script = ExtResource("3_hifs2")
 start_marker = "notches_not_inspected"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_nw1wm"]
 script = ExtResource("3_hifs2")
 start_marker = "notches_inspected"
 required_items = Array[String](["Notches"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_jd1g3"]
@@ -85,6 +87,7 @@ metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 script = ExtResource("3_hifs2")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_n7x2q"]
@@ -95,10 +98,11 @@ dialogue_triggers = Array[ExtResource("3_hifs2")]([SubResource("Resource_t6tpd")
 start_automatically = true
 metadata/_custom_type_script = "uid://dqrq03qgm1a07"
 
-[node name="Minigame 6a" type="Node"]
+[node name="Minigame 6a" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_fhpi3")
 item_name = "Minigame6a completed"
 location_name = "Minigame 6a"
+items = [NodePath("Notches")]
 hints = Array[ExtResource("2_jd1g3")]([SubResource("Resource_aau3x"), SubResource("Resource_qhxm1"), SubResource("Resource_gmouq"), SubResource("Resource_ahq56")])
 has_inventory = true
 location_dialogue = SubResource("Resource_jd1g3")

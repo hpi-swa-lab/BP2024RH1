@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=143 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -67,6 +67,26 @@
 [ext_resource type="PackedScene" uid="uid://bjqw4udnawvm8" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_1.tscn" id="58_0s2o4"]
 [ext_resource type="PackedScene" uid="uid://c2bi0h58ogcem" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/minigame_2.tscn" id="59_4mai8"]
 [ext_resource type="PackedScene" uid="uid://dldwkuqwfxyqu" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_minigame.tscn" id="60_w37fy"]
+[ext_resource type="PackedScene" uid="uid://cp2jpkt8stu8k" path="res://Cases/Binary_Trap/Scenes/office.tscn" id="68_o46vb"]
+[ext_resource type="PackedScene" uid="uid://bj3fuuql3owoj" path="res://Cases/Binary_Trap/Scenes/map.tscn" id="69_vqo61"]
+[ext_resource type="PackedScene" uid="uid://cpl55rtgw33ae" path="res://Cases/Binary_Trap/Scenes/warehouse_pre.tscn" id="70_pwsyv"]
+[ext_resource type="PackedScene" uid="uid://b1t841ugd4yhg" path="res://Cases/Binary_Trap/Scenes/room_lights_off.tscn" id="71_lon8v"]
+[ext_resource type="PackedScene" uid="uid://bxkpxeer0f5qj" path="res://Cases/Binary_Trap/Scenes/minigame1.tscn" id="72_r3ggl"]
+[ext_resource type="PackedScene" uid="uid://hqfrgdphxdrl" path="res://Cases/Binary_Trap/Scenes/minigame_2.tscn" id="73_sueei"]
+[ext_resource type="PackedScene" uid="uid://bb018sy8d7u2l" path="res://Cases/Binary_Trap/Scenes/minigame_3.tscn" id="74_qhxlk"]
+[ext_resource type="PackedScene" uid="uid://q1ccreh7wbh" path="res://Cases/Binary_Trap/Scenes/minigame_4.tscn" id="75_qw2kp"]
+[ext_resource type="PackedScene" uid="uid://cp1lynaxx63sq" path="res://Cases/Binary_Trap/Scenes/minigame_5.tscn" id="76_ftkif"]
+[ext_resource type="PackedScene" uid="uid://c3u6qnv0gbg8f" path="res://Cases/Binary_Trap/Scenes/minigame_6a.tscn" id="77_71bxy"]
+[ext_resource type="PackedScene" uid="uid://dec4b603485ch" path="res://Cases/Binary_Trap/Scenes/minigame_6b.tscn" id="78_8jd3k"]
+[ext_resource type="PackedScene" uid="uid://q3586nx75har" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on.tscn" id="79_tssr6"]
+[ext_resource type="PackedScene" uid="uid://bu8p4b14u8ryj" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on_cupboardOpen.tscn" id="80_i3uta"]
+[ext_resource type="PackedScene" uid="uid://dm02bqect42ay" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on_safeOpen.tscn" id="81_hl454"]
+[ext_resource type="PackedScene" uid="uid://wfqpu727a88p" path="res://Cases/Binary_Trap/Scenes/Room_LightsOn/room_lights_on_woodpieceOpen.tscn" id="82_vf1qt"]
+[ext_resource type="PackedScene" uid="uid://c26cvjsswppqd" path="res://Cases/Binary_Trap/Scenes/Cupboard_CloseUp/cupboard_close_up.tscn" id="83_j4tta"]
+[ext_resource type="PackedScene" uid="uid://yi7fykv7f8u" path="res://Cases/Binary_Trap/Scenes/Cupboard_CloseUp/cupboard_close_up_safeClosed.tscn" id="84_ell1s"]
+[ext_resource type="PackedScene" uid="uid://wft6yuejp0ko" path="res://Cases/Binary_Trap/Scenes/Cupboard_CloseUp/cupboard_close_up_safeOpen.tscn" id="85_hsv4y"]
+[ext_resource type="PackedScene" uid="uid://5fy4txcsa28u" path="res://Cases/Binary_Trap/Scenes/door_close_up.tscn" id="86_lrvy0"]
+[ext_resource type="PackedScene" uid="uid://brbnsck4344wg" path="res://Cases/Binary_Trap/Scenes/warehouse_post.tscn" id="87_lea4x"]
 
 [sub_resource type="Resource" id="Resource_e8heu"]
 script = ExtResource("2_e2o6t")
@@ -395,7 +415,55 @@ case_location_scenes = Array[PackedScene]([ExtResource("43_87ddb"), ExtResource(
 events = Array[ExtResource("14_215e1")]([SubResource("Resource_vuohh"), SubResource("Resource_mc3al")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
+[sub_resource type="Resource" id="Resource_8jd3k"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame5 completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_71bxy"]
+script = ExtResource("14_215e1")
+event_name = "Minigame 5 comlpeted"
+location_name = "Cupboard CloseUp"
+start_condition = SubResource("Resource_8jd3k")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_i3uta"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame6a completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_tssr6"]
+script = ExtResource("14_215e1")
+event_name = "Minigame 6a completed"
+location_name = "Cupboard CloseUp SafeClosed"
+start_condition = SubResource("Resource_i3uta")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_vf1qt"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["Minigame6b completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_hl454"]
+script = ExtResource("14_215e1")
+event_name = "Minigame 6b completed"
+location_name = "Cupboard CloseUp SafeOpen"
+start_condition = SubResource("Resource_vf1qt")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
+[sub_resource type="Resource" id="Resource_vyqle"]
+script = ExtResource("2_e2o6t")
+case_slug = "bitr"
+case_title = "Die Binärfalle"
+case_topic = "Binärcodierung"
+case_location_scenes = Array[PackedScene]([ExtResource("68_o46vb"), ExtResource("69_vqo61"), ExtResource("70_pwsyv"), ExtResource("71_lon8v"), ExtResource("72_r3ggl"), ExtResource("73_sueei"), ExtResource("74_qhxlk"), ExtResource("75_qw2kp"), ExtResource("76_ftkif"), ExtResource("77_71bxy"), ExtResource("78_8jd3k"), ExtResource("79_tssr6"), ExtResource("80_i3uta"), ExtResource("81_hl454"), ExtResource("82_vf1qt"), ExtResource("83_j4tta"), ExtResource("84_ell1s"), ExtResource("85_hsv4y"), ExtResource("86_lrvy0"), ExtResource("87_lea4x")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_71bxy"), SubResource("Resource_tssr6"), SubResource("Resource_hl454")])
+metadata/_custom_type_script = "uid://ni774rbce31d"
+
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
-cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_boyg6"), SubResource("Resource_edr7y"), SubResource("Resource_2tki7"), SubResource("Resource_bqa6y")])
+cases = Array[ExtResource("2_e2o6t")]([SubResource("Resource_e8heu"), SubResource("Resource_feb5d"), SubResource("Resource_boyg6"), SubResource("Resource_edr7y"), SubResource("Resource_2tki7"), SubResource("Resource_bqa6y"), SubResource("Resource_vyqle")])
 metadata/_custom_type_script = "uid://b7tv34cog0tcn"

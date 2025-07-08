@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 [sub_resource type="Resource" id="Resource_y8up7"]
 script = ExtResource("3_di2oc")
 mode = 0
-required_items = Array[String](["Postcard"])
+required_items = Array[String](["Vase"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_ixhx8"]
@@ -37,7 +37,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 [sub_resource type="Resource" id="Resource_6e2qb"]
 script = ExtResource("3_di2oc")
 mode = 0
-required_items = Array[String]([])
+required_items = Array[String](["Vase"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_hxkt8"]
@@ -50,12 +50,14 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 script = ExtResource("3_jntv1")
 start_marker = "vase_not_found"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_jntv1"]
 script = ExtResource("3_jntv1")
 start_marker = "vase_found"
 required_items = Array[String](["Vase"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_xyu0m"]

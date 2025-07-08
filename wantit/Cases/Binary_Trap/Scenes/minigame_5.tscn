@@ -37,7 +37,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 [sub_resource type="Resource" id="Resource_t5thu"]
 script = ExtResource("3_dqjbi")
 mode = 0
-required_items = Array[String]([])
+required_items = Array[String](["Postcard"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_wsdh0"]
@@ -49,7 +49,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 [sub_resource type="Resource" id="Resource_2fsox"]
 script = ExtResource("3_dqjbi")
 mode = 0
-required_items = Array[String]([])
+required_items = Array[String](["Postcard"])
 metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_pk2am"]
@@ -62,12 +62,14 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 script = ExtResource("3_if3mk")
 start_marker = "postcard_not_found"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_gp885"]
 script = ExtResource("3_if3mk")
 start_marker = "postcard_found"
 required_items = Array[String](["Postcard"])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_md1kb"]
