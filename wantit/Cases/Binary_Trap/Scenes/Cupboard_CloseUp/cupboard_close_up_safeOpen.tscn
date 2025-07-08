@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://wft6yuejp0ko"]
+[gd_scene load_steps=21 format=3 uid="uid://wft6yuejp0ko"]
 
 [ext_resource type="Script" uid="uid://y3om711kkl1y" path="res://Cases/Binary_Trap/Scripts/cupboard_close_up.gd" id="1_eb05o"]
 [ext_resource type="Texture2D" uid="uid://bhirv71dfw8pu" path="res://Cases/Binary_Trap/Assets/Backgrounds/cupboard_closeUp.png" id="2_la6dx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://cjxnc2qjk42xm" path="res://Cases/Binary_Trap/dialogue/vase.dialogue" id="7_bubw7"]
 [ext_resource type="Script" uid="uid://bixgx7yeqi1tl" path="res://Cases/Binary_Trap/Scripts/vase_postcard_action.gd" id="7_uhwug"]
 [ext_resource type="Texture2D" uid="uid://3ticuixw37q7" path="res://Cases/Binary_Trap/Assets/Backgrounds/safe_open.png" id="9_qxod4"]
+[ext_resource type="Texture2D" uid="uid://bhvewnusytuu2" path="res://Cases/Binary_Trap/Assets/Backgrounds/vase_closeUp.png" id="11_8nhb1"]
 [ext_resource type="Resource" uid="uid://cnhflk1vhvs4" path="res://Cases/Binary_Trap/dialogue/key.dialogue" id="11_bubw7"]
 [ext_resource type="Texture2D" uid="uid://cj1f3wq6fyg7h" path="res://Cases/Binary_Trap/Assets/Backgrounds/woodpiece_open.png" id="11_cfupa"]
 [ext_resource type="Texture2D" uid="uid://fm14sx53dfdv" path="res://Cases/Binary_Trap/Assets/Collectible_Items/key.png" id="12_55m5s"]
@@ -77,6 +78,7 @@ item_name = "Vase"
 is_collectable = true
 action_script = ExtResource("7_uhwug")
 item_dialogue = SubResource("Resource_8nhb1")
+closeup_texture = ExtResource("11_8nhb1")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
 [node name="Safe (open)" type="TextureRect" parent="."]
