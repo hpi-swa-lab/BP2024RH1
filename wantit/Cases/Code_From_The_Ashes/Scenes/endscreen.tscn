@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhbuqjcsgowht"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_srsc4"]
+[ext_resource type="PackedScene" uid="uid://cmfk48xxv0ha4" path="res://Scenes/endscreen.tscn" id="2_1g8dk"]
+[ext_resource type="Texture2D" uid="uid://b0fd70ty7ubp2" path="res://Cases/The_Missing_Painting/Assets/Screenshot (91).png" id="3_5mwpb"]
+[ext_resource type="Texture2D" uid="uid://852p0fh6urpe" path="res://Cases/The_Missing_Painting/Assets/Screenshot (92).png" id="4_3up6i"]
+
+[node name="IntroEndscreen" type="Node"]
+script = ExtResource("1_srsc4")
+location_name = "Endscreen"
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="Endscreen" parent="." instance=ExtResource("2_1g8dk")]
+Subject = "Pixelgrafiken"
+FirstGamePicture = ExtResource("3_5mwpb")
+SecondGamePicture = ExtResource("4_3up6i")
