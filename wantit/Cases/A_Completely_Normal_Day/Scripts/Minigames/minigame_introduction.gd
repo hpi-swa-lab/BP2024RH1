@@ -19,6 +19,7 @@ var explanation: Array[Label]
 @onready var good_job: TextureRect = $Good_job
 
 func _ready() -> void:
+	super._ready()
 	GlobalTimer.add_log_entry("entered scene: minigame_introduction")
 	explanation = [
 		explanation_start,
@@ -93,7 +94,6 @@ func _on_logik_gatter_level_introduction_ziel_input_true() -> void:
 	ziel_input = true
 
 func _on_start_minigame_1_pressed() -> void:
-	#GlobalTimer.end_timer("Logik Gatter Mini Games")
 	var interaction_item_log_tutorial_complete = Item.new()
 	interaction_item_log_tutorial_complete.item_name = "log_tutorial_complete"
 	item_found.emit(interaction_item_log_tutorial_complete)
