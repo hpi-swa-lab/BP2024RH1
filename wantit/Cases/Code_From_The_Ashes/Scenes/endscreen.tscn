@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_srsc4"]
 [ext_resource type="PackedScene" uid="uid://cmfk48xxv0ha4" path="res://Scenes/endscreen.tscn" id="2_1g8dk"]
-[ext_resource type="Texture2D" uid="uid://b0fd70ty7ubp2" path="res://Cases/The_Missing_Painting/Assets/Screenshot (91).png" id="3_5mwpb"]
-[ext_resource type="Texture2D" uid="uid://852p0fh6urpe" path="res://Cases/The_Missing_Painting/Assets/Screenshot (92).png" id="4_3up6i"]
+[ext_resource type="Texture2D" uid="uid://cxdjsxyxprdci" path="res://Cases/Code_From_The_Ashes/Assets/caesar1.png" id="3_mlqbq"]
+[ext_resource type="Texture2D" uid="uid://dwhb1kug32huq" path="res://Cases/Code_From_The_Ashes/Assets/caesar2.png" id="4_ovpwy"]
 
 [node name="IntroEndscreen" type="Node"]
 script = ExtResource("1_srsc4")
@@ -11,6 +11,6 @@ location_name = "Endscreen"
 metadata/_custom_type_script = "uid://cmjrdjr725xxf"
 
 [node name="Endscreen" parent="." instance=ExtResource("2_1g8dk")]
-Subject = "Pixelgrafiken"
-FirstGamePicture = ExtResource("3_5mwpb")
-SecondGamePicture = ExtResource("4_3up6i")
+Subject = "Cäsar-Verschlüsselung"
+FirstGamePicture = ExtResource("3_mlqbq")
+SecondGamePicture = ExtResource("4_ovpwy")
