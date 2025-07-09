@@ -75,7 +75,6 @@ func check_Answers():
 	else:
 		%ExplanationLabel.text = "Klicke auf die Fehlermeldung, um mehr zu erfahren!"
 		initialize_messages()
-		add_attempt(Answers.size()-errors.size(), errors.size())
 
 func has_no_errors() -> bool:
 	for error in errors:

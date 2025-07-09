@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 
 @export var item_name: String
 @onready var lock: Control = $Lock

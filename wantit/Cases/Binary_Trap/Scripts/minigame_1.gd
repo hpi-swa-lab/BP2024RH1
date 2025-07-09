@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 
 @onready var on_or_off_label: Label = $"on_or_off label"
 @onready var digit_label: Label = $"digit label"

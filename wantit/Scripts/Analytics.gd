@@ -9,7 +9,6 @@ var session_data = {
 		"case": "",
 		"date": get_datetime(),
 		"total_duration_seconds": 0,
-		"minigames": [],
 		"dialogs": [],
 		"hints": [],
 		"scene_times": [],
@@ -70,7 +69,6 @@ func clear_session_data():
 		"case": "",
 		"date": get_datetime(),
 		"total_duration_seconds": 0,
-		"minigames": [],
 		"dialogs": [],
 		"hints": [],
 		"scene_times": [],
@@ -108,15 +106,6 @@ func add_scene_analytics(location_name: String, location_type: String, location_
 	}
 	session_data["scene_times"].append(scene_data)
 	print("adding scene analytics", session_data, "\n")
-
-func add_minigame_analytics(minigame_name: String, duration: int, attempts: Array):
-	var minigame_data = {
-		"name": minigame_name,
-		"total_duration_seconds": duration,
-		"attempts": attempts
-	}
-	session_data["minigames"].append(minigame_data)
-	print("adding minigame analytics", session_data, "\n")
 
 func add_knowledge_test_analytics(phase: String, answers: Array, duration: Array[int]):
 	var knowledge_data = {

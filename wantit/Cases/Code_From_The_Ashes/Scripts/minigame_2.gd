@@ -61,11 +61,6 @@ func _on_button_pressed() -> void:
 		start_dialogue("correct_solution")
 	else:
 		var correct_solutions: int = 0
-		for i in new_text.length():
-			if new_text[i] == original_text[i]:
-				correct_solutions += 1
-		add_attempt(correct_solutions, original_text.length()-correct_solutions)
-		new_text = ""
 		start_dialogue("wrong_solution")
 
 func reset():

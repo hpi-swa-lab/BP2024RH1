@@ -121,6 +121,4 @@ func check_elements(var_name: String) -> bool:
 			answers_correct = false
 		else:
 			correct_selections += 1
-	if not answers_correct:
-		add_attempt(correct_selections, wrong_posts.size())
 	return answers_correct

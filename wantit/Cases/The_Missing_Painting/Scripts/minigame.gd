@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 var columns = 8
 var solution = "10100010" + "00000001" + "11100011" + "10100110" + "11100011" + "00000010" + "00100001" + "11001100"
 var correct_solution

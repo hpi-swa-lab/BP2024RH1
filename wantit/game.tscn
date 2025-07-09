@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=3 uid="uid://dyj7yo7t4iqhf"]
+[gd_scene load_steps=177 format=3 uid="uid://dyj7yo7t4iqhf"]
 
 [ext_resource type="Script" uid="uid://b7tv34cog0tcn" path="res://Scripts/game.gd" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ni774rbce31d" path="res://Scripts/case.gd" id="2_e2o6t"]
@@ -424,13 +424,26 @@ location_name = "PostTest"
 start_condition = SubResource("Resource_wys8s")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"
 
+[sub_resource type="Resource" id="Resource_vbt48"]
+script = ExtResource("18_rvswv")
+mode = 0
+required_items = Array[String](["PreTest completed"])
+metadata/_custom_type_script = "uid://bfe303xauflwy"
+
+[sub_resource type="Resource" id="Resource_mcyeq"]
+script = ExtResource("14_215e1")
+event_name = "on_pretest_completed"
+location_name = "office_begin"
+start_condition = SubResource("Resource_vbt48")
+metadata/_custom_type_script = "uid://duxdni5nv4je5"
+
 [sub_resource type="Resource" id="Resource_2tki7"]
 script = ExtResource("2_e2o6t")
 case_slug = "log"
 case_title = "Ein ganz normaler Tag"
 case_topic = "Logik Gatter"
 case_location_scenes = Array[PackedScene]([ExtResource("7_i3uta"), ExtResource("43_avmo2"), ExtResource("44_vyqle"), ExtResource("45_xoeau"), ExtResource("46_6qn5j"), ExtResource("47_wj41c"), ExtResource("48_baljx"), ExtResource("49_t2ssd"), ExtResource("50_7noa1"), ExtResource("51_3xib3"), ExtResource("52_5628o"), ExtResource("53_fuuk6"), ExtResource("54_cwgap"), ExtResource("55_svdf4"), ExtResource("56_lh772"), ExtResource("57_66xay"), ExtResource("58_0s2o4"), ExtResource("59_4mai8"), ExtResource("60_w37fy"), ExtResource("61_lon8v"), ExtResource("44_vyqle"), ExtResource("79_vf1qt"), ExtResource("24_hl454"), ExtResource("25_vf1qt")])
-events = Array[ExtResource("14_215e1")]([SubResource("Resource_vvpk2"), SubResource("Resource_vqo61"), SubResource("Resource_lon8v"), SubResource("Resource_sueei"), SubResource("Resource_qw2kp"), SubResource("Resource_ftkif"), SubResource("Resource_oykgp"), ExtResource("27_j4tta"), SubResource("Resource_qw5ky"), ExtResource("28_ell1s"), ExtResource("29_hsv4y")])
+events = Array[ExtResource("14_215e1")]([SubResource("Resource_vvpk2"), SubResource("Resource_vqo61"), SubResource("Resource_lon8v"), SubResource("Resource_sueei"), SubResource("Resource_qw2kp"), SubResource("Resource_ftkif"), SubResource("Resource_oykgp"), SubResource("Resource_qw5ky"), ExtResource("28_ell1s"), ExtResource("29_hsv4y"), SubResource("Resource_mcyeq")])
 metadata/_custom_type_script = "uid://ni774rbce31d"
 
 [sub_resource type="Resource" id="Resource_mljfx"]
