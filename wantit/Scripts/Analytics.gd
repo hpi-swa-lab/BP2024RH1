@@ -99,13 +99,13 @@ func add_hint_analytics(hint_name: String):
 	session_data["hints"].append(hint_data)
 
 func add_scene_analytics(location_name: String, location_type: String, location_time: int):
-	var scene_data = {
-		"scene_id": location_name,
-		"scene_type": location_type,
-		"total_duration_seconds": location_time
-	}
-	session_data["scene_times"].append(scene_data)
-	print("adding scene analytics", session_data, "\n")
+	if location_time != 0:
+		var scene_data = {
+			"scene_id": location_name,
+			"scene_type": location_type,
+			"total_duration_seconds": location_time
+		}
+		session_data["scene_times"].append(scene_data)
 
 func add_knowledge_test_analytics(phase: String, answers: Array, duration: Array[int]):
 	var knowledge_data = {

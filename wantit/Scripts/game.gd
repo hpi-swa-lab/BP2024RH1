@@ -94,6 +94,9 @@ func save_current_progress(_item: Item) -> void:
 
 func switch_location(location: Location):
 	if current_location:
+		GlobalTimer.end_timer(current_location.location_name)
+		current_location.export_location_analytics()
+		print("exporting scene analytics", current_location.location_name, GlobalTimer.get_time(current_location.location_name))
 		current_location.get_parent().remove_child(current_location)
 	var case = get_active_case()
 		
@@ -103,16 +106,8 @@ func switch_location(location: Location):
 		location.dialogue_player.start_dialogue()
 	
 	current_location = location
-	current_location.location_switch_requested.connect(func(target_name, _source_name):
-		var index = case.case_locations.find_custom(func (_location):
-			return _location.location_name == target_name)
-	#current_location.location_switch_requested.connect(func(name):
-		#var index = case.case_locations.find_custom( func (_location):
-			#return _location.location_name == name)
-		assert(index >= 0)
-		var _location = case.case_locations[index]
-		switch_location(_location))
 	add_child(current_location)
+	GlobalTimer.start_timer(current_location.location_name)
 	save_current_progress(null)
 
 func _on_location_switch_requested(location_name):

@@ -62,9 +62,6 @@ func _on_item_found(item: Item) -> void:
 
 func _on_location_switch_requested(requested_location_name: String):
 	location_switch_requested.emit(requested_location_name, self.location_name)
-	#location_switch_requested.emit(requested_location_name)
-	GlobalTimer.end_timer(location_name)
-	export_location_analytics()
 
 func update_items_visibility():
 	for item in items:

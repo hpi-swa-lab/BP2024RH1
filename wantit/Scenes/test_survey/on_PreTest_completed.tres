@@ -12,6 +12,6 @@ metadata/_custom_type_script = "uid://bfe303xauflwy"
 [resource]
 script = ExtResource("1_c8fer")
 event_name = "on PreTest completed"
-location_name = "office_begin"
+location_name = "Office"
 start_condition = SubResource("Resource_k5js2")
 metadata/_custom_type_script = "uid://duxdni5nv4je5"

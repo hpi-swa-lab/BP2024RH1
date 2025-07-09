@@ -93,6 +93,7 @@ func start_event(location_name: String):
 func _on_location_switch_requested(_target_location_name: String, _source_location_name: String):
 	location_switch_requested.emit(_target_location_name)
 	from_location = _source_location_name
+	print("requesting switch in case")
 
 func get_location_by_name(location_name: String):
 	for location in case_locations:

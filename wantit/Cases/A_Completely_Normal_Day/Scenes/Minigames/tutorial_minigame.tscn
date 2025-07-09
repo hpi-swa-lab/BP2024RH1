@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://14eprveqxfeg" path="res://Cases/A_Completely_Normal_Day/Scripts/Minigames/minigame_introduction.gd" id="1_cxipq"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_dx632"]
-[ext_resource type="Texture2D" uid="uid://mlwoagb6be07" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/orange1.png" id="2_few14"]
+[ext_resource type="Texture2D" uid="uid://duv5sktetwl6u" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/assets_geklaut/orange1.png" id="2_few14"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_dx632"]
 [ext_resource type="PackedScene" uid="uid://c7p06tvojqkq0" path="res://Cases/A_Completely_Normal_Day/Scenes/Minigames/tutorial_level.tscn" id="3_h0igv"]
-[ext_resource type="Texture2D" uid="uid://q70frbhidy47" path="res://Cases/A_Completely_Normal_Day/Assets/pointing_arrow.png" id="4_vsda3"]
+[ext_resource type="Texture2D" uid="uid://drefwxmg32ofw" path="res://Cases/A_Completely_Normal_Day/Assets/pointing_arrow.png" id="4_vsda3"]
 
 [sub_resource type="Resource" id="Resource_iu7pw"]
 script = ExtResource("3_dx632")
