@@ -4,6 +4,7 @@ var original_text = "BEI SR ZU -I"
 var solution_text = "GIB ES ZU -B"
 var text_fields: Array
 var new_text: String = ""
+var correct_encrypted_alphabet = "picasobdefghjklmnqrtuvwxyz"
 
 func _ready() -> void:
 	super._ready()
@@ -54,7 +55,8 @@ func apply_solution() -> bool:
 	
 	%ColorRect.size = %DecryptedMessage.size
 	
-	return new_text == solution_text
+	#return new_text == solution_text
+	return encrypted_alphabet.to_lower() == correct_encrypted_alphabet
 
 func _on_button_pressed() -> void:
 	if await apply_solution():

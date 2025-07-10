@@ -76,7 +76,7 @@ func try_start_event() -> void:
 func check_matching_event():
 	var player_items = get_player_items()
 	for trigger in events:
-		if trigger.is_valid(player_items):
+		if trigger.is_valid(player_items) and trigger.has_started == false:
 			trigger.has_started = true
 			return trigger.location_name
 	return null
