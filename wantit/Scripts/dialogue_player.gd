@@ -24,6 +24,9 @@ func start_dialogue():
 			dialogue_trigger.start_marker
 		)
 		if not dialogue_trigger.is_repeatable:
+			#print("Dialogue starts")
+			await DialogueManager.dialogue_ended
+			#print("Dialogue finished")
 			dialogue_trigger.is_started = true
 
 func get_dialogue_start():
