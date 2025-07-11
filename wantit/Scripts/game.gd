@@ -102,8 +102,8 @@ func switch_location(location: Location):
 		
 	if location.has_inventory:
 		location.set_inventory(case.inventory)
-	if location.dialogue_player:
-		location.dialogue_player.start_dialogue()
+	#if location.dialogue_player:
+		#location.dialogue_player.start_dialogue()
 	
 	current_location = location
 	add_child(current_location)
