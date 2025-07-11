@@ -102,9 +102,9 @@ func switch_location(location: Location):
 		
 	if location.has_inventory:
 		location.set_inventory(case.inventory)
-	#if location.dialogue_player:
+	if location.dialogue_player:
 		#location.dialogue_player.start_dialogue()
-	
+		location.dialogue_player.activate()	
 	current_location = location
 	add_child(current_location)
 	GlobalTimer.start_timer(current_location.location_name)
@@ -136,6 +136,7 @@ func load_game_data():
 	saved_case_data["inventory_items_names"] = saved_game_data.get("inventory_items", [])
 	saved_case_data["interactions_history"] = saved_game_data.get("interactions", [])
 	saved_case_data["played_dialogues"] = saved_game_data.get("location_dialogues", {})
+	saved_case_data["used_hints"] = saved_game_data.get("used hints", {})
 
 #enables adding interaction from dialogue
 func interaction_happened(interaction_name: String) -> void:
@@ -178,12 +179,20 @@ func get_played_location_dialogues() -> Dictionary:
 			played_dialogues[location.location_name] = location.dialogue_player.get_played_dialogues()
 	return played_dialogues
 
+func get_used_hints():
+	var used_hints := {}
+	var active_case = get_case_by_slug(active_case_slug)
+	for location in active_case.case_locations:
+		used_hints[location.location_name] = location.helpsystem.get_played_hints()
+	return used_hints
+
 func get_save_data() -> Dictionary:
-	var save_data = {}
+	var save_data := {}
 	save_data["active_case_slug"] = active_case_slug
 	save_data["current_location_name"] = current_location.location_name
 	save_data["inventory_items"] = get_case_inventory()
 	save_data["interactions"] = get_case_interactions()
 	save_data["location_dialogues"] = get_played_location_dialogues()
 	save_data["completed_cases"] = completed_cases
+	save_data["used hints"] = get_used_hints()
 	return save_data

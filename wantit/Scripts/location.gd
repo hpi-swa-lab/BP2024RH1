@@ -10,14 +10,15 @@ var case: Case
 var inventory: Inventory
 var dialogue_player: DialoguePlayer
 var helpsystem: Helpsystem
+var saved_location_data
 
 signal item_found(item: Item, location: Location)
 signal location_switch_requested(target_location_name: String, source_location_name: String)
 
 func _ready():
 	set_item_dialogues()
-	if dialogue_player:
-		dialogue_player.activate()
+	#if dialogue_player:
+		#dialogue_player.activate()
 	
 	if not hints.is_empty():
 		var scene = load("res://Cases/Introduction_Case/Scenes/helpsystem.tscn")
@@ -26,7 +27,7 @@ func _ready():
 		helpsystem = get_node_or_null("Helpsystem")
 		if helpsystem:
 			helpsystem.inventory_provider = case
-			helpsystem.set_hints(hints)
+			helpsystem.set_hints(hints, saved_location_data)
 		else:
 			push_warning("Helpsystem node not found in Location: %s" % location_name)
 	
