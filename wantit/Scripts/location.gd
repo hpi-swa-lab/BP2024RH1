@@ -10,23 +10,36 @@ var case: Case
 var inventory: Inventory
 var dialogue_player: DialoguePlayer
 var helpsystem: Helpsystem
+var save_data: Dictionary = {}
+var helpsystem_scene: PackedScene = load("res://Cases/Introduction_Case/Scenes/helpsystem.tscn")
 
 signal item_found(item: Item, location: Location)
 signal location_switch_requested(target_location_name: String, source_location_name: String)
 
+func initialize(_save_data: Dictionary, _case: Case):
+	self.save_data = _save_data
+	self.case = _case
+	
+	if location_dialogue:
+		var played_dialogues = load_played_dialogues(_save_data)
+		setup_dialogue_player(location_dialogue, case, played_dialogues) 
+
 func _ready():
 	set_item_dialogues()
-	if dialogue_player:
-		dialogue_player.activate()
+	#if dialogue_player:
+		#dialogue_player.activate()
 	
-	if not hints.is_empty():
-		var scene = load("res://Cases/Introduction_Case/Scenes/helpsystem.tscn")
-		helpsystem = scene.instantiate()
+	#if not hints.is_empty():
+	if hints:
+		#var scene = load("res://Cases/Introduction_Case/Scenes/helpsystem.tscn")
+		helpsystem = helpsystem_scene.instantiate()
 		await add_child(helpsystem)
 		helpsystem = get_node_or_null("Helpsystem")
 		if helpsystem:
 			helpsystem.inventory_provider = case
 			helpsystem.set_hints(hints)
+			var used_hints = load_used_hints(save_data)
+			helpsystem.set_used_hints(used_hints)
 		else:
 			push_warning("Helpsystem node not found in Location: %s" % location_name)
 	
@@ -88,3 +101,16 @@ func set_item_dialogues() -> void:
 
 func export_location_analytics():
 	Analytics.add_scene_analytics(location_name, "Location", GlobalTimer.get_time(location_name))
+
+
+func serialize() -> Dictionary:	
+	return {
+		"hints_used": helpsystem.get_used_hints() if helpsystem else [],
+		"dialogues_played": dialogue_player.get_played_dialogues() if dialogue_player else []
+	}
+
+func load_used_hints(data: Dictionary) -> Array:
+	return data.get("hints_used", [])
+	
+func load_played_dialogues(data: Dictionary) -> Array:
+	return data.get("dialogues_played", [])
