@@ -58,3 +58,7 @@ func set_used_hints(data: Array) -> void:
 
 func disable_helpsystem():
 	get_parent().remove_child(self)
+
+func reset_used_hints() -> void:
+	for hint in hints:
+		hint.is_shown = false

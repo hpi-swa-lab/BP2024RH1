@@ -26,12 +26,8 @@ func initialize(_save_data: Dictionary, _case: Case):
 
 func _ready():
 	set_item_dialogues()
-	#if dialogue_player:
-		#dialogue_player.activate()
 	
-	#if not hints.is_empty():
 	if hints:
-		#var scene = load("res://Cases/Introduction_Case/Scenes/helpsystem.tscn")
 		helpsystem = helpsystem_scene.instantiate()
 		await add_child(helpsystem)
 		helpsystem = get_node_or_null("Helpsystem")
@@ -78,7 +74,7 @@ func _on_location_switch_requested(requested_location_name: String):
 
 func update_items_visibility():
 	for item in items:
-		if case.inventory.has(item):# or case.interactions.has(item):
+		if case.inventory.has(item):
 			item.mark_found()
 			disable_item(item)
 
@@ -114,3 +110,12 @@ func load_used_hints(data: Dictionary) -> Array:
 	
 func load_played_dialogues(data: Dictionary) -> Array:
 	return data.get("dialogues_played", [])
+
+func reset_progress() -> void:
+	if dialogue_player:
+		dialogue_player.reset_played_dialogues()
+	if helpsystem:
+		helpsystem.reset_used_hints()
+	
+	for item in items:
+		item.reset_as_uncollected()

@@ -78,7 +78,7 @@ func mark_case_completed() -> void:
 	var current_case = get_case_by_slug(active_case_slug)
 	current_case.is_completed = true
 	completed_cases.append(current_case.case_slug)
-	current_case.clear_case_data()
+	current_case.reset_case_progress()
 	
 	GlobalTimer.end_timer(current_case.case_slug)
 	Analytics.export_analytics(current_case.case_slug, GlobalTimer.get_time(current_case.case_slug))
@@ -115,8 +115,8 @@ func switch_location(location: Location):
 func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)
 	var location = current_case.get_location_by_name(location_name)
-	print(active_case_slug)
-	print(location_name)
+	#print(active_case_slug)
+	#print(location_name)
 	switch_location(location)
 
 func get_case_inventory() -> Array[String]:

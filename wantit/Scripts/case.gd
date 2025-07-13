@@ -92,7 +92,6 @@ func start_event(location_name: String):
 func _on_location_switch_requested(_target_location_name: String, _source_location_name: String):
 	location_switch_requested.emit(_target_location_name)
 	from_location = _source_location_name
-	print("requesting switch in case")
 
 func get_location_by_name(location_name: String):
 	for location in case_locations:
@@ -127,17 +126,14 @@ func _on_case_overview_opened(location: Location):
 func _on_case_selected(_case_title: String):
 	case_selected.emit(_case_title)
 	
-func clear_case_data() -> void:
+func reset_case_progress() -> void:
 	interactions.clear()
 	inventory.inventory_slots.clear()
 	restored_inventory_items.clear()
 	
 	for location in case_locations:
-		if location.dialogue_player:
-			location.dialogue_player.reset_played_dialogues()
-		for item in location.items:
-			if item.dialogue_player:
-				item.dialogue_player.reset_played_dialogues()
+		location.reset_progress()
+
 	for event in events:
 		event.has_started = false
 	print("Cleared current case data.")

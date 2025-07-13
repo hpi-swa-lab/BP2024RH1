@@ -33,3 +33,9 @@ func _pressed():
 
 func mark_found() -> void:
 	is_found = true
+
+func reset_as_uncollected() -> void:
+	is_found = false
+	
+	if dialogue_player:
+		dialogue_player.reset_played_dialogues()
