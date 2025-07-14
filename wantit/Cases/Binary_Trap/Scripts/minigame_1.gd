@@ -16,11 +16,7 @@ func _ready() -> void:
 	on_or_off_label.text = "Aus"
 	digit_label.text = "0"
 	
-	#background_lightOn_texture = load("res://Cases/Binary_Trap/Assets/Minigame1/minigame1_closeUp_lightOn.png")
-	#background_lightOff_texture = load("res://Cases/Binary_Trap/Assets/Minigame1/minigame1_closeUp_lightOff.png")
-	
-	#requested_location_lightsOn = "Room LightsOn"
-	#requested_location_lightsOff = "Room LightsOff"
+	back_button.hide()
 
 func update_display() -> void:
 	light_on() if switch.button_pressed else light_off()
@@ -33,6 +29,7 @@ func light_on() -> void:
 	
 	background.texture = background_lightOn_texture
 	back_button.requested_location_name = requested_location_lightsOn
+	back_button.show()
 	
 func light_off() -> void:
 	on_or_off_label.text = "Aus"
