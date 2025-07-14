@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_433j7"]
 [ext_resource type="Texture2D" uid="uid://bn70t63m1ncmv" path="res://Cases/Fake_News_Fiasko/Assets/backgrounds/restaurant_staffRoom.png" id="2_b8ubl"]
-[ext_resource type="Texture2D" uid="uid://b6vo3hqc4qn6" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/cereal_bar.png" id="5_f5kq4"]
+[ext_resource type="Texture2D" uid="uid://bcxrqujr7qiv8" path="res://Cases/Fake_News_Fiasko/Assets/interactable_items/cereal_bar.png" id="5_f5kq4"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="6_h4rxl"]
 [ext_resource type="Resource" uid="uid://4lc413o3i3pm" path="res://Cases/Fake_News_Fiasko/dialogue/cereal_bar.dialogue" id="7_x80cb"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="8_m5xvr"]
@@ -14,6 +14,7 @@
 script = ExtResource("8_m5xvr")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_h4rxl"]
@@ -47,7 +48,6 @@ scale = Vector2(0.153755, 0.153755)
 texture_normal = ExtResource("5_f5kq4")
 script = ExtResource("6_h4rxl")
 item_name = "Cereal Bar"
-is_collectable = true
 item_dialogue = SubResource("Resource_h4rxl")
 metadata/_custom_type_script = "uid://cwfk6xbelioo8"
 
