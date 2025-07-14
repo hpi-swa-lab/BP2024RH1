@@ -70,6 +70,7 @@ func handle_item_found(_item: Item, _location: Location = null) -> void:
 func try_start_event() -> void:
 	var available_event = check_matching_event()
 	if available_event:
+		#available_event.set_started()
 		start_event(available_event)
 	
 func check_matching_event():
@@ -142,11 +143,27 @@ func restore_case_data(save_data: Dictionary):
 	if not save_data.is_empty():
 		restored_inventory_items = save_data.get("inventory_items_names", [])
 		interactions = save_data.get("interactions_history", [])
+		
+		var started_events = save_data.get("events", [])
+		restore_started_events(started_events)
+		
+func restore_started_events(save_data: Array) -> void:
+	for event in events:
+		if event.event_name in save_data:
+			event.has_started = true
+
+func get_completed_events() -> Array:
+	var _events = []
+	for event in events:
+		if event.has_started == true:
+			_events.append(event.event_name)
+	return _events
 
 func get_save_data() -> Dictionary:
 	var save_data := {}
 	save_data["inventory_items"] = inventory.get_inventory_items_name()
 	save_data["interactions_history"] = interactions
+	save_data["events"] = get_completed_events()
 	
 	for location in case_locations:
 		save_data[location.location_name] = location.serialize()
