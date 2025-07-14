@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_ly61v"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_8c2n8"]
-[ext_resource type="Texture2D" uid="uid://cxg5pbosxbvcq" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="2_lg37r"]
+[ext_resource type="Texture2D" uid="uid://4jird1ej17tr" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="2_lg37r"]
 [ext_resource type="Resource" uid="uid://dwounsgde851p" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_default_hint.tres" id="3_1up4n"]
 [ext_resource type="Resource" uid="uid://cmual83u7hdm4" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_router_found_hint.tres" id="4_bkae0"]
 [ext_resource type="Resource" uid="uid://b584dehdw07ha" path="res://Cases/A_Completely_Normal_Day/resources/Hints/light_is_back_computer_found_hint.tres" id="5_0800v"]
 [ext_resource type="Resource" uid="uid://bs1c21kgcmqfw" path="res://Cases/A_Completely_Normal_Day/dialogue/resources/computer_Search_szene_1_default.tres" id="5_qydly"]
 [ext_resource type="Script" uid="uid://d00ce8jbtutbc" path="res://Scripts/location_switch_button.gd" id="8_fwrwg"]
 [ext_resource type="Texture2D" uid="uid://d0cclkn0if58l" path="res://Assets/office/computer.png" id="9_o7laa"]
-[ext_resource type="Texture2D" uid="uid://f6f3bng1frf1" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="11_mlcep"]
+[ext_resource type="Texture2D" uid="uid://bcebx4co0l2wc" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="11_mlcep"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="12_x2o2t"]
-[ext_resource type="Texture2D" uid="uid://dm8tc7i2f2evk" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/office_door.png" id="13_iljt4"]
+[ext_resource type="Texture2D" uid="uid://tj7kjjptrqek" path="res://Cases/A_Completely_Normal_Day/Assets/Scene_Switcher/office_door.png" id="13_iljt4"]
 
 [node name="office_light_is_back" type="Node" node_paths=PackedStringArray("items")]
 script = ExtResource("1_ly61v")
@@ -45,7 +45,7 @@ script = ExtResource("8_fwrwg")
 requested_location_name = "corridor_light_is_back"
 metadata/_custom_type_script = "uid://d00ce8jbtutbc"
 
-[node name="computer" type="TextureButton" parent="." groups=["location_switch_buttons"]]
+[node name="computer" type="TextureButton" parent="."]
 unique_name_in_owner = true
 offset_right = 3840.0
 offset_bottom = 2160.0
