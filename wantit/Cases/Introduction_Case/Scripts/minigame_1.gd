@@ -10,6 +10,7 @@ var clueRects = {}
 func _ready() -> void:
 	super._ready()
 	case.inventory.hide()
+	self.START("intro", 5)
 	
 	DialogueManager.show_dialogue_balloon_scene(load("res://dialogue_balloons/monologue/balloon_monologue.tscn"), load("res://dialogue/minigame1.dialogue"), "minigame1_start")
 	for draggable in draggables:
@@ -30,7 +31,10 @@ func check_draggables(draggable: Button):
 			clue.hide()
 
 func _on_button_pressed() -> void:
-	if %ControlPanel.check_minigame_clues():
+	var test = %ControlPanel.check_minigame_clues()
+	self.TRY(test)
+	if test==0:
+		self.END()
 		%Label.text = "Richtig!"
 		%Label.show()
 		%TryAgain.hide()

@@ -8,6 +8,7 @@ var relevant_posts = []
 var wrong_posts = []
 
 func _ready() -> void:
+	self.START("fnf_3.1", 11)
 	for scrollable_post in %VBoxContainer.get_children():
 		scrollable_post.Post_selected.connect(_on_post_selected)
 	set_statements()
@@ -75,6 +76,7 @@ func set_level():
 		%Option1.text = "Relevant"
 		%Option2.text = "Irrelevant"
 	elif level == 1:
+		self.END()
 		DialogueManager.show_dialogue_balloon_scene(
 			location_dialogue.baloon_type,
 			location_dialogue.dialogue_resource,
@@ -91,7 +93,9 @@ func set_level():
 			if element not in relevant_posts:
 				print("removing", element)
 				%VBoxContainer.remove_child(element)
+		self.START("fnf_3.2", 3)
 	else:
+		self.END()
 		var interaction_item = Item.new()
 		interaction_item.item_name = "Minigame3 completed"
 		item_found.emit(interaction_item)
@@ -121,4 +125,5 @@ func check_elements(var_name: String) -> bool:
 			answers_correct = false
 		else:
 			correct_selections += 1
+	self.TRY(wrong_posts.size(), correct_selections)
 	return answers_correct

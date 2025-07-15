@@ -3,26 +3,26 @@
 [ext_resource type="Texture2D" uid="uid://xiw5b3ky4thj" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/newspaper_cutout.png" id="2_2j0md"]
 [ext_resource type="Texture2D" uid="uid://cinsrfgtkmeal" path="res://Assets/clue_board_max.png" id="2_drn2o"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="2_fpywy"]
-[ext_resource type="Texture2D" uid="uid://bdg4mifqc88lo" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_false.png" id="2_n0miw"]
+[ext_resource type="Texture2D" uid="uid://bpc56gbt30dqt" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_false.png" id="2_n0miw"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_t12x8"]
 [ext_resource type="Script" uid="uid://cpb3p8s01tafo" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/statement.gd" id="2_wyel3"]
 [ext_resource type="Resource" uid="uid://bnyww2cbkld6c" path="res://Cases/Fake_News_Fiasko/dialogue/minigame1.dialogue" id="3_a7tbl"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_b0ifq"]
 [ext_resource type="Texture2D" uid="uid://c2cgb6pbu6lde" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_follower3.png" id="3_knt34"]
-[ext_resource type="Texture2D" uid="uid://c7cfab1nr30qi" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_true.png" id="3_ys2pk"]
+[ext_resource type="Texture2D" uid="uid://cpi0x3bfgs3w0" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/stickynote_true.png" id="3_ys2pk"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_f74x3"]
 [ext_resource type="Texture2D" uid="uid://dlqy3u7jxto5t" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_follower2.png" id="4_jhfol"]
 [ext_resource type="Texture2D" uid="uid://cwnbawivho4pl" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_follower1.png" id="5_elp5d"]
 [ext_resource type="Texture2D" uid="uid://de7mun6uvrbrp" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/business_card.png" id="7_1haqu"]
-[ext_resource type="Texture2D" uid="uid://riltqwdr0myk" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_breakIn.png" id="7_5ok2b"]
-[ext_resource type="Texture2D" uid="uid://bu0ipulfrryqh" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="7_egs20"]
+[ext_resource type="Texture2D" uid="uid://cvhgoc62oafcv" path="res://Cases/Fake_News_Fiasko/Assets/minigame1/securityFootage_breakIn.png" id="7_5ok2b"]
+[ext_resource type="Texture2D" uid="uid://ca7fagtg5mgxc" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="7_egs20"]
 [ext_resource type="Script" uid="uid://dl5tu0rs75qlq" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/case_1_minigame_1.gd" id="8_knt34"]
 [ext_resource type="Script" uid="uid://bvoja0113kl2h" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup.gd" id="9_1haqu"]
 [ext_resource type="Script" uid="uid://d3qcc0y6ic0" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_2.gd" id="10_4ckjm"]
 [ext_resource type="Script" uid="uid://8b4w60tgymnp" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_newspaper_cutout.gd" id="11_1haqu"]
 [ext_resource type="Script" uid="uid://bgu7c8nrr4lcb" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_conversation.gd" id="12_4ckjm"]
 [ext_resource type="Script" uid="uid://8el3otcsc60s" path="res://Cases/Fake_News_Fiasko/minigame1/Scripts/popup_business_card.gd" id="13_5ok2b"]
-[ext_resource type="Texture2D" uid="uid://ck7r3v4vosuoy" path="res://Cases/Fake_News_Fiasko/Assets/tape.png" id="13_fpywy"]
+[ext_resource type="Texture2D" uid="uid://c40abwo8e7676" path="res://Cases/Fake_News_Fiasko/Assets/tape.png" id="13_fpywy"]
 
 [sub_resource type="Resource" id="Resource_t12x8"]
 script = ExtResource("3_b0ifq")
@@ -40,6 +40,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 script = ExtResource("2_fpywy")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_xf4ha"]

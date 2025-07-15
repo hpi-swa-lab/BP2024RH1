@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://de08xwxsx122u"]
 
 [ext_resource type="Script" uid="uid://egb6p06xlqm8" path="res://Cases/Fake_News_Fiasko/minigame2/Scripts/case_2_minigame_2.gd" id="1_k8new"]
-[ext_resource type="Script" path="res://Scripts/dialogue_trigger.gd" id="2_1ij1e"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="2_1ij1e"]
 [ext_resource type="Texture2D" uid="uid://b5rpc8qen503n" path="res://Assets/office/clue_board_max.png" id="2_84nej"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_tuieo"]
 [ext_resource type="Resource" uid="uid://lxco063wq1a2" path="res://Cases/Fake_News_Fiasko/dialogue/minigame2.dialogue" id="3_3mcq3"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cmrfxgfrjufyv" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/plate_footage.png" id="8_1ij1e"]
 [ext_resource type="Texture2D" uid="uid://e5k332u53tfr" path="res://Cases/Fake_News_Fiasko/Assets/minigame2/bill_cutout.png" id="9_3mcq3"]
 [ext_resource type="PackedScene" uid="uid://b1ceb32i5th4a" path="res://Cases/Fake_News_Fiasko/minigame2/Scenes/statement_game2.tscn" id="10_wd6p0"]
-[ext_resource type="Texture2D" uid="uid://c08h44cgeoror" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="14_3mcq3"]
+[ext_resource type="Texture2D" uid="uid://ca7fagtg5mgxc" path="res://Cases/Fake_News_Fiasko/Assets/pin.png" id="14_3mcq3"]
 
 [sub_resource type="Resource" id="Resource_prt7d"]
 script = ExtResource("2_tuieo")
@@ -25,6 +25,7 @@ metadata/_custom_type_script = "uid://c5qtuytooefmh"
 script = ExtResource("2_1ij1e")
 start_marker = "default"
 required_items = Array[String]([])
+is_repeatable = false
 metadata/_custom_type_script = "uid://bnkm50q3eocad"
 
 [sub_resource type="Resource" id="Resource_3mcq3"]

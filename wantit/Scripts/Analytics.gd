@@ -5,16 +5,17 @@ const api_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcy
 var hex = "0123456789abcdef"
 
 var session_data = {
-		"session_id": "",
-		"case": "",
-		"date": get_datetime(),
-		"total_duration_seconds": 0,
-		"dialogs": [],
-		"hints": [],
-		"scene_times": [],
-		"knowledge_tests": [],
-		"game_survey": []
-	}
+	"session_id": "",
+	"case": "",
+	"date": get_datetime(),
+	"total_duration_seconds": 0,
+	"minigames": [],
+	"dialogs": [],
+	"hints": [],
+	"scene_times": [],
+	"knowledge_tests": [],
+	"game_survey": []
+}
 
 var header =  [
 	"apikey: " + api_key,
@@ -69,11 +70,12 @@ func clear_session_data():
 		"case": "",
 		"date": get_datetime(),
 		"total_duration_seconds": 0,
+		"minigames": [],
 		"dialogs": [],
 		"hints": [],
 		"scene_times": [],
 		"knowledge_tests": [],
-		"game_survey":[]
+		"game_survey": []
 	}
 
 func export_analytics(case_name: String, case_time: int):
@@ -106,6 +108,36 @@ func add_scene_analytics(location_name: String, location_type: String, location_
 			"total_duration_seconds": location_time
 		}
 		session_data["scene_times"].append(scene_data)
+
+func add_minigame_analytics(name: String):
+	var minigame_data = {
+		"name": name,
+		"total_duration_seconds": 0,
+		"attempts": []
+	}
+	print(minigame_data)
+	session_data["minigames"].append(minigame_data)
+
+func set_minigame_duration(minigame_name: String, duration: int):
+	for minigame in session_data["minigames"]:
+		if minigame["name"] == minigame_name:
+			minigame["total_duration_seconds"] = duration
+			print(minigame)
+			return
+	push_error("Minigame not found to set duration: " + minigame_name)
+
+func add_minigame_attempt(minigame_name: String, attempt_number: int, correct_answers: int, wrong_answers: int):
+	for minigame in session_data["minigames"]:
+		if minigame["name"] == minigame_name:
+			var attempt_data = {
+				"attempt_number": attempt_number,
+				"correct_answers": correct_answers,
+				"wrong_answers": wrong_answers
+			}
+			print(attempt_data)
+			minigame["attempts"].append(attempt_data)
+			return
+	push_error("Minigame not found: " + minigame_name)
 
 func add_knowledge_test_analytics(phase: String, answers: Array, duration: Array[int]):
 	var knowledge_data = {

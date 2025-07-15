@@ -15,6 +15,7 @@ func _ready() -> void:
 	
 	for statement in statements:
 		statement.statement_selected.connect(_on_statement_selected)
+	self.START("fnf_1", statement_count)
 
 
 func _on_statement_selected(new_statement: Control):
@@ -45,6 +46,8 @@ func check_statement_count():
 
 func _on_check_pressed() -> void:
 	if check_solution():
+		self.END()
+		
 		DialogueManager.show_dialogue_balloon_scene(
 			location_dialogue.baloon_type,
 			location_dialogue.dialogue_resource,
@@ -62,6 +65,7 @@ func check_solution() -> bool:
 		if categorized_statements[statement] != statement.category:
 			correct_selection = false
 			wrong_categorized_statement.append(statement)
+	self.TRY(wrong_categorized_statement.size())
 	return correct_selection
 
 func retry_level():

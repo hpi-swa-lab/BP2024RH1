@@ -11,6 +11,8 @@ var wrong_categorized_statement = []
 func _ready() -> void:
 	statements = %Statements.get_children()
 	
+	self.START("fnf_2", statements.size())
+	
 	for evidence in %Evidence.get_children():
 		evidence.evidence_inspected.connect(_on_evidence_inspected)
 	for statement in statements:
@@ -61,6 +63,7 @@ func check_solution() -> bool:
 			correct_selection = false
 			wrong_categorized_statement.append(statement)
 			categorized_statements.erase(statement)
+	self.TRY(wrong_categorized_statement.size())
 	return correct_selection
 
 func retry_level():
@@ -78,6 +81,7 @@ func retry_level():
 func check_statement_count():
 	if checking:
 		if check_solution():
+			self.END()
 			DialogueManager.show_dialogue_balloon_scene(
 			location_dialogue.baloon_type,
 			location_dialogue.dialogue_resource,

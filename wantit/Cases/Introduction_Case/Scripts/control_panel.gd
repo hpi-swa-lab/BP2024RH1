@@ -39,11 +39,11 @@ func remove_item(pair: HBoxContainer, Clue: Button, draggable: Button):
 	draggable.show()
 	addedPairs -= 1
 
-func check_minigame_clues() -> bool:
-	var cluesCorrect = true
+func check_minigame_clues() -> int:
+	var wrong_answers = 0
 	for Clue in addedClues:
 		if addedClues[Clue] == false:
-			cluesCorrect = false
+			wrong_answers += 1
 	if addedClues.size() != 5:
-		cluesCorrect = false
-	return cluesCorrect
+		wrong_answers = 6
+	return wrong_answers
