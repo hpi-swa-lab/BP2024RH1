@@ -91,7 +91,7 @@ func _on_check_solution_pressed() -> void:
 			input_text += text_fields[i].text
 		else:
 			input_text += " "
-	if input_text == original_text.to_upper():
+	if input_text.to_upper() == original_text.to_upper():
 		if dialogue_resource:
 			DialogueManager.show_dialogue_balloon_scene(
 				"res://dialogue_balloons/balloon.tscn",
