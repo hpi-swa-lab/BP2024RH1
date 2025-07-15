@@ -7,7 +7,6 @@ var current_location_name: String = ""
 @export var cases: Array[Case]
 var gamesaver = GameSaver.new()
 var saved_game_data
-var saved_case_data: Dictionary
 var completed_cases: Array
 
 
@@ -23,7 +22,8 @@ func _ready():
 func restore_saved_game():
 	load_game_data()
 	var active_case = get_case_by_slug(active_case_slug)
-	start_case(active_case, saved_case_data)
+	var case_data = get_saved_case_data()
+	start_case(active_case, case_data)
 
 func start_new_game():
 	active_case_slug = cases[0].case_slug
@@ -58,10 +58,14 @@ func get_active_case():
 	return get_case_by_slug(active_case_slug)
 
 func setup_case_connections(case: Case):
-	case.connect("location_switch_requested_from_event", _on_location_switch_requested)
-	case.connect("location_switch_requested", _on_location_switch_requested)
-	case.connect("case_overview_opened", _on_case_overview_opened)
-	case.connect("case_selected", _on_start_case)
+	if not case.is_connected("location_switch_requested_from_event", _on_location_switch_requested):
+		case.connect("location_switch_requested_from_event", _on_location_switch_requested)
+	if not case.is_connected("location_switch_requested", _on_location_switch_requested):
+		case.connect("location_switch_requested", _on_location_switch_requested)
+	if not case.is_connected("case_overview_opened", _on_case_overview_opened):
+		case.connect("case_overview_opened", _on_case_overview_opened)
+	if not case.is_connected("case_selected", _on_start_case):
+		case.connect("case_selected", _on_start_case)
 	case.item_found.connect(save_current_progress)
 
 func complete_case() -> void:
@@ -74,7 +78,7 @@ func mark_case_completed() -> void:
 	var current_case = get_case_by_slug(active_case_slug)
 	current_case.is_completed = true
 	completed_cases.append(current_case.case_slug)
-	current_case.clear_case_data()
+	current_case.reset_case_progress()
 	
 	GlobalTimer.end_timer(current_case.case_slug)
 	Analytics.export_analytics(current_case.case_slug, GlobalTimer.get_time(current_case.case_slug))
@@ -82,8 +86,6 @@ func mark_case_completed() -> void:
 func reset_to_default_case() -> void:
 	active_case_slug = "default"
 	current_location_name = ""
-	#played_dialogues["default_office"] = "default"
-	#TODO add some text to motivate user to open another case
 
 func start_new_case() -> void:
 	var default_case = get_case_by_slug(active_case_slug)
@@ -113,8 +115,8 @@ func switch_location(location: Location):
 func _on_location_switch_requested(location_name):
 	var current_case = get_case_by_slug(active_case_slug)
 	var location = current_case.get_location_by_name(location_name)
-	print(active_case_slug)
-	print(location_name)
+	#print(active_case_slug)
+	#print(location_name)
 	switch_location(location)
 
 func get_case_inventory() -> Array[String]:
@@ -127,15 +129,17 @@ func get_case_interactions() -> Array:
 
 func load_game_data():
 	active_case_slug = saved_game_data.get("active_case_slug", "")
-	current_location_name = saved_game_data.get("current_location_name")
+	current_location_name = saved_game_data.get("current_location_name", "")
 	completed_cases = saved_game_data.get("completed_cases", [])
+	reset_completed_cases()
+	
+func reset_completed_cases() -> void:
 	for case in cases:
 		if case.case_slug in completed_cases:
 			case.is_completed = true
-	
-	saved_case_data["inventory_items_names"] = saved_game_data.get("inventory_items", [])
-	saved_case_data["interactions_history"] = saved_game_data.get("interactions", [])
-	saved_case_data["played_dialogues"] = saved_game_data.get("location_dialogues", {})
+
+func get_saved_case_data() -> Dictionary:
+	return saved_game_data.get("active_case_data", {})
 
 #enables adding interaction from dialogue
 func interaction_happened(interaction_name: String) -> void:
@@ -169,21 +173,12 @@ func get_case_slug_by_title(target_title: String):
 			return case.case_slug
 	return null
 
-func get_played_location_dialogues() -> Dictionary:
-	var played_dialogues := {}
-	var active_case = get_case_by_slug(active_case_slug)
-#
-	for location in active_case.case_locations:
-		if location.dialogue_player!= null:	
-			played_dialogues[location.location_name] = location.dialogue_player.get_played_dialogues()
-	return played_dialogues
-
 func get_save_data() -> Dictionary:
+	var active_case = get_case_by_slug(active_case_slug)
+	
 	var save_data = {}
 	save_data["active_case_slug"] = active_case_slug
 	save_data["current_location_name"] = current_location.location_name
-	save_data["inventory_items"] = get_case_inventory()
-	save_data["interactions"] = get_case_interactions()
-	save_data["location_dialogues"] = get_played_location_dialogues()
 	save_data["completed_cases"] = completed_cases
+	save_data["active_case_data"] = active_case.get_save_data()
 	return save_data

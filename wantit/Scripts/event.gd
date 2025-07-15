@@ -1,5 +1,4 @@
 extends Resource
-
 class_name  Event
 
 @export var event_name: String
@@ -11,3 +10,6 @@ func is_valid(player_items: Array) -> bool:
 	if start_condition and not has_started:
 		return start_condition.is_satisfied(player_items)
 	return false
+
+func set_started() -> void:
+	has_started = true
