@@ -1,4 +1,4 @@
-extends Location
+extends Minigame
 
 var ziel_input: bool  = false
 var current_active_starts: int = 0

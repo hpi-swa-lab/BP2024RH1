@@ -16,3 +16,7 @@ Klaas: Wir werden gleich bei ihm zu Hause vorbeifahren. Dort befindet sich höch
 Klaas: Danke für deine Unterstützung. Ich freue mich auf unsere weitere Zusammenarbeit!
 do interaction_happened("to_endscreen")
 => END
+
+~ complete
+
+=> END

@@ -44,7 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://w3jwwhr2jth1" path="res://Cases/Code_From_The_Ashes/Scenes/minigame1.tscn" id="41_klri6"]
 [ext_resource type="PackedScene" uid="uid://dxfl6mwk6eufh" path="res://Cases/Code_From_The_Ashes/Scenes/tutorial2.tscn" id="42_eu6ph"]
 [ext_resource type="PackedScene" uid="uid://dk5yd0nfgmxtt" path="res://Cases/The_Missing_Painting/Scenes/office.tscn" id="43_87ddb"]
-[ext_resource type="PackedScene" uid="uid://brb5udqhuuouj" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_beginn.tscn" id="43_avmo2"]
+[ext_resource type="PackedScene" uid="uid://brb5udqhuuouj" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_begin.tscn" id="43_avmo2"]
 [ext_resource type="PackedScene" uid="uid://b8bpblw4o4xej" path="res://Cases/Code_From_The_Ashes/Scenes/minigame_2.tscn" id="43_edr7y"]
 [ext_resource type="PackedScene" uid="uid://t54jjw3ubnea" path="res://Cases/The_Missing_Painting/Scenes/crime_scene.tscn" id="44_mljfx"]
 [ext_resource type="PackedScene" uid="uid://b37iws3eonpm5" path="res://Cases/A_Completely_Normal_Day/Scenes/police_station_rooms/office_end.tscn" id="44_vyqle"]

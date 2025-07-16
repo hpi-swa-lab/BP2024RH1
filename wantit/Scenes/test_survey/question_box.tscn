@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://yoqrryb7blgb"]
+
+[ext_resource type="Script" uid="uid://p6p1ctceiw23" path="res://Scripts/test_survey/question_box.gd" id="1_gk70f"]
+[ext_resource type="PackedScene" uid="uid://c0vmlrauu0it7" path="res://Scenes/test_survey/answer_button.tscn" id="2_o7t1u"]
+[ext_resource type="Texture2D" uid="uid://d08ssl40oxl3r" path="res://Assets/knowledge_tests/Wissenstest.png" id="2_wjd10"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gk70f"]
+font_size = 25
+font_color = Color(0.219608, 0.180392, 0.160784, 1)
+
+[node name="QuestionBox" type="VBoxContainer"]
+script = ExtResource("1_gk70f")
+
+[node name="QuestionLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Dieser Text ist nur Demo."
+label_settings = SubResource("LabelSettings_gk70f")
+horizontal_alignment = 1
+
+[node name="QuestionImage" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_wjd10")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ABox" type="TextEdit" parent="."]
+visible = false
+custom_minimum_size = Vector2(500, 70)
+layout_mode = 2
+placeholder_text = "Antwort"
+wrap_mode = 1
+
+[node name="ASubmit" parent="." instance=ExtResource("2_o7t1u")]
+visible = false
+layout_mode = 2
+text = "Weiter"
+script = null
+
+[node name="A1" parent="." instance=ExtResource("2_o7t1u")]
+layout_mode = 2
+text = "A"
+
+[node name="A2" parent="." instance=ExtResource("2_o7t1u")]
+layout_mode = 2
+text = "B"
+
+[node name="A3" parent="." instance=ExtResource("2_o7t1u")]
+layout_mode = 2
+text = "C"
+
+[node name="A4" parent="." instance=ExtResource("2_o7t1u")]
+layout_mode = 2
+text = "D"

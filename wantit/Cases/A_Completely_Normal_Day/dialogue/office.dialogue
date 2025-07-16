@@ -30,4 +30,6 @@ Klaas: Den Rest sollten wir unseren IT-Experten für Cybersecurity überlassen.
 do interaction_happened("to_endscreen")
 => END
 
-
+~ CloseCase
+do interaction_happened("to_endscreen")
+=> END

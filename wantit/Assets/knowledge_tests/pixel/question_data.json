@@ -1,0 +1,40 @@
+[
+  {
+	"question": "Was ist ein Pixel?",
+	"isWrite": 0,
+	"answers": ["", "", "", ""],
+	"Antwort": "Ein einzelner Punkt auf einem Bildschirm, der eine Farbe darstellt.",
+	"correct": 0
+
+  },
+  {
+	"question": "Wo findet man Pixel?",
+	"isWrite": 0,
+	"answers": ["", "", "", ""],
+	"correct": 0,
+	"Antwort": "Auf Bildschirmen, Monitoren, Fernsehern und in digitalen Bildern."
+  },
+  {
+	"question": "Womit stellt der Computer ein Schwarz-Weiß-Bild dar?",
+	"answers":["Mit Buchstaben", "Mit Tönen", "Mit Nullen und Einsen", ""],
+	"correct": 2
+  },
+  {
+	"question": "Was bedeutet eine 0 in einer Pixelgrafik?",
+	"answers": ["Das Pixel ist schwarz", "Das Pixel ist weiß", "Das Pixel ist transparent", ""],
+	"correct": 0
+  },
+  {
+	"question": "Was bedeutet eine 1 in einer Pixelgrafik?",
+	"answers": ["Das Pixel ist schwarz", "Das Pixel ist weiß", "Das Pixel ist transparent", ""],
+	"correct": 1
+  },
+  {
+	"question": "Die folgende Pixelgrafik soll in einem Computer angezeigt werden. \nReihe im Textfeld Nullen und Einsen so hintereinander, \ndass sie die Pixelgrafik darstellen.",
+	"image": "pixel_Q6.png",
+	"isWrite": 1,
+	"Antwort": "0110,1101,0111,0101",
+	"correct": 0,
+	"answers": ["", "", "", ""],
+  }
+]

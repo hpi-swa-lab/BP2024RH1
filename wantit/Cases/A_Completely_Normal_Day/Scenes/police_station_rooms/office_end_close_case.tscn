@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8rsnb2si7rd5"]
+
+[ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_ghaq1"]
+[ext_resource type="Resource" uid="uid://bnf1oxlxnilcc" path="res://Cases/A_Completely_Normal_Day/dialogue/office.dialogue" id="2_v8oxm"]
+[ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_n4o61"]
+[ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_osrwf"]
+[ext_resource type="Texture2D" uid="uid://djqem8qin66nr" path="res://Cases/A_Completely_Normal_Day/Assets/Backgrounds/office.png" id="5_gv482"]
+[ext_resource type="Texture2D" uid="uid://c2hv5wqh7dg3g" path="res://Cases/A_Completely_Normal_Day/Assets/Interactibale_Items/documents.png" id="6_8i560"]
+
+[sub_resource type="Resource" id="Resource_wdr0c"]
+script = ExtResource("3_n4o61")
+start_marker = "Schluss"
+required_items = Array[String]([])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_xek2r"]
+script = ExtResource("3_n4o61")
+start_marker = "CloseCase"
+required_items = Array[String](["GameSurvey completed"])
+is_repeatable = false
+metadata/_custom_type_script = "uid://bnkm50q3eocad"
+
+[sub_resource type="Resource" id="Resource_2p4d4"]
+script = ExtResource("4_osrwf")
+dialogue_resource = ExtResource("2_v8oxm")
+is_dialogue = true
+dialogue_triggers = Array[ExtResource("3_n4o61")]([SubResource("Resource_wdr0c"), SubResource("Resource_xek2r")])
+start_automatically = true
+metadata/_custom_type_script = "uid://dqrq03qgm1a07"
+
+[node name="office_end_close_case" type="Node"]
+script = ExtResource("1_ghaq1")
+location_name = "office_end_close_case"
+location_dialogue = SubResource("Resource_2p4d4")
+metadata/_custom_type_script = "uid://cmjrdjr725xxf"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_gv482")
+
+[node name="Documents_on_table" type="TextureRect" parent="."]
+offset_left = 487.0
+offset_top = 315.0
+offset_right = 1126.0
+offset_bottom = 837.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_8i560")

@@ -32,6 +32,8 @@ func _ready() -> void:
 		var LevelArr = []
 		Buttons[i] = LevelArr 
 	
+	self.START("intro_2", 5)
+	
 	initialize_buttons()
 	load_level()
 
@@ -75,13 +77,14 @@ func check_Answers():
 	else:
 		%ExplanationLabel.text = "Klicke auf die Fehlermeldung, um mehr zu erfahren!"
 		initialize_messages()
-		add_attempt(Answers.size()-errors.size(), errors.size())
 
 func has_no_errors() -> bool:
+	var count = 0
 	for error in errors:
 		if error:
-			return false
-	return true
+			count += 1
+	self.TRY(count)
+	return count == 0
 		
 func add_button(LevelNum: int, ButtonText: String, ButtonTex: CompressedTexture2D, Answer: String) -> void:
 	var newButton = Button.new()
@@ -179,6 +182,7 @@ func create_label(labelText: String) -> Label:
 	return label
 
 func _on_finish_button_pressed() -> void:
+	self.END()
 	var interaction_item = Item.new()
 	interaction_item.item_name = "Minigame2 completed"
 	interaction_item.is_collectable = false

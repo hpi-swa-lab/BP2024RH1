@@ -39,3 +39,6 @@ Klaas: Doch Alice Wunder wollte die Tat nicht zugeben, um ihr Image zu wahren. B
 Klaas: Und den Rest der Geschichte kennst du bereits.
 do interaction_happened("to_endscreen")
 => END
+
+~ complete
+=> END

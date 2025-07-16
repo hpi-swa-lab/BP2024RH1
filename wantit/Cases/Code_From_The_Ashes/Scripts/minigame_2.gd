@@ -4,10 +4,11 @@ var original_text = "BEI SR ZU -I"
 var solution_text = "GIB ES ZU -B"
 var text_fields: Array
 var new_text: String = ""
+var correct_encrypted_alphabet = "picasobdefghjklmnqrtuvwxyz"
 
 func _ready() -> void:
 	super._ready()
-	
+	self.START("caesr_2", 26)
 	initialize_alphabet()
 
 func initialize_alphabet():
@@ -39,6 +40,7 @@ func apply_solution() -> bool:
 			encrypted_alphabet += child.text.to_upper()
 		else:
 			start_dialogue("double_letter")
+			break
 	if encrypted_alphabet.length() != alphabet.length():
 		start_dialogue("not_whole_alphabet")
 	else:
@@ -54,19 +56,26 @@ func apply_solution() -> bool:
 	
 	%ColorRect.size = %DecryptedMessage.size
 	
-	return new_text == solution_text
+	var i = 0
+	var count_mistakes = 0
+
+	for child in text_fields:
+		if child.text.to_lower()!=correct_encrypted_alphabet[i]:
+			count_mistakes += 1
+		i+=1
+	self.TRY(count_mistakes)
+	
+	#return new_text == solution_text
+	return encrypted_alphabet.to_lower() == correct_encrypted_alphabet
 
 func _on_button_pressed() -> void:
 	if await apply_solution():
+		self.TRY(0)
+		self.END()
 		start_dialogue("correct_solution")
 	else:
-		var correct_solutions: int = 0
-		for i in new_text.length():
-			if new_text[i] == original_text[i]:
-				correct_solutions += 1
-		add_attempt(correct_solutions, original_text.length()-correct_solutions)
-		new_text = ""
 		start_dialogue("wrong_solution")
+		reset()
 
 func reset():
 	%DecryptedMessage.text = ""

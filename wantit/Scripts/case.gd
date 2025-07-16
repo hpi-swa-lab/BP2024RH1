@@ -13,9 +13,7 @@ var interactions: Array
 var is_completed: bool = false
 var restored_inventory_items: Array
 @export var events: Array[Event]
-var played_location_dialogues: Dictionary
 var from_location: String
-#var event_tracker: CaseEventTracker -> CaseEvent
 
 signal location_switch_requested(location_name: String)
 signal location_switch_requested_from_event(location_name: String)
@@ -23,13 +21,14 @@ signal case_overview_opened(location: Location)
 signal case_selected(case_title: String)
 signal item_found(item: Item)
 
-func instantiate(_saved_case_data: Dictionary):
+func instantiate(saved_case_data: Dictionary): 
 	case_locations.clear()
-	restore_case_data(_saved_case_data)
+	restore_case_data(saved_case_data)
+	
 	for scene in case_location_scenes:
 		var instance := scene.instantiate()
 		if instance is Location:
-			_setup_location(instance)
+			setup_location(instance, saved_case_data)
 		else:
 			push_error("Scene does not instantiate to a Location: " + scene.resource_path)
 	
@@ -39,18 +38,18 @@ func instantiate(_saved_case_data: Dictionary):
 	
 	GlobalTimer.start_timer(case_slug)
 
-func _setup_location(location_instance: Location):
+func setup_location(location_instance: Location, saved_case_data: Dictionary):
 	var location := location_instance as Location
-	location.case = self
-	if location.location_dialogue:
-		var restored_location_data = get_restored_location_data(location)
-		location.setup_dialogue_player(location.location_dialogue, self, restored_location_data)
+	var saved_location_data = saved_case_data.get(location.location_name, {})
+	location.initialize(saved_location_data, self)
 	_setup_location_connections(location)
 	case_locations.append(location)
 
 func _setup_location_connections(location: Location) -> void:
-	location.connect("item_found", _on_item_found)
-	location.connect("location_switch_requested", _on_location_switch_requested)
+	if location.has_signal("item_found"):
+		location.connect("item_found", _on_item_found)
+	if location.has_signal("location_switch_requested"):
+		location.connect("location_switch_requested", _on_location_switch_requested)
 	if location.has_signal("case_overview_opened"):
 		location.connect("case_overview_opened", _on_case_overview_opened)
 	if location.has_signal("case_selected"):
@@ -71,12 +70,13 @@ func handle_item_found(_item: Item, _location: Location = null) -> void:
 func try_start_event() -> void:
 	var available_event = check_matching_event()
 	if available_event:
+		#available_event.set_started()
 		start_event(available_event)
 	
 func check_matching_event():
 	var player_items = get_player_items()
 	for trigger in events:
-		if trigger.is_valid(player_items):
+		if trigger.is_valid(player_items) and trigger.has_started == false:
 			trigger.has_started = true
 			return trigger.location_name
 	return null
@@ -127,30 +127,45 @@ func _on_case_overview_opened(location: Location):
 func _on_case_selected(_case_title: String):
 	case_selected.emit(_case_title)
 	
-func clear_case_data() -> void:
+func reset_case_progress() -> void:
 	interactions.clear()
 	inventory.inventory_slots.clear()
 	restored_inventory_items.clear()
-	played_location_dialogues.clear()
 	
 	for location in case_locations:
-		if location.dialogue_player:
-			location.dialogue_player.reset_played_dialogues()
-		for item in location.items:
-			if item.dialogue_player:
-				item.dialogue_player.reset_played_dialogues()
+		location.reset_progress()
+
 	for event in events:
 		event.has_started = false
 	print("Cleared current case data.")
 
-func get_restored_location_data(location: Location):
-	if played_location_dialogues.has(location.location_name):
-		return played_location_dialogues[location.location_name]
-	else:
-		return []
+func restore_case_data(save_data: Dictionary):
+	if not save_data.is_empty():
+		restored_inventory_items = save_data.get("inventory_items_names", [])
+		interactions = save_data.get("interactions_history", [])
+		
+		var started_events = save_data.get("events", [])
+		restore_started_events(started_events)
+		
+func restore_started_events(save_data: Array) -> void:
+	for event in events:
+		if event.event_name in save_data:
+			event.has_started = true
 
-func restore_case_data(_save_data: Dictionary):
-	if not _save_data.is_empty():
-		restored_inventory_items = _save_data["inventory_items_names"]
-		interactions = _save_data["interactions_history"]
-		played_location_dialogues = _save_data["played_dialogues"]
+func get_completed_events() -> Array:
+	var _events = []
+	for event in events:
+		if event.has_started == true:
+			_events.append(event.event_name)
+	return _events
+
+func get_save_data() -> Dictionary:
+	var save_data := {}
+	save_data["inventory_items"] = inventory.get_inventory_items_name()
+	save_data["interactions_history"] = interactions
+	save_data["events"] = get_completed_events()
+	
+	for location in case_locations:
+		save_data[location.location_name] = location.serialize()
+	
+	return save_data

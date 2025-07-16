@@ -1,0 +1,24 @@
+[
+  {
+	"question": "Wie nennt man die Anzahl, um die ein Buchstabe bei der \n Caesar-Verschlüsselung verschoben wird?",
+	"answers": ["Taste", "Schlüssel", "Klartext", "Passwort"],
+	"correct": 1
+  },
+  {
+	"question": "Was passiert bei der Caesar-Verschlüsselung mit den Buchstaben eines Textes?",
+	"answers": ["Sie werden rückwärts geschrieben.", "Sie werden durch Zahlen ersetzt.", "Sie werden im Alphabet um eine feste Anzahl verschoben.", "Sie werden gelöscht"],
+	"correct": 2
+  },
+  {
+	"question": "Wie nennt man den ursprünglichen, noch unverschlüsselten Text?",
+	"answers": ["Klartext", "Schlüssel", "Codewort", "Nachricht"],
+	"correct": 0
+  },
+  {
+	"question": "Entschlüssle das Wort: KDOOR (Schlüssel: 3)",
+	"answers": ["", "", "", ""],
+	"isWrite": 0, 
+	"correct": 0,
+	"richtig": "HALLO"
+  }
+]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://csk21o36cfaod"]
+
+[ext_resource type="Script" uid="uid://bmro870jbwt81" path="res://Scripts/test_survey/knowledge_test.gd" id="1_dd7tm"]
+[ext_resource type="Texture2D" uid="uid://dtngiwb66okj5" path="res://Assets/office/office.png" id="2_k7at8"]
+[ext_resource type="Texture2D" uid="uid://cinsrfgtkmeal" path="res://Assets/clue_board_max.png" id="3_2r3bi"]
+[ext_resource type="Texture2D" uid="uid://d08ssl40oxl3r" path="res://Assets/knowledge_tests/Wissenstest.png" id="4_wtqxd"]
+[ext_resource type="PackedScene" uid="uid://yoqrryb7blgb" path="res://Scenes/test_survey/question_box.tscn" id="5_gyb53"]
+
+[node name="PostTest" type="Node2D"]
+script = ExtResource("1_dd7tm")
+location_name = "PostTest"
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_k7at8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1166.0
+offset_bottom = 663.0
+color = Color(0, 0, 0, 0.67451)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 333)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_2r3bi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -300)
+texture = ExtResource("4_wtqxd")
+
+[node name="QuestionWrap" type="HBoxContainer" parent="."]
+offset_left = 60.0
+offset_top = 241.0
+offset_right = 1096.0
+offset_bottom = 603.0
+
+[node name="QuestionBox" parent="QuestionWrap" instance=ExtResource("5_gyb53")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="SkipButton" type="Button" parent="QuestionWrap/QuestionBox"]
+layout_mode = 2
+text = "Weiß ich nicht"

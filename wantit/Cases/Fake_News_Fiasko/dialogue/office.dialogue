@@ -23,10 +23,14 @@ Klaas: Und? Wen sollen wir noch einmal genauer befragen?
 		Klaas: Jetzt die gute Nachricht. Alle Gäste haben sich von dem Vorfall erholt.
 		=> end
 - Honigwald
-	Klaas: Honigwald hat es tatsächlich zugegeben. “Bitza” läuft jetzt auch wieder, nachdem klar ist, dass Maria ihre Gäste nicht vergiften wollte. Jetzt brauchen wir wohl nur einen neuen Bürgermeister. => end
+	Klaas: Honigwald hat es tatsächlich zugegeben. “Bitza” läuft jetzt auch wieder, nachdem klar ist, dass Maria ihre Gäste nicht vergiften wollte. Jetzt brauchen wir wohl nur einen neuen Bürgermeister. 
+	=> end
 => END
 
 ~ end
 Klaas: Vielen Dank für deine Hilfe und bis zum nächsten Fall!
 do interaction_happened("to_endscreen")
+=> END
+
+~ complete
 => END

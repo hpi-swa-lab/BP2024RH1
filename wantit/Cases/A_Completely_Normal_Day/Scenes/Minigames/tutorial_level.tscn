@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c46r1xqgd45xm" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Or_Gatter.tscn" id="3_1v12f"]
 [ext_resource type="PackedScene" uid="uid://bxn8odjc705k5" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/Ziel.tscn" id="4_q8npu"]
 [ext_resource type="PackedScene" uid="uid://uxhep3vdtv0g" path="res://Cases/A_Completely_Normal_Day/Scenes/LogikGatterBaukasten/connection.tscn" id="7_4cnik"]
-[ext_resource type="Texture2D" uid="uid://c6jlii58fljds" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_on.png" id="8_i4r03"]
-[ext_resource type="Texture2D" uid="uid://cbisqnpn8c3l3" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_off.png" id="9_cc7ng"]
-[ext_resource type="Texture2D" uid="uid://k417db6o8d3m" path="res://Cases/A_Completely_Normal_Day/Assets/arrow.png" id="9_isar4"]
+[ext_resource type="Texture2D" uid="uid://c3gn0fjhbkr5o" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_on.png" id="8_i4r03"]
+[ext_resource type="Texture2D" uid="uid://opxkccun4f8e" path="res://Cases/A_Completely_Normal_Day/Assets/Minigames/lamp_off.png" id="9_cc7ng"]
+[ext_resource type="Texture2D" uid="uid://csknkxhoaw621" path="res://Cases/A_Completely_Normal_Day/Assets/arrow.png" id="9_isar4"]
 
 [node name="LogikGatterLevelIntroduction" type="Control"]
 layout_mode = 3

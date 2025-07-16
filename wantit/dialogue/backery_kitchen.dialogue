@@ -5,5 +5,5 @@
 Klaas: Es scheint so, als hätten wir alle wichtigen Spuren gesichert.
 **RUMMS!**
 Klaas: Ohh, der Praktikant ist gestolpert und die ganzen gesicherten Spuren sind durcheinander gekommen.
-do _on_location_switch_requested("Minigame1")
+do interaction_happened("switch minigame 1")
 => END

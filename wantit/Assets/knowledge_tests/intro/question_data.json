@@ -1,0 +1,48 @@
+[
+  {
+	"question": "Wann werden Daten zu Informationen?",
+	"answers": ["Wenn sie in einem Zusammenhang interpretiert werden", "Wenn sie gespeichert werden.", "Nie.", ""],
+	"correct": 0
+  },
+  {
+	"question": "Was ist der Hauptunterschied zwischen Daten und Informationen?",
+	"answers": ["Informationen sind Rohwerte, Daten haben Bedeutung", "Daten sind Rohwerte, Informationen haben Bedeutung", "Daten und Informationen sind dasselbe", ""],
+	"correct": 1
+  },
+  {
+	"question": "Welches Medium kann Daten enthalten?",
+	"answers": ["Eine Pflanze", "Ein Stift", "Ein Lied", ""],
+	"correct": 2
+  },
+  {
+	"question": "Eine Information kann verschiedene Repräsentationen haben.",
+	"answers": ["richtig", "falsch", "", ""],
+	"correct": 1
+  },
+  {
+	"question": "Beschrifte die Spalten.",
+	"answers": ["Links: Informationen, Rechts: Daten", "Links: Daten, Rechts: Informationen", "", ""],
+	"correct": 0,
+	"image": "intro_Q5.png"
+  },
+  {
+	"question": "32% Gewinn ist ein Beispiel für:",
+	"answers": ["Informationen", "Daten", "Beides", ""],
+	"correct": 0,
+  },
+  {
+	"question": "123 ist ein Beispiel für:",
+	"answers": ["Informationen", "Daten", "Beides", ""],
+	"correct": 1
+  },
+  {
+	"question": "Die Farbe Blau ist ein Beispiel für:",
+	"answers": ["Informationen", "Daten", "Beides", ""],
+	"correct": 1
+  },
+  {
+	"question": "Der Spielstand: 3 : 4 ist ein Beispiel für:",
+	"answers": ["Informationen", "Daten", "Beides", ""],
+	"correct": 0
+  }
+]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxumstkw7fi0j" path="res://Cases/Code_From_The_Ashes/Scripts/minigame_2.gd" id="1_0tf0y"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_ib0ks"]
-[ext_resource type="Resource" uid="uid://mbdxdeoqylid" path="res://Cases/Code_From_The_Ashes/Dialogue/minigame2.dialogue" id="2_tt15t"]
+[ext_resource type="Resource" uid="uid://c6lueglfl5kvg" path="res://Cases/Code_From_The_Ashes/Dialogue/minigame2.dialogue" id="2_tt15t"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_35boq"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="3_hwubi"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="4_ib0ks"]

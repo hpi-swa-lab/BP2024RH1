@@ -1,0 +1,72 @@
+[
+  {
+	"question": "Wann gilt eine Nachricht als glaubwürdig?",
+	"answers": [
+	  "Wenn sie keine Tippfehler enthält.",
+	  "Wenn sie von mehreren unabhängigen Quellen bestätigt wird.",
+	  "Wenn sie viele Likes auf Social Media hat.",
+	  ""
+	],
+	"correct": 1
+  },
+  {
+	"question": "Wenn zwei Personen unterschiedliche Versionen eines Vorfalls erzählen, solltest du...",
+	"answers": [
+	  "herausfinden wer von den beiden lügt.",
+	  "keiner Version glauben.",
+	  "dir dein eigenes Bild über die Ereignisse bilden.",
+	  ""
+	],
+	"correct": 2
+  },
+	{
+	  "question": "„In England regnet es immer.“",
+	  "answers": [
+		"wahr",
+		"verallgemeinernd",
+		"übertrieben",
+		"falsche Schlussfolgerung"
+	  ],
+	  "correct": 1
+	},
+	{
+	  "question": "„Ich weinte ein Meer aus Tränen.“",
+	  "answers": [
+		"wahr",
+		"verallgemeinernd",
+		"übertrieben",
+		"falsche Schlussfolgerung"
+	  ],
+	  "correct": 2
+	},
+	{
+	  "question": "„Es scheint die Sonne, deswegen kann ich heute nicht lernen.“",
+	  "answers": [
+		"wahr",
+		"verallgemeinernd",
+		"übertrieben",
+		"falsche Schlussfolgerung"
+	  ],
+	  "correct": 3
+	},
+	{
+	  "question": "„In deutschen Schulen muss Mathe unterrichtet werden.“",
+	  "answers": [
+		"wahr",
+		"verallgemeinernd",
+		"übertrieben",
+		"falsche Schlussfolgerung"
+	  ],
+	  "correct": 0
+	},
+  {
+	"question": "Welche Aussage ist NICHT relevant für die Frage, wer Lukes Vater ist?",
+	"answers": [
+	  "Luke ist 36 Jahre alt",
+	  "Vor 37 Jahren war Lukes Mutter mit Anakin Skywalker zusammen",
+	  "Lukes Schwester ist Politikerin",
+	  ""
+	],
+	"correct": 2
+  }
+]

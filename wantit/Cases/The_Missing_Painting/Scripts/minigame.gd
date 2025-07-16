@@ -1,7 +1,10 @@
-extends Location
+extends Minigame
 var columns = 8
 var solution = "10100010" + "00000001" + "11100011" + "10100110" + "11100011" + "00000010" + "00100001" + "11001100"
 var correct_solution
+
+func _ready() -> void:
+	self.START("pixel", 64)
 
 func add_solution_Grid(Grid: GridContainer):
 	for i in range(columns * columns):
@@ -41,6 +44,13 @@ func _on_button_gui_input(event: InputEvent) -> void:
 			DialogueManager.show_dialogue_balloon(load ("res://Cases/The_Missing_Painting/Dialogue/minigame.dialogue"), "default")
 		elif %Button.text == "Webseite suchen":
 			var grid_button: Button
+			var count_mistakes = 0
+			for i in range(%LeftGrid.get_child_count()):
+				grid_button = %LeftGrid.get_child(i)
+				if grid_button.text != solution[i]:
+					count_mistakes += 1
+			self.TRY(count_mistakes)
+			
 			for i in range(%LeftGrid.get_child_count()):
 				grid_button = %LeftGrid.get_child(i)
 				if grid_button.text != solution[i]:
@@ -99,6 +109,7 @@ func display_solution():
 		%Display.texture = random_display
 		DialogueManager.show_dialogue_balloon(load ("res://Cases/The_Missing_Painting/Dialogue/minigame.dialogue"), "false_solution")
 	if correct_solution:
+		self.END()
 		%Button.visible = false
 		%Display.texture = load("res://Cases/The_Missing_Painting/Assets/Minigame/website_galery.png")
 		DialogueManager.show_dialogue_balloon(load ("res://Cases/The_Missing_Painting/Dialogue/minigame.dialogue"), "correct_solution")
