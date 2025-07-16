@@ -40,7 +40,7 @@ func apply_solution() -> bool:
 			encrypted_alphabet += child.text.to_upper()
 		else:
 			start_dialogue("double_letter")
-			break
+			return false
 	if encrypted_alphabet.length() != alphabet.length():
 		start_dialogue("not_whole_alphabet")
 	else:
