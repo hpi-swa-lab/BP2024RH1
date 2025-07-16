@@ -13,7 +13,7 @@ config_version=5
 config/name="WantIT"
 run/main_scene="uid://dyj7yo7t4iqhf"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://cbe62t80fvc2v"
 
 [autoload]
 
