@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://hqfrgdphxdrl"]
 
 [ext_resource type="Script" uid="uid://cmjrdjr725xxf" path="res://Scripts/location.gd" id="1_hr3m3"]
-[ext_resource type="Texture2D" uid="uid://bve61rxddrnsp" path="res://Cases/Binary_Trap/Assets/Minigame2/minigame2_closeUp.png" id="2_gt2d2"]
+[ext_resource type="Texture2D" uid="uid://re0t2t7i5i41" path="res://Cases/Binary_Trap/Assets/Minigame2/minigame2_closeUp.png" id="2_gt2d2"]
 [ext_resource type="Script" uid="uid://cl6f77kjtwyhy" path="res://Cases/Binary_Trap/Scripts/minigame2.gd" id="2_hex8g"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_pxh7d"]
 [ext_resource type="PackedScene" uid="uid://dofebqelw66y3" path="res://Cases/Binary_Trap/Scenes/Minigames/lamp_and_switch.tscn" id="2_ydl5m"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_22po7"]
-[ext_resource type="Texture2D" uid="uid://chl46a1yawt36" path="res://Cases/Binary_Trap/Assets/Minigame2/tape.png" id="3_dtrl5"]
+[ext_resource type="Texture2D" uid="uid://byxws6tx0mpd6" path="res://Cases/Binary_Trap/Assets/Minigame2/tape.png" id="3_dtrl5"]
 [ext_resource type="PackedScene" uid="uid://ml5btby7kwxh" path="res://Scenes/back_button.tscn" id="5_06qji"]
-[ext_resource type="FontFile" uid="uid://crpwo0n6tuq0a" path="res://Assets/Fonts/ReenieBeanie-Regular.ttf" id="6_pssty"]
+[ext_resource type="FontFile" uid="uid://1i8a1hw0ikpw" path="res://Assets/Fonts/ReenieBeanie-Regular.ttf" id="6_pssty"]
 
 [sub_resource type="Resource" id="Resource_nince"]
 script = ExtResource("3_22po7")
@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://bfe303xauflwy"
 
 [sub_resource type="Resource" id="Resource_22po7"]
 script = ExtResource("2_pxh7d")
-hint_text = "Die Glühbirnen zeigen dir an, ob der Wert der Stelle mit 0 (Lampe aus) oder 1 (Lampe an) multipliziert wird.2."
+hint_text = "Die Glühbirnen zeigen dir an, ob der Wert der Stelle mit 0 (Lampe aus) oder 1 (Lampe an) multipliziert wird."
 hint_condition = SubResource("Resource_nince")
 metadata/_custom_type_script = "uid://c5qtuytooefmh"
 
