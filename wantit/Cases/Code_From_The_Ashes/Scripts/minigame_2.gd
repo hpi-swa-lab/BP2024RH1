@@ -40,6 +40,7 @@ func apply_solution() -> bool:
 			encrypted_alphabet += child.text.to_upper()
 		else:
 			start_dialogue("double_letter")
+			return false
 	if encrypted_alphabet.length() != alphabet.length():
 		start_dialogue("not_whole_alphabet")
 	else:
@@ -55,15 +56,14 @@ func apply_solution() -> bool:
 	
 	%ColorRect.size = %DecryptedMessage.size
 	
-	#return new_text == solution_text
 	return encrypted_alphabet.to_lower() == correct_encrypted_alphabet
 
 func _on_button_pressed() -> void:
 	if await apply_solution():
 		start_dialogue("correct_solution")
 	else:
-		var correct_solutions: int = 0
 		start_dialogue("wrong_solution")
+		reset()
 
 func reset():
 	%DecryptedMessage.text = ""
