@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://b7hhus8oa5gnt"]
 
 [ext_resource type="Script" uid="uid://cuut68600lh08" path="res://Cases/The_Missing_Painting/Scripts/minigame.gd" id="1_vxk47"]
-[ext_resource type="Texture2D" uid="uid://jh714mdkpuvl" path="res://Cases/The_Missing_Painting/Assets/Minigame/setup.png" id="2_ip1kq"]
+[ext_resource type="Texture2D" uid="uid://n0cwrqo7udoj" path="res://Cases/The_Missing_Painting/Assets/Minigame/setup.png" id="2_ip1kq"]
 [ext_resource type="Script" uid="uid://c5qtuytooefmh" path="res://Scripts/hint.gd" id="2_mfb4k"]
-[ext_resource type="Texture2D" uid="uid://cdk4uvnmivlai" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/background_qrcode_piece.png" id="3_vxk47"]
+[ext_resource type="Texture2D" uid="uid://cj36457hular0" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/background_qrcode_piece.png" id="3_vxk47"]
 [ext_resource type="Script" uid="uid://bfe303xauflwy" path="res://Scripts/hint_condition.gd" id="3_yb0so"]
 [ext_resource type="Script" uid="uid://cwfk6xbelioo8" path="res://Scripts/item.gd" id="4_4mfwh"]
-[ext_resource type="Texture2D" uid="uid://b21m2ftfr64k8" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/qr_code_with_cut.png" id="5_4mfwh"]
-[ext_resource type="Texture2D" uid="uid://cuknu6jm2imq6" path="res://Cases/The_Missing_Painting/Assets/Minigame/website_galery.png" id="6_2fkol"]
-[ext_resource type="FontFile" uid="uid://c84fslbk0xuue" path="res://Cases/The_Missing_Painting/Assets/Minigame/IBMPlexMono-SemiBold.ttf" id="8_qv3qu"]
-[ext_resource type="FontFile" uid="uid://d1titn22brq6y" path="res://Assets/bold.ttf" id="10_xx2t6"]
+[ext_resource type="Texture2D" uid="uid://bov3y5qehdsb5" path="res://Cases/The_Missing_Painting/Assets/Collectible_Items/qr_code_with_cut.png" id="5_4mfwh"]
+[ext_resource type="Texture2D" uid="uid://bi8scmasiiuem" path="res://Cases/The_Missing_Painting/Assets/Minigame/website_galery.png" id="6_2fkol"]
+[ext_resource type="FontFile" uid="uid://ckyn7re8w3a6u" path="res://Cases/The_Missing_Painting/Assets/Minigame/IBMPlexMono-SemiBold.ttf" id="8_qv3qu"]
+[ext_resource type="FontFile" uid="uid://7eypsphh5kj1" path="res://Assets/bold.ttf" id="10_xx2t6"]
 
 [sub_resource type="Resource" id="Resource_xx2t6"]
 script = ExtResource("3_yb0so")

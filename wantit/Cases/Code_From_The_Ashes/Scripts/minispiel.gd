@@ -10,6 +10,7 @@ var text_fields
 @export var dialogue_resource: DialogueResource
 
 func _ready():
+	get_parent().START("caesr_1", 12)
 	initialize_disk()
 	set_lineEdits()
 	set_encrypted_text()
@@ -93,17 +94,19 @@ func _on_check_solution_pressed() -> void:
 			input_text += " "
 	if input_text.to_upper() == original_text.to_upper():
 		if dialogue_resource:
+			get_parent().TRY(0)
+			get_parent().END()
 			DialogueManager.show_dialogue_balloon_scene(
 				"res://dialogue_balloons/balloon.tscn",
 				dialogue_resource,
 				"minigame_completed")
 			await DialogueManager.dialogue_ended
 	else:
-		var correct_selections = 0
+		var incorrect_selections = original_text.length()-input_text.length()
 		for i in input_text.length():
-			if input_text[i] == original_text[i]:
-				correct_selections += 1
-		get_parent().add_attempt(correct_selections, original_text.length()-correct_selections)
+			if input_text[i].to_upper() != original_text[i].to_upper() && original_text[i]!=" " && input_text[i]!=" ":
+				incorrect_selections += 1
+		get_parent().TRY(incorrect_selections)
 		reset_game()
 
 func reset_game():

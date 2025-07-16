@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Dialogue" load_steps=5 format=3 uid="uid://chnuna6smwo7f"]
 
-[ext_resource type="Resource" uid="uid://dv3nhlfd7o38g" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="1_8djgl"]
+[ext_resource type="Resource" uid="uid://bdqylx3sb5h47" path="res://Cases/A_Completely_Normal_Day/dialogue/router.dialogue" id="1_8djgl"]
 [ext_resource type="Script" uid="uid://bnkm50q3eocad" path="res://Scripts/dialogue_trigger.gd" id="2_xlt7s"]
 [ext_resource type="Script" uid="uid://dqrq03qgm1a07" path="res://Scripts/dialogue.gd" id="3_665pr"]
 
